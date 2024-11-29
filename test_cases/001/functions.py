@@ -8521,3 +8521,2574 @@ def combine_and_unique(arr1, arr2):
             unique.append(el)
     return unique
 
+# 941. Функция для выбора наибольшего числа из трех
+def choose_largest(a, b, c):
+    if a > b and a > c:
+        return a
+    if b > a and b > c:
+        return b
+    if c > a and c > b:
+        return c
+    if a == b and a > c:
+        return a
+    if b == c and b > a:
+        return b
+    return a  # Если все равны, возвращаем первое
+
+# 942. Функция для выбора максимальной длины строки из нескольких
+def choose_longest_string(*strings):
+    longest = ""
+    for s in strings:
+        if len(s) > len(longest):
+            longest = s
+        elif len(s) == len(longest):
+            if s > longest:  # лексикографическое сравнение
+                longest = s
+    return longest
+
+# 943. Функция для выбора наиболее часто встречающегося элемента в списке
+def choose_most_frequent(arr):
+    freq = {}
+    for elem in arr:
+        if elem in freq:
+            freq[elem] += 1
+        else:
+            freq[elem] = 1
+    max_count = 0
+    most_frequent = None
+    for key, value in freq.items():
+        if value > max_count:
+            most_frequent = key
+            max_count = value
+        elif value == max_count:
+            if key > most_frequent:
+                most_frequent = key
+    return most_frequent
+
+# 944. Функция для выбора минимального значения из нескольких чисел
+def choose_smallest(*nums):
+    smallest = None
+    for num in nums:
+        if smallest is None or num < smallest:
+            smallest = num
+    return smallest
+
+# 945. Функция для выбора строки, содержащей наибольшее количество гласных
+def choose_string_with_most_vowels(*strings):
+    vowels = 'aeiouAEIOU'
+    max_vowels = 0
+    chosen_string = ""
+    for s in strings:
+        count_vowels = sum(1 for char in s if char in vowels)
+        if count_vowels > max_vowels:
+            max_vowels = count_vowels
+            chosen_string = s
+        elif count_vowels == max_vowels and s > chosen_string:
+            chosen_string = s
+    return chosen_string
+
+# 946. Функция для выбора наименьшего четного числа
+def choose_smallest_even(*nums):
+    smallest_even = None
+    for num in nums:
+        if num % 2 == 0:
+            if smallest_even is None or num < smallest_even:
+                smallest_even = num
+    if smallest_even is None:
+        return "No even numbers"
+    return smallest_even
+
+# 947. Функция для выбора числа с наибольшей разницей с другими числами
+def choose_number_with_max_diff(*nums):
+    max_diff = 0
+    chosen_num = None
+    for num in nums:
+        diff = max(nums) - min(nums)
+        if diff > max_diff:
+            max_diff = diff
+            chosen_num = num
+    return chosen_num
+
+# 948. Функция для выбора строки, которая начинается с гласной
+def choose_string_starting_with_vowel(*strings):
+    vowels = 'aeiouAEIOU'
+    for s in strings:
+        if s[0] in vowels:
+            return s
+    return "No string starts with a vowel"
+
+# 949. Функция для выбора второго наибольшего числа
+def choose_second_largest(*nums):
+    unique_nums = list(set(nums))
+    unique_nums.sort(reverse=True)
+    if len(unique_nums) < 2:
+        return "Not enough distinct numbers"
+    return unique_nums[1]
+
+# 950. Функция для выбора минимального элемента из списка, если он четный
+def choose_smallest_even_from_list(arr):
+    smallest_even = None
+    for num in arr:
+        if num % 2 == 0:
+            if smallest_even is None or num < smallest_even:
+                smallest_even = num
+    if smallest_even is None:
+        return "No even numbers found"
+    return smallest_even
+
+# 951. Функция для выбора самого длинного слова, не начинающегося на гласную
+def choose_longest_non_vowel_word(*words):
+    vowels = 'aeiouAEIOU'
+    longest = ""
+    for word in words:
+        if word[0] not in vowels:
+            if len(word) > len(longest):
+                longest = word
+    if not longest:
+        return "No word found"
+    return longest
+
+# 952. Функция для выбора наименьшего отрицательного числа
+def choose_smallest_negative(*nums):
+    smallest_negative = None
+    for num in nums:
+        if num < 0:
+            if smallest_negative is None or num > smallest_negative:
+                smallest_negative = num
+    if smallest_negative is None:
+        return "No negative numbers"
+    return smallest_negative
+
+# 953. Функция для выбора строки, которая содержит наибольшее количество цифр
+def choose_string_with_most_digits(*strings):
+    max_digits = 0
+    chosen_string = ""
+    for s in strings:
+        count_digits = sum(1 for char in s if char.isdigit())
+        if count_digits > max_digits:
+            max_digits = count_digits
+            chosen_string = s
+        elif count_digits == max_digits and s > chosen_string:
+            chosen_string = s
+    return chosen_string
+
+# 954. Функция для выбора наибольшего числа в пределах диапазона
+def choose_largest_in_range(low, high, *nums):
+    largest_in_range = None
+    for num in nums:
+        if low <= num <= high:
+            if largest_in_range is None or num > largest_in_range:
+                largest_in_range = num
+    if largest_in_range is None:
+        return f"No numbers in the range ({low}, {high})"
+    return largest_in_range
+
+# 955. Функция для выбора первого четного числа в списке
+def choose_first_even_number(arr):
+    for num in arr:
+        if num % 2 == 0:
+            return num
+    return "No even numbers"
+
+# 956. Функция для выбора самой короткой строки, не содержащей пробелы
+def choose_shortest_no_space_string(*strings):
+    shortest = None
+    for s in strings:
+        if ' ' not in s:
+            if shortest is None or len(s) < len(shortest):
+                shortest = s
+    if shortest is None:
+        return "No string without spaces"
+    return shortest
+
+# 957. Функция для выбора самого младшего возраста в группе
+def choose_youngest_age(*ages):
+    youngest = None
+    for age in ages:
+        if youngest is None or age < youngest:
+            youngest = age
+    return youngest
+
+# 958. Функция для выбора строки с наибольшим количеством уникальных символов
+def choose_string_with_most_unique_chars(*strings):
+    max_unique = 0
+    chosen_string = ""
+    for s in strings:
+        unique_chars = len(set(s))
+        if unique_chars > max_unique:
+            max_unique = unique_chars
+            chosen_string = s
+    return chosen_string
+
+# 959. Функция для выбора первого четного числа, которое делится на 3
+def choose_first_even_divisible_by_three(arr):
+    for num in arr:
+        if num % 2 == 0 and num % 3 == 0:
+            return num
+    return "No even number divisible by 3"
+
+# 960. Функция для выбора максимального числа, которое меньше заданного
+def choose_largest_less_than(value, *nums):
+    largest = None
+    for num in nums:
+        if num < value:
+            if largest is None or num > largest:
+                largest = num
+    if largest is None:
+        return f"No numbers less than {value}"
+    return largest
+
+# 961. Функция для выбора первого числа, которое больше заданного
+def choose_first_greater_than(value, *nums):
+    for num in nums:
+        if num > value:
+            return num
+    return f"No numbers greater than {value}"
+
+# 962. Функция для выбора строки, длина которой делится на 3
+def choose_string_with_length_divisible_by_three(*strings):
+    for s in strings:
+        if len(s) % 3 == 0:
+            return s
+    return "No string with length divisible by 3"
+
+# 963. Функция для выбора самого дорогого товара в списке
+def choose_most_expensive_item(*items):
+    max_price = 0
+    most_expensive = None
+    for item in items:
+        price = item['price']
+        if price > max_price:
+            max_price = price
+            most_expensive = item
+    return most_expensive if most_expensive else "No items found"
+
+
+# 964. Функция для выбора строки, длина которой меньше заданного числа
+def choose_string_shorter_than(length, *strings):
+    for s in strings:
+        if len(s) < length:
+            return s
+    return None
+
+# 965. Функция для выбора первого числа, которое не делится на 2 и 3
+def choose_first_not_divisible_by_2_and_3(arr):
+    for num in arr:
+        if num % 2 != 0 and num % 3 != 0:
+            return num
+    return None
+
+# 966. Функция для выбора первого слова, в котором все буквы – гласные
+def choose_word_with_only_vowels(*words):
+    vowels = 'aeiouAEIOU'
+    for word in words:
+        if all(char in vowels for char in word):
+            return word
+    return None
+
+# 967. Функция для выбора самого большого числа в списке, которое не превышает заданное значение
+def choose_largest_less_than_or_equal_to(value, *nums):
+    largest = None
+    for num in nums:
+        if num <= value:
+            if largest is None or num > largest:
+                largest = num
+    return largest if largest is not None else None
+
+# 968. Функция для выбора самой длинной строки, состоящей только из цифр
+def choose_longest_digit_string(*strings):
+    longest = None
+    for s in strings:
+        if s.isdigit():
+            if longest is None or len(s) > len(longest):
+                longest = s
+    return longest if longest is not None else None
+
+# 969. Функция для выбора самой короткой строки, в которой нет гласных
+def choose_shortest_string_without_vowels(*strings):
+    vowels = 'aeiouAEIOU'
+    shortest = None
+    for s in strings:
+        if all(char not in vowels for char in s):
+            if shortest is None or len(s) < len(shortest):
+                shortest = s
+    return shortest if shortest is not None else None
+
+# 970. Функция для выбора наибольшего четного числа, которое меньше заданного
+def choose_largest_even_less_than(value, *nums):
+    largest = None
+    for num in nums:
+        if num % 2 == 0 and num < value:
+            if largest is None or num > largest:
+                largest = num
+    return largest if largest is not None else None
+
+# 971. Функция для выбора второго самого маленького числа
+def choose_second_smallest(*nums):
+    unique_nums = list(set(nums))
+    unique_nums.sort()
+    if len(unique_nums) < 2:
+        return None
+    return unique_nums[1]
+
+# 972. Функция для выбора строки, которая начинается и заканчивается на одну и ту же букву
+def choose_string_start_and_end_same(*strings):
+    for s in strings:
+        if s[0] == s[-1]:
+            return s
+    return None
+
+# 973. Функция для выбора первого числа, которое делится на 5 и 7
+def choose_first_divisible_by_5_and_7(arr):
+    for num in arr:
+        if num % 5 == 0 and num % 7 == 0:
+            return num
+    return None
+
+# 974. Функция для выбора самой короткой строки, содержащей хотя бы одну цифру
+def choose_shortest_string_with_digit(*strings):
+    for s in strings:
+        if any(char.isdigit() for char in s):
+            return s
+    return None
+
+# 975. Функция для выбора самой дорогой покупки, не превышающей заданную цену
+def choose_most_expensive_below_price(limit, *items):
+    max_price = None
+    most_expensive = None
+    for item in items:
+        if item['price'] <= limit:
+            if max_price is None or item['price'] > max_price:
+                most_expensive = item
+                max_price = item['price']
+    return most_expensive if most_expensive else None
+
+# 976. Функция для выбора первого числа, которое является квадратом числа
+def choose_first_square_number(arr):
+    for num in arr:
+        if int(num ** 0.5) ** 2 == num:
+            return num
+    return None
+
+# 977. Функция для выбора самого старшего возраста среди людей
+def choose_oldest_age(*ages):
+    oldest = None
+    for age in ages:
+        if oldest is None or age > oldest:
+            oldest = age
+    return oldest if oldest is not None else None
+
+# 978. Функция для выбора первого числа, которое делится на 2, но не на 3
+def choose_first_divisible_by_2_not_3(arr):
+    for num in arr:
+        if num % 2 == 0 and num % 3 != 0:
+            return num
+    return None
+
+# 979. Функция для выбора самой длинной строки, в которой все символы – цифры
+def choose_longest_all_digits_string(*strings):
+    longest = None
+    for s in strings:
+        if s.isdigit():
+            if longest is None or len(s) > len(longest):
+                longest = s
+    return longest if longest is not None else None
+
+# 980. Функция для выбора первого четного числа, которое больше заданного
+def choose_first_even_greater_than(value, *nums):
+    for num in nums:
+        if num % 2 == 0 and num > value:
+            return num
+    return None
+
+# 981. Функция для выбора первой строки, которая не является числом
+def choose_first_non_numeric_string(*strings):
+    for s in strings:
+        if not s.isdigit():
+            return s
+    return None
+
+# 982. Функция для выбора строки, которая является палиндромом
+def choose_palindrome(*strings):
+    for s in strings:
+        if s == s[::-1]:
+            return s
+    return None
+
+# 983. Функция для выбора самой дорогой покупки, которая не дороже 100
+def choose_most_expensive_under_100(*items):
+    max_price = None
+    most_expensive = None
+    for item in items:
+        if item['price'] <= 100:
+            if max_price is None or item['price'] > max_price:
+                most_expensive = item
+                max_price = item['price']
+    return most_expensive if most_expensive else None
+
+# 984. Функция для выбора самого первого четного числа, которое больше 10
+def choose_first_even_greater_than_10(arr):
+    for num in arr:
+        if num % 2 == 0 and num > 10:
+            return num
+    return None
+
+# 985. Функция для выбора самого маленького числа, которое делится на 5
+def choose_smallest_divisible_by_5(*nums):
+    smallest = None
+    for num in nums:
+        if num % 5 == 0:
+            if smallest is None or num < smallest:
+                smallest = num
+    return smallest if smallest is not None else None
+
+# 986. Функция для выбора первого слова с длиной больше 5, которое начинается с согласной
+def choose_first_long_word_starting_with_consonant(*words):
+    vowels = 'aeiouAEIOU'
+    for word in words:
+        if len(word) > 5 and word[0] not in vowels:
+            return word
+    return None
+
+# 987. Функция для выбора самого большого числа, которое меньше чем 20
+def choose_largest_less_than_20(*nums):
+    largest = None
+    for num in nums:
+        if num < 20:
+            if largest is None or num > largest:
+                largest = num
+    return largest if largest is not None else None
+
+# 988. Функция для выбора строки, которая начинается с заглавной буквы
+def choose_string_starting_with_uppercase(*strings):
+    for s in strings:
+        if s[0].isupper():
+            return s
+    return None
+
+
+
+# 989. Функция для выбора первого числа, которое не является ни четным, ни простым
+def choose_first_non_even_non_prime(arr):
+    def is_prime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    for num in arr:
+        if num % 2 != 0 and not is_prime(num):
+            return num
+    return None
+
+# 990. Функция для выбора самой короткой строки, которая начинается с цифры
+def choose_shortest_string_starting_with_digit(*strings):
+    for s in strings:
+        if s[0].isdigit():
+            return s
+    return None
+
+# 991. Функция для выбора строки, которая является анаграммой другой строки
+def choose_anagram_of(string, *strings):
+    sorted_string = sorted(string)
+    for s in strings:
+        if sorted(s) == sorted_string:
+            return s
+    return None
+
+# 992. Функция для выбора наименьшего числа, которое больше заданного
+def choose_smallest_greater_than(value, *nums):
+    smallest = None
+    for num in nums:
+        if num > value:
+            if smallest is None or num < smallest:
+                smallest = num
+    return smallest if smallest is not None else None
+
+# 993. Функция для выбора первого слова, которое имеет четное количество букв
+def choose_first_even_length_word(*words):
+    for word in words:
+        if len(word) % 2 == 0:
+            return word
+    return None
+
+# 994. Функция для выбора строки, длина которой больше средней длины всех строк
+def choose_longer_than_average(*strings):
+    avg_length = sum(len(s) for s in strings) / len(strings) if strings else 0
+    for s in strings:
+        if len(s) > avg_length:
+            return s
+    return None
+
+# 995. Функция для выбора строки, которая содержит только буквы
+def choose_string_with_only_letters(*strings):
+    for s in strings:
+        if s.isalpha():
+            return s
+    return None
+
+# 996. Функция для выбора самого старого возраста, который меньше 30
+def choose_oldest_under_30(*ages):
+    oldest = None
+    for age in ages:
+        if age < 30:
+            if oldest is None or age > oldest:
+                oldest = age
+    return oldest if oldest is not None else None
+
+# 997. Функция для выбора числа, которое является кратным 4, но не кратным 5
+def choose_multiple_of_4_not_5(arr):
+    for num in arr:
+        if num % 4 == 0 and num % 5 != 0:
+            return num
+    return None
+
+# 998. Функция для выбора строки, длина которой кратна 3
+def choose_string_length_divisible_by_3(*strings):
+    for s in strings:
+        if len(s) % 3 == 0:
+            return s
+    return None
+
+# 999. Функция для выбора наименьшего числа, которое является четным и больше 10
+def choose_smallest_even_greater_than_10(*nums):
+    smallest = None
+    for num in nums:
+        if num % 2 == 0 and num > 10:
+            if smallest is None or num < smallest:
+                smallest = num
+    return smallest if smallest is not None else None
+
+# 1000. Функция для выбора первого числа, которое делится на 2 и 5
+def choose_first_divisible_by_2_and_5(arr):
+    for num in arr:
+        if num % 2 == 0 and num % 5 == 0:
+            return num
+    return None
+
+# 1001. Функция для выбора самой длинной строки, которая не начинается с цифры
+def choose_longest_non_digit_starting_string(*strings):
+    for s in strings:
+        if not s[0].isdigit():
+            return s
+    return None
+
+# 1002. Функция для выбора первого слова, которое состоит только из заглавных букв
+def choose_first_all_uppercase_word(*words):
+    for word in words:
+        if word.isupper():
+            return word
+    return None
+
+# 1003. Функция для выбора самого младшего возраста среди людей старше 50 лет
+def choose_youngest_over_50(*ages):
+    youngest = None
+    for age in ages:
+        if age > 50:
+            if youngest is None or age < youngest:
+                youngest = age
+    return youngest if youngest is not None else None
+
+# 1004. Функция для выбора наибольшего числа, которое делится на 3, но не на 2
+def choose_largest_multiple_of_3_not_2(arr):
+    largest = None
+    for num in arr:
+        if num % 3 == 0 and num % 2 != 0:
+            if largest is None or num > largest:
+                largest = num
+    return largest if largest is not None else None
+
+# 1005. Функция для выбора строки, содержащей хотя бы одну заглавную букву и цифру
+def choose_string_with_uppercase_and_digit(*strings):
+    for s in strings:
+        if any(char.isdigit() for char in s) and any(char.isupper() for char in s):
+            return s
+    return None
+
+# 1006. Функция для выбора первого четного числа, которое меньше 50
+def choose_first_even_less_than_50(arr):
+    for num in arr:
+        if num % 2 == 0 and num < 50:
+            return num
+    return None
+
+# 1007. Функция для выбора самой короткой строки, которая не содержит пробела
+def choose_shortest_no_space_string(*strings):
+    for s in strings:
+        if " " not in s:
+            return s
+    return None
+
+# 1008. Функция для выбора строки, которая является повторением другого слова
+def choose_repeated_string(*strings):
+    for s in strings:
+        if s == s * 2:
+            return s
+    return None
+
+# 1009. Функция для выбора числа, которое больше 0, но не больше 100
+def choose_number_in_range_0_100(*nums):
+    for num in nums:
+        if 0 < num <= 100:
+            return num
+    return None
+
+# 1010. Функция для выбора самого младшего числа, которое является нечётным
+def choose_smallest_odd_number(*nums):
+    smallest_odd = None
+    for num in nums:
+        if num % 2 != 0:
+            if smallest_odd is None or num < smallest_odd:
+                smallest_odd = num
+    return smallest_odd if smallest_odd is not None else None
+
+# 1011. Функция для выбора первого элемента списка, который больше 100 и четный
+def choose_first_greater_than_100_even(arr):
+    for num in arr:
+        if num > 100 and num % 2 == 0:
+            return num
+    return None
+
+# 1012. Функция для выбора самого длинного слова, содержащее только цифры
+def choose_longest_digit_word(*words):
+    longest = None
+    for word in words:
+        if word.isdigit():
+            if longest is None or len(word) > len(longest):
+                longest = word
+    return longest if longest is not None else None
+
+
+
+# 1013. Функция для проверки, является ли число простым, используя множество
+def is_prime_using_set(n):
+    if n < 2:
+        return False
+    factors = set()
+    for i in range(1, n + 1):
+        if n % i == 0:
+            factors.add(i)
+    return len(factors) == 2
+
+# 1014. Функция для подсчета чисел, которые кратны заданному числу в списке
+def count_multiples_of(num, arr):
+    count = 0
+    for val in arr:
+        if val % num == 0:
+            count += 1
+    return count if count > 0 else None
+
+# 1015. Функция для нахождения числа, которое делится на все элементы множества
+def find_divisible_by_all_in_set(num_set, num):
+    for divisor in num_set:
+        if num % divisor != 0:
+            return None
+    return num
+
+# 1016. Функция для поиска первого числа, которое не встречается в словаре
+def find_number_not_in_dict(d, num):
+    for key in d:
+        if key == num:
+            return None
+    return num
+
+# 1017. Функция для нахождения максимального числа в списке, которое делится на заданное
+def find_max_divisible(arr, divisor):
+    max_val = None
+    for num in arr:
+        if num % divisor == 0:
+            if max_val is None or num > max_val:
+                max_val = num
+    return max_val if max_val is not None else None
+
+# 1018. Функция для получения всех чисел, которые не делятся на 2, 3 и 5, используя список
+def find_not_divisible_by_2_3_5(arr):
+    result = []
+    for num in arr:
+        if num % 2 != 0 and num % 3 != 0 and num % 5 != 0:
+            result.append(num)
+    return result if result else None
+
+# 1019. Функция для нахождения суммы всех элементов множества, больших заданного числа
+def sum_of_elements_greater_than(n, num_set):
+    total = 0
+    for num in num_set:
+        if num > n:
+            total += num
+    return total if total > 0 else None
+
+# 1020. Функция для нахождения максимальной разницы между числами в словаре
+def max_difference_in_dict(d):
+    if len(d) < 2:
+        return None
+    values = list(d.values())
+    max_val = max(values)
+    min_val = min(values)
+    return max_val - min_val
+
+# 1021. Функция для вычисления среднего значения всех элементов множества
+def average_of_set(num_set):
+    if not num_set:
+        return None
+    total = 0
+    for num in num_set:
+        total += num
+    return total / len(num_set)
+
+# 1022. Функция для нахождения всех чисел, которые больше заданного числа и не делятся на 2
+def find_greater_than_and_not_divisible_by_2(arr, num):
+    result = []
+    for value in arr:
+        if value > num and value % 2 != 0:
+            result.append(value)
+    return result if result else None
+
+# 1023. Функция для нахождения минимального числа, которое делится на все элементы списка
+def find_min_divisible_by_all(arr):
+    min_val = None
+    for num in arr:
+        if all(num % val == 0 for val in arr):
+            if min_val is None or num < min_val:
+                min_val = num
+    return min_val if min_val is not None else None
+
+# 1024. Функция для нахождения самого маленького ключа в словаре, где значения больше заданного
+def find_smallest_key_greater_than(d, value):
+    smallest_key = None
+    for key, val in d.items():
+        if val > value:
+            if smallest_key is None or key < smallest_key:
+                smallest_key = key
+    return smallest_key if smallest_key is not None else None
+
+# 1025. Функция для нахождения первого числа, которое больше заданного и является квадратом
+def find_first_square_greater_than(arr, num):
+    for val in arr:
+        if val > num and int(val ** 0.5) ** 2 == val:
+            return val
+    return None
+
+# 1026. Функция для нахождения первого числа, которое делится на 2 и на 3, используя множества
+def find_first_divisible_by_2_and_3(num_set):
+    for num in num_set:
+        if num % 2 == 0 and num % 3 == 0:
+            return num
+    return None
+
+# 1027. Функция для нахождения числа, которое встречается в обоих списках
+def find_common_in_lists(arr1, arr2):
+    for val in arr1:
+        if val in arr2:
+            return val
+    return None
+
+# 1028. Функция для нахождения наименьшего числа, которое является четным и больше заданного
+def find_smallest_even_greater_than(arr, num):
+    smallest = None
+    for val in arr:
+        if val > num and val % 2 == 0:
+            if smallest is None or val < smallest:
+                smallest = val
+    return smallest if smallest is not None else None
+
+# 1029. Функция для нахождения элемента множества, который больше заданного
+def find_element_greater_than_in_set(num_set, value):
+    for num in num_set:
+        if num > value:
+            return num
+    return None
+
+# 1030. Функция для вычисления суммы всех чисел, делящихся на 3 или на 5, используя список
+def sum_divisible_by_3_or_5(arr):
+    total = 0
+    for val in arr:
+        if val % 3 == 0 or val % 5 == 0:
+            total += val
+    return total if total > 0 else None
+
+# 1031. Функция для нахождения самого большого числа в словаре
+def find_max_value_in_dict(d):
+    if not d:
+        return None
+    max_val = None
+    for key, val in d.items():
+        if max_val is None or val > max_val:
+            max_val = val
+    return max_val
+
+# 1032. Функция для нахождения числа, которое встречается в массиве более одного раза
+def find_duplicate(arr):
+    seen = set()
+    for num in arr:
+        if num in seen:
+            return num
+        seen.add(num)
+    return None
+
+# 1033. Функция для нахождения минимального числа, которое не делится на 4
+def find_min_not_divisible_by_4(arr):
+    min_val = None
+    for val in arr:
+        if val % 4 != 0:
+            if min_val is None or val < min_val:
+                min_val = val
+    return min_val if min_val is not None else None
+
+# 1034. Функция для нахождения наименьшего числа, которое делится на 7 и на 11
+def find_smallest_divisible_by_7_and_11(arr):
+    min_val = None
+    for val in arr:
+        if val % 7 == 0 and val % 11 == 0:
+            if min_val is None or val < min_val:
+                min_val = val
+    return min_val if min_val is not None else None
+
+# 1035. Функция для нахождения первого числа, которое делится на 3, но не на 5
+def find_first_divisible_by_3_not_5(arr):
+    for val in arr:
+        if val % 3 == 0 and val % 5 != 0:
+            return val
+    return None
+
+# 1036. Функция для нахождения суммы всех элементов в словаре, значения которых больше 10
+def sum_values_greater_than_10_in_dict(d):
+    total = 0
+    for key, val in d.items():
+        if val > 10:
+            total += val
+    return total if total > 0 else None
+
+# 1037. Функция для нахождения строки, длина которой больше заданного числа
+def find_string_longer_than(length, *strings):
+    for s in strings:
+        if len(s) > length:
+            return s
+    return None
+
+
+
+# 1038. Функция для проверки, является ли строка палиндромом
+def is_palindrome(s):
+    if not s:
+        return None
+    reversed_s = ''
+    for i in range(len(s) - 1, -1, -1):
+        reversed_s += s[i]
+    if s == reversed_s:
+        return True
+    return False
+
+# 1039. Функция для подсчета количества гласных в строке
+def count_vowels_in_string(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count if count > 0 else None
+
+# 1040. Функция для поиска первого вхождения подстроки в строку
+def find_first_occurrence_of_substring(s, substring):
+    for i in range(len(s) - len(substring) + 1):
+        if s[i:i+len(substring)] == substring:
+            return i
+    return None
+
+# 1041. Функция для удаления всех пробелов в строке
+def remove_spaces_from_string(s):
+    result = ''
+    for char in s:
+        if char != ' ':
+            result += char
+    return result if result != s else None
+
+# 1042. Функция для получения всех уникальных символов в строке
+def get_unique_characters(s):
+    unique_chars = set()
+    for char in s:
+        unique_chars.add(char)
+    return ''.join(unique_chars)
+
+# 1043. Функция для инвертирования строки
+def reverse_string(s):
+    reversed_str = ''
+    for i in range(len(s) - 1, -1, -1):
+        reversed_str += s[i]
+    return reversed_str
+
+# 1044. Функция для подсчета количества слов в строке
+def count_words_in_string(s):
+    words = s.split()
+    return len(words) if len(words) > 0 else None
+
+# 1045. Функция для получения строки с удаленными знаками препинания
+def remove_punctuation_from_string(s):
+    punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+    result = ''
+    for char in s:
+        if char not in punctuation:
+            result += char
+    return result
+
+# 1046. Функция для проверки, состоит ли строка только из цифр
+def is_string_only_digits(s):
+    for char in s:
+        if not char.isdigit():
+            return False
+    return True
+
+# 1047. Функция для получения индексов всех вхождений подстроки
+def find_all_occurrences_of_substring(s, substring):
+    indices = []
+    for i in range(len(s) - len(substring) + 1):
+        if s[i:i+len(substring)] == substring:
+            indices.append(i)
+    return indices if indices else None
+
+# 1048. Функция для получения строки, которая является повторением самой себя
+def repeat_string(s, n):
+    return s * n if n > 0 else None
+
+# 1049. Функция для получения первого слова в строке
+def get_first_word(s):
+    if not s:
+        return None
+    return s.split()[0]
+
+# 1050. Функция для получения всех чисел из строки
+def extract_numbers_from_string(s):
+    numbers = []
+    temp = ''
+    for char in s:
+        if char.isdigit():
+            temp += char
+        elif temp:
+            numbers.append(int(temp))
+            temp = ''
+    if temp:
+        numbers.append(int(temp))
+    return numbers if numbers else None
+
+# 1051. Функция для проверки, является ли строка буквой
+def is_string_single_letter(s):
+    return len(s) == 1 and s.isalpha()
+
+# 1052. Функция для получения строки с заглавными буквами
+def get_uppercase_letters(s):
+    uppercase = ''
+    for char in s:
+        if char.isupper():
+            uppercase += char
+    return uppercase if uppercase else None
+
+# 1053. Функция для удаления всех символов, которые встречаются в строке более одного раза
+def remove_duplicates_from_string(s):
+    result = ''
+    seen = set()
+    for char in s:
+        if char not in seen:
+            seen.add(char)
+            result += char
+    return result
+
+# 1054. Функция для нахождения всех подстрок заданной длины
+def find_substrings_of_length(s, length):
+    substrings = []
+    for i in range(len(s) - length + 1):
+        substrings.append(s[i:i+length])
+    return substrings if substrings else None
+
+# 1055. Функция для нахождения самой длинной буквы в строке
+def find_longest_alphabetic_char(s):
+    longest = ''
+    for char in s:
+        if char.isalpha() and len(char) > len(longest):
+            longest = char
+    return longest if longest else None
+
+# 1056. Функция для поиска самой частой буквы в строке
+def find_most_frequent_char(s):
+    frequency = {}
+    for char in s:
+        if char.isalpha():
+            frequency[char] = frequency.get(char, 0) + 1
+    most_frequent = max(frequency, key=frequency.get, default=None)
+    return most_frequent
+
+# 1057. Функция для разделения строки на части по символу
+def split_string_by_char(s, char):
+    parts = []
+    temp = ''
+    for c in s:
+        if c == char:
+            if temp:
+                parts.append(temp)
+                temp = ''
+        else:
+            temp += c
+    if temp:
+        parts.append(temp)
+    return parts if parts else None
+
+# 1058. Функция для замены всех цифр на символ `*`
+def replace_digits_with_asterisks(s):
+    result = ''
+    for char in s:
+        if char.isdigit():
+            result += '*'
+        else:
+            result += char
+    return result
+
+# 1059. Функция для нахождения всех подстрок, начинающихся на заглавную букву
+def find_substrings_starting_with_uppercase(s):
+    substrings = []
+    temp = ''
+    for char in s:
+        if char.isupper() and temp:
+            substrings.append(temp)
+            temp = ''
+        temp += char
+    if temp:
+        substrings.append(temp)
+    return substrings if substrings else None
+
+# 1060. Функция для преобразования строки в список символов
+def string_to_list_of_chars(s):
+    return list(s) if s else None
+
+# 1061. Функция для поиска самого длинного слова в строке
+def find_longest_word(s):
+    words = s.split()
+    if not words:
+        return None
+    return max(words, key=len)
+
+# 1062. Функция для нахождения строки, которая является комбинацией двух других
+def is_combination_of_two(s, s1, s2):
+    return s == s1 + s2
+
+# 1063. Функция для проверки, является ли строка числовой
+def is_numeric_string(s):
+    return s.isdigit() if s else False
+
+# 1064. Функция для подсчета всех слов в строке, начинающихся с гласной
+def count_words_starting_with_vowel(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for word in s.split():
+        if word[0] in vowels:
+            count += 1
+    return count if count > 0 else None
+
+# 1065. Функция для нахождения всех слов длиной больше 3 символов
+def find_words_longer_than_3(s):
+    words = s.split()
+    result = [word for word in words if len(word) > 3]
+    return result if result else None
+
+# 1066. Функция для удаления всех гласных в строке
+def remove_vowels_from_string(s):
+    vowels = 'aeiouAEIOU'
+    result = ''
+    for char in s:
+        if char not in vowels:
+            result += char
+    return result if result != s else None
+
+# 1067. Функция для замены всех пробелов на подчеркивания
+def replace_spaces_with_underscores(s):
+    return s.replace(' ', '_') if s else None
+
+# 1068. Функция для нахождения всех цифр в строке
+def find_digits_in_string(s):
+    digits = ''
+    for char in s:
+        if char.isdigit():
+            digits += char
+    return digits if digits else None
+
+# 1069. Функция для подсчета всех букв в строке
+def count_letters_in_string(s):
+    count = 0
+    for char in s:
+        if char.isalpha():
+            count += 1
+    return count if count > 0 else None
+
+# 1070. Функция для нахождения первой заглавной буквы в строке
+def find_first_uppercase_letter(s):
+    for char in s:
+        if char.isupper():
+            return char
+    return None
+
+# 1071. Функция для преобразования строки в обратный порядок
+def reverse_string_in_place(s):
+    result = ''
+    for char in reversed(s):
+        result += char
+    return result
+
+# 1072. Функция для замены всех заглавных букв на строчные
+def convert_upper_to_lower(s):
+    result = ''
+    for char in s:
+        if char.isupper():
+            result += char.lower()
+        else:
+            result += char
+    return result
+
+# 1073. Функция для нахождения всех букв, которые встречаются более одного раза
+def find_repeated_chars(s):
+    count = {}
+    repeated = ''
+    for char in s:
+        if char.isalpha():
+            count[char] = count.get(char, 0) + 1
+    for char, cnt in count.items():
+        if cnt > 1:
+            repeated += char
+    return repeated if repeated else None
+
+# 1074. Функция для нахождения всех символов, которые не являются буквами
+def find_non_alphabetic_chars(s):
+    result = ''
+    for char in s:
+        if not char.isalpha():
+            result += char
+    return result if result else None
+
+# 1075. Функция для конкатенации списка строк
+def concatenate_strings_from_list(lst):
+    result = ''
+    for s in lst:
+        result += s
+    return result
+
+# 1076. Функция для поиска строки с минимальной длиной
+def find_min_length_string(lst):
+    if not lst:
+        return None
+    min_string = lst[0]
+    for s in lst:
+        if len(s) < len(min_string):
+            min_string = s
+    return min_string
+
+# 1077. Функция для замены всех символов на их позицию в алфавите
+def replace_with_alphabet_position(s):
+    result = ''
+    for char in s:
+        if char.isalpha():
+            result += str(ord(char.lower()) - 96)
+        else:
+            result += char
+    return result
+
+
+
+# 1078. Функция для нахождения всех делителей числа
+def find_divisors(n):
+    if n == 0:
+        return None
+    divisors = []
+    for i in range(1, abs(n) + 1):
+        if n % i == 0:
+            divisors.append(i)
+    return divisors if divisors else None
+
+# 1079. Функция для проверки, является ли число простым
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# 1080. Функция для нахождения суммы цифр числа
+def sum_of_digits(n):
+    n = abs(n)
+    total = 0
+    while n > 0:
+        total += n % 10
+        n //= 10
+    return total
+
+# 1081. Функция для умножения числа на его собственные цифры
+def multiply_by_digits(n):
+    n = abs(n)
+    result = 1
+    while n > 0:
+        digit = n % 10
+        if digit != 0:
+            result *= digit
+        n //= 10
+    return result if result != 1 else None
+
+# 1082. Функция для нахождения максимальной цифры в числе
+def max_digit_in_number(n):
+    n = abs(n)
+    max_digit = -1
+    while n > 0:
+        digit = n % 10
+        if digit > max_digit:
+            max_digit = digit
+        n //= 10
+    return max_digit if max_digit != -1 else None
+
+# 1083. Функция для проверки, является ли число четным
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    return False
+
+# 1084. Функция для проверки, является ли число нечетным
+def is_odd(n):
+    if n % 2 != 0:
+        return True
+    return False
+
+# 1085. Функция для нахождения числа с наибольшей суммой цифр в списке
+def find_max_digit_sum(lst):
+    if not lst:
+        return None
+    max_sum = -1
+    max_num = None
+    for n in lst:
+        digit_sum = sum_of_digits(abs(n))
+        if digit_sum > max_sum:
+            max_sum = digit_sum
+            max_num = n
+    return max_num
+
+# 1086. Функция для подсчета количества четных чисел в списке
+def count_even_numbers(lst):
+    count = 0
+    for n in lst:
+        if is_even(n):
+            count += 1
+    return count if count > 0 else None
+
+# 1087. Функция для подсчета количества нечетных чисел в списке
+def count_odd_numbers(lst):
+    count = 0
+    for n in lst:
+        if is_odd(n):
+            count += 1
+    return count if count > 0 else None
+
+# 1088. Функция для нахождения наибольшего числа, которое делится на 3 в списке
+def find_largest_divisible_by_3(lst):
+    largest = None
+    for n in lst:
+        if n % 3 == 0 and (largest is None or n > largest):
+            largest = n
+    return largest
+
+# 1089. Функция для нахождения наименьшего числа, которое делится на 5 в списке
+def find_smallest_divisible_by_5(lst):
+    smallest = None
+    for n in lst:
+        if n % 5 == 0 and (smallest is None or n < smallest):
+            smallest = n
+    return smallest
+
+# 1090. Функция для нахождения произведения всех чисел в списке
+def multiply_all_numbers(lst):
+    if not lst:
+        return None
+    result = 1
+    for n in lst:
+        result *= n
+    return result
+
+# 1091. Функция для нахождения количества чисел, которые больше заданного порога
+def count_numbers_greater_than(lst, threshold):
+    count = 0
+    for n in lst:
+        if n > threshold:
+            count += 1
+    return count if count > 0 else None
+
+# 1092. Функция для нахождения чисел, которые не делятся на 2, 3 или 5
+def find_numbers_not_divisible_by_2_3_5(lst):
+    result = []
+    for n in lst:
+        if n % 2 != 0 and n % 3 != 0 and n % 5 != 0:
+            result.append(n)
+    return result if result else None
+
+# 1093. Функция для подсчета количества чисел, которые делятся на 7
+def count_divisible_by_7(lst):
+    count = 0
+    for n in lst:
+        if n % 7 == 0:
+            count += 1
+    return count if count > 0 else None
+
+# 1094. Функция для нахождения максимального числа, которое является квадратом целого числа
+def find_largest_square_number(lst):
+    largest = None
+    for n in lst:
+        if (n ** 0.5).is_integer() and (largest is None or n > largest):
+            largest = n
+    return largest
+
+# 1095. Функция для нахождения наименьшего числа, которое является кубом целого числа
+def find_smallest_cube_number(lst):
+    smallest = None
+    for n in lst:
+        if (n ** (1/3)).is_integer() and (smallest is None or n < smallest):
+            smallest = n
+    return smallest
+
+# 1096. Функция для нахождения числа, которое является и квадратом, и кубом одновременно
+def find_square_and_cube(lst):
+    result = []
+    for n in lst:
+        if (n ** 0.5).is_integer() and (n ** (1/3)).is_integer():
+            result.append(n)
+    return result if result else None
+
+# 1097. Функция для получения списка всех четных чисел от 1 до n
+def get_even_numbers_up_to_n(n):
+    even_numbers = []
+    for i in range(1, n + 1):
+        if is_even(i):
+            even_numbers.append(i)
+    return even_numbers
+
+# 1098. Функция для получения списка всех нечетных чисел от 1 до n
+def get_odd_numbers_up_to_n(n):
+    odd_numbers = []
+    for i in range(1, n + 1):
+        if is_odd(i):
+            odd_numbers.append(i)
+    return odd_numbers
+
+# 1099. Функция для нахождения наибольшего числа, которое является степенью двойки
+def find_largest_power_of_two(lst):
+    largest = None
+    for n in lst:
+        if (n & (n - 1)) == 0 and (largest is None or n > largest):
+            largest = n
+    return largest
+
+# 1100. Функция для нахождения наименьшего числа, которое является степенью двойки
+def find_smallest_power_of_two(lst):
+    smallest = None
+    for n in lst:
+        if (n & (n - 1)) == 0 and (smallest is None or n < smallest):
+            smallest = n
+    return smallest
+
+# 1101. Функция для нахождения всех чисел, которые являются степенями двойки
+def find_all_powers_of_two(lst):
+    powers_of_two = []
+    for n in lst:
+        if (n & (n - 1)) == 0:
+            powers_of_two.append(n)
+    return powers_of_two if powers_of_two else None
+
+# 1102. Функция для нахождения всех чисел, которые являются отрицательными
+def find_all_negative_numbers(lst):
+    negative_numbers = []
+    for n in lst:
+        if n < 0:
+            negative_numbers.append(n)
+    return negative_numbers if negative_numbers else None
+
+# 1103. Функция для нахождения всех чисел, которые являются положительными
+def find_all_positive_numbers(lst):
+    positive_numbers = []
+    for n in lst:
+        if n > 0:
+            positive_numbers.append(n)
+    return positive_numbers if positive_numbers else None
+
+# 1104. Функция для нахождения всех чисел, которые являются нулями
+def find_all_zeros(lst):
+    zeros = []
+    for n in lst:
+        if n == 0:
+            zeros.append(n)
+    return zeros if zeros else None
+
+# 1105. Функция для нахождения суммы чисел, которые больше заданного порога
+def sum_numbers_greater_than(lst, threshold):
+    total = 0
+    for n in lst:
+        if n > threshold:
+            total += n
+    return total if total > 0 else None
+
+# 1106. Функция для нахождения максимального значения среди всех чисел, делящихся на 4
+def find_max_divisible_by_4(lst):
+    max_divisible_by_4 = None
+    for n in lst:
+        if n % 4 == 0:
+            if max_divisible_by_4 is None or n > max_divisible_by_4:
+                max_divisible_by_4 = n
+    return max_divisible_by_4
+
+# 1107. Функция для нахождения минимального значения среди всех чисел, делящихся на 6
+def find_min_divisible_by_6(lst):
+    min_divisible_by_6 = None
+    for n in lst:
+        if n % 6 == 0:
+            if min_divisible_by_6 is None or n < min_divisible_by_6:
+                min_divisible_by_6 = n
+    return min_divisible_by_6
+
+# 1108. Функция для нахождения числа, которое делится и на 7, и на 11
+def find_divisible_by_7_and_11(lst):
+    result = []
+    for n in lst:
+        if n % 7 == 0 and n % 11 == 0:
+            result.append(n)
+    return result if result else None
+
+# 1109. Функция для нахождения наибольшего числа, которое делится на 9
+def find_largest_divisible_by_9(lst):
+    largest = None
+    for n in lst:
+        if n % 9 == 0 and (largest is None or n > largest):
+            largest = n
+    return largest
+
+# 1110. Функция для нахождения наименьшего числа, которое делится на 12
+def find_smallest_divisible_by_12(lst):
+    smallest = None
+    for n in lst:
+        if n % 12 == 0 and (smallest is None or n < smallest):
+            smallest = n
+    return smallest
+
+# 1111. Функция для нахождения чисел, которые делятся на 15 и на 20
+def find_divisible_by_15_and_20(lst):
+    result = []
+    for n in lst:
+        if n % 15 == 0 and n % 20 == 0:
+            result.append(n)
+    return result if result else None
+
+
+# 1112. Функция для создания кортежа из чисел, переданных в список
+def create_tuple_from_list(lst):
+    if not lst:
+        return None
+    result = tuple(lst)
+    return result
+
+# 1113. Функция для нахождения кортежа с минимальным и максимальным элементом из списка
+def find_min_max_from_list(lst):
+    if not lst:
+        return None
+    min_val = min(lst)
+    max_val = max(lst)
+    return (min_val, max_val)
+
+# 1114. Функция для создания кортежа, состоящего из уникальных элементов списка
+def create_tuple_of_unique_elements(lst):
+    unique_elements = set(lst)
+    return tuple(unique_elements) if unique_elements else None
+
+# 1115. Функция для нахождения кортежа из чисел, которые делятся на 3 из переданного списка
+def find_divisible_by_3(lst):
+    result = []
+    for n in lst:
+        if n % 3 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1116. Функция для нахождения кортежа из всех четных чисел в списке
+def find_even_numbers(lst):
+    result = []
+    for n in lst:
+        if n % 2 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1117. Функция для создания кортежа, состоящего из строк, длина которых больше 3 символов
+def find_long_strings(lst):
+    result = []
+    for s in lst:
+        if len(s) > 3:
+            result.append(s)
+    return tuple(result) if result else None
+
+# 1118. Функция для создания кортежа из строк, содержащих хотя бы одну цифру
+def find_strings_with_digits(lst):
+    result = []
+    for s in lst:
+        if any(char.isdigit() for char in s):
+            result.append(s)
+    return tuple(result) if result else None
+
+# 1119. Функция для создания кортежа из всех чисел, которые являются квадратами целых чисел
+def find_square_numbers(lst):
+    result = []
+    for n in lst:
+        if (n ** 0.5).is_integer():
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1120. Функция для создания кортежа из чисел, которые делятся на 5
+def find_divisible_by_5(lst):
+    result = []
+    for n in lst:
+        if n % 5 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1121. Функция для создания кортежа из строк, длина которых меньше или равна 5 символам
+def find_short_strings(lst):
+    result = []
+    for s in lst:
+        if len(s) <= 5:
+            result.append(s)
+    return tuple(result) if result else None
+
+# 1122. Функция для создания кортежа из чисел, которые больше заданного порога
+def find_greater_than(lst, threshold):
+    result = []
+    for n in lst:
+        if n > threshold:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1123. Функция для создания кортежа, содержащего индексы всех элементов, равных максимальному
+def find_max_indexes(lst):
+    if not lst:
+        return None
+    max_val = max(lst)
+    indexes = [i for i, x in enumerate(lst) if x == max_val]
+    return tuple(indexes) if indexes else None
+
+# 1124. Функция для нахождения кортежа чисел, которые являются четными и больше 10
+def find_even_and_greater_than_ten(lst):
+    result = []
+    for n in lst:
+        if n % 2 == 0 and n > 10:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1125. Функция для создания кортежа из всех строк, в которых есть хотя бы одна заглавная буква
+def find_strings_with_uppercase(lst):
+    result = []
+    for s in lst:
+        if any(char.isupper() for char in s):
+            result.append(s)
+    return tuple(result) if result else None
+
+# 1126. Функция для создания кортежа из чисел, которые делятся на 4 и не делятся на 2
+def find_numbers_divisible_by_4_not_2(lst):
+    result = []
+    for n in lst:
+        if n % 4 == 0 and n % 2 != 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1127. Функция для создания кортежа из всех строк, длина которых больше средней длины всех строк
+def find_longer_than_average(lst):
+    average_length = sum(len(s) for s in lst) / len(lst) if lst else 0
+    result = []
+    for s in lst:
+        if len(s) > average_length:
+            result.append(s)
+    return tuple(result) if result else None
+
+# 1128. Функция для создания кортежа из чисел, которые равны сумме их цифр
+def find_numbers_equal_to_digit_sum(lst):
+    result = []
+    for n in lst:
+        if n == sum(int(digit) for digit in str(abs(n))):
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1129. Функция для создания кортежа из чисел, которые являются делителями 100
+def find_divisors_of_100(lst):
+    result = []
+    for n in lst:
+        if 100 % n == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1130. Функция для создания кортежа из чисел, которые являются кратными 3 и 5
+def find_multiples_of_3_and_5(lst):
+    result = []
+    for n in lst:
+        if n % 3 == 0 and n % 5 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1131. Функция для создания кортежа, содержащего все числа, кратные числу из списка
+def find_multiples_of_list(lst, n):
+    result = []
+    for num in lst:
+        if num % n == 0:
+            result.append(num)
+    return tuple(result) if result else None
+
+# 1132. Функция для нахождения всех чисел, которые являются результатом возведения чисел в квадрат
+def find_squared_numbers(lst):
+    result = []
+    for n in lst:
+        if (n ** 0.5).is_integer():
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1133. Функция для создания кортежа, содержащего числа из списка, которые делятся на 6
+def find_divisible_by_6(lst):
+    result = []
+    for n in lst:
+        if n % 6 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1134. Функция для нахождения чисел, делящихся на 2 и 3
+def find_divisible_by_2_and_3(lst):
+    result = []
+    for n in lst:
+        if n % 2 == 0 and n % 3 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1135. Функция для создания кортежа с числами, которые кратны 2, 3 и 5
+def find_multiples_of_2_3_5(lst):
+    result = []
+    for n in lst:
+        if n % 2 == 0 and n % 3 == 0 and n % 5 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1136. Функция для создания кортежа из всех чисел, которые являются палиндромами
+def find_palindromes(lst):
+    result = []
+    for n in lst:
+        if str(n) == str(n)[::-1]:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1137. Функция для нахождения всех чисел, которые меньше их суммы цифр
+def find_numbers_less_than_digit_sum(lst):
+    result = []
+    for n in lst:
+        if n < sum(int(digit) for digit in str(abs(n))):
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1138. Функция для создания кортежа из чисел, которые равны сумме всех их делителей
+def find_numbers_equal_to_sum_of_divisors(lst):
+    result = []
+    for n in lst:
+        divisors = [i for i in range(1, n) if n % i == 0]
+        if n == sum(divisors):
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1139. Функция для создания кортежа чисел, которые кратны 9, но не кратны 3
+def find_multiples_of_9_not_3(lst):
+    result = []
+    for n in lst:
+        if n % 9 == 0 and n % 3 != 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1140. Функция для нахождения чисел, которые делятся на 11 и 13
+def find_divisible_by_11_and_13(lst):
+    result = []
+    for n in lst:
+        if n % 11 == 0 and n % 13 == 0:
+            result.append(n)
+    return tuple(result) if result else None
+
+
+# 1141. Функция для создания словаря, где ключами являются элементы списка, а значениями их квадраты
+def create_square_dict(lst):
+    if not lst:
+        return None
+    square_dict = {}
+    for item in lst:
+        square_dict[item] = item ** 2
+    return square_dict if square_dict else None
+
+# 1142. Функция для нахождения минимального и максимального значений в словаре
+def find_min_max_in_dict(d):
+    if not d:
+        return None
+    min_key = min(d, key=d.get)
+    max_key = max(d, key=d.get)
+    return (min_key, d[min_key]), (max_key, d[max_key])
+
+# 1143. Функция для фильтрации словаря, оставляя только те ключи, которые являются строками
+def filter_dict_with_strings(d):
+    if not d:
+        return None
+    filtered_dict = {}
+    for key, value in d.items():
+        if isinstance(key, str):
+            filtered_dict[key] = value
+    return filtered_dict if filtered_dict else None
+
+# 1144. Функция для нахождения суммы значений всех числовых ключей в словаре
+def sum_of_numeric_keys(d):
+    if not d:
+        return None
+    total = 0
+    for key, value in d.items():
+        if isinstance(key, (int, float)):
+            total += value
+    return total if total else None
+
+# 1145. Функция для создания словаря, в котором ключи — это длины строк из списка, а значения — сами строки
+def create_dict_from_string_lengths(lst):
+    if not lst:
+        return None
+    length_dict = {}
+    for s in lst:
+        length_dict[len(s)] = s
+    return length_dict if length_dict else None
+
+# 1146. Функция для удаления из словаря всех элементов с отрицательными значениями
+def remove_negative_values(d):
+    if not d:
+        return None
+    clean_dict = {}
+    for key, value in d.items():
+        if value >= 0:
+            clean_dict[key] = value
+    return clean_dict if clean_dict else None
+
+# 1147. Функция для создания словаря из двух списков: первый — ключи, второй — значения
+def create_dict_from_lists(keys, values):
+    if not keys or not values or len(keys) != len(values):
+        return None
+    result_dict = {}
+    for i in range(len(keys)):
+        result_dict[keys[i]] = values[i]
+    return result_dict if result_dict else None
+
+# 1148. Функция для подсчёта количества строк с одинаковыми длинами в списке
+def count_strings_by_length(lst):
+    if not lst:
+        return None
+    length_count = {}
+    for s in lst:
+        length_count[len(s)] = length_count.get(len(s), 0) + 1
+    return length_count if length_count else None
+
+# 1149. Функция для создания словаря из чисел, где ключи — это числа, а значения — их делители
+def create_divisors_dict(lst):
+    if not lst:
+        return None
+    divisors_dict = {}
+    for n in lst:
+        divisors = [i for i in range(1, n + 1) if n % i == 0]
+        divisors_dict[n] = divisors
+    return divisors_dict if divisors_dict else None
+
+# 1150. Функция для нахождения минимального значения в словаре, в котором ключи — это числа
+def find_min_value_in_dict(d):
+    if not d:
+        return None
+    min_value = min(d.values())
+    return min_value if min_value else None
+
+# 1151. Функция для создания словаря, где ключами являются индексы, а значениями элементы списка
+def create_dict_from_list(lst):
+    if not lst:
+        return None
+    index_dict = {}
+    for i, value in enumerate(lst):
+        index_dict[i] = value
+    return index_dict if index_dict else None
+
+# 1152. Функция для создания словаря с подсчётом, сколько раз встречается каждое число в списке
+def count_elements(lst):
+    if not lst:
+        return None
+    count_dict = {}
+    for element in lst:
+        count_dict[element] = count_dict.get(element, 0) + 1
+    return count_dict if count_dict else None
+
+# 1153. Функция для нахождения всех чисел, которые встречаются более одного раза в словаре
+def find_duplicates_in_dict(d):
+    if not d:
+        return None
+    reverse_dict = {}
+    for key, value in d.items():
+        if value not in reverse_dict:
+            reverse_dict[value] = [key]
+        else:
+            reverse_dict[value].append(key)
+    duplicates = {value: keys for value, keys in reverse_dict.items() if len(keys) > 1}
+    return duplicates if duplicates else None
+
+# 1154. Функция для подсчёта количества элементов в списке, которые равны значению по заданному ключу
+def count_values_by_key(d, key):
+    if not d or key not in d:
+        return None
+    count = 0
+    for value in d.values():
+        if value == d[key]:
+            count += 1
+    return count if count else None
+
+# 1155. Функция для поиска всех значений в словаре, которые больше заданного порога
+def find_values_greater_than(d, threshold):
+    if not d:
+        return None
+    result = []
+    for key, value in d.items():
+        if value > threshold:
+            result.append((key, value))
+    return result if result else None
+
+# 1156. Функция для создания словаря, в котором ключи — это числа, а значения — это их остатки от деления на 5
+def create_remainders_dict(lst):
+    if not lst:
+        return None
+    remainder_dict = {}
+    for n in lst:
+        remainder_dict[n] = n % 5
+    return remainder_dict if remainder_dict else None
+
+# 1157. Функция для нахождения суммы всех числовых значений в словаре
+def sum_of_dict_values(d):
+    if not d:
+        return None
+    total = 0
+    for value in d.values():
+        total += value
+    return total if total else None
+
+# 1158. Функция для создания словаря, где ключи — это строки, а значения — длины этих строк
+def create_length_dict(lst):
+    if not lst:
+        return None
+    length_dict = {}
+    for s in lst:
+        length_dict[s] = len(s)
+    return length_dict if length_dict else None
+
+# 1159. Функция для нахождения чисел в словаре, которые являются простыми
+def find_prime_numbers(d):
+    if not d:
+        return None
+    prime_numbers = {}
+    for key, value in d.items():
+        if value > 1 and all(value % i != 0 for i in range(2, int(value ** 0.5) + 1)):
+            prime_numbers[key] = value
+    return prime_numbers if prime_numbers else None
+
+# 1160. Функция для нахождения всех строк, длина которых больше, чем заданное число
+def find_longer_than(d, length):
+    if not d:
+        return None
+    result = []
+    for key, value in d.items():
+        if isinstance(value, str) and len(value) > length:
+            result.append((key, value))
+    return result if result else None
+
+# 1161. Функция для фильтрации словаря, оставляя только те элементы, у которых значения — чётные числа
+def filter_even_values(d):
+    if not d:
+        return None
+    filtered_dict = {}
+    for key, value in d.items():
+        if isinstance(value, int) and value % 2 == 0:
+            filtered_dict[key] = value
+    return filtered_dict if filtered_dict else None
+
+# 1162. Функция для создания словаря, где ключами являются элементы списка, а значениями — их удвоенные значения
+def create_double_value_dict(lst):
+    if not lst:
+        return None
+    double_dict = {}
+    for item in lst:
+        double_dict[item] = item * 2
+    return double_dict if double_dict else None
+
+# 1163. Функция для создания словаря с числовыми значениями, где значения кратны 7
+def create_sevens_dict(lst):
+    if not lst:
+        return None
+    sevens_dict = {}
+    for item in lst:
+        if item % 7 == 0:
+            sevens_dict[item] = item
+    return sevens_dict if sevens_dict else None
+
+# 1164. Функция для нахождения всех значений в словаре, которые равны их ключам
+def find_equal_key_value_pairs(d):
+    if not d:
+        return None
+    result = []
+    for key, value in d.items():
+        if key == value:
+            result.append((key, value))
+    return result if result else None
+
+# 1165. Функция для поиска максимального значения среди всех значений словаря
+def find_max_value_in_dict(d):
+    if not d:
+        return None
+    max_value = max(d.values())
+    return max_value if max_value else None
+
+# 1166. Функция для создания словаря, где ключами являются элементы списка, а значениями их кубы
+def create_cube_dict(lst):
+    if not lst:
+        return None
+    cube_dict = {}
+    for item in lst:
+        cube_dict[item] = item ** 3
+    return cube_dict if cube_dict else None
+
+# 1167. Функция для поиска строк, которые содержат больше определённого количества символов
+def find_long_strings(d, length):
+    if not d:
+        return None
+    result = []
+    for key, value in d.items():
+        if isinstance(value, str) and len(value) > length:
+            result.append((key, value))
+    return result if result else None
+
+# 1168. Функция для нахождения всех значений, которые являются нечётными числами
+def find_odd_values(d):
+    if not d:
+        return None
+    result = []
+    for key, value in d.items():
+        if isinstance(value, int) and value % 2 != 0:
+            result.append((key, value))
+    return result if result else None
+
+# 1169. Функция для нахождения всех чисел, которые больше среднего значения всех значений в словаре
+def find_values_greater_than_average(d):
+    if not d:
+        return None
+    avg_value = sum(d.values()) / len(d)
+    result = []
+    for key, value in d.items():
+        if value > avg_value:
+            result.append((key, value))
+    return result if result else None
+
+# 1170. Функция для создания словаря, где ключи — это индексы строк из списка, а значения — это сами строки
+def create_string_dict(lst):
+    if not lst:
+        return None
+    string_dict = {}
+    for i, s in enumerate(lst):
+        string_dict[i] = s
+    return string_dict if string_dict else None
+
+# 1171. Функция для нахождения чисел, которые больше заданного порога в словаре
+def find_values_greater_than_threshold(d, threshold):
+    if not d:
+        return None
+    result = []
+    for key, value in d.items():
+        if value > threshold:
+            result.append((key, value))
+    return result if result else None
+
+# 1172. Функция для подсчёта количества уникальных значений в словаре
+def count_unique_values(d):
+    if not d:
+        return None
+    unique_values = set(d.values())
+    return len(unique_values) if unique_values else None
+
+# 1173. Функция для фильтрации словаря, оставляя только те элементы, у которых ключи являются строками
+def filter_dict_with_string_keys(d):
+    if not d:
+        return None
+    filtered_dict = {}
+    for key, value in d.items():
+        if isinstance(key, str):
+            filtered_dict[key] = value
+    return filtered_dict if filtered_dict else None
+
+# 1174. Функция для нахождения наибольшего числа в списке значений словаря
+def find_max_in_values(d):
+    if not d:
+        return None
+    max_value = max(d.values())
+    return max_value if max_value else None
+
+# 1175. Функция для удаления из словаря всех элементов, где значение является пустой строкой
+def remove_empty_values(d):
+    if not d:
+        return None
+    clean_dict = {}
+    for key, value in d.items():
+        if value != "":
+            clean_dict[key] = value
+    return clean_dict if clean_dict else None
+
+
+# 1176. Функция для нахождения чисел, которые содержатся и в списке, и в множестве, и выводятся как кортежи
+def find_common_elements(lst, s):
+    if not lst or not s:
+        return None
+    common = set(lst).intersection(s)
+    if not common:
+        return None
+    result = [(item, lst.index(item)) for item in common]
+    return tuple(result) if result else None
+
+# 1177. Функция для вычисления суммы всех элементов кортежа, которые делятся на 3
+def sum_of_multiples_of_3(t):
+    if not t:
+        return None
+    total = 0
+    for n in t:
+        if n % 3 == 0:
+            total += n
+    return total if total else None
+
+# 1178. Функция для создания словаря, в котором ключи — это элементы множества, а значения — их квадраты
+def create_square_dict_from_set(s):
+    if not s:
+        return None
+    square_dict = {}
+    for item in s:
+        square_dict[item] = item ** 2
+    return square_dict if square_dict else None
+
+# 1179. Функция для нахождения чисел, которые встречаются как в списке, так и в словаре
+def find_elements_in_list_and_dict(lst, d):
+    if not lst or not d:
+        return None
+    common_elements = []
+    for item in lst:
+        if item in d:
+            common_elements.append(item)
+    return tuple(common_elements) if common_elements else None
+
+# 1180. Функция для создания множества уникальных значений из списка, кортежа и словаря
+def create_unique_set_from_multiple_sources(lst, t, d):
+    if not lst or not t or not d:
+        return None
+    combined_set = set(lst).union(t).union(d.values())
+    return combined_set if combined_set else None
+
+# 1181. Функция для нахождения строк, длина которых больше заданного числа, из списка и словаря
+def find_long_strings(lst, d, length):
+    if not lst or not d:
+        return None
+    long_strings = []
+    for item in lst:
+        if isinstance(item, str) and len(item) > length:
+            long_strings.append(item)
+    for value in d.values():
+        if isinstance(value, str) and len(value) > length:
+            long_strings.append(value)
+    return tuple(long_strings) if long_strings else None
+
+# 1182. Функция для нахождения чисел, которые больше всех чисел в словаре, и добавление их в множество
+def find_numbers_greater_than_dict_values(lst, d):
+    if not lst or not d:
+        return None
+    greater_numbers = set()
+    max_value = max(d.values())
+    for n in lst:
+        if n > max_value:
+            greater_numbers.add(n)
+    return greater_numbers if greater_numbers else None
+
+# 1183. Функция для подсчёта, сколько раз встречаются числа в списке, и создание словаря с этим количеством
+def count_numbers_in_list(lst):
+    if not lst:
+        return None
+    count_dict = {}
+    for n in lst:
+        count_dict[n] = count_dict.get(n, 0) + 1
+    return count_dict if count_dict else None
+
+# 1184. Функция для создания списка чисел, которые есть в словаре и кортежах
+def find_numbers_in_dict_and_tuple(d, t):
+    if not d or not t:
+        return None
+    result = []
+    for value in d.values():
+        if value in t:
+            result.append(value)
+    return result if result else None
+
+# 1185. Функция для нахождения всех чисел, которые делятся на все числа в множестве
+def find_numbers_divisible_by_all(lst, s):
+    if not lst or not s:
+        return None
+    divisible_numbers = []
+    for n in lst:
+        if all(n % num == 0 for num in s):
+            divisible_numbers.append(n)
+    return tuple(divisible_numbers) if divisible_numbers else None
+
+# 1186. Функция для создания словаря, где ключи — это элементы списка, а значения — их индексы
+def create_index_dict(lst):
+    if not lst:
+        return None
+    index_dict = {}
+    for i, item in enumerate(lst):
+        index_dict[item] = i
+    return index_dict if index_dict else None
+
+# 1187. Функция для создания множества всех уникальных символов из строк в списке и словаре
+def create_unique_char_set(lst, d):
+    if not lst or not d:
+        return None
+    char_set = set()
+    for s in lst:
+        if isinstance(s, str):
+            char_set.update(s)
+    for value in d.values():
+        if isinstance(value, str):
+            char_set.update(value)
+    return char_set if char_set else None
+
+# 1188. Функция для подсчёта уникальных элементов в списке и добавления их в словарь
+def count_unique_elements(lst):
+    if not lst:
+        return None
+    count_dict = {}
+    for item in lst:
+        count_dict[item] = count_dict.get(item, 0) + 1
+    return count_dict if count_dict else None
+
+# 1189. Функция для нахождения чисел, которые являются квадратами чисел из множества
+def find_squares_in_set(s):
+    if not s:
+        return None
+    result = []
+    for n in s:
+        if (n ** 0.5).is_integer():
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1190. Функция для нахождения строк с числовыми символами, которые встречаются в списке и словаре
+def find_numeric_strings(lst, d):
+    if not lst or not d:
+        return None
+    result = []
+    for item in lst:
+        if isinstance(item, str) and any(char.isdigit() for char in item):
+            result.append(item)
+    for value in d.values():
+        if isinstance(value, str) and any(char.isdigit() for char in value):
+            result.append(value)
+    return tuple(result) if result else None
+
+# 1191. Функция для нахождения чисел в списке, которые равны числовым значениям в словаре
+def find_equal_numbers(lst, d):
+    if not lst or not d:
+        return None
+    result = []
+    for item in lst:
+        if item in d.values():
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1192. Функция для создания множества всех чётных чисел из списка и кортежа
+def create_even_set(lst, t):
+    if not lst or not t:
+        return None
+    even_set = set()
+    for item in lst:
+        if item % 2 == 0:
+            even_set.add(item)
+    for item in t:
+        if item % 2 == 0:
+            even_set.add(item)
+    return even_set if even_set else None
+
+# 1193. Функция для нахождения чисел, которые являются общими для списка, множества и кортежа
+def find_common_numbers(lst, s, t):
+    if not lst or not s or not t:
+        return None
+    common_numbers = set(lst).intersection(s, t)
+    return tuple(common_numbers) if common_numbers else None
+
+# 1194. Функция для нахождения всех чисел, которые могут быть составлены из цифр строки
+def find_numbers_from_string(s):
+    if not s:
+        return None
+    result = []
+    for char in s:
+        if char.isdigit():
+            result.append(int(char))
+    return tuple(result) if result else None
+
+# 1195. Функция для создания списка, где элементы — это чётные индексы словаря
+def create_even_indexed_list(d):
+    if not d:
+        return None
+    result = []
+    for i, (key, value) in enumerate(d.items()):
+        if i % 2 == 0:
+            result.append((key, value))
+    return result if result else None
+
+# 1196. Функция для нахождения чисел, которые встречаются в списке, но отсутствуют в множестве
+def find_numbers_not_in_set(lst, s):
+    if not lst or not s:
+        return None
+    result = []
+    for item in lst:
+        if item not in s:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1197. Функция для создания словаря, где ключи — это элементы списка, а значения — множества их делителей
+def create_divisors_dict(lst):
+    if not lst:
+        return None
+    divisors_dict = {}
+    for item in lst:
+        divisors = {i for i in range(1, item + 1) if item % i == 0}
+        divisors_dict[item] = divisors
+    return divisors_dict if divisors_dict else None
+
+# 1198. Функция для нахождения чисел, которые одновременно больше и меньше заданных значений
+def find_numbers_between_bounds(lst, lower, upper):
+    if not lst:
+        return None
+    result = []
+    for n in lst:
+        if lower < n < upper:
+            result.append(n)
+    return tuple(result) if result else None
+
+# 1199. Функция для нахождения всех значений из словаря, которые меньше заданного числа
+def find_values_less_than(d, num):
+    if not d:
+        return None
+    result = []
+    for value in d.values():
+        if value < num:
+            result.append(value)
+    return tuple(result) if result else None
+
+# 1200. Функция для создания словаря, где ключи — это элементы множества, а значения — их длины (если это строки)
+def create_length_dict_from_set(s):
+    if not s:
+        return None
+    length_dict = {}
+    for item in s:
+        if isinstance(item, str):
+            length_dict[item] = len(item)
+    return length_dict if length_dict else None
+
+
+# 1201. Функция для нахождения чисел из списка, которые не присутствуют в множестве и словаре
+def find_numbers_not_in_set_and_dict(lst, s, d):
+    if not lst or not s or not d:
+        return None
+    result = []
+    for item in lst:
+        if item not in s and item not in d.values():
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1202. Функция для создания списка чисел, которые являются нечётными в списке и чётными в словаре
+def find_odd_in_list_and_even_in_dict(lst, d):
+    if not lst or not d:
+        return None
+    result = []
+    for item in lst:
+        if item % 2 != 0 and item in d:
+            if d[item] % 2 == 0:
+                result.append(item)
+    return result if result else None
+
+# 1203. Функция для создания множества, которое объединяет все чётные числа из списка и множества
+def create_even_number_set(lst, s):
+    if not lst or not s:
+        return None
+    even_set = set()
+    for item in lst:
+        if item % 2 == 0:
+            even_set.add(item)
+    for item in s:
+        if item % 2 == 0:
+            even_set.add(item)
+    return even_set if even_set else None
+
+# 1204. Функция для нахождения чисел из списка и словаря, которые больше среднего в словаре
+def find_numbers_greater_than_avg_in_dict(lst, d):
+    if not lst or not d:
+        return None
+    avg = sum(d.values()) / len(d)
+    result = []
+    for item in lst:
+        if item > avg:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1205. Функция для нахождения строк, длина которых меньше заданного числа в списке и словаре
+def find_short_strings(lst, d, length):
+    if not lst or not d:
+        return None
+    result = []
+    for item in lst:
+        if isinstance(item, str) and len(item) < length:
+            result.append(item)
+    for value in d.values():
+        if isinstance(value, str) and len(value) < length:
+            result.append(value)
+    return tuple(result) if result else None
+
+# 1206. Функция для нахождения максимального числа среди значений словаря и элементов списка
+def find_max_in_dict_and_list(lst, d):
+    if not lst or not d:
+        return None
+    max_list_value = max(lst)
+    max_dict_value = max(d.values())
+    return max(max_list_value, max_dict_value)
+
+# 1207. Функция для создания словаря, где ключи — это элементы множества, а значения — длина строки ключа
+def create_length_dict_from_set(s):
+    if not s:
+        return None
+    length_dict = {}
+    for item in s:
+        length_dict[item] = len(str(item))
+    return length_dict if length_dict else None
+
+# 1208. Функция для подсчёта, сколько раз встречаются элементы в списке и словаре
+def count_elements_in_list_and_dict(lst, d):
+    if not lst or not d:
+        return None
+    count_dict = {}
+    for item in lst + list(d.values()):
+        count_dict[item] = count_dict.get(item, 0) + 1
+    return count_dict if count_dict else None
+
+# 1209. Функция для нахождения общих значений между множеством и кортежем
+def find_common_in_set_and_tuple(s, t):
+    if not s or not t:
+        return None
+    result = s.intersection(t)
+    return tuple(result) if result else None
+
+# 1210. Функция для нахождения чисел, которые содержат хотя бы одну цифру из другого числа
+def find_numbers_with_digit(lst, num):
+    if not lst:
+        return None
+    result = []
+    str_num = str(num)
+    for item in lst:
+        if any(digit in str(item) for digit in str_num):
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1211. Функция для создания множества всех нечётных чисел, которые присутствуют и в списке, и в словаре
+def find_odd_numbers_in_both(lst, d):
+    if not lst or not d:
+        return None
+    odd_set = set()
+    for item in lst:
+        if item % 2 != 0 and item in d:
+            odd_set.add(item)
+    return odd_set if odd_set else None
+
+# 1212. Функция для нахождения чисел из списка, которые не присутствуют в словаре
+def find_numbers_not_in_dict(lst, d):
+    if not lst or not d:
+        return None
+    result = []
+    for item in lst:
+        if item not in d:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1213. Функция для нахождения уникальных элементов в списке, кортежах и множествах
+def find_unique_elements(lst, t, s):
+    if not lst or not t or not s:
+        return None
+    unique_elements = set(lst).union(set(t)).union(s)
+    return tuple(unique_elements) if unique_elements else None
+
+# 1214. Функция для нахождения всех чисел в списке, которые делятся на все числа в множестве
+def find_numbers_divisible_by_all(lst, s):
+    if not lst or not s:
+        return None
+    result = []
+    for item in lst:
+        if all(item % i == 0 for i in s):
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1215. Функция для создания множества, которое объединяет все нечётные числа из списка и множества
+def create_odd_number_set(lst, s):
+    if not lst or not s:
+        return None
+    odd_set = set()
+    for item in lst:
+        if item % 2 != 0:
+            odd_set.add(item)
+    for item in s:
+        if item % 2 != 0:
+            odd_set.add(item)
+    return odd_set if odd_set else None
+
+# 1216. Функция для нахождения всех чисел, которые находятся в обеих коллекциях (списке и словаре)
+def find_numbers_in_list_and_dict(lst, d):
+    if not lst or not d:
+        return None
+    result = []
+    for item in lst:
+        if item in d.values():
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1217. Функция для подсчёта уникальных элементов в списке и словаре
+def count_unique_elements_in_list_and_dict(lst, d):
+    if not lst or not d:
+        return None
+    result = set(lst).union(set(d.values()))
+    return len(result) if result else None
+
+# 1218. Функция для нахождения элементов списка, которые не присутствуют в словаре, но есть в кортеже
+def find_numbers_in_list_not_in_dict(lst, t):
+    if not lst or not t:
+        return None
+    result = []
+    for item in lst:
+        if item not in t:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1219. Функция для создания словаря, где ключи — это элементы множества, а значения — их квадраты
+def create_square_dict_from_set(s):
+    if not s:
+        return None
+    square_dict = {}
+    for item in s:
+        square_dict[item] = item ** 2
+    return square_dict if square_dict else None
+
+# 1220. Функция для создания списка, в котором каждый элемент — это результат вычисления произведения всех чисел из словаря
+def create_product_list_from_dict(d):
+    if not d:
+        return None
+    product_list = []
+    for key, value in d.items():
+        product = 1
+        for num in value:
+            product *= num
+        product_list.append(product)
+    return product_list if product_list else None
+
+# 1221. Функция для нахождения всех строк из списка и множества, которые содержат хотя бы одну цифру
+def find_strings_with_digit(lst, s):
+    if not lst or not s:
+        return None
+    result = []
+    for item in lst:
+        if isinstance(item, str) and any(char.isdigit() for char in item):
+            result.append(item)
+    for item in s:
+        if isinstance(item, str) and any(char.isdigit() for char in item):
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1222. Функция для нахождения чисел, которые встречаются и в списке, и в кортеже, и в множестве
+def find_common_numbers(lst, t, s):
+    if not lst or not t or not s:
+        return None
+    common = set(lst).intersection(t, s)
+    return tuple(common) if common else None
+
+# 1223. Функция для создания множества, состоящего из всех строк, длина которых меньше заданного числа
+def create_set_of_short_strings(lst, max_len):
+    if not lst:
+        return None
+    result = set()
+    for item in lst:
+        if isinstance(item, str) and len(item) < max_len:
+            result.add(item)
+    return result if result else None
+
+# 1224. Функция для нахождения всех чисел, которые одновременно больше максимума в списке и меньше минимума в словаре
+def find_numbers_in_range(lst, d):
+    if not lst or not d:
+        return None
+    max_lst = max(lst)
+    min_dict = min(d.values())
+    result = []
+    for item in lst:
+        if max_lst < item < min_dict:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1225. Функция для нахождения строк, длина которых больше средней длины всех строк в списке
+def find_long_strings(lst):
+    if not lst:
+        return None
+    avg_length = sum(len(item) for item in lst) / len(lst)
+    result = []
+    for item in lst:
+        if len(item) > avg_length:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1226. Функция для нахождения чисел, которые находятся в кортеже, но отсутствуют в словаре
+def find_numbers_in_tuple_not_in_dict(t, d):
+    if not t or not d:
+        return None
+    result = []
+    for item in t:
+        if item not in d:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1227. Функция для нахождения элементов, которые встречаются в списке, но не в множестве и словаре
+def find_in_list_not_in_set_and_dict(lst, s, d):
+    if not lst or not s or not d:
+        return None
+    result = []
+    for item in lst:
+        if item not in s and item not in d.values():
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1228. Функция для нахождения максимальных элементов из списка и словаря
+def find_max_values(lst, d):
+    if not lst or not d:
+        return None
+    max_lst = max(lst)
+    max_dict = max(d.values())
+    return max(max_lst, max_dict)
+
+# 1229. Функция для нахождения всех элементов из множества, которые не присутствуют в словаре
+def find_in_set_not_in_dict(s, d):
+    if not s or not d:
+        return None
+    result = []
+    for item in s:
+        if item not in d:
+            result.append(item)
+    return tuple(result) if result else None
+
+# 1230. Функция для создания словаря, где ключи — это строки из множества, а значения — длина строки
+def create_string_length_dict(s):
+    if not s:
+        return None
+    string_length_dict = {}
+    for item in s:
+        if isinstance(item, str):
+            string_length_dict[item] = len(item)
+    return string_length_dict if string_length_dict else None
