@@ -721,7 +721,7 @@ def count_starting_with(lst, char):
     return count
 
 
-# 66. Функция для нахождения наибольшего нечетного числа в списке
+# 65. Функция для нахождения наибольшего нечетного числа в списке
 def max_odd_number(lst):
     odd_numbers = [x for x in lst if x % 2 != 0]
     if not odd_numbers:
@@ -730,7 +730,7 @@ def max_odd_number(lst):
     return max(odd_numbers)
 
 
-# 67. Функция для подсчета количества заглавных букв в строке
+# 66. Функция для подсчета количества заглавных букв в строке
 def count_uppercase(s):
     count = sum(1 for char in s if char.isupper())
     if count == 0:
@@ -738,7 +738,7 @@ def count_uppercase(s):
     return count
 
 
-# 68. Функция для проверки, является ли строка числом Фибоначчи
+# 67. Функция для проверки, является ли строка числом Фибоначчи
 def is_fibonacci_number(n):
     if n < 0:
         print("Negative numbers cannot be Fibonacci numbers.")
@@ -749,7 +749,7 @@ def is_fibonacci_number(n):
     return b == n
 
 
-# 69. Функция для проверки, является ли список симметричным
+# 68. Функция для проверки, является ли список симметричным
 def is_symmetric(lst):
     if lst == lst[::-1]:
         return True
@@ -758,13 +758,13 @@ def is_symmetric(lst):
         return False
 
 
-# 70. Функция для нахождения суммы всех чисел в строке, игнорируя буквы
+# 69. Функция для нахождения суммы всех чисел в строке, игнорируя буквы
 def sum_numbers_in_string(s):
     numbers = [int(x) for x in s.split() if x.isdigit()]
     return sum(numbers)
 
 
-# 71. Функция для нахождения разницы между максимальным и минимальным нечётными числами в списке
+# 70. Функция для нахождения разницы между максимальным и минимальным нечётными числами в списке
 def odd_max_min_difference(lst):
     odd_numbers = [x for x in lst if x % 2 != 0]
     if not odd_numbers:
@@ -773,23 +773,23 @@ def odd_max_min_difference(lst):
     return max(odd_numbers) - min(odd_numbers)
 
 
-# 73. Функция для подсчета количества цифр в строке
+# 71. Функция для подсчета количества цифр в строке
 def count_digits(s):
     count = sum(1 for char in s if char.isdigit())
     return count
 
 
-# 74. Функция для проверки, является ли строка строкой с четным количеством символов
+# 72. Функция для проверки, является ли строка строкой с четным количеством символов
 def is_even_length(s):
     return len(s) % 2 == 0
 
 
-# 75. Функция для нахождения суммы всех чисел в списке, пропуская числа, кратные 4
+# 73. Функция для нахождения суммы всех чисел в списке, пропуская числа, кратные 4
 def sum_exclude_multiples_of_four(lst):
     return sum(x for x in lst if x % 4 != 0)
 
 
-# 76. Функция для нахождения минимального числа, которое не встречается в списке
+# 74. Функция для нахождения минимального числа, которое не встречается в списке
 def missing_min_number(lst):
     i = 0
     while i in lst:
@@ -797,12 +797,12 @@ def missing_min_number(lst):
     return i
 
 
-# 77. Функция для нахождения чисел, которые встречаются в обоих списках
+# 75. Функция для нахождения чисел, которые встречаются в обоих списках
 def common_numbers(lst1, lst2):
     return [x for x in lst1 if x in lst2]
 
 
-# 78. Функция для нахождения первой строки в списке, содержащей хотя бы одну цифру
+# 76. Функция для нахождения первой строки в списке, содержащей хотя бы одну цифру
 def first_string_with_digit(lst):
     for string in lst:
         if any(char.isdigit() for char in string):
@@ -811,17 +811,17 @@ def first_string_with_digit(lst):
     return None
 
 
-# 79. Функция для подсчета количества слов, начинающихся с определенной буквы
+# 77. Функция для подсчета количества слов, начинающихся с определенной буквы
 def count_words_starting_with(lst, char):
     return sum(1 for word in lst if word.startswith(char))
 
 
-# 80. Функция для нахождения количества чисел в списке, которые больше заданного
+# 78. Функция для нахождения количества чисел в списке, которые больше заданного
 def count_greater_than(lst, n):
     return sum(1 for x in lst if x > n)
 
 
-# 81. Функция для нахождения максимальной суммы подсписка
+# 79. Функция для нахождения максимальной суммы подсписка
 def max_sublist_sum(lst):
     if not lst:
         print("List is empty!")
@@ -833,7 +833,7 @@ def max_sublist_sum(lst):
     return max_sum
 
 
-# 82. Функция для вычисления наибольшего произведения двух чисел в списке
+# 80. Функция для вычисления наибольшего произведения двух чисел в списке
 def max_pairwise_product(lst):
     if len(lst) < 2:
         print("Need at least two elements!")
@@ -842,13 +842,13 @@ def max_pairwise_product(lst):
     return lst[-1] * lst[-2]
 
 
-# 83. Функция для проверки, является ли строка палиндромом, игнорируя пробелы и знаки препинания
+# 81. Функция для проверки, является ли строка палиндромом, игнорируя пробелы и знаки препинания
 def is_palindrome_1(s):
     s = ''.join(c.lower() for c in s if c.isalnum())
     return s == s[::-1]
 
 
-# 84. Функция для нахождения наибольшего делителя числа, меньшего заданного
+# 82. Функция для нахождения наибольшего делителя числа, меньшего заданного
 def largest_divisor_less_than(n):
     if n <= 1:
         print(f"{n} doesn't have any divisors greater than 1.")
@@ -859,7 +859,7 @@ def largest_divisor_less_than(n):
     return None
 
 
-# 85. Функция для нахождения всех чисел в списке, которые не являются простыми
+# 83. Функция для нахождения всех чисел в списке, которые не являются простыми
 def non_prime_numbers(lst):
     def is_prime(n):
         if n < 2:
@@ -872,7 +872,7 @@ def non_prime_numbers(lst):
     return [x for x in lst if not is_prime(x)]
 
 
-# 86. Функция для нахождения наибольшего элемента в строке, если строка состоит из цифр
+# 84. Функция для нахождения наибольшего элемента в строке, если строка состоит из цифр
 def max_digit_in_string(s):
     if not s.isdigit():
         print("The string doesn't contain only digits.")
@@ -891,7 +891,7 @@ def max_digit_in_string(s):
 #     return total
 
 
-# 88. Функция для нахождения наибольшего числа, которое является квадратом целого числа
+# 85. Функция для нахождения наибольшего числа, которое является квадратом целого числа
 def largest_square(lst):
     squares = [x for x in lst if int(x ** 0.5) ** 2 == x]
     if squares:
@@ -900,7 +900,7 @@ def largest_square(lst):
     return None
 
 
-# 89. Функция для нахождения всех чисел, которые можно записать как сумму двух квадратов
+# 86. Функция для нахождения всех чисел, которые можно записать как сумму двух квадратов
 def sum_of_two_squares(lst):
     def is_sum_of_squares(n):
         for i in range(1, int(n ** 0.5) + 1):
@@ -911,12 +911,12 @@ def sum_of_two_squares(lst):
     return [x for x in lst if is_sum_of_squares(x)]
 
 
-# 90. Функция для нахождения суммы чисел в строке, игнорируя все символы, кроме цифр
+# 87. Функция для нахождения суммы чисел в строке, игнорируя все символы, кроме цифр
 def sum_of_digits_in_string(s):
     return sum(int(c) for c in s if c.isdigit())
 
 
-# 92. Функция для нахождения всех элементов, которые меньше среднего значения списка
+# 88. Функция для нахождения всех элементов, которые меньше среднего значения списка
 def elements_less_than_mean(lst):
     if not lst:
         print("List is empty!")
@@ -925,12 +925,12 @@ def elements_less_than_mean(lst):
     return [x for x in lst if x < mean]
 
 
-# 93. Функция для нахождения всех элементов в строке, которые являются числами
+# 89. Функция для нахождения всех элементов в строке, которые являются числами
 def extract_numbers_from_string(s):
     return [int(x) for x in s.split() if x.isdigit()]
 
 
-# 94. Функция для вычисления разности между наибольшим и наименьшим числом в списке
+# 90. Функция для вычисления разности между наибольшим и наименьшим числом в списке
 def max_min_difference(lst):
     if not lst:
         print("List is empty!")
@@ -938,7 +938,7 @@ def max_min_difference(lst):
     return max(lst) - min(lst)
 
 
-# 95. Функция для нахождения первого числа, которое делится на 2 и на 5 в списке
+# 91. Функция для нахождения первого числа, которое делится на 2 и на 5 в списке
 def first_divisible_by_2_and_5(lst):
     for x in lst:
         if x % 2 == 0 and x % 5 == 0:
@@ -947,7 +947,7 @@ def first_divisible_by_2_and_5(lst):
     return None
 
 
-# 96. Функция для проверки, является ли строка числом, и если да, то вывести его квадрат
+# 92. Функция для проверки, является ли строка числом, и если да, то вывести его квадрат
 def square_if_number(s):
     try:
         number = float(s)
@@ -957,7 +957,7 @@ def square_if_number(s):
         return None
 
 
-# 97. Функция для подсчета количества чисел в списке, которые не являются простыми
+# 93. Функция для подсчета количества чисел в списке, которые не являются простыми
 def count_non_prime(lst):
     def is_prime(n):
         if n < 2:
@@ -970,12 +970,12 @@ def count_non_prime(lst):
     return sum(1 for x in lst if not is_prime(x))
 
 
-# 98. Функция для нахождения всех элементов в списке, которые являются палиндромами
+# 94. Функция для нахождения всех элементов в списке, которые являются палиндромами
 def palindromic_elements(lst):
     return [x for x in lst if str(x) == str(x)[::-1]]
 
 
-# 99. Функция для нахождения наибольшего числа, которое является степенью двойки
+# 95. Функция для нахождения наибольшего числа, которое является степенью двойки
 def largest_power_of_two(lst):
     powers_of_two = [x for x in lst if (x & (x - 1)) == 0 and x > 0]
     if powers_of_two:
@@ -984,12 +984,12 @@ def largest_power_of_two(lst):
     return None
 
 
-# 100. Функция для нахождения всех чисел, которые являются кратными 6
+# 96. Функция для нахождения всех чисел, которые являются кратными 6
 def multiples_of_six(lst):
     return [x for x in lst if x % 6 == 0]
 
 
-# 101. Функция для нахождения уникальных элементов в списке, используя множество
+# 97. Функция для нахождения уникальных элементов в списке, используя множество
 def unique_elements(lst):
     unique = set()
     for item in lst:
@@ -1000,7 +1000,7 @@ def unique_elements(lst):
     return list(unique)
 
 
-# 102. Функция для подсчёта количества вхождений каждого элемента в список с использованием словаря
+# 98. Функция для подсчёта количества вхождений каждого элемента в список с использованием словаря
 def count_occurrences_1(lst):
     count_dict = {}
     for item in lst:
@@ -1013,7 +1013,7 @@ def count_occurrences_1(lst):
     return count_dict
 
 
-# 103. Функция для нахождения пересечения двух списков с использованием множеств
+# 99. Функция для нахождения пересечения двух списков с использованием множеств
 def intersection_of_lists(lst1, lst2):
     set1 = set(lst1)
     set2 = set(lst2)
@@ -1023,7 +1023,7 @@ def intersection_of_lists(lst1, lst2):
     return list(intersection)
 
 
-# 104. Функция для нахождения всех чисел, которые делятся на любое число из второго списка
+# 100. Функция для нахождения всех чисел, которые делятся на любое число из второго списка
 def divisible_by_any(lst, divisors):
     divisible = []
     for num in lst:
@@ -1036,7 +1036,7 @@ def divisible_by_any(lst, divisors):
     return divisible
 
 
-# 105. Функция для проверки, является ли строка анаграммой другой строки
+# 101. Функция для проверки, является ли строка анаграммой другой строки
 def are_anagrams(s1, s2):
     if len(s1) != len(s2):
         print("Strings are not of equal length.")
@@ -1052,7 +1052,7 @@ def are_anagrams(s1, s2):
     return True
 
 
-# 106. Функция для нахождения пересечения двух множеств
+# 102. Функция для нахождения пересечения двух множеств
 def intersection_of_sets(set1, set2):
     intersection = set1.intersection(set2)
     if not intersection:
@@ -1060,7 +1060,7 @@ def intersection_of_sets(set1, set2):
     return intersection
 
 
-# 107. Функция для удаления дубликатов из списка кортежей по первому элементу
+# 103. Функция для удаления дубликатов из списка кортежей по первому элементу
 def remove_duplicate_tuples(lst):
     seen = set()
     result = []
@@ -1073,7 +1073,7 @@ def remove_duplicate_tuples(lst):
     return result
 
 
-# 108. Функция для подсчёта элементов в строках списка, возвращая словарь с длинами строк
+# 104. Функция для подсчёта элементов в строках списка, возвращая словарь с длинами строк
 def count_string_lengths(lst):
     length_dict = {}
     for s in lst:
@@ -1081,7 +1081,7 @@ def count_string_lengths(lst):
     return length_dict
 
 
-# 109. Функция для нахождения числа, которое встречается больше всех раз в словаре (ключи - элементы, значения - количество)
+# 105. Функция для нахождения числа, которое встречается больше всех раз в словаре (ключи - элементы, значения - количество)
 def most_frequent_in_dict(d):
     if not d:
         print("Dictionary is empty.")
@@ -1090,7 +1090,7 @@ def most_frequent_in_dict(d):
     return max_key, d[max_key]
 
 
-# 110. Функция для объединения двух словарей (если есть одинаковые ключи, их значения суммируются)
+# 106. Функция для объединения двух словарей (если есть одинаковые ключи, их значения суммируются)
 def merge_dicts(d1, d2):
     merged = d1.copy()
     for key, value in d2.items():
@@ -1101,7 +1101,7 @@ def merge_dicts(d1, d2):
     return merged
 
 
-# 111. Функция для подсчёта чётных и нечётных чисел в списке с использованием словаря
+# 107. Функция для подсчёта чётных и нечётных чисел в списке с использованием словаря
 def count_even_odd(lst):
     count = {"even": 0, "odd": 0}
     for num in lst:
@@ -1112,7 +1112,7 @@ def count_even_odd(lst):
     return count
 
 
-# 112. Функция для нахождения минимального ключа в словаре с числовыми значениями
+# 108. Функция для нахождения минимального ключа в словаре с числовыми значениями
 def min_key_in_dict(d):
     if not d:
         print("Dictionary is empty.")
@@ -1120,7 +1120,7 @@ def min_key_in_dict(d):
     return min(d, key=d.get)
 
 
-# 113. Функция для создания словаря из списка, где элементы списка становятся значениями, а их индексы — ключами
+# 109. Функция для создания словаря из списка, где элементы списка становятся значениями, а их индексы — ключами
 def list_to_dict(lst):
     result = {}
     for index, value in enumerate(lst):
@@ -1128,7 +1128,7 @@ def list_to_dict(lst):
     return result
 
 
-# 114. Функция для проверки, является ли строка числом, и если да — вернуть её квадрат
+# 110. Функция для проверки, является ли строка числом, и если да — вернуть её квадрат
 def check_and_square(s):
     try:
         num = float(s)
@@ -1138,12 +1138,12 @@ def check_and_square(s):
         return None
 
 
-# 116. Функция для объединения двух кортежей, убирая повторяющиеся элементы
+# 111. Функция для объединения двух кортежей, убирая повторяющиеся элементы
 def merge_tuples(t1, t2):
     return tuple(set(t1 + t2))
 
 
-# 117. Функция для нахождения всех уникальных чисел в списке (с использованием множества)
+# 112. Функция для нахождения всех уникальных чисел в списке (с использованием множества)
 def unique_numbers(lst):
     unique = set()
     for num in lst:
@@ -1151,7 +1151,7 @@ def unique_numbers(lst):
     return list(unique)
 
 
-# 118. Функция для создания словаря, где ключами будут уникальные элементы списка, а значениями — количество их повторений
+# 113. Функция для создания словаря, где ключами будут уникальные элементы списка, а значениями — количество их повторений
 def create_frequency_dict(lst):
     frequency_dict = {}
     for item in lst:
@@ -1162,7 +1162,7 @@ def create_frequency_dict(lst):
     return frequency_dict
 
 
-# 119. Функция для нахождения элементов, которые присутствуют в одном списке, но отсутствуют в другом
+# 114. Функция для нахождения элементов, которые присутствуют в одном списке, но отсутствуют в другом
 def difference_of_lists(lst1, lst2):
     result = []
     for item in lst1:
@@ -1174,7 +1174,7 @@ def difference_of_lists(lst1, lst2):
     return result
 
 
-# 120. Функция для нахождения всех элементов списка, которые встречаются в другой коллекции
+# 115. Функция для нахождения всех элементов списка, которые встречаются в другой коллекции
 def find_in_collection(lst, collection):
     result = []
     for item in lst:
@@ -1185,7 +1185,7 @@ def find_in_collection(lst, collection):
     return result
 
 
-# 121. Функция для нахождения суммы всех чисел в списке, которые встречаются более одного раза
+# 116. Функция для нахождения суммы всех чисел в списке, которые встречаются более одного раза
 def sum_of_duplicates(lst):
     count_dict = {}
     for item in lst:
@@ -1202,7 +1202,7 @@ def sum_of_duplicates(lst):
     return total
 
 
-# 122. Функция для нахождения элементов, которые присутствуют в одном списке и не встречаются в другом
+# 117. Функция для нахождения элементов, которые присутствуют в одном списке и не встречаются в другом
 def unique_in_first(lst1, lst2):
     unique_elements = []
     for item in lst1:
@@ -1213,7 +1213,7 @@ def unique_in_first(lst1, lst2):
     return unique_elements
 
 
-# 123. Функция для нахождения минимального общего кратного двух чисел
+# 118. Функция для нахождения минимального общего кратного двух чисел
 def lcm_1(a, b):
     if a == 0 or b == 0:
         print("LCM is undefined for 0.")
@@ -1227,7 +1227,7 @@ def lcm_1(a, b):
     return abs(a * b) // gcd(a, b)
 
 
-# 124. Функция для получения всех элементов из словаря, чьи значения больше заданного порога
+# 119. Функция для получения всех элементов из словаря, чьи значения больше заданного порога
 def filter_dict_by_value(d, threshold):
     result = {}
     for key, value in d.items():
@@ -1238,7 +1238,7 @@ def filter_dict_by_value(d, threshold):
     return result
 
 
-# 125. Функция для переворота словаря, меняя местами ключи и значения
+# 120. Функция для переворота словаря, меняя местами ключи и значения
 def reverse_dict(d):
     reversed_dict = {}
     for key, value in d.items():
@@ -1249,7 +1249,7 @@ def reverse_dict(d):
     return reversed_dict
 
 
-# 126. Функция для нахождения всех чисел, которые являются кратными числам из другого списка
+# 121. Функция для нахождения всех чисел, которые являются кратными числам из другого списка
 def multiples_from_list(lst1, lst2):
     multiples = []
     for num in lst1:
@@ -1262,7 +1262,7 @@ def multiples_from_list(lst1, lst2):
     return multiples
 
 
-# 127. Функция для подсчёта частоты вхождения каждого символа в строке, игнорируя регистр
+# 122. Функция для подсчёта частоты вхождения каждого символа в строке, игнорируя регистр
 def case_insensitive_char_frequency(s):
     freq = {}
     for char in s.lower():
@@ -1276,7 +1276,7 @@ def case_insensitive_char_frequency(s):
     return freq
 
 
-# 129. Функция для подсчёта всех различных элементов в списке, с учётом их частоты
+# 123. Функция для подсчёта всех различных элементов в списке, с учётом их частоты
 def count_unique_with_frequency(lst):
     frequency = {}
     for item in lst:
@@ -1287,7 +1287,7 @@ def count_unique_with_frequency(lst):
     return frequency
 
 
-# 130. Функция для подсчёта, сколько раз каждый символ в строке встречается подряд
+# 124. Функция для подсчёта, сколько раз каждый символ в строке встречается подряд
 def count_consecutive_chars(s):
     if not s:
         print("Empty string provided.")
@@ -1312,19 +1312,7 @@ def count_consecutive_chars(s):
     return count
 
 
-# 131. Функция для нахождения всех чисел в списке, которые делятся на наибольший общий делитель всех чисел в списке
-def divisible_by_gcd(lst):
-    from math import gcd
-    from functools import reduce
-    if len(lst) < 2:
-        print("Need at least two numbers.")
-        return []
-    overall_gcd = reduce(gcd, lst)
-    divisible = [num for num in lst if num % overall_gcd == 0]
-    return divisible
-
-
-# 132. Функция для нахождения всех элементов в множестве, которые присутствуют в словаре в качестве ключей
+# 125. Функция для нахождения всех элементов в множестве, которые присутствуют в словаре в качестве ключей
 def find_keys_in_set(s, d):
     result = []
     for item in s:
@@ -1335,7 +1323,7 @@ def find_keys_in_set(s, d):
     return result
 
 
-# 133. Функция для нахождения всех чисел в списке, которые являются простыми
+# 126. Функция для нахождения всех чисел в списке, которые являются простыми
 def find_prime_numbers(lst):
     primes = []
     for num in lst:
@@ -1351,7 +1339,7 @@ def find_prime_numbers(lst):
     return primes
 
 
-# 134. Функция для разделения строки на два списка: один с цифрами, второй с остальными символами
+# 127. Функция для разделения строки на два списка: один с цифрами, второй с остальными символами
 def split_digits_and_others(s):
     digits = []
     others = []
@@ -1363,15 +1351,15 @@ def split_digits_and_others(s):
     return digits, others
 
 
-# 135. Функция для получения кортежа с минимальным и максимальным элементами списка
+# 128. Функция для получения кортежа с минимальным и максимальным элементами списка
 def min_max_tuple(lst):
     if not lst:
         print("List is empty.")
         return None
-    return (min(lst), max(lst))
+    return min(lst), max(lst)
 
 
-# 136. Функция для поиска элементов, которые присутствуют в двух словарях, но имеют разные значения
+# 129. Функция для поиска элементов, которые присутствуют в двух словарях, но имеют разные значения
 def find_common_keys_with_different_values(d1, d2):
     common_keys = set(d1.keys()) & set(d2.keys())
     result = []
@@ -1383,7 +1371,7 @@ def find_common_keys_with_different_values(d1, d2):
     return result
 
 
-# 137. Функция для преобразования строки в список чисел, разделённых пробелами, если в строке присутствуют только числа
+# 130. Функция для преобразования строки в список чисел, разделённых пробелами, если в строке присутствуют только числа
 def string_to_numbers(s):
     try:
         return [int(x) for x in s.split()]
@@ -1392,7 +1380,7 @@ def string_to_numbers(s):
         return []
 
 
-# 138. Функция для нахождения чисел в строке, которые могут быть переведены в степень двойки
+# 131. Функция для нахождения чисел в строке, которые могут быть переведены в степень двойки
 def find_powers_of_two_in_string(s):
     numbers = []
     for word in s.split():
@@ -1405,7 +1393,7 @@ def find_powers_of_two_in_string(s):
     return numbers
 
 
-# 139. Функция для нахождения слов, которые являются палиндромами
+# 132. Функция для нахождения слов, которые являются палиндромами
 def find_palindromes(lst):
     palindromes = []
     for word in lst:
@@ -1414,7 +1402,7 @@ def find_palindromes(lst):
     return palindromes
 
 
-# 140. Функция для объединения двух списков с проверкой на дубликаты
+# 133. Функция для объединения двух списков с проверкой на дубликаты
 def merge_lists_no_duplicates(lst1, lst2):
     result = lst1.copy()
     for item in lst2:
@@ -1425,7 +1413,7 @@ def merge_lists_no_duplicates(lst1, lst2):
     return result
 
 
-# 141. Функция для нахождения всех чисел, которые делятся на 2, но не делятся на 3
+# 134. Функция для нахождения всех чисел, которые делятся на 2, но не делятся на 3
 def divisible_by_2_not_3(lst):
     result = []
     for num in lst:
@@ -1436,7 +1424,7 @@ def divisible_by_2_not_3(lst):
     return result
 
 
-# 142. Функция для нахождения всех чисел в строке, которые являются чётными
+# 135. Функция для нахождения всех чисел в строке, которые являются чётными
 def find_even_numbers_in_string(s):
     result = []
     current_num = ''
@@ -1455,7 +1443,7 @@ def find_even_numbers_in_string(s):
     return result
 
 
-# 143. Функция для нахождения всех чисел, которые не являются простыми
+# 136. Функция для нахождения всех чисел, которые не являются простыми
 def find_non_prime_numbers(lst):
     non_primes = []
     for num in lst:
@@ -1469,7 +1457,7 @@ def find_non_prime_numbers(lst):
     return non_primes
 
 
-# 144. Функция для нахождения всех уникальных символов в строке, игнорируя пробелы
+# 137. Функция для нахождения всех уникальных символов в строке, игнорируя пробелы
 def unique_chars_ignore_spaces(s):
     unique_chars = {}
     for char in s:
@@ -1481,7 +1469,7 @@ def unique_chars_ignore_spaces(s):
     return list(unique_chars.keys())
 
 
-# 145. Функция для подсчёта слов в строке, игнорируя знаки препинания
+# 138. Функция для подсчёта слов в строке, игнорируя знаки препинания
 def count_words_ignore_punctuation(s):
     word_count = 0
     current_word = ''
@@ -1496,7 +1484,7 @@ def count_words_ignore_punctuation(s):
     return word_count
 
 
-# 146. Функция для нахождения всех чисел, которые являются квадратами целых чисел
+# 139. Функция для нахождения всех чисел, которые являются квадратами целых чисел
 def find_squares(lst):
     squares = []
     for num in lst:
@@ -1505,7 +1493,7 @@ def find_squares(lst):
     return squares
 
 
-# 147. Функция для подсчёта количества повторений каждого слова в строке
+# 140. Функция для подсчёта количества повторений каждого слова в строке
 def word_frequency_in_string(s):
     word_count = {}
     current_word = ''
@@ -1526,7 +1514,7 @@ def word_frequency_in_string(s):
     return word_count
 
 
-# 148. Функция для поиска чисел, которые могут быть записаны как сумма двух квадратов
+# 141. Функция для поиска чисел, которые могут быть записаны как сумма двух квадратов
 def find_sum_of_two_squares(lst):
     def is_sum_of_two_squares(n):
         for i in range(1, int(n ** 0.5) + 1):
@@ -1541,7 +1529,7 @@ def find_sum_of_two_squares(lst):
     return result
 
 
-# 149. Функция для получения всех элементов списка, которые не содержат в себе цифры
+# 142. Функция для получения всех элементов списка, которые не содержат в себе цифры
 def find_non_numeric_elements(lst):
     result = []
     for item in lst:
@@ -1550,7 +1538,7 @@ def find_non_numeric_elements(lst):
     return result
 
 
-# 150. Функция для нахождения всех чисел, которые являются нечётными и делятся на 5
+# 143. Функция для нахождения всех чисел, которые являются нечётными и делятся на 5
 def find_odd_and_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -1561,7 +1549,7 @@ def find_odd_and_divisible_by_5(lst):
     return result
 
 
-# 151. Функция для подсчёта всех элементов в словаре, значения которых больше определённого порога
+# 144. Функция для подсчёта всех элементов в словаре, значения которых больше определённого порога
 def count_elements_above_threshold(d, threshold):
     count = 0
     for key, value in d.items():
@@ -1570,7 +1558,7 @@ def count_elements_above_threshold(d, threshold):
     return count
 
 
-# 152. Функция для поиска чисел, которые являются степенями числа 3
+# 145. Функция для поиска чисел, которые являются степенями числа 3
 def find_powers_of_three(lst):
     powers_of_three = []
     for num in lst:
@@ -1581,7 +1569,7 @@ def find_powers_of_three(lst):
     return powers_of_three
 
 
-# 153. Функция для получения всех чисел в строке, которые больше среднего значения
+# 146. Функция для получения всех чисел в строке, которые больше среднего значения
 def find_numbers_greater_than_mean(s):
     nums = [int(x) for x in s.split() if x.isdigit()]
     mean = sum(nums) / len(nums) if nums else 0
@@ -1592,7 +1580,7 @@ def find_numbers_greater_than_mean(s):
     return result
 
 
-# 154. Функция для нахождения всех чисел, которые являются нечётными и не являются простыми
+# 147. Функция для нахождения всех чисел, которые являются нечётными и не являются простыми
 def find_odd_and_not_prime(lst):
     def is_prime(n):
         if n < 2:
@@ -1608,7 +1596,7 @@ def find_odd_and_not_prime(lst):
     return non_prime_odd
 
 
-# 155. Функция для нахождения всех чисел в списке, которые являются делителями другого числа в этом же списке
+# 148. Функция для нахождения всех чисел в списке, которые являются делителями другого числа в этом же списке
 def find_divisors_in_list(lst):
     divisors = []
     for i in range(len(lst)):
@@ -1619,7 +1607,7 @@ def find_divisors_in_list(lst):
     return divisors
 
 
-# 156. Функция для нахождения всех чисел, которые не являются кратными чисел из другого списка
+# 149. Функция для нахождения всех чисел, которые не являются кратными чисел из другого списка
 def find_non_multiples(lst1, lst2):
     non_multiples = []
     for num in lst1:
@@ -1628,7 +1616,7 @@ def find_non_multiples(lst1, lst2):
     return non_multiples
 
 
-# 157. Функция для нахождения всех элементов списка, которые присутствуют в обоих списках
+# 150. Функция для нахождения всех элементов списка, которые присутствуют в обоих списках
 def find_common_elements(lst1, lst2):
     common_elements = []
     for item in lst1:
@@ -1638,7 +1626,7 @@ def find_common_elements(lst1, lst2):
         print("No common elements found.")
     return common_elements
 
-# 159. Функция для нахождения числа, которое является квадратом какого-то целого числа, но не является четным
+# 151. Функция для нахождения числа, которое является квадратом какого-то целого числа, но не является четным
 def find_odd_square(lst):
     result = []
     for num in lst:
@@ -1647,7 +1635,7 @@ def find_odd_square(lst):
     return result
 
 
-# 160. Функция для нахождения всех элементов, которые содержат хотя бы одну гласную
+# 152. Функция для нахождения всех элементов, которые содержат хотя бы одну гласную
 def find_elements_with_vowels(lst):
     vowels = 'aeiouAEIOU'
     result = []
@@ -1657,7 +1645,7 @@ def find_elements_with_vowels(lst):
     return result
 
 
-# 161. Функция для нахождения всех чисел в списке, которые не делятся на 2 и на 3
+# 153. Функция для нахождения всех чисел в списке, которые не делятся на 2 и на 3
 def find_not_divisible_by_2_and_3(lst):
     result = []
     for num in lst:
@@ -1669,7 +1657,7 @@ def find_not_divisible_by_2_and_3(lst):
     return result
 
 
-# 162. Функция для подсчёта всех уникальных букв в строке
+# 154. Функция для подсчёта всех уникальных букв в строке
 def count_unique_chars_in_string(s):
     char_count = {}
     for char in s:
@@ -1684,7 +1672,7 @@ def count_unique_chars_in_string(s):
     return char_count
 
 
-# 163. Функция для поиска чисел, которые могут быть записаны как произведение двух чётных чисел
+# 155. Функция для поиска чисел, которые могут быть записаны как произведение двух чётных чисел
 def find_product_of_two_even_numbers(lst):
     result = []
     for num in lst:
@@ -1698,7 +1686,7 @@ def find_product_of_two_even_numbers(lst):
     return result
 
 
-# 165. Функция для нахождения чисел, которые делятся на 5, но не делятся на 10
+# 156. Функция для нахождения чисел, которые делятся на 5, но не делятся на 10
 def find_multiples_of_5_not_10(lst):
     result = []
     for num in lst:
@@ -1709,7 +1697,7 @@ def find_multiples_of_5_not_10(lst):
     return result
 
 
-# 166. Функция для нахождения всех чисел, которые являются двузначными и не делятся на 2
+# 157. Функция для нахождения всех чисел, которые являются двузначными и не делятся на 2
 def find_double_digits_not_divisible_by_2(lst):
     result = []
     for num in lst:
@@ -1720,7 +1708,7 @@ def find_double_digits_not_divisible_by_2(lst):
     return result
 
 
-# 168. Функция для нахождения чисел, которые встречаются в обеих строках
+# 158. Функция для нахождения чисел, которые встречаются в обеих строках
 def find_common_numbers_in_strings(s1, s2):
     nums1 = {int(x) for x in s1.split() if x.isdigit()}
     nums2 = {int(x) for x in s2.split() if x.isdigit()}
@@ -1731,7 +1719,7 @@ def find_common_numbers_in_strings(s1, s2):
     return common
 
 
-# 169. Функция для нахождения всех чисел, которые делятся на 7, но не на 11
+# 159. Функция для нахождения всех чисел, которые делятся на 7, но не на 11
 def find_divisible_by_7_not_11(lst):
     result = []
     for num in lst:
@@ -1742,7 +1730,7 @@ def find_divisible_by_7_not_11(lst):
     return result
 
 
-# 170. Функция для подсчёта, сколько раз слово встречается в строке, игнорируя регистр
+# 160. Функция для подсчёта, сколько раз слово встречается в строке, игнорируя регистр
 def count_word_in_string(s, word):
     s = s.lower()
     word = word.lower()
@@ -1753,7 +1741,7 @@ def count_word_in_string(s, word):
     return count
 
 
-# 172. Функция для нахождения чисел, которые являются простыми, но не являются кратными 3
+# 161. Функция для нахождения чисел, которые являются простыми, но не являются кратными 3
 def find_primes_not_multiples_of_3(lst):
     def is_prime(n):
         if n < 2:
@@ -1772,7 +1760,7 @@ def find_primes_not_multiples_of_3(lst):
     return result
 
 
-# 174. Функция для нахождения чисел, которые являются чётными и делятся на 4
+# 162. Функция для нахождения чисел, которые являются чётными и делятся на 4
 def find_even_numbers_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -1783,7 +1771,7 @@ def find_even_numbers_divisible_by_4(lst):
     return result
 
 
-# 175. Функция для нахождения всех чисел, которые не являются степенями двойки
+# 163. Функция для нахождения всех чисел, которые не являются степенями двойки
 def find_non_powers_of_two(lst):
     result = []
     for num in lst:
@@ -1794,7 +1782,7 @@ def find_non_powers_of_two(lst):
     return result
 
 
-# 176. Функция для подсчёта всех чисел в строке, которые больше среднего значения всех чисел в строке
+# 164. Функция для подсчёта всех чисел в строке, которые больше среднего значения всех чисел в строке
 def count_numbers_greater_than_average(s):
     nums = [int(x) for x in s.split() if x.isdigit()]
     if not nums:
@@ -1805,7 +1793,7 @@ def count_numbers_greater_than_average(s):
     return count
 
 
-# 178. Функция для нахождения всех чисел, которые делятся на 4 или на 5, но не на 20
+# 165. Функция для нахождения всех чисел, которые делятся на 4 или на 5, но не на 20
 def find_multiples_of_4_or_5_not_20(lst):
     result = []
     for num in lst:
@@ -1816,7 +1804,7 @@ def find_multiples_of_4_or_5_not_20(lst):
     return result
 
 
-# 179. Функция для поиска всех чисел, которые являются точными делителями 100
+# 166. Функция для поиска всех чисел, которые являются точными делителями 100
 def find_exact_divisors_of_100(lst):
     result = []
     for num in lst:
@@ -1827,7 +1815,7 @@ def find_exact_divisors_of_100(lst):
     return result
 
 
-# 180. Функция для поиска чисел, которые являются нечётными и не являются делителями 5
+# 167. Функция для поиска чисел, которые являются нечётными и не являются делителями 5
 def find_odd_not_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -1838,7 +1826,7 @@ def find_odd_not_divisible_by_5(lst):
     return result
 
 
-# 181. Функция для нахождения всех чисел, которые являются кратными либо 2, либо 3, но не обоим
+# 168. Функция для нахождения всех чисел, которые являются кратными либо 2, либо 3, но не обоим
 def find_multiples_of_2_or_3(lst):
     result = []
     for num in lst:
@@ -1851,7 +1839,7 @@ def find_multiples_of_2_or_3(lst):
     return result
 
 
-# 183. Функция для нахождения всех чисел, которые либо нечётные, либо делятся на 4
+# 169. Функция для нахождения всех чисел, которые либо нечётные, либо делятся на 4
 def find_odd_or_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -1862,7 +1850,7 @@ def find_odd_or_divisible_by_4(lst):
     return result
 
 
-# 184. Функция для нахождения чисел, которые являются квадратами целых чисел, но не чётными
+# 170. Функция для нахождения чисел, которые являются квадратами целых чисел, но не чётными
 def find_even_squares(lst):
     result = []
     for num in lst:
@@ -1873,28 +1861,7 @@ def find_even_squares(lst):
     return result
 
 
-# 185. Функция для нахождения всех чисел, которые являются суммой двух простых чисел
-def find_sum_of_two_primes(lst):
-    def is_prime(n):
-        if n < 2:
-            return False
-        for i in range(2, int(n ** 0.5) + 1):
-            if n % i == 0:
-                return False
-        return True
-
-    result = []
-    for num in lst:
-        for i in range(2, num // 2 + 1):
-            if is_prime(i) and is_prime(num - i):
-                result.append(num)
-                break
-    if not result:
-        return "No numbers found that are the sum of two primes."
-    return result
-
-
-# 187. Функция для нахождения всех чисел, которые являются кратными 3 или 5, но не кратными обоим
+# 171. Функция для нахождения всех чисел, которые являются кратными 3 или 5, но не кратными обоим
 def find_multiples_of_3_or_5_not_both(lst):
     result = []
     for num in lst:
@@ -1905,7 +1872,7 @@ def find_multiples_of_3_or_5_not_both(lst):
     return result
 
 
-# 189. Функция для подсчёта всех чисел в строке, которые больше среднего значения
+# 172. Функция для подсчёта всех чисел в строке, которые больше среднего значения
 def count_numbers_greater_than_mean(s):
     nums = [int(x) for x in s.split() if x.isdigit()]
     if not nums:
@@ -1918,7 +1885,7 @@ def count_numbers_greater_than_mean(s):
     return count
 
 
-# 190. Функция для нахождения всех чисел, которые являются степенями 2
+# 173. Функция для нахождения всех чисел, которые являются степенями 2
 def find_powers_of_2(lst):
     result = []
     for num in lst:
@@ -1929,7 +1896,7 @@ def find_powers_of_2(lst):
     return result
 
 
-# 191. Функция для нахождения всех чисел, которые являются четными и кратными 8
+# 174. Функция для нахождения всех чисел, которые являются четными и кратными 8
 def find_even_and_divisible_by_8(lst):
     result = []
     for num in lst:
@@ -1940,7 +1907,7 @@ def find_even_and_divisible_by_8(lst):
     return result
 
 
-# 194. Функция для нахождения чисел, которые являются нечётными и делятся на 3
+# 175. Функция для нахождения чисел, которые являются нечётными и делятся на 3
 def find_odd_and_divisible_by_3(lst):
     result = []
     for num in lst:
@@ -1951,7 +1918,7 @@ def find_odd_and_divisible_by_3(lst):
     return result
 
 
-# 195. Функция для нахождения всех чисел, которые не являются чётными или кратными 7
+# 176. Функция для нахождения всех чисел, которые не являются чётными или кратными 7
 def find_non_even_or_not_multiples_of_7(lst):
     result = []
     for num in lst:
@@ -1961,7 +1928,7 @@ def find_non_even_or_not_multiples_of_7(lst):
         return "No numbers found that are not even or not divisible by 7."
     return result
 
-# 198. Функция для нахождения чисел, которые не делятся на 2, но делятся на 5
+# 177. Функция для нахождения чисел, которые не делятся на 2, но делятся на 5
 def find_not_divisible_by_2_but_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -1972,7 +1939,7 @@ def find_not_divisible_by_2_but_divisible_by_5(lst):
     return result
 
 
-# 199. Функция для нахождения всех чисел, которые являются кратными 3, 5 или 7
+# 178. Функция для нахождения всех чисел, которые являются кратными 3, 5 или 7
 def find_multiples_of_3_5_or_7(lst):
     result = []
     for num in lst:
@@ -1983,7 +1950,7 @@ def find_multiples_of_3_5_or_7(lst):
     return result
 
 
-# 202. Функция для нахождения всех чисел, которые являются чётными, но не являются делителями 4
+# 179. Функция для нахождения всех чисел, которые являются чётными, но не являются делителями 4
 def find_even_not_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -1994,7 +1961,7 @@ def find_even_not_divisible_by_4(lst):
     return result
 
 
-# 203. Функция для нахождения чисел, которые являются кратными 3 или 5, но не кратными 15
+# 180. Функция для нахождения чисел, которые являются кратными 3 или 5, но не кратными 15
 def find_multiples_of_3_or_5_not_15(lst):
     result = []
     for num in lst:
@@ -2005,7 +1972,7 @@ def find_multiples_of_3_or_5_not_15(lst):
     return result
 
 
-# 204. Функция для нахождения всех чисел, которые являются разностью двух квадратов
+# 181. Функция для нахождения всех чисел, которые являются разностью двух квадратов
 def find_difference_of_two_squares(lst):
     result = []
     for num in lst:
@@ -2018,7 +1985,7 @@ def find_difference_of_two_squares(lst):
     return result
 
 
-# 207. Функция для нахождения всех чисел, которые могут быть записаны как сумма двух чисел, каждое из которых делится на 3
+# 182. Функция для нахождения всех чисел, которые могут быть записаны как сумма двух чисел, каждое из которых делится на 3
 def find_sum_of_two_divisible_by_3(lst):
     result = []
     for num in lst:
@@ -2031,7 +1998,7 @@ def find_sum_of_two_divisible_by_3(lst):
     return result
 
 
-# 208. Функция для нахождения всех чисел, которые не являются чётными, но являются делителями 9
+# 183. Функция для нахождения всех чисел, которые не являются чётными, но являются делителями 9
 def find_not_even_but_divisible_by_9(lst):
     result = []
     for num in lst:
@@ -2042,7 +2009,7 @@ def find_not_even_but_divisible_by_9(lst):
     return result
 
 
-# 210. Функция для нахождения всех чисел, которые являются нечетными и делятся на 4
+# 184. Функция для нахождения всех чисел, которые являются нечетными и делятся на 4
 def find_odd_and_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -2053,7 +2020,7 @@ def find_odd_and_divisible_by_4(lst):
     return result
 
 
-# 211. Функция для нахождения всех чисел, которые делятся на 2 или на 3, но не на 6
+# 185. Функция для нахождения всех чисел, которые делятся на 2 или на 3, но не на 6
 def find_divisible_by_2_or_3_not_6(lst):
     result = []
     for num in lst:
@@ -2064,7 +2031,7 @@ def find_divisible_by_2_or_3_not_6(lst):
     return result
 
 
-# 212. Функция для нахождения чисел, которые являются делителями 12, но не являются чётными
+# 186. Функция для нахождения чисел, которые являются делителями 12, но не являются чётными
 def find_divisors_of_12_not_even(lst):
     result = []
     for num in lst:
@@ -2075,7 +2042,7 @@ def find_divisors_of_12_not_even(lst):
     return result
 
 
-# 214. Функция для нахождения всех чисел, которые являются делителями 6, но не 12
+# 187. Функция для нахождения всех чисел, которые являются делителями 6, но не 12
 def find_divisors_of_6_not_12(lst):
     result = []
     for num in lst:
@@ -2086,7 +2053,7 @@ def find_divisors_of_6_not_12(lst):
     return result
 
 
-# 215. Функция для нахождения всех чисел, которые являются квадратами чётных чисел
+# 188. Функция для нахождения всех чисел, которые являются квадратами чётных чисел
 def find_squares_of_even_numbers(lst):
     result = []
     for num in lst:
@@ -2097,7 +2064,7 @@ def find_squares_of_even_numbers(lst):
     return result
 
 
-# 216. Функция для нахождения чисел, которые не являются степенями 2, но являются чётными
+# 189. Функция для нахождения чисел, которые не являются степенями 2, но являются чётными
 def find_even_not_powers_of_2(lst):
     result = []
     for num in lst:
@@ -2108,7 +2075,7 @@ def find_even_not_powers_of_2(lst):
     return result
 
 
-# 217. Функция для нахождения всех чисел, которые не являются чётными и не являются делителями 9
+# 190. Функция для нахождения всех чисел, которые не являются чётными и не являются делителями 9
 def find_not_even_and_not_divisible_by_9(lst):
     result = []
     for num in lst:
@@ -2119,7 +2086,7 @@ def find_not_even_and_not_divisible_by_9(lst):
     return result
 
 
-# 219. Функция для нахождения чисел, которые делятся на 3 и 5, но не на 7
+# 191. Функция для нахождения чисел, которые делятся на 3 и 5, но не на 7
 def find_multiples_of_3_and_5_not_7(lst):
     result = []
     for num in lst:
@@ -2130,7 +2097,7 @@ def find_multiples_of_3_and_5_not_7(lst):
     return result
 
 
-# 222. Функция для нахождения всех чисел, которые являются произведением двух нечётных чисел
+# 192. Функция для нахождения всех чисел, которые являются произведением двух нечётных чисел
 def find_product_of_two_odd_numbers(lst):
     result = []
     for num in lst:
@@ -2143,7 +2110,7 @@ def find_product_of_two_odd_numbers(lst):
     return result
 
 
-# 223. Функция для нахождения чисел, которые являются произведением двух простых чисел
+# 193. Функция для нахождения чисел, которые являются произведением двух простых чисел
 def find_product_of_two_primes(lst):
     def is_prime(n):
         if n < 2:
@@ -2164,7 +2131,7 @@ def find_product_of_two_primes(lst):
     return result
 
 
-# 224. Функция для нахождения всех чисел, которые являются нечётными и не являются степенями 2
+# 194. Функция для нахождения всех чисел, которые являются нечётными и не являются степенями 2
 def find_odd_not_power_of_2(lst):
     result = []
     for num in lst:
@@ -2175,18 +2142,7 @@ def find_odd_not_power_of_2(lst):
     return result
 
 
-# 225. Функция для нахождения чисел, которые являются чётными и делятся на 4, но не на 8
-def find_even_divisible_by_4_not_8(lst):
-    result = []
-    for num in lst:
-        if num % 2 == 0 and num % 4 == 0 and num % 8 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 226. Функция для нахождения чисел, которые делятся на 6, но не делятся на 9
+# 195. Функция для нахождения чисел, которые делятся на 6, но не делятся на 9
 def find_divisible_by_6_not_9(lst):
     result = []
     for num in lst:
@@ -2197,7 +2153,7 @@ def find_divisible_by_6_not_9(lst):
     return result
 
 
-# 227. Функция для нахождения всех чисел, которые являются делителями 24, но не делятся на 8
+# 196. Функция для нахождения всех чисел, которые являются делителями 24, но не делятся на 8
 def find_divisors_of_24_not_8(lst):
     result = []
     for num in lst:
@@ -2208,18 +2164,7 @@ def find_divisors_of_24_not_8(lst):
     return result
 
 
-# 228. Функция для нахождения чисел, которые являются чётными и делятся на 5, но не на 10
-def find_even_and_divisible_by_5_not_10(lst):
-    result = []
-    for num in lst:
-        if num % 2 == 0 and num % 5 == 0 and num % 10 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 229. Функция для нахождения чисел, которые являются квадратами нечётных чисел
+# 197. Функция для нахождения чисел, которые являются квадратами нечётных чисел
 def find_squares_of_odd_numbers(lst):
     result = []
     for num in lst:
@@ -2230,7 +2175,7 @@ def find_squares_of_odd_numbers(lst):
     return result
 
 
-# 230. Функция для нахождения чисел, которые являются степенями 2, но не чётными
+# 198. Функция для нахождения чисел, которые являются степенями 2, но не чётными
 def find_powers_of_2_not_even(lst):
     result = []
     for num in lst:
@@ -2241,7 +2186,7 @@ def find_powers_of_2_not_even(lst):
     return result
 
 
-# 231. Функция для нахождения чисел, которые не являются кратными 3, но делятся на 5
+# 199. Функция для нахождения чисел, которые не являются кратными 3, но делятся на 5
 def find_not_multiples_of_3_but_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -2252,7 +2197,7 @@ def find_not_multiples_of_3_but_divisible_by_5(lst):
     return result
 
 
-# 233. Функция для нахождения чисел, которые являются делителями 15, но не делятся на 3
+# 200. Функция для нахождения чисел, которые являются делителями 15, но не делятся на 3
 def find_divisors_of_15_not_3(lst):
     result = []
     for num in lst:
@@ -2263,7 +2208,7 @@ def find_divisors_of_15_not_3(lst):
     return result
 
 
-# 235. Функция для нахождения чисел, которые являются степенями 2, но не кратными 4
+# 201. Функция для нахождения чисел, которые являются степенями 2, но не кратными 4
 def find_powers_of_2_not_multiples_of_4(lst):
     result = []
     for num in lst:
@@ -2274,7 +2219,7 @@ def find_powers_of_2_not_multiples_of_4(lst):
     return result
 
 
-# 236. Функция для нахождения чисел, которые являются нечётными, но не являются квадратами
+# 202. Функция для нахождения чисел, которые являются нечётными, но не являются квадратами
 def find_odd_not_square(lst):
     result = []
     for num in lst:
@@ -2285,7 +2230,7 @@ def find_odd_not_square(lst):
     return result
 
 
-# 237. Функция для нахождения чисел, которые являются квадратами чётных чисел, но не делятся на 8
+# 203. Функция для нахождения чисел, которые являются квадратами чётных чисел, но не делятся на 8
 def find_squares_of_even_not_divisible_by_8(lst):
     result = []
     for num in lst:
@@ -2296,7 +2241,7 @@ def find_squares_of_even_not_divisible_by_8(lst):
     return result
 
 
-# 238. Функция для нахождения чисел, которые являются делителями 6, но не 2
+# 204. Функция для нахождения чисел, которые являются делителями 6, но не 2
 def find_divisors_of_6_not_2(lst):
     result = []
     for num in lst:
@@ -2307,7 +2252,7 @@ def find_divisors_of_6_not_2(lst):
     return result
 
 
-# 239. Функция для нахождения всех чисел, которые являются делителями 48, но не делятся на 16
+# 205. Функция для нахождения всех чисел, которые являются делителями 48, но не делятся на 16
 def find_divisors_of_48_not_16(lst):
     result = []
     for num in lst:
@@ -2318,42 +2263,7 @@ def find_divisors_of_48_not_16(lst):
     return result
 
 
-# 240. Функция для нахождения чисел, которые являются чётными и делятся на 3, но не на 6
-def find_even_and_divisible_by_3_not_6(lst):
-    result = []
-    for num in lst:
-        if num % 2 == 0 and num % 3 == 0 and num % 6 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 241. Функция для нахождения чисел, которые являются квадратами нечётных чисел, но не делятся на 9
-def find_squares_of_odd_not_divisible_by_9(lst):
-    result = []
-    for num in lst:
-        if int(num ** 0.5) ** 2 == num and int(num ** 0.5) % 2 != 0 and num % 9 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 243. Функция для нахождения чисел, которые являются суммой двух чётных чисел
-def find_sum_of_two_even_numbers(lst):
-    result = []
-    for num in lst:
-        for i in range(2, num // 2 + 1, 2):
-            if (num - i) % 2 == 0:
-                result.append(num)
-                break
-    if not result:
-        return None
-    return result
-
-
-# 244. Функция для нахождения всех чисел, которые являются делителями 20, но не являются чётными
+# 206. Функция для нахождения всех чисел, которые являются делителями 20, но не являются чётными
 def find_divisors_of_20_not_even(lst):
     result = []
     for num in lst:
@@ -2364,7 +2274,7 @@ def find_divisors_of_20_not_even(lst):
     return result
 
 
-# 245. Функция для нахождения чисел, которые делятся на 2, но не делятся на 4 или 8
+# 207. Функция для нахождения чисел, которые делятся на 2, но не делятся на 4 или 8
 def find_divisible_by_2_not_4_or_8(lst):
     result = []
     for num in lst:
@@ -2375,7 +2285,7 @@ def find_divisible_by_2_not_4_or_8(lst):
     return result
 
 
-# 246. Функция для нахождения всех чисел, которые являются квадратами нечётных чисел, но не на 7
+# 208. Функция для нахождения всех чисел, которые являются квадратами нечётных чисел, но не на 7
 def find_squares_of_odd_not_7(lst):
     result = []
     for num in lst:
@@ -2386,7 +2296,7 @@ def find_squares_of_odd_not_7(lst):
     return result
 
 
-# 247. Функция для нахождения всех чисел, которые делятся на 5, но не являются делителями 10
+# 209. Функция для нахождения всех чисел, которые делятся на 5, но не являются делителями 10
 def find_divisible_by_5_not_divisible_by_10(lst):
     result = []
     for num in lst:
@@ -2397,7 +2307,7 @@ def find_divisible_by_5_not_divisible_by_10(lst):
     return result
 
 
-# 248. Функция для нахождения всех чисел, которые являются произведением двух нечётных чисел, но не делятся на 3
+# 210. Функция для нахождения всех чисел, которые являются произведением двух нечётных чисел, но не делятся на 3
 def find_product_of_two_odd_numbers_not_divisible_by_3(lst):
     result = []
     for num in lst:
@@ -2410,7 +2320,7 @@ def find_product_of_two_odd_numbers_not_divisible_by_3(lst):
     return result
 
 
-# 249. Функция для нахождения чисел, которые являются чётными и не являются делителями 3
+# 211. Функция для нахождения чисел, которые являются чётными и не являются делителями 3
 def find_even_not_divisible_by_3(lst):
     result = []
     for num in lst:
@@ -2421,7 +2331,7 @@ def find_even_not_divisible_by_3(lst):
     return result
 
 
-# 250. Функция для нахождения чисел, которые являются разностью двух чётных чисел
+# 212. Функция для нахождения чисел, которые являются разностью двух чётных чисел
 def find_difference_of_two_even_numbers(lst):
     result = []
     for num in lst:
@@ -2434,50 +2344,7 @@ def find_difference_of_two_even_numbers(lst):
     return result
 
 
-# 252. Функция для нахождения чисел, которые делятся на 2 и на 3, но не на 6
-def find_multiples_of_2_and_3_not_6(lst):
-    result = []
-    for num in lst:
-        if num % 2 == 0 and num % 3 == 0 and num % 6 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 253. Функция для нахождения чисел, которые являются чётными и делятся на 4, но не на 8
-def find_even_and_divisible_by_4_not_8(lst):
-    result = []
-    for num in lst:
-        if num % 2 == 0 and num % 4 == 0 and num % 8 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 255. Функция для нахождения всех чисел, которые являются произведением двух простых чисел, но не делятся на 7
-def find_product_of_two_primes_not_divisible_by_7(lst):
-    def is_prime(n):
-        if n < 2:
-            return False
-        for i in range(2, int(n ** 0.5) + 1):
-            if n % i == 0:
-                return False
-        return True
-
-    result = []
-    for num in lst:
-        for i in range(2, num // 2 + 1):
-            if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 7 != 0:
-                result.append(num)
-                break
-    if not result:
-        return None
-    return result
-
-
-# 256. Функция для нахождения всех чисел, которые являются делителями 18, но не делятся на 9
+# 213. Функция для нахождения всех чисел, которые являются делителями 18, но не делятся на 9
 def find_divisors_of_18_not_9(lst):
     result = []
     for num in lst:
@@ -2488,7 +2355,7 @@ def find_divisors_of_18_not_9(lst):
     return result
 
 
-# 257. Функция для нахождения чисел, которые являются кратными 3 и 5, но не кратными 15
+# 214. Функция для нахождения чисел, которые являются кратными 3 и 5, но не кратными 15
 def find_multiples_of_3_and_5_not_15(lst):
     result = []
     for num in lst:
@@ -2499,7 +2366,7 @@ def find_multiples_of_3_and_5_not_15(lst):
     return result
 
 
-# 258. Функция для нахождения всех чисел, которые являются произведением двух простых чисел, но не делятся на 11
+# 215. Функция для нахождения всех чисел, которые являются произведением двух простых чисел, но не делятся на 11
 def find_product_of_two_primes_not_divisible_by_11(lst):
     def is_prime(n):
         if n < 2:
@@ -2520,7 +2387,7 @@ def find_product_of_two_primes_not_divisible_by_11(lst):
     return result
 
 
-# 259. Функция для нахождения чисел, которые являются квадратами чётных чисел, но не делятся на 4
+# 216. Функция для нахождения чисел, которые являются квадратами чётных чисел, но не делятся на 4
 def find_squares_of_even_not_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -2531,7 +2398,7 @@ def find_squares_of_even_not_divisible_by_4(lst):
     return result
 
 
-# 261. Функция для нахождения чисел, которые делятся на 5 и на 6, но не на 10
+# 217. Функция для нахождения чисел, которые делятся на 5 и на 6, но не на 10
 def find_multiples_of_5_and_6_not_10(lst):
     result = []
     for num in lst:
@@ -2542,7 +2409,7 @@ def find_multiples_of_5_and_6_not_10(lst):
     return result
 
 
-# 262. Функция для нахождения чисел, которые являются разностью двух чётных чисел, но не делятся на 4
+# 218. Функция для нахождения чисел, которые являются разностью двух чётных чисел, но не делятся на 4
 def find_difference_of_two_even_not_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -2555,7 +2422,7 @@ def find_difference_of_two_even_not_divisible_by_4(lst):
     return result
 
 
-# 264. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не делятся на 7
+# 219. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не делятся на 7
 def find_product_of_two_primes_not_7(lst):
     def is_prime(n):
         if n < 2:
@@ -2576,7 +2443,7 @@ def find_product_of_two_primes_not_7(lst):
     return result
 
 
-# 265. Функция для нахождения всех чисел, которые являются разностью двух нечётных чисел
+# 220. Функция для нахождения всех чисел, которые являются разностью двух нечётных чисел
 def find_difference_of_two_odd(lst):
     result = []
     for num in lst:
@@ -2589,7 +2456,7 @@ def find_difference_of_two_odd(lst):
     return result
 
 
-# 269. Функция для нахождения чисел, которые являются произведением двух нечётных чисел, но не делятся на 5
+# 221. Функция для нахождения чисел, которые являются произведением двух нечётных чисел, но не делятся на 5
 def find_product_of_two_odd_not_5(lst):
     result = []
     for num in lst:
@@ -2602,7 +2469,7 @@ def find_product_of_two_odd_not_5(lst):
     return result
 
 
-# 270. Функция для нахождения чисел, которые являются делителями 36, но не делятся на 9
+# 222. Функция для нахождения чисел, которые являются делителями 36, но не делятся на 9
 def find_divisors_of_36_not_9(lst):
     result = []
     for num in lst:
@@ -2613,7 +2480,7 @@ def find_divisors_of_36_not_9(lst):
     return result
 
 
-# 271. Функция для нахождения чисел, которые являются нечётными и делятся на 5, но не на 10
+# 223. Функция для нахождения чисел, которые являются нечётными и делятся на 5, но не на 10
 def find_odd_and_divisible_by_5_not_10(lst):
     result = []
     for num in lst:
@@ -2624,7 +2491,7 @@ def find_odd_and_divisible_by_5_not_10(lst):
     return result
 
 
-# 272. Функция для нахождения всех чисел, которые делятся на 6, но не на 3
+# 224. Функция для нахождения всех чисел, которые делятся на 6, но не на 3
 def find_divisible_by_6_not_3(lst):
     result = []
     for num in lst:
@@ -2635,7 +2502,7 @@ def find_divisible_by_6_not_3(lst):
     return result
 
 
-# 275. Функция для нахождения всех чисел, которые являются делителями 30, но не делятся на 5
+# 225. Функция для нахождения всех чисел, которые являются делителями 30, но не делятся на 5
 def find_divisors_of_30_not_5(lst):
     result = []
     for num in lst:
@@ -2646,7 +2513,7 @@ def find_divisors_of_30_not_5(lst):
     return result
 
 
-# 276. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не делятся на 6
+# 226. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не делятся на 6
 def find_product_of_two_primes_not_6(lst):
     def is_prime(n):
         if n < 2:
@@ -2667,7 +2534,7 @@ def find_product_of_two_primes_not_6(lst):
     return result
 
 
-# 277. Функция для нахождения чисел, которые являются чётными и делятся на 7, но не на 14
+# 227. Функция для нахождения чисел, которые являются чётными и делятся на 7, но не на 14
 def find_even_and_divisible_by_7_not_14(lst):
     result = []
     for num in lst:
@@ -2678,18 +2545,7 @@ def find_even_and_divisible_by_7_not_14(lst):
     return result
 
 
-# 279. Функция для нахождения чисел, которые делятся на 10, но не на 5
-def find_divisible_by_10_not_5(lst):
-    result = []
-    for num in lst:
-        if num % 10 == 0 and num % 5 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 280. Функция для нахождения чисел, которые являются разностью двух нечётных чисел, но не делятся на 5
+# 228. Функция для нахождения чисел, которые являются разностью двух нечётных чисел, но не делятся на 5
 def find_difference_of_two_odd_not_5(lst):
     result = []
     for num in lst:
@@ -2702,7 +2558,7 @@ def find_difference_of_two_odd_not_5(lst):
     return result
 
 
-# 282. Функция для нахождения всех чисел, которые являются квадратами нечётных чисел, но не делятся на 5
+# 229. Функция для нахождения всех чисел, которые являются квадратами нечётных чисел, но не делятся на 5
 def find_squares_of_odd_not_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -2713,7 +2569,7 @@ def find_squares_of_odd_not_divisible_by_5(lst):
     return result
 
 
-# 283. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не делятся на 3
+# 230. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не делятся на 3
 def find_product_of_two_primes_not_divisible_by_3(lst):
     def is_prime(n):
         if n < 2:
@@ -2734,18 +2590,7 @@ def find_product_of_two_primes_not_divisible_by_3(lst):
     return result
 
 
-# 284. Функция для нахождения чисел, которые делятся на 2, на 4, но не на 8
-def find_divisible_by_2_and_4_not_8(lst):
-    result = []
-    for num in lst:
-        if num % 2 == 0 and num % 4 == 0 and num % 8 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 285. Функция для нахождения всех чисел, которые являются делителями 40, но не являются чётными
+# 231. Функция для нахождения всех чисел, которые являются делителями 40, но не являются чётными
 def find_divisors_of_40_not_even(lst):
     result = []
     for num in lst:
@@ -2756,7 +2601,7 @@ def find_divisors_of_40_not_even(lst):
     return result
 
 
-# 286. Функция для нахождения чисел, которые являются разностью двух чётных чисел, но не делятся на 5
+# 232. Функция для нахождения чисел, которые являются разностью двух чётных чисел, но не делятся на 5
 def find_difference_of_two_even_not_5(lst):
     result = []
     for num in lst:
@@ -2769,7 +2614,7 @@ def find_difference_of_two_even_not_5(lst):
     return result
 
 
-# 287. Функция для нахождения чисел, которые являются произведением двух нечётных чисел, но не делятся на 7
+# 233. Функция для нахождения чисел, которые являются произведением двух нечётных чисел, но не делятся на 7
 def find_product_of_two_odd_not_divisible_by_7(lst):
     result = []
     for num in lst:
@@ -2782,7 +2627,7 @@ def find_product_of_two_odd_not_divisible_by_7(lst):
     return result
 
 
-# 288. Функция для нахождения чисел, которые делятся на 4, но не на 2
+# 234. Функция для нахождения чисел, которые делятся на 4, но не на 2
 def find_divisible_by_4_not_2(lst):
     result = []
     for num in lst:
@@ -2793,7 +2638,7 @@ def find_divisible_by_4_not_2(lst):
     return result
 
 
-# 290. Функция для нахождения чисел, которые являются квадратами нечётных чисел, но не на 9
+# 235. Функция для нахождения чисел, которые являются квадратами нечётных чисел, но не на 9
 def find_squares_of_odd_not_9(lst):
     result = []
     for num in lst:
@@ -2804,7 +2649,7 @@ def find_squares_of_odd_not_9(lst):
     return result
 
 
-# 291. Функция для нахождения чисел, которые являются разностью двух простых чисел
+# 236. Функция для нахождения чисел, которые являются разностью двух простых чисел
 def find_difference_of_two_primes(lst):
     def is_prime(n):
         if n < 2:
@@ -2825,7 +2670,7 @@ def find_difference_of_two_primes(lst):
     return result
 
 
-# 292. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не на 5
+# 237. Функция для нахождения чисел, которые являются произведением двух простых чисел, но не на 5
 def find_product_of_two_primes_not_5(lst):
     def is_prime(n):
         if n < 2:
@@ -2846,7 +2691,7 @@ def find_product_of_two_primes_not_5(lst):
     return result
 
 
-# 293. Функция для нахождения чисел, которые делятся на 2 и на 5, но не на 10
+# 238. Функция для нахождения чисел, которые делятся на 2 и на 5, но не на 10
 def find_divisible_by_2_and_5_not_10(lst):
     result = []
     for num in lst:
@@ -2857,7 +2702,7 @@ def find_divisible_by_2_and_5_not_10(lst):
     return result
 
 
-# 294. Функция для нахождения чисел, которые являются разностью двух чётных чисел, но не делятся на 6
+# 239. Функция для нахождения чисел, которые являются разностью двух чётных чисел, но не делятся на 6
 def find_difference_of_two_even_not_divisible_by_6(lst):
     result = []
     for num in lst:
@@ -2870,7 +2715,7 @@ def find_difference_of_two_even_not_divisible_by_6(lst):
     return result
 
 
-# 295. Функция для нахождения чисел, которые являются произведением двух нечётных чисел, но не делятся на 4
+# 240. Функция для нахождения чисел, которые являются произведением двух нечётных чисел, но не делятся на 4
 def find_product_of_two_odd_not_divisible_by_4(lst):
     result = []
     for num in lst:
@@ -2883,7 +2728,7 @@ def find_product_of_two_odd_not_divisible_by_4(lst):
     return result
 
 
-# 296. Функция для нахождения чисел, которые являются кратными 6, но не на 12
+# 241. Функция для нахождения чисел, которые являются кратными 6, но не на 12
 def find_multiples_of_6_not_12(lst):
     result = []
     for num in lst:
@@ -2894,7 +2739,7 @@ def find_multiples_of_6_not_12(lst):
     return result
 
 
-# 297. Функция для нахождения чисел, которые являются чётными и не делятся на 5
+# 242. Функция для нахождения чисел, которые являются чётными и не делятся на 5
 def find_even_not_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -2905,7 +2750,7 @@ def find_even_not_divisible_by_5(lst):
     return result
 
 
-# 298. Функция для нахождения чисел, которые являются квадратами нечётных чисел, но не делятся на 3
+# 243. Функция для нахождения чисел, которые являются квадратами нечётных чисел, но не делятся на 3
 def find_squares_of_odd_not_divisible_by_3(lst):
     result = []
     for num in lst:
@@ -2916,7 +2761,7 @@ def find_squares_of_odd_not_divisible_by_3(lst):
     return result
 
 
-# 299. Функция для нахождения всех чисел, которые являются делителями 50, но не являются простыми
+# 244. Функция для нахождения всех чисел, которые являются делителями 50, но не являются простыми
 def find_divisors_of_50_not_prime(lst):
     def is_prime(n):
         if n < 2:
@@ -2935,7 +2780,7 @@ def find_divisors_of_50_not_prime(lst):
     return result
 
 
-# 300. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 6
+# 245. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 6
 def find_divisible_by_3_and_4_not_6(lst):
     result = []
     for num in lst:
@@ -2946,7 +2791,7 @@ def find_divisible_by_3_and_4_not_6(lst):
     return result
 
 
-# 301. Функция для нахождения чисел, которые являются пересечением двух множеств
+# 246. Функция для нахождения чисел, которые являются пересечением двух множеств
 def find_intersection_of_sets(lst1, lst2):
     result = set(lst1) & set(lst2)
     if not result:
@@ -2954,7 +2799,7 @@ def find_intersection_of_sets(lst1, lst2):
     return list(result)
 
 
-# 302. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих
+# 247. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих
 def find_symmetric_difference(lst1, lst2):
     result = set(lst1) ^ set(lst2)
     if not result:
@@ -2962,7 +2807,7 @@ def find_symmetric_difference(lst1, lst2):
     return list(result)
 
 
-# 303. Функция для нахождения чисел, которые являются ключами в одном словаре и значениями в другом
+# 248. Функция для нахождения чисел, которые являются ключами в одном словаре и значениями в другом
 def find_keys_in_dicts(dict1, dict2):
     result = [key for key in dict1 if dict1[key] in dict2]
     if not result:
@@ -2970,7 +2815,7 @@ def find_keys_in_dicts(dict1, dict2):
     return result
 
 
-# 304. Функция для нахождения чисел, которые присутствуют в списке, но не в кортеже
+# 249. Функция для нахождения чисел, которые присутствуют в списке, но не в кортеже
 def find_in_list_not_in_tuple(lst, tpl):
     result = [x for x in lst if x not in tpl]
     if not result:
@@ -2978,7 +2823,7 @@ def find_in_list_not_in_tuple(lst, tpl):
     return result
 
 
-# 305. Функция для нахождения чисел, которые являются парами, где первое число больше второго
+# 250. Функция для нахождения чисел, которые являются парами, где первое число больше второго
 def find_pairs_with_first_greater(lst):
     result = [(a, b) for a in lst for b in lst if a > b]
     if not result:
@@ -2986,7 +2831,7 @@ def find_pairs_with_first_greater(lst):
     return result
 
 
-# 306. Функция для нахождения чисел, которые являются кортежами, но не содержат отрицательных чисел
+# 251. Функция для нахождения чисел, которые являются кортежами, но не содержат отрицательных чисел
 def find_tuples_without_negatives(lst):
     result = [tpl for tpl in lst if all(x >= 0 for x in tpl)]
     if not result:
@@ -2994,7 +2839,7 @@ def find_tuples_without_negatives(lst):
     return result
 
 
-# 307. Функция для нахождения чисел, которые присутствуют в словаре как ключи, но не имеют чётных значений
+# 252. Функция для нахождения чисел, которые присутствуют в словаре как ключи, но не имеют чётных значений
 def find_keys_with_odd_values(dict_data):
     result = [key for key, value in dict_data.items() if value % 2 != 0]
     if not result:
@@ -3002,7 +2847,7 @@ def find_keys_with_odd_values(dict_data):
     return result
 
 
-# 308. Функция для нахождения чисел, которые являются произведением двух чисел, но не делятся на 2
+# 253. Функция для нахождения чисел, которые являются произведением двух чисел, но не делятся на 2
 def find_product_of_two_not_divisible_by_2(lst):
     result = []
     for i in range(len(lst)):
@@ -3015,7 +2860,7 @@ def find_product_of_two_not_divisible_by_2(lst):
     return result
 
 
-# 309. Функция для нахождения чисел, которые являются элементами множества, но не присутствуют в списке
+# 254. Функция для нахождения чисел, которые являются элементами множества, но не присутствуют в списке
 def find_in_set_not_in_list(s, lst):
     result = list(s - set(lst))
     if not result:
@@ -3023,7 +2868,7 @@ def find_in_set_not_in_list(s, lst):
     return result
 
 
-# 310. Функция для нахождения чисел, которые присутствуют в словаре как ключи, но не делятся на 3
+# 255. Функция для нахождения чисел, которые присутствуют в словаре как ключи, но не делятся на 3
 def find_keys_not_divisible_by_3(dict_data):
     result = [key for key in dict_data if key % 3 != 0]
     if not result:
@@ -3031,7 +2876,7 @@ def find_keys_not_divisible_by_3(dict_data):
     return result
 
 
-# 311. Функция для нахождения чисел, которые встречаются в двух списках и их сумма делится на 4
+# 256. Функция для нахождения чисел, которые встречаются в двух списках и их сумма делится на 4
 def find_numbers_with_sum_divisible_by_4(lst1, lst2):
     result = []
     for num1 in lst1:
@@ -3043,7 +2888,7 @@ def find_numbers_with_sum_divisible_by_4(lst1, lst2):
     return result
 
 
-# 312. Функция для нахождения чисел, которые встречаются только в одном из двух списков
+# 257. Функция для нахождения чисел, которые встречаются только в одном из двух списков
 def find_unique_in_one_list(lst1, lst2):
     result = list(set(lst1) ^ set(lst2))
     if not result:
@@ -3051,7 +2896,7 @@ def find_unique_in_one_list(lst1, lst2):
     return result
 
 
-# 313. Функция для нахождения чисел, которые являются парами, где сумма элементов делится на 5
+# 258. Функция для нахождения чисел, которые являются парами, где сумма элементов делится на 5
 def find_pairs_with_sum_divisible_by_5(lst):
     result = [(a, b) for a in lst for b in lst if (a + b) % 5 == 0]
     if not result:
@@ -3059,7 +2904,7 @@ def find_pairs_with_sum_divisible_by_5(lst):
     return result
 
 
-# 314. Функция для нахождения чисел, которые являются кортежами, но не содержат чётных чисел
+# 259. Функция для нахождения чисел, которые являются кортежами, но не содержат чётных чисел
 def find_tuples_without_even_numbers(lst):
     result = [tpl for tpl in lst if all(x % 2 != 0 for x in tpl)]
     if not result:
@@ -3067,7 +2912,7 @@ def find_tuples_without_even_numbers(lst):
     return result
 
 
-# 315. Функция для нахождения чисел, которые являются целыми числами в строках
+# 260. Функция для нахождения чисел, которые являются целыми числами в строках
 def find_integers_in_strings(lst):
     result = []
     for s in lst:
@@ -3081,7 +2926,7 @@ def find_integers_in_strings(lst):
     return result
 
 
-# 316. Функция для нахождения чисел, которые делятся на 7 и на 8, но не на 56
+# 261. Функция для нахождения чисел, которые делятся на 7 и на 8, но не на 56
 def find_divisible_by_7_and_8_not_56(lst):
     result = []
     for num in lst:
@@ -3092,7 +2937,7 @@ def find_divisible_by_7_and_8_not_56(lst):
     return result
 
 
-# 317. Функция для нахождения чисел, которые являются нечётными и присутствуют в словаре как ключи
+# 262. Функция для нахождения чисел, которые являются нечётными и присутствуют в словаре как ключи
 def find_odd_keys_in_dict(dict_data):
     result = [key for key in dict_data if key % 2 != 0]
     if not result:
@@ -3100,7 +2945,7 @@ def find_odd_keys_in_dict(dict_data):
     return result
 
 
-# 318. Функция для нахождения чисел, которые являются чётными и присутствуют в кортеже, но не в списке
+# 263. Функция для нахождения чисел, которые являются чётными и присутствуют в кортеже, но не в списке
 def find_even_in_tuple_not_in_list(tpl, lst):
     result = [x for x in tpl if x % 2 == 0 and x not in lst]
     if not result:
@@ -3108,7 +2953,7 @@ def find_even_in_tuple_not_in_list(tpl, lst):
     return result
 
 
-# 319. Функция для нахождения чисел, которые являются делителями 100, но не являются простыми
+# 264. Функция для нахождения чисел, которые являются делителями 100, но не являются простыми
 def find_divisors_of_100_not_prime(lst):
     def is_prime(n):
         if n < 2:
@@ -3124,7 +2969,7 @@ def find_divisors_of_100_not_prime(lst):
     return result
 
 
-# 320. Функция для нахождения чисел, которые встречаются в списке, но не в множестве
+# 265. Функция для нахождения чисел, которые встречаются в списке, но не в множестве
 def find_in_list_not_in_set(lst, s):
     result = [x for x in lst if x not in s]
     if not result:
@@ -3132,7 +2977,7 @@ def find_in_list_not_in_set(lst, s):
     return result
 
 
-# 321. Функция для нахождения чисел, которые являются результатами суммы элементов из двух списков
+# 266. Функция для нахождения чисел, которые являются результатами суммы элементов из двух списков
 def find_sum_of_two_lists(lst1, lst2):
     result = [a + b for a in lst1 for b in lst2]
     if not result:
@@ -3140,7 +2985,7 @@ def find_sum_of_two_lists(lst1, lst2):
     return result
 
 
-# 322. Функция для нахождения чисел, которые являются разностью элементов из двух списков
+# 267. Функция для нахождения чисел, которые являются разностью элементов из двух списков
 def find_difference_of_two_lists(lst1, lst2):
     result = [a - b for a in lst1 for b in lst2]
     if not result:
@@ -3148,7 +2993,7 @@ def find_difference_of_two_lists(lst1, lst2):
     return result
 
 
-# 323. Функция для нахождения чисел, которые являются нечётными и присутствуют в кортеже, но не в списке
+# 268. Функция для нахождения чисел, которые являются нечётными и присутствуют в кортеже, но не в списке
 def find_odd_in_tuple_not_in_list(tpl, lst):
     result = [x for x in tpl if x % 2 != 0 and x not in lst]
     if not result:
@@ -3156,7 +3001,7 @@ def find_odd_in_tuple_not_in_list(tpl, lst):
     return result
 
 
-# 324. Функция для нахождения чисел, которые делятся на 5 и на 6, но не на 12
+# 269. Функция для нахождения чисел, которые делятся на 5 и на 6, но не на 12
 def find_divisible_by_5_and_6_not_12(lst):
     result = []
     for num in lst:
@@ -3167,7 +3012,7 @@ def find_divisible_by_5_and_6_not_12(lst):
     return result
 
 
-# 325. Функция для нахождения чисел, которые являются нечётными, но не являются делителями 5
+# 270. Функция для нахождения чисел, которые являются нечётными, но не являются делителями 5
 def find_odd_not_divisible_by_5_2(lst):
     result = [num for num in lst if num % 2 != 0 and num % 5 != 0]
     if not result:
@@ -3175,7 +3020,7 @@ def find_odd_not_divisible_by_5_2(lst):
     return result
 
 
-# 326. Функция для нахождения чисел, которые являются чётными и присутствуют в списке и кортеже
+# 271. Функция для нахождения чисел, которые являются чётными и присутствуют в списке и кортеже
 def find_even_in_list_and_tuple(lst, tpl):
     result = [x for x in lst if x % 2 == 0 and x in tpl]
     if not result:
@@ -3183,7 +3028,7 @@ def find_even_in_list_and_tuple(lst, tpl):
     return result
 
 
-# 327. Функция для нахождения чисел, которые являются результатом произведения двух чисел
+# 272. Функция для нахождения чисел, которые являются результатом произведения двух чисел
 def find_product_of_two_numbers(lst):
     result = [a * b for a in lst for b in lst]
     if not result:
@@ -3191,7 +3036,7 @@ def find_product_of_two_numbers(lst):
     return result
 
 
-# 328. Функция для нахождения чисел, которые являются элементами множества, но не встречаются в списке
+# 273. Функция для нахождения чисел, которые являются элементами множества, но не встречаются в списке
 def find_in_set_not_in_list_2(s, lst):
     result = [x for x in s if x not in lst]
     if not result:
@@ -3199,7 +3044,7 @@ def find_in_set_not_in_list_2(s, lst):
     return result
 
 
-# 329. Функция для нахождения чисел, которые являются результатами разности чисел в списках
+# 274. Функция для нахождения чисел, которые являются результатами разности чисел в списках
 def find_difference_between_lists(lst1, lst2):
     result = [a - b for a in lst1 for b in lst2]
     if not result:
@@ -3207,7 +3052,7 @@ def find_difference_between_lists(lst1, lst2):
     return result
 
 
-# 330. Функция для нахождения чисел, которые присутствуют в одном из списков, но не в обоих
+# 275. Функция для нахождения чисел, которые присутствуют в одном из списков, но не в обоих
 def find_unique_in_one_list_not_both(lst1, lst2):
     result = [x for x in lst1 if x not in lst2] + [x for x in lst2 if x not in lst1]
     if not result:
@@ -3215,7 +3060,7 @@ def find_unique_in_one_list_not_both(lst1, lst2):
     return result
 
 
-# 331. Функция для нахождения чисел, которые являются четными и делятся на 3
+# 276. Функция для нахождения чисел, которые являются четными и делятся на 3
 def find_even_and_divisible_by_3(lst):
     result = []
     for num in lst:
@@ -3227,7 +3072,7 @@ def find_even_and_divisible_by_3(lst):
     return result
 
 
-# 332. Функция для нахождения чисел, которые являются квадратами, но не делятся на 5
+# 277. Функция для нахождения чисел, которые являются квадратами, но не делятся на 5
 def find_squares_not_divisible_by_5(lst):
     result = []
     for num in lst:
@@ -3239,7 +3084,7 @@ def find_squares_not_divisible_by_5(lst):
     return result
 
 
-# 333. Функция для нахождения чисел, которые делятся на 7 и на 8, но не на 56
+# 278. Функция для нахождения чисел, которые делятся на 7 и на 8, но не на 56
 def find_divisible_by_7_and_8_not_56_2(lst):
     result = []
     for num in lst:
@@ -3252,7 +3097,7 @@ def find_divisible_by_7_and_8_not_56_2(lst):
     return result
 
 
-# 335. Функция для нахождения чисел, которые присутствуют в списке и кортежах
+# 279. Функция для нахождения чисел, которые присутствуют в списке и кортежах
 def find_in_list_and_tuple(lst, tpl):
     result = []
     for num in lst:
@@ -3263,18 +3108,7 @@ def find_in_list_and_tuple(lst, tpl):
     return result
 
 
-# 337. Функция для нахождения чисел, которые являются разностью двух элементов списка
-def find_difference_of_two_elements(lst):
-    result = []
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            result.append(abs(lst[i] - lst[j]))
-    if not result:
-        return None
-    return result
-
-
-# 338. Функция для нахождения чисел, которые являются суммой двух чисел, но не делятся на 4
+# 280. Функция для нахождения чисел, которые являются суммой двух чисел, но не делятся на 4
 def find_sum_of_two_not_divisible_by_4(lst):
     result = []
     for i in range(len(lst)):
@@ -3286,21 +3120,7 @@ def find_sum_of_two_not_divisible_by_4(lst):
     return result
 
 
-# 339. Функция для нахождения чисел, которые присутствуют в одном из списков, но не в обоих
-def find_unique_in_one_list_2(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 342. Функция для нахождения чисел, которые присутствуют в обоих списках
+# 281. Функция для нахождения чисел, которые присутствуют в обоих списках
 def find_in_both_lists(lst1, lst2):
     result = []
     for num in lst1:
@@ -3311,7 +3131,7 @@ def find_in_both_lists(lst1, lst2):
     return result
 
 
-# 344. Функция для нахождения чисел, которые не присутствуют в одном из списков
+# 282. Функция для нахождения чисел, которые не присутствуют в одном из списков
 def find_not_in_list(lst1, lst2):
     result = []
     for num in lst1:
@@ -3322,7 +3142,7 @@ def find_not_in_list(lst1, lst2):
     return result
 
 
-# 345. Функция для нахождения чисел, которые являются произведением двух чисел, но не делятся на 7
+# 283. Функция для нахождения чисел, которые являются произведением двух чисел, но не делятся на 7
 def find_product_not_divisible_by_7(lst):
     result = []
     for i in range(len(lst)):
@@ -3335,7 +3155,7 @@ def find_product_not_divisible_by_7(lst):
     return result
 
 
-# 347. Функция для нахождения чисел, которые являются произведением двух нечётных чисел
+# 284. Функция для нахождения чисел, которые являются произведением двух нечётных чисел
 def find_product_of_two_odds(lst):
     result = []
     for i in range(len(lst)):
@@ -3347,7 +3167,7 @@ def find_product_of_two_odds(lst):
     return result
 
 
-# 348. Функция для нахождения чисел, которые являются суммой двух нечётных чисел
+# 285. Функция для нахождения чисел, которые являются суммой двух нечётных чисел
 def find_sum_of_two_odds(lst):
     result = []
     for i in range(len(lst)):
@@ -3359,7 +3179,7 @@ def find_sum_of_two_odds(lst):
     return result
 
 
-# 350. Функция для нахождения чисел, которые являются четными и находятся в кортеже
+# 286. Функция для нахождения чисел, которые являются четными и находятся в кортеже
 def find_even_in_tuple(tpl):
     result = []
     for num in tpl:
@@ -3370,18 +3190,7 @@ def find_even_in_tuple(tpl):
     return result
 
 
-# 351. Функция для нахождения чисел, которые являются результатом разности двух чисел
-def find_difference_between_two_numbers(lst):
-    result = []
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            result.append(abs(lst[i] - lst[j]))
-    if not result:
-        return None
-    return result
-
-
-# 352. Функция для нахождения чисел, которые являются произведением двух чисел, но не на 5
+# 287. Функция для нахождения чисел, которые являются произведением двух чисел, но не на 5
 def find_product_not_divisible_by_5(lst):
     result = []
     for i in range(len(lst)):
@@ -3394,18 +3203,7 @@ def find_product_not_divisible_by_5(lst):
     return result
 
 
-# 353. Функция для нахождения чисел, которые делятся на 9, но не на 3
-def find_divisible_by_9_not_3_2(lst):
-    result = []
-    for num in lst:
-        if num % 9 == 0 and num % 3 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 354. Функция для нахождения чисел, которые присутствуют в одном словаре, но не в другом
+# 288. Функция для нахождения чисел, которые присутствуют в одном словаре, но не в другом
 def find_keys_in_dict_not_in_other(dict1, dict2):
     result = []
     for key in dict1:
@@ -3416,7 +3214,7 @@ def find_keys_in_dict_not_in_other(dict1, dict2):
     return result
 
 
-# 355. Функция для нахождения чисел, которые являются разностью элементов в кортеже
+# 289. Функция для нахождения чисел, которые являются разностью элементов в кортеже
 def find_difference_in_tuple(tpl):
     result = []
     for i in range(len(tpl)):
@@ -3427,18 +3225,7 @@ def find_difference_in_tuple(tpl):
     return result
 
 
-# 356. Функция для нахождения чисел, которые являются результатом суммы двух чисел из списка
-def find_sum_of_two_from_list(lst):
-    result = []
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            result.append(lst[i] + lst[j])
-    if not result:
-        return None
-    return result
-
-
-# 357. Функция для нахождения чисел, которые являются результатом разности двух чисел из двух списков
+# 290. Функция для нахождения чисел, которые являются результатом разности двух чисел из двух списков
 def find_difference_between_lists_2(lst1, lst2):
     result = []
     for num1 in lst1:
@@ -3449,7 +3236,7 @@ def find_difference_between_lists_2(lst1, lst2):
     return result
 
 
-# 358. Функция для нахождения чисел, которые являются нечётными и присутствуют в одном из списков
+# 291. Функция для нахождения чисел, которые являются нечётными и присутствуют в одном из списков
 def find_odd_in_one_list(lst1, lst2):
     result = []
     for num in lst1:
@@ -3463,7 +3250,7 @@ def find_odd_in_one_list(lst1, lst2):
     return result
 
 
-# 359. Функция для нахождения чисел, которые являются результатом суммы двух чисел из одного списка
+# 292. Функция для нахождения чисел, которые являются результатом суммы двух чисел из одного списка
 def find_sum_of_two_from_one_list(lst):
     result = []
     for i in range(len(lst)):
@@ -3474,7 +3261,7 @@ def find_sum_of_two_from_one_list(lst):
     return result
 
 
-# 360. Функция для нахождения чисел, которые встречаются в обоих списках, но не в обоих списках сразу
+# 293. Функция для нахождения чисел, которые встречаются в обоих списках, но не в обоих списках сразу
 def find_common_not_in_both_lists(lst1, lst2):
     result = []
     for num in lst1:
@@ -3485,7 +3272,7 @@ def find_common_not_in_both_lists(lst1, lst2):
     return result
 
 
-# 361. Функция для нахождения чисел, которые являются результатом суммы элементов двух списков
+# 294. Функция для нахождения чисел, которые являются результатом суммы элементов двух списков
 def find_sum_of_elements_from_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3495,7 +3282,7 @@ def find_sum_of_elements_from_two_lists(lst1, lst2):
     return result
 
 
-# 363. Функция для нахождения чисел, которые являются результатом разности элементов из двух списков
+# 295. Функция для нахождения чисел, которые являются результатом разности элементов из двух списков
 def find_difference_of_elements_from_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3505,7 +3292,7 @@ def find_difference_of_elements_from_two_lists(lst1, lst2):
     return result
 
 
-# 364. Функция для преобразования чисел из списка в их квадраты
+# 296. Функция для преобразования чисел из списка в их квадраты
 def square_numbers(lst):
     result = list(map(lambda x: x ** 2, lst))
     if not result:
@@ -3513,7 +3300,7 @@ def square_numbers(lst):
     return result
 
 
-# 365. Функция для нахождения чисел, которые делятся на 3, но не на 5
+# 297. Функция для нахождения чисел, которые делятся на 3, но не на 5
 def find_divisible_by_3_not_5(lst):
     result = []
     for num in lst:
@@ -3524,7 +3311,7 @@ def find_divisible_by_3_not_5(lst):
     return result
 
 
-# 366. Функция для нахождения чисел, которые присутствуют только в одном из двух списков
+# 298. Функция для нахождения чисел, которые присутствуют только в одном из двух списков
 def find_unique_in_one_list_3(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3536,7 +3323,7 @@ def find_unique_in_one_list_3(lst1, lst2):
     return result
 
 
-# 367. Функция для нахождения чисел, которые присутствуют в списке, но не в кортеже
+# 299. Функция для нахождения чисел, которые присутствуют в списке, но не в кортеже
 def find_in_list_not_in_tuple_2(lst, tpl):
     result = []
     for num in lst:
@@ -3547,7 +3334,7 @@ def find_in_list_not_in_tuple_2(lst, tpl):
     return result
 
 
-# 368. Функция для нахождения чисел, которые являются кубами чисел в списке
+# 300. Функция для нахождения чисел, которые являются кубами чисел в списке
 def find_cubes(lst):
     result = list(map(lambda x: x ** 3, lst))
     if not result:
@@ -3555,7 +3342,7 @@ def find_cubes(lst):
     return result
 
 
-# 369. Функция для нахождения чисел, которые делятся на 2 и 3
+# 301. Функция для нахождения чисел, которые делятся на 2 и 3
 def find_divisible_by_2_and_3(lst):
     result = []
     for num in lst:
@@ -3566,21 +3353,7 @@ def find_divisible_by_2_and_3(lst):
     return result
 
 
-# 370. Функция для нахождения чисел, которые не присутствуют в двух списках одновременно
-def find_not_in_both_lists(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 371. Функция для нахождения чисел, которые являются результатом возведения в степень
+# 302. Функция для нахождения чисел, которые являются результатом возведения в степень
 def find_powers_of_numbers(lst, power):
     result = list(map(lambda x: x ** power, lst))
     if not result:
@@ -3588,21 +3361,7 @@ def find_powers_of_numbers(lst, power):
     return result
 
 
-# 372. Функция для нахождения чисел, которые присутствуют только в одном из двух списков
-def find_unique_elements_in_lists(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 374. Функция для нахождения чисел, которые являются результатом разности двух чисел в разных списках
+# 303. Функция для нахождения чисел, которые являются результатом разности двух чисел в разных списках
 def find_difference_between_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3612,29 +3371,7 @@ def find_difference_between_two_lists(lst1, lst2):
     return result
 
 
-# 375. Функция для нахождения чисел, которые присутствуют в обоих списках
-def find_common_elements_in_lists(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num in lst2:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 377. Функция для нахождения чисел, которые присутствуют в первом списке, но не во втором
-def find_elements_in_first_not_in_second(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 378. Функция для нахождения чисел, которые присутствуют в обоих словарях
+# 304. Функция для нахождения чисел, которые присутствуют в обоих словарях
 def find_keys_in_both_dicts(dict1, dict2):
     result = []
     for key in dict1:
@@ -3645,7 +3382,7 @@ def find_keys_in_both_dicts(dict1, dict2):
     return result
 
 
-# 379. Функция для нахождения чисел, которые являются результатом произведения чисел из двух списков
+# 305. Функция для нахождения чисел, которые являются результатом произведения чисел из двух списков
 def find_product_of_elements_from_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3655,21 +3392,7 @@ def find_product_of_elements_from_two_lists(lst1, lst2):
     return result
 
 
-# 380. Функция для нахождения чисел, которые встречаются только в одном из двух списков
-def find_unique_in_either_list(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 381. Функция для нахождения чисел, которые присутствуют в словаре, но не в списке
+# 306. Функция для нахождения чисел, которые присутствуют в словаре, но не в списке
 def find_keys_in_dict_not_in_list(d, lst):
     result = []
     for key in d:
@@ -3680,7 +3403,7 @@ def find_keys_in_dict_not_in_list(d, lst):
     return result
 
 
-# 384. Функция для нахождения чисел, которые являются результатом возведения чисел из списка в степень
+# 307. Функция для нахождения чисел, которые являются результатом возведения чисел из списка в степень
 def find_powers_of_numbers_in_list(lst, power):
     result = []
     for num in lst:
@@ -3690,18 +3413,7 @@ def find_powers_of_numbers_in_list(lst, power):
     return result
 
 
-# 385. Функция для нахождения чисел, которые делятся на 7, но не на 14
-def find_divisible_by_7_not_14(lst):
-    result = []
-    for num in lst:
-        if num % 7 == 0 and num % 14 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 386. Функция для нахождения чисел, которые присутствуют в обоих множествах
+# 308. Функция для нахождения чисел, которые присутствуют в обоих множествах
 def find_elements_in_both_sets(set1, set2):
     result = list(set1 & set2)
     if not result:
@@ -3709,18 +3421,7 @@ def find_elements_in_both_sets(set1, set2):
     return result
 
 
-# 389. Функция для нахождения чисел, которые делятся на 8, но не на 16
-def find_divisible_by_8_not_16(lst):
-    result = []
-    for num in lst:
-        if num % 8 == 0 and num % 16 != 0:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 390. Функция для нахождения чисел, которые являются разницей элементов из двух списков
+# 309. Функция для нахождения чисел, которые являются разницей элементов из двух списков
 def find_diff_between_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3730,7 +3431,7 @@ def find_diff_between_lists(lst1, lst2):
     return result
 
 
-# 392. Функция для нахождения чисел, которые являются результатом сложения чисел в двух списках
+# 310. Функция для нахождения чисел, которые являются результатом сложения чисел в двух списках
 def find_sum_of_two_lists_2(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3740,18 +3441,7 @@ def find_sum_of_two_lists_2(lst1, lst2):
     return result
 
 
-# 393. Функция для нахождения чисел, которые встречаются в одном словаре, но не в другом
-def find_keys_in_dict_not_in_other_dict(dict1, dict2):
-    result = []
-    for key in dict1:
-        if key not in dict2:
-            result.append(key)
-    if not result:
-        return None
-    return result
-
-
-# 394. Функция для нахождения чисел, которые присутствуют в кортеже, но не в списке
+# 311. Функция для нахождения чисел, которые присутствуют в кортеже, но не в списке
 def find_in_tuple_not_in_list(tpl, lst):
     result = []
     for num in tpl:
@@ -3762,18 +3452,7 @@ def find_in_tuple_not_in_list(tpl, lst):
     return result
 
 
-# 395. Функция для нахождения чисел, которые являются произведением двух чисел в списке
-def find_product_of_two_numbers_in_list(lst):
-    result = []
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            result.append(lst[i] * lst[j])
-    if not result:
-        return None
-    return result
-
-
-# 396. Функция для нахождения чисел, которые делятся на 10, но не на 20
+# 312. Функция для нахождения чисел, которые делятся на 10, но не на 20
 def find_divisible_by_10_not_20(lst):
     result = []
     for num in lst:
@@ -3784,7 +3463,7 @@ def find_divisible_by_10_not_20(lst):
     return result
 
 
-# 397. Функция для нахождения чисел, которые являются суммой элементов из двух списков
+# 313. Функция для нахождения чисел, которые являются суммой элементов из двух списков
 def find_sum_from_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3794,7 +3473,7 @@ def find_sum_from_two_lists(lst1, lst2):
     return result
 
 
-# 398. Функция для нахождения чисел, которые присутствуют в обоих множествах
+# 314. Функция для нахождения чисел, которые присутствуют в обоих множествах
 def find_common_elements_in_sets(set1, set2):
     result = list(set1 & set2)
     if not result:
@@ -3802,7 +3481,7 @@ def find_common_elements_in_sets(set1, set2):
     return result
 
 
-# 399. Функция для нахождения чисел, которые являются произведением чисел в списке
+# 315. Функция для нахождения чисел, которые являются произведением чисел в списке
 def find_product_in_list(lst):
     result = []
     for i in range(len(lst)):
@@ -3813,7 +3492,7 @@ def find_product_in_list(lst):
     return result
 
 
-# 401. Функция для нахождения чисел, которые присутствуют в списке и не присутствуют в словаре
+# 316. Функция для нахождения чисел, которые присутствуют в списке и не присутствуют в словаре
 def find_in_list_not_in_dict(lst, d):
     result = []
     for num in lst:
@@ -3824,7 +3503,7 @@ def find_in_list_not_in_dict(lst, d):
     return result
 
 
-# 402. Функция для объединения двух словарей
+# 317. Функция для объединения двух словарей
 def merge_dicts_2(dict1, dict2):
     result = dict1.copy()
     result.update(dict2)
@@ -3833,7 +3512,7 @@ def merge_dicts_2(dict1, dict2):
     return result
 
 
-# 403. Функция для нахождения чисел, которые присутствуют в одном из двух наборов
+# 318. Функция для нахождения чисел, которые присутствуют в одном из двух наборов
 def find_in_one_set_not_other(set1, set2):
     result = set1.symmetric_difference(set2)
     if not result:
@@ -3841,7 +3520,7 @@ def find_in_one_set_not_other(set1, set2):
     return list(result)
 
 
-# 404. Функция для нахождения чисел, которые являются результатом деления элементов из двух списков
+# 319. Функция для нахождения чисел, которые являются результатом деления элементов из двух списков
 def find_division_from_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3852,7 +3531,7 @@ def find_division_from_two_lists(lst1, lst2):
     return result
 
 
-# 406. Функция для нахождения чисел, которые присутствуют в обоих списках, но в одном из них меньше
+# 320. Функция для нахождения чисел, которые присутствуют в обоих списках, но в одном из них меньше
 def find_common_less_in_one_list(lst1, lst2):
     result = []
     for num in lst1:
@@ -3863,7 +3542,7 @@ def find_common_less_in_one_list(lst1, lst2):
     return result
 
 
-# 407. Функция для нахождения чисел, которые находятся в одном списке, но не в другом
+# 321. Функция для нахождения чисел, которые находятся в одном списке, но не в другом
 def find_in_first_not_in_second(lst1, lst2):
     result = []
     for num in lst1:
@@ -3874,7 +3553,7 @@ def find_in_first_not_in_second(lst1, lst2):
     return result
 
 
-# 408. Функция для нахождения чисел, которые присутствуют в обоих списках, но имеют разные индексы
+# 322. Функция для нахождения чисел, которые присутствуют в обоих списках, но имеют разные индексы
 def find_common_elements_diff_index(lst1, lst2):
     result = []
     for i, num1 in enumerate(lst1):
@@ -3886,7 +3565,7 @@ def find_common_elements_diff_index(lst1, lst2):
     return result
 
 
-# 409. Функция для нахождения чисел, которые являются результатом добавления элементов из двух словарей
+# 323. Функция для нахождения чисел, которые являются результатом добавления элементов из двух словарей
 def add_values_of_dicts(dict1, dict2):
     result = {}
     for key in dict1:
@@ -3897,7 +3576,7 @@ def add_values_of_dicts(dict1, dict2):
     return result
 
 
-# 410. Функция для нахождения чисел, которые находятся в двух множествах, но в одном из них больше
+# 324. Функция для нахождения чисел, которые находятся в двух множествах, но в одном из них больше
 def find_more_in_one_set(set1, set2):
     result = []
     for num in set1:
@@ -3908,7 +3587,7 @@ def find_more_in_one_set(set1, set2):
     return result
 
 
-# 411. Функция для нахождения чисел, которые являются результатом умножения чисел в списке на два
+# 325. Функция для нахождения чисел, которые являются результатом умножения чисел в списке на два
 def multiply_numbers_by_two(lst):
     result = []
     for num in lst:
@@ -3918,21 +3597,7 @@ def multiply_numbers_by_two(lst):
     return result
 
 
-# 412. Функция для нахождения чисел, которые содержатся только в одном из двух списков
-def find_unique_in_one_list_4(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 413. Функция для нахождения чисел, которые являются результатом суммы значений по ключам в словарях
+# 326. Функция для нахождения чисел, которые являются результатом суммы значений по ключам в словарях
 def sum_dict_values(dict1, dict2):
     result = {}
     for key in dict1:
@@ -3943,7 +3608,7 @@ def sum_dict_values(dict1, dict2):
     return result
 
 
-# 414. Функция для нахождения чисел, которые являются квадратами чисел из списка
+# 327. Функция для нахождения чисел, которые являются квадратами чисел из списка
 def find_squares_2(lst):
     result = []
     for num in lst:
@@ -3953,7 +3618,7 @@ def find_squares_2(lst):
     return result
 
 
-# 415. Функция для нахождения чисел, которые являются разницей элементов из двух множеств
+# 328. Функция для нахождения чисел, которые являются разницей элементов из двух множеств
 def find_difference_of_sets(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -3961,7 +3626,7 @@ def find_difference_of_sets(set1, set2):
     return result
 
 
-# 416. Функция для нахождения чисел, которые являются результатом суммирования элементов из списка и множества
+# 329. Функция для нахождения чисел, которые являются результатом суммирования элементов из списка и множества
 def find_sum_list_set(lst, s):
     result = []
     for num in lst:
@@ -3972,7 +3637,7 @@ def find_sum_list_set(lst, s):
     return result
 
 
-# 418. Функция для нахождения чисел, которые встречаются в одном множестве, но не в другом
+# 330. Функция для нахождения чисел, которые встречаются в одном множестве, но не в другом
 def find_in_set_not_in_other_set(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -3980,7 +3645,7 @@ def find_in_set_not_in_other_set(set1, set2):
     return result
 
 
-# 419. Функция для нахождения чисел, которые являются результатом деления элементов одного списка на элементы другого
+# 331. Функция для нахождения чисел, которые являются результатом деления элементов одного списка на элементы другого
 def divide_elements_of_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -3991,7 +3656,7 @@ def divide_elements_of_lists(lst1, lst2):
     return result
 
 
-# 421. Функция для нахождения чисел, которые находятся в двух множествах, но не в одном из них
+# 332. Функция для нахождения чисел, которые находятся в двух множествах, но не в одном из них
 def find_in_both_sets_not_in_one(set1, set2):
     result = list(set1 & set2 - (set1 | set2))
     if not result:
@@ -3999,21 +3664,7 @@ def find_in_both_sets_not_in_one(set1, set2):
     return result
 
 
-# 422. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих
-def find_unique_in_both_lists(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 424. Функция для нахождения чисел, которые являются результатом вычитания элементов из списка и множества
+# 333. Функция для нахождения чисел, которые являются результатом вычитания элементов из списка и множества
 def subtract_set_from_list(lst, s):
     result = []
     for num in lst:
@@ -4024,7 +3675,7 @@ def subtract_set_from_list(lst, s):
     return result
 
 
-# 425. Функция для нахождения чисел, которые являются результатом суммирования элементов из двух кортежей
+# 334. Функция для нахождения чисел, которые являются результатом суммирования элементов из двух кортежей
 def find_sum_of_tuples(tpl1, tpl2):
     result = []
     for a, b in zip(tpl1, tpl2):
@@ -4034,35 +3685,7 @@ def find_sum_of_tuples(tpl1, tpl2):
     return result
 
 
-# 427. Функция для нахождения чисел, которые находятся в одном из двух списков, но не в обоих
-def find_in_either_list(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 428. Функция для нахождения чисел, которые встречаются только в одном из двух кортежей
-def find_unique_in_tuple(tpl1, tpl2):
-    result = []
-    for num in tpl1:
-        if num not in tpl2:
-            result.append(num)
-    for num in tpl2:
-        if num not in tpl1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 430. Функция для нахождения чисел, которые присутствуют в одном из двух множеств
+# 335. Функция для нахождения чисел, которые присутствуют в одном из двух множеств
 def find_in_one_set_not_other_2(set1, set2):
     result = list(set1 ^ set2)  # Симметрическая разница
     if not result:
@@ -4070,7 +3693,7 @@ def find_in_one_set_not_other_2(set1, set2):
     return result
 
 
-# 431. Функция для нахождения чисел, которые делятся на 4, но не на 8
+# 336. Функция для нахождения чисел, которые делятся на 4, но не на 8
 def find_divisible_by_4_not_8(lst):
     result = []
     for num in lst:
@@ -4081,7 +3704,7 @@ def find_divisible_by_4_not_8(lst):
     return result
 
 
-# 432. Функция для нахождения чисел, которые присутствуют в одном словаре, но не в другом
+# 337. Функция для нахождения чисел, которые присутствуют в одном словаре, но не в другом
 def find_keys_in_dict1_not_in_dict2(dict1, dict2):
     result = []
     for key in dict1:
@@ -4092,7 +3715,7 @@ def find_keys_in_dict1_not_in_dict2(dict1, dict2):
     return result
 
 
-# 436. Функция для нахождения чисел, которые являются результатом умножения чисел в одном списке на два
+# 338. Функция для нахождения чисел, которые являются результатом умножения чисел в одном списке на два
 def multiply_by_two(lst):
     result = []
     for num in lst:
@@ -4102,7 +3725,7 @@ def multiply_by_two(lst):
     return result
 
 
-# 437. Функция для нахождения чисел, которые являются результатом вычитания элементов одного списка из другого
+# 339. Функция для нахождения чисел, которые являются результатом вычитания элементов одного списка из другого
 def subtract_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -4112,7 +3735,7 @@ def subtract_lists(lst1, lst2):
     return result
 
 
-# 439. Функция для нахождения чисел, которые присутствуют в обоих словарях
+# 340. Функция для нахождения чисел, которые присутствуют в обоих словарях
 def find_common_in_dicts(dict1, dict2):
     result = []
     for key in dict1:
@@ -4123,26 +3746,12 @@ def find_common_in_dicts(dict1, dict2):
     return result
 
 
-# 441. Функция для нахождения чисел, которые присутствуют только в одном словаре
-def find_unique_in_dict(dict1, dict2):
-    result = []
-    for key in dict1:
-        if key not in dict2:
-            result.append(key)
-    for key in dict2:
-        if key not in dict1:
-            result.append(key)
-    if not result:
-        return None
-    return result
-
-
-# 442. Функция для нахождения чисел, которые являются результатом сложения всех чисел в списке
+# 341. Функция для нахождения чисел, которые являются результатом сложения всех чисел в списке
 def sum_list_3(lst):
     return sum(lst) if lst else None
 
 
-# 443. Функция для нахождения чисел, которые делятся на 3, но не на 9
+# 342. Функция для нахождения чисел, которые делятся на 3, но не на 9
 def find_divisible_by_3_not_9(lst):
     result = []
     for num in lst:
@@ -4153,7 +3762,7 @@ def find_divisible_by_3_not_9(lst):
     return result
 
 
-# 444. Функция для нахождения чисел, которые делятся на 5 или 7
+# 343. Функция для нахождения чисел, которые делятся на 5 или 7
 def find_divisible_by_5_or_7(lst):
     result = []
     for num in lst:
@@ -4164,28 +3773,7 @@ def find_divisible_by_5_or_7(lst):
     return result
 
 
-# 450. Функция для нахождения чисел, которые являются результатом вычитания элементов из двух кортежей
-def subtract_tuples(tpl1, tpl2):
-    result = []
-    for a, b in zip(tpl1, tpl2):
-        result.append(a - b)
-    if not result:
-        return None
-    return result
-
-
-# 452. Функция для нахождения чисел, которые являются результатом деления чисел одного списка на числа другого
-def divide_lists(lst1, lst2):
-    result = []
-    for a, b in zip(lst1, lst2):
-        if b != 0:
-            result.append(a / b)
-    if not result:
-        return None
-    return result
-
-
-# 455. Функция для нахождения чисел, которые присутствуют в одном из двух словарей
+# 344. Функция для нахождения чисел, которые присутствуют в одном из двух словарей
 def find_in_dicts(dict1, dict2):
     result = []
     for key in dict1:
@@ -4196,54 +3784,7 @@ def find_in_dicts(dict1, dict2):
     return result
 
 
-# 456. Функция для нахождения чисел, которые встречаются только в одном из двух списков
-def find_in_one_not_in_other(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 457. Функция для нахождения чисел, которые присутствуют в одном из двух множеств
-def find_in_sets(set1, set2):
-    result = list(set1 ^ set2)
-    if not result:
-        return None
-    return result
-
-
-# 458. Функция для нахождения чисел, которые присутствуют в одном из двух кортежей
-def find_in_tuples(tpl1, tpl2):
-    result = []
-    for num in tpl1:
-        if num not in tpl2:
-            result.append(num)
-    for num in tpl2:
-        if num not in tpl1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 459. Функция для нахождения чисел, которые являются разницей элементов из двух списков
-def subtract_lists_2(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 460. Функция для нахождения чисел, которые делятся на 3 или 5
+# 345. Функция для нахождения чисел, которые делятся на 3 или 5
 def find_divisible_by_3_or_5(lst):
     result = []
     for num in lst:
@@ -4254,7 +3795,7 @@ def find_divisible_by_3_or_5(lst):
     return result
 
 
-# 461. Функция для нахождения чисел, которые делятся на 4, но не на 6
+# 346. Функция для нахождения чисел, которые делятся на 4, но не на 6
 def find_divisible_by_4_not_6(lst):
     result = []
     for num in lst:
@@ -4265,7 +3806,7 @@ def find_divisible_by_4_not_6(lst):
     return result
 
 
-# 464. Функция для нахождения чисел, которые делятся на 5, но не на 10
+# 347. Функция для нахождения чисел, которые делятся на 5, но не на 10
 def find_divisible_by_5_not_10(lst):
     result = []
     for num in lst:
@@ -4276,7 +3817,7 @@ def find_divisible_by_5_not_10(lst):
     return result
 
 
-# 465. Функция для нахождения чисел, которые являются результатом возведения элементов списка в степень
+# 348. Функция для нахождения чисел, которые являются результатом возведения элементов списка в степень
 def find_powers_of_list(lst, power):
     result = []
     for num in lst:
@@ -4286,7 +3827,7 @@ def find_powers_of_list(lst, power):
     return result
 
 
-# 466. Функция для нахождения чисел, которые делятся на 6, но не на 12
+# 349. Функция для нахождения чисел, которые делятся на 6, но не на 12
 def find_divisible_by_6_not_12(lst):
     result = []
     for num in lst:
@@ -4297,35 +3838,7 @@ def find_divisible_by_6_not_12(lst):
     return result
 
 
-# 468. Функция для нахождения чисел, которые присутствуют в одном из двух кортежей, но не в обоих
-def find_unique_in_tuples(tpl1, tpl2):
-    result = []
-    for num in tpl1:
-        if num not in tpl2:
-            result.append(num)
-    for num in tpl2:
-        if num not in tpl1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 470. Функция для нахождения чисел, которые присутствуют в одном из двух словарей, но не в обоих
-def find_keys_in_one_dict_not_other(dict1, dict2):
-    result = []
-    for key in dict1:
-        if key not in dict2:
-            result.append(key)
-    for key in dict2:
-        if key not in dict1:
-            result.append(key)
-    if not result:
-        return None
-    return result
-
-
-# 471. Функция для нахождения чисел, которые делятся на 4 или 5
+# 350. Функция для нахождения чисел, которые делятся на 4 или 5
 def find_divisible_by_4_or_5(lst):
     result = []
     for num in lst:
@@ -4336,29 +3849,7 @@ def find_divisible_by_4_or_5(lst):
     return result
 
 
-# 475. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих
-def find_in_either_but_not_both(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 476. Функция для нахождения чисел, которые являются разницей элементов из двух множеств
-def find_difference_in_sets(set1, set2):
-    result = list(set1 - set2)
-    if not result:
-        return None
-    return result
-
-
-# 477. Функция для нахождения чисел, которые присутствуют в одном списке, но не в другом
+# 351. Функция для нахождения чисел, которые присутствуют в одном списке, но не в другом
 def find_in_list_not_in_another(lst1, lst2):
     result = []
     for num in lst1:
@@ -4369,7 +3860,7 @@ def find_in_list_not_in_another(lst1, lst2):
     return result
 
 
-# 478. Функция для нахождения чисел, которые присутствуют в одном словаре, но не в другом
+# 352. Функция для нахождения чисел, которые присутствуют в одном словаре, но не в другом
 def find_unique_keys_in_dict(dict1, dict2):
     result = []
     for key in dict1:
@@ -4380,7 +3871,7 @@ def find_unique_keys_in_dict(dict1, dict2):
     return result
 
 
-# 480. Функция для нахождения чисел, которые являются произведением чисел из двух списков
+# 353. Функция для нахождения чисел, которые являются произведением чисел из двух списков
 def multiply_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -4390,35 +3881,7 @@ def multiply_lists(lst1, lst2):
     return result
 
 
-# 481. Функция для нахождения чисел, которые присутствуют в одном из двух кортежей
-def find_in_tuples_not_in_other(tpl1, tpl2):
-    result = []
-    for num in tpl1:
-        if num not in tpl2:
-            result.append(num)
-    for num in tpl2:
-        if num not in tpl1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 482. Функция для нахождения чисел, которые встречаются только в одном из двух списков
-def find_in_one_list_not_other(lst1, lst2):
-    result = []
-    for num in lst1:
-        if num not in lst2:
-            result.append(num)
-    for num in lst2:
-        if num not in lst1:
-            result.append(num)
-    if not result:
-        return None
-    return result
-
-
-# 484. Функция для нахождения чисел, которые являются результатом вычитания элементов одного списка из другого
+# 354. Функция для нахождения чисел, которые являются результатом вычитания элементов одного списка из другого
 def subtract_lists_v2(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
@@ -4428,18 +3891,7 @@ def subtract_lists_v2(lst1, lst2):
     return result
 
 
-# 485. Функция для нахождения чисел, которые являются результатом деления чисел из одного списка на числа из другого
-def divide_lists_v2(lst1, lst2):
-    result = []
-    for a, b in zip(lst1, lst2):
-        if b != 0:
-            result.append(a / b)
-    if not result:
-        return None
-    return result
-
-
-# 486. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
+# 355. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
 def find_in_set_not_other(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -4447,7 +3899,7 @@ def find_in_set_not_other(set1, set2):
     return result
 
 
-# 487. Функция для нахождения чисел, которые присутствуют в обоих множествах
+# 356. Функция для нахождения чисел, которые присутствуют в обоих множествах
 def find_common_in_sets(set1, set2):
     result = list(set1 & set2)
     if not result:
@@ -4455,7 +3907,7 @@ def find_common_in_sets(set1, set2):
     return result
 
 
-# 489. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
+# 357. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
 def find_divisible_by_2_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0})
     if not result:
@@ -4463,7 +3915,7 @@ def find_divisible_by_2_in_both_sets(set1, set2):
     return result
 
 
-# 490. Функция для нахождения чисел, которые не делятся на 3 и присутствуют в двух множествах
+# 358. Функция для нахождения чисел, которые не делятся на 3 и присутствуют в двух множествах
 def find_not_divisible_by_3_in_both_sets(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 3 == 0})
     if not result:
@@ -4471,7 +3923,7 @@ def find_not_divisible_by_3_in_both_sets(set1, set2):
     return result
 
 
-# 492. Функция для нахождения чисел, которые присутствуют в одном множестве и не присутствуют в другом
+# 359. Функция для нахождения чисел, которые присутствуют в одном множестве и не присутствуют в другом
 def find_in_one_set_not_other_v2(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -4479,7 +3931,7 @@ def find_in_one_set_not_other_v2(set1, set2):
     return result
 
 
-# 493. Функция для нахождения чисел, которые делятся на 2 или 5, и присутствуют в двух множествах
+# 360. Функция для нахождения чисел, которые делятся на 2 или 5, и присутствуют в двух множествах
 def find_divisible_by_2_or_5_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0 or num % 5 == 0})
     if not result:
@@ -4487,7 +3939,7 @@ def find_divisible_by_2_or_5_in_both_sets(set1, set2):
     return result
 
 
-# 494. Функция для нахождения чисел, которые не делятся на 2 или 3, и присутствуют в двух множествах
+# 361. Функция для нахождения чисел, которые не делятся на 2 или 3, и присутствуют в двух множествах
 def find_not_divisible_by_2_or_3_in_both_sets(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 2 == 0 or num % 3 == 0})
     if not result:
@@ -4495,7 +3947,7 @@ def find_not_divisible_by_2_or_3_in_both_sets(set1, set2):
     return result
 
 
-# 495. Функция для нахождения чисел, которые делятся на 4 и присутствуют в обоих множествах
+# 362. Функция для нахождения чисел, которые делятся на 4 и присутствуют в обоих множествах
 def find_divisible_by_4_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 4 == 0})
     if not result:
@@ -4503,7 +3955,7 @@ def find_divisible_by_4_in_both_sets(set1, set2):
     return result
 
 
-# 496. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
+# 363. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
 def find_in_set_not_other_v2(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -4511,7 +3963,7 @@ def find_in_set_not_other_v2(set1, set2):
     return result
 
 
-# 497. Функция для нахождения чисел, которые присутствуют в одном из двух множеств
+# 364. Функция для нахождения чисел, которые присутствуют в одном из двух множеств
 def find_in_any_set(set1, set2):
     result = list(set1 | set2)  # Объединение
     if not result:
@@ -4519,7 +3971,7 @@ def find_in_any_set(set1, set2):
     return result
 
 
-# 498. Функция для нахождения чисел, которые делятся на 7 и присутствуют в обоих множествах
+# 365. Функция для нахождения чисел, которые делятся на 7 и присутствуют в обоих множествах
 def find_divisible_by_7_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 7 == 0})
     if not result:
@@ -4527,7 +3979,7 @@ def find_divisible_by_7_in_both_sets(set1, set2):
     return result
 
 
-# 499. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
+# 366. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
 def find_difference_in_sets(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -4535,7 +3987,7 @@ def find_difference_in_sets(set1, set2):
     return result
 
 
-# 500. Функция для нахождения чисел, которые не делятся на 2, но присутствуют в обоих множествах
+# 367. Функция для нахождения чисел, которые не делятся на 2, но присутствуют в обоих множествах
 def find_not_divisible_by_2_in_both_sets(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 2 == 0})
     if not result:
@@ -4543,7 +3995,7 @@ def find_not_divisible_by_2_in_both_sets(set1, set2):
     return result
 
 
-# 501. Функция для нахождения чисел, которые являются общими для трёх множеств
+# 368. Функция для нахождения чисел, которые являются общими для трёх множеств
 def find_common_in_three_sets(set1, set2, set3):
     result = list(set1 & set2 & set3)
     if not result:
@@ -4551,7 +4003,7 @@ def find_common_in_three_sets(set1, set2, set3):
     return result
 
 
-# 502. Функция для нахождения чисел, которые являются разностью элементов из трёх множеств
+# 369. Функция для нахождения чисел, которые являются разностью элементов из трёх множеств
 def find_difference_in_three_sets(set1, set2, set3):
     result = list(set1 - set2 - set3)
     if not result:
@@ -4559,7 +4011,7 @@ def find_difference_in_three_sets(set1, set2, set3):
     return result
 
 
-# 503. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
+# 370. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
 def find_diff_in_sets_v2(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -4567,7 +4019,7 @@ def find_diff_in_sets_v2(set1, set2):
     return result
 
 
-# 504. Функция для нахождения чисел, которые не делятся на 5 и присутствуют в обоих множествах
+# 371. Функция для нахождения чисел, которые не делятся на 5 и присутствуют в обоих множествах
 def find_not_divisible_by_5_in_both_sets(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 5 == 0})
     if not result:
@@ -4575,7 +4027,7 @@ def find_not_divisible_by_5_in_both_sets(set1, set2):
     return result
 
 
-# 505. Функция для нахождения чисел, которые делятся на 3 или 6 и присутствуют в обоих множествах
+# 372. Функция для нахождения чисел, которые делятся на 3 или 6 и присутствуют в обоих множествах
 def find_divisible_by_3_or_6_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 3 == 0 or num % 6 == 0})
     if not result:
@@ -4583,7 +4035,7 @@ def find_divisible_by_3_or_6_in_both_sets(set1, set2):
     return result
 
 
-# 506. Функция для нахождения чисел, которые являются общими для двух множеств и делятся на 3
+# 373. Функция для нахождения чисел, которые являются общими для двух множеств и делятся на 3
 def find_common_in_sets_divisible_by_3(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 3 == 0})
     if not result:
@@ -4591,7 +4043,7 @@ def find_common_in_sets_divisible_by_3(set1, set2):
     return result
 
 
-# 507. Функция для нахождения чисел, которые делятся на 6, но не на 12 и присутствуют в двух множествах
+# 374. Функция для нахождения чисел, которые делятся на 6, но не на 12 и присутствуют в двух множествах
 def find_divisible_by_6_not_12_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 6 == 0 and num % 12 != 0})
     if not result:
@@ -4599,7 +4051,7 @@ def find_divisible_by_6_not_12_in_both_sets(set1, set2):
     return result
 
 
-# 508. Функция для нахождения чисел, которые не присутствуют в обоих множествах
+# 375. Функция для нахождения чисел, которые не присутствуют в обоих множествах
 def find_not_in_both_sets(set1, set2):
     result = list(set1 ^ set2)  # Симметрическая разница
     if not result:
@@ -4607,7 +4059,7 @@ def find_not_in_both_sets(set1, set2):
     return result
 
 
-# 509. Функция для нахождения чисел, которые являются разницей между тремя множествами
+# 376. Функция для нахождения чисел, которые являются разницей между тремя множествами
 def find_difference_between_three_sets(set1, set2, set3):
     result = list(set1 - set2 - set3)
     if not result:
@@ -4615,7 +4067,7 @@ def find_difference_between_three_sets(set1, set2, set3):
     return result
 
 
-# 510. Функция для нахождения чисел, которые делятся на 2, но не на 3, и присутствуют в двух множествах
+# 377. Функция для нахождения чисел, которые делятся на 2, но не на 3, и присутствуют в двух множествах
 def find_divisible_by_2_not_3_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0 and num % 3 != 0})
     if not result:
@@ -4623,7 +4075,7 @@ def find_divisible_by_2_not_3_in_both_sets(set1, set2):
     return result
 
 
-# 511. Функция для нахождения чисел, которые присутствуют в обоих множествах и не делятся на 4
+# 378. Функция для нахождения чисел, которые присутствуют в обоих множествах и не делятся на 4
 def find_common_not_divisible_by_4(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 4 == 0})
     if not result:
@@ -4631,7 +4083,7 @@ def find_common_not_divisible_by_4(set1, set2):
     return result
 
 
-# 512. Функция для нахождения чисел, которые присутствуют только в одном из двух множеств
+# 379. Функция для нахождения чисел, которые присутствуют только в одном из двух множеств
 def find_unique_in_sets(set1, set2):
     result = list(set1 ^ set2)  # Симметрическая разница
     if not result:
@@ -4639,7 +4091,7 @@ def find_unique_in_sets(set1, set2):
     return result
 
 
-# 513. Функция для нахождения чисел, которые являются общими для всех трёх множеств
+# 380. Функция для нахождения чисел, которые являются общими для всех трёх множеств
 def find_common_in_all_sets(set1, set2, set3):
     result = list(set1 & set2 & set3)
     if not result:
@@ -4647,7 +4099,7 @@ def find_common_in_all_sets(set1, set2, set3):
     return result
 
 
-# 514. Функция для нахождения чисел, которые присутствуют в двух множествах и не делятся на 3
+# 381. Функция для нахождения чисел, которые присутствуют в двух множествах и не делятся на 3
 def find_in_both_sets_not_divisible_by_3(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 3 == 0})
     if not result:
@@ -4655,7 +4107,7 @@ def find_in_both_sets_not_divisible_by_3(set1, set2):
     return result
 
 
-# 515. Функция для нахождения чисел, которые присутствуют только в одном из двух множеств
+# 382. Функция для нахождения чисел, которые присутствуют только в одном из двух множеств
 def find_unique_in_one_set(set1, set2):
     result = list(set1 ^ set2)  # Симметрическая разница
     if not result:
@@ -4663,7 +4115,7 @@ def find_unique_in_one_set(set1, set2):
     return result
 
 
-# 516. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
+# 383. Функция для нахождения чисел, которые присутствуют в одном множестве, но не в другом
 def find_in_set_not_other_v3(set1, set2):
     result = []
     for elem in set1:
@@ -4674,7 +4126,7 @@ def find_in_set_not_other_v3(set1, set2):
     return result
 
 
-# 517. Функция для нахождения чисел, которые являются пересечением двух множеств и делятся на 3
+# 384. Функция для нахождения чисел, которые являются пересечением двух множеств и делятся на 3
 def find_common_divisible_by_3(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4685,7 +4137,7 @@ def find_common_divisible_by_3(set1, set2):
     return result
 
 
-# 518. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
+# 385. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
 def find_in_one_set_not_other_v3(set1, set2):
     result = []
     for elem in set1 | set2:
@@ -4696,7 +4148,7 @@ def find_in_one_set_not_other_v3(set1, set2):
     return result
 
 
-# 519. Функция для нахождения чисел, которые делятся на 2, но не на 4 и присутствуют в двух множествах
+# 386. Функция для нахождения чисел, которые делятся на 2, но не на 4 и присутствуют в двух множествах
 def find_divisible_by_2_not_4_in_both_sets(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4707,7 +4159,7 @@ def find_divisible_by_2_not_4_in_both_sets(set1, set2):
     return result
 
 
-# 520. Функция для нахождения чисел, которые присутствуют в двух множествах и не делятся на 5
+# 387. Функция для нахождения чисел, которые присутствуют в двух множествах и не делятся на 5
 def find_in_both_sets_not_divisible_by_5(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4718,7 +4170,7 @@ def find_in_both_sets_not_divisible_by_5(set1, set2):
     return result
 
 
-# 521. Функция для нахождения чисел, которые присутствуют в обоих множествах и делятся на 3
+# 388. Функция для нахождения чисел, которые присутствуют в обоих множествах и делятся на 3
 def find_in_both_sets_divisible_by_3(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4729,7 +4181,7 @@ def find_in_both_sets_divisible_by_3(set1, set2):
     return result
 
 
-# 522. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
+# 389. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
 def find_unique_in_sets_v2(set1, set2):
     result = []
     for elem in set1 ^ set2:  # Симметрическая разница
@@ -4739,7 +4191,7 @@ def find_unique_in_sets_v2(set1, set2):
     return result
 
 
-# 523. Функция для нахождения чисел, которые присутствуют в первом множестве, но не во втором, и делятся на 7
+# 390. Функция для нахождения чисел, которые присутствуют в первом множестве, но не во втором, и делятся на 7
 def find_in_first_set_not_second_divisible_by_7(set1, set2):
     result = []
     for elem in set1 - set2:
@@ -4750,7 +4202,7 @@ def find_in_first_set_not_second_divisible_by_7(set1, set2):
     return result
 
 
-# 524. Функция для нахождения чисел, которые делятся на 6, но не на 12 и присутствуют в двух множествах
+# 391. Функция для нахождения чисел, которые делятся на 6, но не на 12 и присутствуют в двух множествах
 def find_divisible_by_6_not_12_in_both_sets_2(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4761,7 +4213,7 @@ def find_divisible_by_6_not_12_in_both_sets_2(set1, set2):
     return result
 
 
-# 525. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих, и делятся на 5
+# 392. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих, и делятся на 5
 def find_in_one_set_not_other_divisible_by_5(set1, set2):
     result = []
     for elem in set1 ^ set2:  # Симметрическая разница
@@ -4772,7 +4224,7 @@ def find_in_one_set_not_other_divisible_by_5(set1, set2):
     return result
 
 
-# 526. Функция для нахождения чисел, которые являются общими для двух множеств и делятся на 4
+# 393. Функция для нахождения чисел, которые являются общими для двух множеств и делятся на 4
 def find_common_in_sets_divisible_by_4(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4783,21 +4235,7 @@ def find_common_in_sets_divisible_by_4(set1, set2):
     return result
 
 
-# 527. Функция для нахождения чисел, которые присутствуют только в одном множестве
-def find_unique_in_one_set_v2(set1, set2):
-    result = []
-    for elem in set1:
-        if elem not in set2:
-            result.append(elem)
-    for elem in set2:
-        if elem not in set1:
-            result.append(elem)
-    if not result:
-        return None
-    return result
-
-
-# 528. Функция для нахождения чисел, которые делятся на 3 и присутствуют в обоих множествах
+# 394. Функция для нахождения чисел, которые делятся на 3 и присутствуют в обоих множествах
 def find_divisible_by_3_in_both_sets(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4808,7 +4246,7 @@ def find_divisible_by_3_in_both_sets(set1, set2):
     return result
 
 
-# 529. Функция для нахождения чисел, которые присутствуют только в одном из двух множеств, но не в другом
+# 395. Функция для нахождения чисел, которые присутствуют только в одном из двух множеств, но не в другом
 def find_difference_in_sets_v2(set1, set2):
     result = []
     for elem in set1 - set2:
@@ -4820,7 +4258,7 @@ def find_difference_in_sets_v2(set1, set2):
     return result
 
 
-# 530. Функция для нахождения чисел, которые присутствуют в двух множествах и делятся на 4
+# 396. Функция для нахождения чисел, которые присутствуют в двух множествах и делятся на 4
 def find_divisible_by_4_in_both_sets_2(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4831,7 +4269,7 @@ def find_divisible_by_4_in_both_sets_2(set1, set2):
     return result
 
 
-# 531. Функция для нахождения чисел, которые присутствуют только в одном множестве и не делятся на 3
+# 397. Функция для нахождения чисел, которые присутствуют только в одном множестве и не делятся на 3
 def find_unique_not_divisible_by_3(set1, set2):
     result = []
     for elem in set1 - set2:
@@ -4845,7 +4283,7 @@ def find_unique_not_divisible_by_3(set1, set2):
     return result
 
 
-# 532. Функция для нахождения чисел, которые делятся на 5 и присутствуют в двух множествах
+# 398. Функция для нахождения чисел, которые делятся на 5 и присутствуют в двух множествах
 def find_divisible_by_5_in_both_sets(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4856,7 +4294,7 @@ def find_divisible_by_5_in_both_sets(set1, set2):
     return result
 
 
-# 533. Функция для нахождения чисел, которые присутствуют в обоих множествах и не делятся на 2
+# 399. Функция для нахождения чисел, которые присутствуют в обоих множествах и не делятся на 2
 def find_in_both_sets_not_divisible_by_2(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4867,7 +4305,7 @@ def find_in_both_sets_not_divisible_by_2(set1, set2):
     return result
 
 
-# 534. Функция для нахождения чисел, которые являются разностью между двумя множествами
+# 400. Функция для нахождения чисел, которые являются разностью между двумя множествами
 def find_difference_between_sets(set1, set2):
     result = list(set1 - set2)
     if not result:
@@ -4875,7 +4313,7 @@ def find_difference_between_sets(set1, set2):
     return result
 
 
-# 535. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
+# 401. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
 def find_unique_elements_in_sets(set1, set2):
     result = list(set1 ^ set2)  # Симметрическая разница
     if not result:
@@ -4883,7 +4321,7 @@ def find_unique_elements_in_sets(set1, set2):
     return result
 
 
-# 536. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
+# 402. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
 def find_divisible_by_2_in_both_sets_2(set1, set2):
     result = []
     for elem in set1 & set2:
@@ -4894,7 +4332,7 @@ def find_divisible_by_2_in_both_sets_2(set1, set2):
     return result
 
 
-# 537. Функция для нахождения чисел, которые присутствуют в первом множестве, но не во втором
+# 403. Функция для нахождения чисел, которые присутствуют в первом множестве, но не во втором
 def find_in_first_set_not_second(set1, set2):
     result = []
     for elem in set1 - set2:
@@ -4904,7 +4342,7 @@ def find_in_first_set_not_second(set1, set2):
     return result
 
 
-# 538. Функция для нахождения чисел, которые делятся на 5 и присутствуют только в одном множестве
+# 404. Функция для нахождения чисел, которые делятся на 5 и присутствуют только в одном множестве
 def find_divisible_by_5_in_one_set(set1, set2):
     result = []
     for elem in set1:
@@ -4915,37 +4353,34 @@ def find_divisible_by_5_in_one_set(set1, set2):
     return result
 
 
-# 539. Функция для проверки, является ли стек пустым
+# 405. Функция для проверки, является ли стек пустым
 def is_stack_empty(stack):
     if len(stack) == 0:
         return True
     return False
 
 
-# 540. Функция для добавления элементов в стек, пока не будет достигнут определённый предел
+# 406. Функция для добавления элементов в стек, пока не будет достигнут определённый предел
 def fill_stack_until_limit(stack, limit):
     while len(stack) < limit:
         stack.append(len(stack) + 1)
     return stack
 
 
-# 541. Функция для пополнения стека числами от 1 до N
+# 407. Функция для пополнения стека числами от 1 до N
 def fill_stack_up_to_n(stack, n):
     for i in range(1, n + 1):
         stack.append(i)
     return stack
 
 
-# 542. Функция для извлечения всех элементов из стека и их возвращения в обратном порядке
-def reverse_stack(stack):
-    reversed_stack = []
-    while stack:
-        reversed_stack.append(stack.pop())
-    return reversed_stack
-
-
-# 543. Функция для проверки, является ли стек палиндромом
+# 408. Функция для проверки, является ли стек палиндромом
 def is_stack_palindrome(stack):
+    def reverse_stack(stack):
+        reversed_stack = []
+        while stack:
+            reversed_stack.append(stack.pop())
+        return reversed_stack
     original = list(stack)  # Копия стека
     reversed_stack = reverse_stack(stack)
     if original == reversed_stack:
@@ -4953,7 +4388,7 @@ def is_stack_palindrome(stack):
     return False
 
 
-# 544. Функция для извлечения и возврата элементов из стека, пока не встретится число, большее чем X
+# 409. Функция для извлечения и возврата элементов из стека, пока не встретится число, большее чем X
 def pop_until_greater_than_x(stack, x):
     popped_elements = []
     while stack:
@@ -4967,7 +4402,7 @@ def pop_until_greater_than_x(stack, x):
     return popped_elements
 
 
-# 545. Функция для извлечения и возврата всех элементов стека, меньших чем Y
+# 410. Функция для извлечения и возврата всех элементов стека, меньших чем Y
 def pop_elements_less_than_y(stack, y):
     result = []
     while stack:
@@ -4979,7 +4414,7 @@ def pop_elements_less_than_y(stack, y):
     return result
 
 
-# 546. Функция для удаления всех нечётных чисел из стека
+# 411. Функция для удаления всех нечётных чисел из стека
 def remove_odds_from_stack(stack):
     result = []
     while stack:
@@ -4991,7 +4426,7 @@ def remove_odds_from_stack(stack):
     return result
 
 
-# 547. Функция для извлечения элементов из стека до тех пор, пока сумма элементов не превысит X
+# 412. Функция для извлечения элементов из стека до тех пор, пока сумма элементов не превысит X
 def pop_until_sum_exceeds_x(stack, x):
     popped_elements = []
     current_sum = 0
@@ -5004,7 +4439,7 @@ def pop_until_sum_exceeds_x(stack, x):
     return popped_elements
 
 
-# 548. Функция для извлечения всех элементов из стека, которые делятся на 3
+# 413. Функция для извлечения всех элементов из стека, которые делятся на 3
 def pop_elements_divisible_by_3(stack):
     result = []
     while stack:
@@ -5016,7 +4451,7 @@ def pop_elements_divisible_by_3(stack):
     return result
 
 
-# 549. Функция для поиска и извлечения наименьшего элемента из стека
+# 414. Функция для поиска и извлечения наименьшего элемента из стека
 def pop_min_element(stack):
     if not stack:
         return None
@@ -5025,7 +4460,7 @@ def pop_min_element(stack):
     return min_elem
 
 
-# 550. Функция для создания нового стека с удвоенными значениями исходного стека
+# 415. Функция для создания нового стека с удвоенными значениями исходного стека
 def double_stack_values(stack):
     new_stack = []
     while stack:
@@ -5034,7 +4469,7 @@ def double_stack_values(stack):
     return new_stack
 
 
-# 551. Функция для извлечения элементов, пока не встретится чётное число
+# 416. Функция для извлечения элементов, пока не встретится чётное число
 def pop_until_even(stack):
     result = []
     while stack:
@@ -5048,7 +4483,7 @@ def pop_until_even(stack):
     return result
 
 
-# 552. Функция для извлечения всех чисел из стека, которые являются простыми
+# 417. Функция для извлечения всех чисел из стека, которые являются простыми
 def pop_prime_numbers(stack):
     def is_prime(n):
         if n < 2:
@@ -5068,7 +4503,7 @@ def pop_prime_numbers(stack):
     return result
 
 
-# 553. Функция для извлечения элементов из стека до тех пор, пока не встретится число, которое делится на 4
+# 418. Функция для извлечения элементов из стека до тех пор, пока не встретится число, которое делится на 4
 def pop_until_divisible_by_4(stack):
     result = []
     while stack:
@@ -5082,7 +4517,7 @@ def pop_until_divisible_by_4(stack):
     return result
 
 
-# 554. Функция для удаления из стека всех чисел, которые не делятся на 2
+# 419. Функция для удаления из стека всех чисел, которые не делятся на 2
 def remove_non_divisible_by_2(stack):
     result = []
     while stack:
@@ -5094,7 +4529,7 @@ def remove_non_divisible_by_2(stack):
     return result
 
 
-# 557. Функция для нахождения и удаления всех чётных чисел из стека
+# 420. Функция для нахождения и удаления всех чётных чисел из стека
 def remove_even_from_stack(stack):
     result = []
     while stack:
@@ -5106,7 +4541,7 @@ def remove_even_from_stack(stack):
     return result
 
 
-# 558. Функция для извлечения всех чисел из стека, которые больше чем X
+# 421. Функция для извлечения всех чисел из стека, которые больше чем X
 def pop_elements_greater_than_x(stack, x):
     result = []
     while stack:
@@ -5118,7 +4553,7 @@ def pop_elements_greater_than_x(stack, x):
     return result
 
 
-# 559. Функция для нахождения всех чётных чисел в стеке
+# 422. Функция для нахождения всех чётных чисел в стеке
 def find_even_in_stack(stack):
     result = []
     while stack:
@@ -5130,7 +4565,7 @@ def find_even_in_stack(stack):
     return result
 
 
-# 560. Функция для удаления всех чисел, которые делятся на 5 из стека
+# 423. Функция для удаления всех чисел, которые делятся на 5 из стека
 def remove_divisible_by_5_from_stack(stack):
     result = []
     while stack:
@@ -5142,7 +4577,7 @@ def remove_divisible_by_5_from_stack(stack):
     return result
 
 
-# 561. Функция для удаления максимального элемента из стека
+# 424. Функция для удаления максимального элемента из стека
 def remove_max_from_stack(stack):
     if not stack:
         return None
@@ -5151,7 +4586,7 @@ def remove_max_from_stack(stack):
     return max_elem
 
 
-# 562. Функция для нахождения и извлечения всех чисел, которые не делятся на 3
+# 425. Функция для нахождения и извлечения всех чисел, которые не делятся на 3
 def pop_elements_not_divisible_by_3(stack):
     result = []
     while stack:
@@ -5163,7 +4598,7 @@ def pop_elements_not_divisible_by_3(stack):
     return result
 
 
-# 563. Функция для извлечения элементов из стека, пока их сумма не станет больше X
+# 426. Функция для извлечения элементов из стека, пока их сумма не станет больше X
 def pop_until_sum_exceeds(stack, x):
     result = []
     total = 0
@@ -5178,7 +4613,7 @@ def pop_until_sum_exceeds(stack, x):
     return result
 
 
-# 564. Функция для нахождения элементов, которые меньше, чем среднее значение стека
+# 427. Функция для нахождения элементов, которые меньше, чем среднее значение стека
 def pop_elements_less_than_average(stack):
     result = []
     if not stack:
@@ -5193,7 +4628,7 @@ def pop_elements_less_than_average(stack):
     return result
 
 
-# 565. Функция для нахождения элементов, которые не встречаются более одного раза в стеке
+# 428. Функция для нахождения элементов, которые не встречаются более одного раза в стеке
 def pop_unique_elements(stack):
     result = []
     element_count = {}
@@ -5209,7 +4644,7 @@ def pop_unique_elements(stack):
     return result
 
 
-# 566. Функция для извлечения всех элементов стека, которые делятся на 5
+# 429. Функция для извлечения всех элементов стека, которые делятся на 5
 def pop_elements_divisible_by_5(stack):
     result = []
     while stack:
@@ -5221,7 +4656,7 @@ def pop_elements_divisible_by_5(stack):
     return result
 
 
-# 567. Функция для нахождения элементов, которые больше, чем X, и возвращения их в обратном порядке
+# 430. Функция для нахождения элементов, которые больше, чем X, и возвращения их в обратном порядке
 def pop_elements_greater_than_x_reverse(stack, x):
     result = []
     while stack:
@@ -5233,7 +4668,7 @@ def pop_elements_greater_than_x_reverse(stack, x):
     return result[::-1]
 
 
-# 568. Функция для удаления всех элементов, которые меньше, чем X, из стека
+# 431. Функция для удаления всех элементов, которые меньше, чем X, из стека
 def remove_less_than_x(stack, x):
     result = []
     while stack:
@@ -5245,7 +4680,7 @@ def remove_less_than_x(stack, x):
     return result
 
 
-# 569. Функция для нахождения наименьшего элемента в стеке
+# 432. Функция для нахождения наименьшего элемента в стеке
 def find_min_in_stack(stack):
     if not stack:
         return None
@@ -5253,7 +4688,7 @@ def find_min_in_stack(stack):
     return min_elem
 
 
-# 570. Функция для извлечения элементов, пока не встретится число, которое делится на 6
+# 433. Функция для извлечения элементов, пока не встретится число, которое делится на 6
 def pop_until_divisible_by_6(stack):
     result = []
     while stack:
@@ -5267,7 +4702,7 @@ def pop_until_divisible_by_6(stack):
     return result
 
 
-# 571. Функция для нахождения всех чисел в стеке, которые являются чётными и делятся на 4
+# 434. Функция для нахождения всех чисел в стеке, которые являются чётными и делятся на 4
 def find_even_divisible_by_4(stack):
     result = []
     while stack:
@@ -5279,19 +4714,7 @@ def find_even_divisible_by_4(stack):
     return result
 
 
-# 572. Функция для нахождения чисел в стеке, которые делятся на 3, но не на 6
-def find_divisible_by_3_not_6(stack):
-    result = []
-    while stack:
-        elem = stack.pop()
-        if elem % 3 == 0 and elem % 6 != 0:
-            result.append(elem)
-    if not result:
-        return None
-    return result
-
-
-# 573. Функция для извлечения всех нечётных чисел из стека
+# 435. Функция для извлечения всех нечётных чисел из стека
 def pop_odd_elements(stack):
     result = []
     while stack:
@@ -5303,7 +4726,7 @@ def pop_odd_elements(stack):
     return result
 
 
-# 574. Функция для нахождения всех чисел, которые меньше X, и их удаления из стека
+# 436. Функция для нахождения всех чисел, которые меньше X, и их удаления из стека
 def remove_less_than_x_v2(stack, x):
     result = []
     while stack:
@@ -5315,7 +4738,7 @@ def remove_less_than_x_v2(stack, x):
     return result
 
 
-# 575. Функция для нахождения всех чисел в стеке, которые являются квадратами целых чисел
+# 437. Функция для нахождения всех чисел в стеке, которые являются квадратами целых чисел
 def find_square_numbers_in_stack(stack):
     result = []
     while stack:
@@ -5327,7 +4750,7 @@ def find_square_numbers_in_stack(stack):
     return result
 
 
-# 576. Функция для нахождения наибольшего элемента в стеке
+# 438. Функция для нахождения наибольшего элемента в стеке
 def find_max_in_stack(stack):
     if not stack:
         return None
@@ -5335,7 +4758,7 @@ def find_max_in_stack(stack):
     return max_elem
 
 
-# 577. Функция для извлечения всех элементов стека, которые делятся на 7
+# 439. Функция для извлечения всех элементов стека, которые делятся на 7
 def pop_elements_divisible_by_7(stack):
     result = []
     while stack:
@@ -5347,7 +4770,7 @@ def pop_elements_divisible_by_7(stack):
     return result
 
 
-# 578. Функция для нахождения всех чисел, которые больше X и делятся на 2
+# 440. Функция для нахождения всех чисел, которые больше X и делятся на 2
 def find_greater_than_x_divisible_by_2(stack, x):
     result = []
     while stack:
@@ -5359,7 +4782,7 @@ def find_greater_than_x_divisible_by_2(stack, x):
     return result
 
 
-# 579. Функция для извлечения и удаления всех элементов стека, которые не делятся на 4
+# 441. Функция для извлечения и удаления всех элементов стека, которые не делятся на 4
 def remove_not_divisible_by_4(stack):
     result = []
     while stack:
@@ -5371,7 +4794,7 @@ def remove_not_divisible_by_4(stack):
     return result
 
 
-# 580. Функция для извлечения всех чисел, которые делятся на 10, из стека
+# 442. Функция для извлечения всех чисел, которые делятся на 10, из стека
 def pop_elements_divisible_by_10(stack):
     result = []
     while stack:
@@ -5383,7 +4806,7 @@ def pop_elements_divisible_by_10(stack):
     return result
 
 
-# 581. Функция для нахождения всех элементов стека, которые делятся на 3 и на 5
+# 443. Функция для нахождения всех элементов стека, которые делятся на 3 и на 5
 def find_divisible_by_3_and_5(stack):
     result = []
     while stack:
@@ -5395,7 +4818,7 @@ def find_divisible_by_3_and_5(stack):
     return result
 
 
-# 582. Функция для удаления всех элементов стека, которые больше X
+# 444. Функция для удаления всех элементов стека, которые больше X
 def remove_greater_than_x(stack, x):
     result = []
     while stack:
@@ -5407,19 +4830,7 @@ def remove_greater_than_x(stack, x):
     return result
 
 
-# 583. Функция для нахождения чисел, которые делятся на 2 или на 3
-def find_divisible_by_2_or_3(stack):
-    result = []
-    while stack:
-        elem = stack.pop()
-        if elem % 2 == 0 or elem % 3 == 0:
-            result.append(elem)
-    if not result:
-        return None
-    return result
-
-
-# 584. Функция для извлечения и удаления всех чисел, которые больше, чем X и чётные
+# 445. Функция для извлечения и удаления всех чисел, которые больше, чем X и чётные
 def pop_elements_greater_than_x_even(stack, x):
     result = []
     while stack:
@@ -5431,7 +4842,7 @@ def pop_elements_greater_than_x_even(stack, x):
     return result
 
 
-# 585. Функция для извлечения элементов из очереди, пока их сумма не станет больше X
+# 446. Функция для извлечения элементов из очереди, пока их сумма не станет больше X
 def process_queue_until_sum_exceeds(queue, x):
     result = []
     total = 0
@@ -5446,7 +4857,7 @@ def process_queue_until_sum_exceeds(queue, x):
     return result
 
 
-# 586. Функция для нахождения всех элементов в очереди, которые меньше среднего
+# 447. Функция для нахождения всех элементов в очереди, которые меньше среднего
 def process_queue_less_than_average(queue):
     result = []
     if not queue:
@@ -5461,7 +4872,7 @@ def process_queue_less_than_average(queue):
     return result
 
 
-# 587. Функция для нахождения уникальных элементов, встречающихся только один раз в очереди
+# 448. Функция для нахождения уникальных элементов, встречающихся только один раз в очереди
 def process_queue_unique_elements(queue):
     result = []
     element_count = {}
@@ -5477,7 +4888,7 @@ def process_queue_unique_elements(queue):
     return result
 
 
-# 588. Функция для извлечения всех чисел, которые делятся на 5 из очереди
+# 449. Функция для извлечения всех чисел, которые делятся на 5 из очереди
 def process_queue_divisible_by_5(queue):
     result = []
     while queue:
@@ -5489,7 +4900,7 @@ def process_queue_divisible_by_5(queue):
     return result
 
 
-# 589. Функция для извлечения всех чисел из очереди, которые больше X
+# 450. Функция для извлечения всех чисел из очереди, которые больше X
 def process_queue_greater_than_x(queue, x):
     result = []
     while queue:
@@ -5501,7 +4912,7 @@ def process_queue_greater_than_x(queue, x):
     return result
 
 
-# 590. Функция для извлечения всех чисел из очереди, которые делятся на 2, но не на 4
+# 451. Функция для извлечения всех чисел из очереди, которые делятся на 2, но не на 4
 def process_queue_divisible_by_2_not_4(queue):
     result = []
     while queue:
@@ -5513,7 +4924,7 @@ def process_queue_divisible_by_2_not_4(queue):
     return result
 
 
-# 591. Функция для нахождения всех элементов, которые делятся на 7 из очереди
+# 452. Функция для нахождения всех элементов, которые делятся на 7 из очереди
 def process_queue_divisible_by_7(queue):
     result = []
     while queue:
@@ -5525,7 +4936,7 @@ def process_queue_divisible_by_7(queue):
     return result
 
 
-# 593. Функция для извлечения и возвращения всех элементов из очереди, которые являются нечётными
+# 453. Функция для извлечения и возвращения всех элементов из очереди, которые являются нечётными
 def process_queue_odd_elements(queue):
     result = []
     while queue:
@@ -5537,7 +4948,7 @@ def process_queue_odd_elements(queue):
     return result
 
 
-# 594. Функция для извлечения и возвращения всех чисел, которые являются квадратами целых чисел
+# 454. Функция для извлечения и возвращения всех чисел, которые являются квадратами целых чисел
 def process_queue_square_numbers(queue):
     result = []
     while queue:
@@ -5549,7 +4960,7 @@ def process_queue_square_numbers(queue):
     return result
 
 
-# 595. Функция для извлечения всех чисел, которые делятся на 3 или на 5
+# 455. Функция для извлечения всех чисел, которые делятся на 3 или на 5
 def process_queue_divisible_by_3_or_5(queue):
     result = []
     while queue:
@@ -5561,7 +4972,7 @@ def process_queue_divisible_by_3_or_5(queue):
     return result
 
 
-# 596. Функция для извлечения всех чисел, которые делятся на 3, но не на 6
+# 456. Функция для извлечения всех чисел, которые делятся на 3, но не на 6
 def process_queue_divisible_by_3_not_6(queue):
     result = []
     while queue:
@@ -5573,7 +4984,7 @@ def process_queue_divisible_by_3_not_6(queue):
     return result
 
 
-# 597. Функция для удаления всех чисел из очереди, которые меньше, чем X
+# 457. Функция для удаления всех чисел из очереди, которые меньше, чем X
 def process_queue_remove_less_than_x(queue, x):
     result = []
     while queue:
@@ -5585,7 +4996,7 @@ def process_queue_remove_less_than_x(queue, x):
     return result
 
 
-# 598. Функция для извлечения всех чисел, которые меньше X
+# 458. Функция для извлечения всех чисел, которые меньше X
 def process_queue_less_than_x(queue, x):
     result = []
     while queue:
@@ -5597,7 +5008,7 @@ def process_queue_less_than_x(queue, x):
     return result
 
 
-# 599. Функция для нахождения и извлечения минимального элемента из очереди
+# 459. Функция для нахождения и извлечения минимального элемента из очереди
 def process_queue_min_element(queue):
     if not queue:
         return None
@@ -5606,7 +5017,7 @@ def process_queue_min_element(queue):
     return min_elem
 
 
-# 600. Функция для удаления всех элементов из очереди, которые больше X
+# 460. Функция для удаления всех элементов из очереди, которые больше X
 def process_queue_remove_greater_than_x(queue, x):
     result = []
     while queue:
@@ -5618,7 +5029,7 @@ def process_queue_remove_greater_than_x(queue, x):
     return result
 
 
-# 601. Функция для нахождения и извлечения максимального элемента из очереди
+# 461. Функция для нахождения и извлечения максимального элемента из очереди
 def process_queue_max_element(queue):
     if not queue:
         return None
@@ -5627,7 +5038,7 @@ def process_queue_max_element(queue):
     return max_elem
 
 
-# 602. Функция для удаления всех элементов из очереди, которые делятся на 4
+# 462. Функция для удаления всех элементов из очереди, которые делятся на 4
 def process_queue_remove_divisible_by_4(queue):
     result = []
     while queue:
@@ -5639,7 +5050,7 @@ def process_queue_remove_divisible_by_4(queue):
     return result
 
 
-# 603. Функция для извлечения всех чисел, которые больше X, и делятся на 2
+# 463. Функция для извлечения всех чисел, которые больше X, и делятся на 2
 def process_queue_greater_than_x_and_divisible_by_2(queue, x):
     result = []
     while queue:
@@ -5651,7 +5062,7 @@ def process_queue_greater_than_x_and_divisible_by_2(queue, x):
     return result
 
 
-# 604. Функция для извлечения всех элементов из очереди, которые больше X и делятся на 3
+# 464. Функция для извлечения всех элементов из очереди, которые больше X и делятся на 3
 def process_queue_greater_than_x_and_divisible_by_3(queue, x):
     result = []
     while queue:
@@ -5663,7 +5074,7 @@ def process_queue_greater_than_x_and_divisible_by_3(queue, x):
     return result
 
 
-# 605. Функция для извлечения всех элементов из очереди, которые меньше X и не делятся на 5
+# 465. Функция для извлечения всех элементов из очереди, которые меньше X и не делятся на 5
 def process_queue_less_than_x_not_divisible_by_5(queue, x):
     result = []
     while queue:
@@ -5675,7 +5086,7 @@ def process_queue_less_than_x_not_divisible_by_5(queue, x):
     return result
 
 
-# 606. Функция для нахождения всех чисел в очереди, которые являются чётными и делятся на 4
+# 466. Функция для нахождения всех чисел в очереди, которые являются чётными и делятся на 4
 def process_queue_even_and_divisible_by_4(queue):
     result = []
     while queue:
@@ -5687,7 +5098,7 @@ def process_queue_even_and_divisible_by_4(queue):
     return result
 
 
-# 607. Функция для нахождения всех элементов, которые не делятся на 3 и на 5
+# 467. Функция для нахождения всех элементов, которые не делятся на 3 и на 5
 def process_queue_not_divisible_by_3_and_5(queue):
     result = []
     while queue:
@@ -5699,7 +5110,7 @@ def process_queue_not_divisible_by_3_and_5(queue):
     return result
 
 
-# 608. Функция для нахождения всех элементов в кортеже, которые больше X
+# 468. Функция для нахождения всех элементов в кортеже, которые больше X
 def find_elements_greater_than_x(tpl, x):
     result = []
     for elem in tpl:
@@ -5710,7 +5121,7 @@ def find_elements_greater_than_x(tpl, x):
     return tuple(result)
 
 
-# 609. Функция для извлечения всех чётных чисел из кортежа
+# 469. Функция для извлечения всех чётных чисел из кортежа
 def find_even_elements_in_tuple(tpl):
     result = []
     for elem in tpl:
@@ -5721,7 +5132,7 @@ def find_even_elements_in_tuple(tpl):
     return tuple(result)
 
 
-# 610. Функция для нахождения всех элементов, которые меньше среднего значения кортежа
+# 470. Функция для нахождения всех элементов, которые меньше среднего значения кортежа
 def find_elements_less_than_average(tpl):
     result = []
     if not tpl:
@@ -5735,7 +5146,7 @@ def find_elements_less_than_average(tpl):
     return tuple(result)
 
 
-# 611. Функция для нахождения всех элементов, которые больше X и делятся на 5
+# 471. Функция для нахождения всех элементов, которые больше X и делятся на 5
 def find_elements_greater_than_x_divisible_by_5(tpl, x):
     result = []
     for elem in tpl:
@@ -5746,7 +5157,7 @@ def find_elements_greater_than_x_divisible_by_5(tpl, x):
     return tuple(result)
 
 
-# 612. Функция для извлечения элементов, которые не встречаются более одного раза в кортеже
+# 472. Функция для извлечения элементов, которые не встречаются более одного раза в кортеже
 def find_unique_elements_in_tuple(tpl):
     result = []
     element_count = {}
@@ -5760,7 +5171,7 @@ def find_unique_elements_in_tuple(tpl):
     return tuple(result)
 
 
-# 613. Функция для нахождения чисел, которые делятся на 3 и на 4
+# 473. Функция для нахождения чисел, которые делятся на 3 и на 4
 def find_divisible_by_3_and_4(tpl):
     result = []
     for elem in tpl:
@@ -5771,7 +5182,7 @@ def find_divisible_by_3_and_4(tpl):
     return tuple(result)
 
 
-# 614. Функция для извлечения всех нечётных чисел из кортежа
+# 474. Функция для извлечения всех нечётных чисел из кортежа
 def find_odd_elements_in_tuple(tpl):
     result = []
     for elem in tpl:
@@ -5782,21 +5193,21 @@ def find_odd_elements_in_tuple(tpl):
     return tuple(result)
 
 
-# 615. Функция для нахождения минимального числа в кортеже
+# 475. Функция для нахождения минимального числа в кортеже
 def find_min_in_tuple(tpl):
     if not tpl:
         return None
     return min(tpl)
 
 
-# 616. Функция для нахождения максимального числа в кортеже
+# 476. Функция для нахождения максимального числа в кортеже
 def find_max_in_tuple(tpl):
     if not tpl:
         return None
     return max(tpl)
 
 
-# 617. Функция для нахождения чисел, которые делятся на 2 или на 5
+# 477. Функция для нахождения чисел, которые делятся на 2 или на 5
 def find_divisible_by_2_or_5(tpl):
     result = []
     for elem in tpl:
@@ -5807,7 +5218,7 @@ def find_divisible_by_2_or_5(tpl):
     return tuple(result)
 
 
-# 618. Функция для извлечения всех чисел, которые делятся на 6
+# 478. Функция для извлечения всех чисел, которые делятся на 6
 def find_divisible_by_6(tpl):
     result = []
     for elem in tpl:
@@ -5818,7 +5229,7 @@ def find_divisible_by_6(tpl):
     return tuple(result)
 
 
-# 619. Функция для нахождения чисел, которые являются квадратами целых чисел
+# 479. Функция для нахождения чисел, которые являются квадратами целых чисел
 def find_square_numbers_in_tuple(tpl):
     result = []
     for elem in tpl:
@@ -5829,7 +5240,7 @@ def find_square_numbers_in_tuple(tpl):
     return tuple(result)
 
 
-# 620. Функция для нахождения чисел, которые больше X, но не делятся на 3
+# 480. Функция для нахождения чисел, которые больше X, но не делятся на 3
 def find_greater_than_x_not_divisible_by_3(tpl, x):
     result = []
     for elem in tpl:
@@ -5840,7 +5251,7 @@ def find_greater_than_x_not_divisible_by_3(tpl, x):
     return tuple(result)
 
 
-# 622. Функция для нахождения всех чисел, которые больше X, и делятся на 3
+# 481. Функция для нахождения всех чисел, которые больше X, и делятся на 3
 def find_greater_than_x_divisible_by_3(tpl, x):
     result = []
     for elem in tpl:
@@ -5851,7 +5262,7 @@ def find_greater_than_x_divisible_by_3(tpl, x):
     return tuple(result)
 
 
-# 623. Функция для нахождения чисел, которые не делятся на 4 и на 5
+# 482. Функция для нахождения чисел, которые не делятся на 4 и на 5
 def find_not_divisible_by_4_and_5(tpl):
     result = []
     for elem in tpl:
@@ -5862,7 +5273,7 @@ def find_not_divisible_by_4_and_5(tpl):
     return tuple(result)
 
 
-# 624. Функция для нахождения чисел, которые меньше X, но делятся на 3
+# 483. Функция для нахождения чисел, которые меньше X, но делятся на 3
 def find_less_than_x_divisible_by_3(tpl, x):
     result = []
     for elem in tpl:
@@ -5873,7 +5284,7 @@ def find_less_than_x_divisible_by_3(tpl, x):
     return tuple(result)
 
 
-# 625. Функция для нахождения чисел, которые делятся на 2 и на 5
+# 484. Функция для нахождения чисел, которые делятся на 2 и на 5
 def find_divisible_by_2_and_5(tpl):
     result = []
     for elem in tpl:
@@ -5884,7 +5295,7 @@ def find_divisible_by_2_and_5(tpl):
     return tuple(result)
 
 
-# 626. Функция для нахождения чисел, которые не являются квадратами целых чисел
+# 485. Функция для нахождения чисел, которые не являются квадратами целых чисел
 def find_not_square_numbers_in_tuple(tpl):
     result = []
     for elem in tpl:
@@ -5895,18 +5306,7 @@ def find_not_square_numbers_in_tuple(tpl):
     return tuple(result)
 
 
-# 627. Функция для извлечения чисел, которые делятся на 9, но не на 3
-def find_divisible_by_9_not_3(tpl):
-    result = []
-    for elem in tpl:
-        if elem % 9 == 0 and elem % 3 != 0:
-            result.append(elem)
-    if not result:
-        return None
-    return tuple(result)
-
-
-# 628. Функция для нахождения чисел, которые делятся на 2 и на 7
+# 486. Функция для нахождения чисел, которые делятся на 2 и на 7
 def find_divisible_by_2_and_7(tpl):
     result = []
     for elem in tpl:
@@ -5917,7 +5317,7 @@ def find_divisible_by_2_and_7(tpl):
     return tuple(result)
 
 
-# 629. Функция для нахождения чисел, которые меньше X и являются нечётными
+# 487. Функция для нахождения чисел, которые меньше X и являются нечётными
 def find_less_than_x_odd(tpl, x):
     result = []
     for elem in tpl:
@@ -5928,7 +5328,7 @@ def find_less_than_x_odd(tpl, x):
     return tuple(result)
 
 
-# 630. Функция для нахождения всех чисел, которые больше X и являются чётными
+# 488. Функция для нахождения всех чисел, которые больше X и являются чётными
 def find_greater_than_x_even(tpl, x):
     result = []
     for elem in tpl:
@@ -5939,7 +5339,7 @@ def find_greater_than_x_even(tpl, x):
     return tuple(result)
 
 
-# 631. Функция для получения уникальных элементов из списка с помощью множества
+# 489. Функция для получения уникальных элементов из списка с помощью множества
 def unique_elements_from_list(lst):
     if not lst:
         return None
@@ -5947,7 +5347,7 @@ def unique_elements_from_list(lst):
     return tuple(unique_elements)
 
 
-# 632. Функция для нахождения пересечения двух списков
+# 490. Функция для нахождения пересечения двух списков
 def intersection_of_lists_2(lst1, lst2):
     result = list(set(lst1) & set(lst2))
     if not result:
@@ -5955,7 +5355,7 @@ def intersection_of_lists_2(lst1, lst2):
     return result
 
 
-# 633. Функция для объединения двух словарей, если они не содержат одинаковых ключей
+# 491. Функция для объединения двух словарей, если они не содержат одинаковых ключей
 def merge_dicts_no_common_keys(d1, d2):
     if any(k in d2 for k in d1):
         return None
@@ -5963,14 +5363,14 @@ def merge_dicts_no_common_keys(d1, d2):
     return merged_dict
 
 
-# 634. Функция для переворота строки
-def reverse_string(s):
+# 492. Функция для переворота строки
+def reverse_string_3(s):
     if not s:
         return None
     return s[::-1]
 
 
-# 635. Функция для нахождения всех чисел, которые являются делителями числа X
+# 493. Функция для нахождения всех чисел, которые являются делителями числа X
 def divisors_of_x(x):
     if x <= 0:
         return None
@@ -5983,7 +5383,7 @@ def divisors_of_x(x):
     return divisors
 
 
-# 636. Функция для подсчёта количества вхождений каждого элемента в список
+# 494. Функция для подсчёта количества вхождений каждого элемента в список
 def count_elements_in_list(lst):
     if not lst:
         return None
@@ -5993,14 +5393,14 @@ def count_elements_in_list(lst):
     return count_dict
 
 
-# 637. Функция для создания словаря из списка пар (ключ, значение)
+# 495. Функция для создания словаря из списка пар (ключ, значение)
 def list_to_dict_2(lst):
     if not lst or len(lst) % 2 != 0:
         return None
     return dict(zip(lst[::2], lst[1::2]))
 
 
-# 638. Функция для подсчёта чётных и нечётных чисел в списке
+# 496. Функция для подсчёта чётных и нечётных чисел в списке
 def count_even_and_odd(lst):
     if not lst:
         return None
@@ -6014,7 +5414,7 @@ def count_even_and_odd(lst):
     return {"even": even_count, "odd": odd_count}
 
 
-# 639. Функция для извлечения всех гласных из строки
+# 497. Функция для извлечения всех гласных из строки
 def extract_vowels_from_string(s):
     if not s:
         return None
@@ -6025,21 +5425,21 @@ def extract_vowels_from_string(s):
     return ''.join(result)
 
 
-# 640. Функция для слияния двух отсортированных списков в один отсортированный
+# 498. Функция для слияния двух отсортированных списков в один отсортированный
 def merge_sorted_lists(lst1, lst2):
     if not lst1 and not lst2:
         return None
     return sorted(lst1 + lst2)
 
 
-# 641. Функция для проверки, является ли строка палиндромом
+# 499. Функция для проверки, является ли строка палиндромом
 def is_palindrome_2(s):
     if not s:
         return None
     return s == s[::-1]
 
 
-# 642. Функция для нахождения наибольшего общего делителя двух чисел
+# 500. Функция для нахождения наибольшего общего делителя двух чисел
 def gcd_of_two_numbers(a, b):
     if a <= 0 or b <= 0:
         return None
@@ -6048,7 +5448,7 @@ def gcd_of_two_numbers(a, b):
     return a
 
 
-# 643. Функция для нахождения всех простых чисел в диапазоне от 1 до X
+# 501. Функция для нахождения всех простых чисел в диапазоне от 1 до X
 def prime_numbers_up_to_x(x):
     if x < 2:
         return None
@@ -6066,7 +5466,7 @@ def prime_numbers_up_to_x(x):
     return primes
 
 
-# 644. Функция для вычисления факториала числа
+# 502. Функция для вычисления факториала числа
 def factorial_of_number(n):
     if n < 0:
         return None
@@ -6076,14 +5476,14 @@ def factorial_of_number(n):
     return factorial
 
 
-# 645. Функция для подсчёта всех слов в строке
+# 503. Функция для подсчёта всех слов в строке
 def count_words_in_string(s):
     if not s:
         return None
     return len(s.split())
 
 
-# 646. Функция для нахождения всех индексов вхождения элемента в список
+# 504. Функция для нахождения всех индексов вхождения элемента в список
 def find_all_indices_of_element(lst, element):
     if not lst:
         return None
@@ -6093,7 +5493,7 @@ def find_all_indices_of_element(lst, element):
     return indices
 
 
-# 647. Функция для нахождения всех чисел, которые являются квадратами из списка
+# 505. Функция для нахождения всех чисел, которые являются квадратами из списка
 def square_numbers_from_list(lst):
     if not lst:
         return None
@@ -6103,7 +5503,7 @@ def square_numbers_from_list(lst):
     return squares
 
 
-# 648. Функция для извлечения всех чисел, которые больше среднего значения
+# 506. Функция для извлечения всех чисел, которые больше среднего значения
 def greater_than_average(lst):
     if not lst:
         return None
@@ -6114,56 +5514,56 @@ def greater_than_average(lst):
     return result
 
 
-# 649. Функция для сортировки списка строк по длине
+# 507. Функция для сортировки списка строк по длине
 def sort_strings_by_length(lst):
     if not lst:
         return None
     return sorted(lst, key=len)
 
 
-# 650. Функция для нахождения суммы всех чисел в списке
+# 508. Функция для нахождения суммы всех чисел в списке
 def sum_of_elements(lst):
     if not lst:
         return None
     return sum(lst)
 
 
-# 651. Функция для нахождения максимальной строки по длине из списка строк
+# 509. Функция для нахождения максимальной строки по длине из списка строк
 def longest_string(lst):
     if not lst:
         return None
     return max(lst, key=len)
 
 
-# 652. Функция для нахождения разницы между двумя множествами
+# 510. Функция для нахождения разницы между двумя множествами
 def difference_between_sets(set1, set2):
     if not set1 or not set2:
         return None
     return set1 - set2
 
 
-# 653. Функция для нахождения всех элементов, которые присутствуют в одном из двух списков
+# 511. Функция для нахождения всех элементов, которые присутствуют в одном из двух списков
 def union_of_lists(lst1, lst2):
     if not lst1 and not lst2:
         return None
     return list(set(lst1) | set(lst2))
 
 
-# 654. Функция для нахождения всех элементов, которые присутствуют в обоих списках
+# 512. Функция для нахождения всех элементов, которые присутствуют в обоих списках
 def intersection_of_lists_3(lst1, lst2):
     if not lst1 and not lst2:
         return None
     return list(set(lst1) & set(lst2))
 
 
-# 655. Функция для проверки, является ли строка цифрой
+# 513. Функция для проверки, является ли строка цифрой
 def is_digit(s):
     if not s:
         return None
     return s.isdigit()
 
 
-# 656. Функция для извлечения всех буквенных символов из строки
+# 514. Функция для извлечения всех буквенных символов из строки
 def extract_letters_from_string(s):
     if not s:
         return None
@@ -6171,35 +5571,35 @@ def extract_letters_from_string(s):
     return result
 
 
-# 657. Функция для нахождения всех элементов, которые являются строками в списке
+# 515. Функция для нахождения всех элементов, которые являются строками в списке
 def find_all_strings_in_list(lst):
     if not lst:
         return None
     return [x for x in lst if isinstance(x, str)]
 
 
-# 658. Функция для проверки, все ли элементы в списке уникальны
+# 516. Функция для проверки, все ли элементы в списке уникальны
 def all_unique(lst):
     if not lst:
         return None
     return len(lst) == len(set(lst))
 
 
-# 659. Функция для объединения всех элементов строки в единую строку с разделителями
+# 517. Функция для объединения всех элементов строки в единую строку с разделителями
 def join_elements_with_separator(lst, separator):
     if not lst:
         return None
     return separator.join(lst)
 
 
-# 660. Функция для нахождения разницы между двумя списками (без повторений)
+# 518. Функция для нахождения разницы между двумя списками (без повторений)
 def difference_between_lists(lst1, lst2):
     if not lst1 and not lst2:
         return None
     return list(set(lst1) - set(lst2))
 
 
-# 661. Функция для подсчёта всех вхождений подстроки в строку без пересечения
+# 519. Функция для подсчёта всех вхождений подстроки в строку без пересечения
 def count_non_overlapping_substring(s, substring):
     if not s or not substring:
         return None
@@ -6214,22 +5614,7 @@ def count_non_overlapping_substring(s, substring):
     return count
 
 
-# 662. Функция для нахождения всех индексов вхождения подстроки в строку
-def find_all_occurrences(s, substring):
-    if not s or not substring:
-        return None
-    indices = []
-    i = 0
-    while i < len(s):
-        i = s.find(substring, i)
-        if i == -1:
-            break
-        indices.append(i)
-        i += 1
-    return indices if indices else None
-
-
-# 663. Функция для нахождения всех слов, которые начинаются с определенной буквы
+# 520. Функция для нахождения всех слов, которые начинаются с определенной буквы
 def find_words_starting_with(s, letter):
     if not s or not letter:
         return None
@@ -6238,14 +5623,14 @@ def find_words_starting_with(s, letter):
     return result if result else None
 
 
-# 664. Функция для проверки, является ли строка анаграммой другой строки
+# 521. Функция для проверки, является ли строка анаграммой другой строки
 def are_anagrams_2(s1, s2):
     if not s1 or not s2:
         return None
     return sorted(s1) == sorted(s2)
 
 
-# 665. Функция для извлечения всех чисел, расположенных в строке
+# 522. Функция для извлечения всех чисел, расположенных в строке
 def extract_numbers_from_string_2(s):
     if not s:
         return None
@@ -6262,7 +5647,7 @@ def extract_numbers_from_string_2(s):
     return numbers if numbers else None
 
 
-# 666. Функция для проверки, является ли строка палиндромом (с учётом пробелов)
+# 523. Функция для проверки, является ли строка палиндромом (с учётом пробелов)
 def is_palindrome_with_spaces(s):
     if not s:
         return None
@@ -6270,7 +5655,7 @@ def is_palindrome_with_spaces(s):
     return clean_s == clean_s[::-1]
 
 
-# 667. Функция для подсчёта количества гласных и согласных в строке
+# 524. Функция для подсчёта количества гласных и согласных в строке
 def count_vowels_and_consonants(s):
     if not s:
         return None
@@ -6288,7 +5673,7 @@ def count_vowels_and_consonants(s):
     return {"vowels": vowels_count, "consonants": consonants}
 
 
-# 668. Функция для удаления всех пробелов в строке, а затем инвертирования
+# 525. Функция для удаления всех пробелов в строке, а затем инвертирования
 def remove_spaces_and_reverse(s):
     if not s:
         return None
@@ -6296,7 +5681,7 @@ def remove_spaces_and_reverse(s):
     return no_spaces[::-1]
 
 
-# 669. Функция для нахождения подстроки с максимальной длиной без повторяющихся символов
+# 526. Функция для нахождения подстроки с максимальной длиной без повторяющихся символов
 def longest_unique_substring(s):
     if not s:
         return None
@@ -6314,7 +5699,7 @@ def longest_unique_substring(s):
     return max_substring if max_len > 0 else None
 
 
-# 670. Функция для нахождения наибольшего общего префикса двух строк
+# 527. Функция для нахождения наибольшего общего префикса двух строк
 def longest_common_prefix(s1, s2):
     if not s1 or not s2:
         return None
@@ -6327,7 +5712,7 @@ def longest_common_prefix(s1, s2):
     return ''.join(prefix) if prefix else None
 
 
-# 671. Функция для подсчёта повторяющихся слов в строке
+# 528. Функция для подсчёта повторяющихся слов в строке
 def count_repeating_words(s):
     if not s:
         return None
@@ -6338,7 +5723,7 @@ def count_repeating_words(s):
     return {word: count for word, count in word_count.items() if count > 1}
 
 
-# 672. Функция для нахождения самого длинного слова в строке
+# 529. Функция для нахождения самого длинного слова в строке
 def longest_word_in_string(s):
     if not s:
         return None
@@ -6346,14 +5731,14 @@ def longest_word_in_string(s):
     return max(words, key=len) if words else None
 
 
-# 673. Функция для извлечения подстрок длиной N
+# 530. Функция для извлечения подстрок длиной N
 def extract_substrings_of_length_n(s, n):
     if not s or n <= 0:
         return None
     return [s[i:i + n] for i in range(len(s) - n + 1)]
 
 
-# 674. Функция для удаления всех слов, которые начинаются на определённую букву
+# 531. Функция для удаления всех слов, которые начинаются на определённую букву
 def remove_words_starting_with(s, letter):
     if not s or not letter:
         return None
@@ -6362,22 +5747,14 @@ def remove_words_starting_with(s, letter):
     return ' '.join(filtered_words) if filtered_words else None
 
 
-# 675. Функция для замены всех пробелов на подчеркивания
+# 532. Функция для замены всех пробелов на подчеркивания
 def replace_spaces_with_underscores(s):
     if not s:
         return None
     return s.replace(" ", "_")
 
 
-# 676. Функция для нахождения всех возможных перестановок строки
-def string_permutations(s):
-    if not s:
-        return None
-    from itertools import permutations
-    return [''.join(p) for p in permutations(s)]
-
-
-# 677. Функция для извлечения всех буквенных символов и их сортировки по алфавиту
+# 533. Функция для извлечения всех буквенных символов и их сортировки по алфавиту
 def sort_letters_in_string(s):
     if not s:
         return None
@@ -6386,14 +5763,14 @@ def sort_letters_in_string(s):
     return ''.join(letters)
 
 
-# 679. Функция для удаления всех чисел из строки
+# 534. Функция для удаления всех чисел из строки
 def remove_numbers_from_string(s):
     if not s:
         return None
     return ''.join([ch for ch in s if not ch.isdigit()])
 
 
-# 680. Функция для нахождения всех вхождений строки с учётом регистра
+# 535. Функция для нахождения всех вхождений строки с учётом регистра
 def find_case_sensitive_occurrences(s, substring):
     if not s or not substring:
         return None
@@ -6408,18 +5785,7 @@ def find_case_sensitive_occurrences(s, substring):
     return indices if indices else None
 
 
-# 681. Функция для нахождения подстроки, которая встречается чаще всего
-def most_frequent_substring(s, length):
-    if not s or length <= 0:
-        return None
-    substrings = [s[i:i + length] for i in range(len(s) - length + 1)]
-    from collections import Counter
-    counts = Counter(substrings)
-    most_common = counts.most_common(1)
-    return most_common[0][0] if most_common else None
-
-
-# 682. Функция для удаления всех гласных из строки
+# 536. Функция для удаления всех гласных из строки
 def remove_vowels_from_string(s):
     if not s:
         return None
@@ -6427,7 +5793,7 @@ def remove_vowels_from_string(s):
     return ''.join([ch for ch in s if ch not in vowels])
 
 
-# 683. Функция для вычисления расстояния Левенштейна между двумя строками
+# 537. Функция для вычисления расстояния Левенштейна между двумя строками
 def levenshtein_distance(s1, s2):
     if not s1 or not s2:
         return None
@@ -6446,35 +5812,32 @@ def levenshtein_distance(s1, s2):
     return dp[len_s1][len_s2]
 
 
-# 684. Функция для нахождения всех возможных подстрок строки заданной длины
+# 538. Функция для нахождения всех возможных подстрок строки заданной длины
 def fixed_length_substrings(s, length):
     if not s or length <= 0:
         return None
     return [s[i:i + length] for i in range(len(s) - length + 1)]
 
 
-# 685. Функция для удаления всех дублирующихся символов в строке
+# 539. Функция для удаления всех дублирующихся символов в строке
 def remove_duplicates_from_string(s):
     if not s:
         return None
     return ''.join(sorted(set(s), key=s.index))
 
 
-# 686. Функция для нахождения суммы всех чисел в списке с плавающими точками
-def sum_of_floats(lst):
-    if not lst:
-        return None
-    total = 0.0
-    for num in lst:
-        if isinstance(num, (int, float)):
-            total += num
-        else:
-            return None
-    return total
-
-
-# 687. Функция для нахождения среднего арифметического с плавающими точками
+# 540. Функция для нахождения среднего арифметического с плавающими точками
 def average_of_floats(lst):
+    def sum_of_floats(lst):
+        if not lst:
+            return None
+        total = 0.0
+        for num in lst:
+            if isinstance(num, (int, float)):
+                total += num
+            else:
+                return None
+        return total
     if not lst:
         return None
     total = sum_of_floats(lst)
@@ -6483,7 +5846,7 @@ def average_of_floats(lst):
     return total / len(lst)
 
 
-# 688. Функция для нахождения наибольшего числа с плавающей точкой в списке
+# 541. Функция для нахождения наибольшего числа с плавающей точкой в списке
 def max_float(lst):
     if not lst:
         return None
@@ -6494,7 +5857,7 @@ def max_float(lst):
     return max_val if max_val != float('-inf') else None
 
 
-# 689. Функция для нахождения наименьшего числа с плавающей точкой в списке
+# 542. Функция для нахождения наименьшего числа с плавающей точкой в списке
 def min_float(lst):
     if not lst:
         return None
@@ -6505,21 +5868,21 @@ def min_float(lst):
     return min_val if min_val != float('inf') else None
 
 
-# 690. Функция для проверки, является ли число с плавающей точкой положительным
+# 543. Функция для проверки, является ли число с плавающей точкой положительным
 def is_positive_float(x):
     if not isinstance(x, (int, float)):
         return None
     return x > 0
 
 
-# 691. Функция для нахождения разницы между двумя числами с плавающей точкой
+# 544. Функция для нахождения разницы между двумя числами с плавающей точкой
 def difference_between_floats(x, y):
     if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
         return None
     return abs(x - y)
 
 
-# 692. Функция для нахождения произведения всех чисел в списке с плавающими точками
+# 545. Функция для нахождения произведения всех чисел в списке с плавающими точками
 def product_of_floats(lst):
     if not lst:
         return None
@@ -6532,7 +5895,7 @@ def product_of_floats(lst):
     return product
 
 
-# 693. Функция для деления двух чисел с плавающей точкой с учётом ошибок деления на ноль
+# 546. Функция для деления двух чисел с плавающей точкой с учётом ошибок деления на ноль
 def divide_floats(x, y):
     if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
         return None
@@ -6541,21 +5904,21 @@ def divide_floats(x, y):
     return x / y
 
 
-# 694. Функция для нахождения квадратного корня числа с плавающей точкой
+# 547. Функция для нахождения квадратного корня числа с плавающей точкой
 def square_root(x):
     if not isinstance(x, (int, float)) or x < 0:
         return None
     return x ** 0.5
 
 
-# 695. Функция для округления числа с плавающей точкой до ближайшего целого
+# 548. Функция для округления числа с плавающей точкой до ближайшего целого
 def round_to_nearest_integer(x):
     if not isinstance(x, (int, float)):
         return None
     return round(x)
 
 
-# 696. Функция для нахождения всех чисел, которые делятся на X с плавающей точкой
+# 549. Функция для нахождения всех чисел, которые делятся на X с плавающей точкой
 def divisible_by_x(lst, x):
     if not isinstance(x, (int, float)) or x == 0 or not lst:
         return None
@@ -6566,14 +5929,14 @@ def divisible_by_x(lst, x):
     return result if result else None
 
 
-# 697. Функция для вычисления значения экспоненты для числа с плавающей точкой
+# 550. Функция для вычисления значения экспоненты для числа с плавающей точкой
 def exponentiation_of_float(x, n):
     if not isinstance(x, (int, float)) or not isinstance(n, (int, float)):
         return None
     return x ** n
 
 
-# 698. Функция для вычисления факториала числа с плавающей точкой (для целых чисел)
+# 551. Функция для вычисления факториала числа с плавающей точкой (для целых чисел)
 def factorial_of_float(x):
     if not isinstance(x, int) or x < 0:
         return None
@@ -6583,26 +5946,7 @@ def factorial_of_float(x):
     return factorial
 
 
-# 699. Функция для вычисления логарифма числа с плавающей точкой по основанию X
-def log_of_float(x, base):
-    if not isinstance(x, (int, float)) or not isinstance(base, (int, float)) or x <= 0 or base <= 1:
-        return None
-    import math
-    return math.log(x, base)
-
-
-# 700. Функция для нахождения чисел, которые больше среднего арифметического
-def greater_than_average_2(lst):
-    if not lst:
-        return None
-    avg = average_of_floats(lst)
-    if avg is None:
-        return None
-    result = [x for x in lst if isinstance(x, (int, float)) and x > avg]
-    return result if result else None
-
-
-# 701. Функция для нахождения медианы в списке чисел с плавающей точкой
+# 552. Функция для нахождения медианы в списке чисел с плавающей точкой
 def median_of_floats(lst):
     if not lst:
         return None
@@ -6617,7 +5961,7 @@ def median_of_floats(lst):
         return (lst[n // 2 - 1] + lst[n // 2]) / 2
 
 
-# 702. Функция для нахождения всех чисел, которые являются простыми с плавающей точкой
+# 553. Функция для нахождения всех чисел, которые являются простыми с плавающей точкой
 def prime_floats(lst):
     if not lst:
         return None
@@ -6634,14 +5978,14 @@ def prime_floats(lst):
     return result if result else None
 
 
-# 703. Функция для нахождения всех чисел в диапазоне от X до Y с плавающей точкой
+# 554. Функция для нахождения всех чисел в диапазоне от X до Y с плавающей точкой
 def numbers_in_range(x, y):
     if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
         return None
     return [i for i in range(int(x), int(y) + 1)]
 
 
-# 704. Функция для нахождения геометрической прогрессии
+# 555. Функция для нахождения геометрической прогрессии
 def geometric_progression(a, r, n):
     if not isinstance(a, (int, float)) or not isinstance(r, (int, float)) or not isinstance(n, int) or n <= 0:
         return None
@@ -6649,7 +5993,7 @@ def geometric_progression(a, r, n):
     return result if result else None
 
 
-# 705. Функция для нахождения суммы всех чисел в геометрической прогрессии
+# 556. Функция для нахождения суммы всех чисел в геометрической прогрессии
 def sum_of_geometric_progression(a, r, n):
     if not isinstance(a, (int, float)) or not isinstance(r, (int, float)) or not isinstance(n, int) or n <= 0:
         return None
@@ -6658,78 +6002,49 @@ def sum_of_geometric_progression(a, r, n):
     return a * (1 - r ** n) / (1 - r)
 
 
-# 706. Функция для нахождения числа Пи с заданной точностью
-def pi_to_precision(precision):
-    if not isinstance(precision, int) or precision <= 0:
-        return None
-    import math
-    return round(math.pi, precision)
-
-
-# 707. Функция для нахождения квадрата числа с плавающей точкой
+# 557. Функция для нахождения квадрата числа с плавающей точкой
 def square_of_float(x):
     if not isinstance(x, (int, float)):
         return None
     return x * x
 
 
-# 708. Функция для вычисления суммы ряда с плавающими числами (арифметическая прогрессия)
+# 558. Функция для вычисления суммы ряда с плавающими числами (арифметическая прогрессия)
 def sum_of_arithmetic_progression(a, d, n):
     if not isinstance(a, (int, float)) or not isinstance(d, (int, float)) or not isinstance(n, int) or n <= 0:
         return None
     return n * (2 * a + (n - 1) * d) / 2
 
 
-# 709. Функция для нахождения разности между наибольшим и наименьшим числом с плавающей точкой
-def difference_between_max_and_min(lst):
-    if not lst:
-        return None
-    max_num = max_float(lst)
-    min_num = min_float(lst)
-    if max_num is None or min_num is None:
-        return None
-    return max_num - min_num
-
-
-# 710. Функция для нахождения всех чисел, которые не равны нулю в списке с плавающими точками
+# 559. Функция для нахождения всех чисел, которые не равны нулю в списке с плавающими точками
 def non_zero_floats(lst):
     if not lst:
         return None
     return [x for x in lst if isinstance(x, (int, float)) and x != 0]
 
 
-# 711. Функция для вычисления разности между средним значением и каждым числом в списке
-def difference_from_average(lst):
-    if not lst:
-        return None
-    avg = average_of_floats(lst)
-    if avg is None:
-        return None
-    return [abs(x - avg) for x in lst if isinstance(x, (int, float))]
-
-
-# 712. Функция для нахождения чисел, квадрат которых больше заданного значения
+# 560. Функция для нахождения чисел, квадрат которых больше заданного значения
 def squares_greater_than(lst, value):
     if not isinstance(value, (int, float)) or not lst:
         return None
     return [x for x in lst if isinstance(x, (int, float)) and x ** 2 > value]
 
 
-# 713. Функция для нахождения всех чисел, которые меньше заданного значения
+# 561. Функция для нахождения всех чисел, которые меньше заданного значения
 def less_than_value(lst, value):
     if not isinstance(value, (int, float)) or not lst:
         return None
     return [x for x in lst if isinstance(x, (int, float)) and x < value]
 
 
-# 714. Функция для нахождения суммы квадратов чисел в списке
+# 562. Функция для нахождения суммы квадратов чисел в списке
 def sum_of_squares_2(lst):
     if not lst:
         return None
     return sum(x ** 2 for x in lst if isinstance(x, (int, float)))
 
 
-# 715. Функция для нахождения разности между максимальным и минимальным числом, но только для положительных чисел
+# 563. Функция для нахождения разности между максимальным и минимальным числом, но только для положительных чисел
 def positive_max_min_difference(lst):
     if not lst:
         return None
@@ -6739,7 +6054,7 @@ def positive_max_min_difference(lst):
     return max(positive_numbers) - min(positive_numbers)
 
 
-# 716. Функция для нахождения разности между максимальным и минимальным числом, но только для отрицательных чисел
+# 564. Функция для нахождения разности между максимальным и минимальным числом, но только для отрицательных чисел
 def negative_max_min_difference(lst):
     if not lst:
         return None
@@ -6749,76 +6064,21 @@ def negative_max_min_difference(lst):
     return max(negative_numbers) - min(negative_numbers)
 
 
-# 717. Функция для нахождения среднего квадратичного отклонения списка с плавающими числами
-def standard_deviation(lst):
-    if not lst:
-        return None
-    avg = average_of_floats(lst)
-    if avg is None:
-        return None
-    variance = sum((x - avg) ** 2 for x in lst if isinstance(x, (int, float))) / len(lst)
-    return variance ** 0.5
-
-
-# 718. Функция для нахождения суммы всех чисел, которые делятся на X без остатка
+# 565. Функция для нахождения суммы всех чисел, которые делятся на X без остатка
 def sum_of_divisible_by_x(lst, x):
     if not isinstance(x, (int, float)) or x == 0 or not lst:
         return None
     return sum(x for x in lst if isinstance(x, (int, float)) and x % x == 0)
 
 
-# 719. Функция для вычисления коэффициента корреляции между двумя списками с плавающими точками
-def correlation_coefficient(lst1, lst2):
-    if not lst1 or not lst2 or len(lst1) != len(lst2):
-        return None
-    n = len(lst1)
-    avg1, avg2 = average_of_floats(lst1), average_of_floats(lst2)
-    if avg1 is None or avg2 is None:
-        return None
-    numerator = sum((x - avg1) * (y - avg2) for x, y in zip(lst1, lst2))
-    denominator = (sum((x - avg1) ** 2 for x in lst1) ** 0.5) * (sum((y - avg2) ** 2 for y in lst2) ** 0.5)
-    if denominator == 0:
-        return None
-    return numerator / denominator
-
-
-# 720. Функция для нахождения медианы всех чисел, которые больше среднего
-def median_greater_than_average(lst):
-    if not lst:
-        return None
-    avg = average_of_floats(lst)
-    if avg is None:
-        return None
-    greater_than_avg = [x for x in lst if isinstance(x, (int, float)) and x > avg]
-    if not greater_than_avg:
-        return None
-    greater_than_avg.sort()
-    n = len(greater_than_avg)
-    if n % 2 == 1:
-        return greater_than_avg[n // 2]
-    else:
-        return (greater_than_avg[n // 2 - 1] + greater_than_avg[n // 2]) / 2
-
-
-# 721. Функция для нахождения всех чисел, которые являются кубами
+# 566. Функция для нахождения всех чисел, которые являются кубами
 def cubes(lst):
     if not lst:
         return None
     return [x for x in lst if isinstance(x, (int, float)) and round(x ** (1 / 3), 6) ** 3 == x]
 
 
-# 722. Функция для нахождения разности между квадратами максимального и минимального числа
-def square_difference_max_min(lst):
-    if not lst:
-        return None
-    max_val = max_float(lst)
-    min_val = min_float(lst)
-    if max_val is None or min_val is None:
-        return None
-    return max_val ** 2 - min_val ** 2
-
-
-# 723. Функция для нахождения чисел, которые могут быть представлены как сумма двух квадратов
+# 567. Функция для нахождения чисел, которые могут быть представлены как сумма двух квадратов
 def sum_of_two_squares_3(lst):
     if not lst:
         return None
@@ -6833,47 +6093,21 @@ def sum_of_two_squares_3(lst):
     return result if result else None
 
 
-# 724. Функция для проверки, является ли число с плавающей точкой степенью двойки
+# 568. Функция для проверки, является ли число с плавающей точкой степенью двойки
 def is_power_of_two(x):
     if not isinstance(x, (int, float)) or x <= 0:
         return False
     return (x & (x - 1)) == 0
 
 
-# 725. Функция для нахождения суммы всех чисел, которые являются степенями двойки
-def sum_of_powers_of_two(lst):
-    if not lst:
-        return None
-    return sum(x for x in lst if isinstance(x, (int, float)) and is_power_of_two(x))
-
-
-# 726. Функция для нахождения суммы всех чисел, которые являются целыми степенями 10
-def sum_of_powers_of_ten(lst):
-    if not lst:
-        return None
-    return sum(x for x in lst if isinstance(x, (int, float)) and round(x, 10) == 10 ** round(math.log10(x)))
-
-
-# 727. Функция для нахождения всех чисел, которые являются целыми числами
+# 569. Функция для нахождения всех чисел, которые являются целыми числами
 def integers_in_float_list(lst):
     if not lst:
         return None
     return [x for x in lst if isinstance(x, (int, float)) and x.is_integer()]
 
 
-# 728. Функция для вычисления среднего квадратичного отклонения для заданного диапазона
-def standard_deviation_in_range(lst, lower, upper):
-    if not lst:
-        return None
-    valid_nums = [x for x in lst if isinstance(x, (int, float)) and lower <= x <= upper]
-    if not valid_nums:
-        return None
-    avg = average_of_floats(valid_nums)
-    variance = sum((x - avg) ** 2 for x in valid_nums) / len(valid_nums)
-    return variance ** 0.5
-
-
-# 729. Функция для нахождения суммы всех чисел, которые можно выразить как произведение двух простых чисел
+# 570. Функция для нахождения суммы всех чисел, которые можно выразить как произведение двух простых чисел
 def sum_of_products_of_primes(lst):
     if not lst:
         return None
@@ -6896,7 +6130,7 @@ def sum_of_products_of_primes(lst):
     return sum(result) if result else None
 
 
-# 730. Функция для нахождения всех чисел, которые равны разности двух квадратов
+# 571. Функция для нахождения всех чисел, которые равны разности двух квадратов
 def difference_of_two_squares(lst):
     if not lst:
         return None
@@ -6911,35 +6145,35 @@ def difference_of_two_squares(lst):
     return result if result else None
 
 
-# 731. Функция для нахождения всех чисел, которые являются степенями 3 (кубами)
+# 572. Функция для нахождения всех чисел, которые являются степенями 3 (кубами)
 def cubes_of_numbers(lst):
     if not lst:
         return None
     return [x for x in lst if isinstance(x, (int, float)) and round(x ** (1 / 3), 6) ** 3 == x]
 
 
-# 732. Функция для нахождения среднего арифметического квадратов чисел
+# 573. Функция для нахождения среднего арифметического квадратов чисел
 def average_of_squares(lst):
     if not lst:
         return None
     return sum(x ** 2 for x in lst if isinstance(x, (int, float))) / len(lst)
 
 
-# 733. Функция для вычисления факториала числа (рекурсия)
+# 574. Функция для вычисления факториала числа (рекурсия)
 def factorial_2(n):
     if n == 0 or n == 1:
         return 1
     return n * factorial_2(n - 1)
 
 
-# 734. Функция для вычисления суммы чисел от 1 до N (рекурсия)
+# 575. Функция для вычисления суммы чисел от 1 до N (рекурсия)
 def sum_to_n(n):
     if n == 0:
         return 0
     return n + sum_to_n(n - 1)
 
 
-# 735. Функция для нахождения N-го числа Фибоначчи (рекурсия)
+# 576. Функция для нахождения N-го числа Фибоначчи (рекурсия)
 def fibonacci_2(n):
     if n == 0:
         return 0
@@ -6948,28 +6182,28 @@ def fibonacci_2(n):
     return fibonacci_2(n - 1) + fibonacci_2(n - 2)
 
 
-# 736. Функция для вычисления степени числа (рекурсия)
+# 577. Функция для вычисления степени числа (рекурсия)
 def power_2(base, exp):
     if exp == 0:
         return 1
     return base * power_2(base, exp - 1)
 
 
-# 737. Функция для нахождения суммы элементов списка (рекурсия)
+# 578. Функция для нахождения суммы элементов списка (рекурсия)
 def recursive_sum(lst):
     if not lst:
         return 0
     return lst[0] + recursive_sum(lst[1:])
 
 
-# 738. Функция для нахождения произведения элементов списка (рекурсия)
+# 579. Функция для нахождения произведения элементов списка (рекурсия)
 def recursive_product(lst):
     if not lst:
         return 1
     return lst[0] * recursive_product(lst[1:])
 
 
-# 739. Функция для нахождения максимального числа в списке (рекурсия)
+# 580. Функция для нахождения максимального числа в списке (рекурсия)
 def recursive_max(lst):
     if len(lst) == 1:
         return lst[0]
@@ -6978,7 +6212,7 @@ def recursive_max(lst):
         return lst[0] if lst[0] > sub_max else sub_max
 
 
-# 740. Функция для нахождения минимального числа в списке (рекурсия)
+# 581. Функция для нахождения минимального числа в списке (рекурсия)
 def recursive_min(lst):
     if len(lst) == 1:
         return lst[0]
@@ -6987,14 +6221,14 @@ def recursive_min(lst):
         return lst[0] if lst[0] < sub_min else sub_min
 
 
-# 741. Функция для инвертирования строки (рекурсия)
+# 582. Функция для инвертирования строки (рекурсия)
 def reverse_string_2(s):
     if len(s) == 0:
         return s
     return s[-1] + reverse_string_2(s[:-1])
 
 
-# 742. Функция для проверки, является ли строка палиндромом (рекурсия)
+# 583. Функция для проверки, является ли строка палиндромом (рекурсия)
 def is_palindrome_4(s):
     if len(s) <= 1:
         return True
@@ -7003,21 +6237,21 @@ def is_palindrome_4(s):
     return is_palindrome_4(s[1:-1])
 
 
-# 743. Функция для нахождения НОД (наибольший общий делитель) двух чисел (рекурсия)
+# 584. Функция для нахождения НОД (наибольший общий делитель) двух чисел (рекурсия)
 def gsd_2(a, b):
     if b == 0:
         return a
     return gsd_2(b, a % b)
 
 
-# 745. Функция для подсчета количества вхождений элемента в списке (рекурсия)
+# 585. Функция для подсчета количества вхождений элемента в списке (рекурсия)
 def count_occurrences_3(lst, x):
     if not lst:
         return 0
     return (1 if lst[0] == x else 0) + count_occurrences_3(lst[1:], x)
 
 
-# 746. Функция для проверки, является ли число простым (рекурсия)
+# 586. Функция для проверки, является ли число простым (рекурсия)
 def is_prime_4(n, divisor=None):
     if n <= 1:
         return False
@@ -7030,7 +6264,7 @@ def is_prime_4(n, divisor=None):
     return is_prime_4(n, divisor - 1)
 
 
-# 747. Функция для нахождения наибольшего элемента в дереве (рекурсия)
+# 587. Функция для нахождения наибольшего элемента в дереве (рекурсия)
 def find_max_in_tree(tree):
     if tree is None:
         return float('-inf')
@@ -7039,7 +6273,7 @@ def find_max_in_tree(tree):
     return max(tree.get('value', float('-inf')), left_max, right_max)
 
 
-# 748. Функция для проверки, является ли число четным (рекурсия)
+# 588. Функция для проверки, является ли число четным (рекурсия)
 def is_even_2(n):
     if n == 0:
         return True
@@ -7048,56 +6282,56 @@ def is_even_2(n):
     return is_even_2(n - 2)
 
 
-# 749. Функция для вычисления суммы чисел, меньших X в списке (рекурсия)
+# 589. Функция для вычисления суммы чисел, меньших X в списке (рекурсия)
 def sum_less_than_x(lst, x):
     if not lst:
         return 0
     return (lst[0] if lst[0] < x else 0) + sum_less_than_x(lst[1:], x)
 
 
-# 750. Функция для вычисления факториала числа с использованием хвоста (рекурсия с аккумулятором)
+# 590. Функция для вычисления факториала числа с использованием хвоста (рекурсия с аккумулятором)
 def factorial_tail(n, acc=1):
     if n == 0 or n == 1:
         return acc
     return factorial_tail(n - 1, acc * n)
 
 
-# 751. Функция для вычисления суммы чисел в диапазоне от 1 до N, но с шагом 2 (рекурсия)
+# 591. Функция для вычисления суммы чисел в диапазоне от 1 до N, но с шагом 2 (рекурсия)
 def sum_with_step(n):
     if n <= 0:
         return 0
     return n + sum_with_step(n - 2)
 
 
-# 752. Функция для нахождения всех чисел Фибоначчи до N (рекурсия)
+# 592. Функция для нахождения всех чисел Фибоначчи до N (рекурсия)
 def fibonacci_up_to_n(n, a=0, b=1):
     if a > n:
         return []
     return [a] + fibonacci_up_to_n(n, b, a + b)
 
 
-# 753. Функция для нахождения чисел, которые делятся на X, используя рекурсию
+# 593. Функция для нахождения чисел, которые делятся на X, используя рекурсию
 def find_divisible(lst, x):
     if not lst:
         return []
     return ([lst[0]] if lst[0] % x == 0 else []) + find_divisible(lst[1:], x)
 
 
-# 754. Функция для подсчета количества четных чисел в списке (рекурсия)
+# 594. Функция для подсчета количества четных чисел в списке (рекурсия)
 def count_even(lst):
     if not lst:
         return 0
     return (1 if lst[0] % 2 == 0 else 0) + count_even(lst[1:])
 
 
-# 755. Функция для подсчета количества отрицательных чисел в списке (рекурсия)
+# 595. Функция для подсчета количества отрицательных чисел в списке (рекурсия)
 def count_negatives(lst):
     if not lst:
         return 0
     return (1 if lst[0] < 0 else 0) + count_negatives(lst[1:])
 
 
-# 756. Функция для нахождения всех чисел в списке, которые больше среднего значения (рекурсия)
+# 596. Функция для нахождения всех чисел в списке, которые больше среднего значения (рекурсия)
 def greater_than_average_3(lst, avg=None):
     if not lst:
         return []
@@ -7106,21 +6340,21 @@ def greater_than_average_3(lst, avg=None):
     return ([lst[0]] if lst[0] > avg else []) + greater_than_average_3(lst[1:], avg)
 
 
-# 757. Функция для нахождения суммы чисел, которые больше X в списке (рекурсия)
+# 597. Функция для нахождения суммы чисел, которые больше X в списке (рекурсия)
 def sum_greater_than_x(lst, x):
     if not lst:
         return 0
     return (lst[0] if lst[0] > x else 0) + sum_greater_than_x(lst[1:], x)
 
 
-# 758. Функция для нахождения длины строки (рекурсия)
+# 598. Функция для нахождения длины строки (рекурсия)
 def string_length(s):
     if s == "":
         return 0
     return 1 + string_length(s[1:])
 
 
-# 759. Функция для подсчета количества четных чисел в диапазоне от 1 до N (рекурсия)
+# 599. Функция для подсчета количества четных чисел в диапазоне от 1 до N (рекурсия)
 def count_evens_in_range(n):
     if n == 0:
         return 0
@@ -7129,21 +6363,21 @@ def count_evens_in_range(n):
     return count_evens_in_range(n - 1)
 
 
-# 760. Функция для вычисления суммы чисел, которые находятся в пределах заданного диапазона (рекурсия)
+# 600. Функция для вычисления суммы чисел, которые находятся в пределах заданного диапазона (рекурсия)
 def sum_in_range(lst, low, high):
     if not lst:
         return 0
     return (lst[0] if low <= lst[0] <= high else 0) + sum_in_range(lst[1:], low, high)
 
 
-# 761. Функция для нахождения произведения чисел, которые меньше X в списке (рекурсия)
+# 601. Функция для нахождения произведения чисел, которые меньше X в списке (рекурсия)
 def product_less_than_x(lst, x):
     if not lst:
         return 1
     return (lst[0] if lst[0] < x else 1) * product_less_than_x(lst[1:], x)
 
 
-# 762. Функция для нахождения суммы всех чисел в строке, которые можно преобразовать в числа (рекурсия)
+# 602. Функция для нахождения суммы всех чисел в строке, которые можно преобразовать в числа (рекурсия)
 def sum_of_numbers_in_string(s):
     if s == "":
         return 0
@@ -7155,7 +6389,7 @@ def sum_of_numbers_in_string(s):
     return sum_of_numbers_in_string(s[1:])
 
 
-# 763. Функция для нахождения всех четных чисел в строке, которые можно преобразовать в числа (рекурсия)
+# 603. Функция для нахождения всех четных чисел в строке, которые можно преобразовать в числа (рекурсия)
 def even_numbers_in_string(s):
     if s == "":
         return []
@@ -7170,7 +6404,7 @@ def even_numbers_in_string(s):
     return even_numbers_in_string(s[1:])
 
 
-# 764. Функция для добавления элемента в кольцевой массив с ограничением размера
+# 604. Функция для добавления элемента в кольцевой массив с ограничением размера
 def append_to_ring(arr, element, max_size=10):
     if len(arr) >= max_size:
         arr.pop(0)  # Удаляем первый элемент, если массив переполнен
@@ -7180,7 +6414,7 @@ def append_to_ring(arr, element, max_size=10):
     return arr
 
 
-# 765. Функция для нахождения индекса элемента в кольцевом массиве с возможностью обрабатывать отсутствующие элементы
+# 605. Функция для нахождения индекса элемента в кольцевом массиве с возможностью обрабатывать отсутствующие элементы
 def find_in_ring(arr, element):
     if not arr:
         return None
@@ -7190,14 +6424,7 @@ def find_in_ring(arr, element):
     return None
 
 
-# 766. Функция для добавления нескольких элементов в кольцевой массив
-def append_multiple_to_ring(arr, elements, max_size=10):
-    for element in elements:
-        arr = append_to_ring(arr, element, max_size)
-    return arr
-
-
-# 767. Функция для нахождения всех индексов в кольцевом массиве, где встречается заданный элемент
+# 606. Функция для нахождения всех индексов в кольцевом массиве, где встречается заданный элемент
 def find_all_in_ring(arr, element):
     if not arr:
         return []
@@ -7209,7 +6436,7 @@ def find_all_in_ring(arr, element):
     return indices
 
 
-# 768. Функция для циклического сдвига элементов в кольцевом массиве с шагом, который может быть отрицательным
+# 607. Функция для циклического сдвига элементов в кольцевом массиве с шагом, который может быть отрицательным
 def rotate_with_negativity(arr, steps):
     if not arr:
         return arr
@@ -7224,56 +6451,56 @@ def rotate_with_negativity(arr, steps):
     return rotated
 
 
-# 769. Функция для увеличения всех элементов кольцевого массива на заданное число
+# 608. Функция для увеличения всех элементов кольцевого массива на заданное число
 def increase_ring_elements(arr, value):
     if not arr:
         return arr
     return [x + value for x in arr]
 
 
-# 770. Функция для уменьшения всех элементов кольцевого массива на заданное число
+# 609. Функция для уменьшения всех элементов кольцевого массива на заданное число
 def decrease_ring_elements(arr, value):
     if not arr:
         return arr
     return [x - value for x in arr]
 
 
-# 771. Функция для умножения всех элементов кольцевого массива на заданное число
+# 610. Функция для умножения всех элементов кольцевого массива на заданное число
 def multiply_ring_elements(arr, value):
     if not arr:
         return arr
     return [x * value for x in arr]
 
 
-# 772. Функция для нахождения суммы элементов в кольцевом массиве
+# 611. Функция для нахождения суммы элементов в кольцевом массиве
 def sum_ring(arr):
     if not arr:
         return 0
     return sum(arr)
 
 
-# 773. Функция для нахождения среднего значения элементов кольцевого массива
+# 612. Функция для нахождения среднего значения элементов кольцевого массива
 def average_ring(arr):
     if not arr:
         return None
     return sum(arr) / len(arr)
 
 
-# 774. Функция для нахождения максимального элемента кольцевого массива
+# 613. Функция для нахождения максимального элемента кольцевого массива
 def max_ring(arr):
     if not arr:
         return None
     return max(arr)
 
 
-# 775. Функция для нахождения минимального элемента кольцевого массива
+# 614. Функция для нахождения минимального элемента кольцевого массива
 def min_ring(arr):
     if not arr:
         return None
     return min(arr)
 
 
-# 776. Функция для проверки, содержится ли хотя бы одно положительное число в кольцевом массиве
+# 615. Функция для проверки, содержится ли хотя бы одно положительное число в кольцевом массиве
 def has_positive_ring(arr):
     if not arr:
         return False
@@ -7283,7 +6510,7 @@ def has_positive_ring(arr):
     return False
 
 
-# 777. Функция для проверки, содержится ли хотя бы одно отрицательное число в кольцевом массиве
+# 616. Функция для проверки, содержится ли хотя бы одно отрицательное число в кольцевом массиве
 def has_negative_ring(arr):
     if not arr:
         return False
@@ -7293,7 +6520,7 @@ def has_negative_ring(arr):
     return False
 
 
-# 778. Функция для инвертирования элементов в кольцевом массиве, если они находятся в четных индексах
+# 617. Функция для инвертирования элементов в кольцевом массиве, если они находятся в четных индексах
 def reverse_even_index_elements(arr):
     if not arr:
         return arr
@@ -7304,80 +6531,80 @@ def reverse_even_index_elements(arr):
     return result
 
 
-# 779. Функция для нахождения четных чисел в кольцевом массиве
+# 618. Функция для нахождения четных чисел в кольцевом массиве
 def find_even_ring(arr):
     if not arr:
         return []
     return [x for x in arr if x % 2 == 0]
 
 
-# 780. Функция для нахождения нечетных чисел в кольцевом массиве
+# 619. Функция для нахождения нечетных чисел в кольцевом массиве
 def find_odd_ring(arr):
     if not arr:
         return []
     return [x for x in arr if x % 2 != 0]
 
 
-# 781. Функция для подсчета количества четных чисел в кольцевом массиве
+# 620. Функция для подсчета количества четных чисел в кольцевом массиве
 def count_even_ring(arr):
     if not arr:
         return 0
     return sum(1 for x in arr if x % 2 == 0)
 
 
-# 782. Функция для подсчета количества нечетных чисел в кольцевом массиве
+# 621. Функция для подсчета количества нечетных чисел в кольцевом массиве
 def count_odd_ring(arr):
     if not arr:
         return 0
     return sum(1 for x in arr if x % 2 != 0)
 
 
-# 783. Функция для добавления элемента в кольцевой массив только если он еще не существует
+# 622. Функция для добавления элемента в кольцевой массив только если он еще не существует
 def append_unique_ring(arr, element):
     if element not in arr:
         arr.append(element)
     return arr
 
 
-# 784. Функция для нахождения всех элементов кольцевого массива, которые делятся на X
+# 623. Функция для нахождения всех элементов кольцевого массива, которые делятся на X
 def find_divisible_ring(arr, x):
     if not arr:
         return []
     return [el for el in arr if el % x == 0]
 
 
-# 785. Функция для удаления всех элементов, которые меньше заданного числа
+# 624. Функция для удаления всех элементов, которые меньше заданного числа
 def remove_less_than_ring(arr, threshold):
     if not arr:
         return arr
     return [x for x in arr if x >= threshold]
 
 
-# 786. Функция для очистки кольцевого массива от элементов, больших заданного числа
+# 625. Функция для очистки кольцевого массива от элементов, больших заданного числа
 def remove_greater_than_ring(arr, threshold):
     if not arr:
         return arr
     return [x for x in arr if x <= threshold]
 
 
-# 787. Функция для преобразования строки в список символов, с проверкой на пустоту
+# 626. Функция для преобразования строки в список символов, с проверкой на пустоту
 def string_to_list(s):
     if s == "":
         return []
     return list(s)
 
 
-# 788. Функция для объединения двух списков без повторений
+# 627. Функция для объединения двух списков без повторений
 def merge_unique_lists(list1, list2):
     return list(set(list1 + list2))
 
 
-# 789. Функция для создания множества из строк, игнорируя регистр
+# 628. Функция для создания множества из строк, игнорируя регистр
 def set_from_strings_ignore_case(strings):
     return {s.lower() for s in strings}
 
 
-# 790. Функция для подсчета количества вхождений каждого символа в строку
+# 629. Функция для подсчета количества вхождений каждого символа в строку
 def count_characters(s):
     char_count = {}
     for char in s:
@@ -7388,20 +6615,20 @@ def count_characters(s):
     return char_count
 
 
-# 791. Функция для проверки, является ли строка палиндромом
+# 630. Функция для проверки, является ли строка палиндромом
 def is_palindrome_5(s):
     cleaned = ''.join(e for e in s if e.isalnum()).lower()
     return cleaned == cleaned[::-1]
 
 
-# 792. Функция для вычисления факториала числа с использованием рекурсии
+# 631. Функция для вычисления факториала числа с использованием рекурсии
 def factorial_4(n):
     if n == 0:
         return 1
     return n * factorial_4(n - 1)
 
 
-# 793. Функция для подсчета числа всех вхождений слова в тексте
+# 632. Функция для подсчета числа всех вхождений слова в тексте
 def count_word_occurrences(text, word):
     words = text.split()
     count = 0
@@ -7411,12 +6638,12 @@ def count_word_occurrences(text, word):
     return count
 
 
-# 795. Функция для фильтрации строк, которые содержат только цифры
+# 633. Функция для фильтрации строк, которые содержат только цифры
 def filter_numeric_strings(strings):
     return [s for s in strings if s.isdigit()]
 
 
-# 796. Функция для поиска ближайшего к числу в списке
+# 634. Функция для поиска ближайшего к числу в списке
 def closest_number(arr, num):
     if not arr:
         return None
@@ -7427,31 +6654,31 @@ def closest_number(arr, num):
     return closest
 
 
-# 797. Функция для сортировки списка словарей по заданному ключу
+# 635. Функция для сортировки списка словарей по заданному ключу
 def sort_dicts_by_key(lst, key):
     return sorted(lst, key=lambda x: x.get(key, None))
 
 
-# 798. Функция для поиска наибольшего общего делителя двух чисел
+# 636. Функция для поиска наибольшего общего делителя двух чисел
 def gcd_5(a, b):
     while b:
         a, b = b, a % b
     return a
 
 
-# 799. Функция для вычисления среднего арифметического элементов списка с защитой от деления на 0
+# 637. Функция для вычисления среднего арифметического элементов списка с защитой от деления на 0
 def average_6(numbers):
     if not numbers:
         return None
     return sum(numbers) / len(numbers)
 
 
-# 800. Функция для преобразования строки в формат "заглавными и маленькими буквами"
+# 638. Функция для преобразования строки в формат "заглавными и маленькими буквами"
 def alternate_case(s):
     return ''.join([c.upper() if i % 2 == 0 else c.lower() for i, c in enumerate(s)])
 
 
-# 801. Функция для подсчета, сколько раз встречается каждый элемент в списке
+# 639. Функция для подсчета, сколько раз встречается каждый элемент в списке
 def count_elements(arr):
     counts = {}
     for el in arr:
@@ -7459,12 +6686,12 @@ def count_elements(arr):
     return counts
 
 
-# 802. Функция для преобразования списка в строку через разделитель
+# 640. Функция для преобразования списка в строку через разделитель
 def list_to_string(lst, separator=","):
     return separator.join(map(str, lst))
 
 
-# 803. Функция для извлечения уникальных элементов из списка с сохранением порядка
+# 641. Функция для извлечения уникальных элементов из списка с сохранением порядка
 def unique_elements_6(arr):
     seen = set()
     result = []
@@ -7475,7 +6702,7 @@ def unique_elements_6(arr):
     return result
 
 
-# 804. Функция для поиска строки в тексте с учетом возможных пробелов
+# 642. Функция для поиска строки в тексте с учетом возможных пробелов
 def find_word_in_text(text, word):
     index = text.find(word)
     if index != -1:
@@ -7483,7 +6710,7 @@ def find_word_in_text(text, word):
     return "Word not found"
 
 
-# 805. Функция для определения, является ли строка числом (целым или с плавающей точкой)
+# 643. Функция для определения, является ли строка числом (целым или с плавающей точкой)
 def is_number_5(s):
     try:
         float(s)
@@ -7492,9 +6719,9 @@ def is_number_5(s):
         return False
 
 
-# 806. Функция для объединения двух словарей, при этом значения по одинаковым ключам складываются
+# 644. Функция для объединения двух словарей, при этом значения по одинаковым ключам складываются
 def merge_dicts_6(dict1, dict2):
-    result = dict1.copy()  # Начинаем с первого словаря
+    result = dict1.copy()
     for key, value in dict2.items():
         if key in result:
             result[key] += value
@@ -7503,17 +6730,17 @@ def merge_dicts_6(dict1, dict2):
     return result
 
 
-# 807. Функция для извлечения элементов с четными индексами из списка
+# 645. Функция для извлечения элементов с четными индексами из списка
 def even_index_elements(arr):
     return [arr[i] for i in range(0, len(arr), 2)]
 
 
-# 808. Функция для инвертирования словаря (меняем местами ключи и значения)
+# 646. Функция для инвертирования словаря (меняем местами ключи и значения)
 def invert_dict(d):
     return {v: k for k, v in d.items()}
 
 
-# 809. Функция для слияния двух отсортированных списков в один отсортированный
+# 647. Функция для слияния двух отсортированных списков в один отсортированный
 def merge_sorted_lists_5(list1, list2):
     merged = []
     i = j = 0
@@ -7529,19 +6756,19 @@ def merge_sorted_lists_5(list1, list2):
     return merged
 
 
-# 810. Функция для замены каждого второго символа в строке на звездочку
+# 648. Функция для замены каждого второго символа в строке на звездочку
 def replace_second_char(s):
     return ''.join([c if i % 2 == 0 else '*' for i, c in enumerate(s)])
 
 
-# 811. Функция для получения уникальных чисел из списка с их суммой
+# 649. Функция для получения уникальных чисел из списка с их суммой
 def unique_numbers_and_sum(lst):
     unique_numbers = set(lst)
     total = sum(unique_numbers)
     return unique_numbers, total
 
 
-# 812. Функция для проверки, является ли строка правильным email
+# 650. Функция для проверки, является ли строка правильным email
 def is_valid_email_2(email):
     if "@" not in email or "." not in email:
         return False
@@ -7551,25 +6778,25 @@ def is_valid_email_2(email):
     return True
 
 
-# 813. Функция для подсчета всех слов в строке с учётом знаков препинания
+# 651. Функция для подсчета всех слов в строке с учётом знаков препинания
 def count_words_in_string_2(s):
     words = s.split()
     return len(words)
 
 
-# 814. Функция для нахождения максимального числа в списке с проверкой на пустоту
+# 652. Функция для нахождения максимального числа в списке с проверкой на пустоту
 def max_in_list(lst):
     if not lst:
         return None
     return max(lst)
 
 
-# 815. Функция для преобразования строки в список чисел, разделенных запятой
+# 653. Функция для преобразования строки в список чисел, разделенных запятой
 def string_to_numbers_2(s):
     return [int(x) for x in s.split(",") if x.strip().isdigit()]
 
 
-# 816. Функция для вычисления степени числа с обработкой возможных ошибок
+# 654. Функция для вычисления степени числа с обработкой возможных ошибок
 def power_5(base, exponent):
     try:
         return base ** exponent
@@ -7577,17 +6804,17 @@ def power_5(base, exponent):
         return "Invalid input"
 
 
-# 817. Функция для генерации списка всех чисел от 1 до N, которые делятся на X
+# 655. Функция для генерации списка всех чисел от 1 до N, которые делятся на X
 def divisible_by_x_5(n, x):
     return [i for i in range(1, n + 1) if i % x == 0]
 
 
-# 818. Функция для вычисления длины строки, игнорируя пробелы
+# 656. Функция для вычисления длины строки, игнорируя пробелы
 def length_without_spaces(s):
     return len(s.replace(" ", ""))
 
 
-# 819. Функция для проверки, является ли строка числом в десятичной системе
+# 657. Функция для проверки, является ли строка числом в десятичной системе
 def is_decimal(s):
     try:
         float(s)
@@ -7596,12 +6823,12 @@ def is_decimal(s):
         return False
 
 
-# 820. Функция для изменения регистра в строках, включая те, которые начинаются с пробела
+# 658. Функция для изменения регистра в строках, включая те, которые начинаются с пробела
 def change_case_and_strip(s):
     return s.strip().upper() if s.startswith(" ") else s.lower()
 
 
-# 821. Функция для нахождения индекса первого отрицательного числа в списке
+# 659. Функция для нахождения индекса первого отрицательного числа в списке
 def find_first_negative(arr):
     if not arr:
         return None
@@ -7611,7 +6838,7 @@ def find_first_negative(arr):
     return None
 
 
-# 822. Функция для удаления всех повторяющихся элементов из списка, сохраняя порядок
+# 660. Функция для удаления всех повторяющихся элементов из списка, сохраняя порядок
 def remove_duplicates_5(arr):
     if not arr:
         return arr
@@ -7624,7 +6851,7 @@ def remove_duplicates_5(arr):
     return result
 
 
-# 823. Функция для проверки, является ли строка числом с плавающей точкой
+# 661. Функция для проверки, является ли строка числом с плавающей точкой
 def is_float_5(s):
     try:
         float(s)
@@ -7633,7 +6860,7 @@ def is_float_5(s):
         return False
 
 
-# 824. Функция для извлечения всех слов из строки, содержащих цифры
+# 662. Функция для извлечения всех слов из строки, содержащих цифры
 def extract_words_with_numbers(s):
     if not s:
         return []
@@ -7645,7 +6872,7 @@ def extract_words_with_numbers(s):
     return result
 
 
-# 825. Функция для нахождения наименьшего общего кратного двух чисел
+# 663. Функция для нахождения наименьшего общего кратного двух чисел
 def lcm_4(a, b):
     if a == 0 or b == 0:
         return 0
@@ -7656,7 +6883,7 @@ def lcm_4(a, b):
         greater += 1
 
 
-# 826. Функция для объединения двух списков с уникальными значениями
+# 664. Функция для объединения двух списков с уникальными значениями
 def merge_unique_lists_2(arr1, arr2):
     result = arr1.copy()
     for el in arr2:
@@ -7665,7 +6892,7 @@ def merge_unique_lists_2(arr1, arr2):
     return result
 
 
-# 827. Функция для возврата индекса элемента в списке, если он существует, или None
+# 665. Функция для возврата индекса элемента в списке, если он существует, или None
 def find_index_of_element(arr, element):
     if not arr:
         return None
@@ -7675,7 +6902,7 @@ def find_index_of_element(arr, element):
     return None
 
 
-# 828. Функция для подсчета всех слов в строке с учетом разделителей
+# 666. Функция для подсчета всех слов в строке с учетом разделителей
 def count_words_in_string_with_delimiters(s, delimiters=" "):
     if not s:
         return 0
@@ -7684,7 +6911,7 @@ def count_words_in_string_with_delimiters(s, delimiters=" "):
     return len(s.split())
 
 
-# 830. Функция для нахождения всех чисел больше среднего в списке
+# 667. Функция для нахождения всех чисел больше среднего в списке
 def greater_than_average_6(arr):
     if not arr:
         return []
@@ -7692,7 +6919,7 @@ def greater_than_average_6(arr):
     return [x for x in arr if x > avg]
 
 
-# 831. Функция для объединения словаря и списка кортежей в новый словарь
+# 668. Функция для объединения словаря и списка кортежей в новый словарь
 def merge_dict_and_tuple(lst, d):
     if not lst:
         return d
@@ -7701,7 +6928,7 @@ def merge_dict_and_tuple(lst, d):
     return d
 
 
-# 832. Функция для вычисления суммы всех чисел в строке
+# 669. Функция для вычисления суммы всех чисел в строке
 def sum_numbers_in_string_2(s):
     if not s:
         return 0
@@ -7718,7 +6945,7 @@ def sum_numbers_in_string_2(s):
     return total
 
 
-# 833. Функция для нахождения числа, которое не встречается в двух списках
+# 670. Функция для нахождения числа, которое не встречается в двух списках
 def find_missing_number(arr1, arr2):
     set1 = set(arr1)
     set2 = set(arr2)
@@ -7728,7 +6955,7 @@ def find_missing_number(arr1, arr2):
     return None
 
 
-# 834. Функция для слияния двух строк с их чередующимися символами
+# 671. Функция для слияния двух строк с их чередующимися символами
 def alternate_merge(s1, s2):
     if not s1:
         return s2
@@ -7743,14 +6970,14 @@ def alternate_merge(s1, s2):
     return ''.join(result)
 
 
-# 835. Функция для проверки, все ли элементы в списке больше заданного числа
+# 672. Функция для проверки, все ли элементы в списке больше заданного числа
 def are_all_greater_than(arr, number):
     if not arr:
         return False
     return all(x > number for x in arr)
 
 
-# 836. Функция для поиска и замены первого вхождения подстроки в строке
+# 673. Функция для поиска и замены первого вхождения подстроки в строке
 def replace_first_occurrence(s, old, new):
     if old not in s:
         return s
@@ -7758,17 +6985,7 @@ def replace_first_occurrence(s, old, new):
     return s[:index] + new + s[index + len(old):]
 
 
-# 837. Функция для возврата наибольшего общего делителя массива
-def gcd_of_list(arr):
-    if not arr:
-        return None
-    result = arr[0]
-    for num in arr[1:]:
-        result = gcd(result, num)
-    return result
-
-
-# 838. Функция для получения уникальных элементов из списка, исключая те, которые повторяются
+# 674. Функция для получения уникальных элементов из списка, исключая те, которые повторяются
 def get_unique_elements(arr):
     if not arr:
         return []
@@ -7778,7 +6995,7 @@ def get_unique_elements(arr):
     return [key for key, value in count.items() if value == 1]
 
 
-# 839. Функция для нахождения минимального четного числа в списке
+# 675. Функция для нахождения минимального четного числа в списке
 def min_even_number(arr):
     if not arr:
         return None
@@ -7788,19 +7005,19 @@ def min_even_number(arr):
     return None
 
 
-# 840. Функция для преобразования числа в строку с ведущими нулями
+# 676. Функция для преобразования числа в строку с ведущими нулями
 def number_to_string_with_leading_zeros(n, width):
     return str(n).zfill(width)
 
 
-# 841. Функция для преобразования списка чисел в строку с разделением на запятую
+# 677. Функция для преобразования списка чисел в строку с разделением на запятую
 def list_to_comma_separated_string(arr):
     if not arr:
         return ""
     return ", ".join(map(str, arr))
 
 
-# 842. Функция для проверки, является ли строка правильным числом (целым или с плавающей точкой)
+# 678. Функция для проверки, является ли строка правильным числом (целым или с плавающей точкой)
 def is_valid_number(s):
     try:
         float(s)
@@ -7809,7 +7026,7 @@ def is_valid_number(s):
         return False
 
 
-# 843. Функция для подсчета гласных букв в строке
+# 679. Функция для подсчета гласных букв в строке
 def count_vowels_2(s):
     vowels = "aeiouAEIOU"
     count = 0
@@ -7819,7 +7036,7 @@ def count_vowels_2(s):
     return count
 
 
-# 844. Функция для вычисления произведения всех чисел в строке
+# 680. Функция для вычисления произведения всех чисел в строке
 def product_of_numbers_in_string(s):
     if not s:
         return 1
@@ -7836,33 +7053,27 @@ def product_of_numbers_in_string(s):
     return total
 
 
-# 845. Функция для поиска всех строк в списке, содержащих хотя бы одну цифру
+# 681. Функция для поиска всех строк в списке, содержащих хотя бы одну цифру
 def find_strings_with_digits(arr):
     return [s for s in arr if any(char.isdigit() for char in s)]
 
 
-# 846. Функция для вычисления числа цифр в строке
+# 682. Функция для вычисления числа цифр в строке
 def count_digits_in_string(s):
     return sum(1 for char in s if char.isdigit())
 
 
-# 847. Функция для получения каждого второго элемента в строке
+# 683. Функция для получения каждого второго элемента в строке
 def get_every_second_char(s):
     return s[::2]
 
 
-# 848. Функция для фильтрации строк, содержащих хотя бы одну заглавную букву
+# 684. Функция для фильтрации строк, содержащих хотя бы одну заглавную букву
 def filter_strings_with_uppercase(arr):
     return [s for s in arr if any(char.isupper() for char in s)]
 
 
-# 849. Функция для поиска всех чисел в строке и их суммирования
-def sum_numbers_in_string_v2(s):
-    numbers = extract_numbers_from_string(s)
-    return sum(numbers)
-
-
-# 850. Функция для подсчета повторений каждого символа в строке, кроме пробела
+# 685. Функция для подсчета повторений каждого символа в строке, кроме пробела
 def count_non_space_characters(s):
     count = {}
     for char in s:
@@ -7871,7 +7082,7 @@ def count_non_space_characters(s):
     return count
 
 
-# 851. Функция для поиска строки с максимальной длиной в списке
+# 686. Функция для поиска строки с максимальной длиной в списке
 def find_longest_string(arr):
     if not arr:
         return None
@@ -7884,7 +7095,7 @@ def find_longest_string(arr):
     return longest_string
 
 
-# 852. Функция для нахождения индекса первого четного числа в списке
+# 687. Функция для нахождения индекса первого четного числа в списке
 def find_first_even(arr):
     if not arr:
         return None
@@ -7894,7 +7105,7 @@ def find_first_even(arr):
     return None
 
 
-# 853. Функция для вычисления суммы всех чисел в строке
+# 688. Функция для вычисления суммы всех чисел в строке
 def sum_numbers_in_string_v3(s):
     total = 0
     temp = ""
@@ -7911,7 +7122,7 @@ def sum_numbers_in_string_v3(s):
     return total
 
 
-# 854. Функция для преобразования строки в список чисел (каждое число отделено пробелом)
+# 689. Функция для преобразования строки в список чисел (каждое число отделено пробелом)
 def string_to_number_list(s):
     if not s:
         return []
@@ -7922,7 +7133,7 @@ def string_to_number_list(s):
         return None
 
 
-# 855. Функция для поиска максимального и минимального элемента в списке
+# 690. Функция для поиска максимального и минимального элемента в списке
 def find_max_min(arr):
     if not arr:
         return None, None
@@ -7936,7 +7147,7 @@ def find_max_min(arr):
     return max_val, min_val
 
 
-# 856. Функция для замены всех пробелов на подчеркивания в строке
+# 691. Функция для замены всех пробелов на подчеркивания в строке
 def replace_spaces_with_underscores_5(s):
     if not s:
         return None
@@ -7949,7 +7160,7 @@ def replace_spaces_with_underscores_5(s):
     return result
 
 
-# 857. Функция для удаления дубликатов из списка, не изменяя порядок
+# 692. Функция для удаления дубликатов из списка, не изменяя порядок
 def remove_duplicates_maintain_order(arr):
     if not arr:
         return []
@@ -7962,7 +7173,7 @@ def remove_duplicates_maintain_order(arr):
     return result
 
 
-# 858. Функция для поиска первого числа в списке, которое делится на заданное число
+# 693. Функция для поиска первого числа в списке, которое делится на заданное число
 def find_first_multiple(arr, divisor):
     if not arr or divisor == 0:
         return None
@@ -7972,7 +7183,7 @@ def find_first_multiple(arr, divisor):
     return None
 
 
-# 859. Функция для проверки, является ли строка полиндромом, игнорируя пробелы и регистр
+# 694. Функция для проверки, является ли строка полиндромом, игнорируя пробелы и регистр
 def is_palindrome_v2(s):
     if not s:
         return False
@@ -7980,7 +7191,7 @@ def is_palindrome_v2(s):
     return cleaned == cleaned[::-1]
 
 
-# 860. Функция для получения всех четных чисел из списка
+# 695. Функция для получения всех четных чисел из списка
 def get_even_numbers(arr):
     if not arr:
         return []
@@ -7991,7 +7202,7 @@ def get_even_numbers(arr):
     return even_numbers
 
 
-# 861. Функция для проверки, является ли строка числом (целым или с плавающей точкой)
+# 696. Функция для проверки, является ли строка числом (целым или с плавающей точкой)
 def is_number_v2(s):
     if not s:
         return False
@@ -8002,7 +7213,7 @@ def is_number_v2(s):
         return False
 
 
-# 862. Функция для подсчета всех повторяющихся элементов в списке
+# 697. Функция для подсчета всех повторяющихся элементов в списке
 def count_repeating_elements(arr):
     if not arr:
         return {}
@@ -8012,7 +7223,7 @@ def count_repeating_elements(arr):
     return {key: value for key, value in counts.items() if value > 1}
 
 
-# 863. Функция для извлечения уникальных слов из строки
+# 698. Функция для извлечения уникальных слов из строки
 def extract_unique_words(s):
     if not s:
         return []
@@ -8021,7 +7232,7 @@ def extract_unique_words(s):
     return list(unique_words)
 
 
-# 864. Функция для нахождения наибольшего простого числа в списке
+# 699. Функция для нахождения наибольшего простого числа в списке
 def find_largest_prime(arr):
     if not arr:
         return None
@@ -8040,7 +7251,7 @@ def find_largest_prime(arr):
     return None
 
 
-# 865. Функция для извлечения всех цифр из строки
+# 700. Функция для извлечения всех цифр из строки
 def extract_digits(s):
     if not s:
         return []
@@ -8048,7 +7259,7 @@ def extract_digits(s):
     return digits
 
 
-# 866. Функция для поиска всех слов в строке, длина которых больше 3 символов
+# 701. Функция для поиска всех слов в строке, длина которых больше 3 символов
 def find_long_words(s):
     if not s:
         return []
@@ -8057,7 +7268,7 @@ def find_long_words(s):
     return long_words
 
 
-# 867. Функция для получения всех чисел в строке, разделенных запятыми
+# 702. Функция для получения всех чисел в строке, разделенных запятыми
 def get_numbers_from_string(s):
     if not s:
         return []
@@ -8074,7 +7285,7 @@ def get_numbers_from_string(s):
     return numbers
 
 
-# 868. Функция для нахождения всех чисел в списке, которые больше заданного числа
+# 703. Функция для нахождения всех чисел в списке, которые больше заданного числа
 def find_numbers_greater_than(arr, n):
     if not arr:
         return []
@@ -8085,7 +7296,7 @@ def find_numbers_greater_than(arr, n):
     return greater_numbers
 
 
-# 869. Функция для объединения списка строк в одну строку с разделителями
+# 704. Функция для объединения списка строк в одну строку с разделителями
 def join_strings_with_separator(arr, separator):
     if not arr:
         return ""
@@ -8095,7 +7306,7 @@ def join_strings_with_separator(arr, separator):
     return result
 
 
-# 870. Функция для вычисления суммы всех четных чисел в списке
+# 705. Функция для вычисления суммы всех четных чисел в списке
 def sum_even_numbers(arr):
     if not arr:
         return 0
@@ -8106,7 +7317,7 @@ def sum_even_numbers(arr):
     return total
 
 
-# 871. Функция для нахождения первой строки, содержащей заданное слово
+# 706. Функция для нахождения первой строки, содержащей заданное слово
 def find_string_with_word(arr, word):
     if not arr or not word:
         return None
@@ -8116,7 +7327,7 @@ def find_string_with_word(arr, word):
     return None
 
 
-# 872. Функция для нахождения наименьшего нечетного числа в списке
+# 707. Функция для нахождения наименьшего нечетного числа в списке
 def find_smallest_odd(arr):
     if not arr:
         return None
@@ -8126,7 +7337,7 @@ def find_smallest_odd(arr):
     return None
 
 
-# 873. Функция для замены всех вхождений подстроки на другую подстроку
+# 708. Функция для замены всех вхождений подстроки на другую подстроку
 def replace_substring(s, old_sub, new_sub):
     if not s or not old_sub:
         return s
@@ -8146,7 +7357,7 @@ def replace_substring(s, old_sub, new_sub):
     return result
 
 
-# 874. Функция для нахождения первого элемента списка, который делится на 3 и на 5
+# 709. Функция для нахождения первого элемента списка, который делится на 3 и на 5
 def find_divisible_by_3_and_5_5(arr):
     if not arr:
         return None
@@ -8156,7 +7367,7 @@ def find_divisible_by_3_and_5_5(arr):
     return None
 
 
-# 875. Функция для вычисления среднего арифметического элементов списка
+# 710. Функция для вычисления среднего арифметического элементов списка
 def calculate_average(arr):
     if not arr:
         return None
@@ -8165,7 +7376,7 @@ def calculate_average(arr):
     return total / count
 
 
-# 876. Функция для объединения двух списков в один и удаления повторяющихся элементов
+# 711. Функция для объединения двух списков в один и удаления повторяющихся элементов
 def combine_and_unique(arr1, arr2):
     if not arr1 and not arr2:
         return []
@@ -8177,7 +7388,7 @@ def combine_and_unique(arr1, arr2):
     return unique
 
 
-# 877. Функция для выбора наибольшего числа из трех
+# 712. Функция для выбора наибольшего числа из трех
 def choose_largest(a, b, c):
     if a > b and a > c:
         return a
@@ -8192,7 +7403,7 @@ def choose_largest(a, b, c):
     return a  # Если все равны, возвращаем первое
 
 
-# 878. Функция для выбора максимальной длины строки из нескольких
+# 713. Функция для выбора максимальной длины строки из нескольких
 def choose_longest_string(*strings):
     longest = ""
     for s in strings:
@@ -8204,7 +7415,7 @@ def choose_longest_string(*strings):
     return longest
 
 
-# 879. Функция для выбора наиболее часто встречающегося элемента в списке
+# 714. Функция для выбора наиболее часто встречающегося элемента в списке
 def choose_most_frequent(arr):
     freq = {}
     for elem in arr:
@@ -8224,7 +7435,7 @@ def choose_most_frequent(arr):
     return most_frequent
 
 
-# 880. Функция для выбора минимального значения из нескольких чисел
+# 715. Функция для выбора минимального значения из нескольких чисел
 def choose_smallest(*nums):
     smallest = None
     for num in nums:
@@ -8233,7 +7444,7 @@ def choose_smallest(*nums):
     return smallest
 
 
-# 881. Функция для выбора строки, содержащей наибольшее количество гласных
+# 716. Функция для выбора строки, содержащей наибольшее количество гласных
 def choose_string_with_most_vowels(*strings):
     vowels = 'aeiouAEIOU'
     max_vowels = 0
@@ -8248,7 +7459,7 @@ def choose_string_with_most_vowels(*strings):
     return chosen_string
 
 
-# 882. Функция для выбора наименьшего четного числа
+# 717. Функция для выбора наименьшего четного числа
 def choose_smallest_even(*nums):
     smallest_even = None
     for num in nums:
@@ -8260,7 +7471,7 @@ def choose_smallest_even(*nums):
     return smallest_even
 
 
-# 883. Функция для выбора числа с наибольшей разницей с другими числами
+# 718. Функция для выбора числа с наибольшей разницей с другими числами
 def choose_number_with_max_diff(*nums):
     max_diff = 0
     chosen_num = None
@@ -8272,7 +7483,7 @@ def choose_number_with_max_diff(*nums):
     return chosen_num
 
 
-# 884. Функция для выбора строки, которая начинается с гласной
+# 719. Функция для выбора строки, которая начинается с гласной
 def choose_string_starting_with_vowel(*strings):
     vowels = 'aeiouAEIOU'
     for s in strings:
@@ -8281,7 +7492,7 @@ def choose_string_starting_with_vowel(*strings):
     return "No string starts with a vowel"
 
 
-# 885. Функция для выбора второго наибольшего числа
+# 720. Функция для выбора второго наибольшего числа
 def choose_second_largest(*nums):
     unique_nums = list(set(nums))
     unique_nums.sort(reverse=True)
@@ -8290,7 +7501,7 @@ def choose_second_largest(*nums):
     return unique_nums[1]
 
 
-# 886. Функция для выбора минимального элемента из списка, если он четный
+# 721. Функция для выбора минимального элемента из списка, если он четный
 def choose_smallest_even_from_list(arr):
     smallest_even = None
     for num in arr:
@@ -8302,7 +7513,7 @@ def choose_smallest_even_from_list(arr):
     return smallest_even
 
 
-# 887. Функция для выбора самого длинного слова, не начинающегося на гласную
+# 722. Функция для выбора самого длинного слова, не начинающегося на гласную
 def choose_longest_non_vowel_word(*words):
     vowels = 'aeiouAEIOU'
     longest = ""
@@ -8315,7 +7526,7 @@ def choose_longest_non_vowel_word(*words):
     return longest
 
 
-# 888. Функция для выбора наименьшего отрицательного числа
+# 723. Функция для выбора наименьшего отрицательного числа
 def choose_smallest_negative(*nums):
     smallest_negative = None
     for num in nums:
@@ -8327,7 +7538,7 @@ def choose_smallest_negative(*nums):
     return smallest_negative
 
 
-# 889. Функция для выбора строки, которая содержит наибольшее количество цифр
+# 724. Функция для выбора строки, которая содержит наибольшее количество цифр
 def choose_string_with_most_digits(*strings):
     max_digits = 0
     chosen_string = ""
@@ -8341,7 +7552,7 @@ def choose_string_with_most_digits(*strings):
     return chosen_string
 
 
-# 890. Функция для выбора наибольшего числа в пределах диапазона
+# 725. Функция для выбора наибольшего числа в пределах диапазона
 def choose_largest_in_range(low, high, *nums):
     largest_in_range = None
     for num in nums:
@@ -8353,7 +7564,7 @@ def choose_largest_in_range(low, high, *nums):
     return largest_in_range
 
 
-# 891. Функция для выбора первого четного числа в списке
+# 726. Функция для выбора первого четного числа в списке
 def choose_first_even_number(arr):
     for num in arr:
         if num % 2 == 0:
@@ -8361,7 +7572,7 @@ def choose_first_even_number(arr):
     return "No even numbers"
 
 
-# 892. Функция для выбора самой короткой строки, не содержащей пробелы
+# 727. Функция для выбора самой короткой строки, не содержащей пробелы
 def choose_shortest_no_space_string(*strings):
     shortest = None
     for s in strings:
@@ -8373,7 +7584,7 @@ def choose_shortest_no_space_string(*strings):
     return shortest
 
 
-# 893. Функция для выбора самого младшего возраста в группе
+# 728. Функция для выбора самого младшего возраста в группе
 def choose_youngest_age(*ages):
     youngest = None
     for age in ages:
@@ -8382,7 +7593,7 @@ def choose_youngest_age(*ages):
     return youngest
 
 
-# 894. Функция для выбора строки с наибольшим количеством уникальных символов
+# 729. Функция для выбора строки с наибольшим количеством уникальных символов
 def choose_string_with_most_unique_chars(*strings):
     max_unique = 0
     chosen_string = ""
@@ -8394,7 +7605,7 @@ def choose_string_with_most_unique_chars(*strings):
     return chosen_string
 
 
-# 895. Функция для выбора первого четного числа, которое делится на 3
+# 730. Функция для выбора первого четного числа, которое делится на 3
 def choose_first_even_divisible_by_three(arr):
     for num in arr:
         if num % 2 == 0 and num % 3 == 0:
@@ -8402,7 +7613,7 @@ def choose_first_even_divisible_by_three(arr):
     return "No even number divisible by 3"
 
 
-# 896. Функция для выбора максимального числа, которое меньше заданного
+# 731. Функция для выбора максимального числа, которое меньше заданного
 def choose_largest_less_than(value, *nums):
     largest = None
     for num in nums:
@@ -8414,7 +7625,7 @@ def choose_largest_less_than(value, *nums):
     return largest
 
 
-# 897. Функция для выбора первого числа, которое больше заданного
+# 732. Функция для выбора первого числа, которое больше заданного
 def choose_first_greater_than(value, *nums):
     for num in nums:
         if num > value:
@@ -8422,7 +7633,7 @@ def choose_first_greater_than(value, *nums):
     return f"No numbers greater than {value}"
 
 
-# 898. Функция для выбора строки, длина которой делится на 3
+# 733. Функция для выбора строки, длина которой делится на 3
 def choose_string_with_length_divisible_by_three(*strings):
     for s in strings:
         if len(s) % 3 == 0:
@@ -8430,7 +7641,7 @@ def choose_string_with_length_divisible_by_three(*strings):
     return "No string with length divisible by 3"
 
 
-# 899. Функция для выбора самого дорогого товара в списке
+# 734. Функция для выбора самого дорогого товара в списке
 def choose_most_expensive_item(*items):
     max_price = 0
     most_expensive = None
@@ -8442,7 +7653,7 @@ def choose_most_expensive_item(*items):
     return most_expensive if most_expensive else "No items found"
 
 
-# 900. Функция для выбора строки, длина которой меньше заданного числа
+# 735. Функция для выбора строки, длина которой меньше заданного числа
 def choose_string_shorter_than(length, *strings):
     for s in strings:
         if len(s) < length:
@@ -8450,7 +7661,7 @@ def choose_string_shorter_than(length, *strings):
     return None
 
 
-# 901. Функция для выбора первого числа, которое не делится на 2 и 3
+# 736. Функция для выбора первого числа, которое не делится на 2 и 3
 def choose_first_not_divisible_by_2_and_3(arr):
     for num in arr:
         if num % 2 != 0 and num % 3 != 0:
@@ -8458,7 +7669,7 @@ def choose_first_not_divisible_by_2_and_3(arr):
     return None
 
 
-# 902. Функция для выбора первого слова, в котором все буквы – гласные
+# 737. Функция для выбора первого слова, в котором все буквы – гласные
 def choose_word_with_only_vowels(*words):
     vowels = 'aeiouAEIOU'
     for word in words:
@@ -8467,7 +7678,7 @@ def choose_word_with_only_vowels(*words):
     return None
 
 
-# 903. Функция для выбора самого большого числа в списке, которое не превышает заданное значение
+# 738. Функция для выбора самого большого числа в списке, которое не превышает заданное значение
 def choose_largest_less_than_or_equal_to(value, *nums):
     largest = None
     for num in nums:
@@ -8477,7 +7688,7 @@ def choose_largest_less_than_or_equal_to(value, *nums):
     return largest if largest is not None else None
 
 
-# 904. Функция для выбора самой длинной строки, состоящей только из цифр
+# 739. Функция для выбора самой длинной строки, состоящей только из цифр
 def choose_longest_digit_string(*strings):
     longest = None
     for s in strings:
@@ -8487,7 +7698,7 @@ def choose_longest_digit_string(*strings):
     return longest if longest is not None else None
 
 
-# 905. Функция для выбора самой короткой строки, в которой нет гласных
+# 740. Функция для выбора самой короткой строки, в которой нет гласных
 def choose_shortest_string_without_vowels(*strings):
     vowels = 'aeiouAEIOU'
     shortest = None
@@ -8498,7 +7709,7 @@ def choose_shortest_string_without_vowels(*strings):
     return shortest if shortest is not None else None
 
 
-# 906. Функция для выбора наибольшего четного числа, которое меньше заданного
+# 741. Функция для выбора наибольшего четного числа, которое меньше заданного
 def choose_largest_even_less_than(value, *nums):
     largest = None
     for num in nums:
@@ -8508,7 +7719,7 @@ def choose_largest_even_less_than(value, *nums):
     return largest if largest is not None else None
 
 
-# 907. Функция для выбора второго самого маленького числа
+# 742. Функция для выбора второго самого маленького числа
 def choose_second_smallest(*nums):
     unique_nums = list(set(nums))
     unique_nums.sort()
@@ -8517,7 +7728,7 @@ def choose_second_smallest(*nums):
     return unique_nums[1]
 
 
-# 908. Функция для выбора строки, которая начинается и заканчивается на одну и ту же букву
+# 743. Функция для выбора строки, которая начинается и заканчивается на одну и ту же букву
 def choose_string_start_and_end_same(*strings):
     for s in strings:
         if s[0] == s[-1]:
@@ -8525,7 +7736,7 @@ def choose_string_start_and_end_same(*strings):
     return None
 
 
-# 909. Функция для выбора первого числа, которое делится на 5 и 7
+# 744. Функция для выбора первого числа, которое делится на 5 и 7
 def choose_first_divisible_by_5_and_7(arr):
     for num in arr:
         if num % 5 == 0 and num % 7 == 0:
@@ -8533,7 +7744,7 @@ def choose_first_divisible_by_5_and_7(arr):
     return None
 
 
-# 910. Функция для выбора самой короткой строки, содержащей хотя бы одну цифру
+# 745. Функция для выбора самой короткой строки, содержащей хотя бы одну цифру
 def choose_shortest_string_with_digit(*strings):
     for s in strings:
         if any(char.isdigit() for char in s):
@@ -8541,7 +7752,7 @@ def choose_shortest_string_with_digit(*strings):
     return None
 
 
-# 911. Функция для выбора самой дорогой покупки, не превышающей заданную цену
+# 746. Функция для выбора самой дорогой покупки, не превышающей заданную цену
 def choose_most_expensive_below_price(limit, *items):
     max_price = None
     most_expensive = None
@@ -8553,7 +7764,7 @@ def choose_most_expensive_below_price(limit, *items):
     return most_expensive if most_expensive else None
 
 
-# 912. Функция для выбора первого числа, которое является квадратом числа
+# 747. Функция для выбора первого числа, которое является квадратом числа
 def choose_first_square_number(arr):
     for num in arr:
         if int(num ** 0.5) ** 2 == num:
@@ -8561,7 +7772,7 @@ def choose_first_square_number(arr):
     return None
 
 
-# 913. Функция для выбора самого старшего возраста среди людей
+# 748. Функция для выбора самого старшего возраста среди людей
 def choose_oldest_age(*ages):
     oldest = None
     for age in ages:
@@ -8570,7 +7781,7 @@ def choose_oldest_age(*ages):
     return oldest if oldest is not None else None
 
 
-# 914. Функция для выбора первого числа, которое делится на 2, но не на 3
+# 749. Функция для выбора первого числа, которое делится на 2, но не на 3
 def choose_first_divisible_by_2_not_3(arr):
     for num in arr:
         if num % 2 == 0 and num % 3 != 0:
@@ -8578,7 +7789,7 @@ def choose_first_divisible_by_2_not_3(arr):
     return None
 
 
-# 915. Функция для выбора самой длинной строки, в которой все символы – цифры
+# 750. Функция для выбора самой длинной строки, в которой все символы – цифры
 def choose_longest_all_digits_string(*strings):
     longest = None
     for s in strings:
@@ -8588,7 +7799,7 @@ def choose_longest_all_digits_string(*strings):
     return longest if longest is not None else None
 
 
-# 916. Функция для выбора первого четного числа, которое больше заданного
+# 751. Функция для выбора первого четного числа, которое больше заданного
 def choose_first_even_greater_than(value, *nums):
     for num in nums:
         if num % 2 == 0 and num > value:
@@ -8596,7 +7807,7 @@ def choose_first_even_greater_than(value, *nums):
     return None
 
 
-# 917. Функция для выбора первой строки, которая не является числом
+# 752. Функция для выбора первой строки, которая не является числом
 def choose_first_non_numeric_string(*strings):
     for s in strings:
         if not s.isdigit():
@@ -8604,7 +7815,7 @@ def choose_first_non_numeric_string(*strings):
     return None
 
 
-# 918. Функция для выбора строки, которая является палиндромом
+# 753. Функция для выбора строки, которая является палиндромом
 def choose_palindrome(*strings):
     for s in strings:
         if s == s[::-1]:
@@ -8612,7 +7823,7 @@ def choose_palindrome(*strings):
     return None
 
 
-# 919. Функция для выбора самой дорогой покупки, которая не дороже 100
+# 754. Функция для выбора самой дорогой покупки, которая не дороже 100
 def choose_most_expensive_under_100(*items):
     max_price = None
     most_expensive = None
@@ -8624,7 +7835,7 @@ def choose_most_expensive_under_100(*items):
     return most_expensive if most_expensive else None
 
 
-# 920. Функция для выбора самого первого четного числа, которое больше 10
+# 755. Функция для выбора самого первого четного числа, которое больше 10
 def choose_first_even_greater_than_10(arr):
     for num in arr:
         if num % 2 == 0 and num > 10:
@@ -8632,7 +7843,7 @@ def choose_first_even_greater_than_10(arr):
     return None
 
 
-# 921. Функция для выбора самого маленького числа, которое делится на 5
+# 756. Функция для выбора самого маленького числа, которое делится на 5
 def choose_smallest_divisible_by_5(*nums):
     smallest = None
     for num in nums:
@@ -8642,7 +7853,7 @@ def choose_smallest_divisible_by_5(*nums):
     return smallest if smallest is not None else None
 
 
-# 922. Функция для выбора первого слова с длиной больше 5, которое начинается с согласной
+# 757. Функция для выбора первого слова с длиной больше 5, которое начинается с согласной
 def choose_first_long_word_starting_with_consonant(*words):
     vowels = 'aeiouAEIOU'
     for word in words:
@@ -8651,7 +7862,7 @@ def choose_first_long_word_starting_with_consonant(*words):
     return None
 
 
-# 923. Функция для выбора самого большого числа, которое меньше чем 20
+# 758. Функция для выбора самого большого числа, которое меньше чем 20
 def choose_largest_less_than_20(*nums):
     largest = None
     for num in nums:
@@ -8661,7 +7872,7 @@ def choose_largest_less_than_20(*nums):
     return largest if largest is not None else None
 
 
-# 924. Функция для выбора строки, которая начинается с заглавной буквы
+# 759. Функция для выбора строки, которая начинается с заглавной буквы
 def choose_string_starting_with_uppercase(*strings):
     for s in strings:
         if s[0].isupper():
@@ -8669,7 +7880,7 @@ def choose_string_starting_with_uppercase(*strings):
     return None
 
 
-# 925. Функция для выбора первого числа, которое не является ни четным, ни простым
+# 760. Функция для выбора первого числа, которое не является ни четным, ни простым
 def choose_first_non_even_non_prime(arr):
     def is_prime(num):
         if num < 2:
@@ -8685,7 +7896,7 @@ def choose_first_non_even_non_prime(arr):
     return None
 
 
-# 926. Функция для выбора самой короткой строки, которая начинается с цифры
+# 761. Функция для выбора самой короткой строки, которая начинается с цифры
 def choose_shortest_string_starting_with_digit(*strings):
     for s in strings:
         if s[0].isdigit():
@@ -8693,7 +7904,7 @@ def choose_shortest_string_starting_with_digit(*strings):
     return None
 
 
-# 927. Функция для выбора строки, которая является анаграммой другой строки
+# 762. Функция для выбора строки, которая является анаграммой другой строки
 def choose_anagram_of(string, *strings):
     sorted_string = sorted(string)
     for s in strings:
@@ -8702,7 +7913,7 @@ def choose_anagram_of(string, *strings):
     return None
 
 
-# 928. Функция для выбора наименьшего числа, которое больше заданного
+# 763. Функция для выбора наименьшего числа, которое больше заданного
 def choose_smallest_greater_than(value, *nums):
     smallest = None
     for num in nums:
@@ -8712,7 +7923,7 @@ def choose_smallest_greater_than(value, *nums):
     return smallest if smallest is not None else None
 
 
-# 929. Функция для выбора первого слова, которое имеет четное количество букв
+# 764. Функция для выбора первого слова, которое имеет четное количество букв
 def choose_first_even_length_word(*words):
     for word in words:
         if len(word) % 2 == 0:
@@ -8720,7 +7931,7 @@ def choose_first_even_length_word(*words):
     return None
 
 
-# 930. Функция для выбора строки, длина которой больше средней длины всех строк
+# 765. Функция для выбора строки, длина которой больше средней длины всех строк
 def choose_longer_than_average(*strings):
     avg_length = sum(len(s) for s in strings) / len(strings) if strings else 0
     for s in strings:
@@ -8729,7 +7940,7 @@ def choose_longer_than_average(*strings):
     return None
 
 
-# 931. Функция для выбора строки, которая содержит только буквы
+# 766. Функция для выбора строки, которая содержит только буквы
 def choose_string_with_only_letters(*strings):
     for s in strings:
         if s.isalpha():
@@ -8737,7 +7948,7 @@ def choose_string_with_only_letters(*strings):
     return None
 
 
-# 932. Функция для выбора самого старого возраста, который меньше 30
+# 767. Функция для выбора самого старого возраста, который меньше 30
 def choose_oldest_under_30(*ages):
     oldest = None
     for age in ages:
@@ -8747,7 +7958,7 @@ def choose_oldest_under_30(*ages):
     return oldest if oldest is not None else None
 
 
-# 933. Функция для выбора числа, которое является кратным 4, но не кратным 5
+# 768. Функция для выбора числа, которое является кратным 4, но не кратным 5
 def choose_multiple_of_4_not_5(arr):
     for num in arr:
         if num % 4 == 0 and num % 5 != 0:
@@ -8755,7 +7966,7 @@ def choose_multiple_of_4_not_5(arr):
     return None
 
 
-# 934. Функция для выбора строки, длина которой кратна 3
+# 769. Функция для выбора строки, длина которой кратна 3
 def choose_string_length_divisible_by_3(*strings):
     for s in strings:
         if len(s) % 3 == 0:
@@ -8763,7 +7974,7 @@ def choose_string_length_divisible_by_3(*strings):
     return None
 
 
-# 935. Функция для выбора наименьшего числа, которое является четным и больше 10
+# 770. Функция для выбора наименьшего числа, которое является четным и больше 10
 def choose_smallest_even_greater_than_10(*nums):
     smallest = None
     for num in nums:
@@ -8773,7 +7984,7 @@ def choose_smallest_even_greater_than_10(*nums):
     return smallest if smallest is not None else None
 
 
-# 936. Функция для выбора первого числа, которое делится на 2 и 5
+# 771. Функция для выбора первого числа, которое делится на 2 и 5
 def choose_first_divisible_by_2_and_5(arr):
     for num in arr:
         if num % 2 == 0 and num % 5 == 0:
@@ -8781,7 +7992,7 @@ def choose_first_divisible_by_2_and_5(arr):
     return None
 
 
-# 937. Функция для выбора самой длинной строки, которая не начинается с цифры
+# 772. Функция для выбора самой длинной строки, которая не начинается с цифры
 def choose_longest_non_digit_starting_string(*strings):
     for s in strings:
         if not s[0].isdigit():
@@ -8789,7 +8000,7 @@ def choose_longest_non_digit_starting_string(*strings):
     return None
 
 
-# 938. Функция для выбора первого слова, которое состоит только из заглавных букв
+# 773. Функция для выбора первого слова, которое состоит только из заглавных букв
 def choose_first_all_uppercase_word(*words):
     for word in words:
         if word.isupper():
@@ -8797,7 +8008,7 @@ def choose_first_all_uppercase_word(*words):
     return None
 
 
-# 939. Функция для выбора самого младшего возраста среди людей старше 50 лет
+# 774. Функция для выбора самого младшего возраста среди людей старше 50 лет
 def choose_youngest_over_50(*ages):
     youngest = None
     for age in ages:
@@ -8807,7 +8018,7 @@ def choose_youngest_over_50(*ages):
     return youngest if youngest is not None else None
 
 
-# 940. Функция для выбора наибольшего числа, которое делится на 3, но не на 2
+# 775. Функция для выбора наибольшего числа, которое делится на 3, но не на 2
 def choose_largest_multiple_of_3_not_2(arr):
     largest = None
     for num in arr:
@@ -8817,7 +8028,7 @@ def choose_largest_multiple_of_3_not_2(arr):
     return largest if largest is not None else None
 
 
-# 941. Функция для выбора строки, содержащей хотя бы одну заглавную букву и цифру
+# 776. Функция для выбора строки, содержащей хотя бы одну заглавную букву и цифру
 def choose_string_with_uppercase_and_digit(*strings):
     for s in strings:
         if any(char.isdigit() for char in s) and any(char.isupper() for char in s):
@@ -8825,7 +8036,7 @@ def choose_string_with_uppercase_and_digit(*strings):
     return None
 
 
-# 942. Функция для выбора первого четного числа, которое меньше 50
+# 777. Функция для выбора первого четного числа, которое меньше 50
 def choose_first_even_less_than_50(arr):
     for num in arr:
         if num % 2 == 0 and num < 50:
@@ -8833,7 +8044,7 @@ def choose_first_even_less_than_50(arr):
     return None
 
 
-# 943. Функция для выбора самой короткой строки, которая не содержит пробела
+# 778. Функция для выбора самой короткой строки, которая не содержит пробела
 def choose_shortest_no_space_string_3(*strings):
     for s in strings:
         if " " not in s:
@@ -8841,7 +8052,7 @@ def choose_shortest_no_space_string_3(*strings):
     return None
 
 
-# 944. Функция для выбора строки, которая является повторением другого слова
+# 779. Функция для выбора строки, которая является повторением другого слова
 def choose_repeated_string(*strings):
     for s in strings:
         if s == s * 2:
@@ -8849,7 +8060,7 @@ def choose_repeated_string(*strings):
     return None
 
 
-# 945. Функция для выбора числа, которое больше 0, но не больше 100
+# 780. Функция для выбора числа, которое больше 0, но не больше 100
 def choose_number_in_range_0_100(*nums):
     for num in nums:
         if 0 < num <= 100:
@@ -8857,7 +8068,7 @@ def choose_number_in_range_0_100(*nums):
     return None
 
 
-# 946. Функция для выбора самого младшего числа, которое является нечётным
+# 781. Функция для выбора самого младшего числа, которое является нечётным
 def choose_smallest_odd_number(*nums):
     smallest_odd = None
     for num in nums:
@@ -8867,7 +8078,7 @@ def choose_smallest_odd_number(*nums):
     return smallest_odd if smallest_odd is not None else None
 
 
-# 947. Функция для выбора первого элемента списка, который больше 100 и четный
+# 782. Функция для выбора первого элемента списка, который больше 100 и четный
 def choose_first_greater_than_100_even(arr):
     for num in arr:
         if num > 100 and num % 2 == 0:
@@ -8875,7 +8086,7 @@ def choose_first_greater_than_100_even(arr):
     return None
 
 
-# 948. Функция для выбора самого длинного слова, содержащее только цифры
+# 783. Функция для выбора самого длинного слова, содержащее только цифры
 def choose_longest_digit_word(*words):
     longest = None
     for word in words:
@@ -8885,7 +8096,7 @@ def choose_longest_digit_word(*words):
     return longest if longest is not None else None
 
 
-# 949. Функция для проверки, является ли число простым, используя множество
+# 784. Функция для проверки, является ли число простым, используя множество
 def is_prime_using_set(n):
     if n < 2:
         return False
@@ -8896,7 +8107,7 @@ def is_prime_using_set(n):
     return len(factors) == 2
 
 
-# 950. Функция для подсчета чисел, которые кратны заданному числу в списке
+# 785. Функция для подсчета чисел, которые кратны заданному числу в списке
 def count_multiples_of(num, arr):
     count = 0
     for val in arr:
@@ -8905,7 +8116,7 @@ def count_multiples_of(num, arr):
     return count if count > 0 else None
 
 
-# 951. Функция для нахождения числа, которое делится на все элементы множества
+# 786. Функция для нахождения числа, которое делится на все элементы множества
 def find_divisible_by_all_in_set(num_set, num):
     for divisor in num_set:
         if num % divisor != 0:
@@ -8913,7 +8124,7 @@ def find_divisible_by_all_in_set(num_set, num):
     return num
 
 
-# 952. Функция для поиска первого числа, которое не встречается в словаре
+# 787. Функция для поиска первого числа, которое не встречается в словаре
 def find_number_not_in_dict(d, num):
     for key in d:
         if key == num:
@@ -8921,7 +8132,7 @@ def find_number_not_in_dict(d, num):
     return num
 
 
-# 953. Функция для нахождения максимального числа в списке, которое делится на заданное
+# 788. Функция для нахождения максимального числа в списке, которое делится на заданное
 def find_max_divisible(arr, divisor):
     max_val = None
     for num in arr:
@@ -8931,7 +8142,7 @@ def find_max_divisible(arr, divisor):
     return max_val if max_val is not None else None
 
 
-# 954. Функция для получения всех чисел, которые не делятся на 2, 3 и 5, используя список
+# 789. Функция для получения всех чисел, которые не делятся на 2, 3 и 5, используя список
 def find_not_divisible_by_2_3_5(arr):
     result = []
     for num in arr:
@@ -8940,7 +8151,7 @@ def find_not_divisible_by_2_3_5(arr):
     return result if result else None
 
 
-# 955. Функция для нахождения суммы всех элементов множества, больших заданного числа
+# 790. Функция для нахождения суммы всех элементов множества, больших заданного числа
 def sum_of_elements_greater_than(n, num_set):
     total = 0
     for num in num_set:
@@ -8949,7 +8160,7 @@ def sum_of_elements_greater_than(n, num_set):
     return total if total > 0 else None
 
 
-# 956. Функция для нахождения максимальной разницы между числами в словаре
+# 791. Функция для нахождения максимальной разницы между числами в словаре
 def max_difference_in_dict(d):
     if len(d) < 2:
         return None
@@ -8959,7 +8170,7 @@ def max_difference_in_dict(d):
     return max_val - min_val
 
 
-# 957. Функция для вычисления среднего значения всех элементов множества
+# 792. Функция для вычисления среднего значения всех элементов множества
 def average_of_set(num_set):
     if not num_set:
         return None
@@ -8969,7 +8180,7 @@ def average_of_set(num_set):
     return total / len(num_set)
 
 
-# 958. Функция для нахождения всех чисел, которые больше заданного числа и не делятся на 2
+# 793. Функция для нахождения всех чисел, которые больше заданного числа и не делятся на 2
 def find_greater_than_and_not_divisible_by_2(arr, num):
     result = []
     for value in arr:
@@ -8978,7 +8189,7 @@ def find_greater_than_and_not_divisible_by_2(arr, num):
     return result if result else None
 
 
-# 959. Функция для нахождения минимального числа, которое делится на все элементы списка
+# 794. Функция для нахождения минимального числа, которое делится на все элементы списка
 def find_min_divisible_by_all(arr):
     min_val = None
     for num in arr:
@@ -8988,7 +8199,7 @@ def find_min_divisible_by_all(arr):
     return min_val if min_val is not None else None
 
 
-# 960. Функция для нахождения самого маленького ключа в словаре, где значения больше заданного
+# 795. Функция для нахождения самого маленького ключа в словаре, где значения больше заданного
 def find_smallest_key_greater_than(d, value):
     smallest_key = None
     for key, val in d.items():
@@ -8998,7 +8209,7 @@ def find_smallest_key_greater_than(d, value):
     return smallest_key if smallest_key is not None else None
 
 
-# 961. Функция для нахождения первого числа, которое больше заданного и является квадратом
+# 796. Функция для нахождения первого числа, которое больше заданного и является квадратом
 def find_first_square_greater_than(arr, num):
     for val in arr:
         if num < val == int(val ** 0.5) ** 2:
@@ -9006,7 +8217,7 @@ def find_first_square_greater_than(arr, num):
     return None
 
 
-# 962. Функция для нахождения первого числа, которое делится на 2 и на 3, используя множества
+# 797. Функция для нахождения первого числа, которое делится на 2 и на 3, используя множества
 def find_first_divisible_by_2_and_3(num_set):
     for num in num_set:
         if num % 2 == 0 and num % 3 == 0:
@@ -9014,7 +8225,7 @@ def find_first_divisible_by_2_and_3(num_set):
     return None
 
 
-# 963. Функция для нахождения числа, которое встречается в обоих списках
+# 798. Функция для нахождения числа, которое встречается в обоих списках
 def find_common_in_lists(arr1, arr2):
     for val in arr1:
         if val in arr2:
@@ -9022,7 +8233,7 @@ def find_common_in_lists(arr1, arr2):
     return None
 
 
-# 964. Функция для нахождения наименьшего числа, которое является четным и больше заданного
+# 799. Функция для нахождения наименьшего числа, которое является четным и больше заданного
 def find_smallest_even_greater_than(arr, num):
     smallest = None
     for val in arr:
@@ -9032,7 +8243,7 @@ def find_smallest_even_greater_than(arr, num):
     return smallest if smallest is not None else None
 
 
-# 965. Функция для нахождения элемента множества, который больше заданного
+# 800. Функция для нахождения элемента множества, который больше заданного
 def find_element_greater_than_in_set(num_set, value):
     for num in num_set:
         if num > value:
@@ -9040,7 +8251,7 @@ def find_element_greater_than_in_set(num_set, value):
     return None
 
 
-# 966. Функция для вычисления суммы всех чисел, делящихся на 3 или на 5, используя список
+# 801. Функция для вычисления суммы всех чисел, делящихся на 3 или на 5, используя список
 def sum_divisible_by_3_or_5(arr):
     total = 0
     for val in arr:
@@ -9049,7 +8260,7 @@ def sum_divisible_by_3_or_5(arr):
     return total if total > 0 else None
 
 
-# 967. Функция для нахождения самого большого числа в словаре
+# 802. Функция для нахождения самого большого числа в словаре
 def find_max_value_in_dict(d):
     if not d:
         return None
@@ -9060,7 +8271,7 @@ def find_max_value_in_dict(d):
     return max_val
 
 
-# 968. Функция для нахождения числа, которое встречается в массиве более одного раза
+# 803. Функция для нахождения числа, которое встречается в массиве более одного раза
 def find_duplicate(arr):
     seen = set()
     for num in arr:
@@ -9070,7 +8281,7 @@ def find_duplicate(arr):
     return None
 
 
-# 969. Функция для нахождения минимального числа, которое не делится на 4
+# 804. Функция для нахождения минимального числа, которое не делится на 4
 def find_min_not_divisible_by_4(arr):
     min_val = None
     for val in arr:
@@ -9080,7 +8291,7 @@ def find_min_not_divisible_by_4(arr):
     return min_val if min_val is not None else None
 
 
-# 970. Функция для нахождения наименьшего числа, которое делится на 7 и на 11
+# 805. Функция для нахождения наименьшего числа, которое делится на 7 и на 11
 def find_smallest_divisible_by_7_and_11(arr):
     min_val = None
     for val in arr:
@@ -9090,7 +8301,7 @@ def find_smallest_divisible_by_7_and_11(arr):
     return min_val if min_val is not None else None
 
 
-# 971. Функция для нахождения первого числа, которое делится на 3, но не на 5
+# 806. Функция для нахождения первого числа, которое делится на 3, но не на 5
 def find_first_divisible_by_3_not_5(arr):
     for val in arr:
         if val % 3 == 0 and val % 5 != 0:
@@ -9098,7 +8309,7 @@ def find_first_divisible_by_3_not_5(arr):
     return None
 
 
-# 972. Функция для нахождения суммы всех элементов в словаре, значения которых больше 10
+# 807. Функция для нахождения суммы всех элементов в словаре, значения которых больше 10
 def sum_values_greater_than_10_in_dict(d):
     total = 0
     for key, val in d.items():
@@ -9107,7 +8318,7 @@ def sum_values_greater_than_10_in_dict(d):
     return total if total > 0 else None
 
 
-# 973. Функция для нахождения строки, длина которой больше заданного числа
+# 808. Функция для нахождения строки, длина которой больше заданного числа
 def find_string_longer_than(length, *strings):
     for s in strings:
         if len(s) > length:
@@ -9115,7 +8326,7 @@ def find_string_longer_than(length, *strings):
     return None
 
 
-# 974. Функция для проверки, является ли строка палиндромом
+# 809. Функция для проверки, является ли строка палиндромом
 def is_palindrome_6(s):
     if not s:
         return None
@@ -9127,7 +8338,7 @@ def is_palindrome_6(s):
     return False
 
 
-# 975. Функция для подсчета количества гласных в строке
+# 810. Функция для подсчета количества гласных в строке
 def count_vowels_in_string(s):
     vowels = 'aeiouAEIOU'
     count = 0
@@ -9137,7 +8348,7 @@ def count_vowels_in_string(s):
     return count if count > 0 else None
 
 
-# 976. Функция для поиска первого вхождения подстроки в строку
+# 811. Функция для поиска первого вхождения подстроки в строку
 def find_first_occurrence_of_substring(s, substring):
     for i in range(len(s) - len(substring) + 1):
         if s[i:i + len(substring)] == substring:
@@ -9145,7 +8356,7 @@ def find_first_occurrence_of_substring(s, substring):
     return None
 
 
-# 977. Функция для удаления всех пробелов в строке
+# 812. Функция для удаления всех пробелов в строке
 def remove_spaces_from_string(s):
     result = ''
     for char in s:
@@ -9154,7 +8365,7 @@ def remove_spaces_from_string(s):
     return result if result != s else None
 
 
-# 978. Функция для получения всех уникальных символов в строке
+# 813. Функция для получения всех уникальных символов в строке
 def get_unique_characters(s):
     unique_chars = set()
     for char in s:
@@ -9162,7 +8373,7 @@ def get_unique_characters(s):
     return ''.join(unique_chars)
 
 
-# 979. Функция для инвертирования строки
+# 814. Функция для инвертирования строки
 def reverse_string_5(s):
     reversed_str = ''
     for i in range(len(s) - 1, -1, -1):
@@ -9170,13 +8381,13 @@ def reverse_string_5(s):
     return reversed_str
 
 
-# 980. Функция для подсчета количества слов в строке
+# 815. Функция для подсчета количества слов в строке
 def count_words_in_string_5(s):
     words = s.split()
     return len(words) if len(words) > 0 else None
 
 
-# 981. Функция для получения строки с удаленными знаками препинания
+# 816. Функция для получения строки с удаленными знаками препинания
 def remove_punctuation_from_string(s):
     punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
     result = ''
@@ -9186,7 +8397,7 @@ def remove_punctuation_from_string(s):
     return result
 
 
-# 982. Функция для проверки, состоит ли строка только из цифр
+# 817. Функция для проверки, состоит ли строка только из цифр
 def is_string_only_digits(s):
     for char in s:
         if not char.isdigit():
@@ -9194,7 +8405,7 @@ def is_string_only_digits(s):
     return True
 
 
-# 983. Функция для получения индексов всех вхождений подстроки
+# 818. Функция для получения индексов всех вхождений подстроки
 def find_all_occurrences_of_substring(s, substring):
     indices = []
     for i in range(len(s) - len(substring) + 1):
@@ -9203,19 +8414,19 @@ def find_all_occurrences_of_substring(s, substring):
     return indices if indices else None
 
 
-# 984. Функция для получения строки, которая является повторением самой себя
+# 819. Функция для получения строки, которая является повторением самой себя
 def repeat_string(s, n):
     return s * n if n > 0 else None
 
 
-# 985. Функция для получения первого слова в строке
+# 820. Функция для получения первого слова в строке
 def get_first_word(s):
     if not s:
         return None
     return s.split()[0]
 
 
-# 986. Функция для получения всех чисел из строки
+# 821. Функция для получения всех чисел из строки
 def extract_numbers_from_string_4(s):
     numbers = []
     temp = ''
@@ -9230,12 +8441,12 @@ def extract_numbers_from_string_4(s):
     return numbers if numbers else None
 
 
-# 987. Функция для проверки, является ли строка буквой
+# 822. Функция для проверки, является ли строка буквой
 def is_string_single_letter(s):
     return len(s) == 1 and s.isalpha()
 
 
-# 988. Функция для получения строки с заглавными буквами
+# 823. Функция для получения строки с заглавными буквами
 def get_uppercase_letters(s):
     uppercase = ''
     for char in s:
@@ -9244,7 +8455,7 @@ def get_uppercase_letters(s):
     return uppercase if uppercase else None
 
 
-# 989. Функция для удаления всех символов, которые встречаются в строке более одного раза
+# 824. Функция для удаления всех символов, которые встречаются в строке более одного раза
 def remove_duplicates_from_string_2(s):
     result = ''
     seen = set()
@@ -9255,7 +8466,7 @@ def remove_duplicates_from_string_2(s):
     return result
 
 
-# 990. Функция для нахождения всех подстрок заданной длины
+# 825. Функция для нахождения всех подстрок заданной длины
 def find_substrings_of_length(s, length):
     substrings = []
     for i in range(len(s) - length + 1):
@@ -9263,7 +8474,7 @@ def find_substrings_of_length(s, length):
     return substrings if substrings else None
 
 
-# 991. Функция для нахождения самой длинной буквы в строке
+# 826. Функция для нахождения самой длинной буквы в строке
 def find_longest_alphabetic_char(s):
     longest = ''
     for char in s:
@@ -9272,7 +8483,7 @@ def find_longest_alphabetic_char(s):
     return longest if longest else None
 
 
-# 992. Функция для поиска самой частой буквы в строке
+# 827. Функция для поиска самой частой буквы в строке
 def find_most_frequent_char(s):
     frequency = {}
     for char in s:
@@ -9282,7 +8493,7 @@ def find_most_frequent_char(s):
     return most_frequent
 
 
-# 993. Функция для разделения строки на части по символу
+# 828. Функция для разделения строки на части по символу
 def split_string_by_char(s, char):
     parts = []
     temp = ''
@@ -9298,7 +8509,7 @@ def split_string_by_char(s, char):
     return parts if parts else None
 
 
-# 994. Функция для замены всех цифр на символ `*`
+# 829. Функция для замены всех цифр на символ `*`
 def replace_digits_with_asterisks(s):
     result = ''
     for char in s:
@@ -9309,7 +8520,7 @@ def replace_digits_with_asterisks(s):
     return result
 
 
-# 995. Функция для нахождения всех подстрок, начинающихся на заглавную букву
+# 830. Функция для нахождения всех подстрок, начинающихся на заглавную букву
 def find_substrings_starting_with_uppercase(s):
     substrings = []
     temp = ''
@@ -9323,12 +8534,12 @@ def find_substrings_starting_with_uppercase(s):
     return substrings if substrings else None
 
 
-# 996. Функция для преобразования строки в список символов
+# 831. Функция для преобразования строки в список символов
 def string_to_list_of_chars(s):
     return list(s) if s else None
 
 
-# 997. Функция для поиска самого длинного слова в строке
+# 832. Функция для поиска самого длинного слова в строке
 def find_longest_word(s):
     words = s.split()
     if not words:
@@ -9336,17 +8547,17 @@ def find_longest_word(s):
     return max(words, key=len)
 
 
-# 998. Функция для нахождения строки, которая является комбинацией двух других
+# 833. Функция для нахождения строки, которая является комбинацией двух других
 def is_combination_of_two(s, s1, s2):
     return s == s1 + s2
 
 
-# 999. Функция для проверки, является ли строка числовой
+# 834. Функция для проверки, является ли строка числовой
 def is_numeric_string(s):
     return s.isdigit() if s else False
 
 
-# 1000. Функция для подсчета всех слов в строке, начинающихся с гласной
+# 835. Функция для подсчета всех слов в строке, начинающихся с гласной
 def count_words_starting_with_vowel(s):
     vowels = 'aeiouAEIOU'
     count = 0
@@ -9356,14 +8567,14 @@ def count_words_starting_with_vowel(s):
     return count if count > 0 else None
 
 
-# 1001. Функция для нахождения всех слов длиной больше 3 символов
+# 836. Функция для нахождения всех слов длиной больше 3 символов
 def find_words_longer_than_3(s):
     words = s.split()
     result = [word for word in words if len(word) > 3]
     return result if result else None
 
 
-# 1002. Функция для удаления всех гласных в строке
+# 837. Функция для удаления всех гласных в строке
 def remove_vowels_from_string_2(s):
     vowels = 'aeiouAEIOU'
     result = ''
@@ -9373,12 +8584,12 @@ def remove_vowels_from_string_2(s):
     return result if result != s else None
 
 
-# 1003. Функция для замены всех пробелов на подчеркивания
+# 838. Функция для замены всех пробелов на подчеркивания
 def replace_spaces_with_underscores_6(s):
     return s.replace(' ', '_') if s else None
 
 
-# 1004. Функция для нахождения всех цифр в строке
+# 839. Функция для нахождения всех цифр в строке
 def find_digits_in_string(s):
     digits = ''
     for char in s:
@@ -9387,7 +8598,7 @@ def find_digits_in_string(s):
     return digits if digits else None
 
 
-# 1005. Функция для подсчета всех букв в строке
+# 840. Функция для подсчета всех букв в строке
 def count_letters_in_string(s):
     count = 0
     for char in s:
@@ -9396,7 +8607,7 @@ def count_letters_in_string(s):
     return count if count > 0 else None
 
 
-# 1006. Функция для нахождения первой заглавной буквы в строке
+# 841. Функция для нахождения первой заглавной буквы в строке
 def find_first_uppercase_letter(s):
     for char in s:
         if char.isupper():
@@ -9404,7 +8615,7 @@ def find_first_uppercase_letter(s):
     return None
 
 
-# 1007. Функция для преобразования строки в обратный порядок
+# 842. Функция для преобразования строки в обратный порядок
 def reverse_string_in_place(s):
     result = ''
     for char in reversed(s):
@@ -9412,7 +8623,7 @@ def reverse_string_in_place(s):
     return result
 
 
-# 1008. Функция для замены всех заглавных букв на строчные
+# 843. Функция для замены всех заглавных букв на строчные
 def convert_upper_to_lower(s):
     result = ''
     for char in s:
@@ -9423,7 +8634,7 @@ def convert_upper_to_lower(s):
     return result
 
 
-# 1009. Функция для нахождения всех букв, которые встречаются более одного раза
+# 844. Функция для нахождения всех букв, которые встречаются более одного раза
 def find_repeated_chars(s):
     count = {}
     repeated = ''
@@ -9436,7 +8647,7 @@ def find_repeated_chars(s):
     return repeated if repeated else None
 
 
-# 1010. Функция для нахождения всех символов, которые не являются буквами
+# 845. Функция для нахождения всех символов, которые не являются буквами
 def find_non_alphabetic_chars(s):
     result = ''
     for char in s:
@@ -9445,7 +8656,7 @@ def find_non_alphabetic_chars(s):
     return result if result else None
 
 
-# 1011. Функция для конкатенации списка строк
+# 846. Функция для конкатенации списка строк
 def concatenate_strings_from_list(lst):
     result = ''
     for s in lst:
@@ -9453,7 +8664,7 @@ def concatenate_strings_from_list(lst):
     return result
 
 
-# 1012. Функция для поиска строки с минимальной длиной
+# 847. Функция для поиска строки с минимальной длиной
 def find_min_length_string(lst):
     if not lst:
         return None
@@ -9464,7 +8675,7 @@ def find_min_length_string(lst):
     return min_string
 
 
-# 1013. Функция для замены всех символов на их позицию в алфавите
+# 848. Функция для замены всех символов на их позицию в алфавите
 def replace_with_alphabet_position(s):
     result = ''
     for char in s:
@@ -9475,7 +8686,7 @@ def replace_with_alphabet_position(s):
     return result
 
 
-# 1014. Функция для нахождения всех делителей числа
+# 849. Функция для нахождения всех делителей числа
 def find_divisors(n):
     if n == 0:
         return None
@@ -9486,7 +8697,7 @@ def find_divisors(n):
     return divisors if divisors else None
 
 
-# 1015. Функция для проверки, является ли число простым
+# 850. Функция для проверки, является ли число простым
 def is_prime_66(n):
     if n <= 1:
         return False
@@ -9496,7 +8707,7 @@ def is_prime_66(n):
     return True
 
 
-# 1016. Функция для нахождения суммы цифр числа
+# 851. Функция для нахождения суммы цифр числа
 def sum_of_digits(n):
     n = abs(n)
     total = 0
@@ -9506,7 +8717,7 @@ def sum_of_digits(n):
     return total
 
 
-# 1017. Функция для умножения числа на его собственные цифры
+# 852. Функция для умножения числа на его собственные цифры
 def multiply_by_digits(n):
     n = abs(n)
     result = 1
@@ -9518,7 +8729,7 @@ def multiply_by_digits(n):
     return result if result != 1 else None
 
 
-# 1018. Функция для нахождения максимальной цифры в числе
+# 853. Функция для нахождения максимальной цифры в числе
 def max_digit_in_number(n):
     n = abs(n)
     max_digit = -1
@@ -9530,46 +8741,19 @@ def max_digit_in_number(n):
     return max_digit if max_digit != -1 else None
 
 
-# 1020. Функция для проверки, является ли число нечетным
-def is_odd(n):
-    if n % 2 != 0:
-        return True
-    return False
-
-
-# 1021. Функция для нахождения числа с наибольшей суммой цифр в списке
-def find_max_digit_sum(lst):
-    if not lst:
-        return None
-    max_sum = -1
-    max_num = None
-    for n in lst:
-        digit_sum = sum_of_digits(abs(n))
-        if digit_sum > max_sum:
-            max_sum = digit_sum
-            max_num = n
-    return max_num
-
-
-# 1022. Функция для подсчета количества четных чисел в списке
 def count_even_numbers_5(lst):
+    def is_odd(n):
+        if n % 2 != 0:
+            return True
+        return False
     count = 0
     for n in lst:
-        if is_even(n):
+        if not is_odd(n):
             count += 1
     return count if count > 0 else None
 
 
-# 1023. Функция для подсчета количества нечетных чисел в списке
-def count_odd_numbers(lst):
-    count = 0
-    for n in lst:
-        if is_odd(n):
-            count += 1
-    return count if count > 0 else None
-
-
-# 1024. Функция для нахождения наибольшего числа, которое делится на 3 в списке
+# 854. Функция для нахождения наибольшего числа, которое делится на 3 в списке
 def find_largest_divisible_by_3(lst):
     largest = None
     for n in lst:
@@ -9578,7 +8762,7 @@ def find_largest_divisible_by_3(lst):
     return largest
 
 
-# 1025. Функция для нахождения наименьшего числа, которое делится на 5 в списке
+# 855. Функция для нахождения наименьшего числа, которое делится на 5 в списке
 def find_smallest_divisible_by_5(lst):
     smallest = None
     for n in lst:
@@ -9587,7 +8771,7 @@ def find_smallest_divisible_by_5(lst):
     return smallest
 
 
-# 1026. Функция для нахождения произведения всех чисел в списке
+# 856. Функция для нахождения произведения всех чисел в списке
 def multiply_all_numbers(lst):
     if not lst:
         return None
@@ -9597,7 +8781,7 @@ def multiply_all_numbers(lst):
     return result
 
 
-# 1027. Функция для нахождения количества чисел, которые больше заданного порога
+# 857. Функция для нахождения количества чисел, которые больше заданного порога
 def count_numbers_greater_than(lst, threshold):
     count = 0
     for n in lst:
@@ -9606,7 +8790,7 @@ def count_numbers_greater_than(lst, threshold):
     return count if count > 0 else None
 
 
-# 1028. Функция для нахождения чисел, которые не делятся на 2, 3 или 5
+# 858. Функция для нахождения чисел, которые не делятся на 2, 3 или 5
 def find_numbers_not_divisible_by_2_3_5(lst):
     result = []
     for n in lst:
@@ -9615,7 +8799,7 @@ def find_numbers_not_divisible_by_2_3_5(lst):
     return result if result else None
 
 
-# 1029. Функция для подсчета количества чисел, которые делятся на 7
+# 859. Функция для подсчета количества чисел, которые делятся на 7
 def count_divisible_by_7(lst):
     count = 0
     for n in lst:
@@ -9624,7 +8808,7 @@ def count_divisible_by_7(lst):
     return count if count > 0 else None
 
 
-# 1030. Функция для нахождения максимального числа, которое является квадратом целого числа
+# 860. Функция для нахождения максимального числа, которое является квадратом целого числа
 def find_largest_square_number(lst):
     largest = None
     for n in lst:
@@ -9633,7 +8817,7 @@ def find_largest_square_number(lst):
     return largest
 
 
-# 1031. Функция для нахождения наименьшего числа, которое является кубом целого числа
+# 861. Функция для нахождения наименьшего числа, которое является кубом целого числа
 def find_smallest_cube_number(lst):
     smallest = None
     for n in lst:
@@ -9642,7 +8826,7 @@ def find_smallest_cube_number(lst):
     return smallest
 
 
-# 1032. Функция для нахождения числа, которое является и квадратом, и кубом одновременно
+# 862. Функция для нахождения числа, которое является и квадратом, и кубом одновременно
 def find_square_and_cube(lst):
     result = []
     for n in lst:
@@ -9651,25 +8835,7 @@ def find_square_and_cube(lst):
     return result if result else None
 
 
-# 1033. Функция для получения списка всех четных чисел от 1 до n
-def get_even_numbers_up_to_n(n):
-    even_numbers = []
-    for i in range(1, n + 1):
-        if is_even(i):
-            even_numbers.append(i)
-    return even_numbers
-
-
-# 1034. Функция для получения списка всех нечетных чисел от 1 до n
-def get_odd_numbers_up_to_n(n):
-    odd_numbers = []
-    for i in range(1, n + 1):
-        if is_odd(i):
-            odd_numbers.append(i)
-    return odd_numbers
-
-
-# 1035. Функция для нахождения наибольшего числа, которое является степенью двойки
+# 863. Функция для нахождения наибольшего числа, которое является степенью двойки
 def find_largest_power_of_two(lst):
     largest = None
     for n in lst:
@@ -9678,7 +8844,7 @@ def find_largest_power_of_two(lst):
     return largest
 
 
-# 1036. Функция для нахождения наименьшего числа, которое является степенью двойки
+# 864. Функция для нахождения наименьшего числа, которое является степенью двойки
 def find_smallest_power_of_two(lst):
     smallest = None
     for n in lst:
@@ -9687,7 +8853,7 @@ def find_smallest_power_of_two(lst):
     return smallest
 
 
-# 1037. Функция для нахождения всех чисел, которые являются степенями двойки
+# 865. Функция для нахождения всех чисел, которые являются степенями двойки
 def find_all_powers_of_two(lst):
     powers_of_two = []
     for n in lst:
@@ -9696,7 +8862,7 @@ def find_all_powers_of_two(lst):
     return powers_of_two if powers_of_two else None
 
 
-# 1038. Функция для нахождения всех чисел, которые являются отрицательными
+# 866. Функция для нахождения всех чисел, которые являются отрицательными
 def find_all_negative_numbers(lst):
     negative_numbers = []
     for n in lst:
@@ -9705,7 +8871,7 @@ def find_all_negative_numbers(lst):
     return negative_numbers if negative_numbers else None
 
 
-# 1039. Функция для нахождения всех чисел, которые являются положительными
+# 867. Функция для нахождения всех чисел, которые являются положительными
 def find_all_positive_numbers(lst):
     positive_numbers = []
     for n in lst:
@@ -9714,7 +8880,7 @@ def find_all_positive_numbers(lst):
     return positive_numbers if positive_numbers else None
 
 
-# 1040. Функция для нахождения всех чисел, которые являются нулями
+# 868. Функция для нахождения всех чисел, которые являются нулями
 def find_all_zeros(lst):
     zeros = []
     for n in lst:
@@ -9723,7 +8889,7 @@ def find_all_zeros(lst):
     return zeros if zeros else None
 
 
-# 1041. Функция для нахождения суммы чисел, которые больше заданного порога
+# 869. Функция для нахождения суммы чисел, которые больше заданного порога
 def sum_numbers_greater_than(lst, threshold):
     total = 0
     for n in lst:
@@ -9732,7 +8898,7 @@ def sum_numbers_greater_than(lst, threshold):
     return total if total > 0 else None
 
 
-# 1042. Функция для нахождения максимального значения среди всех чисел, делящихся на 4
+# 870. Функция для нахождения максимального значения среди всех чисел, делящихся на 4
 def find_max_divisible_by_4(lst):
     max_divisible_by_4 = None
     for n in lst:
@@ -9742,7 +8908,7 @@ def find_max_divisible_by_4(lst):
     return max_divisible_by_4
 
 
-# 1043. Функция для нахождения минимального значения среди всех чисел, делящихся на 6
+# 871. Функция для нахождения минимального значения среди всех чисел, делящихся на 6
 def find_min_divisible_by_6(lst):
     min_divisible_by_6 = None
     for n in lst:
@@ -9752,7 +8918,7 @@ def find_min_divisible_by_6(lst):
     return min_divisible_by_6
 
 
-# 1044. Функция для нахождения числа, которое делится и на 7, и на 11
+# 872. Функция для нахождения числа, которое делится и на 7, и на 11
 def find_divisible_by_7_and_11(lst):
     result = []
     for n in lst:
@@ -9761,7 +8927,7 @@ def find_divisible_by_7_and_11(lst):
     return result if result else None
 
 
-# 1045. Функция для нахождения наибольшего числа, которое делится на 9
+# 873. Функция для нахождения наибольшего числа, которое делится на 9
 def find_largest_divisible_by_9(lst):
     largest = None
     for n in lst:
@@ -9770,7 +8936,7 @@ def find_largest_divisible_by_9(lst):
     return largest
 
 
-# 1046. Функция для нахождения наименьшего числа, которое делится на 12
+# 874. Функция для нахождения наименьшего числа, которое делится на 12
 def find_smallest_divisible_by_12(lst):
     smallest = None
     for n in lst:
@@ -9779,7 +8945,7 @@ def find_smallest_divisible_by_12(lst):
     return smallest
 
 
-# 1047. Функция для нахождения чисел, которые делятся на 15 и на 20
+# 875. Функция для нахождения чисел, которые делятся на 15 и на 20
 def find_divisible_by_15_and_20(lst):
     result = []
     for n in lst:
@@ -9788,7 +8954,7 @@ def find_divisible_by_15_and_20(lst):
     return result if result else None
 
 
-# 1048. Функция для создания кортежа из чисел, переданных в список
+# 876. Функция для создания кортежа из чисел, переданных в список
 def create_tuple_from_list(lst):
     if not lst:
         return None
@@ -9796,22 +8962,22 @@ def create_tuple_from_list(lst):
     return result
 
 
-# 1049. Функция для нахождения кортежа с минимальным и максимальным элементом из списка
+# 877. Функция для нахождения кортежа с минимальным и максимальным элементом из списка
 def find_min_max_from_list(lst):
     if not lst:
         return None
     min_val = min(lst)
     max_val = max(lst)
-    return (min_val, max_val)
+    return min_val, max_val
 
 
-# 1050. Функция для создания кортежа, состоящего из уникальных элементов списка
+# 878. Функция для создания кортежа, состоящего из уникальных элементов списка
 def create_tuple_of_unique_elements(lst):
     unique_elements = set(lst)
     return tuple(unique_elements) if unique_elements else None
 
 
-# 1051. Функция для нахождения кортежа из чисел, которые делятся на 3 из переданного списка
+# 879. Функция для нахождения кортежа из чисел, которые делятся на 3 из переданного списка
 def find_divisible_by_3(lst):
     result = []
     for n in lst:
@@ -9820,7 +8986,7 @@ def find_divisible_by_3(lst):
     return tuple(result) if result else None
 
 
-# 1052. Функция для нахождения кортежа из всех четных чисел в списке
+# 880. Функция для нахождения кортежа из всех четных чисел в списке
 def find_even_numbers(lst):
     result = []
     for n in lst:
@@ -9829,7 +8995,7 @@ def find_even_numbers(lst):
     return tuple(result) if result else None
 
 
-# 1053. Функция для создания кортежа, состоящего из строк, длина которых больше 3 символов
+# 881. Функция для создания кортежа, состоящего из строк, длина которых больше 3 символов
 def find_long_strings(lst):
     result = []
     for s in lst:
@@ -9838,7 +9004,7 @@ def find_long_strings(lst):
     return tuple(result) if result else None
 
 
-# 1054. Функция для создания кортежа из строк, содержащих хотя бы одну цифру
+# 882. Функция для создания кортежа из строк, содержащих хотя бы одну цифру
 def find_strings_with_digits_2(lst):
     result = []
     for s in lst:
@@ -9847,7 +9013,7 @@ def find_strings_with_digits_2(lst):
     return tuple(result) if result else None
 
 
-# 1055. Функция для создания кортежа из всех чисел, которые являются квадратами целых чисел
+# 883. Функция для создания кортежа из всех чисел, которые являются квадратами целых чисел
 def find_square_numbers(lst):
     result = []
     for n in lst:
@@ -9856,7 +9022,7 @@ def find_square_numbers(lst):
     return tuple(result) if result else None
 
 
-# 1056. Функция для создания кортежа из чисел, которые делятся на 5
+# 884. Функция для создания кортежа из чисел, которые делятся на 5
 def find_divisible_by_5(lst):
     result = []
     for n in lst:
@@ -9865,7 +9031,7 @@ def find_divisible_by_5(lst):
     return tuple(result) if result else None
 
 
-# 1057. Функция для создания кортежа из строк, длина которых меньше или равна 5 символам
+# 885. Функция для создания кортежа из строк, длина которых меньше или равна 5 символам
 def find_short_strings(lst):
     result = []
     for s in lst:
@@ -9874,7 +9040,7 @@ def find_short_strings(lst):
     return tuple(result) if result else None
 
 
-# 1058. Функция для создания кортежа из чисел, которые больше заданного порога
+# 886. Функция для создания кортежа из чисел, которые больше заданного порога
 def find_greater_than(lst, threshold):
     result = []
     for n in lst:
@@ -9883,7 +9049,7 @@ def find_greater_than(lst, threshold):
     return tuple(result) if result else None
 
 
-# 1059. Функция для создания кортежа, содержащего индексы всех элементов, равных максимальному
+# 887. Функция для создания кортежа, содержащего индексы всех элементов, равных максимальному
 def find_max_indexes(lst):
     if not lst:
         return None
@@ -9892,7 +9058,7 @@ def find_max_indexes(lst):
     return tuple(indexes) if indexes else None
 
 
-# 1060. Функция для нахождения кортежа чисел, которые являются четными и больше 10
+# 888. Функция для нахождения кортежа чисел, которые являются четными и больше 10
 def find_even_and_greater_than_ten(lst):
     result = []
     for n in lst:
@@ -9901,7 +9067,7 @@ def find_even_and_greater_than_ten(lst):
     return tuple(result) if result else None
 
 
-# 1061. Функция для создания кортежа из всех строк, в которых есть хотя бы одна заглавная буква
+# 889. Функция для создания кортежа из всех строк, в которых есть хотя бы одна заглавная буква
 def find_strings_with_uppercase(lst):
     result = []
     for s in lst:
@@ -9910,7 +9076,7 @@ def find_strings_with_uppercase(lst):
     return tuple(result) if result else None
 
 
-# 1062. Функция для создания кортежа из чисел, которые делятся на 4 и не делятся на 2
+# 890. Функция для создания кортежа из чисел, которые делятся на 4 и не делятся на 2
 def find_numbers_divisible_by_4_not_2(lst):
     result = []
     for n in lst:
@@ -9919,7 +9085,7 @@ def find_numbers_divisible_by_4_not_2(lst):
     return tuple(result) if result else None
 
 
-# 1063. Функция для создания кортежа из всех строк, длина которых больше средней длины всех строк
+# 891. Функция для создания кортежа из всех строк, длина которых больше средней длины всех строк
 def find_longer_than_average(lst):
     average_length = sum(len(s) for s in lst) / len(lst) if lst else 0
     result = []
@@ -9929,7 +9095,7 @@ def find_longer_than_average(lst):
     return tuple(result) if result else None
 
 
-# 1064. Функция для создания кортежа из чисел, которые равны сумме их цифр
+# 892. Функция для создания кортежа из чисел, которые равны сумме их цифр
 def find_numbers_equal_to_digit_sum(lst):
     result = []
     for n in lst:
@@ -9938,7 +9104,7 @@ def find_numbers_equal_to_digit_sum(lst):
     return tuple(result) if result else None
 
 
-# 1065. Функция для создания кортежа из чисел, которые являются делителями 100
+# 893. Функция для создания кортежа из чисел, которые являются делителями 100
 def find_divisors_of_100(lst):
     result = []
     for n in lst:
@@ -9947,7 +9113,7 @@ def find_divisors_of_100(lst):
     return tuple(result) if result else None
 
 
-# 1066. Функция для создания кортежа из чисел, которые являются кратными 3 и 5
+# 894. Функция для создания кортежа из чисел, которые являются кратными 3 и 5
 def find_multiples_of_3_and_5(lst):
     result = []
     for n in lst:
@@ -9956,7 +9122,7 @@ def find_multiples_of_3_and_5(lst):
     return tuple(result) if result else None
 
 
-# 1067. Функция для создания кортежа, содержащего все числа, кратные числу из списка
+# 895. Функция для создания кортежа, содержащего все числа, кратные числу из списка
 def find_multiples_of_list(lst, n):
     result = []
     for num in lst:
@@ -9965,7 +9131,7 @@ def find_multiples_of_list(lst, n):
     return tuple(result) if result else None
 
 
-# 1068. Функция для нахождения всех чисел, которые являются результатом возведения чисел в квадрат
+# 896. Функция для нахождения всех чисел, которые являются результатом возведения чисел в квадрат
 def find_squared_numbers(lst):
     result = []
     for n in lst:
@@ -9974,7 +9140,7 @@ def find_squared_numbers(lst):
     return tuple(result) if result else None
 
 
-# 1069. Функция для создания кортежа, содержащего числа из списка, которые делятся на 6
+# 897. Функция для создания кортежа, содержащего числа из списка, которые делятся на 6
 def find_divisible_by_6_2(lst):
     result = []
     for n in lst:
@@ -9983,7 +9149,7 @@ def find_divisible_by_6_2(lst):
     return tuple(result) if result else None
 
 
-# 1070. Функция для нахождения чисел, делящихся на 2 и 3
+# 898. Функция для нахождения чисел, делящихся на 2 и 3
 def find_divisible_by_2_and_3_2(lst):
     result = []
     for n in lst:
@@ -9992,7 +9158,7 @@ def find_divisible_by_2_and_3_2(lst):
     return tuple(result) if result else None
 
 
-# 1071. Функция для создания кортежа с числами, которые кратны 2, 3 и 5
+# 899. Функция для создания кортежа с числами, которые кратны 2, 3 и 5
 def find_multiples_of_2_3_5(lst):
     result = []
     for n in lst:
@@ -10001,7 +9167,7 @@ def find_multiples_of_2_3_5(lst):
     return tuple(result) if result else None
 
 
-# 1072. Функция для создания кортежа из всех чисел, которые являются палиндромами
+# 900. Функция для создания кортежа из всех чисел, которые являются палиндромами
 def find_palindromes_4(lst):
     result = []
     for n in lst:
@@ -10010,7 +9176,7 @@ def find_palindromes_4(lst):
     return tuple(result) if result else None
 
 
-# 1073. Функция для нахождения всех чисел, которые меньше их суммы цифр
+# 901. Функция для нахождения всех чисел, которые меньше их суммы цифр
 def find_numbers_less_than_digit_sum(lst):
     result = []
     for n in lst:
@@ -10019,7 +9185,7 @@ def find_numbers_less_than_digit_sum(lst):
     return tuple(result) if result else None
 
 
-# 1074. Функция для создания кортежа из чисел, которые равны сумме всех их делителей
+# 902. Функция для создания кортежа из чисел, которые равны сумме всех их делителей
 def find_numbers_equal_to_sum_of_divisors(lst):
     result = []
     for n in lst:
@@ -10029,7 +9195,7 @@ def find_numbers_equal_to_sum_of_divisors(lst):
     return tuple(result) if result else None
 
 
-# 1075. Функция для создания кортежа чисел, которые кратны 9, но не кратны 3
+# 903. Функция для создания кортежа чисел, которые кратны 9, но не кратны 3
 def find_multiples_of_9_not_3(lst):
     result = []
     for n in lst:
@@ -10038,7 +9204,7 @@ def find_multiples_of_9_not_3(lst):
     return tuple(result) if result else None
 
 
-# 1076. Функция для нахождения чисел, которые делятся на 11 и 13
+# 904. Функция для нахождения чисел, которые делятся на 11 и 13
 def find_divisible_by_11_and_13(lst):
     result = []
     for n in lst:
@@ -10047,7 +9213,7 @@ def find_divisible_by_11_and_13(lst):
     return tuple(result) if result else None
 
 
-# 1077. Функция для создания словаря, где ключами являются элементы списка, а значениями их квадраты
+# 905. Функция для создания словаря, где ключами являются элементы списка, а значениями их квадраты
 def create_square_dict(lst):
     if not lst:
         return None
@@ -10057,7 +9223,7 @@ def create_square_dict(lst):
     return square_dict if square_dict else None
 
 
-# 1078. Функция для нахождения минимального и максимального значений в словаре
+# 906. Функция для нахождения минимального и максимального значений в словаре
 def find_min_max_in_dict(d):
     if not d:
         return None
@@ -10066,7 +9232,7 @@ def find_min_max_in_dict(d):
     return (min_key, d[min_key]), (max_key, d[max_key])
 
 
-# 1079. Функция для фильтрации словаря, оставляя только те ключи, которые являются строками
+# 907. Функция для фильтрации словаря, оставляя только те ключи, которые являются строками
 def filter_dict_with_strings(d):
     if not d:
         return None
@@ -10077,7 +9243,7 @@ def filter_dict_with_strings(d):
     return filtered_dict if filtered_dict else None
 
 
-# 1080. Функция для нахождения суммы значений всех числовых ключей в словаре
+# 908. Функция для нахождения суммы значений всех числовых ключей в словаре
 def sum_of_numeric_keys(d):
     if not d:
         return None
@@ -10088,7 +9254,7 @@ def sum_of_numeric_keys(d):
     return total if total else None
 
 
-# 1081. Функция для создания словаря, в котором ключи — это длины строк из списка, а значения — сами строки
+# 909. Функция для создания словаря, в котором ключи — это длины строк из списка, а значения — сами строки
 def create_dict_from_string_lengths(lst):
     if not lst:
         return None
@@ -10098,7 +9264,7 @@ def create_dict_from_string_lengths(lst):
     return length_dict if length_dict else None
 
 
-# 1082. Функция для удаления из словаря всех элементов с отрицательными значениями
+# 910. Функция для удаления из словаря всех элементов с отрицательными значениями
 def remove_negative_values(d):
     if not d:
         return None
@@ -10109,7 +9275,7 @@ def remove_negative_values(d):
     return clean_dict if clean_dict else None
 
 
-# 1083. Функция для создания словаря из двух списков: первый — ключи, второй — значения
+# 911. Функция для создания словаря из двух списков: первый — ключи, второй — значения
 def create_dict_from_lists(keys, values):
     if not keys or not values or len(keys) != len(values):
         return None
@@ -10119,7 +9285,7 @@ def create_dict_from_lists(keys, values):
     return result_dict if result_dict else None
 
 
-# 1084. Функция для подсчёта количества строк с одинаковыми длинами в списке
+# 912. Функция для подсчёта количества строк с одинаковыми длинами в списке
 def count_strings_by_length(lst):
     if not lst:
         return None
@@ -10129,7 +9295,7 @@ def count_strings_by_length(lst):
     return length_count if length_count else None
 
 
-# 1086. Функция для нахождения минимального значения в словаре, в котором ключи — это числа
+# 913. Функция для нахождения минимального значения в словаре, в котором ключи — это числа
 def find_min_value_in_dict(d):
     if not d:
         return None
@@ -10137,7 +9303,7 @@ def find_min_value_in_dict(d):
     return min_value if min_value else None
 
 
-# 1087. Функция для создания словаря, где ключами являются индексы, а значениями элементы списка
+# 914. Функция для создания словаря, где ключами являются индексы, а значениями элементы списка
 def create_dict_from_list(lst):
     if not lst:
         return None
@@ -10147,7 +9313,7 @@ def create_dict_from_list(lst):
     return index_dict if index_dict else None
 
 
-# 1089. Функция для нахождения всех чисел, которые встречаются более одного раза в словаре
+# 915. Функция для нахождения всех чисел, которые встречаются более одного раза в словаре
 def find_duplicates_in_dict(d):
     if not d:
         return None
@@ -10161,7 +9327,7 @@ def find_duplicates_in_dict(d):
     return duplicates if duplicates else None
 
 
-# 1090. Функция для подсчёта количества элементов в списке, которые равны значению по заданному ключу
+# 916. Функция для подсчёта количества элементов в списке, которые равны значению по заданному ключу
 def count_values_by_key(d, key):
     if not d or key not in d:
         return None
@@ -10172,7 +9338,7 @@ def count_values_by_key(d, key):
     return count if count else None
 
 
-# 1091. Функция для поиска всех значений в словаре, которые больше заданного порога
+# 917. Функция для поиска всех значений в словаре, которые больше заданного порога
 def find_values_greater_than(d, threshold):
     if not d:
         return None
@@ -10183,7 +9349,7 @@ def find_values_greater_than(d, threshold):
     return result if result else None
 
 
-# 1092. Функция для создания словаря, в котором ключи — это числа, а значения — это их остатки от деления на 5
+# 918. Функция для создания словаря, в котором ключи — это числа, а значения — это их остатки от деления на 5
 def create_remainders_dict(lst):
     if not lst:
         return None
@@ -10193,7 +9359,7 @@ def create_remainders_dict(lst):
     return remainder_dict if remainder_dict else None
 
 
-# 1093. Функция для нахождения суммы всех числовых значений в словаре
+# 919. Функция для нахождения суммы всех числовых значений в словаре
 def sum_of_dict_values(d):
     if not d:
         return None
@@ -10203,7 +9369,7 @@ def sum_of_dict_values(d):
     return total if total else None
 
 
-# 1094. Функция для создания словаря, где ключи — это строки, а значения — длины этих строк
+# 920. Функция для создания словаря, где ключи — это строки, а значения — длины этих строк
 def create_length_dict(lst):
     if not lst:
         return None
@@ -10213,7 +9379,7 @@ def create_length_dict(lst):
     return length_dict if length_dict else None
 
 
-# 1095. Функция для нахождения чисел в словаре, которые являются простыми
+# 921. Функция для нахождения чисел в словаре, которые являются простыми
 def find_prime_numbers_2(d):
     if not d:
         return None
@@ -10224,18 +9390,7 @@ def find_prime_numbers_2(d):
     return prime_numbers if prime_numbers else None
 
 
-# 1096. Функция для нахождения всех строк, длина которых больше, чем заданное число
-def find_longer_than(d, length):
-    if not d:
-        return None
-    result = []
-    for key, value in d.items():
-        if isinstance(value, str) and len(value) > length:
-            result.append((key, value))
-    return result if result else None
-
-
-# 1097. Функция для фильтрации словаря, оставляя только те элементы, у которых значения — чётные числа
+# 922. Функция для фильтрации словаря, оставляя только те элементы, у которых значения — чётные числа
 def filter_even_values(d):
     if not d:
         return None
@@ -10246,7 +9401,7 @@ def filter_even_values(d):
     return filtered_dict if filtered_dict else None
 
 
-# 1098. Функция для создания словаря, где ключами являются элементы списка, а значениями — их удвоенные значения
+# 923. Функция для создания словаря, где ключами являются элементы списка, а значениями — их удвоенные значения
 def create_double_value_dict(lst):
     if not lst:
         return None
@@ -10256,7 +9411,7 @@ def create_double_value_dict(lst):
     return double_dict if double_dict else None
 
 
-# 1099. Функция для создания словаря с числовыми значениями, где значения кратны 7
+# 924. Функция для создания словаря с числовыми значениями, где значения кратны 7
 def create_sevens_dict(lst):
     if not lst:
         return None
@@ -10267,7 +9422,7 @@ def create_sevens_dict(lst):
     return sevens_dict if sevens_dict else None
 
 
-# 1100. Функция для нахождения всех значений в словаре, которые равны их ключам
+# 925. Функция для нахождения всех значений в словаре, которые равны их ключам
 def find_equal_key_value_pairs(d):
     if not d:
         return None
@@ -10278,7 +9433,7 @@ def find_equal_key_value_pairs(d):
     return result if result else None
 
 
-# 1101. Функция для поиска максимального значения среди всех значений словаря
+# 926. Функция для поиска максимального значения среди всех значений словаря
 def find_max_value_in_dict_4(d):
     if not d:
         return None
@@ -10286,7 +9441,7 @@ def find_max_value_in_dict_4(d):
     return max_value if max_value else None
 
 
-# 1102. Функция для создания словаря, где ключами являются элементы списка, а значениями их кубы
+# 927. Функция для создания словаря, где ключами являются элементы списка, а значениями их кубы
 def create_cube_dict(lst):
     if not lst:
         return None
@@ -10296,7 +9451,7 @@ def create_cube_dict(lst):
     return cube_dict if cube_dict else None
 
 
-# 1103. Функция для поиска строк, которые содержат больше определённого количества символов
+# 928. Функция для поиска строк, которые содержат больше определённого количества символов
 def find_long_strings_3(d, length):
     if not d:
         return None
@@ -10307,7 +9462,7 @@ def find_long_strings_3(d, length):
     return result if result else None
 
 
-# 1104. Функция для нахождения всех значений, которые являются нечётными числами
+# 929. Функция для нахождения всех значений, которые являются нечётными числами
 def find_odd_values(d):
     if not d:
         return None
@@ -10318,7 +9473,7 @@ def find_odd_values(d):
     return result if result else None
 
 
-# 1105. Функция для нахождения всех чисел, которые больше среднего значения всех значений в словаре
+# 930. Функция для нахождения всех чисел, которые больше среднего значения всех значений в словаре
 def find_values_greater_than_average(d):
     if not d:
         return None
@@ -10330,7 +9485,7 @@ def find_values_greater_than_average(d):
     return result if result else None
 
 
-# 1106. Функция для создания словаря, где ключи — это индексы строк из списка, а значения — это сами строки
+# 931. Функция для создания словаря, где ключи — это индексы строк из списка, а значения — это сами строки
 def create_string_dict(lst):
     if not lst:
         return None
@@ -10340,7 +9495,7 @@ def create_string_dict(lst):
     return string_dict if string_dict else None
 
 
-# 1107. Функция для нахождения чисел, которые больше заданного порога в словаре
+# 932. Функция для нахождения чисел, которые больше заданного порога в словаре
 def find_values_greater_than_threshold(d, threshold):
     if not d:
         return None
@@ -10351,7 +9506,7 @@ def find_values_greater_than_threshold(d, threshold):
     return result if result else None
 
 
-# 1108. Функция для подсчёта количества уникальных значений в словаре
+# 933. Функция для подсчёта количества уникальных значений в словаре
 def count_unique_values(d):
     if not d:
         return None
@@ -10359,7 +9514,7 @@ def count_unique_values(d):
     return len(unique_values) if unique_values else None
 
 
-# 1109. Функция для фильтрации словаря, оставляя только те элементы, у которых ключи являются строками
+# 934. Функция для фильтрации словаря, оставляя только те элементы, у которых ключи являются строками
 def filter_dict_with_string_keys(d):
     if not d:
         return None
@@ -10370,7 +9525,7 @@ def filter_dict_with_string_keys(d):
     return filtered_dict if filtered_dict else None
 
 
-# 1110. Функция для нахождения наибольшего числа в списке значений словаря
+# 935. Функция для нахождения наибольшего числа в списке значений словаря
 def find_max_in_values(d):
     if not d:
         return None
@@ -10378,7 +9533,7 @@ def find_max_in_values(d):
     return max_value if max_value else None
 
 
-# 1111. Функция для удаления из словаря всех элементов, где значение является пустой строкой
+# 936. Функция для удаления из словаря всех элементов, где значение является пустой строкой
 def remove_empty_values(d):
     if not d:
         return None
@@ -10389,7 +9544,7 @@ def remove_empty_values(d):
     return clean_dict if clean_dict else None
 
 
-# 1112. Функция для нахождения чисел, которые содержатся и в списке, и в множестве, и выводятся как кортежи
+# 937. Функция для нахождения чисел, которые содержатся и в списке, и в множестве, и выводятся как кортежи
 def find_common_elements_5(lst, s):
     if not lst or not s:
         return None
@@ -10400,7 +9555,7 @@ def find_common_elements_5(lst, s):
     return tuple(result) if result else None
 
 
-# 1113. Функция для вычисления суммы всех элементов кортежа, которые делятся на 3
+# 938. Функция для вычисления суммы всех элементов кортежа, которые делятся на 3
 def sum_of_multiples_of_3(t):
     if not t:
         return None
@@ -10411,7 +9566,7 @@ def sum_of_multiples_of_3(t):
     return total if total else None
 
 
-# 1115. Функция для нахождения чисел, которые встречаются как в списке, так и в словаре
+# 939. Функция для нахождения чисел, которые встречаются как в списке, так и в словаре
 def find_elements_in_list_and_dict(lst, d):
     if not lst or not d:
         return None
@@ -10422,7 +9577,7 @@ def find_elements_in_list_and_dict(lst, d):
     return tuple(common_elements) if common_elements else None
 
 
-# 1116. Функция для создания множества уникальных значений из списка, кортежа и словаря
+# 940. Функция для создания множества уникальных значений из списка, кортежа и словаря
 def create_unique_set_from_multiple_sources(lst, t, d):
     if not lst or not t or not d:
         return None
@@ -10430,7 +9585,7 @@ def create_unique_set_from_multiple_sources(lst, t, d):
     return combined_set if combined_set else None
 
 
-# 1117. Функция для нахождения строк, длина которых больше заданного числа, из списка и словаря
+# 941. Функция для нахождения строк, длина которых больше заданного числа, из списка и словаря
 def find_long_strings_6(lst, d, length):
     if not lst or not d:
         return None
@@ -10444,7 +9599,7 @@ def find_long_strings_6(lst, d, length):
     return tuple(long_strings) if long_strings else None
 
 
-# 1118. Функция для нахождения чисел, которые больше всех чисел в словаре, и добавление их в множество
+# 942. Функция для нахождения чисел, которые больше всех чисел в словаре, и добавление их в множество
 def find_numbers_greater_than_dict_values(lst, d):
     if not lst or not d:
         return None
@@ -10456,7 +9611,7 @@ def find_numbers_greater_than_dict_values(lst, d):
     return greater_numbers if greater_numbers else None
 
 
-# 1119. Функция для подсчёта, сколько раз встречаются числа в списке, и создание словаря с этим количеством
+# 943. Функция для подсчёта, сколько раз встречаются числа в списке, и создание словаря с этим количеством
 def count_numbers_in_list(lst):
     if not lst:
         return None
@@ -10466,7 +9621,7 @@ def count_numbers_in_list(lst):
     return count_dict if count_dict else None
 
 
-# 1120. Функция для создания списка чисел, которые есть в словаре и кортежах
+# 944. Функция для создания списка чисел, которые есть в словаре и кортежах
 def find_numbers_in_dict_and_tuple(d, t):
     if not d or not t:
         return None
@@ -10477,7 +9632,7 @@ def find_numbers_in_dict_and_tuple(d, t):
     return result if result else None
 
 
-# 1122. Функция для создания словаря, где ключи — это элементы списка, а значения — их индексы
+# 945. Функция для создания словаря, где ключи — это элементы списка, а значения — их индексы
 def create_index_dict(lst):
     if not lst:
         return None
@@ -10487,7 +9642,7 @@ def create_index_dict(lst):
     return index_dict if index_dict else None
 
 
-# 1123. Функция для создания множества всех уникальных символов из строк в списке и словаре
+# 946. Функция для создания множества всех уникальных символов из строк в списке и словаре
 def create_unique_char_set(lst, d):
     if not lst or not d:
         return None
@@ -10501,7 +9656,7 @@ def create_unique_char_set(lst, d):
     return char_set if char_set else None
 
 
-# 1124. Функция для подсчёта уникальных элементов в списке и добавления их в словарь
+# 947. Функция для подсчёта уникальных элементов в списке и добавления их в словарь
 def count_unique_elements(lst):
     if not lst:
         return None
@@ -10511,7 +9666,7 @@ def count_unique_elements(lst):
     return count_dict if count_dict else None
 
 
-# 1125. Функция для нахождения чисел, которые являются квадратами чисел из множества
+# 948. Функция для нахождения чисел, которые являются квадратами чисел из множества
 def find_squares_in_set(s):
     if not s:
         return None
@@ -10522,7 +9677,7 @@ def find_squares_in_set(s):
     return tuple(result) if result else None
 
 
-# 1126. Функция для нахождения строк с числовыми символами, которые встречаются в списке и словаре
+# 949. Функция для нахождения строк с числовыми символами, которые встречаются в списке и словаре
 def find_numeric_strings(lst, d):
     if not lst or not d:
         return None
@@ -10536,7 +9691,7 @@ def find_numeric_strings(lst, d):
     return tuple(result) if result else None
 
 
-# 1127. Функция для нахождения чисел в списке, которые равны числовым значениям в словаре
+# 950. Функция для нахождения чисел в списке, которые равны числовым значениям в словаре
 def find_equal_numbers(lst, d):
     if not lst or not d:
         return None
@@ -10547,21 +9702,7 @@ def find_equal_numbers(lst, d):
     return tuple(result) if result else None
 
 
-# 1128. Функция для создания множества всех чётных чисел из списка и кортежа
-def create_even_set(lst, t):
-    if not lst or not t:
-        return None
-    even_set = set()
-    for item in lst:
-        if item % 2 == 0:
-            even_set.add(item)
-    for item in t:
-        if item % 2 == 0:
-            even_set.add(item)
-    return even_set if even_set else None
-
-
-# 1130. Функция для нахождения всех чисел, которые могут быть составлены из цифр строки
+# 951. Функция для нахождения всех чисел, которые могут быть составлены из цифр строки
 def find_numbers_from_string(s):
     if not s:
         return None
@@ -10572,7 +9713,7 @@ def find_numbers_from_string(s):
     return tuple(result) if result else None
 
 
-# 1131. Функция для создания списка, где элементы — это чётные индексы словаря
+# 952. Функция для создания списка, где элементы — это чётные индексы словаря
 def create_even_indexed_list(d):
     if not d:
         return None
@@ -10583,7 +9724,7 @@ def create_even_indexed_list(d):
     return result if result else None
 
 
-# 1132. Функция для нахождения чисел, которые встречаются в списке, но отсутствуют в множестве
+# 953. Функция для нахождения чисел, которые встречаются в списке, но отсутствуют в множестве
 def find_numbers_not_in_set(lst, s):
     if not lst or not s:
         return None
@@ -10594,7 +9735,7 @@ def find_numbers_not_in_set(lst, s):
     return tuple(result) if result else None
 
 
-# 1133. Функция для создания словаря, где ключи — это элементы списка, а значения — множества их делителей
+# 954. Функция для создания словаря, где ключи — это элементы списка, а значения — множества их делителей
 def create_divisors_dict(lst):
     if not lst:
         return None
@@ -10605,7 +9746,7 @@ def create_divisors_dict(lst):
     return divisors_dict if divisors_dict else None
 
 
-# 1134. Функция для нахождения чисел, которые одновременно больше и меньше заданных значений
+# 955. Функция для нахождения чисел, которые одновременно больше и меньше заданных значений
 def find_numbers_between_bounds(lst, lower, upper):
     if not lst:
         return None
@@ -10616,7 +9757,7 @@ def find_numbers_between_bounds(lst, lower, upper):
     return tuple(result) if result else None
 
 
-# 1135. Функция для нахождения всех значений из словаря, которые меньше заданного числа
+# 956. Функция для нахождения всех значений из словаря, которые меньше заданного числа
 def find_values_less_than(d, num):
     if not d:
         return None
@@ -10627,7 +9768,7 @@ def find_values_less_than(d, num):
     return tuple(result) if result else None
 
 
-# 1136. Функция для создания словаря, где ключи — это элементы множества, а значения — их длины (если это строки)
+# 957. Функция для создания словаря, где ключи — это элементы множества, а значения — их длины (если это строки)
 def create_length_dict_from_set(s):
     if not s:
         return None
@@ -10638,18 +9779,7 @@ def create_length_dict_from_set(s):
     return length_dict if length_dict else None
 
 
-# 1137. Функция для нахождения чисел из списка, которые не присутствуют в множестве и словаре
-def find_numbers_not_in_set_and_dict(lst, s, d):
-    if not lst or not s or not d:
-        return None
-    result = []
-    for item in lst:
-        if item not in s and item not in d.values():
-            result.append(item)
-    return tuple(result) if result else None
-
-
-# 1138. Функция для создания списка чисел, которые являются нечётными в списке и чётными в словаре
+# 958. Функция для создания списка чисел, которые являются нечётными в списке и чётными в словаре
 def find_odd_in_list_and_even_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -10661,7 +9791,7 @@ def find_odd_in_list_and_even_in_dict(lst, d):
     return result if result else None
 
 
-# 1139. Функция для создания множества, которое объединяет все чётные числа из списка и множества
+# 959. Функция для создания множества, которое объединяет все чётные числа из списка и множества
 def create_even_number_set(lst, s):
     if not lst or not s:
         return None
@@ -10675,7 +9805,7 @@ def create_even_number_set(lst, s):
     return even_set if even_set else None
 
 
-# 1140. Функция для нахождения чисел из списка и словаря, которые больше среднего в словаре
+# 960. Функция для нахождения чисел из списка и словаря, которые больше среднего в словаре
 def find_numbers_greater_than_avg_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -10687,7 +9817,7 @@ def find_numbers_greater_than_avg_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1141. Функция для нахождения строк, длина которых меньше заданного числа в списке и словаре
+# 961. Функция для нахождения строк, длина которых меньше заданного числа в списке и словаре
 def find_short_strings_2(lst, d, length):
     if not lst or not d:
         return None
@@ -10701,7 +9831,7 @@ def find_short_strings_2(lst, d, length):
     return tuple(result) if result else None
 
 
-# 1142. Функция для нахождения максимального числа среди значений словаря и элементов списка
+# 962. Функция для нахождения максимального числа среди значений словаря и элементов списка
 def find_max_in_dict_and_list(lst, d):
     if not lst or not d:
         return None
@@ -10710,7 +9840,7 @@ def find_max_in_dict_and_list(lst, d):
     return max(max_list_value, max_dict_value)
 
 
-# 1143. Функция для создания словаря, где ключи — это элементы множества, а значения — длина строки ключа
+# 963. Функция для создания словаря, где ключи — это элементы множества, а значения — длина строки ключа
 def create_length_dict_from_set_2(s):
     if not s:
         return None
@@ -10720,7 +9850,7 @@ def create_length_dict_from_set_2(s):
     return length_dict if length_dict else None
 
 
-# 1144. Функция для подсчёта, сколько раз встречаются элементы в списке и словаре
+# 964. Функция для подсчёта, сколько раз встречаются элементы в списке и словаре
 def count_elements_in_list_and_dict(lst, d):
     if not lst or not d:
         return None
@@ -10730,7 +9860,7 @@ def count_elements_in_list_and_dict(lst, d):
     return count_dict if count_dict else None
 
 
-# 1145. Функция для нахождения общих значений между множеством и кортежем
+# 965. Функция для нахождения общих значений между множеством и кортежем
 def find_common_in_set_and_tuple(s, t):
     if not s or not t:
         return None
@@ -10738,7 +9868,7 @@ def find_common_in_set_and_tuple(s, t):
     return tuple(result) if result else None
 
 
-# 1146. Функция для нахождения чисел, которые содержат хотя бы одну цифру из другого числа
+# 966. Функция для нахождения чисел, которые содержат хотя бы одну цифру из другого числа
 def find_numbers_with_digit(lst, num):
     if not lst:
         return None
@@ -10750,7 +9880,7 @@ def find_numbers_with_digit(lst, num):
     return tuple(result) if result else None
 
 
-# 1147. Функция для создания множества всех нечётных чисел, которые присутствуют и в списке, и в словаре
+# 967. Функция для создания множества всех нечётных чисел, которые присутствуют и в списке, и в словаре
 def find_odd_numbers_in_both(lst, d):
     if not lst or not d:
         return None
@@ -10761,7 +9891,7 @@ def find_odd_numbers_in_both(lst, d):
     return odd_set if odd_set else None
 
 
-# 1148. Функция для нахождения чисел из списка, которые не присутствуют в словаре
+# 968. Функция для нахождения чисел из списка, которые не присутствуют в словаре
 def find_numbers_not_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -10772,7 +9902,7 @@ def find_numbers_not_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1149. Функция для нахождения уникальных элементов в списке, кортежах и множествах
+# 969. Функция для нахождения уникальных элементов в списке, кортежах и множествах
 def find_unique_elements_9(lst, t, s):
     if not lst or not t or not s:
         return None
@@ -10780,7 +9910,7 @@ def find_unique_elements_9(lst, t, s):
     return tuple(unique_elements) if unique_elements else None
 
 
-# 1150. Функция для нахождения всех чисел в списке, которые делятся на все числа в множестве
+# 970. Функция для нахождения всех чисел в списке, которые делятся на все числа в множестве
 def find_numbers_divisible_by_all(lst, s):
     if not lst or not s:
         return None
@@ -10791,7 +9921,7 @@ def find_numbers_divisible_by_all(lst, s):
     return tuple(result) if result else None
 
 
-# 1151. Функция для создания множества, которое объединяет все нечётные числа из списка и множества
+# 971. Функция для создания множества, которое объединяет все нечётные числа из списка и множества
 def create_odd_number_set(lst, s):
     if not lst or not s:
         return None
@@ -10805,7 +9935,7 @@ def create_odd_number_set(lst, s):
     return odd_set if odd_set else None
 
 
-# 1152. Функция для нахождения всех чисел, которые находятся в обеих коллекциях (списке и словаре)
+# 972. Функция для нахождения всех чисел, которые находятся в обеих коллекциях (списке и словаре)
 def find_numbers_in_list_and_dict(lst, d):
     if not lst or not d:
         return None
@@ -10816,7 +9946,7 @@ def find_numbers_in_list_and_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1153. Функция для подсчёта уникальных элементов в списке и словаре
+# 973. Функция для подсчёта уникальных элементов в списке и словаре
 def count_unique_elements_in_list_and_dict(lst, d):
     if not lst or not d:
         return None
@@ -10824,7 +9954,7 @@ def count_unique_elements_in_list_and_dict(lst, d):
     return len(result) if result else None
 
 
-# 1155. Функция для создания словаря, где ключи — это элементы множества, а значения — их квадраты
+# 974. Функция для создания словаря, где ключи — это элементы множества, а значения — их квадраты
 def create_square_dict_from_set(s):
     if not s:
         return None
@@ -10834,7 +9964,7 @@ def create_square_dict_from_set(s):
     return square_dict if square_dict else None
 
 
-# 1156. Функция для создания списка, в котором каждый элемент — это результат вычисления произведения всех чисел из словаря
+# 975. Функция для создания списка, в котором каждый элемент — это результат вычисления произведения всех чисел из словаря
 def create_product_list_from_dict(d):
     if not d:
         return None
@@ -10847,7 +9977,7 @@ def create_product_list_from_dict(d):
     return product_list if product_list else None
 
 
-# 1157. Функция для нахождения всех строк из списка и множества, которые содержат хотя бы одну цифру
+# 976. Функция для нахождения всех строк из списка и множества, которые содержат хотя бы одну цифру
 def find_strings_with_digit(lst, s):
     if not lst or not s:
         return None
@@ -10861,7 +9991,7 @@ def find_strings_with_digit(lst, s):
     return tuple(result) if result else None
 
 
-# 1158. Функция для нахождения чисел, которые встречаются и в списке, и в кортеже, и в множестве
+# 977. Функция для нахождения чисел, которые встречаются и в списке, и в кортеже, и в множестве
 def find_common_numbers(lst, t, s):
     if not lst or not t or not s:
         return None
@@ -10869,7 +9999,7 @@ def find_common_numbers(lst, t, s):
     return tuple(common) if common else None
 
 
-# 1159. Функция для создания множества, состоящего из всех строк, длина которых меньше заданного числа
+# 978. Функция для создания множества, состоящего из всех строк, длина которых меньше заданного числа
 def create_set_of_short_strings(lst, max_len):
     if not lst:
         return None
@@ -10880,20 +10010,7 @@ def create_set_of_short_strings(lst, max_len):
     return result if result else None
 
 
-# 1160. Функция для нахождения всех чисел, которые одновременно больше максимума в списке и меньше минимума в словаре
-def find_numbers_in_range(lst, d):
-    if not lst or not d:
-        return None
-    max_lst = max(lst)
-    min_dict = min(d.values())
-    result = []
-    for item in lst:
-        if max_lst < item < min_dict:
-            result.append(item)
-    return tuple(result) if result else None
-
-
-# 1161. Функция для нахождения строк, длина которых больше средней длины всех строк в списке
+# 979. Функция для нахождения строк, длина которых больше средней длины всех строк в списке
 def find_long_strings_2(lst):
     if not lst:
         return None
@@ -10905,7 +10022,7 @@ def find_long_strings_2(lst):
     return tuple(result) if result else None
 
 
-# 1162. Функция для нахождения чисел, которые находятся в кортеже, но отсутствуют в словаре
+# 980. Функция для нахождения чисел, которые находятся в кортеже, но отсутствуют в словаре
 def find_numbers_in_tuple_not_in_dict(t, d):
     if not t or not d:
         return None
@@ -10916,7 +10033,7 @@ def find_numbers_in_tuple_not_in_dict(t, d):
     return tuple(result) if result else None
 
 
-# 1163. Функция для нахождения элементов, которые встречаются в списке, но не в множестве и словаре
+# 981. Функция для нахождения элементов, которые встречаются в списке, но не в множестве и словаре
 def find_in_list_not_in_set_and_dict(lst, s, d):
     if not lst or not s or not d:
         return None
@@ -10927,7 +10044,7 @@ def find_in_list_not_in_set_and_dict(lst, s, d):
     return tuple(result) if result else None
 
 
-# 1164. Функция для нахождения максимальных элементов из списка и словаря
+# 982. Функция для нахождения максимальных элементов из списка и словаря
 def find_max_values(lst, d):
     if not lst or not d:
         return None
@@ -10936,7 +10053,7 @@ def find_max_values(lst, d):
     return max(max_lst, max_dict)
 
 
-# 1165. Функция для нахождения всех элементов из множества, которые не присутствуют в словаре
+# 983. Функция для нахождения всех элементов из множества, которые не присутствуют в словаре
 def find_in_set_not_in_dict(s, d):
     if not s or not d:
         return None
@@ -10947,7 +10064,7 @@ def find_in_set_not_in_dict(s, d):
     return tuple(result) if result else None
 
 
-# 1166. Функция для создания словаря, где ключи — это строки из множества, а значения — длина строки
+# 984. Функция для создания словаря, где ключи — это строки из множества, а значения — длина строки
 def create_string_length_dict(s):
     if not s:
         return None
@@ -10958,18 +10075,7 @@ def create_string_length_dict(s):
     return string_length_dict if string_length_dict else None
 
 
-# 1167. Функция для нахождения всех чисел в списке, которые не присутствуют в словаре и множествах
-def find_numbers_not_in_dict_and_sets(lst, d, s):
-    if not lst or not d or not s:
-        return None
-    result = []
-    for item in lst:
-        if item not in d and item not in s:
-            result.append(item)
-    return tuple(result) if result else None
-
-
-# 1168. Функция для создания множества, которое содержит уникальные элементы из списка и множества
+# 985. Функция для создания множества, которое содержит уникальные элементы из списка и множества
 def create_unique_set_from_list_and_set(lst, s):
     if not lst or not s:
         return None
@@ -10981,7 +10087,7 @@ def create_unique_set_from_list_and_set(lst, s):
     return unique_set if unique_set else None
 
 
-# 1170. Функция для нахождения всех чисел из списка и словаря, которые являются чётными
+# 986. Функция для нахождения всех чисел из списка и словаря, которые являются чётными
 def find_even_numbers_in_list_and_dict(lst, d):
     if not lst or not d:
         return None
@@ -10995,7 +10101,7 @@ def find_even_numbers_in_list_and_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1171. Функция для создания словаря, где ключи — это строки, а значения — длины строк, встречающихся и в списке, и в множестве
+# 987. Функция для создания словаря, где ключи — это строки, а значения — длины строк, встречающихся и в списке, и в множестве
 def create_length_dict_from_strings_in_both(lst, s):
     if not lst or not s:
         return None
@@ -11006,18 +10112,7 @@ def create_length_dict_from_strings_in_both(lst, s):
     return length_dict if length_dict else None
 
 
-# 1172. Функция для нахождения чисел, которые есть в кортеже, но отсутствуют в списке и словаре
-def find_numbers_in_tuple_not_in_list_and_dict(t, lst, d):
-    if not t or not lst or not d:
-        return None
-    result = []
-    for item in t:
-        if item not in lst and item not in d:
-            result.append(item)
-    return tuple(result) if result else None
-
-
-# 1173. Функция для нахождения строк в списке, которые содержат хотя бы один символ, присутствующий в другом списке
+# 988. Функция для нахождения строк в списке, которые содержат хотя бы один символ, присутствующий в другом списке
 def find_strings_with_common_characters(lst1, lst2):
     if not lst1 or not lst2:
         return None
@@ -11031,7 +10126,7 @@ def find_strings_with_common_characters(lst1, lst2):
     return tuple(result) if result else None
 
 
-# 1174. Функция для нахождения чисел в словаре, значения которых больше, чем в списке
+# 989. Функция для нахождения чисел в словаре, значения которых больше, чем в списке
 def find_values_greater_than_in_list(d, lst):
     if not d or not lst:
         return None
@@ -11044,7 +10139,7 @@ def find_values_greater_than_in_list(d, lst):
     return tuple(result) if result else None
 
 
-# 1175. Функция для нахождения всех чисел, которые присутствуют и в списке, и в множестве
+# 990. Функция для нахождения всех чисел, которые присутствуют и в списке, и в множестве
 def find_numbers_in_both_list_and_set(lst, s):
     if not lst or not s:
         return None
@@ -11055,7 +10150,7 @@ def find_numbers_in_both_list_and_set(lst, s):
     return tuple(result) if result else None
 
 
-# 1176. Функция для нахождения элементов из списка, которые не встречаются в других структурах данных
+# 991. Функция для нахождения элементов из списка, которые не встречаются в других структурах данных
 def find_elements_not_in_other_structures(lst, s, d, t):
     if not lst or not s or not d or not t:
         return None
@@ -11066,7 +10161,7 @@ def find_elements_not_in_other_structures(lst, s, d, t):
     return tuple(result) if result else None
 
 
-# 1177. Функция для нахождения чисел, которые меньше минимального значения в списке и больше максимального в словаре
+# 992. Функция для нахождения чисел, которые меньше минимального значения в списке и больше максимального в словаре
 def find_numbers_between_min_in_list_and_max_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11079,7 +10174,7 @@ def find_numbers_between_min_in_list_and_max_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1178. Функция для создания множества из всех строк, длина которых больше заданного значения
+# 993. Функция для создания множества из всех строк, длина которых больше заданного значения
 def create_set_of_long_strings(lst, min_length):
     if not lst:
         return None
@@ -11090,7 +10185,7 @@ def create_set_of_long_strings(lst, min_length):
     return long_strings if long_strings else None
 
 
-# 1179. Функция для нахождения всех чисел в словаре, которые меньше средней величины всех значений в словаре
+# 994. Функция для нахождения всех чисел в словаре, которые меньше средней величины всех значений в словаре
 def find_numbers_less_than_avg_in_dict(d):
     if not d:
         return None
@@ -11102,7 +10197,7 @@ def find_numbers_less_than_avg_in_dict(d):
     return tuple(result) if result else None
 
 
-# 1180. Функция для подсчёта количества строк, длина которых больше средней длины всех строк в списке
+# 995. Функция для подсчёта количества строк, длина которых больше средней длины всех строк в списке
 def count_strings_longer_than_avg(lst):
     if not lst:
         return None
@@ -11114,7 +10209,7 @@ def count_strings_longer_than_avg(lst):
     return count if count > 0 else None
 
 
-# 1181. Функция для нахождения элементов, которые одновременно присутствуют в множестве и кортеже
+# 996. Функция для нахождения элементов, которые одновременно присутствуют в множестве и кортеже
 def find_common_in_set_and_tuple_2(s, t):
     if not s or not t:
         return None
@@ -11125,7 +10220,7 @@ def find_common_in_set_and_tuple_2(s, t):
     return tuple(result) if result else None
 
 
-# 1182. Функция для создания словаря, где ключи — это строки, а значения — их длина, если строка есть в списке
+# 997. Функция для создания словаря, где ключи — это строки, а значения — их длина, если строка есть в списке
 def create_length_dict_from_strings_in_list(lst):
     if not lst:
         return None
@@ -11136,7 +10231,7 @@ def create_length_dict_from_strings_in_list(lst):
     return length_dict if length_dict else None
 
 
-# 1183. Функция для нахождения чисел, которые больше максимума в списке и меньше минимума в словаре
+# 998. Функция для нахождения чисел, которые больше максимума в списке и меньше минимума в словаре
 def find_numbers_between_max_in_list_and_min_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11149,7 +10244,7 @@ def find_numbers_between_max_in_list_and_min_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1184. Функция для нахождения строк, содержащих хотя бы одну букву из множества
+# 999. Функция для нахождения строк, содержащих хотя бы одну букву из множества
 def find_strings_with_letter_from_set(lst, s):
     if not lst or not s:
         return None
@@ -11160,7 +10255,7 @@ def find_strings_with_letter_from_set(lst, s):
     return tuple(result) if result else None
 
 
-# 1185. Функция для нахождения чисел, которые присутствуют в списке, но не в словаре
+# 1000. Функция для нахождения чисел, которые присутствуют в списке, но не в словаре
 def find_numbers_in_list_not_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11171,7 +10266,7 @@ def find_numbers_in_list_not_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1186. Функция для нахождения всех чисел в списке, которые встречаются и в множестве, и в словаре
+# 1001. Функция для нахождения всех чисел в списке, которые встречаются и в множестве, и в словаре
 def find_numbers_in_both_set_and_dict(lst, s, d):
     if not lst or not s or not d:
         return None
@@ -11182,7 +10277,7 @@ def find_numbers_in_both_set_and_dict(lst, s, d):
     return tuple(result) if result else None
 
 
-# 1187. Функция для создания списка всех чисел, которые больше минимального в словаре и меньше максимального в множестве
+# 1002. Функция для создания списка всех чисел, которые больше минимального в словаре и меньше максимального в множестве
 def create_list_between_min_in_dict_and_max_in_set(d, s):
     if not d or not s:
         return None
@@ -11195,7 +10290,7 @@ def create_list_between_min_in_dict_and_max_in_set(d, s):
     return result if result else None
 
 
-# 1188. Функция для нахождения чисел, которые присутствуют в кортеже, но отсутствуют в множестве и словаре
+# 1003. Функция для нахождения чисел, которые присутствуют в кортеже, но отсутствуют в множестве и словаре
 def find_in_tuple_not_in_set_and_dict(t, s, d):
     if not t or not s or not d:
         return None
@@ -11206,7 +10301,7 @@ def find_in_tuple_not_in_set_and_dict(t, s, d):
     return tuple(result) if result else None
 
 
-# 1189. Функция для нахождения всех чисел, которые больше заданного в списке, но меньше в словаре
+# 1004. Функция для нахождения всех чисел, которые больше заданного в списке, но меньше в словаре
 def find_floats_between_list_and_dict(lst, d):
     if not lst or not d:
         return None
@@ -11218,7 +10313,7 @@ def find_floats_between_list_and_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1190. Функция для нахождения всех чисел в списке, которые больше максимума в словаре
+# 1005. Функция для нахождения всех чисел в списке, которые больше максимума в словаре
 def find_floats_greater_than_max_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11230,20 +10325,7 @@ def find_floats_greater_than_max_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1192. Функция для нахождения чисел, которые больше максимума в списке и меньше максимального в другом списке
-def find_floats_between_max_in_list_and_max_in_another_list(lst1, lst2):
-    if not lst1 or not lst2:
-        return None
-    max_lst1 = max(lst1)
-    max_lst2 = max(lst2)
-    result = []
-    for item in lst1:
-        if isinstance(item, float) and item > max_lst1 and item < max_lst2:
-            result.append(item)
-    return tuple(result) if result else None
-
-
-# 1193. Функция для подсчёта количества чисел, которые меньше заданного значения в списке и словаре
+# 1006. Функция для подсчёта количества чисел, которые меньше заданного значения в списке и словаре
 def count_floats_less_than_value_in_list_and_dict(lst, d, value):
     if not lst or not d:
         return None
@@ -11257,7 +10339,7 @@ def count_floats_less_than_value_in_list_and_dict(lst, d, value):
     return count if count > 0 else None
 
 
-# 1194. Функция для нахождения чисел в списке, которые меньше максимального значения в другом списке
+# 1007. Функция для нахождения чисел в списке, которые меньше максимального значения в другом списке
 def find_floats_less_than_max_in_other_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
@@ -11269,7 +10351,7 @@ def find_floats_less_than_max_in_other_list(lst1, lst2):
     return tuple(result) if result else None
 
 
-# 1195. Функция для нахождения чисел, которые меньше всех значений в словаре и больше всех значений в списке
+# 1008. Функция для нахождения чисел, которые меньше всех значений в словаре и больше всех значений в списке
 def find_floats_between_max_in_list_and_min_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11282,7 +10364,7 @@ def find_floats_between_max_in_list_and_min_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1197. Функция для нахождения чисел в списке, которые равны или меньше значений в множестве
+# 1009. Функция для нахождения чисел в списке, которые равны или меньше значений в множестве
 def find_floats_less_than_or_equal_to_set_values(lst, s):
     if not lst or not s:
         return None
@@ -11293,7 +10375,7 @@ def find_floats_less_than_or_equal_to_set_values(lst, s):
     return tuple(result) if result else None
 
 
-# 1198. Функция для нахождения всех чисел в словаре, которые меньше заданного значения
+# 1010. Функция для нахождения всех чисел в словаре, которые меньше заданного значения
 def find_floats_less_than_value_in_dict(d, value):
     if not d:
         return None
@@ -11304,7 +10386,7 @@ def find_floats_less_than_value_in_dict(d, value):
     return tuple(result) if result else None
 
 
-# 1199. Функция для нахождения чисел, которые одновременно больше максимума в одном списке и меньше минимума в другом списке
+# 1011. Функция для нахождения чисел, которые одновременно больше максимума в одном списке и меньше минимума в другом списке
 def find_floats_between_max_in_first_list_and_min_in_second_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
@@ -11312,12 +10394,12 @@ def find_floats_between_max_in_first_list_and_min_in_second_list(lst1, lst2):
     min_lst2 = min(lst2)
     result = []
     for item in lst1:
-        if isinstance(item, float) and item > max_lst1 and item < min_lst2:
+        if isinstance(item, float) and max_lst1 < item < min_lst2:
             result.append(item)
     return tuple(result) if result else None
 
 
-# 1200. Функция для нахождения чисел, которые меньше или равны максимальному значению в списке
+# 1012. Функция для нахождения чисел, которые меньше или равны максимальному значению в списке
 def find_floats_less_than_or_equal_to_max_in_list(lst):
     if not lst:
         return None
@@ -11329,7 +10411,7 @@ def find_floats_less_than_or_equal_to_max_in_list(lst):
     return tuple(result) if result else None
 
 
-# 1201. Функция для нахождения чисел, которые больше минимального значения в списке, но меньше максимального в словаре
+# 1013. Функция для нахождения чисел, которые больше минимального значения в списке, но меньше максимального в словаре
 def find_floats_between_min_in_list_and_max_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11342,7 +10424,7 @@ def find_floats_between_min_in_list_and_max_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1204. Функция для создания множества, содержащего все числа, которые больше минимального в словаре и меньше максимального в списке
+# 1014. Функция для создания множества, содержащего все числа, которые больше минимального в словаре и меньше максимального в списке
 def create_set_between_min_in_dict_and_max_in_list(d, lst):
     if not d or not lst:
         return None
@@ -11355,7 +10437,7 @@ def create_set_between_min_in_dict_and_max_in_list(d, lst):
     return result if result else None
 
 
-# 1205. Функция для нахождения всех чисел в списке, которые делятся на заданное число
+# 1015. Функция для нахождения всех чисел в списке, которые делятся на заданное число
 def find_floats_divisible_by_value_in_list(lst, value):
     if not lst:
         return None
@@ -11366,7 +10448,7 @@ def find_floats_divisible_by_value_in_list(lst, value):
     return tuple(result) if result else None
 
 
-# 1206. Функция для нахождения чисел, которые меньше заданного значения в списке и больше в словаре
+# 1016. Функция для нахождения чисел, которые меньше заданного значения в списке и больше в словаре
 def find_floats_between_value_in_list_and_value_in_dict(lst, d, value):
     if not lst or not d:
         return None
@@ -11377,20 +10459,7 @@ def find_floats_between_value_in_list_and_value_in_dict(lst, d, value):
     return tuple(result) if result else None
 
 
-# 1208. Функция для нахождения всех чисел, которые больше минимального значения в списке и меньше максимального в другом
-def find_floats_between_min_in_list_and_max_in_other_list(lst1, lst2):
-    if not lst1 or not lst2:
-        return None
-    min_lst1 = min(lst1)
-    max_lst2 = max(lst2)
-    result = []
-    for item in lst1:
-        if isinstance(item, float) and min_lst1 < item < max_lst2:
-            result.append(item)
-    return tuple(result) if result else None
-
-
-# 1209. Функция для подсчёта чисел в списке, которые больше средней величины всех чисел в словаре
+# 1017. Функция для подсчёта чисел в списке, которые больше средней величины всех чисел в словаре
 def count_floats_greater_than_avg_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11402,7 +10471,7 @@ def count_floats_greater_than_avg_in_dict(lst, d):
     return count if count > 0 else None
 
 
-# 1210. Функция для нахождения всех чисел в списке, которые делятся на два заданных числа
+# 1018. Функция для нахождения всех чисел в списке, которые делятся на два заданных числа
 def find_floats_divisible_by_two_values(lst, value1, value2):
     if not lst:
         return None
@@ -11413,7 +10482,7 @@ def find_floats_divisible_by_two_values(lst, value1, value2):
     return tuple(result) if result else None
 
 
-# 1211. Функция для создания множества чисел, которые больше заданного в списке
+# 1019. Функция для создания множества чисел, которые больше заданного в списке
 def create_set_of_floats_greater_than_value_in_list(lst, value):
     if not lst:
         return None
@@ -11424,7 +10493,7 @@ def create_set_of_floats_greater_than_value_in_list(lst, value):
     return result if result else None
 
 
-# 1212. Функция для нахождения чисел в списке, которые меньше среднего значения в другом списке
+# 1020. Функция для нахождения чисел в списке, которые меньше среднего значения в другом списке
 def find_floats_less_than_avg_in_other_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
@@ -11436,7 +10505,7 @@ def find_floats_less_than_avg_in_other_list(lst1, lst2):
     return tuple(result) if result else None
 
 
-# 1213. Функция для нахождения чисел, которые больше минимального в одном списке и меньше максимального в другом списке
+# 1021. Функция для нахождения чисел, которые больше минимального в одном списке и меньше максимального в другом списке
 def find_floats_between_min_in_first_list_and_max_in_second_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
@@ -11449,7 +10518,7 @@ def find_floats_between_min_in_first_list_and_max_in_second_list(lst1, lst2):
     return tuple(result) if result else None
 
 
-# 1214. Функция для нахождения чисел, которые меньше среднего значения всех чисел в словаре
+# 1022. Функция для нахождения чисел, которые меньше среднего значения всех чисел в словаре
 def find_floats_less_than_avg_in_dict(lst, d):
     if not lst or not d:
         return None
@@ -11461,7 +10530,7 @@ def find_floats_less_than_avg_in_dict(lst, d):
     return tuple(result) if result else None
 
 
-# 1215. Функция для нахождения чисел, которые больше заданного значения, присутствующего в словаре
+# 1023. Функция для нахождения чисел, которые больше заданного значения, присутствующего в словаре
 def find_floats_greater_than_value_in_dict(lst, d, value):
     if not lst or not d:
         return None
@@ -11472,7 +10541,7 @@ def find_floats_greater_than_value_in_dict(lst, d, value):
     return tuple(result) if result else None
 
 
-# 1216. Функция для нахождения чисел, которые больше максимального значения в одном списке и меньше максимального в другом
+# 1024. Функция для нахождения чисел, которые больше максимального значения в одном списке и меньше максимального в другом
 def find_floats_between_max_in_first_list_and_max_in_second_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
@@ -11480,6 +10549,1980 @@ def find_floats_between_max_in_first_list_and_max_in_second_list(lst1, lst2):
     max_lst2 = max(lst2)
     result = []
     for item in lst1:
-        if isinstance(item, float) and item > max_lst1 and item < max_lst2:
+        if isinstance(item, float) and max_lst1 < item < max_lst2:
             result.append(item)
     return tuple(result) if result else None
+
+
+# 1025. Функция для нахождения чисел, которые являются суммой элементов из двух списков
+def add_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a + b)
+    if not result:
+        return None
+    return result
+
+
+# 1026. Функция для нахождения чисел, которые являются результатом возведения элементов одного списка в квадрат
+def square_list_2(lst):
+    result = []
+    for num in lst:
+        result.append(num ** 2)
+    if not result:
+        return None
+    return result
+
+
+# 1027. Функция для нахождения чисел, которые делятся на 7, но не на 14
+def find_divisible_by_7_not_14(lst):
+    result = []
+    for num in lst:
+        if num % 7 == 0 and num % 14 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1028. Функция для нахождения чисел, которые встречаются в обоих списках
+def find_common_in_lists_2(lst1, lst2):
+    result = []
+    for num in lst1:
+        if num in lst2:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1029. Функция для нахождения чисел, которые являются произведением всех элементов списка
+def multiply_list_elements(lst):
+    result = 1
+    for num in lst:
+        result *= num
+    if result == 1:
+        return None
+    return result
+
+
+# 1030. Функция для нахождения чисел, которые являются разницей квадратов элементов из двух списков
+def subtract_squares_of_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a**2 - b**2)
+    if not result:
+        return None
+    return result
+
+
+# 1031. Функция для нахождения чисел, которые делятся на 8, но не на 16
+def find_divisible_by_8_not_16(lst):
+    result = []
+    for num in lst:
+        if num % 8 == 0 and num % 16 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1032. Функция для нахождения чисел, которые представляют собой делители других чисел в списке
+def find_divisors_in_list_2(lst):
+    result = []
+    for num in lst:
+        for other in lst:
+            if other != num and other % num == 0:
+                result.append(num)
+                break
+    if not result:
+        return None
+    return result
+
+
+# 1033. Функция для нахождения чисел, которые меньше всех элементов другого списка
+def find_less_than_all_other(lst1, lst2):
+    result = []
+    for num in lst1:
+        if all(num < x for x in lst2):
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1034. Функция для нахождения чисел, которые делятся на 2 или 3
+def find_divisible_by_2_or_3(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 or num % 3 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1035. Функция для нахождения чисел, которые являются суммой элементов из одного списка и чисел из другого
+def add_lists_elements_with_offset(lst1, lst2, offset):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a + b + offset)
+    if not result:
+        return None
+    return result
+
+
+# 1036. Функция для нахождения чисел, которые являются результатом умножения всех элементов списка на константу
+def multiply_list_by_constant(lst, constant):
+    result = []
+    for num in lst:
+        result.append(num * constant)
+    if not result:
+        return None
+    return result
+
+
+# 1037. Функция для нахождения чисел, которые не делятся на 3 и на 5
+def find_not_divisible_by_3_and_5(lst):
+    result = []
+    for num in lst:
+        if num % 3 != 0 and num % 5 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1038. Функция для нахождения чисел, которые представляют собой сумму элементов из двух списков с условием
+def add_lists_conditionally(lst1, lst2, condition):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if a + b > condition:
+            result.append(a + b)
+    if not result:
+        return None
+    return result
+
+
+# 1039. Функция для нахождения чисел, которые являются четными и больше 10
+def find_even_and_greater_than_10(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num > 10:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1040. Функция для нахождения чисел, которые равны разности двух других элементов в списке
+def find_difference_elements_in_list(lst):
+    result = []
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] - lst[j] == 0:
+                result.append(lst[i])
+    if not result:
+        return None
+    return result
+
+
+# 1041. Функция для нахождения чисел, которые являются квадратными корнями элементов списка
+def find_square_roots(lst):
+    result = []
+    for num in lst:
+        if num >= 0:
+            result.append(num ** 0.5)
+    if not result:
+        return None
+    return result
+
+
+# 1042. Функция для нахождения чисел, которые встречаются в одном списке, но не в другом
+def find_unique_in_first_list(lst1, lst2):
+    result = []
+    for num in lst1:
+        if num not in lst2:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1043. Функция для нахождения чисел, которые делятся на 10 или 12
+def find_divisible_by_10_or_12(lst):
+    result = []
+    for num in lst:
+        if num % 10 == 0 or num % 12 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1044. Функция для нахождения чисел, которые делятся на 11, но не на 22
+def find_divisible_by_11_not_22(lst):
+    result = []
+    for num in lst:
+        if num % 11 == 0 and num % 22 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1045. Функция для нахождения чисел, которые являются факториалами элементов списка
+def find_factorials(lst):
+    result = []
+    for num in lst:
+        if num == 0:
+            result.append(1)
+        else:
+            fact = 1
+            for i in range(1, num + 1):
+                fact *= i
+            result.append(fact)
+    if not result:
+        return None
+    return result
+
+
+# 1046. Функция для нахождения чисел, которые являются разностью между максимальным и минимальным значением в списке
+def find_diff_between_max_and_min(lst):
+    result = []
+    max_val = max(lst)
+    min_val = min(lst)
+    result.append(max_val - min_val)
+    if not result:
+        return None
+    return result
+
+
+# 1047. Функция для нахождения чисел, которые являются разностью квадратов элементов двух списков
+def subtract_squares_of_lists_v2(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a**2 - b**2)
+    if not result:
+        return None
+    return result
+
+
+# 1048. Функция для нахождения чисел, которые являются произведением всех чисел из списка и заданной константы
+def multiply_list_by_constant_v2(lst, constant):
+    result = []
+    for num in lst:
+        result.append(num * constant)
+    if not result:
+        return None
+    return result
+
+
+# 1049. Функция для нахождения чисел, которые являются результатом деления всех элементов списка на заданную константу
+def divide_list_by_constant(lst, constant):
+    result = []
+    if constant == 0:
+        return None
+    for num in lst:
+        result.append(num / constant)
+    if not result:
+        return None
+    return result
+
+
+# 1050. Функция для нахождения чисел, которые делятся на 4 или 8, но не на 12
+def find_divisible_by_4_or_8_not_12(lst):
+    result = []
+    for num in lst:
+        if (num % 4 == 0 or num % 8 == 0) and num % 12 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1051. Функция для нахождения чисел, которые являются суммой элементов двух списков с проверкой условия
+def add_lists_with_condition(lst1, lst2, condition):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if a + b > condition:
+            result.append(a + b)
+    if not result:
+        return None
+    return result
+
+
+# 1052. Функция для нахождения чисел, которые являются разницей между максимальным и минимальным элементом в двух списках
+def find_max_min_diff_in_lists(lst1, lst2):
+    result = []
+    max_val1 = max(lst1)
+    min_val1 = min(lst1)
+    max_val2 = max(lst2)
+    min_val2 = min(lst2)
+    result.append(max_val1 - min_val1)
+    result.append(max_val2 - min_val2)
+    if not result:
+        return None
+    return result
+
+
+# 1053. Функция для нахождения чисел, которые делятся на 3 и на 7
+def find_divisible_by_3_and_7(lst):
+    result = []
+    for num in lst:
+        if num % 3 == 0 and num % 7 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1054. Функция для нахождения чисел, которые делятся на 15, но не на 30
+def find_divisible_by_15_not_30(lst):
+    result = []
+    for num in lst:
+        if num % 15 == 0 and num % 30 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1055. Функция для нахождения чисел, которые равны разности между элементами двух списков
+def subtract_lists_elements(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a - b)
+    if not result:
+        return None
+    return result
+
+
+# 1056. Функция для нахождения чисел, которые делятся на 2 и на 3, но не на 6
+def find_divisible_by_2_and_3_not_6(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 3 == 0 and num % 6 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1057. Функция для нахождения чисел, которые являются квадратами элементов одного списка
+def find_squares_of_elements(lst):
+    result = []
+    for num in lst:
+        result.append(num**2)
+    if not result:
+        return None
+    return result
+
+
+# 1058. Функция для нахождения чисел, которые являются произведением элементов двух списков, но только тех, которые четные
+def multiply_even_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if a % 2 == 0 and b % 2 == 0:
+            result.append(a * b)
+    if not result:
+        return None
+    return result
+
+
+# 1059. Функция для нахождения чисел, которые делятся на 10, но не на 5
+def find_divisible_by_10_not_5(lst):
+    result = []
+    for num in lst:
+        if num % 10 == 0 and num % 5 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1060. Функция для нахождения чисел, которые равны произведению всех чисел другого списка
+def find_product_of_elements_of_other_list(lst1, lst2):
+    result = []
+    product = 1
+    for num in lst2:
+        product *= num
+    for num in lst1:
+        if num == product:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1061. Функция для нахождения чисел, которые являются делителями числа
+def find_divisors_4(lst, num):
+    result = []
+    for i in lst:
+        if num % i == 0:
+            result.append(i)
+    if not result:
+        return None
+    return result
+
+
+# 1062. Функция для нахождения чисел, которые больше всех чисел в другом списке
+def find_greater_than_all_in_other_list(lst1, lst2):
+    result = []
+    for num in lst1:
+        if all(num > x for x in lst2):
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1063. Функция для нахождения чисел, которые являются результатом умножения всех чисел в списке на 2
+def multiply_list_by_2(lst):
+    result = []
+    for num in lst:
+        result.append(num * 2)
+    if not result:
+        return None
+    return result
+
+
+# 1064. Функция для нахождения чисел, которые являются результатом возведения чисел в степень, заданную как аргумент
+def find_powers_of_elements(lst, power):
+    result = []
+    for num in lst:
+        result.append(num ** power)
+    if not result:
+        return None
+    return result
+
+
+# 1065. Функция для нахождения чисел, которые больше или равны всем элементам другого списка
+def find_greater_or_equal_to_all(lst1, lst2):
+    result = []
+    for num in lst1:
+        if all(num >= x for x in lst2):
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1066. Функция для нахождения чисел, которые являются разностью элементов из двух списков, с учетом определенного условия
+def subtract_lists_with_condition(lst1, lst2, condition):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if a - b > condition:
+            result.append(a - b)
+    if not result:
+        return None
+    return result
+
+
+# 1067. Функция для нахождения чисел, которые являются произведением элементов одного списка на элементы другого списка
+def multiply_lists_elements(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a * b)
+    if not result:
+        return None
+    return result
+
+
+# 1068. Функция для нахождения чисел, которые являются делителями чисел из списка
+def find_divisors_of_list_elements(lst):
+    result = []
+    for num in lst:
+        for i in range(1, num + 1):
+            if num % i == 0:
+                result.append(i)
+    if not result:
+        return None
+    return result
+
+
+# 1069. Функция для нахождения чисел, которые больше или равны минимальному элементу в другом списке
+def find_greater_than_or_equal_min(lst1, lst2):
+    result = []
+    min_val = min(lst2)
+    for num in lst1:
+        if num >= min_val:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1070. Функция для нахождения чисел, которые равны разнице двух элементов в одном списке
+def find_difference_of_elements(lst):
+    result = []
+    for i in range(len(lst)):
+        for j in range(i + 1, len(lst)):
+            result.append(lst[i] - lst[j])
+    if not result:
+        return None
+    return result
+
+
+# 1071. Функция для нахождения чисел, которые являются квадратными корнями элементов другого списка
+def find_square_roots_of_list(lst):
+    result = []
+    for num in lst:
+        result.append(num**0.5)
+    if not result:
+        return None
+    return result
+
+# 1072. Функция для нахождения чисел, которые являются разностью всех элементов двух списков по порядку
+def subtract_lists_elementwise(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] - lst2[i])
+        else:
+            result.append(lst1[i])
+    if not result:
+        return None
+    return result
+
+
+# 1073. Функция для нахождения чисел, которые встречаются в двух списках, но не одновременно в одном из них
+def find_exclusive_in_both(lst1, lst2):
+    result = []
+    for num in lst1:
+        if num not in lst2:
+            result.append(num)
+    for num in lst2:
+        if num not in lst1:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1074. Функция для нахождения чисел, которые являются результатом суммы чисел двух списков, если сумма больше 10
+def sum_lists_if_greater_than_10(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        summ = a + b
+        if summ > 10:
+            result.append(summ)
+    if not result:
+        return None
+    return result
+
+
+# 1075. Функция для нахождения чисел, которые являются результатом возведения элементов одного списка в степень элементов другого
+def power_of_elements(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a ** b)
+    if not result:
+        return None
+    return result
+
+
+# 1076. Функция для нахождения чисел, которые являются результатом деления элементов одного списка на элементы другого, при этом исключая делители, равные нулю
+def divide_lists_with_exclusion_of_zero(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if b != 0:
+            result.append(a / b)
+    if not result:
+        return None
+    return result
+
+
+# 1077. Функция для нахождения чисел, которые встречаются в двух списках и являются четными
+def find_even_common(lst1, lst2):
+    result = []
+    for num in lst1:
+        if num in lst2 and num % 2 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1078. Функция для нахождения чисел, которые меньше суммы элементов второго списка
+def find_less_than_sum_of_other_list(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        if num < sum_lst2:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1079. Функция для нахождения чисел, которые являются разностью элементов одного списка от их квадратов
+def subtract_from_squares(lst):
+    result = []
+    for num in lst:
+        result.append(num**2 - num)
+    if not result:
+        return None
+    return result
+
+
+# 1080. Функция для нахождения чисел, которые являются результатом умножения чисел одного списка на числа другого, но только если результат больше 20
+def multiply_lists_if_greater_than_20(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        product = a * b
+        if product > 20:
+            result.append(product)
+    if not result:
+        return None
+    return result
+
+
+# 1081. Функция для нахождения чисел, которые делятся на 3, но не делятся на 6
+def find_divisible_by_3_not_6(lst):
+    result = []
+    for num in lst:
+        if num % 3 == 0 and num % 6 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1082. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих, с использованием множеств
+def find_unique_elements_in_sets_3(lst1, lst2):
+    result = list(set(lst1) ^ set(lst2))
+    if not result:
+        return None
+    return result
+
+
+# 1083. Функция для нахождения чисел, которые являются суммой всех чисел в списке, умноженных на их индексы
+def sum_elements_times_index(lst):
+    result = []
+    for i, num in enumerate(lst):
+        result.append(num * i)
+    if not result:
+        return None
+    return result
+
+
+# 1084. Функция для нахождения чисел, которые представляют собой разность элементов одного списка, умноженных на элементы другого списка
+def diff_of_multiplied_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a * b) - a)
+    if not result:
+        return None
+    return result
+
+
+# 1085. Функция для нахождения чисел, которые встречаются в одном из двух списков, но не в обоих, и вычисление их суммы
+def find_unique_in_both_lists_and_sum(lst1, lst2):
+    result = []
+    total_sum = 0
+    for num in lst1:
+        if num not in lst2:
+            result.append(num)
+            total_sum += num
+    for num in lst2:
+        if num not in lst1:
+            result.append(num)
+            total_sum += num
+    if not result:
+        return None
+    return total_sum
+
+
+# 1086. Функция для нахождения чисел, которые равны произведению всех элементов одного списка и разности элементов другого списка
+def multiply_by_difference_of_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a * b) - (b - a))
+    if not result:
+        return None
+    return result
+
+
+# 1087. Функция для нахождения чисел, которые равны разности всех элементов одного списка и их квадратичных значений
+def find_difference_of_elements_and_squares(lst):
+    result = []
+    for num in lst:
+        result.append(num - num**2)
+    if not result:
+        return None
+    return result
+
+
+# 1088. Функция для нахождения чисел, которые присутствуют в обоих списках, но только если они делятся на 5
+def find_common_and_divisible_by_5(lst1, lst2):
+    result = []
+    for num in lst1:
+        if num in lst2 and num % 5 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1089. Функция для нахождения чисел, которые меньше всех элементов из другого списка, но больше 10
+def find_less_than_all_and_gt_10(lst1, lst2):
+    result = []
+    for num in lst1:
+        if all(num < x for x in lst2) and num > 10:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1090. Функция для нахождения чисел, которые делятся на 2 и на 4, но не на 8
+def find_divisible_by_2_and_4_not_8(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 4 == 0 and num % 8 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1091. Функция для нахождения чисел, которые равны разности между квадратом и кубом числа
+def find_diff_between_square_and_cube(lst):
+    result = []
+    for num in lst:
+        result.append(num**2 - num**3)
+    if not result:
+        return None
+    return result
+
+
+# 1092. Функция для нахождения чисел, которые являются результатом возведения каждого числа в степень его индекса в списке
+def power_elements_by_index(lst):
+    result = []
+    for i, num in enumerate(lst):
+        result.append(num ** i)
+    if not result:
+        return None
+    return result
+
+
+# 1093. Функция для нахождения чисел, которые равны разности квадратов двух элементов из двух списков
+def subtract_squares_of_two_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a**2 - b**2)
+    if not result:
+        return None
+    return result
+
+
+# 1094. Функция для нахождения чисел, которые являются результатом разности всех элементов одного списка, деленных на элементы другого
+def subtract_divided_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if b != 0:
+            result.append(a - (a / b))
+    if not result:
+        return None
+    return result
+
+
+# 1095. Функция для нахождения чисел, которые представляют собой сумму всех чисел из одного списка, умноженных на их индексы
+def sum_elements_times_index_v2(lst):
+    result = []
+    for i, num in enumerate(lst):
+        result.append(num * (i + 1))
+    if not result:
+        return None
+    return result
+
+
+# 1096. Функция для нахождения чисел, которые делятся на 6 и на 8
+def find_divisible_by_6_and_8(lst):
+    result = []
+    for num in lst:
+        if num % 6 == 0 and num % 8 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1097. Функция для нахождения чисел, которые представляют собой разницу всех чисел в списке и их факториалов
+def find_diff_and_factorials(lst):
+    result = []
+    for num in lst:
+        fact = 1
+        for i in range(1, num + 1):
+            fact *= i
+        result.append(num - fact)
+    if not result:
+        return None
+    return result
+
+
+# 1098. Функция для нахождения чисел, которые являются результатом умножения чисел одного списка на элементы другого, но только если результат меньше 100
+def multiply_lists_if_less_than_100(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        product = a * b
+        if product < 100:
+            result.append(product)
+    if not result:
+        return None
+    return result
+
+
+# 1099. Функция для нахождения чисел, которые равны результату возведения элементов списка в степень их индекса
+def find_powers_by_index(lst):
+    result = []
+    for i, num in enumerate(lst):
+        result.append(num ** (i + 1))
+    if not result:
+        return None
+    return result
+
+
+# 1100. Функция для нахождения чисел, которые равны разности всех чисел из двух списков, умноженных на индексы
+def subtract_lists_with_index(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] - lst2[i]) * i)
+        else:
+            result.append(lst1[i] * i)
+    if not result:
+        return None
+    return result
+
+
+# 1101. Функция для нахождения чисел, которые являются суммой всех чисел в одном списке, делённых на числа из другого
+def sum_divided_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if b != 0:
+            result.append(a / b)
+    if not result:
+        return None
+    return result
+
+
+# 1102. Функция для нахождения чисел, которые равны разности квадратов элементов одного списка и квадратов элементов другого
+def diff_of_squares(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a**2 - b**2)
+    if not result:
+        return None
+    return result
+
+
+# 1103. Функция для нахождения чисел, которые делятся на 7, но не делятся на 14 и 21
+def find_divisible_by_7_not_14_or_21(lst):
+    result = []
+    for num in lst:
+        if num % 7 == 0 and num % 14 != 0 and num % 21 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1104. Функция для нахождения чисел, которые являются суммой чисел из одного списка и разности чисел другого списка
+def sum_and_diff_of_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a + b) - (b - a))
+    if not result:
+        return None
+    return result
+
+
+# 1105. Функция для нахождения чисел, которые являются результатом умножения чисел из одного списка на чисел другого, но только если произведение больше 50
+def multiply_lists_if_greater_than_50(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        product = a * b
+        if product > 50:
+            result.append(product)
+    if not result:
+        return None
+    return result
+
+
+# 1106. Функция для нахождения чисел, которые делятся на 8, но не делятся на 4
+def find_divisible_by_8_not_4(lst):
+    result = []
+    for num in lst:
+        if num % 8 == 0 and num % 4 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1107. Функция для нахождения чисел, которые равны разнице квадратов всех чисел из первого списка и всех чисел из второго
+def diff_of_all_squares(lst1, lst2):
+    result = []
+    sum_sq_lst1 = sum([num ** 2 for num in lst1])
+    sum_sq_lst2 = sum([num ** 2 for num in lst2])
+    result.append(sum_sq_lst1 - sum_sq_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1108. Функция для нахождения чисел, которые присутствуют в обоих списках, но только если их сумма больше 20
+def find_common_and_sum_gt_20(lst1, lst2):
+    result = []
+    for num in lst1:
+        if num in lst2 and (num + num > 20):
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1109. Функция для нахождения чисел, которые являются результатом деления чисел из одного списка на числа из другого, с учётом остатка
+def divide_with_remainder(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if b != 0:
+            result.append(a % b)
+    if not result:
+        return None
+    return result
+
+
+# 1110. Функция для нахождения чисел, которые равны произведению чисел из первого списка и чисел второго, если результат больше 100
+def multiply_if_greater_than_100(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        product = a * b
+        if product > 100:
+            result.append(product)
+    if not result:
+        return None
+    return result
+
+
+# 1111. Функция для нахождения чисел, которые являются разностью элементов из одного списка и индексов элементов другого списка
+def subtract_by_index(lst1, lst2):
+    result = []
+    for i, num in enumerate(lst1):
+        if i < len(lst2):
+            result.append(num - lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1112. Функция для нахождения чисел, которые являются результатом возведения элементов одного списка в степень их индекса
+def power_by_index(lst):
+    result = []
+    for i, num in enumerate(lst):
+        result.append(num ** (i + 1))
+    if not result:
+        return None
+    return result
+
+
+# 1113. Функция для нахождения чисел, которые являются результатом разности чисел одного списка и элементов другого, делённых на их индексы
+def diff_divided_by_index(lst1, lst2):
+    result = []
+    for i, (a, b) in enumerate(zip(lst1, lst2)):
+        if i != 0:
+            result.append((a - b) / i)
+    if not result:
+        return None
+    return result
+
+
+# 1114. Функция для нахождения чисел, которые равны произведению всех элементов списка, делённых на количество элементов другого списка
+def multiply_by_len_of_other_list(lst1, lst2):
+    result = []
+    len_lst2 = len(lst2)
+    for num in lst1:
+        result.append(num * len_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1115. Функция для нахождения чисел, которые являются суммой элементов двух списков и их произведений
+def sum_and_multiply_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a + b + (a * b))
+    if not result:
+        return None
+    return result
+
+
+# 1116. Функция для нахождения чисел, которые равны сумме чисел одного списка и произведению элементов другого
+def sum_and_product_of_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a + b) * (a * b))
+    if not result:
+        return None
+    return result
+
+
+# 1117. Функция для нахождения чисел, которые делятся на 4, но не на 8 и 16
+def find_divisible_by_4_not_8_or_16(lst):
+    result = []
+    for num in lst:
+        if num % 4 == 0 and num % 8 != 0 and num % 16 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1118. Функция для нахождения чисел, которые представляют собой разницу чисел одного списка и индексов чисел другого
+def subtract_by_other_list_index(lst1, lst2):
+    result = []
+    for i, num in enumerate(lst2):
+        if i < len(lst1):
+            result.append(lst1[i] - num)
+    if not result:
+        return None
+    return result
+
+
+# 1119. Функция для нахождения чисел, которые являются результатом деления чисел одного списка на индексы элементов другого списка
+def divide_by_index(lst1, lst2):
+    result = []
+    for i, num in enumerate(lst2):
+        if i != 0:
+            result.append(lst1[i] / i)
+    if not result:
+        return None
+    return result
+
+
+# 1120. Функция для нахождения чисел, которые являются разностью чисел одного списка, умноженных на индексы другого списка
+def diff_multiplied_by_index(lst1, lst2):
+    result = []
+    for i, num in enumerate(lst2):
+        if i < len(lst1):
+            result.append((lst1[i] - num) * i)
+    if not result:
+        return None
+    return result
+
+
+# 1121. Функция для нахождения чисел, которые равны разности квадратов элементов первого списка и индексов элементов второго
+def diff_of_squares_and_indexes(lst1, lst2):
+    result = []
+    for i, num in enumerate(lst2):
+        if i < len(lst1):
+            result.append((lst1[i] ** 2) - i)
+    if not result:
+        return None
+    return result
+
+
+# 1122. Функция для нахождения чисел, которые являются разностью всех чисел первого списка и произведений чисел второго списка
+def diff_of_lists_and_products(lst1, lst2):
+    result = []
+    product_lst2 = 1
+    for num in lst2:
+        product_lst2 *= num
+    for num in lst1:
+        result.append(num - product_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1123. Функция для нахождения чисел, которые являются результатом возведения чисел одного списка в степень числа, которое является суммой элементов второго списка
+def power_by_sum_of_other_list(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append(num ** sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1124. Функция для нахождения чисел, которые являются разностью квадратов чисел из двух списков, но с добавлением их индексов
+def diff_of_squares_with_index(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] ** 2 - lst2[i] ** 2) + i)
+    if not result:
+        return None
+    return result
+
+
+# 1125. Функция для нахождения чисел, которые равны произведению всех чисел в первом списке, делённого на элементы второго списка
+def multiply_by_division_of_other_list(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2) and lst2[i] != 0:
+            result.append(lst1[i] * (1 / lst2[i]))
+    if not result:
+        return None
+    return result
+
+
+# 1126. Функция для нахождения чисел, которые являются результатом возведения чисел из одного списка в степень их индексов в другом
+def power_by_index_of_other_list(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] ** lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1127. Функция для нахождения чисел, которые делятся на 9, но не на 3
+def find_divisible_by_9_not_3(lst):
+    result = []
+    for num in lst:
+        if num % 9 == 0 and num % 3 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1128. Функция для нахождения чисел, которые равны разности между квадратом чисел первого списка и их индексов во втором списке
+def diff_of_squares_and_indexes_from_other_list(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] ** 2 - lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1129. Функция для нахождения чисел, которые являются результатом деления чисел одного списка на индексы второго списка
+def divide_by_index_of_other_list(lst1, lst2):
+    result = []
+    for i in range(len(lst2)):
+        if i != 0:
+            result.append(lst1[i] / i)
+    if not result:
+        return None
+    return result
+
+
+# 1130. Функция для нахождения чисел, которые равны произведению чисел первого списка и индексов второго списка, но только если результат меньше 50
+def multiply_by_index_if_less_than_50(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            product = lst1[i] * lst2[i]
+            if product < 50:
+                result.append(product)
+    if not result:
+        return None
+    return result
+
+
+# 1131. Функция для нахождения чисел, которые делятся на 6 и 9, но не на 12
+def find_divisible_by_6_and_9_not_12(lst):
+    result = []
+    for num in lst:
+        if num % 6 == 0 and num % 9 == 0 and num % 12 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1132. Функция для нахождения чисел, которые являются результатом разности квадратов чисел первого списка и суммы чисел второго
+def diff_of_squares_and_sum_of_other_list(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append(num ** 2 - sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1133. Функция для нахождения чисел, которые являются произведением чисел одного списка на элементы второго, делённого на их индексы
+def multiply_by_divided_index(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2) and i != 0:
+            result.append((lst1[i] * lst2[i]) / i)
+    if not result:
+        return None
+    return result
+
+
+# 1134. Функция для нахождения чисел, которые равны произведению всех чисел из первого списка и суммы чисел из второго
+def multiply_by_sum_of_other_list_v2(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append(num * sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1135. Функция для нахождения чисел, которые равны разности элементов одного списка от произведений элементов другого
+def subtract_from_product_of_other_list_v2(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a - (a * b))
+    if not result:
+        return None
+    return result
+
+
+# 1136. Функция для нахождения чисел, которые равны разности между элементами одного списка и их произведением с индексами другого списка
+def diff_and_multiply_by_index(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] - lst2[i]) * i)
+    if not result:
+        return None
+    return result
+
+
+# 1137. Функция для нахождения чисел, которые являются результатом деления всех чисел из одного списка на их индексы
+def divide_by_index_of_list(lst):
+    result = []
+    for i in range(len(lst)):
+        if i != 0:
+            result.append(lst[i] / i)
+    if not result:
+        return None
+    return result
+
+
+# 1138. Функция для нахождения чисел, которые равны разности всех чисел из одного списка, умноженных на элементы второго списка
+def diff_of_lists_and_multiplied_by_other_list(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] - lst2[i]) * lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1139. Функция для нахождения чисел, которые являются разностью квадратов чисел одного списка и суммы чисел из другого
+def diff_of_squares_and_sum_v2(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append((num ** 2) - sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1140. Функция для нахождения чисел, которые являются разностью произведений элементов одного списка и их квадратов
+def diff_of_product_and_square(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a * b) - (a ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1141. Функция для нахождения чисел, которые делятся на 4 и на 7, но не на 14
+def find_divisible_by_4_and_7_not_14(lst):
+    result = []
+    for num in lst:
+        if num % 4 == 0 and num % 7 == 0 and num % 14 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1142. Функция для нахождения чисел, которые являются результатом суммы всех элементов первого списка и разности элементов второго
+def sum_and_diff_of_lists_v2(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a + b - a)
+    if not result:
+        return None
+    return result
+
+
+# 1143. Функция для нахождения чисел, которые являются произведением всех чисел из одного списка, умноженных на сумму чисел из другого
+def multiply_all_and_sum_other_list(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append(num * sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1144. Функция для нахождения чисел, которые являются результатом разности чисел одного списка и суммы элементов другого
+def diff_of_lists_and_sum_other_list(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append(num - sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1145. Функция для нахождения чисел, которые равны разности квадратов чисел одного списка и их деления на элементы второго
+def diff_of_squares_and_division_by_other_list(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2) and lst2[i] != 0:
+            result.append((lst1[i] ** 2) / lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1146. Функция для нахождения чисел, которые являются результатом произведения всех элементов списка и разности элементов другого
+def multiply_by_diff_of_lists(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] * (lst1[i] - lst2[i]))
+    if not result:
+        return None
+    return result
+
+
+# 1147. Функция для нахождения чисел, которые делятся на 5, но не на 10 и 15
+def find_divisible_by_5_not_10_and_15(lst):
+    result = []
+    for num in lst:
+        if num % 5 == 0 and num % 10 != 0 and num % 15 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1148. Функция для нахождения чисел, которые равны разности всех чисел в первом списке и разности всех чисел во втором
+def diff_of_all_lists(lst1, lst2):
+    result = []
+    diff_lst2 = sum(lst2) - sum(lst1)
+    for num in lst1:
+        result.append(num - diff_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1149. Функция для нахождения чисел, которые являются результатом разности произведений элементов двух списков
+def diff_of_products(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a * b) - (a * b))
+    if not result:
+        return None
+    return result
+
+
+# 1150. Функция для нахождения чисел, которые являются суммой элементов первого списка и разностью элементов второго, но только если разность положительна
+def sum_and_positive_diff(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        diff = a - b
+        if diff > 0:
+            result.append(a + diff)
+    if not result:
+        return None
+    return result
+
+
+# 1151. Функция для нахождения чисел, которые являются результатом умножения чисел первого списка на индексы второго списка, с учётом остатка от деления на 3
+def multiply_by_index_with_remainder(lst1, lst2):
+    result = []
+    for i, num in enumerate(lst1):
+        if i < len(lst2):
+            product = num * lst2[i]
+            result.append(product % 3)
+    if not result:
+        return None
+    return result
+
+
+# 1152. Функция для нахождения чисел, которые равны разности квадрата элементов первого списка и разности квадратов элементов второго
+def diff_of_squares_of_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append((a ** 2) - (b ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1153. Функция для нахождения чисел, которые являются произведением чисел из одного списка, делённых на элементы другого, но только если результат больше 10
+def multiply_and_divide_by_condition(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        if b != 0:
+            result_value = (a * b) / b
+            if result_value > 10:
+                result.append(result_value)
+    if not result:
+        return None
+    return result
+
+
+# 1154. Функция для нахождения чисел, которые являются разностью всех чисел одного списка и произведений всех чисел из другого
+def diff_from_product_of_other_list(lst1, lst2):
+    result = []
+    product_lst2 = 1
+    for num in lst2:
+        product_lst2 *= num
+    for num in lst1:
+        result.append(num - product_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1155. Функция для нахождения чисел, которые являются результатом возведения чисел первого списка в степень их индексов в другом списке, с условием, что степень больше 1
+def power_by_index_with_condition(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2) and lst2[i] > 1:
+            result.append(lst1[i] ** lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1156. Функция для нахождения чисел, которые равны разности всех чисел одного списка и суммы всех элементов другого списка, умноженных на их индексы
+def diff_and_sum_multiplied_by_indexes(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for i, num in enumerate(lst1):
+        result.append(num - (sum_lst2 * i))
+    if not result:
+        return None
+    return result
+
+
+# 1157. Функция для нахождения чисел, которые являются результатом деления каждого числа первого списка на индекс соответствующего числа из второго списка, если индекс больше 2
+def divide_by_index_if_greater_than_2(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if len(lst2) > i > 2:
+            result.append(lst1[i] / lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1158. Функция для нахождения чисел, которые делятся на 8, но не на 16, и вычисление их суммы
+def find_divisible_by_8_not_16_and_sum(lst):
+    result = []
+    total_sum = 0
+    for num in lst:
+        if num % 8 == 0 and num % 16 != 0:
+            result.append(num)
+            total_sum += num
+    if not result:
+        return None
+    return total_sum
+
+
+# 1159. Функция для нахождения чисел, которые являются результатом возведения элементов одного списка в степень их индексов из другого, с условием, что результат меньше 100
+def power_with_index_condition(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result_value = lst1[i] ** lst2[i]
+            if result_value < 100:
+                result.append(result_value)
+    if not result:
+        return None
+    return result
+
+
+# 1160. Функция для нахождения чисел, которые равны разности произведений всех чисел в одном списке и их квадратов
+def diff_of_product_and_squares(lst1, lst2):
+    result = []
+    product_lst1 = 1
+    for num in lst1:
+        product_lst1 *= num
+    for num in lst2:
+        result.append(product_lst1 - (num ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1161. Функция для нахождения чисел, которые являются результатом возведения элементов списка в степень их индекса из другого списка, но с учётом остатка от деления на 5
+def power_and_modulo(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result_value = lst1[i] ** lst2[i]
+            result.append(result_value % 5)
+    if not result:
+        return None
+    return result
+
+
+# 1162. Функция для нахождения чисел, которые делятся на 6, но не на 9, и вычисление их произведения
+def find_divisible_by_6_not_9_and_multiply(lst):
+    result = []
+    product = 1
+    for num in lst:
+        if num % 6 == 0 and num % 9 != 0:
+            result.append(num)
+            product *= num
+    if not result:
+        return None
+    return product
+
+
+# 1163. Функция для нахождения чисел, которые равны разности элементов одного списка и разности всех элементов другого списка
+def diff_of_lists_and_total_diff(lst1, lst2):
+    result = []
+    diff_lst2 = sum(lst2) - sum(lst1)
+    for num in lst1:
+        result.append(num - diff_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1164. Функция для нахождения чисел, которые являются результатом умножения чисел одного списка на индексы второго, с учётом разности от их суммы
+def multiply_by_index_and_diff(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for i, num in enumerate(lst1):
+        if i < len(lst2):
+            result.append((num * i) - sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1165. Функция для нахождения чисел, которые равны разности всех чисел из одного списка и индексов другого списка, умноженных на их квадраты
+def diff_and_index_squared(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] - lst2[i]) * (i ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1166. Функция для нахождения чисел, которые равны разности между произведениями элементов из двух списков и их индексами
+def diff_of_product_and_index(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] * lst2[i]) - i)
+    if not result:
+        return None
+    return result
+
+
+# 1167. Функция для нахождения чисел, которые равны разности элементов одного списка и их произведений с элементами другого списка
+def diff_and_product_of_lists(lst1, lst2):
+    result = []
+    for a, b in zip(lst1, lst2):
+        result.append(a - (a * b))
+    if not result:
+        return None
+    return result
+
+
+# 1168. Функция для нахождения чисел, которые являются результатом произведения чисел первого списка на индексы второго списка, делённые на их сумму
+def multiply_by_index_divided_by_sum(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for i in range(len(lst1)):
+        if i < len(lst2) and sum_lst2 != 0:
+            result.append((lst1[i] * lst2[i]) / sum_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1169. Функция для нахождения чисел, которые равны разности квадратов элементов одного списка и их индексов в другом списке
+def diff_of_squares_and_indexes_v2(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] ** 2) - lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1170. Функция для нахождения чисел, которые делятся на 7 и на 11, но не на 77
+def find_divisible_by_7_and_11_not_77(lst):
+    result = []
+    for num in lst:
+        if num % 7 == 0 and num % 11 == 0 and num % 77 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result
+
+
+# 1171. Функция для нахождения чисел, которые равны разности всех чисел из одного списка и всех чисел из другого списка
+def diff_of_all_lists_v2(lst1, lst2):
+    result = []
+    sum_lst1 = sum(lst1)
+    sum_lst2 = sum(lst2)
+    for num in lst1:
+        result.append(num - (sum_lst1 - sum_lst2))
+    if not result:
+        return None
+    return result
+
+
+# 1172. Функция для нахождения чисел, которые равны произведению чисел одного списка и индексов другого, умноженных на их квадрат
+def multiply_by_index_and_square(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] * lst2[i]) * (i ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1173. Функция для нахождения чисел, которые делятся на 5, но не на 10 и 15, и вычисление их произведения
+def find_divisible_by_5_not_10_and_15_and_multiply(lst):
+    result = []
+    product = 1
+    for num in lst:
+        if num % 5 == 0 and num % 10 != 0 and num % 15 != 0:
+            result.append(num)
+            product *= num
+    if not result:
+        return None
+    return product
+
+
+# 1174. Функция для нахождения чисел, которые равны произведению всех чисел первого списка и суммы чисел второго, делённой на количество элементов второго списка
+def multiply_by_sum_and_len_other_list(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    len_lst2 = len(lst2)
+    for num in lst1:
+        result.append(num * (sum_lst2 / len_lst2))
+    if not result:
+        return None
+    return result
+
+
+# 1175. Функция для нахождения чисел, которые являются результатом умножения чисел первого списка на индексы второго списка, но только если произведение больше 20
+def multiply_by_index_if_greater_than_20(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            product = lst1[i] * lst2[i]
+            if product > 20:
+                result.append(product)
+    if not result:
+        return None
+    return result
+
+
+# 1176. Функция для нахождения чисел, которые равны произведению чисел одного списка и их квадратов, делённых на элементы другого
+def multiply_by_square_divided(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] ** 2) * lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1177. Функция для нахождения чисел, которые являются разностью всех чисел первого списка и суммы всех чисел второго, умноженной на их индексы
+def diff_from_sum_multiplied_by_index(lst1, lst2):
+    result = []
+    sum_lst2 = sum(lst2)
+    for i, num in enumerate(lst1):
+        result.append(num - (sum_lst2 * i))
+    if not result:
+        return None
+    return result
+
+
+# 1178. Функция для нахождения чисел, которые являются результатом деления элементов одного списка на индексы элементов другого списка, если индекс меньше 5
+def divide_by_index_if_less_than_5(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2) and i < 5:
+            result.append(lst1[i] / lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1179. Функция для нахождения чисел, которые равны произведению чисел первого списка на разность всех чисел второго
+def multiply_by_diff_of_other_list(lst1, lst2):
+    result = []
+    diff_lst2 = sum(lst2) - sum(lst1)
+    for num in lst1:
+        result.append(num * diff_lst2)
+    if not result:
+        return None
+    return result
+
+
+# 1180. Функция для нахождения чисел, которые делятся на 4, но не на 8, и вычисление их произведения
+def find_divisible_by_4_not_8_and_multiply(lst):
+    result = []
+    product = 1
+    for num in lst:
+        if num % 4 == 0 and num % 8 != 0:
+            result.append(num)
+            product *= num
+    if not result:
+        return None
+    return product
+
+
+# 1181. Функция для нахождения чисел, которые равны произведению чисел одного списка на индексы второго, делённых на их квадраты
+def multiply_by_index_divided_by_square(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2) and i != 0:
+            result.append((lst1[i] * lst2[i]) / (i ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1182. Функция для нахождения чисел, которые равны разности всех чисел первого списка и произведений всех чисел из второго, умноженных на индексы
+def diff_and_product_multiplied_by_index(lst1, lst2):
+    result = []
+    product_lst2 = 1
+    for num in lst2:
+        product_lst2 *= num
+    for i, num in enumerate(lst1):
+        result.append(num - (product_lst2 * i))
+    if not result:
+        return None
+    return result
+
+
+# 1183. Функция для нахождения чисел, которые равны произведению всех элементов одного списка и разности всех чисел другого
+def multiply_by_diff_of_all_lists(lst1, lst2):
+    result = []
+    total_diff = sum(lst1) - sum(lst2)
+    for num in lst1:
+        result.append(num * total_diff)
+    if not result:
+        return None
+    return result
+
+
+# 1184. Функция для нахождения чисел, которые являются результатом возведения элементов первого списка в степень их индексов в другом списке
+def power_by_index_v2(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] ** lst2[i])
+    if not result:
+        return None
+    return result
+
+
+# 1185. Функция для нахождения чисел, которые делятся на 2 и на 5, но не на 10, и вычисление их произведения
+def find_divisible_by_2_and_5_not_10_and_multiply(lst):
+    result = []
+    product = 1
+    for num in lst:
+        if num % 2 == 0 and num % 5 == 0 and num % 10 != 0:
+            result.append(num)
+            product *= num
+    if not result:
+        return None
+    return product
+
+
+# 1186. Функция для нахождения чисел, которые равны разности всех чисел из одного списка и произведений элементов другого, с учётом их индексов
+def diff_and_product_with_index(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] - (lst2[i] * i))
+    if not result:
+        return None
+    return result
+
+
+# 1187. Функция для нахождения чисел, которые являются разностью всех чисел первого списка и разности всех чисел второго списка, умноженных на их индексы
+def diff_of_all_and_index_product(lst1, lst2):
+    result = []
+    total_diff_lst2 = sum(lst2) - sum(lst1)
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append(lst1[i] - (total_diff_lst2 * i))
+    if not result:
+        return None
+    return result
+
+
+# 1188. Функция для нахождения чисел, которые равны произведению всех чисел из одного списка и разности всех чисел второго списка
+def multiply_and_diff_of_lists_v2(lst1, lst2):
+    result = []
+    total_diff = sum(lst1) - sum(lst2)
+    for num in lst1:
+        result.append(num * total_diff)
+    if not result:
+        return None
+    return result
+
+
+# 1189. Функция для нахождения чисел, которые являются результатом разности произведений элементов первого списка и их индексов
+def diff_of_product_and_index_v3(lst1, lst2):
+    result = []
+    for i in range(len(lst1)):
+        if i < len(lst2):
+            result.append((lst1[i] * lst2[i]) - (i ** 2))
+    if not result:
+        return None
+    return result
+
+
+# 1190. Функция для нахождения значений, которые равны разности значений одинаковых ключей из двух словарей
+def diff_of_values_in_dicts(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2:
+            result.append(dict1[key] - dict2[key])
+    if not result:
+        return None
+    return result
+
+
+# 1191. Функция для нахождения ключей, которые присутствуют в обоих словарях, но только если их значения больше 10
+def find_common_keys_with_values_gt_10(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2 and dict1[key] > 10 and dict2[key] > 10:
+            result.append(key)
+    if not result:
+        return None
+    return result
+
+
+# 1192. Функция для нахождения значений, которые равны произведению значений одного словаря и их индексов в другом
+def multiply_values_by_index_in_other_dict(dict1, dict2):
+    result = []
+    for i, key in enumerate(dict1):
+        if key in dict2:
+            result.append(dict1[key] * dict2.get(key, 0) * i)
+    if not result:
+        return None
+    return result
+
+
+# 1193. Функция для нахождения ключей, у которых значения из первого словаря больше значений из второго
+def find_keys_with_value_greater_in_first_dict(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2 and dict1[key] > dict2[key]:
+            result.append(key)
+    if not result:
+        return None
+    return result
+
+
+# 1194. Функция для нахождения ключей, значения которых в обоих словарях совпадают
+def find_keys_with_equal_values_in_dicts(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2 and dict1[key] == dict2[key]:
+            result.append(key)
+    if not result:
+        return None
+    return result
+
+
+# 1195. Функция для нахождения значений, которые равны разности значений одного словаря и значения того же ключа в другом словаре
+def find_value_diff_between_dicts(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2:
+            result.append(dict1[key] - dict2[key])
+    if not result:
+        return None
+    return result
+
+
+# 1196. Функция для нахождения значений, которые являются результатом умножения значений одинаковых ключей из двух словарей
+def multiply_values_in_dicts(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2:
+            result.append(dict1[key] * dict2[key])
+    if not result:
+        return None
+    return result
+
+
+# 1197. Функция для нахождения ключей, которые присутствуют в обоих словарях, но значения которых делятся на 3
+def find_keys_with_values_divisible_by_3(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2 and dict1[key] % 3 == 0 and dict2[key] % 3 == 0:
+            result.append(key)
+    if not result:
+        return None
+    return result
+
+
+# 1198. Функция для нахождения ключей, у которых значения из первого словаря меньше значений из второго, но больше 5
+def find_keys_with_value_range_in_dicts(dict1, dict2):
+    result = []
+    for key in dict1:
+        if key in dict2 and dict2[key] > dict1[key] > 5:
+            result.append(key)
+    if not result:
+        return None
+    return result
+
+
+# 601. Функция для сортировки массива по убыванию с использованием пузырьковой сортировки
+def bubble_sort_descending(arr):
+    result = arr[:]
+    n = len(result)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if result[j] < result[j+1]:
+                result[j], result[j+1] = result[j+1], result[j]
+    if not result:
+        return None
+    return result
+
+
+# 602. Функция для сортировки массива по возрастанию с использованием сортировки вставками
+def insertion_sort_ascending(arr):
+    result = arr[:]
+    for i in range(1, len(result)):
+        key = result[i]
+        j = i - 1
+        while j >= 0 and key < result[j]:
+            result[j + 1] = result[j]
+            j -= 1
+        result[j + 1] = key
+    if not result:
+        return None
+    return result
