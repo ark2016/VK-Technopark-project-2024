@@ -30,11 +30,11 @@ def extract_functions_to_files(file_path, output_dir, functions_per_file=10, inc
                 if functions_in_file == 1:
                     # Если только одна функция в файле, имя файла будет просто числом
                     file_range_start = function_counter - 1
-                    function_filename = os.path.join(output_dir, f"{file_range_start}.py")
+                    function_filename = os.path.join(output_dir, f"file_{file_range_start}.py")
                 else:
                     file_range_start = (function_counter - functions_in_file)
                     file_range_end = function_counter - 1
-                    function_filename = os.path.join(output_dir, f"{file_range_start}-{file_range_end}.py")
+                    function_filename = os.path.join(output_dir, f"file_{file_range_start}_{file_range_end}.py")
 
                 with open(function_filename, 'w', encoding='utf-8') as func_file:
                     func_file.writelines(function_code)
@@ -79,20 +79,29 @@ def extract_functions_to_files(file_path, output_dir, functions_per_file=10, inc
         if functions_in_file == 1:
             # Если только одна функция в файле, имя файла будет просто числом
             file_range_start = function_counter - 1
-            function_filename = os.path.join(output_dir, f"{file_range_start}.py")
+            function_filename = os.path.join(output_dir, f"file_{file_range_start}.py")
         else:
             file_range_start = (function_counter - functions_in_file)
             file_range_end = function_counter - 1
-            function_filename = os.path.join(output_dir, f"{file_range_start}-{file_range_end}.py")
+            function_filename = os.path.join(output_dir, f"file_{file_range_start}_{file_range_end}.py")
 
         with open(function_filename, 'w', encoding='utf-8') as func_file:
             func_file.writelines(function_code)
 
 
-# Пример использования
-file_path = 'functions.py'  # Укажи путь к исходному файлу
-output_dir = 'functions'  # Укажи директорию для сохранения файлов
-functions_per_file = 1  # Укажи количество функций на файл
+# # Раскомментировать для функций
+# file_path = 'functions.py'  # Укажи путь к исходному файлу
+# output_dir = 'tests/functions'  # Укажи директорию для сохранения файлов
+#
+# functions_per_file = 20  # Укажи количество функций на файл
+# include_comments = True  # Укажи, нужно ли включать комментарии перед функциями
+
+
+# Раскомментировать для тестов
+file_path = 'tests.py'  # Укажи путь к исходному файлу
+output_dir = 'tests/tests'  # Укажи директорию для сохранения файлов
+
+functions_per_file = 20  # Укажи количество функций на файл
 include_comments = True  # Укажи, нужно ли включать комментарии перед функциями
 
 extract_functions_to_files(file_path, output_dir, functions_per_file, include_comments)

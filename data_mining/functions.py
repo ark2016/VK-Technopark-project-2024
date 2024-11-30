@@ -29,35 +29,33 @@ def factorial(n):
     return result
 
 
-# 3. Функция для подсчета количества гласных в строке
+# 3. Функция, проверяющая, чего больше, гласных или согласных
 def count_vowels(s):
     vowels = "aeiou"
-    count = 0
+    vowels_count = 0
+    consonants_count = 0
     for char in s:
         if char in vowels:
-            count += 1
-        else:
-            if char.isalpha():
-                count -= 1
-    if count < 0:
-        print("More consonants than vowels")
-        return 0
-    return count
+            vowels_count += 1
+        elif char.isalpha():
+            consonants_count += 1
+    if vowels_count > consonants_count:
+        return True
+    return False
 
 
-# 4. Функция для подсчета четных чисел в списке
+# 4. Функции, проверяющая чего больше, чётных или нечётных чисел в списке
 def count_even_numbers(lst):
-    count = 0
+    even_count = 0
+    odd_count = 0
     for num in lst:
         if num % 2 == 0:
-            count += 1
+            even_count += 1
         else:
-            if num == 1:
-                print("One is not even, but it appears!")
-                count -= 1
-    if count > len(lst) // 2:
-        print("More evens than odds!")
-    return count
+            odd_count += 1
+    if even_count > odd_count:
+        return True
+    return False
 
 
 # 5. Функция, которая возвращает сумму чисел от 1 до n
@@ -853,7 +851,7 @@ def largest_divisor_less_than(n):
     if n <= 1:
         print(f"{n} doesn't have any divisors greater than 1.")
         return None
-    for i in range(n - 1, 0, -1):
+    for i in range(n - 1, 1, -1):
         if n % i == 0:
             return i
     return None
@@ -878,17 +876,6 @@ def max_digit_in_string(s):
         print("The string doesn't contain only digits.")
         return None
     return max(map(int, s))
-
-
-# # 87. Функция для вычисления суммы чисел от 1 до n, но пропуская числа, делящиеся на 3
-# def sum_exclude_multiples_of_three(n):
-#     total = 0
-#     for i in range(1, n + 1):
-#         if i % 3 != 0:
-#             total += i
-#         else:
-#             print(f"Number {i} skipped (multiple of 3).")
-#     return total
 
 
 # 85. Функция для нахождения наибольшего числа, которое является квадратом целого числа
@@ -997,7 +984,7 @@ def unique_elements(lst):
             unique.add(item)
         else:
             print(f"Duplicate found: {item}")
-    return list(unique)
+    return sorted(list(unique))
 
 
 # 98. Функция для подсчёта количества вхождений каждого элемента в список с использованием словаря
@@ -1068,8 +1055,6 @@ def remove_duplicate_tuples(lst):
         if item[0] not in seen:
             seen.add(item[0])
             result.append(item)
-        else:
-            print(f"Duplicate tuple found: {item}")
     return result
 
 
@@ -1140,7 +1125,7 @@ def check_and_square(s):
 
 # 111. Функция для объединения двух кортежей, убирая повторяющиеся элементы
 def merge_tuples(t1, t2):
-    return tuple(set(t1 + t2))
+    return tuple(sorted(set(t1 + t2)))
 
 
 # 112. Функция для нахождения всех уникальных чисел в списке (с использованием множества)
@@ -1148,7 +1133,7 @@ def unique_numbers(lst):
     unique = set()
     for num in lst:
         unique.add(num)
-    return list(unique)
+    return sorted(list(unique))
 
 
 # 113. Функция для создания словаря, где ключами будут уникальные элементы списка, а значениями — количество их повторений
@@ -1320,7 +1305,7 @@ def find_keys_in_set(s, d):
             result.append(item)
     if not result:
         print("No elements from the set found in the dictionary keys.")
-    return result
+    return sorted(result)
 
 
 # 126. Функция для нахождения всех чисел в списке, которые являются простыми
@@ -2010,13 +1995,13 @@ def find_not_even_but_divisible_by_9(lst):
 
 
 # 184. Функция для нахождения всех чисел, которые являются нечетными и делятся на 4
-def find_odd_and_divisible_by_4(lst):
+def find_divisible_by_2(lst):
     result = []
     for num in lst:
-        if num % 2 != 0 and num % 4 == 0:
+        if num % 2 == 0 and num % 4 != 0:
             result.append(num)
     if not result:
-        return "No odd numbers found that are divisible by 4."
+        return "No numbers."
     return result
 
 
@@ -2115,7 +2100,7 @@ def find_product_of_two_primes(lst):
     def is_prime(n):
         if n < 2:
             return False
-        for i in range(2, int(n ** 0.5) + 1):
+        for i in range(1, int(n ** 0.5) + 1):
             if n % i == 0:
                 return False
         return True
@@ -12500,7 +12485,7 @@ def find_keys_with_value_range_in_dicts(dict1, dict2):
     return result
 
 
-# 601. Функция для сортировки массива по убыванию с использованием пузырьковой сортировки
+# 1199. Функция для сортировки массива по убыванию с использованием пузырьковой сортировки
 def bubble_sort_descending(arr):
     result = arr[:]
     n = len(result)
@@ -12513,7 +12498,7 @@ def bubble_sort_descending(arr):
     return result
 
 
-# 602. Функция для сортировки массива по возрастанию с использованием сортировки вставками
+# 1200. Функция для сортировки массива по возрастанию с использованием сортировки вставками
 def insertion_sort_ascending(arr):
     result = arr[:]
     for i in range(1, len(result)):
