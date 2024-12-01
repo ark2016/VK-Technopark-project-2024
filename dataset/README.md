@@ -1,6 +1,6 @@
 #### Создание датасета
 
-В данном разделе реализованы подходы к созданию датасета в формате Method2Test при обработке Open Sorce датасета [Arain/UnitTest-Finetuning](VK-Technopark-project-2024/data/data_Arain_unitTest-FineTuning_example).
+В данном разделе реализованы подходы к созданию датасета в формате Method2Test при обработке Open Sorce датасета [Arain/UnitTest-Finetuning](https://huggingface.co/datasets/Arain/UnitTest-Finetuning).
 
 Файлы:
 
