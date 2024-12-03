@@ -97,9 +97,9 @@ class Code2TestPrepareDataset:
             match = pattern.match(input_text)
             if match:
                 return True, (match.group('language'),
-                              match.group('methodCode'),
-                              match.group('methodTotalCode'),
-                              match.group('callCode_callees_string'))
+                            match.group('methodCode'),
+                            match.group('methodTotalCode'),
+                            match.group('callCode_callees_string'))
             else:
 
                 return False, None
@@ -249,6 +249,176 @@ class Code2TestPrepareDataset:
 
         end_time_ = time.time()
         print(f"Время подготовки датасета: {end_time_ - start_time_:.3f} секунды")
+
+class Code2TestPrepareToInput(Code2TestPrepareDataset):
+    '''
+    Дочерний класс для финальной подготовки датасета 
+    '''
+    def __init__(self, json_input_path):
+        '''Конструктор из родительского класса'''
+        super().__init__(json_input_path)
+
+    @staticmethod
+    def remove_docs(row, col_name, docs_col_name):
+        '''Функция удаления описания из указанной колонки'''
+        return row[col_name].replace(row[docs_col_name], '')
+
+    @staticmethod
+    def remove_three_quotes(row, col_name):
+        '''Функция удаления """""" из указанной колонки'''
+        return row[col_name].replace('""""""', '')
+    
+    @staticmethod
+    def remove_three_quotes_v2(row, col_name):
+        '''Функция удаления '''''' из указанной колонки'''
+        return row[col_name].replace('''''''', '')
+    
+    @staticmethod
+    def drop_ln(row, col_name):
+        '''Функция удаления \n из указанной колонки'''
+        return row[col_name].replace('\n', '')
+
+    @staticmethod
+    def drop_large_spaces(row, col_name):
+        '''Функция удаления длинных пробелов (\t) из указанной колонки'''
+        cleaned_string = re.sub(r'\s+', ' ', row[col_name])
+        return cleaned_string
+
+    @staticmethod
+    def remove_comment(row, col_name, comments_col_name):
+        '''Функция удаления комментариев из указанной колонки'''
+        return row[col_name].replace(row[comments_col_name], '')
+    
+    @staticmethod
+    def drop_hashtag_symbol(row, col_name):
+        '''Функция отбрасывает символ # для указанной колонки'''
+        return row[col_name].replace('#', '')
+
+    @staticmethod
+    def remove_non_language_symbols(row, col_name):
+        '''Функция удаления неалфавитных символов из указанной колонки'''
+        return re.sub(r'[^a-zA-Z0-9\s]', '', row[col_name])
+
+    @staticmethod
+    def strip_text(row, col_name):
+        '''Функция удаления пробелов в начале и в конце строки для указанной колонки'''
+        return row[col_name].strip()
+    
+    @staticmethod
+    def create_NL_code_representation(row, desc_col, comm_col):
+        '''Функция создания описания'''
+        result = "DESCRIPTION_TOKEN: {} COMMENTS_TOKEN: {}".format(row[desc_col], row[comm_col])
+        return result
+
+    @staticmethod
+    def replace_empty_info(row, info_col):
+        '''Функция для определения пустого описания'''
+        return row[info_col].replace("DESCRIPTION_TOKEN:  COMMENTS_TOKEN: ", "INFO_TOKEN")
+
+    @staticmethod
+    def replace_INFO_TOKEN_non_empty(row, info_col):
+        '''Функция замены INFO_TOKEN при условии не равенства строки INFO_TOKEN'''
+        if row[info_col] == 'INFO_TOKEN':
+            return 'INFO_TOKEN'
+        return row[info_col].replace('INFO_TOKEN', 'DESCRIPTION_TOKEN: ')
+    
+    @staticmethod
+    def remove_triple_quotes_content(row, col_name):
+        '''Функция для удаления содержимого внутри тройных кавычек'''
+        # Регулярное выражение для поиска содержимого внутри тройных кавычек
+        pattern = re.compile(r'""".*?"""', re.DOTALL)
+        # Замена содержимого внутри тройных кавычек на пустую строку
+        return pattern.sub('', row[col_name])
+    
+    @staticmethod
+    def replace_func(row, column_fm, column_fc):
+        '''Функция будет заменять содержимое одной колонки внутри другой'''
+        target = row[column_fc]
+        substring = row[column_fm]
+        return target.replace(substring, 'FUNC_TOKEN')
+
+    @staticmethod
+    def insert_space(row, column, token):
+        '''Функция вставить пробел дополнительный пробел для токена в колонке'''
+        return row[column].replace(token, f" {token} ").strip().replace('  ', ' ')
+
+    def prepare_dataset(self):
+        '''Расширение функциональности родительского prepare_dataset()'''
+        super().prepare_dataset()
+
+        start = time.time()
+        self.code_dataset = self.code_dataset.drop(columns=['callee', 
+                                                            'callee_docs', 
+                                                            'callee_comments', 
+                                                            'callee_ast']) # Выбрасывем callee колонки
+
+        # Готовим focal_method
+        start_time = time.time()
+        self.code_dataset['focal_method'] = self.code_dataset.progress_apply(self.remove_docs, axis=1, args=('focal_method', 'focal_method_docs'))
+        self.code_dataset['focal_method'] = self.code_dataset.progress_apply(self.remove_three_quotes, axis=1, args=('focal_method',))
+        self.code_dataset['focal_method'] = self.code_dataset.progress_apply(self.remove_three_quotes_v2, axis=1, args=('focal_method',))
+        self.code_dataset['focal_method'] = self.code_dataset.progress_apply(self.drop_ln, axis=1, args=('focal_method',))
+        self.code_dataset['focal_method'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis=1, args=('focal_method',))
+        self.code_dataset['focal_method'] = self.code_dataset.progress_apply(self.remove_comment, axis=1, args=('focal_method', 'focal_method_comments'))
+
+        self.code_dataset['focal_method_comments'] = self.code_dataset.progress_apply(self.drop_hashtag_symbol, axis=1, args=('focal_method_comments',))
+        self.code_dataset['focal_method_comments'] = self.code_dataset.progress_apply(self.drop_ln, axis=1, args=('focal_method_comments',))
+        self.code_dataset['focal_method_comments'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis=1, args=('focal_method_comments',))
+        self.code_dataset['focal_method_comments'] = self.code_dataset.progress_apply(self.remove_non_language_symbols, axis=1, args=('focal_method_comments',))
+        self.code_dataset['focal_method_comments'] = self.code_dataset.progress_apply(self.strip_text, axis=1, args=('focal_method_comments',))
+        
+        self.code_dataset['focal_method_info'] = self.code_dataset.progress_apply(
+            self.create_NL_code_representation, axis=1, args=('focal_method_docs', 'focal_method_comments')
+        )
+        self.code_dataset['focal_method_info'] = self.code_dataset.progress_apply(
+            self.replace_empty_info, axis=1, args=('focal_method_info',)
+        )
+        self.code_dataset['focal_method_info'] = self.code_dataset.progress_apply(
+            self.replace_INFO_TOKEN_non_empty, axis=1, args=('focal_method_info',)
+        )
+        self.code_dataset = self.code_dataset[self.code_dataset['focal_method_ast'] != 'AST_TOKEN']
+        self.code_dataset['focal_method_info'] = self.code_dataset.progress_apply(self.drop_ln, axis=1, args=('focal_method_info',))
+        self.code_dataset['focal_method_info'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis=1, args=('focal_method_info',))
+        self.code_dataset['focal_method_ast'] = self.code_dataset.progress_apply(self.drop_ln, axis = 1, args = ['focal_method_ast'])
+        self.code_dataset['focal_method_ast'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis = 1, args = ['focal_method_ast'])
+        self.code_dataset = self.code_dataset.drop(columns=['focal_method_docs', 
+                                'focal_method_comments'])
+        
+        # Готовим focal_cls
+        end_time = time.time()
+        print(f"Время подготовки focal_method: {end_time - start_time:.3f} секунды")
+        
+        start_time = time.time()
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.remove_triple_quotes_content, axis = 1, args = ['focal_cls'])
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.remove_docs, axis=1, args=('focal_cls', 'focal_cls_docs'))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.remove_three_quotes, axis=1, args=('focal_cls',))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.remove_three_quotes_v2, axis=1, args=('focal_cls',))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.drop_ln, axis=1, args=('focal_cls',))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis=1, args=('focal_cls',))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.remove_comment, axis=1, args=('focal_cls', 'focal_cls_comments'))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.replace_func, axis=1, args=('focal_method', 'focal_cls'))
+        self.code_dataset['focal_cls'] = self.code_dataset.progress_apply(self.insert_space, axis=1, args=('focal_cls', 'FUNC_TOKEN'))
+        self.code_dataset['focal_cls_info'] = self.code_dataset.progress_apply(
+            self.create_NL_code_representation, axis=1, args=('focal_cls_docs', 'focal_cls_comments')
+        )
+        self.code_dataset['focal_cls_info'] = self.code_dataset.progress_apply(
+            self.replace_empty_info, axis=1, args=('focal_cls_info',)
+        )
+        self.code_dataset['focal_cls_info'] = self.code_dataset.progress_apply(
+            self.replace_INFO_TOKEN_non_empty, axis=1, args=('focal_cls_info',)
+        )
+        self.code_dataset['focal_cls_info'] = self.code_dataset.progress_apply(self.drop_ln, axis=1, args=('focal_cls_info',))
+        self.code_dataset['focal_cls_info'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis=1, args=('focal_cls_info',))
+        self.code_dataset = self.code_dataset.drop(columns=['focal_cls_docs', 
+                                'focal_cls_comments'])
+        
+        self.code_dataset['focal_cls_ast'] = self.code_dataset.progress_apply(self.drop_ln, axis = 1, args = ['focal_cls_ast'])
+        self.code_dataset['focal_cls_ast'] = self.code_dataset.progress_apply(self.drop_large_spaces, axis = 1, args = ['focal_cls_ast'])
+        
+        end_time = time.time()
+        print(f"Время подготовки focal_cls: {end_time - start_time:.3f} секунды")
+        end = time.time()
+        print(f"Время подготовки датасета: {end - start:.3f} секунды")
 
 # MAIN
 def main():
