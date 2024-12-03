@@ -8,6 +8,6 @@
 
 * [Данные для SymPrompt Focal Method](data_sym_prompt_focal_method)
 
-* [Данные длч Live Code Benchmark](live_codebench_dataset)
+* [Данные для Live Code Benchmark](live_codebench_dataset)
 
 * [Предварительный анализ](data_pre_research)
