@@ -51,10 +51,10 @@ def find_divisors_of_50_not_prime(lst):
 
 
 # 245. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 6
-def find_divisible_by_3_and_4_not_6(lst):
+def find_divisible_by_3_and_4_not_7(lst):
     result = []
     for num in lst:
-        if num % 3 == 0 and num % 4 == 0 and num % 6 != 0:
+        if num % 3 == 0 and num % 4 == 0 and num % 7 != 0:
             result.append(num)
     if not result:
         return None
@@ -66,7 +66,7 @@ def find_intersection_of_sets(lst1, lst2):
     result = set(lst1) & set(lst2)
     if not result:
         return None
-    return list(result)
+    return sorted(list(result))
 
 
 # 247. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих
@@ -74,7 +74,7 @@ def find_symmetric_difference(lst1, lst2):
     result = set(lst1) ^ set(lst2)
     if not result:
         return None
-    return list(result)
+    return sorted(list(result))
 
 
 # 248. Функция для нахождения чисел, которые являются ключами в одном словаре и значениями в другом
@@ -132,7 +132,7 @@ def find_product_of_two_not_divisible_by_2(lst):
 
 # 254. Функция для нахождения чисел, которые являются элементами множества, но не присутствуют в списке
 def find_in_set_not_in_list(s, lst):
-    result = list(s - set(lst))
+    result = sorted(list(s - set(lst)))
     if not result:
         return None
     return result

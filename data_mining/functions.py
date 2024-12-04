@@ -2344,7 +2344,7 @@ def find_divisors_of_18_not_9(lst):
 def find_multiples_of_3_and_5_not_15(lst):
     result = []
     for num in lst:
-        if num % 3 == 0 and num % 5 == 0 and num % 15 != 0:
+        if num % 3 == 0 or num % 5 == 0 and num % 15 != 0:
             result.append(num)
     if not result:
         return None
@@ -2356,7 +2356,7 @@ def find_product_of_two_primes_not_divisible_by_11(lst):
     def is_prime(n):
         if n < 2:
             return False
-        for i in range(2, int(n ** 0.5) + 1):
+        for i in range(1, int(n ** 0.5) + 1):
             if n % i == 0:
                 return False
         return True
@@ -2376,7 +2376,7 @@ def find_product_of_two_primes_not_divisible_by_11(lst):
 def find_squares_of_even_not_divisible_by_4(lst):
     result = []
     for num in lst:
-        if int(num ** 0.5) ** 2 == num and int(num ** 0.5) % 2 == 0 and num % 4 != 0:
+        if (int(num ** 0.5) ** 2 == num or int(num ** 0.5) % 2 == 0) and num % 4 != 0:
             result.append(num)
     if not result:
         return None
@@ -2387,7 +2387,7 @@ def find_squares_of_even_not_divisible_by_4(lst):
 def find_multiples_of_5_and_6_not_10(lst):
     result = []
     for num in lst:
-        if num % 5 == 0 and num % 6 == 0 and num % 10 != 0:
+        if (num % 5 == 0 or num % 6 == 0) and num % 10 != 0:
             result.append(num)
     if not result:
         return None
@@ -2419,7 +2419,7 @@ def find_product_of_two_primes_not_7(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 7 != 0:
                 result.append(num)
                 break
@@ -2433,7 +2433,7 @@ def find_difference_of_two_odd(lst):
     result = []
     for num in lst:
         for i in range(1, num // 2 + 1, 2):
-            if (num - i) % 2 != 0:
+            if (num - i) % 3 != 0:
                 result.append(num)
                 break
     if not result:
@@ -2477,10 +2477,10 @@ def find_odd_and_divisible_by_5_not_10(lst):
 
 
 # 224. Функция для нахождения всех чисел, которые делятся на 6, но не на 3
-def find_divisible_by_6_not_3(lst):
+def find_divisible_by_6(lst):
     result = []
     for num in lst:
-        if num % 6 == 0 and num % 3 != 0:
+        if num % 6 == 0:
             result.append(num)
     if not result:
         return None
@@ -2510,7 +2510,7 @@ def find_product_of_two_primes_not_6(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 6 != 0:
                 result.append(num)
                 break
@@ -2520,10 +2520,10 @@ def find_product_of_two_primes_not_6(lst):
 
 
 # 227. Функция для нахождения чисел, которые являются чётными и делятся на 7, но не на 14
-def find_even_and_divisible_by_7_not_14(lst):
+def find_even_and_divisible_by_7(lst):
     result = []
     for num in lst:
-        if num % 2 == 0 and num % 7 == 0 and num % 14 != 0:
+        if num % 2 == 0 and num % 7 == 0:
             result.append(num)
     if not result:
         return None
@@ -2535,7 +2535,7 @@ def find_difference_of_two_odd_not_5(lst):
     result = []
     for num in lst:
         for i in range(1, num // 2 + 1, 2):
-            if (num - i) % 2 != 0 and num % 5 != 0:
+            if num % 5 != 0:
                 result.append(num)
                 break
     if not result:
@@ -2566,7 +2566,7 @@ def find_product_of_two_primes_not_divisible_by_3(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 3 != 0:
                 result.append(num)
                 break
@@ -2613,10 +2613,10 @@ def find_product_of_two_odd_not_divisible_by_7(lst):
 
 
 # 234. Функция для нахождения чисел, которые делятся на 4, но не на 2
-def find_divisible_by_4_not_2(lst):
+def find_divisible_by_4(lst):
     result = []
     for num in lst:
-        if num % 4 == 0 and num % 2 != 0:
+        if num % 4 == 0 and num % 8 != 0:
             result.append(num)
     if not result:
         return None
@@ -2646,7 +2646,7 @@ def find_difference_of_two_primes(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if is_prime(i) and is_prime(num - i):
                 result.append(num)
                 break
@@ -2667,7 +2667,7 @@ def find_product_of_two_primes_not_5(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 5 != 0:
                 result.append(num)
                 break
@@ -2680,7 +2680,7 @@ def find_product_of_two_primes_not_5(lst):
 def find_divisible_by_2_and_5_not_10(lst):
     result = []
     for num in lst:
-        if num % 2 == 0 and num % 5 == 0 and num % 10 != 0:
+        if (num % 2 == 0 or num % 5 == 0) and num % 10 != 0:
             result.append(num)
     if not result:
         return None
@@ -2704,8 +2704,9 @@ def find_difference_of_two_even_not_divisible_by_6(lst):
 def find_product_of_two_odd_not_divisible_by_4(lst):
     result = []
     for num in lst:
-        for i in range(1, num // 2 + 1, 2):
-            if num % i == 0 and (num // i) % 2 != 0 and num % 4 != 0:
+        # Проверяем, что произведение двух нечётных чисел
+        for i in range(1, int(num ** 0.5) + 1):
+            if num % i == 0 and i % 2 != 0 and (num // i) % 2 != 0 and num % 5 != 0:
                 result.append(num)
                 break
     if not result:
@@ -2765,11 +2766,11 @@ def find_divisors_of_50_not_prime(lst):
     return result
 
 
-# 245. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 6
-def find_divisible_by_3_and_4_not_6(lst):
+# 245. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 7
+def find_divisible_by_3_and_4_not_7(lst):
     result = []
     for num in lst:
-        if num % 3 == 0 and num % 4 == 0 and num % 6 != 0:
+        if num % 3 == 0 and num % 4 == 0 and num % 7 != 0:
             result.append(num)
     if not result:
         return None
@@ -2781,7 +2782,7 @@ def find_intersection_of_sets(lst1, lst2):
     result = set(lst1) & set(lst2)
     if not result:
         return None
-    return list(result)
+    return sorted(list(result))
 
 
 # 247. Функция для нахождения чисел, которые присутствуют в одном из двух списков, но не в обоих
@@ -2789,7 +2790,7 @@ def find_symmetric_difference(lst1, lst2):
     result = set(lst1) ^ set(lst2)
     if not result:
         return None
-    return list(result)
+    return sorted(list(result))
 
 
 # 248. Функция для нахождения чисел, которые являются ключами в одном словаре и значениями в другом
@@ -2847,7 +2848,7 @@ def find_product_of_two_not_divisible_by_2(lst):
 
 # 254. Функция для нахождения чисел, которые являются элементами множества, но не присутствуют в списке
 def find_in_set_not_in_list(s, lst):
-    result = list(s - set(lst))
+    result = sorted(list(s - set(lst)))
     if not result:
         return None
     return result
@@ -2915,7 +2916,7 @@ def find_integers_in_strings(lst):
 def find_divisible_by_7_and_8_not_56(lst):
     result = []
     for num in lst:
-        if num % 7 == 0 and num % 8 == 0 and num % 56 != 0:
+        if (num % 7 == 0 or num % 8 == 0) and num % 56 != 0:
             result.append(num)
     if not result:
         return None
@@ -3075,7 +3076,7 @@ def find_divisible_by_7_and_8_not_56_2(lst):
     for num in lst:
         if num % 7 == 0:
             if num % 8 == 0:
-                if num % 56 != 0:
+                if num % 56 == 0:
                     result.append(num)
     if not result:
         return None
@@ -3251,7 +3252,8 @@ def find_common_not_in_both_lists(lst1, lst2):
     result = []
     for num in lst1:
         if num in lst2:
-            result.append(num)
+            if num not in result:
+                result.append(num)
     if not result:
         return None
     return result
@@ -3547,7 +3549,7 @@ def find_common_elements_diff_index(lst1, lst2):
                 result.append(num1)
     if not result:
         return None
-    return result
+    return sorted(set(result))
 
 
 # 323. Функция для нахождения чисел, которые являются результатом добавления элементов из двух словарей
@@ -3564,12 +3566,13 @@ def add_values_of_dicts(dict1, dict2):
 # 324. Функция для нахождения чисел, которые находятся в двух множествах, но в одном из них больше
 def find_more_in_one_set(set1, set2):
     result = []
+    list1, list2 = list(set1), list(set2)
     for num in set1:
-        if num in set2 and set1.count(num) > set2.count(num):
+        if num in set2 and num % 3 == 0:
             result.append(num)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 325. Функция для нахождения чисел, которые являются результатом умножения чисел в списке на два
@@ -3608,7 +3611,7 @@ def find_difference_of_sets(set1, set2):
     result = list(set1 - set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 329. Функция для нахождения чисел, которые являются результатом суммирования элементов из списка и множества
@@ -3643,10 +3646,10 @@ def divide_elements_of_lists(lst1, lst2):
 
 # 332. Функция для нахождения чисел, которые находятся в двух множествах, но не в одном из них
 def find_in_both_sets_not_in_one(set1, set2):
-    result = list(set1 & set2 - (set1 | set2))
+    result = list(set1 & set2 ^ (set1 | set2))
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 333. Функция для нахождения чисел, которые являются результатом вычитания элементов из списка и множества
@@ -3881,7 +3884,7 @@ def find_in_set_not_other(set1, set2):
     result = list(set1 - set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 356. Функция для нахождения чисел, которые присутствуют в обоих множествах
@@ -3889,7 +3892,7 @@ def find_common_in_sets(set1, set2):
     result = list(set1 & set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 357. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
@@ -3897,7 +3900,7 @@ def find_divisible_by_2_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0})
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 358. Функция для нахождения чисел, которые не делятся на 3 и присутствуют в двух множествах
@@ -3905,7 +3908,7 @@ def find_not_divisible_by_3_in_both_sets(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 3 == 0})
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 359. Функция для нахождения чисел, которые присутствуют в одном множестве и не присутствуют в другом
@@ -3913,7 +3916,7 @@ def find_in_one_set_not_other_v2(set1, set2):
     result = list(set1 - set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 360. Функция для нахождения чисел, которые делятся на 2 или 5, и присутствуют в двух множествах
@@ -3921,7 +3924,7 @@ def find_divisible_by_2_or_5_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0 or num % 5 == 0})
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 361. Функция для нахождения чисел, которые не делятся на 2 или 3, и присутствуют в двух множествах

@@ -2,7 +2,7 @@
 def find_divisible_by_7_and_8_not_56(lst):
     result = []
     for num in lst:
-        if num % 7 == 0 and num % 8 == 0 and num % 56 != 0:
+        if (num % 7 == 0 or num % 8 == 0) and num % 56 != 0:
             result.append(num)
     if not result:
         return None
@@ -162,7 +162,7 @@ def find_divisible_by_7_and_8_not_56_2(lst):
     for num in lst:
         if num % 7 == 0:
             if num % 8 == 0:
-                if num % 56 != 0:
+                if num % 56 == 0:
                     result.append(num)
     if not result:
         return None

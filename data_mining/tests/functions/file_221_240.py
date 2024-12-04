@@ -34,10 +34,10 @@ def find_odd_and_divisible_by_5_not_10(lst):
 
 
 # 224. Функция для нахождения всех чисел, которые делятся на 6, но не на 3
-def find_divisible_by_6_not_3(lst):
+def find_divisible_by_6(lst):
     result = []
     for num in lst:
-        if num % 6 == 0 and num % 3 != 0:
+        if num % 6 == 0:
             result.append(num)
     if not result:
         return None
@@ -67,7 +67,7 @@ def find_product_of_two_primes_not_6(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 6 != 0:
                 result.append(num)
                 break
@@ -77,10 +77,10 @@ def find_product_of_two_primes_not_6(lst):
 
 
 # 227. Функция для нахождения чисел, которые являются чётными и делятся на 7, но не на 14
-def find_even_and_divisible_by_7_not_14(lst):
+def find_even_and_divisible_by_7(lst):
     result = []
     for num in lst:
-        if num % 2 == 0 and num % 7 == 0 and num % 14 != 0:
+        if num % 2 == 0 and num % 7 == 0:
             result.append(num)
     if not result:
         return None
@@ -92,7 +92,7 @@ def find_difference_of_two_odd_not_5(lst):
     result = []
     for num in lst:
         for i in range(1, num // 2 + 1, 2):
-            if (num - i) % 2 != 0 and num % 5 != 0:
+            if num % 5 != 0:
                 result.append(num)
                 break
     if not result:
@@ -123,7 +123,7 @@ def find_product_of_two_primes_not_divisible_by_3(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 3 != 0:
                 result.append(num)
                 break
@@ -170,10 +170,10 @@ def find_product_of_two_odd_not_divisible_by_7(lst):
 
 
 # 234. Функция для нахождения чисел, которые делятся на 4, но не на 2
-def find_divisible_by_4_not_2(lst):
+def find_divisible_by_4(lst):
     result = []
     for num in lst:
-        if num % 4 == 0 and num % 2 != 0:
+        if num % 4 == 0 and num % 8 != 0:
             result.append(num)
     if not result:
         return None
@@ -203,7 +203,7 @@ def find_difference_of_two_primes(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if is_prime(i) and is_prime(num - i):
                 result.append(num)
                 break
@@ -224,7 +224,7 @@ def find_product_of_two_primes_not_5(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 5 != 0:
                 result.append(num)
                 break
@@ -237,7 +237,7 @@ def find_product_of_two_primes_not_5(lst):
 def find_divisible_by_2_and_5_not_10(lst):
     result = []
     for num in lst:
-        if num % 2 == 0 and num % 5 == 0 and num % 10 != 0:
+        if (num % 2 == 0 or num % 5 == 0) and num % 10 != 0:
             result.append(num)
     if not result:
         return None
@@ -261,8 +261,9 @@ def find_difference_of_two_even_not_divisible_by_6(lst):
 def find_product_of_two_odd_not_divisible_by_4(lst):
     result = []
     for num in lst:
-        for i in range(1, num // 2 + 1, 2):
-            if num % i == 0 and (num // i) % 2 != 0 and num % 4 != 0:
+        # Проверяем, что произведение двух нечётных чисел
+        for i in range(1, int(num ** 0.5) + 1):
+            if num % i == 0 and i % 2 != 0 and (num // i) % 2 != 0 and num % 5 != 0:
                 result.append(num)
                 break
     if not result:

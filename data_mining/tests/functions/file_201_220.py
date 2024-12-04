@@ -149,7 +149,7 @@ def find_divisors_of_18_not_9(lst):
 def find_multiples_of_3_and_5_not_15(lst):
     result = []
     for num in lst:
-        if num % 3 == 0 and num % 5 == 0 and num % 15 != 0:
+        if num % 3 == 0 or num % 5 == 0 and num % 15 != 0:
             result.append(num)
     if not result:
         return None
@@ -168,7 +168,7 @@ def find_product_of_two_primes_not_divisible_by_11(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 11 != 0:
                 result.append(num)
                 break
@@ -181,7 +181,7 @@ def find_product_of_two_primes_not_divisible_by_11(lst):
 def find_squares_of_even_not_divisible_by_4(lst):
     result = []
     for num in lst:
-        if int(num ** 0.5) ** 2 == num and int(num ** 0.5) % 2 == 0 and num % 4 != 0:
+        if (int(num ** 0.5) ** 2 == num or int(num ** 0.5) % 2 == 0) and num % 4 != 0:
             result.append(num)
     if not result:
         return None
@@ -192,7 +192,7 @@ def find_squares_of_even_not_divisible_by_4(lst):
 def find_multiples_of_5_and_6_not_10(lst):
     result = []
     for num in lst:
-        if num % 5 == 0 and num % 6 == 0 and num % 10 != 0:
+        if (num % 5 == 0 or num % 6 == 0) and num % 10 != 0:
             result.append(num)
     if not result:
         return None
@@ -224,7 +224,7 @@ def find_product_of_two_primes_not_7(lst):
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 7 != 0:
                 result.append(num)
                 break
@@ -238,7 +238,7 @@ def find_difference_of_two_odd(lst):
     result = []
     for num in lst:
         for i in range(1, num // 2 + 1, 2):
-            if (num - i) % 2 != 0:
+            if (num - i) % 3 != 0:
                 result.append(num)
                 break
     if not result:

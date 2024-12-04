@@ -144,7 +144,8 @@ def find_common_not_in_both_lists(lst1, lst2):
     result = []
     for num in lst1:
         if num in lst2:
-            result.append(num)
+            if num not in result:
+                result.append(num)
     if not result:
         return None
     return result

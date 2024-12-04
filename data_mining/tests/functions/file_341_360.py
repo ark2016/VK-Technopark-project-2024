@@ -148,7 +148,7 @@ def find_in_set_not_other(set1, set2):
     result = list(set1 - set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 356. Функция для нахождения чисел, которые присутствуют в обоих множествах
@@ -156,7 +156,7 @@ def find_common_in_sets(set1, set2):
     result = list(set1 & set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 357. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
@@ -164,7 +164,7 @@ def find_divisible_by_2_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0})
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 358. Функция для нахождения чисел, которые не делятся на 3 и присутствуют в двух множествах
@@ -172,7 +172,7 @@ def find_not_divisible_by_3_in_both_sets(set1, set2):
     result = list((set1 & set2) - {num for num in range(1, 101) if num % 3 == 0})
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 359. Функция для нахождения чисел, которые присутствуют в одном множестве и не присутствуют в другом
@@ -180,7 +180,7 @@ def find_in_one_set_not_other_v2(set1, set2):
     result = list(set1 - set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 360. Функция для нахождения чисел, которые делятся на 2 или 5, и присутствуют в двух множествах
@@ -188,4 +188,4 @@ def find_divisible_by_2_or_5_in_both_sets(set1, set2):
     result = list((set1 & set2) & {num for num in range(1, 101) if num % 2 == 0 or num % 5 == 0})
     if not result:
         return None
-    return result
+    return sorted(result)

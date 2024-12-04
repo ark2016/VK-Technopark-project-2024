@@ -18,7 +18,7 @@ def find_common_elements_diff_index(lst1, lst2):
                 result.append(num1)
     if not result:
         return None
-    return result
+    return sorted(set(result))
 
 
 # 323. Функция для нахождения чисел, которые являются результатом добавления элементов из двух словарей
@@ -35,12 +35,13 @@ def add_values_of_dicts(dict1, dict2):
 # 324. Функция для нахождения чисел, которые находятся в двух множествах, но в одном из них больше
 def find_more_in_one_set(set1, set2):
     result = []
+    list1, list2 = list(set1), list(set2)
     for num in set1:
-        if num in set2 and set1.count(num) > set2.count(num):
+        if num in set2 and num % 3 == 0:
             result.append(num)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 325. Функция для нахождения чисел, которые являются результатом умножения чисел в списке на два
@@ -79,7 +80,7 @@ def find_difference_of_sets(set1, set2):
     result = list(set1 - set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 329. Функция для нахождения чисел, которые являются результатом суммирования элементов из списка и множества
@@ -114,10 +115,10 @@ def divide_elements_of_lists(lst1, lst2):
 
 # 332. Функция для нахождения чисел, которые находятся в двух множествах, но не в одном из них
 def find_in_both_sets_not_in_one(set1, set2):
-    result = list(set1 & set2 - (set1 | set2))
+    result = list(set1 & set2 ^ (set1 | set2))
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 333. Функция для нахождения чисел, которые являются результатом вычитания элементов из списка и множества
