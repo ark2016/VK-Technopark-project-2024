@@ -4069,7 +4069,7 @@ def test_find_common_divisible_by_3():
 
 
 # 385. Тесты для функции find_in_one_set_not_other_v3
-def test_find_in_one_set_not_other_v3_2():
+def test_find_in_one_set_not_other_v3():
     assert find_in_one_set_not_other_v3({1, 2, 3}, {2, 3, 4}) == [1, 4]
     assert find_in_one_set_not_other_v3({1, 3}, {2, 4}) == [1, 2, 3, 4]
     assert find_in_one_set_not_other_v3({1, 2, 3}, {1, 2, 3}) is None

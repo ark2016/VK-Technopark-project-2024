@@ -35,7 +35,6 @@ def add_values_of_dicts(dict1, dict2):
 # 324. Функция для нахождения чисел, которые находятся в двух множествах, но в одном из них больше
 def find_more_in_one_set(set1, set2):
     result = []
-    list1, list2 = list(set1), list(set2)
     for num in set1:
         if num in set2 and num % 3 == 0:
             result.append(num)

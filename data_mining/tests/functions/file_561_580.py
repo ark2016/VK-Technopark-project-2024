@@ -105,7 +105,6 @@ def difference_of_two_squares(lst):
     result = []
     for num in lst:
         if isinstance(num, int) and num > 0:
-            found = False
             for a in range(1, int(num ** 0.5) + 1):
                 if num % a == 0:
                     b = num // a

@@ -3565,7 +3565,6 @@ def add_values_of_dicts(dict1, dict2):
 # 324. Функция для нахождения чисел, которые находятся в двух множествах, но в одном из них больше
 def find_more_in_one_set(set1, set2):
     result = []
-    list1, list2 = list(set1), list(set2)
     for num in set1:
         if num in set2 and num % 3 == 0:
             result.append(num)
@@ -6120,7 +6119,6 @@ def difference_of_two_squares(lst):
     result = []
     for num in lst:
         if isinstance(num, int) and num > 0:
-            found = False
             for a in range(1, int(num ** 0.5) + 1):
                 if num % a == 0:
                     b = num // a
