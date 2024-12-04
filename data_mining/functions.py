@@ -2100,14 +2100,14 @@ def find_product_of_two_primes(lst):
     def is_prime(n):
         if n < 2:
             return False
-        for i in range(1, int(n ** 0.5) + 1):
+        for i in range(2, int(n ** 0.5) + 1):
             if n % i == 0:
                 return False
         return True
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i):
                 result.append(num)
                 break
@@ -2356,14 +2356,14 @@ def find_product_of_two_primes_not_divisible_by_11(lst):
     def is_prime(n):
         if n < 2:
             return False
-        for i in range(1, int(n ** 0.5) + 1):
+        for i in range(2, int(n ** 0.5) + 1):
             if n % i == 0:
                 return False
         return True
 
     result = []
     for num in lst:
-        for i in range(2, num // 2 + 1):
+        for i in range(1, num // 2 + 1):
             if num % i == 0 and is_prime(i) and is_prime(num // i) and num % 11 != 0:
                 result.append(num)
                 break

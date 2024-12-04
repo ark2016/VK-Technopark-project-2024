@@ -89,19 +89,19 @@ def extract_functions_to_files(file_path, output_dir, functions_per_file=10, inc
             func_file.writelines(function_code)
 
 
-# # Раскомментировать для функций
-# file_path = 'functions.py'  # Укажи путь к исходному файлу
-# output_dir = 'tests/functions'  # Укажи директорию для сохранения файлов
-#
-# functions_per_file = 20  # Укажи количество функций на файл
-# include_comments = True  # Укажи, нужно ли включать комментарии перед функциями
-
-
-# Раскомментировать для тестов
-file_path = 'tests.py'  # Укажи путь к исходному файлу
-output_dir = 'tests/tests'  # Укажи директорию для сохранения файлов
+# Раскомментировать для функций
+file_path = 'functions.py'  # Укажи путь к исходному файлу
+output_dir = 'tests/functions'  # Укажи директорию для сохранения файлов
 
 functions_per_file = 20  # Укажи количество функций на файл
 include_comments = True  # Укажи, нужно ли включать комментарии перед функциями
+
+
+# # Раскомментировать для тестов
+# file_path = 'tests.py'  # Укажи путь к исходному файлу
+# output_dir = 'tests/tests'  # Укажи директорию для сохранения файлов
+#
+# functions_per_file = 20  # Укажи количество функций на файл
+# include_comments = True  # Укажи, нужно ли включать комментарии перед функциями
 
 extract_functions_to_files(file_path, output_dir, functions_per_file, include_comments)

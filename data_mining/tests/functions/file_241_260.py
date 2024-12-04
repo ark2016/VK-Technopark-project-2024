@@ -50,7 +50,7 @@ def find_divisors_of_50_not_prime(lst):
     return result
 
 
-# 245. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 6
+# 245. Функция для нахождения чисел, которые делятся на 3 и на 4, но не на 7
 def find_divisible_by_3_and_4_not_7(lst):
     result = []
     for num in lst:

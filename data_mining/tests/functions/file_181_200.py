@@ -35,7 +35,7 @@ def find_not_even_but_divisible_by_9(lst):
     return result
 
 
-# 184. Функция для нахождения всех чисел, которые являются четными но не делятся на 4
+# 184. Функция для нахождения всех чисел, которые являются нечетными и делятся на 4
 def find_divisible_by_2(lst):
     result = []
     for num in lst:
