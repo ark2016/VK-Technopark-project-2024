@@ -139,7 +139,7 @@ def choose_largest(a, b, c):
         return a
     if b == c and b > a:
         return b
-    return a  # Если все равны, возвращаем первое
+    return a
 
 
 # 713. Функция для выбора максимальной длины строки из нескольких
@@ -149,7 +149,7 @@ def choose_longest_string(*strings):
         if len(s) > len(longest):
             longest = s
         elif len(s) == len(longest):
-            if s > longest:  # лексикографическое сравнение
+            if s > longest:
                 longest = s
     return longest
 

@@ -126,7 +126,7 @@ def prime_floats(lst):
                 return False
         return True
 
-    result = [x for x in lst if isinstance(x, (int, float)) and is_prime(x)]
+    result = [x for x in lst if isinstance(x, int) and is_prime(x)]
     return result if result else None
 
 

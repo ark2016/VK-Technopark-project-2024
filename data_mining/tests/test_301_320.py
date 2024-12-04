@@ -12,6 +12,7 @@ def test_find_divisible_by_2_and_3():
     assert find_divisible_by_2_and_3([1, 2, 3]) == None
     assert find_divisible_by_2_and_3([]) == None
 
+
 # 302. Тесты для функции `find_powers_of_numbers`
 def test_find_powers_of_numbers():
     assert find_powers_of_numbers([2, 3], 2) == [4, 9]
@@ -21,6 +22,7 @@ def test_find_powers_of_numbers():
     assert find_powers_of_numbers([2], 0) == [1]
     assert find_powers_of_numbers([-2, -3], 2) == [4, 9]
     assert find_powers_of_numbers([2], 1) == [2]
+
 
 # 303. Тесты для функции `find_difference_between_two_lists`
 def test_find_difference_between_two_lists():
@@ -32,6 +34,7 @@ def test_find_difference_between_two_lists():
     assert find_difference_between_two_lists([1], [-1]) == [2]
     assert find_difference_between_two_lists([2, 3, 4], [5, 3, 1]) == [3, 0, 3]
 
+
 # 304. Тесты для функции `find_keys_in_both_dicts`
 def test_find_keys_in_both_dicts():
     assert find_keys_in_both_dicts({"a": 1, "b": 2}, {"b": 3, "c": 4}) == ["b"]
@@ -41,6 +44,7 @@ def test_find_keys_in_both_dicts():
     assert find_keys_in_both_dicts({"a": 1, "b": 2}, {}) == None
     assert find_keys_in_both_dicts({}, {}) == None
     assert find_keys_in_both_dicts({"a": 1, "b": 2, "c": 3}, {"c": 4, "d": 5, "a": 0}) == ["a", "c"]
+
 
 # 305. Тесты для функции `find_product_of_elements_from_two_lists`
 def test_find_product_of_elements_from_two_lists():
@@ -52,6 +56,7 @@ def test_find_product_of_elements_from_two_lists():
     assert find_product_of_elements_from_two_lists([], []) == None
     assert find_product_of_elements_from_two_lists([2, 3], [4, 1]) == [8, 3]
 
+
 # 306. Тесты для функции `find_keys_in_dict_not_in_list`
 def test_find_keys_in_dict_not_in_list():
     assert find_keys_in_dict_not_in_list({"a": 1, "b": 2}, ["a"]) == ["b"]
@@ -61,6 +66,7 @@ def test_find_keys_in_dict_not_in_list():
     assert find_keys_in_dict_not_in_list({"a": 1, "b": 2}, []) == ["a", "b"]
     assert find_keys_in_dict_not_in_list({"a": 1, "b": 2}, ["c"]) == ["a", "b"]
     assert find_keys_in_dict_not_in_list({"a": 1}, ["a", "b"]) == None
+
 
 # 307. Тесты для функции `find_powers_of_numbers_in_list`
 def test_find_powers_of_numbers_in_list():
@@ -72,6 +78,7 @@ def test_find_powers_of_numbers_in_list():
     assert find_powers_of_numbers_in_list([-2, -3], 2) == [4, 9]
     assert find_powers_of_numbers_in_list([2], 1) == [2]
 
+
 # 308. Тесты для функции `find_elements_in_both_sets`
 def test_find_elements_in_both_sets():
     assert find_elements_in_both_sets({1, 2, 3}, {2, 3, 4}) == [2, 3]
@@ -82,6 +89,7 @@ def test_find_elements_in_both_sets():
     assert find_elements_in_both_sets(set(), set()) == None
     assert find_elements_in_both_sets({0, 1, 2}, {2, 0, 3}) == [0, 2]
 
+
 # 309. Тесты для функции `find_diff_between_lists`
 def test_find_diff_between_lists():
     assert find_diff_between_lists([1, 2, 3], [4, 5, 6]) == [3, 3, 3]
@@ -91,6 +99,7 @@ def test_find_diff_between_lists():
     assert find_diff_between_lists([1], [0]) == [1]
     assert find_diff_between_lists([0], [1]) == [1]
     assert find_diff_between_lists([2, 3, 4], [5, 3, 1]) == [3, 0, 3]
+
 
 # 310. Тесты для функции `find_sum_of_two_lists_2`
 def test_find_sum_of_two_lists_2():

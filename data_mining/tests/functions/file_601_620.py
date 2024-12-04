@@ -35,10 +35,10 @@ def even_numbers_in_string(s):
 # 604. Функция для добавления элемента в кольцевой массив с ограничением размера
 def append_to_ring(arr, element, max_size=10):
     if len(arr) >= max_size:
-        arr.pop(0)  # Удаляем первый элемент, если массив переполнен
+        arr.pop(0)
     arr.append(element)
     if len(arr) > max_size:
-        arr = arr[1:]  # Оставляем только max_size элементов
+        arr = arr[1:]
     return arr
 
 
@@ -69,7 +69,7 @@ def rotate_with_negativity(arr, steps):
     if not arr:
         return arr
     n = len(arr)
-    steps = steps % n  # Оставляем шаг в пределах длины массива
+    steps = steps % n
     if steps == 0:
         return arr
     if steps < 0:

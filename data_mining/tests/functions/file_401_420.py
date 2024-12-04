@@ -1,9 +1,9 @@
 # 401. Функция для нахождения чисел, которые присутствуют в одном из двух множеств, но не в обоих
 def find_unique_elements_in_sets(set1, set2):
-    result = list(set1 ^ set2)  # Симметрическая разница
+    result = list(set1 ^ set2)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 402. Функция для нахождения чисел, которые делятся на 2 и присутствуют в двух множествах
@@ -14,7 +14,7 @@ def find_divisible_by_2_in_both_sets_2(set1, set2):
             result.append(elem)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 403. Функция для нахождения чисел, которые присутствуют в первом множестве, но не во втором
@@ -24,7 +24,7 @@ def find_in_first_set_not_second(set1, set2):
         result.append(elem)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 404. Функция для нахождения чисел, которые делятся на 5 и присутствуют только в одном множестве
@@ -35,7 +35,7 @@ def find_divisible_by_5_in_one_set(set1, set2):
             result.append(elem)
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 405. Функция для проверки, является ли стек пустым
@@ -66,7 +66,7 @@ def is_stack_palindrome(stack):
         while stack:
             reversed_stack.append(stack.pop())
         return reversed_stack
-    original = list(stack)  # Копия стека
+    original = list(stack)
     reversed_stack = reverse_stack(stack)
     if original == reversed_stack:
         return True

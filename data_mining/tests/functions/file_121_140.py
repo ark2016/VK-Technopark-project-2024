@@ -135,7 +135,7 @@ def find_powers_of_two_in_string(s):
     for word in s.split():
         try:
             num = int(word)
-            if (num & (num - 1)) == 0 and num > 0:  # Check if number is power of two
+            if (num & (num - 1)) == 0 and num > 0:
                 numbers.append(num)
         except ValueError:
             continue

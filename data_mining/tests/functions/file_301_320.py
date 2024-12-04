@@ -180,7 +180,7 @@ def find_in_one_set_not_other(set1, set2):
 def find_division_from_two_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
-        if b != 0:  # избегаем деления на ноль
+        if b != 0:
             result.append(a / b)
     if not result:
         return None

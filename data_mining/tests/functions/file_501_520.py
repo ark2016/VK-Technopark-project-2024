@@ -11,8 +11,6 @@ def prime_numbers_up_to_x(x):
                 break
         if is_prime:
             primes.append(num)
-    if not primes:
-        return None
     return primes
 
 
@@ -96,14 +94,14 @@ def difference_between_sets(set1, set2):
 def union_of_lists(lst1, lst2):
     if not lst1 and not lst2:
         return None
-    return list(set(lst1) | set(lst2))
+    return sorted(list(set(lst1) | set(lst2)))
 
 
 # 512. Функция для нахождения всех элементов, которые присутствуют в обоих списках
 def intersection_of_lists_3(lst1, lst2):
     if not lst1 and not lst2:
         return None
-    return list(set(lst1) & set(lst2))
+    return sorted(list(set(lst1) & set(lst2)))
 
 
 # 513. Функция для проверки, является ли строка цифрой
@@ -146,7 +144,7 @@ def join_elements_with_separator(lst, separator):
 def difference_between_lists(lst1, lst2):
     if not lst1 and not lst2:
         return None
-    return list(set(lst1) - set(lst2))
+    return sorted(list(set(lst1) - set(lst2)))
 
 
 # 519. Функция для подсчёта всех вхождений подстроки в строку без пересечения
@@ -160,7 +158,7 @@ def count_non_overlapping_substring(s, substring):
         if i == -1:
             break
         count += 1
-        i += len(substring)  # Сдвигаем на длину подстроки, чтобы избежать пересечения
+        i += len(substring)
     return count
 
 

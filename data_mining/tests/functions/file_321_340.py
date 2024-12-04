@@ -106,7 +106,7 @@ def find_in_set_not_in_other_set(set1, set2):
 def divide_elements_of_lists(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
-        if b != 0:  # избегаем деления на ноль
+        if b != 0:
             result.append(a / b)
     if not result:
         return None
@@ -144,7 +144,7 @@ def find_sum_of_tuples(tpl1, tpl2):
 
 # 335. Функция для нахождения чисел, которые присутствуют в одном из двух множеств
 def find_in_one_set_not_other_2(set1, set2):
-    result = list(set1 ^ set2)  # Симметрическая разница
+    result = list(set1 ^ set2)
     if not result:
         return None
     return result

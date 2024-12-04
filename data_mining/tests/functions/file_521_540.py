@@ -204,8 +204,6 @@ def remove_duplicates_from_string(s):
 # 540. Функция для нахождения среднего арифметического с плавающими точками
 def average_of_floats(lst):
     def sum_of_floats(lst):
-        if not lst:
-            return None
         total = 0.0
         for num in lst:
             if isinstance(num, (int, float)):

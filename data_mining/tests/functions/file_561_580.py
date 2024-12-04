@@ -91,7 +91,7 @@ def sum_of_products_of_primes(lst):
     result = []
     for num in lst:
         if isinstance(num, (int, float)):
-            for i in range(2, int(num ** 0.5) + 1):
+            for i in range(1, int(num ** 0.5) + 1):
                 if num % i == 0 and is_prime(i) and is_prime(num // i):
                     result.append(num)
                     break
@@ -104,10 +104,12 @@ def difference_of_two_squares(lst):
         return None
     result = []
     for num in lst:
-        if isinstance(num, (int, float)):
-            for i in range(1, int(num ** 0.5) + 1):
-                for j in range(i + 1, int(num ** 0.5) + 1):
-                    if j ** 2 - i ** 2 == num:
+        if isinstance(num, int) and num > 0:
+            found = False
+            for a in range(1, int(num ** 0.5) + 1):
+                if num % a == 0:
+                    b = num // a
+                    if (a + b) % 2 == 0 and (b - a) % 2 == 0:
                         result.append(num)
                         break
     return result if result else None
@@ -136,7 +138,7 @@ def factorial_2(n):
 
 # 575. Функция для вычисления суммы чисел от 1 до N (рекурсия)
 def sum_to_n(n):
-    if n == 0:
+    if n <= 0:
         return 0
     return n + sum_to_n(n - 1)
 
@@ -152,7 +154,7 @@ def fibonacci_2(n):
 
 # 577. Функция для вычисления степени числа (рекурсия)
 def power_2(base, exp):
-    if exp == 0:
+    if exp <= 0:
         return 1
     return base * power_2(base, exp - 1)
 

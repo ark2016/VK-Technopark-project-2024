@@ -261,7 +261,6 @@ def find_difference_of_two_even_not_divisible_by_6(lst):
 def find_product_of_two_odd_not_divisible_by_4(lst):
     result = []
     for num in lst:
-        # Проверяем, что произведение двух нечётных чисел
         for i in range(1, int(num ** 0.5) + 1):
             if num % i == 0 and i % 2 != 0 and (num // i) % 2 != 0 and num % 5 != 0:
                 result.append(num)

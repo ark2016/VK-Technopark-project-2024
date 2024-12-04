@@ -188,10 +188,10 @@ def find_divisible_by_2_or_5(tpl):
 
 
 # 478. Функция для извлечения всех чисел, которые делятся на 6
-def find_divisible_by_6(tpl):
+def find_divisible_by_57(tpl):
     result = []
     for elem in tpl:
-        if elem % 6 == 0:
+        if elem % 57 == 0:
             result.append(elem)
     if not result:
         return None

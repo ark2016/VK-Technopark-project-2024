@@ -61,6 +61,8 @@ def find_max_in_tree(tree):
 
 # 588. Функция для проверки, является ли число четным (рекурсия)
 def is_even_2(n):
+    if n < 0:
+        n = abs(n)
     if n == 0:
         return True
     if n == 1:
