@@ -57,11 +57,11 @@ if __name__ == '__main__':  # Это здесь обязательно, если
     print(f'Test 2. Процент покрытия: {percent2} %, Количество ошибок: {errors2}, Пропущенные строчки: {missing2}')
 
     # Рассчитаем метрики для целого датафрейма
-    df = pd.read_csv("data/02_functions_tests_600.csv")
+    df = pd.read_csv("data/03_functions_tests_800.csv")
 
     # Рассчитываем покрытие и ошибки для каждой строки в DataFrame
     result_df = calculate_coverage_for_df(df)
-    result_df.to_csv("tests.csv", index=False)
+    result_df.to_csv("tests_metric.csv", index=False)
 
     # Выводим результат
     print(result_df)
