@@ -6,30 +6,32 @@ def product_less_than_x(lst, x):
 
 
 # 602. Функция для нахождения суммы всех чисел в строке, которые можно преобразовать в числа (рекурсия)
-def sum_of_numbers_in_string(s):
+def sum_of_numbers_in_string(s, current_num=None):
     if s == "":
         return 0
-    current_num = ""
+    if current_num is None:
+        current_num = ""
     if s[0].isdigit():
         current_num += s[0]
     elif current_num:
-        return int(current_num) + sum_of_numbers_in_string(s[1:])
-    return sum_of_numbers_in_string(s[1:])
+        return int(current_num) + sum_of_numbers_in_string(s[1:], current_num)
+    return sum_of_numbers_in_string(s[1:], current_num)
 
 
 # 603. Функция для нахождения всех четных чисел в строке, которые можно преобразовать в числа (рекурсия)
-def even_numbers_in_string(s):
+def even_numbers_in_string(s, current_num=None):
     if s == "":
         return []
-    current_num = ""
+    if current_num is None:
+        current_num = ""
     if s[0].isdigit():
         current_num += s[0]
     elif current_num:
         num = int(current_num)
         if num % 2 == 0:
-            return [num] + even_numbers_in_string(s[1:])
-        return even_numbers_in_string(s[1:])
-    return even_numbers_in_string(s[1:])
+            return [num] + even_numbers_in_string(s[1:], current_num)
+        return even_numbers_in_string(s[1:], current_num)
+    return even_numbers_in_string(s[1:], current_num)
 
 
 # 604. Функция для добавления элемента в кольцевой массив с ограничением размера
@@ -69,12 +71,13 @@ def rotate_with_negativity(arr, steps):
     if not arr:
         return arr
     n = len(arr)
-    steps = steps % n
     if steps == 0:
         return arr
     if steps < 0:
+        steps = steps % n
         rotated = arr[steps:] + arr[:steps]
     else:
+        steps = steps % n
         rotated = arr[-steps:] + arr[:-steps]
     return rotated
 

@@ -174,7 +174,7 @@ def extract_unique_words(s):
         return []
     words = s.split()
     unique_words = set(words)
-    return list(unique_words)
+    return sorted(list(unique_words))
 
 
 # 699. Функция для нахождения наибольшего простого числа в списке

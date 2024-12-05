@@ -6459,3 +6459,2045 @@ def test_sum_in_range():
     assert sum_in_range([1, 2, 3, 4, 5], 10, 20) == 0
     assert sum_in_range([1, 5, 9, 13, 17], 5, 15) == 27
     assert sum_in_range([-1, -2, -3, 4, 5], -3, 3) == -6
+
+
+# 601. Тесты для функции `product_less_than_x`:
+def test_product_less_than_x():
+    assert product_less_than_x([2, 3, 4], 3) == 2
+    assert product_less_than_x([1, 2, 3, 4], 5) == 24
+    assert product_less_than_x([], 5) == 1
+    assert product_less_than_x([5, 6, 7], 5) == 1
+    assert product_less_than_x([1, 2, 0, 4], 5) == 0
+    assert product_less_than_x([2, 3, 4], 2) == 1
+    assert product_less_than_x([4, 5, 6, 1], 4) == 1
+    assert product_less_than_x([-1, -2, -3], 0) == -6
+    assert product_less_than_x([4, 0, 3], 1) == 0
+
+
+# 602. Тесты для функции `sum_of_numbers_in_string`:
+def test_sum_of_numbers_in_string():
+    assert sum_of_numbers_in_string("123abc") == 369
+    assert sum_of_numbers_in_string("abc123") == 0
+    assert sum_of_numbers_in_string("abc123def") == 369
+    assert sum_of_numbers_in_string("123abc456") == 369
+    assert sum_of_numbers_in_string("") == 0
+    assert sum_of_numbers_in_string("abc") == 0
+    assert sum_of_numbers_in_string("12a34b56") == 1246
+    assert sum_of_numbers_in_string("0") == 0
+    assert sum_of_numbers_in_string("1a1b1c") == 123
+
+
+# 603. Тесты для функции `even_numbers_in_string`:
+def test_even_numbers_in_string():
+    assert even_numbers_in_string("1234") == []
+    assert even_numbers_in_string("abc") == []
+    assert even_numbers_in_string("2468") == []
+    assert even_numbers_in_string("1357") == []
+    assert even_numbers_in_string("1a2b3c4d") == [12, 1234]
+    assert even_numbers_in_string("abcdefg") == []
+    assert even_numbers_in_string("0") == []
+    assert even_numbers_in_string("a1b2c3d4") == [12]
+    assert even_numbers_in_string("123456") == []
+
+
+# 604. Тесты для функции `append_to_ring`:
+def test_append_to_ring():
+    assert append_to_ring([1, 2, 3], 4) == [1, 2, 3, 4]
+    assert append_to_ring([1, 2, 3, 4, 5], 6, 5) == [2, 3, 4, 5, 6]
+    assert append_to_ring([], 1, 3) == [1]
+    assert append_to_ring([1, 2, 3, 4], 5, 3) == [3, 4, 5]
+    assert append_to_ring([1, 2], 3) == [1, 2, 3]
+    assert append_to_ring([1, 2, 3], 4, 3) == [2, 3, 4]
+    assert append_to_ring([1], 2, 1) == [2]
+    assert append_to_ring([1, 2], 3, 1) == [3]
+    assert append_to_ring([1, 2], 3, 2) == [2, 3]
+
+
+# 605. Тесты для функции `find_in_ring`:
+def test_find_in_ring():
+    assert find_in_ring([1, 2, 3], 2) == 1
+    assert find_in_ring([1, 2, 3], 4) is None
+    assert find_in_ring([], 1) is None
+    assert find_in_ring([1, 2, 3, 1], 1) == 0
+    assert find_in_ring([1, 2, 3, 4, 5], 5) == 4
+    assert find_in_ring([1, 2, 3, 4, 5], 6) is None
+    assert find_in_ring([1, 1, 1, 1], 1) == 0
+    assert find_in_ring([1, 2, 3], 1) == 0
+    assert find_in_ring([1, 2, 3], 3) == 2
+
+
+# 606. Тесты для функции `find_all_in_ring`:
+def test_find_all_in_ring():
+    assert find_all_in_ring([1, 2, 3, 1], 1) == [0, 3]
+    assert find_all_in_ring([1, 2, 3], 4) == []
+    assert find_all_in_ring([], 1) == []
+    assert find_all_in_ring([1, 2, 3, 1, 2, 3], 2) == [1, 4]
+    assert find_all_in_ring([1, 1, 1, 1], 1) == [0, 1, 2, 3]
+    assert find_all_in_ring([1, 2, 3, 4, 5], 5) == [4]
+    assert find_all_in_ring([1, 2, 3, 4, 5], 6) == []
+    assert find_all_in_ring([1, 2, 3, 3], 3) == [2, 3]
+    assert find_all_in_ring([1, 2, 3, 3], 1) == [0]
+
+
+# 607. Тесты для функции `rotate_with_negativity`:
+def test_rotate_with_negativity():
+    assert rotate_with_negativity([1, 2, 3], 1) == [3, 1, 2]
+    assert rotate_with_negativity([1, 2, 3], -1) == [3, 1, 2]
+    assert rotate_with_negativity([], 1) == []
+    assert rotate_with_negativity([1, 2, 3, 4], 2) == [3, 4, 1, 2]
+    assert rotate_with_negativity([1, 2, 3], 3) == [1, 2, 3]
+    assert rotate_with_negativity([1, 2, 3], 0) == [1, 2, 3]
+    assert rotate_with_negativity([1, 2, 3], -3) == [1, 2, 3]
+    assert rotate_with_negativity([1, 2, 3], -2) == [2, 3, 1]
+    assert rotate_with_negativity([1, 2, 3, 4], -1) == [4, 1, 2, 3]
+
+
+# 608. Тесты для функции `increase_ring_elements`:
+def test_increase_ring_elements():
+    assert increase_ring_elements([1, 2, 3], 1) == [2, 3, 4]
+    assert increase_ring_elements([], 1) == []
+    assert increase_ring_elements([0], 1) == [1]
+    assert increase_ring_elements([1, 2, 3], -1) == [0, 1, 2]
+    assert increase_ring_elements([1, 2, 3], 0) == [1, 2, 3]
+    assert increase_ring_elements([1, 2, 3], 2) == [3, 4, 5]
+    assert increase_ring_elements([1, -2, 3], 1) == [2, -1, 4]
+    assert increase_ring_elements([-1, -2, -3], 1) == [0, -1, -2]
+    assert increase_ring_elements([1, 1, 1], 1) == [2, 2, 2]
+
+
+# 609. Тесты для функции `decrease_ring_elements`:
+def test_decrease_ring_elements():
+    assert decrease_ring_elements([1, 2, 3], 1) == [0, 1, 2]
+    assert decrease_ring_elements([], 1) == []
+    assert decrease_ring_elements([0], 1) == [-1]
+    assert decrease_ring_elements([1, 2, 3], -1) == [2, 3, 4]
+    assert decrease_ring_elements([1, 2, 3], 0) == [1, 2, 3]
+    assert decrease_ring_elements([1, 2, 3], 2) == [-1, 0, 1]
+    assert decrease_ring_elements([1, -2, 3], 1) == [0, -3, 2]
+    assert decrease_ring_elements([-1, -2, -3], 1) == [-2, -3, -4]
+    assert decrease_ring_elements([1, 1, 1], 1) == [0, 0, 0]
+
+
+# 610. Тесты для функции `multiply_ring_elements`:
+def test_multiply_ring_elements():
+    assert multiply_ring_elements([1, 2, 3], 2) == [2, 4, 6]
+    assert multiply_ring_elements([], 2) == []
+    assert multiply_ring_elements([0], 2) == [0]
+    assert multiply_ring_elements([1, 2, 3], 0) == [0, 0, 0]
+    assert multiply_ring_elements([1, 2, 3], -1) == [-1, -2, -3]
+    assert multiply_ring_elements([1, -2, 3], 2) == [2, -4, 6]
+    assert multiply_ring_elements([-1, -2, -3], 2) == [-2, -4, -6]
+    assert multiply_ring_elements([1, 1, 1], 2) == [2, 2, 2]
+    assert multiply_ring_elements([1, 2, 3], 1) == [1, 2, 3]
+
+
+# 611. Тесты для функции `sum_ring`:
+def test_sum_ring():
+    assert sum_ring([1, 2, 3]) == 6
+    assert sum_ring([]) == 0
+    assert sum_ring([0]) == 0
+    assert sum_ring([-1, -2, -3]) == -6
+    assert sum_ring([1, -1, 2, -2]) == 0
+    assert sum_ring([5, 5, 5, 5]) == 20
+    assert sum_ring([10]) == 10
+    assert sum_ring([-1, -1, 1, 1]) == 0
+    assert sum_ring([1, 2, 3, 4, 5]) == 15
+
+
+# 612. Тесты для функции `average_ring`:
+def test_average_ring():
+    assert average_ring([1, 2, 3]) == 2
+    assert average_ring([]) is None
+    assert average_ring([0]) == 0
+    assert average_ring([-1, -2, -3]) == -2
+    assert average_ring([1, -1, 2, -2]) == 0
+    assert average_ring([5, 5, 5, 5]) == 5
+    assert average_ring([10]) == 10
+    assert average_ring([-1, -1, 1, 1]) == 0
+    assert average_ring([1, 2, 3, 4, 5]) == 3
+
+
+# 613. Тесты для функции `max_ring`:
+def test_max_ring():
+    assert max_ring([1, 2, 3]) == 3
+    assert max_ring([]) is None
+    assert max_ring([0]) == 0
+    assert max_ring([-1, -2, -3]) == -1
+    assert max_ring([1, -1, 2, -2]) == 2
+    assert max_ring([5, 5, 5, 5]) == 5
+    assert max_ring([10]) == 10
+    assert max_ring([-1, -1, 1, 1]) == 1
+    assert max_ring([1, 2, 3, 4, 5]) == 5
+
+
+# 614. Тесты для функции `min_ring`:
+def test_min_ring():
+    assert min_ring([1, 2, 3]) == 1
+    assert min_ring([]) is None
+    assert min_ring([0]) == 0
+    assert min_ring([-1, -2, -3]) == -3
+    assert min_ring([1, -1, 2, -2]) == -2
+    assert min_ring([5, 5, 5, 5]) == 5
+    assert min_ring([10]) == 10
+    assert min_ring([-1, -1, 1, 1]) == -1
+    assert min_ring([1, 2, 3, 4, 5]) == 1
+
+
+# 615. Тесты для функции `has_positive_ring`:
+def test_has_positive_ring():
+    assert has_positive_ring([1, 2, 3]) is True
+    assert has_positive_ring([]) is False
+    assert has_positive_ring([0]) is False
+    assert has_positive_ring([-1, -2, -3]) is False
+    assert has_positive_ring([1, -1, 2, -2]) is True
+    assert has_positive_ring([5, 5, 5, 5]) is True
+    assert has_positive_ring([10]) is True
+    assert has_positive_ring([-1, -1, -1, -1]) is False
+    assert has_positive_ring([1, 2, 3, 4, 5]) is True
+
+
+# 616. Тесты для функции `has_negative_ring`:
+def test_has_negative_ring():
+    assert has_negative_ring([1, 2, 3]) is False
+    assert has_negative_ring([]) is False
+    assert has_negative_ring([0]) is False
+    assert has_negative_ring([-1, -2, -3]) is True
+    assert has_negative_ring([1, -1, 2, -2]) is True
+    assert has_negative_ring([5, 5, 5, 5]) is False
+    assert has_negative_ring([10]) is False
+    assert has_negative_ring([-1, -1, -1, -1]) is True
+    assert has_negative_ring([1, 2, 3, 4, 5]) is False
+
+
+# 617. Тесты для функции `reverse_even_index_elements`:
+def test_reverse_even_index_elements():
+    assert reverse_even_index_elements([1, 2, 3, 4]) == [4, 2, 2, 4]
+    assert reverse_even_index_elements([]) == []
+    assert reverse_even_index_elements([0]) == [0]
+    assert reverse_even_index_elements([1, 2, 3, 4, 5]) == [5, 2, 3, 4, 1]
+    assert reverse_even_index_elements([1, -1, 2, -2]) == [-2, -1, -1, -2]
+    assert reverse_even_index_elements([5, 5, 5, 5]) == [5, 5, 5, 5]
+    assert reverse_even_index_elements([10]) == [10]
+    assert reverse_even_index_elements([1, 1, 1, 1, 1, 1]) == [1, 1, 1, 1, 1, 1]
+    assert reverse_even_index_elements([1, 2, 3, 4, 5, 6]) == [6, 2, 4, 4, 2, 6]
+
+
+# 618. Тесты для функции `find_even_ring`:
+def test_find_even_ring():
+    assert find_even_ring([1, 2, 3, 4]) == [2, 4]
+    assert find_even_ring([]) == []
+    assert find_even_ring([0]) == [0]
+    assert find_even_ring([1, 3, 5]) == []
+    assert find_even_ring([2, 4, 6]) == [2, 4, 6]
+    assert find_even_ring([-2, -4, -6]) == [-2, -4, -6]
+    assert find_even_ring([-1, -3, -5]) == []
+    assert find_even_ring([1, 2, 3, 4, 5]) == [2, 4]
+    assert find_even_ring([2, 2, 2, 2]) == [2, 2, 2, 2]
+
+
+# 619. Тесты для функции `find_odd_ring`:
+def test_find_odd_ring():
+    assert find_odd_ring([1, 2, 3, 4]) == [1, 3]
+    assert find_odd_ring([]) == []
+    assert find_odd_ring([0]) == []
+    assert find_odd_ring([1, 3, 5]) == [1, 3, 5]
+    assert find_odd_ring([2, 4, 6]) == []
+    assert find_odd_ring([-2, -4, -6]) == []
+    assert find_odd_ring([-1, -3, -5]) == [-1, -3, -5]
+    assert find_odd_ring([1, 2, 3, 4, 5]) == [1, 3, 5]
+    assert find_odd_ring([2, 2, 2, 2]) == []
+
+
+# 620. Тесты для функции `count_even_ring`:
+def test_count_even_ring():
+    assert count_even_ring([1, 2, 3, 4]) == 2
+    assert count_even_ring([]) == 0
+    assert count_even_ring([0]) == 1
+    assert count_even_ring([1, 3, 5]) == 0
+    assert count_even_ring([2, 4, 6]) == 3
+    assert count_even_ring([-2, -4, -6]) == 3
+    assert count_even_ring([-1, -3, -5]) == 0
+    assert count_even_ring([1, 2, 3, 4, 5]) == 2
+    assert count_even_ring([2, 2, 2, 2]) == 4
+
+
+# 621. Тесты для функции `count_odd_ring`:
+def test_count_odd_ring():
+    assert count_odd_ring([]) == 0
+    assert count_odd_ring([1, 2, 3, 4, 5]) == 3
+    assert count_odd_ring([2, 4, 6, 8]) == 0
+    assert count_odd_ring([1, 3, 5, 7]) == 4
+    assert count_odd_ring([0, 1, -1, -2]) == 2
+
+
+# 622. Тесты для функции `append_unique_ring`:
+def test_append_unique_ring():
+    assert append_unique_ring([], 1) == [1]
+    assert append_unique_ring([1, 2, 3], 2) == [1, 2, 3]
+    assert append_unique_ring([1, 2, 3], 4) == [1, 2, 3, 4]
+    assert append_unique_ring(['a', 'b'], 'a') == ['a', 'b']
+    assert append_unique_ring(['a', 'b'], 'c') == ['a', 'b', 'c']
+
+
+# 623. Тесты для функции `find_divisible_ring`:
+def test_find_divisible_ring():
+    assert find_divisible_ring([], 2) == []
+    assert find_divisible_ring([1, 2, 3, 4, 5, 6], 2) == [2, 4, 6]
+    assert find_divisible_ring([1, 3, 5], 2) == []
+    assert find_divisible_ring([10, 20, 30], 10) == [10, 20, 30]
+    assert find_divisible_ring([10, 25, 35], 5) == [10, 25, 35]
+
+
+# 624. Тесты для функции `remove_less_than_ring`:
+def test_remove_less_than_ring():
+    assert remove_less_than_ring([], 10) == []
+    assert remove_less_than_ring([1, 5, 10, 15], 10) == [10, 15]
+    assert remove_less_than_ring([20, 25, 30], 20) == [20, 25, 30]
+    assert remove_less_than_ring([1, 2, 3], 5) == []
+    assert remove_less_than_ring([5, 5, 5], 5) == [5, 5, 5]
+
+
+# 625. Тесты для функции `remove_greater_than_ring`:
+def test_remove_greater_than_ring():
+    assert remove_greater_than_ring([], 10) == []
+    assert remove_greater_than_ring([1, 5, 10, 15], 10) == [1, 5, 10]
+    assert remove_greater_than_ring([20, 25, 30], 20) == [20]
+    assert remove_greater_than_ring([1, 2, 3], 5) == [1, 2, 3]
+    assert remove_greater_than_ring([5, 5, 5], 5) == [5, 5, 5]
+
+
+# 626. Тесты для функции `string_to_list`:
+def test_string_to_list():
+    assert string_to_list("") == []
+    assert string_to_list("hello") == ['h', 'e', 'l', 'l', 'o']
+    assert string_to_list("12345") == ['1', '2', '3', '4', '5']
+    assert string_to_list(" ") == [' ']
+    assert string_to_list("!@#") == ['!', '@', '#']
+
+
+# 627. Тесты для функции `merge_unique_lists`:
+def test_merge_unique_lists():
+    assert merge_unique_lists([], []) == []
+    assert merge_unique_lists([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]
+    assert merge_unique_lists([1, 1, 2], [2, 3, 3]) == [1, 2, 3]
+    assert merge_unique_lists(['a', 'b'], ['b', 'c']) == ['a', 'b', 'c']
+    assert merge_unique_lists([1, 2, 3], []) == [1, 2, 3]
+
+
+# 628. Тесты для функции `set_from_strings_ignore_case`:
+def test_set_from_strings_ignore_case():
+    assert set_from_strings_ignore_case([]) == []
+    assert set_from_strings_ignore_case(["a", "A", "b", "B"]) == ['a', 'b']
+    assert set_from_strings_ignore_case(["abc", "ABC"]) == ['abc']
+    assert set_from_strings_ignore_case(["hello", "HELLO", "Hello"]) == ['hello']
+    assert set_from_strings_ignore_case(["a"]) == ['a']
+
+
+# 629. Тесты для функции `count_characters`:
+def test_count_characters():
+    assert count_characters("") == {}
+    assert count_characters("aabbcc") == {'a': 2, 'b': 2, 'c': 2}
+    assert count_characters("aabbc") == {'a': 2, 'b': 2, 'c': 1}
+    assert count_characters("abc") == {'a': 1, 'b': 1, 'c': 1}
+    assert count_characters("aaa") == {'a': 3}
+
+
+# 630. Тесты для функции `is_palindrome_5`:
+def test_is_palindrome_5():
+    assert is_palindrome_5("racecar") is True
+    assert is_palindrome_5("RaceCar") is True
+    assert is_palindrome_5("hello") is False
+    assert is_palindrome_5("A man, a plan, a canal, Panama") is True
+    assert is_palindrome_5("") is True
+
+
+# 631. Тесты для функции `factorial_4`:
+def test_factorial_4():
+    assert factorial_4(0) == 1
+    assert factorial_4(1) == 1
+    assert factorial_4(2) == 2
+    assert factorial_4(3) == 6
+    assert factorial_4(5) == 120
+    assert factorial_4(10) == 3628800
+    assert factorial_4(4) == 24
+
+
+# 632. Тесты для функции `count_word_occurrences`:
+def test_count_word_occurrences():
+    assert count_word_occurrences("", "word") == 0
+    assert count_word_occurrences("word", "word") == 1
+    assert count_word_occurrences("word word", "word") == 2
+    assert count_word_occurrences("word word notword", "word") == 2
+    assert count_word_occurrences("notword", "word") == 0
+    assert count_word_occurrences("a b c d", "a") == 1
+    assert count_word_occurrences("a a a a", "a") == 4
+
+
+# 633. Тесты для функции `filter_numeric_strings`:
+def test_filter_numeric_strings():
+    assert filter_numeric_strings([]) == []
+    assert filter_numeric_strings(["123", "abc", "456", "78a"]) == ["123", "456"]
+    assert filter_numeric_strings(["12", "12b", "c34", "56"]) == ["12", "56"]
+    assert filter_numeric_strings(["one", "two", "three"]) == []
+    assert filter_numeric_strings(["0", "1", "2"]) == ["0", "1", "2"]
+
+
+# 634. Тесты для функции `closest_number`:
+def test_closest_number():
+    assert closest_number([], 10) is None
+    assert closest_number([10, 20, 30], 25) == 20
+    assert closest_number([1, 2, 3, 4, 5], 3) == 3
+    assert closest_number([1, 2, 3, 4, 5], 6) == 5
+    assert closest_number([-1, -2, -3, -4, -5], -3) == -3
+    assert closest_number([7, 14, 21], 18) == 21
+
+
+# 635. Тесты для функции `sort_dicts_by_key`:
+def test_sort_dicts_by_key():
+    assert sort_dicts_by_key([], 'key') == []
+    assert sort_dicts_by_key([{'key': 2}, {'key': 1}], 'key') == [{'key': 1}, {'key': 2}]
+    assert sort_dicts_by_key([{'key': 3}, {'key': 2}, {'key': 1}], 'key') == [{'key': 1}, {'key': 2}, {'key': 3}]
+    assert sort_dicts_by_key([{'a': 3}, {'a': 2}, {'a': 1}], 'a') == [{'a': 1}, {'a': 2}, {'a': 3}]
+    assert sort_dicts_by_key([{'b': 1}, {'a': 2}], 'a') == [{'b': 1}, {'a': 2}]
+
+
+# 636. Тесты для функции `gcd_5`:
+def test_gcd_5():
+    assert gcd_5(10, 5) == 5
+    assert gcd_5(20, 8) == 4
+    assert gcd_5(100, 10) == 10
+    assert gcd_5(42, 56) == 14
+    assert gcd_5(9, 3) == 3
+    assert gcd_5(17, 13) == 1
+
+
+# 637. Тесты для функции `average_6`:
+def test_average_6():
+    assert average_6([]) is None
+    assert average_6([1, 2, 3]) == 2
+    assert average_6([10, 20, 30]) == 20
+    assert average_6([5, 15, 25, 35]) == 20
+    assert average_6([-1, -2, -3]) == -2
+    assert average_6([0]) == 0
+
+
+# 638. Тесты для функции `alternate_case`:
+def test_alternate_case():
+    assert alternate_case("") == ""
+    assert alternate_case("hello") == "HeLlO"
+    assert alternate_case("HELLO") == "HeLlO"
+    assert alternate_case("12345") == "12345"
+    assert alternate_case("hElLo WoRlD") == 'HeLlO WoRlD'
+    assert alternate_case("abc") == "AbC"
+
+
+# 639. Тесты для функции `count_elements`:
+def test_count_elements():
+    assert count_elements([]) == {}
+    assert count_elements([1, 1, 2, 2, 2, 3]) == {1: 2, 2: 3, 3: 1}
+    assert count_elements(['a', 'b', 'a', 'a', 'c']) == {'a': 3, 'b': 1, 'c': 1}
+    assert count_elements([0, 1, 0, 1, 0, 1]) == {0: 3, 1: 3}
+    assert count_elements(['apple', 'banana', 'apple']) == {'apple': 2, 'banana': 1}
+
+
+# 640. Тесты для функции `list_to_string`:
+def test_list_to_string():
+    assert list_to_string([], ",") == ""
+    assert list_to_string([1, 2, 3], ",") == "1,2,3"
+    assert list_to_string(["a", "b", "c"], "-") == "a-b-c"
+    assert list_to_string([1, 2, 3], " ") == "1 2 3"
+    assert list_to_string(["apple", "banana"], " and ") == "apple and banana"
+
+
+# 641. Тесты для функции `unique_elements_6`:
+def test_unique_elements_6():
+    assert unique_elements_6([1, 2, 2, 3, 1, 4]) == [1, 2, 3, 4]
+    assert unique_elements_6([1, 1, 1, 1]) == [1]
+    assert unique_elements_6([]) == []
+    assert unique_elements_6([5, 5, 6, 6, 7]) == [5, 6, 7]
+    assert unique_elements_6([10, 20, 10, 30, 20]) == [10, 20, 30]
+
+
+# 642. Тесты для функции `find_word_in_text`:
+def test_find_word_in_text():
+    assert find_word_in_text("Hello world", "world") == "Word found at index 6"
+    assert find_word_in_text("Hello world", "hi") == "Word not found"
+    assert find_word_in_text("", "anything") == "Word not found"
+    assert find_word_in_text("Testing the function", "function") == 'Word found at index 12'
+    assert find_word_in_text("Multiple words here", "words") == "Word found at index 9"
+
+
+# 643. Тесты для функции `is_number_5`:
+def test_is_number_5():
+    assert is_number_5("123") is True
+    assert is_number_5("123.45") is True
+    assert is_number_5("abc") is False
+    assert is_number_5("") is False
+    assert is_number_5("123abc") is False
+    assert is_number_5("-123.45") is True
+    assert is_number_5("0") is True
+    assert is_number_5(".5") is True
+    assert is_number_5("-.5") is True
+
+
+# 644. Тесты для функции `merge_dicts_6`:
+def test_merge_dicts_6():
+    assert merge_dicts_6({1: 10, 2: 20}, {2: 30, 3: 40}) == {1: 10, 2: 50, 3: 40}
+    assert merge_dicts_6({}, {2: 20}) == {2: 20}
+    assert merge_dicts_6({1: 10}, {}) == {1: 10}
+    assert merge_dicts_6({1: 10}, {1: 5}) == {1: 15}
+    assert merge_dicts_6({1: 10, 4: 40}, {4: 10, 5: 50}) == {1: 10, 4: 50, 5: 50}
+
+
+# 645. Тесты для функции `even_index_elements`:
+def test_even_index_elements():
+    assert even_index_elements([1, 2, 3, 4, 5]) == [1, 3, 5]
+    assert even_index_elements([0, 2, 4, 6, 8]) == [0, 4, 8]
+    assert even_index_elements(["a", "b", "c", "d"]) == ["a", "c"]
+    assert even_index_elements([]) == []
+    assert even_index_elements([7]) == [7]
+
+
+# 646. Тесты для функции `invert_dict`:
+def test_invert_dict():
+    assert invert_dict({1: "a", 2: "b", 3: "c"}) == {"a": 1, "b": 2, "c": 3}
+    assert invert_dict({"x": 10, "y": 20}) == {10: "x", 20: "y"}
+    assert invert_dict({}) == {}
+    assert invert_dict({1: 1, 2: 2}) == {1: 1, 2: 2}
+    assert invert_dict({"key": "value"}) == {"value": "key"}
+
+
+# 647. Тесты для функции `merge_sorted_lists_5`:
+def test_merge_sorted_lists_5():
+    assert merge_sorted_lists_5([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]
+    assert merge_sorted_lists_5([], [2, 4, 6]) == [2, 4, 6]
+    assert merge_sorted_lists_5([1, 3, 5], []) == [1, 3, 5]
+    assert merge_sorted_lists_5([1], [2]) == [1, 2]
+    assert merge_sorted_lists_5([1, 1, 1], [1, 1, 1]) == [1, 1, 1, 1, 1, 1]
+
+
+# 648. Тесты для функции `replace_second_char`:
+def test_replace_second_char():
+    assert replace_second_char("abcdef") == "a*c*e*"
+    assert replace_second_char("123456") == "1*3*5*"
+    assert replace_second_char("a") == "a"
+    assert replace_second_char("") == ""
+    assert replace_second_char("!") == "!"
+    assert replace_second_char("hello world") == "h*l*o*w*r*d"
+
+
+# 649. Тесты для функции `unique_numbers_and_sum`:
+def test_unique_numbers_and_sum():
+    assert unique_numbers_and_sum([1, 2, 2, 3, 1, 4]) == ([1, 2, 3, 4], 10)
+    assert unique_numbers_and_sum([1, 1, 1, 1]) == ([1], 1)
+    assert unique_numbers_and_sum([]) == ([], 0)
+    assert unique_numbers_and_sum([5, 5, 6, 6, 7]) == ([5, 6, 7], 18)
+    assert unique_numbers_and_sum([10, 20, 10, 30, 20]) == ([10, 20, 30], 60)
+
+
+# 650. Тесты для функции `is_valid_email_2`:
+def test_is_valid_email_2():
+    assert is_valid_email_2("example@example.com") is True
+    assert is_valid_email_2("example.com") is False
+    assert is_valid_email_2("example@com") is False
+    assert is_valid_email_2("@example.com") is False
+    assert is_valid_email_2("example@.com") is True
+
+
+# 651. Тесты для функции `count_words_in_string_2`:
+def test_count_words_in_string_2():
+    assert count_words_in_string_2("Hello world!") == 2
+    assert count_words_in_string_2("A quick brown fox.") == 4
+    assert count_words_in_string_2("") == 0
+    assert count_words_in_string_2("One two three") == 3
+    assert count_words_in_string_2("  Leading and trailing spaces  ") == 4
+
+
+# 652. Тесты для функции `max_in_list`:
+def test_max_in_list():
+    assert max_in_list([1, 2, 3, 4, 5]) == 5
+    assert max_in_list([-1, -2, -3, -4, -5]) == -1
+    assert max_in_list([]) is None
+    assert max_in_list([0]) == 0
+    assert max_in_list([5, 5, 5]) == 5
+
+
+# 653. Тесты для функции `string_to_numbers_2`:
+def test_string_to_numbers_2():
+    assert string_to_numbers_2("1,2,3") == [1, 2, 3]
+    assert string_to_numbers_2("4, 5, 6") == [4, 5, 6]
+    assert string_to_numbers_2("7,,8,,9") == [7, 8, 9]
+    assert string_to_numbers_2("10, 11, 12") == [10, 11, 12]
+    assert string_to_numbers_2("") == []
+    assert string_to_numbers_2("a,b,c") == []
+
+
+# 654. Тесты для функции `power_5`:
+def test_power_5():
+    assert power_5(2, 3) == 8
+    assert power_5(5, 0) == 1
+    assert power_5(1, 100) == 1
+    assert power_5("a", 2) == "Invalid input"
+    assert power_5(3, "b") == "Invalid input"
+    assert power_5(2, -3) == 0.125
+    assert power_5(-2, 3) == -8
+    assert power_5(0, 0) == 1
+    assert power_5(0, 5) == 0
+
+
+# 655. Тесты для функции `divisible_by_x_5`:
+def test_divisible_by_x_5():
+    assert divisible_by_x_5(10, 2) == [2, 4, 6, 8, 10]
+    assert divisible_by_x_5(15, 3) == [3, 6, 9, 12, 15]
+    assert divisible_by_x_5(5, 1) == [1, 2, 3, 4, 5]
+    assert divisible_by_x_5(20, 5) == [5, 10, 15, 20]
+    assert divisible_by_x_5(7, 7) == [7]
+
+
+# 656. Тесты для функции `length_without_spaces`:
+def test_length_without_spaces():
+    assert length_without_spaces("hello world") == 10
+    assert length_without_spaces(" a b c ") == 3
+    assert length_without_spaces("") == 0
+    assert length_without_spaces("leading spaces") == 13
+    assert length_without_spaces("no_spaces") == 9
+
+
+# 657. Тесты для функции `is_decimal`:
+def test_is_decimal():
+    assert is_decimal("123.45") is True
+    assert is_decimal("123") is False
+    assert is_decimal("abc") is False
+    assert is_decimal("") is False
+    assert is_decimal("123.") is True
+    assert is_decimal(".45") is True
+
+
+# 658. Тесты для функции `change_case_and_strip`:
+def test_change_case_and_strip():
+    assert change_case_and_strip(" hello") == "HELLO"
+    assert change_case_and_strip("hello") == "hello"
+    assert change_case_and_strip(" HELLO") == "HELLO"
+    assert change_case_and_strip("Hello World") == "hello world"
+    assert change_case_and_strip("HELLO WORLD") == "hello world"
+    assert change_case_and_strip("") == ""
+
+
+# 659. Тесты для функции `find_first_negative`:
+def test_find_first_negative():
+    assert find_first_negative([1, 2, 3, -4, 5]) == 3
+    assert find_first_negative([1, -2, 3, -4, 5]) == 1
+    assert find_first_negative([1, 2, 3, 4, 5]) is None
+    assert find_first_negative([]) is None
+    assert find_first_negative([-1, -2, -3]) == 0
+
+
+# 660. Тесты для функции `remove_duplicates_5`:
+def test_remove_duplicates_5():
+    assert remove_duplicates_5([1, 2, 2, 3, 1, 4]) == [1, 2, 3, 4]
+    assert remove_duplicates_5([1, 1, 1, 1]) == [1]
+    assert remove_duplicates_5([]) == []
+    assert remove_duplicates_5([5, 5, 6, 6, 7]) == [5, 6, 7]
+    assert remove_duplicates_5([10, 20, 10, 30, 20]) == [10, 20, 30]
+
+
+# 661. Тесты для функции `is_float_5`
+def test_is_float_5():
+    assert is_float_5("3.14") is True
+    assert is_float_5("0.001") is True
+    assert is_float_5("-3.14") is True
+    assert is_float_5("3") is False
+    assert is_float_5("abc") is False
+    assert is_float_5("3.") is True
+
+
+# 662. Тесты для функции `extract_words_with_numbers`
+def test_extract_words_with_numbers():
+    assert extract_words_with_numbers("abc123 def456") == ["abc123", "def456"]
+    assert extract_words_with_numbers("123") == ["123"]
+    assert extract_words_with_numbers("abc def") == []
+    assert extract_words_with_numbers("") == []
+    assert extract_words_with_numbers("a1b2 c3") == ["a1b2", "c3"]
+    assert extract_words_with_numbers("word1 word2 word3") == ["word1", "word2", "word3"]
+
+
+# 663. Тесты для функции `lcm_4`
+def test_lcm_4():
+    assert lcm_4(4, 5) == 20
+    assert lcm_4(0, 5) == 0
+    assert lcm_4(6, 8) == 24
+    assert lcm_4(7, 3) == 21
+    assert lcm_4(21, 6) == 42
+    assert lcm_4(1, 1) == 1
+
+
+# 664. Тесты для функции `merge_unique_lists_2`
+def test_merge_unique_lists_2():
+    assert merge_unique_lists_2([1, 2], [2, 3]) == [1, 2, 3]
+    assert merge_unique_lists_2([], [1, 2]) == [1, 2]
+    assert merge_unique_lists_2([1, 2], []) == [1, 2]
+    assert merge_unique_lists_2([1, 2], [3, 4]) == [1, 2, 3, 4]
+    assert merge_unique_lists_2([], []) == []
+    assert merge_unique_lists_2([1, 3, 5], [2, 4, 6]) == [1, 3, 5, 2, 4, 6]
+
+
+# 665. Тесты для функции `find_index_of_element`
+def test_find_index_of_element():
+    assert find_index_of_element([1, 2, 3], 2) == 1
+    assert find_index_of_element([1, 2, 3], 4) is None
+    assert find_index_of_element([], 2) is None
+    assert find_index_of_element([1, 2, 3, 2], 2) == 1
+    assert find_index_of_element([1], 1) == 0
+    assert find_index_of_element([2], 1) is None
+
+
+# 666. Тесты для функции `count_words_in_string_with_delimiters`
+def test_count_words_in_string_with_delimiters():
+    assert count_words_in_string_with_delimiters("Hello world") == 2
+    assert count_words_in_string_with_delimiters("word,word2", ",") == 2
+    assert count_words_in_string_with_delimiters("") == 0
+    assert count_words_in_string_with_delimiters("a, b; c", ",; ") == 3
+    assert count_words_in_string_with_delimiters(" one  two   three ") == 3
+    assert count_words_in_string_with_delimiters("singleword") == 1
+
+
+# 667. Тесты для функции `greater_than_average_6`
+def test_greater_than_average_6():
+    assert greater_than_average_6([1, 2, 3, 4, 5]) == [4, 5]
+    assert greater_than_average_6([5, 10, 15]) == [15]
+    assert greater_than_average_6([2, 4, 6, 8]) == [6, 8]
+    assert greater_than_average_6([1, 1, 1, 1]) == []
+    assert greater_than_average_6([]) == []
+    assert greater_than_average_6([3, 3, 3, 3, 4]) == [4]
+
+
+# 668. Тесты для функции `merge_dict_and_tuple`
+def test_merge_dict_and_tuple():
+    assert merge_dict_and_tuple([("key1", "value1"), ("key2", "value2")], {"key3": "value3"}) == {"key3": "value3", "key1": "value1", "key2": "value2"}
+    assert merge_dict_and_tuple([], {"key1": "value1"}) == {"key1": "value1"}
+    assert merge_dict_and_tuple([("key1", "value1")], {}) == {"key1": "value1"}
+    assert merge_dict_and_tuple([], {}) == {}
+    assert merge_dict_and_tuple([("key1", "value1"), ("key2", "value2")], {"key1": "old_value"}) == {"key1": "value1", "key2": "value2"}
+    assert merge_dict_and_tuple([("key1", "value1"), ("key2", "value2")], {"key3": "value3"}) == {"key3": "value3", "key1": "value1", "key2": "value2"}
+
+
+# 669. Тесты для функции `sum_numbers_in_string_2`
+def test_sum_numbers_in_string_2():
+    assert sum_numbers_in_string_2("abc123def456") == 579
+    assert sum_numbers_in_string_2("123") == 123
+    assert sum_numbers_in_string_2("") == 0
+    assert sum_numbers_in_string_2("abc") == 0
+    assert sum_numbers_in_string_2("1a2b3c") == 6
+    assert sum_numbers_in_string_2("10, 20, 30") == 60
+
+
+# 670. Тесты для функции `find_missing_number`
+def test_find_missing_number():
+    assert find_missing_number([1, 2, 3], [2, 3]) == 1
+    assert find_missing_number([1, 2, 3], [1, 2, 3]) is None
+    assert find_missing_number([], [1, 2, 3]) is None
+    assert find_missing_number([1, 2, 3], []) == 3
+    assert find_missing_number([1, 1, 2, 2], [1, 2]) is None
+    assert find_missing_number([4, 5, 6], [4, 6]) == 5
+
+
+# 671. Тесты для функции `alternate_merge`
+def test_alternate_merge():
+    assert alternate_merge("abc", "def") == "adbecf"
+    assert alternate_merge("", "def") == "def"
+    assert alternate_merge("abc", "") == "abc"
+    assert alternate_merge("a", "b") == "ab"
+    assert alternate_merge("abc", "defgh") == "adbecfgh"
+    assert alternate_merge("abcd", "ef") == 'aebfcd'
+
+
+# 672. Тесты для функции `are_all_greater_than`
+def test_are_all_greater_than():
+    assert are_all_greater_than([5, 6, 7], 4) is True
+    assert are_all_greater_than([3, 4, 5], 5) is False
+    assert are_all_greater_than([], 1) is False
+    assert are_all_greater_than([10, 20], 15) is False
+    assert are_all_greater_than([1, 1, 1], 1) is False
+    assert are_all_greater_than([2, 3, 4], 1) is True
+
+
+# 673. Тесты для функции `replace_first_occurrence`
+def test_replace_first_occurrence():
+    assert replace_first_occurrence("hello world", "world", "there") == "hello there"
+    assert replace_first_occurrence("hello hello", "hello", "hi") == "hi hello"
+    assert replace_first_occurrence("abc", "d", "e") == "abc"
+    assert replace_first_occurrence("", "a", "b") == ""
+    assert replace_first_occurrence("a a a", "a", "b") == "b a a"
+    assert replace_first_occurrence("test", "test", "best") == "best"
+
+
+# 674. Тесты для функции `get_unique_elements`
+def test_get_unique_elements():
+    assert get_unique_elements([1, 2, 2, 3, 4, 4]) == [1, 3]
+    assert get_unique_elements([]) == []
+    assert get_unique_elements([1, 1, 1]) == []
+    assert get_unique_elements([1, 2, 3, 4]) == [1, 2, 3, 4]
+    assert get_unique_elements([1, 1, 2, 3, 3, 4, 5, 5]) == [2, 4]
+    assert get_unique_elements([2, 2, 2, 3, 3]) == []
+
+
+# 675. Тесты для функции `min_even_number`
+def test_min_even_number():
+    assert min_even_number([1, 2, 3, 4]) == 2
+    assert min_even_number([5, 7, 9]) is None
+    assert min_even_number([]) is None
+    assert min_even_number([2, 4, 6, 8]) == 2
+    assert min_even_number([1, 3, 5, 7, 2]) == 2
+    assert min_even_number([10, 20, 30]) == 10
+
+
+# 676. Тесты для функции `number_to_string_with_leading_zeros`
+def test_number_to_string_with_leading_zeros():
+    assert number_to_string_with_leading_zeros(5, 3) == "005"
+    assert number_to_string_with_leading_zeros(123, 5) == "00123"
+    assert number_to_string_with_leading_zeros(0, 4) == "0000"
+    assert number_to_string_with_leading_zeros(456, 2) == "456"
+    assert number_to_string_with_leading_zeros(12, 4) == "0012"
+    assert number_to_string_with_leading_zeros(789, 6) == "000789"
+
+
+# 677. Тесты для функции `list_to_comma_separated_string`
+def test_list_to_comma_separated_string():
+    assert list_to_comma_separated_string([1, 2, 3]) == "1, 2, 3"
+    assert list_to_comma_separated_string([]) == ""
+    assert list_to_comma_separated_string([1]) == "1"
+    assert list_to_comma_separated_string([1, 2, 3, 4, 5]) == "1, 2, 3, 4, 5"
+    assert list_to_comma_separated_string([10, 20, 30]) == "10, 20, 30"
+    assert list_to_comma_separated_string([100, 200]) == "100, 200"
+
+
+# 678. Тесты для функции `is_valid_number`
+def test_is_valid_number():
+    assert is_valid_number("3.14") is True
+    assert is_valid_number("123") is True
+    assert is_valid_number("-0.001") is True
+    assert is_valid_number("abc") is False
+    assert is_valid_number("") is False
+    assert is_valid_number("3.14.15") is False
+
+
+# 679. Тесты для функции `count_vowels_2`
+def test_count_vowels_2():
+    assert count_vowels_2("hello") == 2
+    assert count_vowels_2("world") == 1
+    assert count_vowels_2("AEIOUaeiou") == 10
+    assert count_vowels_2("bcdfg") == 0
+    assert count_vowels_2("") == 0
+    assert count_vowels_2("aEiOu") == 5
+
+
+# 680. Тесты для функции `product_of_numbers_in_string`
+def test_product_of_numbers_in_string():
+    assert product_of_numbers_in_string("1234") == 1234
+    assert product_of_numbers_in_string("56a78") == 4368
+    assert product_of_numbers_in_string("1a2b3c4") == 24
+    assert product_of_numbers_in_string("abc") == 1
+    assert product_of_numbers_in_string("") == 1
+    assert product_of_numbers_in_string("10, 20, 30") == 6000
+
+
+# 681. Тесты для функции `find_strings_with_digits`:
+def test_find_strings_with_digits():
+    assert find_strings_with_digits(["abc", "a1c", "123", ""]) == ["a1c", "123"]
+    assert find_strings_with_digits(["no_digits", "still_no", "3digits"]) == ["3digits"]
+    assert find_strings_with_digits(["", "1"]) == ["1"]
+    assert find_strings_with_digits(["all_numbers1", "2gether", ""]) == ["all_numbers1", "2gether"]
+    assert find_strings_with_digits(["none_here", "and_here", ""]) == []
+    assert find_strings_with_digits(["12three", "fou4r", ""]) == ["12three", "fou4r"]
+
+
+# 682. Тесты для функции `count_digits_in_string`:
+def test_count_digits_in_string():
+    assert count_digits_in_string("abc123") == 3
+    assert count_digits_in_string("") == 0
+    assert count_digits_in_string("no_digits") == 0
+    assert count_digits_in_string("5abc67") == 3
+    assert count_digits_in_string("123456") == 6
+    assert count_digits_in_string("only1digit") == 1
+
+
+# 683. Тесты для функции `get_every_second_char`:
+def test_get_every_second_char():
+    assert get_every_second_char("abcdef") == "ace"
+    assert get_every_second_char("a") == "a"
+    assert get_every_second_char("") == ""
+    assert get_every_second_char("123456") == "135"
+    assert get_every_second_char("a1b2c3d4") == "abcd"
+    assert get_every_second_char("even") == 'ee'
+
+
+# 684. Тесты для функции `filter_strings_with_uppercase`:
+def test_filter_strings_with_uppercase():
+    assert filter_strings_with_uppercase(["abc", "ABC", "aBc"]) == ["ABC", "aBc"]
+    assert filter_strings_with_uppercase(["no_upper", "STILL_NONE", ""]) == ["STILL_NONE"]
+    assert filter_strings_with_uppercase(["lower", "Case", "UPPER"]) == ["Case", "UPPER"]
+    assert filter_strings_with_uppercase(["", "noupper", ""]) == []
+    assert filter_strings_with_uppercase(["Empty", "Spaces", "OnlyUpper"]) == ["Empty", "Spaces", "OnlyUpper"]
+    assert filter_strings_with_uppercase(["upperCASE", "MiXeD", ""]) == ["upperCASE", "MiXeD"]
+
+
+# 685. Тесты для функции `count_non_space_characters`:
+def test_count_non_space_characters():
+    assert count_non_space_characters("abc abc") == {"a": 2, "b": 2, "c": 2}
+    assert count_non_space_characters("") == {}
+    assert count_non_space_characters("no spaces") == {'n': 1, 'o': 1, 's': 2, 'p': 1, 'a': 1, 'c': 1, 'e': 1}
+    assert count_non_space_characters("a b c") == {"a": 1, "b": 1, "c": 1}
+    assert count_non_space_characters("repeated repeated") == {"r": 2, "e": 6, "p": 2, "a": 2, "t": 2, "d": 2}
+    assert count_non_space_characters("spaces only") == {"s": 2, "p": 1, "a": 1, "c": 1, "e": 1, "o": 1, "n": 1, "l": 1, "y": 1}
+
+
+# 686. Тесты для функции `find_longest_string`:
+def test_find_longest_string():
+    assert find_longest_string(["short", "longer", "longest"]) == "longest"
+    assert find_longest_string(["one", "three"]) == "three"
+    assert find_longest_string(["same", "size"]) == "same"
+    assert find_longest_string([""]) == ""
+    assert find_longest_string(["two", "letters", "word"]) == "letters"
+    assert find_longest_string([]) is None
+
+
+# 687. Тесты для функции `find_first_even`:
+def test_find_first_even():
+    assert find_first_even([1, 3, 5, 6]) == 3
+    assert find_first_even([2, 4, 6, 8]) == 0
+    assert find_first_even([1, 3, 5, 7]) is None
+    assert find_first_even([1, 2, 3, 4, 5]) == 1
+    assert find_first_even([]) is None
+    assert find_first_even([1, 2, 4, 8, 16]) == 1
+
+
+# 688. Тесты для функции `sum_numbers_in_string_v3`:
+def test_sum_numbers_in_string_v3():
+    assert sum_numbers_in_string_v3("abc123") == 123
+    assert sum_numbers_in_string_v3("") is None
+    assert sum_numbers_in_string_v3("123abc45") == 168
+    assert sum_numbers_in_string_v3("no digits here") is None
+    assert sum_numbers_in_string_v3("12 and 34") == 46
+    assert sum_numbers_in_string_v3("100") == 100
+
+
+# 689. Тесты для функции `string_to_number_list`:
+def test_string_to_number_list():
+    assert string_to_number_list("1 2 3") == [1, 2, 3]
+    assert string_to_number_list("") == []
+    assert string_to_number_list("one two three") is None
+    assert string_to_number_list("1 2 3 four") is None
+    assert string_to_number_list("10 20 30") == [10, 20, 30]
+    assert string_to_number_list("10 20") == [10, 20]
+
+
+# 690. Тесты для функции `find_max_min`:
+def test_find_max_min():
+    assert find_max_min([1, 2, 3, 4, 5]) == (5, 1)
+    assert find_max_min([5, 1, 5, 5]) == (5, 1)
+    assert find_max_min([3, -3, 5, 7]) == (7, -3)
+    assert find_max_min([10]) == (10, 10)
+    assert find_max_min([]) == (None, None)
+    assert find_max_min([-5, -4, -3, -2, -1]) == (-1, -5)
+
+
+# 691. Тесты для функции `replace_spaces_with_underscores_5`:
+def test_replace_spaces_with_underscores_5():
+    assert replace_spaces_with_underscores_5("a b c") == "a_b_c"
+    assert replace_spaces_with_underscores_5("") is None
+    assert replace_spaces_with_underscores_5("no spaces") == "no_spaces"
+    assert replace_spaces_with_underscores_5("only one") == "only_one"
+    assert replace_spaces_with_underscores_5("leading space ") == "leading_space_"
+    assert replace_spaces_with_underscores_5(" trailing space") == "_trailing_space"
+
+
+# 692. Тесты для функции `remove_duplicates_maintain_order`:
+def test_remove_duplicates_maintain_order():
+    assert remove_duplicates_maintain_order([1, 2, 2, 3, 4, 4, 5]) == [1, 2, 3, 4, 5]
+    assert remove_duplicates_maintain_order([]) == []
+    assert remove_duplicates_maintain_order([1, 1, 1, 1]) == [1]
+    assert remove_duplicates_maintain_order(["a", "b", "a", "c", "b"]) == ["a", "b", "c"]
+    assert remove_duplicates_maintain_order([1, 2, 3]) == [1, 2, 3]
+    assert remove_duplicates_maintain_order([4, 4, 4, 4, 4, 4]) == [4]
+
+
+# 693. Тесты для функции `find_first_multiple`:
+def test_find_first_multiple():
+    assert find_first_multiple([10, 20, 30], 10) == 10
+    assert find_first_multiple([1, 3, 5], 2) is None
+    assert find_first_multiple([], 2) is None
+    assert find_first_multiple([5, 10, 15], 5) == 5
+    assert find_first_multiple([2, 4, 6], 3) == 6
+    assert find_first_multiple([4, 8, 12, 16], 4) == 4
+
+
+# 694. Тесты для функции `is_palindrome_v2`:
+def test_is_palindrome_v2():
+    assert is_palindrome_v2("A man a plan a canal Panama") is True
+    assert is_palindrome_v2("") is False
+    assert is_palindrome_v2("racecar") is True
+    assert is_palindrome_v2("hello") is False
+    assert is_palindrome_v2("Never odd or even") is True
+    assert is_palindrome_v2("not a palindrome") is False
+
+
+# 695. Тесты для функции `get_even_numbers`:
+def test_get_even_numbers():
+    assert get_even_numbers([1, 2, 3, 4, 5, 6]) == [2, 4, 6]
+    assert get_even_numbers([]) == []
+    assert get_even_numbers([1, 3, 5]) == []
+    assert get_even_numbers([0, 2, 4, 6, 8]) == [0, 2, 4, 6, 8]
+    assert get_even_numbers([1, 2, 3, 4, 5]) == [2, 4]
+    assert get_even_numbers([10, 11, 12, 13]) == [10, 12]
+
+
+# 696. Тесты для функции `is_number_v2`:
+def test_is_number_v2():
+    assert is_number_v2("123") is True
+    assert is_number_v2("abc") is False
+    assert is_number_v2("") is False
+    assert is_number_v2("123.45") is True
+    assert is_number_v2("12e4") is True
+    assert is_number_v2("one") is False
+
+
+# 697. Тесты для функции `count_repeating_elements`:
+def test_count_repeating_elements():
+    assert count_repeating_elements([1, 2, 2, 3, 3, 3]) == {2: 2, 3: 3}
+    assert count_repeating_elements([]) == {}
+    assert count_repeating_elements([1, 1, 1, 1]) == {1: 4}
+    assert count_repeating_elements(["a", "b", "a", "c", "b"]) == {"a": 2, "b": 2}
+    assert count_repeating_elements([1, 2, 3]) == {}
+    assert count_repeating_elements([4, 4, 4, 4, 4, 4]) == {4: 6}
+
+
+# 698. Тесты для функции `extract_unique_words`:
+def test_extract_unique_words():
+    assert extract_unique_words("one two two three three three") == ['one', 'three', 'two']
+    assert extract_unique_words("") == []
+    assert extract_unique_words("word") == ["word"]
+    assert extract_unique_words("a b c a b c") == ["a", "b", "c"]
+    assert extract_unique_words("unique words in this string") == ['in', 'string', 'this', 'unique', 'words']
+    assert extract_unique_words("repeat repeat") == ["repeat"]
+
+
+# 699. Тесты для функции `find_largest_prime`:
+def test_find_largest_prime():
+    assert find_largest_prime([2, 3, 5, 7, 11, 13]) == 13
+    assert find_largest_prime([]) is None
+    assert find_largest_prime([4, 6, 8, 10]) is None
+    assert find_largest_prime([11, 1024, 23, 19]) == 23
+    assert find_largest_prime([10, 13, 17, 18, 19]) == 19
+    assert find_largest_prime([1, 2, 3]) == 3
+
+
+# 700. Тесты для функции `extract_digits`:
+def test_extract_digits():
+    assert extract_digits("a1b2c3") == [1, 2, 3]
+    assert extract_digits("") == []
+    assert extract_digits("no digits here") == []
+    assert extract_digits("123abc456") == [1, 2, 3, 4, 5, 6]
+    assert extract_digits("0") == [0]
+    assert extract_digits("one1two2") == [1, 2]
+
+
+# 701. Тесты для функции `find_long_words`
+def test_find_long_words():
+    assert find_long_words("Hello world from AI") == ["Hello", "world", "from"]
+    assert find_long_words("AI is fun") == []
+    assert find_long_words("") == []
+    assert find_long_words("Test the function find long words") == ["Test", "function", "find", "long", "words"]
+    assert find_long_words("Short and sweet") == ["Short", "sweet"]
+    assert find_long_words("A sequence of longwordsisrequired") == ["sequence", "longwordsisrequired"]
+    assert find_long_words("Edge case with wordsss") == ["Edge", "case", "with", "wordsss"]
+    assert find_long_words("Another edge case with word") == ["Another", "edge", "case", "with", "word"]
+    assert find_long_words("1234567890 more than 10") == ["1234567890", "more", "than"]
+
+
+# 702. Тесты для функции `get_numbers_from_string`
+def test_get_numbers_from_string():
+    assert get_numbers_from_string("123,456,789") == [123, 456, 789]
+    assert get_numbers_from_string("100,200,300") == [100, 200, 300]
+    assert get_numbers_from_string("") == []
+    assert get_numbers_from_string("0,1,2,3") == [0, 1, 2, 3]
+    assert get_numbers_from_string("11,22,33") == [11, 22, 33]
+    assert get_numbers_from_string("text without numbers") == []
+    assert get_numbers_from_string("400number,500text,600number") == [400, 500, 600]
+    assert get_numbers_from_string("999text999") == [999, 999]
+    assert get_numbers_from_string("1.2.3") == [1, 2, 3]
+
+
+# 703. Тесты для функции `find_numbers_greater_than`
+def test_find_numbers_greater_than():
+    assert find_numbers_greater_than([1, 2, 3, 4, 5], 3) == [4, 5]
+    assert find_numbers_greater_than([], 3) == []
+    assert find_numbers_greater_than([3, 3, 3], 3) == []
+    assert find_numbers_greater_than([10, 20, 30, 40, 50], 25) == [30, 40, 50]
+    assert find_numbers_greater_than([-1, -2, -3, -4], -3) == [-1, -2]
+    assert find_numbers_greater_than([100, 101, 102], 100) == [101, 102]
+    assert find_numbers_greater_than([2, 4, 6, 8], 1) == [2, 4, 6, 8]
+    assert find_numbers_greater_than([5, 3, 1], 4) == [5]
+    assert find_numbers_greater_than([5, 4, 3, 2, 1], 2) == [5, 4, 3]
+
+
+# 704. Тесты для функции `join_strings_with_separator`
+def test_join_strings_with_separator():
+    assert join_strings_with_separator(["a", "b", "c"], ",") == "a,b,c"
+    assert join_strings_with_separator([], ",") == ""
+    assert join_strings_with_separator(["onlyone"], ",") == "onlyone"
+    assert join_strings_with_separator(["this", "is", "a", "test"], " ") == "this is a test"
+    assert join_strings_with_separator(["test", "function"], "-") == "test-function"
+    assert join_strings_with_separator(["join", "with", "different", "separators"], "|") == "join|with|different|separators"
+    assert join_strings_with_separator(["first", "second"], ".") == "first.second"
+    assert join_strings_with_separator(["combine", "all", "words"], "") == "combineallwords"
+    assert join_strings_with_separator(["1", "2", "3"], " ") == "1 2 3"
+
+
+# 705. Тесты для функции `sum_even_numbers`
+def test_sum_even_numbers():
+    assert sum_even_numbers([1, 2, 3, 4, 5, 6]) == 12
+    assert sum_even_numbers([]) == 0
+    assert sum_even_numbers([1, 3, 5, 7]) == 0
+    assert sum_even_numbers([2, 4, 6, 8, 10]) == 30
+    assert sum_even_numbers([-2, -4, -6]) == -12
+    assert sum_even_numbers([0, 2, 4]) == 6
+    assert sum_even_numbers([1, 2, 3, 4]) == 6
+    assert sum_even_numbers([10, 20, 30, 40]) == 100
+    assert sum_even_numbers([2, 2, 2, 2]) == 8
+
+
+# 706. Тесты для функции `find_string_with_word`
+def test_find_string_with_word():
+    assert find_string_with_word(["hello world", "foo bar"], "hello") == "hello world"
+    assert find_string_with_word(["one two", "three four"], "five") is None
+    assert find_string_with_word([], "word") is None
+    assert find_string_with_word(["find this string", "or this one"], "this") == "find this string"
+    assert find_string_with_word(["no match here"], "hello") is None
+    assert find_string_with_word(["searching", "for", "word"], "for") == "for"
+    assert find_string_with_word(["multiple", "matches", "here"], "matches") == "matches"
+    assert find_string_with_word(["first", "last"], "last") == "last"
+    assert find_string_with_word(["edge case"], "edge") == "edge case"
+
+
+# 707. Тесты для функции `find_smallest_odd`
+def test_find_smallest_odd():
+    assert find_smallest_odd([1, 3, 5, 7, 9]) == 1
+    assert find_smallest_odd([2, 4, 6, 8, 10]) is None
+    assert find_smallest_odd([]) is None
+    assert find_smallest_odd([10, 15, 20, 25]) == 15
+    assert find_smallest_odd([11, 13, 15, 17]) == 11
+    assert find_smallest_odd([-1, -3, -5, 0]) == -5
+    assert find_smallest_odd([100, 101, 102, 103]) == 101
+    assert find_smallest_odd([5, 4, 3, 2, 1]) == 1
+    assert find_smallest_odd([12, 14, 16, 19]) == 19
+
+
+# 708. Тесты для функции `replace_substring`
+def test_replace_substring():
+    assert replace_substring("hello world", "world", "there") == "hello there"
+    assert replace_substring("ababab", "ab", "cd") == "cdcdcd"
+    assert replace_substring("", "a", "b") == ""
+    assert replace_substring("nothing to replace", "xyz", "abc") is None
+    assert replace_substring("12345", "123", "678") == "67845"
+    assert replace_substring("replace me if you can", "can", "will") == "replace me if you will"
+    assert replace_substring("edgecase", "edge", "case") == "casecase"
+    assert replace_substring("simple test", "simple", "complex") == "complex test"
+    assert replace_substring("aaaa", "aa", "bb") == "bbbb"
+
+
+# 709. Тесты для функции `find_divisible_by_3_and_5`
+def test_find_divisible_by_3_and_5_5():
+    assert find_divisible_by_3_and_5_5([15, 30, 45, 60]) == 15
+    assert find_divisible_by_3_and_5_5([1, 2, 3, 4, 5]) is None
+    assert find_divisible_by_3_and_5_5([]) is None
+    assert find_divisible_by_3_and_5_5([0, 3, 5, 15]) == 0
+    assert find_divisible_by_3_and_5_5([9, 18, 27, 45]) == 45
+    assert find_divisible_by_3_and_5_5([100, 101, 102, 103]) is None
+    assert find_divisible_by_3_and_5_5([30, 60, 90, 120]) == 30
+    assert find_divisible_by_3_and_5_5([-15, -30, -45]) == -15
+    assert find_divisible_by_3_and_5_5([3, 6, 9, 12, 15]) == 15
+
+
+# 710. Тесты для функции `calculate_average`
+def test_calculate_average():
+    assert calculate_average([1, 2, 3, 4, 5]) == 3
+    assert calculate_average([]) is None
+    assert calculate_average([10, 20, 30]) == 20
+    assert calculate_average([-1, -2, -3]) == -2
+    assert calculate_average([5, 10, 15, 20]) == 12.5
+    assert calculate_average([100]) == 100
+    assert calculate_average([0, 0, 0]) == 0
+    assert calculate_average([0, 5, 10]) == 5
+    assert calculate_average([-10, 10, -10, 10]) == 0
+
+
+# 711. Тесты для функции `combine_and_unique`
+def test_combine_and_unique():
+    assert combine_and_unique([1, 2, 3], [3, 4, 5]) == [1, 2, 3, 4, 5]
+    assert combine_and_unique([], [1, 2, 3]) == [1, 2, 3]
+    assert combine_and_unique([1, 2, 3], []) == [1, 2, 3]
+    assert combine_and_unique([], []) == []
+    assert combine_and_unique([1, 1, 1], [1, 1, 1]) == [1]
+    assert combine_and_unique([1, 2, 2], [2, 3, 3]) == [1, 2, 3]
+    assert combine_and_unique([-1, -2, -3], [-3, -4, -5]) == [-1, -2, -3, -4, -5]
+    assert combine_and_unique([1, 2, 3, 4], [5, 6, 7, 8]) == [1, 2, 3, 4, 5, 6, 7, 8]
+    assert combine_and_unique(["a", "b"], ["b", "c"]) == ["a", "b", "c"]
+
+
+# 712. Тесты для функции `choose_largest`
+def test_choose_largest():
+    assert choose_largest(1, 2, 3) == 3
+    assert choose_largest(3, 2, 1) == 3
+    assert choose_largest(1, 3, 2) == 3
+    assert choose_largest(3, 3, 2) == 3
+    assert choose_largest(2, 3, 3) == 3
+    assert choose_largest(3, 3, 3) == 3
+    assert choose_largest(-1, -2, -3) == -1
+    assert choose_largest(0, 0, 0) == 0
+    assert choose_largest(100, 50, 25) == 100
+
+
+# 713. Тесты для функции `choose_longest_string`
+def test_choose_longest_string():
+    assert choose_longest_string("one", "three", "five") == "three"
+    assert choose_longest_string("a", "bc", "def") == "def"
+    assert choose_longest_string("apple", "banana", "cherry") == "cherry"
+    assert choose_longest_string("") == ""
+    assert choose_longest_string("short", "longer", "longest") == "longest"
+    assert choose_longest_string("a", "ab", "abc") == "abc"
+    assert choose_longest_string("equal", "equal") == "equal"
+    assert choose_longest_string("A", "BB", "CCC") == "CCC"
+    assert choose_longest_string("one", "two", "three") == "three"
+
+
+# 714. Тесты для функции `choose_most_frequent`
+def test_choose_most_frequent():
+    assert choose_most_frequent([1, 2, 2, 3, 3, 3]) == 3
+    assert choose_most_frequent(["a", "b", "b", "c", "c", "c"]) == "c"
+    assert choose_most_frequent([1, 1, 1, 2, 2, 3, 3, 3, 3]) == 3
+    assert choose_most_frequent([]) is None
+    assert choose_most_frequent([1, 1, 2, 2, 3, 3]) == 3
+    assert choose_most_frequent(["equal", "equal", "equal", "equal"]) == "equal"
+    assert choose_most_frequent(["x", "x", "y", "y", "z"]) == "y"
+    assert choose_most_frequent([1, 2, 3, 4, 5, 1, 2, 3, 1]) == 1
+    assert choose_most_frequent(["apple", "banana", "apple"]) == "apple"
+
+
+# 715. Тесты для функции `choose_smallest`
+def test_choose_smallest():
+    assert choose_smallest(3, 2, 1) == 1
+    assert choose_smallest(1, 2, 3) == 1
+    assert choose_smallest(2, 2, 2) == 2
+    assert choose_smallest(-1, -2, -3) == -3
+    assert choose_smallest(0, -1, 1) == -1
+    assert choose_smallest(100, 50, 25) == 25
+    assert choose_smallest(1) == 1
+    assert choose_smallest(-10, -20, -30) == -30
+    assert choose_smallest(1, 1, 1, 1) == 1
+
+
+# 716. Тесты для функции `choose_string_with_most_vowels`
+def test_choose_string_with_most_vowels():
+    assert choose_string_with_most_vowels("hello", "world", "ai") == "hello"
+    assert choose_string_with_most_vowels("a", "e", "i", "o", "u") == "u"
+    assert choose_string_with_most_vowels("rhythm", "glyph", "fly") == "rhythm"
+    assert choose_string_with_most_vowels("vowel", "consonant") == "consonant"
+    assert choose_string_with_most_vowels("aaa", "bbb", "ccc") == "aaa"
+    assert choose_string_with_most_vowels("aeiou", "bcdfg", "xyz") == "aeiou"
+    assert choose_string_with_most_vowels("a", "aaa", "aa") == "aaa"
+    assert choose_string_with_most_vowels("equal", "longer", "longest") == "equal"
+    assert choose_string_with_most_vowels("a", "ab", "abc") == "abc"
+
+
+# 717. Тесты для функции `choose_smallest_even`
+def test_choose_smallest_even():
+    assert choose_smallest_even(1, 2, 3, 4) == 2
+    assert choose_smallest_even(2, 2, 2, 2) == 2
+    assert choose_smallest_even(1, 1, 1, 1) == "No even numbers"
+    assert choose_smallest_even(0) == 0
+    assert choose_smallest_even(-2, -4, -6) == -6
+    assert choose_smallest_even(10, 20, 30) == 10
+    assert choose_smallest_even(1, 3, 5, 7) == "No even numbers"
+    assert choose_smallest_even(2) == 2
+    assert choose_smallest_even(-10, -20, -30) == -30
+
+
+# 718. Тесты для функции `choose_number_with_max_diff`
+def test_choose_number_with_max_diff():
+    assert choose_number_with_max_diff(1, 2, 3) == 1
+    assert choose_number_with_max_diff(-1, -2, -3) == -1
+    assert choose_number_with_max_diff(10, 20, 30) == 10
+    assert choose_number_with_max_diff(1, 1, 1) is None
+    assert choose_number_with_max_diff(5, 5, 5, 10) == 10
+    assert choose_number_with_max_diff(0, 0, 0) is None
+    assert choose_number_with_max_diff(-10, -20, -30) == -10
+    assert choose_number_with_max_diff(3, 6, 9, 12) == 3
+    assert choose_number_with_max_diff(-1, 0, 1) == -1
+
+
+# 719. Тесты для функции `choose_string_starting_with_vowel`
+def test_choose_string_starting_with_vowel():
+    assert choose_string_starting_with_vowel("apple", "banana", "orange") == "apple"
+    assert choose_string_starting_with_vowel("test", "test", "test") == "No string starts with a vowel"
+    assert choose_string_starting_with_vowel("egg", "emphasis") == "egg"
+    assert choose_string_starting_with_vowel("quick", "brown", "fox") == "No string starts with a vowel"
+    assert choose_string_starting_with_vowel("upper", "lower") == "upper"
+    assert choose_string_starting_with_vowel("a", "e", "i") == "a"
+    assert choose_string_starting_with_vowel("AI", "rules") == "AI"
+    assert choose_string_starting_with_vowel("buzz", "quiz") == "No string starts with a vowel"
+
+
+# 720. Тесты для функции `choose_second_largest`
+def test_choose_second_largest():
+    assert choose_second_largest(1, 2, 3) == 2
+    assert choose_second_largest(3, 2, 1) == 2
+    assert choose_second_largest(1, 3, 2) == 2
+    assert choose_second_largest(10, 20, 30) == 20
+    assert choose_second_largest(30, 20, 10) == 20
+    assert choose_second_largest(20, 10, 30) == 20
+    assert choose_second_largest(1, 1, 1) == "Not enough distinct numbers"
+    assert choose_second_largest(1, 2) == 1
+    assert choose_second_largest(3, 3, 5, 5, 5) == 3
+
+
+# 721. Тесты для функции `choose_smallest_even_from_list`
+def test_choose_smallest_even_from_list():
+    assert choose_smallest_even_from_list([1, 3, 5, 7]) == "No even numbers found"
+    assert choose_smallest_even_from_list([2, 4, 6, 8]) == 2
+    assert choose_smallest_even_from_list([1, 2, 3, 4, 5]) == 2
+    assert choose_smallest_even_from_list([-2, 3, -4, 5, -6]) == -6
+    assert choose_smallest_even_from_list([10, 15, 7, 3]) == 10
+    assert choose_smallest_even_from_list([]) == "No even numbers found"
+
+
+# 722. Тесты для функции `choose_longest_non_vowel_word`
+def test_choose_longest_non_vowel_word():
+    assert choose_longest_non_vowel_word("apple", "banana", "cherry") == "banana"
+    assert choose_longest_non_vowel_word("Apple", "Orange", "Grape") == "Grape"
+    assert choose_longest_non_vowel_word("egg", "ibex", "owl") == "No word found"
+    assert choose_longest_non_vowel_word("cat", "dog", "fish") == "fish"
+    assert choose_longest_non_vowel_word("bird", "fly", "ant") == "bird"
+    assert choose_longest_non_vowel_word("enter", "exit", "island") == 'No word found'
+
+
+# 723. Тесты для функции `choose_smallest_negative`
+def test_choose_smallest_negative():
+    assert choose_smallest_negative(1, 2, 3, 4) == "No negative numbers"
+    assert choose_smallest_negative(-1, -2, -3, -4) == -1
+    assert choose_smallest_negative(1, -2, 3, -4) == -2
+    assert choose_smallest_negative(-10, -20, -30, -40) == -10
+    assert choose_smallest_negative(-5, 0, -10) == -5
+    assert choose_smallest_negative(5, 10, 15) == "No negative numbers"
+
+
+# 724. Тесты для функции `choose_string_with_most_digits`
+def test_choose_string_with_most_digits():
+    assert choose_string_with_most_digits("abc123", "def45", "gh6789") == "gh6789"
+    assert choose_string_with_most_digits("123", "456", "789") == "789"
+    assert choose_string_with_most_digits("abc", "def", "ghi") == 'ghi'
+    assert choose_string_with_most_digits("ab123cd", "ef45gh", "ij678kl") == "ij678kl"
+    assert choose_string_with_most_digits("abc1", "def2", "ghi3") == "ghi3"
+    assert choose_string_with_most_digits("123abc", "456def", "789ghi") == "789ghi"
+
+
+# 725. Тесты для функции `choose_largest_in_range`
+def test_choose_largest_in_range():
+    assert choose_largest_in_range(1, 10, 5, 3, 8, 15) == 8
+    assert choose_largest_in_range(0, 100, 50, 60, 70) == 70
+    assert choose_largest_in_range(-10, 10, -5, 0, 5) == 5
+    assert choose_largest_in_range(10, 20, 5, 25, 30) == "No numbers in the range (10, 20)"
+    assert choose_largest_in_range(1, 5, 2, 3, 4) == 4
+    assert choose_largest_in_range(100, 200, 150, 175, 190) == 190
+
+
+# 726. Тесты для функции `choose_first_even_number`
+def test_choose_first_even_number():
+    assert choose_first_even_number([1, 3, 5, 7]) == "No even numbers"
+    assert choose_first_even_number([2, 4, 6, 8]) == 2
+    assert choose_first_even_number([1, 2, 3, 4]) == 2
+    assert choose_first_even_number([5, 7, 8, 10]) == 8
+    assert choose_first_even_number([10, 20, 30]) == 10
+    assert choose_first_even_number([1, 3, 7]) == "No even numbers"
+
+
+# 727. Тесты для функции `choose_shortest_no_space_string`
+def test_choose_shortest_no_space_string():
+    assert choose_shortest_no_space_string("hello", "world", "hi") == "hi"
+    assert choose_shortest_no_space_string("a b c", "de bf", "g h") == 'No string without spaces'
+    assert choose_shortest_no_space_string("one", "two", "three") == "one"
+    assert choose_shortest_no_space_string("no spaces", "he re", "or here") == 'No string without spaces'
+    assert choose_shortest_no_space_string("apple", "banana", "cherry") == "apple"
+    assert choose_shortest_no_space_string("ab", "abc", "abcd") == "ab"
+
+
+# 728. Тесты для функции `choose_youngest_age`
+def test_choose_youngest_age():
+    assert choose_youngest_age(25, 30, 20, 35) == 20
+    assert choose_youngest_age(40, 50, 30, 20) == 20
+    assert choose_youngest_age(15, 20, 25, 10) == 10
+    assert choose_youngest_age(60, 55, 45, 35) == 35
+    assert choose_youngest_age(5, 10, 15, 20) == 5
+    assert choose_youngest_age(100, 90, 80, 70) == 70
+
+
+# 729. Тесты для функции `choose_string_with_most_unique_chars`
+def test_choose_string_with_most_unique_chars():
+    assert choose_string_with_most_unique_chars("apple", "banana", "cherry") == 'cherry'
+    assert choose_string_with_most_unique_chars("cat", "dog", "elephant") == "elephant"
+    assert choose_string_with_most_unique_chars("abcd", "efgh", "ijkl") == "abcd"
+    assert choose_string_with_most_unique_chars("unique", "characters", "test") == "characters"
+    assert choose_string_with_most_unique_chars("simple", "complex", "word") == "complex"
+    assert choose_string_with_most_unique_chars("first", "second", "third") == "second"
+
+
+# 730. Тесты для функции `choose_first_even_divisible_by_three`
+def test_choose_first_even_divisible_by_three():
+    assert choose_first_even_divisible_by_three([1, 3, 5, 7]) == "No even number divisible by 3"
+    assert choose_first_even_divisible_by_three([2, 4, 6, 8]) == 6
+    assert choose_first_even_divisible_by_three([12, 18, 24]) == 12
+    assert choose_first_even_divisible_by_three([7, 14, 21, 28]) == 'No even number divisible by 3'
+    assert choose_first_even_divisible_by_three([3, 6, 9, 12]) == 6
+    assert choose_first_even_divisible_by_three([2, 5, 8, 11]) == "No even number divisible by 3"
+
+
+# 731. Тесты для функции `choose_largest_less_than`
+def test_choose_largest_less_than():
+    assert choose_largest_less_than(10, 1, 2, 3, 4) == 4
+    assert choose_largest_less_than(-20, 1, 2, 3) == 'No numbers less than -20'
+    assert choose_largest_less_than(0, -1, -2, -3) == -1
+    assert choose_largest_less_than(1, 5, 6, 8) == 'No numbers less than 1'
+    assert choose_largest_less_than(15, 10, 12, 14) == 14
+    assert choose_largest_less_than(2, 1, 3, 5) == 1
+
+
+# 732. Тесты для функции `choose_first_greater_than`
+def test_choose_first_greater_than():
+    assert choose_first_greater_than(10, 5, 15, 20) == 15
+    assert choose_first_greater_than(0, 1, 2, 3) == 1
+    assert choose_first_greater_than(-5, -1, 0, 5) == -1
+    assert choose_first_greater_than(100, 150, 200, 250) == 150
+    assert choose_first_greater_than(3, 2, 4, 5) == 4
+    assert choose_first_greater_than(10, 5, 6, 7) == f"No numbers greater than 10"
+
+
+# 733. Тесты для функции `choose_string_with_length_divisible_by_three`
+def test_choose_string_with_length_divisible_by_three():
+    assert choose_string_with_length_divisible_by_three("abcd", "defg", "hijklmn") == "No string with length divisible by 3"
+    assert choose_string_with_length_divisible_by_three("abcdefgh", "ijklmnopqrs", "tuv") == "tuv"
+    assert choose_string_with_length_divisible_by_three("123456", "789", "0123") == "123456"
+    assert choose_string_with_length_divisible_by_three("aaaaaa", "bbbbbbb", "ccccccccc") == "aaaaaa"
+    assert choose_string_with_length_divisible_by_three("hello", "world", "test") == "No string with length divisible by 3"
+    assert choose_string_with_length_divisible_by_three("one", "two", "three") == 'one'
+
+
+# 734. Тесты для функции `choose_most_expensive_item`
+def test_choose_most_expensive_item():
+    assert choose_most_expensive_item({"name": "item1", "price": 10}, {"name": "item2", "price": 20}, {"name": "item3", "price": 30}) == {"name": "item3", "price": 30}
+    assert choose_most_expensive_item({"name": "item4", "price": 5}, {"name": "item5", "price": 15}, {"name": "item6", "price": 25}) == {"name": "item6", "price": 25}
+    assert choose_most_expensive_item({"name": "item7", "price": 100}, {"name": "item8", "price": 200}, {"name": "item9", "price": 300}) == {"name": "item9", "price": 300}
+    assert choose_most_expensive_item({"name": "item10", "price": 50}, {"name": "item11", "price": 75}, {"name": "item12", "price": 100}) == {"name": "item12", "price": 100}
+    assert choose_most_expensive_item({"name": "item13", "price": 60}, {"name": "item14", "price": 80}, {"name": "item15", "price": 120}) == {"name": "item15", "price": 120}
+    assert choose_most_expensive_item({"name": "item16", "price": 10}, {"name": "item17", "price": 5}) == {"name": "item16", "price": 10}
+
+
+# 735. Тесты для функции `choose_string_shorter_than`
+def test_choose_string_shorter_than():
+    assert choose_string_shorter_than(5, "apple", "cat", "banana") == "cat"
+    assert choose_string_shorter_than(4, "dog", "fish", "whale") == "dog"
+    assert choose_string_shorter_than(7, "elephant", "snake", "shark") == "snake"
+    assert choose_string_shorter_than(3, "sun", "moon", "star") is None
+    assert choose_string_shorter_than(6, "planet", "comet", "asteroid") == "comet"
+    assert choose_string_shorter_than(8, "galaxy", "universe", "cosmos") == "galaxy"
+
+
+# 736. Тесты для функции `choose_first_not_divisible_by_2_and_3`
+def test_choose_first_not_divisible_by_2_and_3():
+    assert choose_first_not_divisible_by_2_and_3([1, 2, 3, 4, 5]) == 1
+    assert choose_first_not_divisible_by_2_and_3([6, 9, 12, 15]) is None
+    assert choose_first_not_divisible_by_2_and_3([7, 14, 21, 28]) == 7
+    assert choose_first_not_divisible_by_2_and_3([8, 11, 13, 16]) == 11
+    assert choose_first_not_divisible_by_2_and_3([10, 25, 30, 45]) == 25
+    assert choose_first_not_divisible_by_2_and_3([17, 34, 51, 68]) == 17
+
+
+# 737. Тесты для функции `choose_word_with_only_vowels`
+def test_choose_word_with_only_vowels():
+    assert choose_word_with_only_vowels("aeiou", "io", "u") == "aeiou"
+    assert choose_word_with_only_vowels("aaaa", "eieio", "iiiii") == "aaaa"
+    assert choose_word_with_only_vowels("oo", "u", "eeee") == "oo"
+    assert choose_word_with_only_vowels("ui", "oe", "aa") == "ui"
+    assert choose_word_with_only_vowels("o", "e", "i") == "o"
+    assert choose_word_with_only_vowels("apple", "banana", "cherry") is None
+
+
+# 738. Тесты для функции `choose_largest_less_than_or_equal_to`
+def test_choose_largest_less_than_or_equal_to():
+    assert choose_largest_less_than_or_equal_to(10, 1, 2, 3, 4) == 4
+    assert choose_largest_less_than_or_equal_to(5, 1, 2, 3) == 3
+    assert choose_largest_less_than_or_equal_to(0, -1, -2, -3) == -1
+    assert choose_largest_less_than_or_equal_to(7, 5, 6, 8) == 6
+    assert choose_largest_less_than_or_equal_to(15, 10, 12, 14) == 14
+    assert choose_largest_less_than_or_equal_to(2, 1, 3, 5) == 1
+
+
+# 739. Тесты для функции `choose_longest_digit_string`
+def test_choose_longest_digit_string():
+    assert choose_longest_digit_string("123", "45678", "90") == "45678"
+    assert choose_longest_digit_string("112233", "44556677", "889900") == "44556677"
+    assert choose_longest_digit_string("abc123", "def456", "ghi789") is None
+    assert choose_longest_digit_string("111", "2222", "333") == "2222"
+    assert choose_longest_digit_string("99999", "8888", "7777") == "99999"
+    assert choose_longest_digit_string("1234567890", "0987654321", "1112131415") == "1234567890"
+
+
+# 740. Тесты для функции `choose_shortest_string_without_vowels`
+def test_choose_shortest_string_without_vowels():
+    assert choose_shortest_string_without_vowels("bcdf", "ghjkl", "mnpqr") == "bcdf"
+    assert choose_shortest_string_without_vowels("bcdfg", "hjklm", "npqr") == "npqr"
+    assert choose_shortest_string_without_vowels("b", "c", "d") == "b"
+    assert choose_shortest_string_without_vowels("xyz", "wxy", "uvw") == 'xyz'
+    assert choose_shortest_string_without_vowels("apple", "banana", "cherry") is None
+    assert choose_shortest_string_without_vowels("bcd", "ghj", "mn") == "mn"
+
+
+# 741. Тесты для функции `choose_largest_even_less_than`:
+def test_choose_largest_even_less_than():
+    assert choose_largest_even_less_than(10, 1, 2, 3, 4, 5, 6, 7, 8, 9) == 8
+    assert choose_largest_even_less_than(5, 1, 3, 5) is None
+    assert choose_largest_even_less_than(20, 10, 15, 20, 25) == 10
+
+
+# 742. Тесты для функции `choose_second_smallest`:
+def test_choose_second_smallest():
+    assert choose_second_smallest(5, 3, 8, 6, 7, 2) == 3
+    assert choose_second_smallest(4, 4, 4) is None
+    assert choose_second_smallest(8, 1, 4, 5, 7) == 4
+
+
+# 743. Тесты для функции `choose_string_start_and_end_same`:
+def test_choose_string_start_and_end_same():
+    assert choose_string_start_and_end_same("level", "racecar", "deified") == "level"
+    assert choose_string_start_and_end_same("hello", "world") is None
+    assert choose_string_start_and_end_same("anna", "noon") == "anna"
+
+
+# 744. Тесты для функции `choose_first_divisible_by_5_and_7`:
+def test_choose_first_divisible_by_5_and_7():
+    assert choose_first_divisible_by_5_and_7([35, 70, 10, 14, 21]) == 35
+    assert choose_first_divisible_by_5_and_7([2, 4, 7, 8, 10]) is None
+    assert choose_first_divisible_by_5_and_7([105, 140, 28, 49]) == 105
+
+
+# 745. Тесты для функции `choose_shortest_string_with_digit`:
+def test_choose_shortest_string_with_digit():
+    assert choose_shortest_string_with_digit("abc1", "a2b", "abcd3") == 'abc1'
+    assert choose_shortest_string_with_digit("abc", "def") is None
+    assert choose_shortest_string_with_digit("12345", "67890") == "12345"
+
+
+# 746. Тесты для функции `choose_most_expensive_below_price`:
+def test_choose_most_expensive_below_price():
+    assert choose_most_expensive_below_price(120, *[{'name': 'item1', 'price': 50}, {'name': 'item2', 'price': 100}, {'name': 'item3', 'price': 150}]) == {'name': 'item2', 'price': 100}
+    assert choose_most_expensive_below_price(40, *[{'name': 'item1', 'price': 50}, {'name': 'item2', 'price': 100}, {'name': 'item3', 'price': 150}]) is None
+    assert choose_most_expensive_below_price(60, *[{'name': 'item1', 'price': 50}, {'name': 'item2', 'price': 100}, {'name': 'item3', 'price': 150}]) == {'name': 'item1', 'price': 50}
+
+
+# 747. Тесты для функции `choose_first_square_number`:
+def test_choose_first_square_number():
+    assert choose_first_square_number([1, 2, 3, 4, 5, 6, 7, 8, 9]) == 1
+    assert choose_first_square_number([10, 15, 20, 25, 30]) == 25
+    assert choose_first_square_number([2, 3, 5, 6, 7]) is None
+
+
+# 748. Тесты для функции `choose_oldest_age`:
+def test_choose_oldest_age():
+    assert choose_oldest_age(20, 35, 50, 40) == 50
+    assert choose_oldest_age(18, 12, 15) == 18
+    assert choose_oldest_age(70, 85, 90, 95) == 95
+
+
+# 749. Тесты для функции `choose_first_divisible_by_2_not_3`:
+def test_choose_first_divisible_by_2_not_3():
+    assert choose_first_divisible_by_2_not_3([4, 6, 8, 9, 12]) == 4
+    assert choose_first_divisible_by_2_not_3([9, 15, 21, 33]) is None
+    assert choose_first_divisible_by_2_not_3([10, 14, 20, 22]) == 10
+
+
+# 750. Тесты для функции `choose_longest_all_digits_string`:
+def test_choose_longest_all_digits_string():
+    assert choose_longest_all_digits_string("123", "12345", "678") == "12345"
+    assert choose_longest_all_digits_string("abc", "def") is None
+    assert choose_longest_all_digits_string("12", "3456", "7890") == "3456"
+
+
+# 751. Тесты для функции `choose_first_even_greater_than`:
+def test_choose_first_even_greater_than():
+    assert choose_first_even_greater_than(10, 11, 12, 13, 14) == 12
+    assert choose_first_even_greater_than(15, 20, 22, 24, 26) == 20
+    assert choose_first_even_greater_than(30, 25, 35) is None
+
+
+# 752. Тесты для функции `choose_first_non_numeric_string`:
+def test_choose_first_non_numeric_string():
+    assert choose_first_non_numeric_string("123", "abc", "456", "789") == "abc"
+    assert choose_first_non_numeric_string("001", "010") is None
+    assert choose_first_non_numeric_string("apple", "banana", "cherry") == "apple"
+
+
+# 753. Тесты для функции `choose_palindrome`:
+def test_choose_palindrome():
+    assert choose_palindrome("level", "world", "racecar") == "level"
+    assert choose_palindrome("hello", "world") is None
+    assert choose_palindrome("noon", "deified", "civic") == "noon"
+
+
+# 754. Тесты для функции `choose_most_expensive_under_100`:
+def test_choose_most_expensive_under_100():
+    assert choose_most_expensive_under_100(*[{'name': 'item1', 'price': 60}, {'name': 'item2', 'price': 80}, {'name': 'item3', 'price': 100}]) == {'name': 'item3', 'price': 100}
+    assert choose_most_expensive_under_100({'name': 'item4', 'price': 110}) is None
+    assert choose_most_expensive_under_100({'name': 'item5', 'price': 90}) == {'name': 'item5', 'price': 90}
+
+
+# 755. Тесты для функции `choose_first_even_greater_than_10`:
+def test_choose_first_even_greater_than_10():
+    assert choose_first_even_greater_than_10([9, 11, 13, 14, 16]) == 14
+    assert choose_first_even_greater_than_10([5, 7, 8, 10]) is None
+    assert choose_first_even_greater_than_10([12, 15, 18, 20]) == 12
+
+
+# 756. Тесты для функции `choose_smallest_divisible_by_5`:
+def test_choose_smallest_divisible_by_5():
+    assert choose_smallest_divisible_by_5(10, 25, 30, 15) == 10
+    assert choose_smallest_divisible_by_5(4, 8, 16, 32) is None
+    assert choose_smallest_divisible_by_5(45, 50, 55) == 45
+
+
+# 757. Тесты для функции `choose_first_long_word_starting_with_consonant`:
+def test_choose_first_long_word_starting_with_consonant():
+    assert choose_first_long_word_starting_with_consonant("banana", "strawberry", "apple", "grape") == 'banana'
+    assert choose_first_long_word_starting_with_consonant("orange", "apricot", "kiwi") is None
+    assert choose_first_long_word_starting_with_consonant("blackberry", "blueberry", "raspberry") == "blackberry"
+
+
+# 758. Тесты для функции `choose_largest_less_than_20`:
+def test_choose_largest_less_than_20():
+    assert choose_largest_less_than_20(5, 10, 15, 18) == 18
+    assert choose_largest_less_than_20(20, 21, 22) is None
+    assert choose_largest_less_than_20(19, 1, 3, 6, 14) == 19
+
+
+# 759. Тесты для функции `choose_string_starting_with_uppercase`:
+def test_choose_string_starting_with_uppercase():
+    assert choose_string_starting_with_uppercase("Apple", "banana", "Cherry", "date") == "Apple"
+    assert choose_string_starting_with_uppercase("eggplant", "fig", "grape") is None
+    assert choose_string_starting_with_uppercase("Honeydew", "Ice", "Juice") == "Honeydew"
+
+
+# 760. Тесты для функции `choose_first_non_even_non_prime`:
+def test_choose_first_non_even_non_prime():
+    assert choose_first_non_even_non_prime([2, 4, 6, 9, 12, 15]) == 9
+    assert choose_first_non_even_non_prime([2, 3, 5, 7, 11]) is None
+    assert choose_first_non_even_non_prime([1, 22, 25, 28]) == 1
+
+
+# 761. Тесты для функции `choose_shortest_string_starting_with_digit`:
+def test_choose_shortest_string_starting_with_digit():
+    assert choose_shortest_string_starting_with_digit("abc", "1abc", "2a") == "1abc"
+    assert choose_shortest_string_starting_with_digit("abc", "abc1", "2a") == "2a"
+    assert choose_shortest_string_starting_with_digit("abc", "a1bc", "abc") is None
+    assert choose_shortest_string_starting_with_digit("1abc", "2abc", "3abc") == "1abc"
+    assert choose_shortest_string_starting_with_digit("123", "456", "789") == "123"
+    assert choose_shortest_string_starting_with_digit("abc", "def", "ghi") is None
+
+
+# 762. Тесты для функции `choose_anagram_of`:
+def test_choose_anagram_of():
+    assert choose_anagram_of("listen", "enlist", "google", "inlets") == "enlist"
+    assert choose_anagram_of("listen", "google", "facebook", "silent") == "silent"
+    assert choose_anagram_of("abc", "def", "ghi", "jkl") is None
+    assert choose_anagram_of("cat", "tac", "act") == "tac"
+    assert choose_anagram_of("cat", "dog", "god") is None
+    assert choose_anagram_of("abc", "bca", "cab", "bac") == "bca"
+
+
+# 763. Тесты для функции `choose_smallest_greater_than`:
+def test_choose_smallest_greater_than():
+    assert choose_smallest_greater_than(5, 1, 2, 6, 8, 7) == 6
+    assert choose_smallest_greater_than(3, 4, 5, 1, 2, 6) == 4
+    assert choose_smallest_greater_than(10, 11, 12, 13, 14) == 11
+    assert choose_smallest_greater_than(0, -1, -2, 1, 2, 3) == 1
+    assert choose_smallest_greater_than(50, 100, 200, 300) == 100
+    assert choose_smallest_greater_than(100, 50, 60, 70, 80) is None
+
+
+# 764. Тесты для функции `choose_first_even_length_word`:
+def test_choose_first_even_length_word():
+    assert choose_first_even_length_word("one", "two", "three", "four") == "four"
+    assert choose_first_even_length_word("hello", "world", "Python") == 'Python'
+    assert choose_first_even_length_word("apple", "banana", "cherry", "dates") == "banana"
+    assert choose_first_even_length_word("apple", "b", "c", "dd") == "dd"
+    assert choose_first_even_length_word("a", "bb", "ccc", "dddd") == "bb"
+    assert choose_first_even_length_word("a", "b", "c", "d") is None
+
+
+# 765. Тесты для функции `choose_longer_than_average`:
+def test_choose_longer_than_average():
+    assert choose_longer_than_average("a", "bb", "ccc", "dddd") == 'ccc'
+    assert choose_longer_than_average("short", "longer", "longest") == 'longest'
+    assert choose_longer_than_average("aa", "bbb", "cccc") == 'cccc'
+    assert choose_longer_than_average("one", "one", "one", "one") is None
+    assert choose_longer_than_average("one", "two", "three") == "three"
+    assert choose_longer_than_average("a", "a", "a") is None
+
+
+# 766. Тесты для функции `choose_string_with_only_letters`:
+def test_choose_string_with_only_letters():
+    assert choose_string_with_only_letters("abc123", "def456", "ghi789") is None
+    assert choose_string_with_only_letters("abc", "def", "ghi") == "abc"
+    assert choose_string_with_only_letters("123", "456", "789") is None
+    assert choose_string_with_only_letters("abc", "def", "123") == "abc"
+    assert choose_string_with_only_letters("abc123", "def", "ghi") == "def"
+    assert choose_string_with_only_letters("abc", "123", "def456") == "abc"
+
+
+# 767. Тесты для функции `choose_oldest_under_30`:
+def test_choose_oldest_under_30():
+    assert choose_oldest_under_30(25, 20, 18, 22) == 25
+    assert choose_oldest_under_30(10, 15, 30, 35) == 15
+    assert choose_oldest_under_30(30, 40, 50) is None
+    assert choose_oldest_under_30(29, 28, 27, 26) == 29
+    assert choose_oldest_under_30(25, 29, 21, 28) == 29
+    assert choose_oldest_under_30(20, 19, 18, 25) == 25
+
+
+# 768. Тесты для функции `choose_multiple_of_4_not_5`:
+def test_choose_multiple_of_4_not_5():
+    assert choose_multiple_of_4_not_5([4, 8, 12, 16, 20]) == 4
+    assert choose_multiple_of_4_not_5([5, 10, 15, 20, 25]) is None
+    assert choose_multiple_of_4_not_5([7, 14, 21, 28, 35]) == 28
+    assert choose_multiple_of_4_not_5([8, 16, 24, 32, 40]) == 8
+    assert choose_multiple_of_4_not_5([6, 12, 18, 24, 30]) == 12
+    assert choose_multiple_of_4_not_5([3, 6, 9, 12, 15]) == 12
+
+
+# 769. Тесты для функции `choose_string_length_divisible_by_3`:
+def test_choose_string_length_divisible_by_3():
+    assert choose_string_length_divisible_by_3("a", "bb", "ccc", "dddd", "eeeee") == "ccc"
+    assert choose_string_length_divisible_by_3("abcdef", "ghijk", "lmnopqr") == "abcdef"
+    assert choose_string_length_divisible_by_3("a", "b", "c") is None
+    assert choose_string_length_divisible_by_3("123", "456", "789") == "123"
+    assert choose_string_length_divisible_by_3("111", "222", "333") == "111"
+    assert choose_string_length_divisible_by_3("a", "bbb", "cc", "ddd") == "bbb"
+
+
+# 770. Тесты для функции `choose_smallest_even_greater_than_10`:
+def test_choose_smallest_even_greater_than_10():
+    assert choose_smallest_even_greater_than_10(12, 14, 16, 18, 20) == 12
+    assert choose_smallest_even_greater_than_10(21, 22, 23, 24, 25) == 22
+    assert choose_smallest_even_greater_than_10(10, 11, 12, 13, 14) == 12
+    assert choose_smallest_even_greater_than_10(30, 32, 34, 36) == 30
+    assert choose_smallest_even_greater_than_10(8, 9, 10, 11, 12) == 12
+    assert choose_smallest_even_greater_than_10(50, 60, 70) == 50
+
+
+# 771. Тесты для функции `choose_first_divisible_by_2_and_5`:
+def test_choose_first_divisible_by_2_and_5():
+    assert choose_first_divisible_by_2_and_5([10, 20, 30, 40, 50]) == 10
+    assert choose_first_divisible_by_2_and_5([5, 10, 15, 20, 25]) == 10
+    assert choose_first_divisible_by_2_and_5([1, 3, 5, 7, 9]) is None
+    assert choose_first_divisible_by_2_and_5([2, 4, 6, 8, 10]) == 10
+    assert choose_first_divisible_by_2_and_5([12, 14, 16, 18, 20]) == 20
+    assert choose_first_divisible_by_2_and_5([15, 25, 35, 45, 50]) == 50
+
+
+# 772. Тесты для функции `choose_longest_non_digit_starting_string`:
+def test_choose_longest_non_digit_starting_string():
+    assert choose_longest_non_digit_starting_string("abc1", "def2", "ghi3") == "abc1"
+    assert choose_longest_non_digit_starting_string("1abc", "2def", "3ghi") is None
+    assert choose_longest_non_digit_starting_string("abcd", "efgh", "ijkl") == "abcd"
+    assert choose_longest_non_digit_starting_string("1abcd", "2efgh", "3ijkl") is None
+    assert choose_longest_non_digit_starting_string("abcd", "1efgh", "ijkl") == "abcd"
+    assert choose_longest_non_digit_starting_string("1abcd", "efgh", "ijkl") == "efgh"
+
+
+# 773. Тесты для функции `choose_first_all_uppercase_word`:
+def test_choose_first_all_uppercase_word():
+    assert choose_first_all_uppercase_word("HELLO", "WORLD", "PYTHON") == "HELLO"
+    assert choose_first_all_uppercase_word("hello", "WORLD", "python") == "WORLD"
+    assert choose_first_all_uppercase_word("hello", "world", "python") is None
+    assert choose_first_all_uppercase_word("HELLO", "WORLD", "PYTHON") == "HELLO"
+    assert choose_first_all_uppercase_word("hello", "WORLD", "PYTHON") == "WORLD"
+    assert choose_first_all_uppercase_word("hello", "world", "PYTHON") == "PYTHON"
+
+
+# 774. Тесты для функции `choose_youngest_over_50`:
+def test_choose_youngest_over_50():
+    assert choose_youngest_over_50(55, 60, 65, 70) == 55
+    assert choose_youngest_over_50(50, 55, 60, 65) == 55
+    assert choose_youngest_over_50(40, 45, 50, 55) == 55
+    assert choose_youngest_over_50(45, 50, 55, 60) == 55
+    assert choose_youngest_over_50(35, 40, 45, 50) is None
+    assert choose_youngest_over_50(25, 30, 35, 40) is None
+
+
+# 775. Тесты для функции `choose_largest_multiple_of_3_not_2`:
+def test_choose_largest_multiple_of_3_not_2():
+    assert choose_largest_multiple_of_3_not_2([3, 6, 9, 12, 15]) == 15
+    assert choose_largest_multiple_of_3_not_2([1, 2, 3, 4, 5]) == 3
+    assert choose_largest_multiple_of_3_not_2([5, 10, 15, 20, 25]) == 15
+    assert choose_largest_multiple_of_3_not_2([9, 18, 27, 36, 45]) == 45
+    assert choose_largest_multiple_of_3_not_2([12, 24, 36, 48, 60]) is None
+    assert choose_largest_multiple_of_3_not_2([11, 22, 33, 44, 55]) == 33
+
+
+# 776. Тесты для функции `choose_string_with_uppercase_and_digit`:
+def test_choose_string_with_uppercase_and_digit():
+    assert choose_string_with_uppercase_and_digit("Abc1", "def2", "ghi3") == "Abc1"
+    assert choose_string_with_uppercase_and_digit("1abc", "2def", "3ghi") is None
+    assert choose_string_with_uppercase_and_digit("Abc", "def", "Ghi") is None
+    assert choose_string_with_uppercase_and_digit("Abc1", "Def2", "Ghi3") == "Abc1"
+    assert choose_string_with_uppercase_and_digit("1Abc", "2Def", "3Ghi") == "1Abc"
+    assert choose_string_with_uppercase_and_digit("abc1", "def2", "ghi3") is None
+
+
+# 777. Тесты для функции `choose_first_even_less_than_50`:
+def test_choose_first_even_less_than_50():
+    assert choose_first_even_less_than_50([10, 20, 30, 40, 50]) == 10
+    assert choose_first_even_less_than_50([5, 10, 15, 20, 25]) == 10
+    assert choose_first_even_less_than_50([1, 3, 5, 7, 9]) is None
+    assert choose_first_even_less_than_50([2, 4, 6, 8, 10]) == 2
+    assert choose_first_even_less_than_50([12, 14, 16, 18, 20]) == 12
+    assert choose_first_even_less_than_50([15, 25, 35, 45, 50]) is None
+
+
+# 778. Тесты для функции `choose_shortest_no_space_string_3`:
+def test_choose_shortest_no_space_string_3():
+    assert choose_shortest_no_space_string_3("hello", "world", "python") == "hello"
+    assert choose_shortest_no_space_string_3("this is a test", "no spaces here", "short") == "short"
+    assert choose_shortest_no_space_string_3("a", "ab", "abc") == "a"
+    assert choose_shortest_no_space_string_3("abc", "abcd", "abcdef") == "abc"
+    assert choose_shortest_no_space_string_3("hello world", "python programming", "short text") is None
+    assert choose_shortest_no_space_string_3("no space", "shortest", "longest text") == "shortest"
+
+
+# 779. Тесты для функции `choose_repeated_string`:
+def test_choose_repeated_string():
+    assert choose_repeated_string("abcabc", "defdef", "ghighi") == "abcabc"
+    assert choose_repeated_string("hello", "world", "python") is None
+    assert choose_repeated_string("aabbcc", "ddeeff", "gghhii") is None
+    assert choose_repeated_string("abcabc", "abc", "def") == "abcabc"
+    assert choose_repeated_string("xyzxyz", "xyz", "xyxxyx") == "xyzxyz"
+    assert choose_repeated_string("repeatrepeat", "repe", "repeated") == "repeatrepeat"
+
+
+# 780. Тесты для функции `choose_number_in_range_0_100`:
+def test_choose_number_in_range_0_100():
+    assert choose_number_in_range_0_100(0, 10, 20, 30, 40) == 10
+    assert choose_number_in_range_0_100(50, 60, 70, 80, 90) == 50
+    assert choose_number_in_range_0_100(100, 110, 120, 130, 140) == 100
+    assert choose_number_in_range_0_100(-10, -20, -30) is None
+    assert choose_number_in_range_0_100(-15, -25, -35, -45, -55) is None
+    assert choose_number_in_range_0_100(1, 2, 3, 4, 5) == 1
+
+
+# 781. Тесты для функции `choose_smallest_odd_number`:
+def test_choose_smallest_odd_number():
+    assert choose_smallest_odd_number(5, 3, 9) == 3
+    assert choose_smallest_odd_number(2, 4, 6) is None
+    assert choose_smallest_odd_number(7, 3, -1, -5) == -5
+    assert choose_smallest_odd_number(1, 1, 1) == 1
+    assert choose_smallest_odd_number() is None
+    assert choose_smallest_odd_number(4, 9, 11) == 9
+
+
+# 782. Тесты для функции `choose_first_greater_than_100_even`:
+def test_choose_first_greater_than_100_even():
+    assert choose_first_greater_than_100_even([101, 102, 103]) == 102
+    assert choose_first_greater_than_100_even([100, 99, 98]) is None
+    assert choose_first_greater_than_100_even([150, 101, 200]) == 150
+    assert choose_first_greater_than_100_even([]) is None
+    assert choose_first_greater_than_100_even([200, 150, 180]) == 200
+    assert choose_first_greater_than_100_even([123, 245, 132]) == 132
+
+
+# 783. Тесты для функции `choose_longest_digit_word`:
+def test_choose_longest_digit_word():
+    assert choose_longest_digit_word("123", "4567", "89") == "4567"
+    assert choose_longest_digit_word("abc", "def", "ghi") is None
+    assert choose_longest_digit_word("1", "22", "333", "4444", "55555") == "55555"
+    assert choose_longest_digit_word() is None
+    assert choose_longest_digit_word("789", "12", "234") == "789"
+    assert choose_longest_digit_word("10", "20", "30", "40") == "10"
+
+
+# 784. Тесты для функции `is_prime_using_set`:
+def test_is_prime_using_set():
+    assert is_prime_using_set(2) is True
+    assert is_prime_using_set(3) is True
+    assert is_prime_using_set(4) is False
+    assert is_prime_using_set(-1) is False
+    assert is_prime_using_set(11) is True
+    assert is_prime_using_set(1) is False
+    assert is_prime_using_set(0) is False
+    assert is_prime_using_set(5) is True
+    assert is_prime_using_set(9) is False
+
+
+# 785. Тесты для функции `count_multiples_of`:
+def test_count_multiples_of():
+    assert count_multiples_of(3, [3, 6, 9, 12]) == 4
+    assert count_multiples_of(5, [1, 2, 3, 4]) is None
+    assert count_multiples_of(2, [4, 6, 8, 10]) == 4
+    assert count_multiples_of(7, [14, 21, 28, 35]) == 4
+    assert count_multiples_of(1, [1, 2, 3, 4, 5]) == 5
+    assert count_multiples_of(10, [10, 20, 30, 40]) == 4
+
+
+# 786. Тесты для функции `find_divisible_by_all_in_set`:
+def test_find_divisible_by_all_in_set():
+    assert find_divisible_by_all_in_set({1, 2, 3}, 6) == 6
+    assert find_divisible_by_all_in_set({2, 3}, 5) is None
+    assert find_divisible_by_all_in_set({5, 10, 15}, 30) == 30
+    assert find_divisible_by_all_in_set({3, 9, 27}, 81) == 81
+    assert find_divisible_by_all_in_set({2, 4, 8}, 16) == 16
+    assert find_divisible_by_all_in_set({3, 6, 12}, 12) == 12
+
+
+# 787. Тесты для функции `find_number_not_in_dict`:
+def test_find_number_not_in_dict():
+    assert find_number_not_in_dict({1: 'a', 2: 'b', 3: 'c'}, 4) == 4
+    assert find_number_not_in_dict({1: 'a', 2: 'b', 3: 'c'}, 2) is None
+    assert find_number_not_in_dict({}, 1) == 1
+    assert find_number_not_in_dict({5: 'x', 6: 'y', 7: 'z'}, 8) == 8
+    assert find_number_not_in_dict({9: 'a', 10: 'b'}, 10) is None
+    assert find_number_not_in_dict({100: 'a', 200: 'b'}, 150) == 150
+
+
+# 788. Тесты для функции `find_max_divisible`:
+def test_find_max_divisible():
+    assert find_max_divisible([12, 15, 20, 30], 5) == 30
+    assert find_max_divisible([7, 14, 21, 28], 3) == 21
+    assert find_max_divisible([8, 16, 24], 4) == 24
+    assert find_max_divisible([1, 2, 3, 4], 5) is None
+    assert find_max_divisible([9, 18, 27, 36], 9) == 36
+    assert find_max_divisible([], 5) is None
+
+
+# 789. Тесты для функции `find_not_divisible_by_2_3_5`:
+def test_find_not_divisible_by_2_3_5():
+    assert find_not_divisible_by_2_3_5([7, 11, 13, 17]) == [7, 11, 13, 17]
+    assert find_not_divisible_by_2_3_5([6, 10, 15, 20]) is None
+    assert find_not_divisible_by_2_3_5([1, 2, 3, 5, 7]) == [1, 7]
+    assert find_not_divisible_by_2_3_5([9, 18, 27, 35]) is None
+    assert find_not_divisible_by_2_3_5([8, 16, 24, 30]) is None
+    assert find_not_divisible_by_2_3_5([19, 23, 29, 31]) == [19, 23, 29, 31]
+
+
+# 790. Тесты для функции `sum_of_elements_greater_than`:
+def test_sum_of_elements_greater_than():
+    assert sum_of_elements_greater_than(10, {12, 15, 20}) == 47
+    assert sum_of_elements_greater_than(25, {5, 10, 15, 20}) is None
+    assert sum_of_elements_greater_than(0, {1, 2, 3, 4}) == 10
+    assert sum_of_elements_greater_than(5, {10, 20, 30}) == 60
+    assert sum_of_elements_greater_than(100, {50, 75, 125}) == 125
+    assert sum_of_elements_greater_than(-5, {1, 2, 3, 4}) == 10
+
+
+# 791. Тесты для функции `max_difference_in_dict`:
+def test_max_difference_in_dict():
+    assert max_difference_in_dict({1: 10, 2: 20, 3: 30}) == 20
+    assert max_difference_in_dict({}) is None
+    assert max_difference_in_dict({4: 50}) is None
+    assert max_difference_in_dict({5: 5, 6: 10, 7: 15}) == 10
+    assert max_difference_in_dict({10: 100, 20: 200}) == 100
+    assert max_difference_in_dict({8: 8, 9: 18, 10: 28}) == 20
+
+
+# 792. Тесты для функции `average_of_set`:
+def test_average_of_set():
+    assert average_of_set({1, 2, 3, 4}) == 2.5
+    assert average_of_set({10, 20, 30}) == 20.0
+    assert average_of_set(set()) is None
+    assert average_of_set({5, 15, 25, 35}) == 20.0
+    assert average_of_set({100}) == 100.0
+    assert average_of_set({1, 3, 5, 7, 9}) == 5.0
+
+
+# 793. Тесты для функции `find_greater_than_and_not_divisible_by_2`:
+def test_find_greater_than_and_not_divisible_by_2():
+    assert find_greater_than_and_not_divisible_by_2([1, 3, 5, 7, 9], 4) == [5, 7, 9]
+    assert find_greater_than_and_not_divisible_by_2([2, 4, 6, 8], 3) is None
+    assert find_greater_than_and_not_divisible_by_2([11, 13, 17, 19], 10) == [11, 13, 17, 19]
+    assert find_greater_than_and_not_divisible_by_2([], 5) is None
+    assert find_greater_than_and_not_divisible_by_2([5, 15, 25, 35], 10) == [15, 25, 35]
+    assert find_greater_than_and_not_divisible_by_2([21, 23, 25, 27], 22) == [23, 25, 27]
+
+
+# 794. Тесты для функции `find_min_divisible_by_all`:
+def test_find_min_divisible_by_all():
+    assert find_min_divisible_by_all([1, 2, 3]) is None
+    assert find_min_divisible_by_all([5, 10, 15]) is None
+    assert find_min_divisible_by_all([4, 8, 16]) == 16
+    assert find_min_divisible_by_all([7, 14, 28]) == 28
+    assert find_min_divisible_by_all([2, 3, 5]) is None
+    assert find_min_divisible_by_all([3, 5, 7, 11]) is None
+
+
+# 795. Тесты для функции `find_smallest_key_greater_than`:
+def test_find_smallest_key_greater_than():
+    assert find_smallest_key_greater_than({1: 10, 2: 20, 3: 30}, 15) == 2
+    assert find_smallest_key_greater_than({4: 40, 5: 50}, 60) is None
+    assert find_smallest_key_greater_than({6: 60, 7: 70, 8: 80}, 65) == 7
+    assert find_smallest_key_greater_than({}, 10) is None
+    assert find_smallest_key_greater_than({9: 90, 10: 100}, 95) == 10
+    assert find_smallest_key_greater_than({11: 110, 12: 120}, 105) == 11
+
+
+# 796. Тесты для функции `find_first_square_greater_than`:
+def test_find_first_square_greater_than():
+    assert find_first_square_greater_than([1, 4, 9, 16], 5) == 9
+    assert find_first_square_greater_than([25, 36, 49], 30) == 36
+    assert find_first_square_greater_than([2, 3, 5], 6) is None
+    assert find_first_square_greater_than([81, 64, 49], 50) == 81
+    assert find_first_square_greater_than([], 10) is None
+    assert find_first_square_greater_than([100, 121, 144], 110) == 121
+
+
+# 797. Тесты для функции `find_first_divisible_by_2_and_3`:
+def test_find_first_divisible_by_2_and_3():
+    assert find_first_divisible_by_2_and_3({6, 12, 18}) == 18
+    assert find_first_divisible_by_2_and_3({1, 3, 5}) is None
+    assert find_first_divisible_by_2_and_3({24, 30, 36}) == 24
+    assert find_first_divisible_by_2_and_3(set()) is None
+    assert find_first_divisible_by_2_and_3({7, 14, 21}) is None
+    assert find_first_divisible_by_2_and_3({9, 15, 21, 27}) is None
+
+
+# 798. Тесты для функции `find_common_in_lists`:
+def test_find_common_in_lists():
+    assert find_common_in_lists([1, 2, 3], [3, 4, 5]) == 3
+    assert find_common_in_lists([6, 7, 8], [9, 10, 11]) is None
+    assert find_common_in_lists([12, 13, 14], [14, 15, 16]) == 14
+    assert find_common_in_lists([17, 18, 19], [20, 21, 22]) is None
+    assert find_common_in_lists([23, 24, 25], [25, 26, 27]) == 25
+    assert find_common_in_lists([], [28, 29, 30]) is None
+
+
+# 799. Тесты для функции `find_smallest_even_greater_than`:
+def test_find_smallest_even_greater_than():
+    assert find_smallest_even_greater_than([2, 4, 6, 8], 5) == 6
+    assert find_smallest_even_greater_than([10, 12, 14], 15) is None
+    assert find_smallest_even_greater_than([16, 18, 20], 17) == 18
+    assert find_smallest_even_greater_than([], 3) is None
+    assert find_smallest_even_greater_than([22, 24, 26], 21) == 22
+    assert find_smallest_even_greater_than([28, 30, 32], 29) == 30
+
+
+# 800. Тесты для функции `find_element_greater_than_in_set`:
+def test_find_element_greater_than_in_set():
+    assert find_element_greater_than_in_set({1, 2, 3, 4}, 3) == 4
+    assert find_element_greater_than_in_set({5, 6, 7, 8}, 10) is None
+    assert find_element_greater_than_in_set({11, 12, 13, 14}, 12) == 13
+    assert find_element_greater_than_in_set(set(), 0) is None
+    assert find_element_greater_than_in_set({15, 16, 17, 18}, 16) == 17
+    assert find_element_greater_than_in_set({19, 20, 21, 22}, 18) == 19

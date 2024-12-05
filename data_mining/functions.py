@@ -6363,30 +6363,32 @@ def product_less_than_x(lst, x):
 
 
 # 602. Функция для нахождения суммы всех чисел в строке, которые можно преобразовать в числа (рекурсия)
-def sum_of_numbers_in_string(s):
+def sum_of_numbers_in_string(s, current_num=None):
     if s == "":
         return 0
-    current_num = ""
+    if current_num is None:
+        current_num = ""
     if s[0].isdigit():
         current_num += s[0]
     elif current_num:
-        return int(current_num) + sum_of_numbers_in_string(s[1:])
-    return sum_of_numbers_in_string(s[1:])
+        return int(current_num) + sum_of_numbers_in_string(s[1:], current_num)
+    return sum_of_numbers_in_string(s[1:], current_num)
 
 
 # 603. Функция для нахождения всех четных чисел в строке, которые можно преобразовать в числа (рекурсия)
-def even_numbers_in_string(s):
+def even_numbers_in_string(s, current_num=None):
     if s == "":
         return []
-    current_num = ""
+    if current_num is None:
+        current_num = ""
     if s[0].isdigit():
         current_num += s[0]
     elif current_num:
         num = int(current_num)
         if num % 2 == 0:
-            return [num] + even_numbers_in_string(s[1:])
-        return even_numbers_in_string(s[1:])
-    return even_numbers_in_string(s[1:])
+            return [num] + even_numbers_in_string(s[1:], current_num)
+        return even_numbers_in_string(s[1:], current_num)
+    return even_numbers_in_string(s[1:], current_num)
 
 
 # 604. Функция для добавления элемента в кольцевой массив с ограничением размера
@@ -6426,12 +6428,13 @@ def rotate_with_negativity(arr, steps):
     if not arr:
         return arr
     n = len(arr)
-    steps = steps % n
     if steps == 0:
         return arr
     if steps < 0:
+        steps = steps % n
         rotated = arr[steps:] + arr[:steps]
     else:
+        steps = steps % n
         rotated = arr[-steps:] + arr[:-steps]
     return rotated
 
@@ -6581,12 +6584,12 @@ def string_to_list(s):
 
 # 627. Функция для объединения двух списков без повторений
 def merge_unique_lists(list1, list2):
-    return list(set(list1 + list2))
+    return sorted(list(set(list1 + list2)))
 
 
 # 628. Функция для создания множества из строк, игнорируя регистр
 def set_from_strings_ignore_case(strings):
-    return {s.lower() for s in strings}
+    return sorted({s.lower() for s in strings})
 
 
 # 629. Функция для подсчета количества вхождений каждого символа в строку
@@ -6641,7 +6644,7 @@ def closest_number(arr, num):
 
 # 635. Функция для сортировки списка словарей по заданному ключу
 def sort_dicts_by_key(lst, key):
-    return sorted(lst, key=lambda x: x.get(key, None))
+    return sorted(lst, key=lambda x: x.get(key, 0))
 
 
 # 636. Функция для поиска наибольшего общего делителя двух чисел
@@ -6748,7 +6751,12 @@ def replace_second_char(s):
 
 # 649. Функция для получения уникальных чисел из списка с их суммой
 def unique_numbers_and_sum(lst):
-    unique_numbers = set(lst)
+    seen = set()
+    unique_numbers = []
+    for num in lst:
+        if num not in seen:
+            unique_numbers.append(num)
+            seen.add(num)
     total = sum(unique_numbers)
     return unique_numbers, total
 
@@ -6936,7 +6944,7 @@ def find_missing_number(arr1, arr2):
     set2 = set(arr2)
     missing = set1 - set2
     if missing:
-        return missing.pop()
+        return sorted(missing, reverse=True)[0]
     return None
 
 
@@ -7214,7 +7222,7 @@ def extract_unique_words(s):
         return []
     words = s.split()
     unique_words = set(words)
-    return list(unique_words)
+    return sorted(list(unique_words))
 
 
 # 699. Функция для нахождения наибольшего простого числа в списке
@@ -7461,7 +7469,7 @@ def choose_number_with_max_diff(*nums):
     max_diff = 0
     chosen_num = None
     for num in nums:
-        diff = max(nums) - min(nums)
+        diff = sum(abs(num - x) for x in nums)
         if diff > max_diff:
             max_diff = diff
             chosen_num = num
@@ -8040,8 +8048,10 @@ def choose_shortest_no_space_string_3(*strings):
 # 779. Функция для выбора строки, которая является повторением другого слова
 def choose_repeated_string(*strings):
     for s in strings:
-        if s == s * 2:
-            return s
+        if len(s) % 2 == 0:
+            half = len(s) // 2
+            if s[:half] == s[half:]:
+                return s
     return None
 
 

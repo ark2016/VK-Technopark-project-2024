@@ -98,7 +98,7 @@ def find_missing_number(arr1, arr2):
     set2 = set(arr2)
     missing = set1 - set2
     if missing:
-        return missing.pop()
+        return sorted(missing, reverse=True)[0]
     return None
 
 

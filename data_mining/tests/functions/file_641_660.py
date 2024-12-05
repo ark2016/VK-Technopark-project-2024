@@ -70,7 +70,12 @@ def replace_second_char(s):
 
 # 649. Функция для получения уникальных чисел из списка с их суммой
 def unique_numbers_and_sum(lst):
-    unique_numbers = set(lst)
+    seen = set()
+    unique_numbers = []
+    for num in lst:
+        if num not in seen:
+            unique_numbers.append(num)
+            seen.add(num)
     total = sum(unique_numbers)
     return unique_numbers, total
 

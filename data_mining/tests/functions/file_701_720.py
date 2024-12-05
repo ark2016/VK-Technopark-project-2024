@@ -215,7 +215,7 @@ def choose_number_with_max_diff(*nums):
     max_diff = 0
     chosen_num = None
     for num in nums:
-        diff = max(nums) - min(nums)
+        diff = sum(abs(num - x) for x in nums)
         if diff > max_diff:
             max_diff = diff
             chosen_num = num

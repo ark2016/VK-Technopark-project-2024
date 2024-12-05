@@ -157,8 +157,10 @@ def choose_shortest_no_space_string_3(*strings):
 # 779. Функция для выбора строки, которая является повторением другого слова
 def choose_repeated_string(*strings):
     for s in strings:
-        if s == s * 2:
-            return s
+        if len(s) % 2 == 0:
+            half = len(s) // 2
+            if s[:half] == s[half:]:
+                return s
     return None
 
 

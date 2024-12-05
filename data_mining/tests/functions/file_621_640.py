@@ -42,12 +42,12 @@ def string_to_list(s):
 
 # 627. Функция для объединения двух списков без повторений
 def merge_unique_lists(list1, list2):
-    return list(set(list1 + list2))
+    return sorted(list(set(list1 + list2)))
 
 
 # 628. Функция для создания множества из строк, игнорируя регистр
 def set_from_strings_ignore_case(strings):
-    return {s.lower() for s in strings}
+    return sorted({s.lower() for s in strings})
 
 
 # 629. Функция для подсчета количества вхождений каждого символа в строку
@@ -102,7 +102,7 @@ def closest_number(arr, num):
 
 # 635. Функция для сортировки списка словарей по заданному ключу
 def sort_dicts_by_key(lst, key):
-    return sorted(lst, key=lambda x: x.get(key, None))
+    return sorted(lst, key=lambda x: x.get(key, 0))
 
 
 # 636. Функция для поиска наибольшего общего делителя двух чисел
