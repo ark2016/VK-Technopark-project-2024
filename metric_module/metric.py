@@ -1,11 +1,14 @@
-import sys
+import ast
+import contextlib
+import multiprocessing
 import os
+import tempfile
 import coverage
 import pytest
 import re
-import threading
-import io
-from pathlib import Path
+
+from tqdm import tqdm
+
 
 # Плагин для сбора результатов тестов
 class TestResultCollector:
@@ -20,9 +23,15 @@ class TestResultCollector:
             elif report.passed:
                 self.passed_tests += 1
 
+
 # Функция для добавления импорта в начало кода
 def add_import_to_code(code: str, module_name: str) -> str:
     return f"from {module_name} import *\n\n" + code
+
+
+def add_import_module_to_code(code: str, module_name: str) -> str:
+    return f"import {module_name}\n\n" + code
+
 
 # Функция для разделения тестов на отдельные функции
 # Обновлённая функция для разделения тестов на отдельные функции, игнорируя комментарии и поддерживая различные операторы
@@ -64,104 +73,138 @@ def split_test_function(code: str) -> str:
 
     return new_code
 
-def exec_tests(code_string, test_string, code_filename, test_filename):
-    code_path = Path(code_filename).resolve()
-    test_path = Path(test_filename).resolve()
 
-    # Сохраняем строки кода в файлы
-    with open(code_path, 'w', encoding='utf-8') as f:
-        f.write(code_string)
-    with open(test_path, 'w', encoding='utf-8') as f:
-        f.write(test_string)
+# Функция для выполнения тестов в отдельном процессе
+def run_coverage_process(code_string, test_string, queue):
+    try:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            code_filename = os.path.join(temp_dir, 'user_code.py')  # Изменено имя файла
+            test_filename = os.path.join(temp_dir, 'test_user_code.py')  # Соответствующее имя тестового файла
 
-    # Проверяем наличие файлов
-    if not code_path.is_file():
-        print(f"Файл с кодом '{code_filename}' не найден.")
-        sys.exit(1)
-    if not test_path.is_file():
-        print(f"Файл с тестами '{test_filename}' не найден.")
-        sys.exit(1)
+            # Запись кода и тестов во временные файлы
+            with open(code_filename, 'w', encoding='utf-8') as f:
+                f.write(code_string)
 
-    # Запускаем измерение покрытия
-    cov = coverage.Coverage()
-    cov.start()
+            # Разделение тестов и добавление импорта
+            test_string = split_test_function(test_string)
+            test_string = add_import_to_code(test_string, 'user_code')  # Обновлён модуль
+            test_string = add_import_module_to_code(test_string, 'pytest')
 
-    # Инициализируем плагин для сбора результатов тестов
-    collector = TestResultCollector()
+            # print(test_string)
 
-    # Выполняем тесты с помощью pytest, передавая плагин
-    pytest_result = pytest.main([str(test_path)], plugins=[collector])
+            with open(test_filename, 'w', encoding='utf-8') as f:
+                f.write(test_string)
 
-    # Останавливаем измерение покрытия
-    cov.stop()
-    cov.save()
+            # Перенаправление вывода в devnull для подавления
+            with open(os.devnull, 'w') as devnull:
+                with contextlib.redirect_stdout(devnull), contextlib.redirect_stderr(devnull):
+                    # Переход в временную директорию
+                    original_cwd = os.getcwd()
+                    os.chdir(temp_dir)
 
-    # Генерируем отчет по покрытию для файла с кодом
-    total_percentage = cov.report(include=[str(code_path)], show_missing=True)
+                    try:
+                        # Инициализация coverage
+                        cov = coverage.Coverage()
+                        cov.erase()
+                        cov.start()
 
-    # Получаем данные покрытия
-    data = cov.get_data()
-    analysis = cov.analysis(str(code_path))
-    # analysis содержит: (filename, executed_lines, missing_lines, excluded_lines)
-    _, executed_lines, missing_lines, _ = analysis
+                        # Инициализация плагина для сбора результатов тестов
+                        collector = TestResultCollector()
 
-    os.remove(code_path)
-    os.remove(test_path)
-    os.remove('.coverage')
+                        # Запуск pytest с очисткой кеша
+                        pytest_args = [test_filename, '--cache-clear']
+                        pytest_result = pytest.main(pytest_args, plugins=[collector])
 
-    # Возвращаем процент покрытия, количество неудачных тестов и пропущенные строки
-    return total_percentage, collector.failed_tests, missing_lines
+                        # Остановка coverage
+                        cov.stop()
+                        cov.save()
+
+                        # Получение процента покрытия
+                        total_percentage = cov.report(include=[code_filename], show_missing=True)
+
+                        # Анализ покрытия
+                        _, executed_lines, missing_lines, _ = cov.analysis(code_filename)
+
+                        # Отправка результатов через очередь
+                        queue.put((total_percentage, collector.failed_tests, missing_lines))
+                    finally:
+                        # Возвращение в исходную директорию
+                        os.chdir(original_cwd)
+    except Exception as e:
+        # Отправка исключений через очередь
+        queue.put(e)
 
 
-def coverage_percent(code_string, test_string, code_filename='code.py', test_filename='test_code.py'):
-    test_string = split_test_function(test_string)
-    test_string = add_import_to_code(test_string, os.path.splitext(code_filename)[0])
+# Обновленная функция coverage_percent, использующая multiprocessing
+def coverage_percent(code_string, test_string):
+    # Создание очереди для передачи результатов
+    queue = multiprocessing.Queue()
 
-    # Список для хранения результата из потока
-    result = []
+    # Создание и запуск процесса
+    process = multiprocessing.Process(target=run_coverage_process, args=(code_string, test_string, queue))
+    process.start()
+    process.join()
 
-    def run_tests_in_thread():
-        # Перенаправление вывода в StringIO для подавления
-        original_stdout = sys.stdout
-        original_stderr = sys.stderr
-        sys.stdout = io.StringIO()
-        sys.stderr = io.StringIO()
+    # Проверка завершения процесса
+    if process.exitcode != 0:
+        raise RuntimeError(f"Процесс завершился с ошибкой. Код выхода: {process.exitcode}")
+
+    try:
+        result = queue.get_nowait()
+    except:
+        raise RuntimeError("Не удалось получить результат из процесса.")
+
+    if isinstance(result, Exception):
+        raise result
+
+    return result  # (total_percentage, failed_tests, missing_lines)
+
+
+# Функция для проверки синтаксиса Python кода
+def is_valid_python_code(code):
+    try:
+        ast.parse(code)
+        return True
+    except SyntaxError:
+        return False
+
+
+# Функция для вычисления покрытия и ошибок для каждой строки датафрейма
+def calculate_coverage_for_df(df):
+    # Создаем новый DataFrame с такими же колонками, как у исходного, и добавляем новые столбцы
+    result_df = df.copy()
+
+    # Список для хранения результатов
+    coverage_percentages = []
+    failed_tests_counts = []
+    missing_lines_counts = []
+
+    # Проходим по каждой строке в датафрейме
+    for index, row in tqdm(df.iterrows(), total=df.shape[0]):
+        code_string = row['Function']
+        test_string = row['Test']
+
+        # Проверка синтаксиса
+        if not is_valid_python_code(code_string):
+            print(f"Синтаксическая ошибка в Function {index}")
+        if not is_valid_python_code(test_string):
+            print(f"Синтаксическая ошибка в Test {index}")
 
         try:
-            total_percentage, failed_tests, missing_lines = exec_tests(
-                code_string, test_string, code_filename, test_filename
-            )
-            result.append((total_percentage, failed_tests, missing_lines))
-        finally:
-            # Восстанавливаем стандартные выводы
-            sys.stdout = original_stdout
-            sys.stderr = original_stderr
+            # Получаем данные покрытия и ошибок для каждого кода и теста
+            total_percentage, failed_tests, missing_lines = coverage_percent(code_string, test_string)
+        except Exception as e:
+            # В случае ошибки при выполнении тестов записываем значения по умолчанию
+            print(f"Ошибка при обработке строки {index}: {e}")
+            total_percentage, failed_tests, missing_lines = 0.0, -1, []
 
-    # Создание и запуск потока
-    test_thread = threading.Thread(target=run_tests_in_thread)
-    test_thread.start()
-    test_thread.join()
+        # Добавляем результат в соответствующие списки
+        coverage_percentages.append(total_percentage)
+        failed_tests_counts.append(failed_tests)
+        missing_lines_counts.append(missing_lines)
 
-    if result:
-        total_percentage, failed_tests, missing_lines = result[0]
-        return total_percentage, failed_tests, missing_lines
-    else:
-        raise RuntimeError("Не удалось получить результат покрытия.")
+    # Добавляем новые столбцы в DataFrame
+    result_df['coverage_percent'] = coverage_percentages
+    result_df['Errors'] = failed_tests_counts
 
-# Пример использования
-# if __name__ == "__main__":
-#     # Пример кода и тестов
-#     code_string = """
-# def add(a, b):
-#     return a + b
-# """
-#
-#     test_string = """
-# def test_add():
-#     assert add(1, 2) == 3
-#     assert add(-1, 1) == 0
-#     assert add(0, 0) == 0
-# """
-#
-#     coverage_result = coverage_percent(code_string, test_string)
-#     print(f"Процент покрытия: {coverage_result}%")
+    return result_df

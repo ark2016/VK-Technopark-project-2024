@@ -1462,23 +1462,15 @@ def test_min_max_tuple():
 
 # 129. Тесты для функции `find_common_keys_with_different_values`:
 def test_find_common_keys_with_different_values():
-    assert find_common_keys_with_different_values(
-        {'a': 1, 'b': 2}, {'a': 2, 'b': 2}) == ['a']
-    assert find_common_keys_with_different_values(
-        {'x': 1, 'y': 2}, {'y': 3, 'z': 4}) == ['y']
-    assert find_common_keys_with_different_values(
-        {'k': 10, 'l': 20}, {'m': 30, 'n': 40}) == []
+    assert find_common_keys_with_different_values({'a': 1, 'b': 2}, {'a': 2, 'b': 2}) == ['a']
+    assert find_common_keys_with_different_values({'x': 1, 'y': 2}, {'y': 3, 'z': 4}) == ['y']
+    assert find_common_keys_with_different_values({'k': 10, 'l': 20}, {'m': 30, 'n': 40}) == []
     assert find_common_keys_with_different_values({}, {}) == []
-    assert find_common_keys_with_different_values(
-        {'a': 1, 'b': 1}, {'a': 1, 'b': 2}) == ['b']
-    assert find_common_keys_with_different_values(
-        {'key1': 100, 'key2': 200}, {'key1': 300, 'key2': 200}) == ['key1']
-    assert find_common_keys_with_different_values(
-        {'k1': 1, 'k2': 2}, {'k2': 3, 'k3': 4}) == ['k2']
-    assert find_common_keys_with_different_values(
-        {'a': 1}, {'a': 2}) == ['a']
-    assert find_common_keys_with_different_values(
-        {'x': 5}, {'y': 5}) == []
+    assert find_common_keys_with_different_values({'a': 1, 'b': 1}, {'a': 1, 'b': 2}) == ['b']
+    assert find_common_keys_with_different_values({'key1': 100, 'key2': 200}, {'key1': 300, 'key2': 200}) == ['key1']
+    assert find_common_keys_with_different_values({'k1': 1, 'k2': 2}, {'k2': 3, 'k3': 4}) == ['k2']
+    assert find_common_keys_with_different_values({'a': 1}, {'a': 2}) == ['a']
+    assert find_common_keys_with_different_values({'x': 5}, {'y': 5}) == []
 
 
 # 130. Тесты для функции `string_to_numbers`:
@@ -6289,12 +6281,9 @@ def test_is_prime_4():
 
 # 587. Тесты для функции `find_max_in_tree`:
 def test_find_max_in_tree():
-    tree1 = {'value': 5, 'left': {'value': 3}, 'right': {'value': 7}}
-    tree2 = {'value': 10, 'left': None, 'right': {'value': 20}}
-    tree3 = {'value': -1, 'left': {'value': -3}, 'right': {'value': -2}}
-    assert find_max_in_tree(tree1) == 7
-    assert find_max_in_tree(tree2) == 20
-    assert find_max_in_tree(tree3) == -1
+    assert find_max_in_tree({'value': 5, 'left': {'value': 3}, 'right': {'value': 7}}) == 7
+    assert find_max_in_tree({'value': 10, 'left': None, 'right': {'value': 20}}) == 20
+    assert find_max_in_tree({'value': -1, 'left': {'value': -3}, 'right': {'value': -2}}) == -1
     assert find_max_in_tree({'value': 42}) == 42
     assert find_max_in_tree({'value': -100, 'left': None, 'right': None}) == -100
     assert find_max_in_tree(None) == float('-inf')
