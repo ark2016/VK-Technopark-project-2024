@@ -12,6 +12,8 @@
 
 * [model_research_lab.ipynb](model_research_lab.ipynb) - файл (.ipynb), в котором показана лаборатория с анализом подбора архитектуры и реализацией train-val-loop (дополняется).
 
+* [model_research_lab_launch.ipynb](model_research_lab_launch.ipynb) - файл (.ipynb), в котором показана лаборатория с анализом подбора архитектуры и реализацией train-val-loop. ***Важно***: именно этот файл реализует обучение модели.
+
 * [pictures](pictures) - папка с изображениями (например, архитектуры сети).
 
 
@@ -29,6 +31,19 @@
 
 * Ссылка на частично [подготовленный датасет](https://cloud.mail.ru/public/UUQb/BQsxBFqMb)
 
+#### Инструкция по запуску обучения
+
+1. Скачать датасет по [ссылке]((https://cloud.mail.ru/public/UUQb/BQsxBFqMb)
+
+2. Скачать файлы [model_research_lab_launch.ipynb](model_research_lab_launch.ipynb) и [create_dataset_m2t_tokens.py](create_dataset_m2t_tokens.py). Первый будет импортировать второй для дополнительной обработки данных.
+
+3. Выполнить ячейки в ноутбуке.
+
+4. ***Важно***: при вызове функции ```get_loaders```(batch_size = \<YOUR_BATCH_SIZE\>) выбрать разумный batch_size. По умолчанию выставлен 2 для отладки.
+
+5. ***Важно***: при вызове функции ```train_val_loop_codeLM``` (batch_size = \<YOUR_BATCH_SIZE\>) ```test_step_only``` сделать ```False``` и ```device = 'cuda'```. По умолчанию выставлены ```True``` и ```cpu``` для отладки.
+
+6. ***Если что-то непонятно, обратиться ко мне за консультацией !!!***
 
 
 
