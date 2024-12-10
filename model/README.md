@@ -33,7 +33,7 @@
 
 #### Инструкция по запуску обучения
 
-1. Скачать датасет по [ссылке]((https://cloud.mail.ru/public/UUQb/BQsxBFqMb)
+1. Скачать датасет по [ссылке](https://cloud.mail.ru/public/UUQb/BQsxBFqMb)
 
 2. Скачать файлы [model_research_lab_launch.ipynb](model_research_lab_launch.ipynb) и [create_dataset_m2t_tokens.py](create_dataset_m2t_tokens.py). Первый будет импортировать второй для дополнительной обработки данных.
 
