@@ -16,7 +16,9 @@
 
 * [languagemodels.ipynb](languagemodels.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. 
 
-* [language_models_to_train.ipynb](language_models_to_train.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. ***Важно***: именно этот файл реализует обучение модели.
+* [language_models_to_train.ipynb](language_models_to_train.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. 
+
+* [language_models_to_train_final.ipynb](language_models_to_train_final.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. ***Важно***: именно этот файл реализует обучение модели. Все реализовано без конфликтов токенизаторов и прочих вещей, готово к запуску обучения.
 
 * [pictures](pictures) - папка с изображениями (например, архитектуры сети).
 
@@ -53,7 +55,7 @@
 
 1. Скачать полностью подготовленный датасет по [ссылке](https://cloud.mail.ru/public/sKTM/4V9QD9qJD). Этот файл (.parquet) будет считываться в ноутбуке обучения.
 
-2. Скачать файл [language_models_to_train.ipynb](language_models_to_train.ipynb), который реализует обучение.
+2. Скачать файл [language_models_to_train_final.ipynb](language_models_to_train_final.ipynb), который реализует обучение.
 
 3. Выполнить ячейки в ноутбуке.
 
