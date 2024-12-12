@@ -49,7 +49,7 @@
 
 #### Или другая инструкция (UPD)
 
-1. Скачать полностью подготовленный датасет по [ссылке](https://cloud.mail.ru/public/sKTM/4V9QD9qJD). Этот файл (.parquet) будет считываться в ноутбуке обучения.
+1. Скачать полностью подготовленный датасет по [ссылке]([https://cloud.mail.ru/public/sKTM/4V9QD9qJD](https://cloud.mail.ru/public/sKTM/4V9QD9qJD)). Этот файл (.parquet) будет считываться в ноутбуке обучения.
 
 2. Скачать файл [languagemodels.ipynb](languagemodels.ipynb), который реализует обучение.
 
