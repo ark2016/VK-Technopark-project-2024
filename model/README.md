@@ -53,7 +53,7 @@
 
 1. Скачать полностью подготовленный датасет по [ссылке](https://cloud.mail.ru/public/sKTM/4V9QD9qJD). Этот файл (.parquet) будет считываться в ноутбуке обучения.
 
-2. Скачать файл [language_models_to_train.ipynb](languagemodels.ipynb), который реализует обучение.
+2. Скачать файл [language_models_to_train.ipynb](language_models_to_train.ipynb), который реализует обучение.
 
 3. Выполнить ячейки в ноутбуке.
 
