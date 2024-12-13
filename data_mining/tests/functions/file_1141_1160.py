@@ -1,8 +1,8 @@
-# 1141. Функция для нахождения чисел, которые делятся на 4 и на 7, но не на 14
-def find_divisible_by_4_and_7_not_14(lst):
+# 1141. Функция для нахождения чисел, которые делятся на 4 и на 7, но не на 18
+def find_divisible_by_4_and_7_not_18(lst):
     result = []
     for num in lst:
-        if num % 4 == 0 and num % 7 == 0 and num % 14 != 0:
+        if num % 4 == 0 and num % 7 == 0 and num % 18 != 0:
             result.append(num)
     if not result:
         return None
@@ -13,7 +13,7 @@ def find_divisible_by_4_and_7_not_14(lst):
 def sum_and_diff_of_lists_v2(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
-        result.append(a + b - a)
+        result.append(a + b - 2*a)
     if not result:
         return None
     return result
@@ -89,7 +89,7 @@ def diff_of_all_lists(lst1, lst2):
 def diff_of_products(lst1, lst2):
     result = []
     for a, b in zip(lst1, lst2):
-        result.append((a * b) - (a * b))
+        result.append((a * b) - (a * 2 * b))
     if not result:
         return None
     return result

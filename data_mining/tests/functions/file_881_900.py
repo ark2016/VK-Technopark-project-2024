@@ -83,7 +83,7 @@ def find_strings_with_uppercase(lst):
 def find_numbers_divisible_by_4_not_2(lst):
     result = []
     for n in lst:
-        if n % 4 == 0 and n % 2 != 0:
+        if n % 2 == 0 and n % 16 != 0:
             result.append(n)
     return tuple(result) if result else None
 

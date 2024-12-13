@@ -154,7 +154,7 @@ def find_min_max_from_list(lst):
 
 # 878. Функция для создания кортежа, состоящего из уникальных элементов списка
 def create_tuple_of_unique_elements(lst):
-    unique_elements = set(lst)
+    unique_elements = sorted(set(lst))
     return tuple(unique_elements) if unique_elements else None
 
 

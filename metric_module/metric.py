@@ -207,4 +207,7 @@ def calculate_coverage_for_df(df):
     result_df['coverage_percent'] = coverage_percentages
     result_df['Errors'] = failed_tests_counts
 
-    return result_df
+    mean_cover_percent = result_df['coverage_percent'].mean()
+    mean_failed = result_df['Errors'].mean()
+
+    return result_df, mean_cover_percent, mean_failed

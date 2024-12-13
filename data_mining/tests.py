@@ -8501,3 +8501,4049 @@ def test_find_element_greater_than_in_set():
     assert find_element_greater_than_in_set(set(), 0) is None
     assert find_element_greater_than_in_set({15, 16, 17, 18}, 16) == 17
     assert find_element_greater_than_in_set({19, 20, 21, 22}, 18) == 19
+
+
+# 801. Тесты для функции `sum_divisible_by_3_or_5`:
+def test_sum_divisible_by_3_or_5():
+    assert sum_divisible_by_3_or_5([3, 5, 6, 10]) == 24
+    assert sum_divisible_by_3_or_5([1, 2, 4, 7]) is None
+    assert sum_divisible_by_3_or_5([-3, -5, -6, -10]) is None
+    assert sum_divisible_by_3_or_5([0, 0, 0]) is None
+    assert sum_divisible_by_3_or_5([15, 30, 45]) == 90
+    assert sum_divisible_by_3_or_5([1, 2, 3, 4, 5]) == 8
+    assert sum_divisible_by_3_or_5([]) is None
+    assert sum_divisible_by_3_or_5([5, 5, 5, 5]) == 20
+    assert sum_divisible_by_3_or_5([3, 6, 9]) == 18
+
+
+# 802. Тесты для функции `find_max_value_in_dict`:
+def test_find_max_value_in_dict():
+    assert find_max_value_in_dict({'a': 1, 'b': 2, 'c': 3}) == 3
+    assert find_max_value_in_dict({}) is None
+    assert find_max_value_in_dict({'a': -1, 'b': -2, 'c': -3}) == -1
+    assert find_max_value_in_dict({'a': 10, 'b': 10}) == 10
+    assert find_max_value_in_dict({'a': 1}) == 1
+    assert find_max_value_in_dict({'a': 1, 'b': 2}) == 2
+    assert find_max_value_in_dict({'a': -1, 'b': -2, 'c': 0}) == 0
+    assert find_max_value_in_dict({'a': 5, 'b': 3, 'c': 8, 'd': 6}) == 8
+    assert find_max_value_in_dict({'a': 0}) == 0
+
+
+# 803. Тесты для функции `find_duplicate`:
+def test_find_duplicate():
+    assert find_duplicate([1, 2, 3, 2, 5]) == 2
+    assert find_duplicate([1, 1, 1, 1]) == 1
+    assert find_duplicate([1, 2, 3, 4]) is None
+    assert find_duplicate([]) is None
+    assert find_duplicate([1, 2, 3, 4, 5, 6, 7, 8, 9, 1]) == 1
+    assert find_duplicate([5, 5, 5, 5, 5]) == 5
+    assert find_duplicate([5, 4, 3, 2, 1, 2]) == 2
+    assert find_duplicate([0, 0, 0, 0]) == 0
+    assert find_duplicate([1, 2, 3, 4, 2, 5, 6, 7, 8]) == 2
+
+
+# 804. Тесты для функции `find_min_not_divisible_by_4`:
+def test_find_min_not_divisible_by_4():
+    assert find_min_not_divisible_by_4([1, 2, 3, 5, 6, 7]) == 1
+    assert find_min_not_divisible_by_4([4, 8, 16, 20]) is None
+    assert find_min_not_divisible_by_4([10, 12, 15, 17]) == 10
+    assert find_min_not_divisible_by_4([4, 8, 3, 12]) == 3
+    assert find_min_not_divisible_by_4([0, 1, 2, 3, 4, 5]) == 1
+    assert find_min_not_divisible_by_4([2, 4, 6, 8]) == 2
+    assert find_min_not_divisible_by_4([-1, -2, -3, -4]) == -3
+    assert find_min_not_divisible_by_4([4, 6, 8, 10, 12]) == 6
+    assert find_min_not_divisible_by_4([16, 18, 20, 22]) == 18
+
+
+# 805. Тесты для функции `find_smallest_divisible_by_7_and_11`:
+def test_find_smallest_divisible_by_7_and_11():
+    assert find_smallest_divisible_by_7_and_11([77, 154, 231, 308]) == 77
+    assert find_smallest_divisible_by_7_and_11([1, 2, 3, 4]) is None
+    assert find_smallest_divisible_by_7_and_11([14, 22, 35, 77]) == 77
+    assert find_smallest_divisible_by_7_and_11([154, 308, 462]) == 154
+    assert find_smallest_divisible_by_7_and_11([7, 11, 77, 121]) == 77
+    assert find_smallest_divisible_by_7_and_11([49, 99, 143, 154]) == 154
+    assert find_smallest_divisible_by_7_and_11([21, 33, 55, 77]) == 77
+    assert find_smallest_divisible_by_7_and_11([210, 330, 462, 770]) == 462
+    assert find_smallest_divisible_by_7_and_11([]) is None
+
+
+# 806. Тесты для функции `find_first_divisible_by_3_not_5`:
+def test_find_first_divisible_by_3_not_5():
+    assert find_first_divisible_by_3_not_5([6, 12, 9, 15]) == 6
+    assert find_first_divisible_by_3_not_5([1, 2, 4, 5]) is None
+    assert find_first_divisible_by_3_not_5([3, 6, 9, 12]) == 3
+    assert find_first_divisible_by_3_not_5([15, 30, 45, 60]) is None
+    assert find_first_divisible_by_3_not_5([3, 5, 6, 9]) == 3
+    assert find_first_divisible_by_3_not_5([6, 15, 30, 45]) == 6
+    assert find_first_divisible_by_3_not_5([1, 3, 5, 9]) == 3
+    assert find_first_divisible_by_3_not_5([9, 15, 18, 21]) == 9
+    assert find_first_divisible_by_3_not_5([]) is None
+
+
+# 807. Тесты для функции `sum_values_greater_than_10_in_dict`:
+def test_sum_values_greater_than_10_in_dict():
+    assert sum_values_greater_than_10_in_dict({'a': 5, 'b': 15, 'c': 20}) == 35
+    assert sum_values_greater_than_10_in_dict({'a': 1, 'b': 2, 'c': 3}) is None
+    assert sum_values_greater_than_10_in_dict({'a': 11, 'b': 12, 'c': 13}) == 36
+    assert sum_values_greater_than_10_in_dict({'a': 0, 'b': 10, 'c': 20}) == 20
+    assert sum_values_greater_than_10_in_dict({'a': 9, 'b': 10, 'c': 11}) == 11
+    assert sum_values_greater_than_10_in_dict({'a': 15, 'b': 15, 'c': 15}) == 45
+    assert sum_values_greater_than_10_in_dict({}) is None
+    assert sum_values_greater_than_10_in_dict({'a': 7, 'b': 14, 'c': 21}) == 35
+    assert sum_values_greater_than_10_in_dict({'a': -5, 'b': -10, 'c': -20}) is None
+
+
+# 808. Тесты для функции `find_string_longer_than`:
+def test_find_string_longer_than():
+    assert find_string_longer_than(3, "apple", "bat", "cat") == "apple"
+    assert find_string_longer_than(5, "apple", "banana", "cherry") == "banana"
+    assert find_string_longer_than(6, "apple", "banana", "cherry") is None
+    assert find_string_longer_than(10, "apple", "banana", "cherry") is None
+    assert find_string_longer_than(4, "kiwi", "pear", "peach") == "peach"
+    assert find_string_longer_than(2, "a", "b", "c", "d") is None
+    assert find_string_longer_than(0, "apple", "banana", "cherry", "date") == "apple"
+    assert find_string_longer_than(7, "elephant", "giraffe", "hippopotamus") == "elephant"
+    assert find_string_longer_than(1, "x", "y", "z") is None
+
+
+# 809. Тесты для функции `is_palindrome_6`:
+def test_is_palindrome_6():
+    assert is_palindrome_6("racecar") is True
+    assert is_palindrome_6("hello") is False
+    assert is_palindrome_6("madam") is True
+    assert is_palindrome_6("a") is True
+    assert is_palindrome_6("") is None
+    assert is_palindrome_6("noon") is True
+    assert is_palindrome_6("world") is False
+    assert is_palindrome_6("level") is True
+    assert is_palindrome_6("python") is False
+
+
+# 810. Тесты для функции `count_vowels_in_string`:
+def test_count_vowels_in_string():
+    assert count_vowels_in_string("hello") == 2
+    assert count_vowels_in_string("world") == 1
+    assert count_vowels_in_string("aeiou") == 5
+    assert count_vowels_in_string("bcdfgh") is None
+    assert count_vowels_in_string("rhythm") is None
+    assert count_vowels_in_string("AEIOU") == 5
+    assert count_vowels_in_string("xyz") is None
+    assert count_vowels_in_string("supercalifragilisticexpialidocious") == 16
+    assert count_vowels_in_string("") is None
+
+
+# 811. Тесты для функции `find_first_occurrence_of_substring`:
+def test_find_first_occurrence_of_substring():
+    assert find_first_occurrence_of_substring("hello world", "world") == 6
+    assert find_first_occurrence_of_substring("hello world", "hello") == 0
+    assert find_first_occurrence_of_substring("abcdef", "def") == 3
+    assert find_first_occurrence_of_substring("abcdef", "xyz") is None
+    assert find_first_occurrence_of_substring("abcdabcd", "abcd") == 0
+    assert find_first_occurrence_of_substring("mississippi", "iss") == 1
+    assert find_first_occurrence_of_substring("banana", "na") == 2
+    assert find_first_occurrence_of_substring("abababab", "ab") == 0
+    assert find_first_occurrence_of_substring("", "a") is None
+
+
+# 812. Тесты для функции `remove_spaces_from_string`:
+def test_remove_spaces_from_string():
+    assert remove_spaces_from_string("hello world") == "helloworld"
+    assert remove_spaces_from_string("a b c d e f") == "abcdef"
+    assert remove_spaces_from_string(" no spaces ") == "nospaces"
+    assert remove_spaces_from_string("helloworld") is None
+    assert remove_spaces_from_string(" ") == ""
+    assert remove_spaces_from_string("   multiple   spaces   ") == "multiplespaces"
+    assert remove_spaces_from_string("") is None
+    assert remove_spaces_from_string("single") is None
+    assert remove_spaces_from_string("a b c") == "abc"
+
+
+# 813. Тесты для функции `get_unique_characters`:
+def test_get_unique_characters():
+    assert get_unique_characters("hello") == "ehlo"
+    assert get_unique_characters("world") == "dlorw"
+    assert get_unique_characters("abcabc") == "abc"
+    assert get_unique_characters("") == ""
+
+
+# 814. Тесты для функции `reverse_string_5`:
+def test_reverse_string_5():
+    assert reverse_string_5("hello") == "olleh"
+    assert reverse_string_5("world") == "dlrow"
+    assert reverse_string_5("a") == "a"
+    assert reverse_string_5("") == ""
+
+
+# 815. Тесты для функции `count_words_in_string_5`:
+def test_count_words_in_string_5():
+    assert count_words_in_string_5("hello world") == 2
+    assert count_words_in_string_5("one two three") == 3
+    assert count_words_in_string_5("") is None
+    assert count_words_in_string_5("single") == 1
+
+
+# 816. Тесты для функции `remove_punctuation_from_string`:
+def test_remove_punctuation_from_string():
+    assert remove_punctuation_from_string("hello, world!") == "hello world"
+    assert remove_punctuation_from_string("a.b.c!") == "abc"
+    assert remove_punctuation_from_string("") == ""
+    assert remove_punctuation_from_string("no_punctuation") == "nopunctuation"
+
+
+# 817. Тесты для функции `is_string_only_digits`:
+def test_is_string_only_digits():
+    assert is_string_only_digits("12345") is True
+    assert is_string_only_digits("123a45") is False
+    assert is_string_only_digits("") is True
+    assert is_string_only_digits("0") is True
+
+
+# 818. Тесты для функции `find_all_occurrences_of_substring`:
+def test_find_all_occurrences_of_substring():
+    assert find_all_occurrences_of_substring("hello hello", "lo") == [3, 9]
+    assert find_all_occurrences_of_substring("abcdabcd", "ab") == [0, 4]
+    assert find_all_occurrences_of_substring("mississippi", "iss") == [1, 4]
+    assert find_all_occurrences_of_substring("no match", "z") is None
+
+
+# 819. Тесты для функции `repeat_string`:
+def test_repeat_string():
+    assert repeat_string("ab", 3) == "ababab"
+    assert repeat_string("hello", 0) is None
+    assert repeat_string("x", 5) == "xxxxx"
+    assert repeat_string("", 3) == ""
+
+
+# 820. Тесты для функции `get_first_word`:
+def test_get_first_word():
+    assert get_first_word("hello world") == "hello"
+    assert get_first_word("first second third") == "first"
+    assert get_first_word("") is None
+    assert get_first_word("singleword") == "singleword"
+
+
+# 821. Тесты для функции `extract_numbers_from_string_4`
+def test_extract_numbers_from_string_4():
+    assert extract_numbers_from_string_4("123 abc 456 def 789") == [123, 456, 789]
+    assert extract_numbers_from_string_4("no numbers here") is None
+    assert extract_numbers_from_string_4("0") == [0]
+    assert extract_numbers_from_string_4("12abc34de56") == [12, 34, 56]
+    assert extract_numbers_from_string_4("1a2b3c") == [1, 2, 3]
+    assert extract_numbers_from_string_4("") is None
+    assert extract_numbers_from_string_4("9999") == [9999]
+    assert extract_numbers_from_string_4("abc123def456ghi789") == [123, 456, 789]
+    assert extract_numbers_from_string_4("10 20 30 40") == [10, 20, 30, 40]
+
+
+# 822. Тесты для функции `is_string_single_letter`
+def test_is_string_single_letter():
+    assert is_string_single_letter("A") is True
+    assert is_string_single_letter("ab") is False
+    assert is_string_single_letter("1") is False
+    assert is_string_single_letter("") is False
+    assert is_string_single_letter("C") is True
+    assert is_string_single_letter("Z") is True
+    assert is_string_single_letter("abc") is False
+    assert is_string_single_letter("7") is False
+    assert is_string_single_letter("K") is True
+
+
+# 823. Тесты для функции `get_uppercase_letters`
+def test_get_uppercase_letters():
+    assert get_uppercase_letters("Hello World!") == "HW"
+    assert get_uppercase_letters("no uppercase") is None
+    assert get_uppercase_letters("MIXED Case") == "MIXEDC"
+    assert get_uppercase_letters("") is None
+    assert get_uppercase_letters("lowercase") is None
+    assert get_uppercase_letters("UPPERCASE") == "UPPERCASE"
+    assert get_uppercase_letters("uPPERCASE") == "PPERCASE"
+    assert get_uppercase_letters("hElLo") == "EL"
+    assert get_uppercase_letters("123ABC") == "ABC"
+
+
+# 824. Тесты для функции `remove_duplicates_from_string_2`
+def test_remove_duplicates_from_string_2():
+    assert remove_duplicates_from_string_2("aabbcc") == ""
+    assert remove_duplicates_from_string_2("abcdef") == "abcdef"
+    assert remove_duplicates_from_string_2("hello world") == "he wrd"
+    assert remove_duplicates_from_string_2("mississippi") == "m"
+    assert remove_duplicates_from_string_2("") == ""
+    assert remove_duplicates_from_string_2("apple") == "ale"
+    assert remove_duplicates_from_string_2("unique") == "niqe"
+    assert remove_duplicates_from_string_2("numbers 123123") == "numbers "
+    assert remove_duplicates_from_string_2("aaa bbb ccc") == ""
+
+
+# 825. Тесты для функции `find_substrings_of_length`
+def test_find_substrings_of_length():
+    assert find_substrings_of_length("abcdef", 2) == ["ab", "bc", "cd", "de", "ef"]
+    assert find_substrings_of_length("hello", 3) == ["hel", "ell", "llo"]
+    assert find_substrings_of_length("hi", 1) == ["h", "i"]
+    assert find_substrings_of_length("abcdef", 0) == ['', '', '', '', '', '', '']
+    assert find_substrings_of_length("abcd", 5) is None
+    assert find_substrings_of_length("", 1) is None
+    assert find_substrings_of_length("abc", 1) == ["a", "b", "c"]
+    assert find_substrings_of_length("python", 6) == ["python"]
+    assert find_substrings_of_length("data", 2) == ["da", "at", "ta"]
+
+
+# 826. Тесты для функции `find_longest_alphabetic_char`
+def test_find_longest_alphabetic_char():
+    assert find_longest_alphabetic_char("abcdef") == "a"
+    assert find_longest_alphabetic_char("hello123") == "h"
+    assert find_longest_alphabetic_char("a1b2c3") == "a"
+    assert find_longest_alphabetic_char("123456") is None
+    assert find_longest_alphabetic_char("") is None
+    assert find_longest_alphabetic_char("abcdefg") == "a"
+    assert find_longest_alphabetic_char("xyz") == "x"
+    assert find_longest_alphabetic_char("jkl") == "j"
+    assert find_longest_alphabetic_char("hello!") == "h"
+
+
+# 827. Тесты для функции `find_most_frequent_char`
+def test_find_most_frequent_char():
+    assert find_most_frequent_char("hello") == "l"
+    assert find_most_frequent_char("abcdef") == "a"
+    assert find_most_frequent_char("mississippi") == "i"
+    assert find_most_frequent_char("banana") == "a"
+    assert find_most_frequent_char("") is None
+    assert find_most_frequent_char("aaa") == "a"
+    assert find_most_frequent_char("hello world") == "l"
+    assert find_most_frequent_char("data science") == "a"
+    assert find_most_frequent_char("analytics") == "a"
+
+
+# 828. Тесты для функции `split_string_by_char`
+def test_split_string_by_char():
+    assert split_string_by_char("a,b,c,d", ",") == ["a", "b", "c", "d"]
+    assert split_string_by_char("hello world", " ") == ["hello", "world"]
+    assert split_string_by_char("abcdef", ",") == ["abcdef"]
+    assert split_string_by_char("", ",") is None
+    assert split_string_by_char("a|b|c", "|") == ["a", "b", "c"]
+    assert split_string_by_char("one/two/three", "/") == ["one", "two", "three"]
+    assert split_string_by_char("apple|orange|banana", "|") == ["apple", "orange", "banana"]
+    assert split_string_by_char("123-456-789", "-") == ["123", "456", "789"]
+    assert split_string_by_char("hello", "x") == ["hello"]
+
+
+# 829. Тесты для функции `replace_digits_with_asterisks`
+def test_replace_digits_with_asterisks():
+    assert replace_digits_with_asterisks("abc123") == "abc***"
+    assert replace_digits_with_asterisks("hello") == "hello"
+    assert replace_digits_with_asterisks("12345") == "*****"
+    assert replace_digits_with_asterisks("") == ""
+    assert replace_digits_with_asterisks("0") == "*"
+    assert replace_digits_with_asterisks("abc1def2") == "abc*def*"
+    assert replace_digits_with_asterisks("12three34") == "**three**"
+    assert replace_digits_with_asterisks("no digits") == "no digits"
+    assert replace_digits_with_asterisks("4you") == "*you"
+
+
+# 830. Тесты для функции `find_substrings_starting_with_uppercase`
+def test_find_substrings_starting_with_uppercase():
+    assert find_substrings_starting_with_uppercase("HelloWorld") == ["Hello", "World"]
+    assert find_substrings_starting_with_uppercase("noUppercase") == ['no', 'Uppercase']
+    assert find_substrings_starting_with_uppercase("StartWithUpperCase") == ["Start", "With", "Upper", "Case"]
+    assert find_substrings_starting_with_uppercase("") is None
+    assert find_substrings_starting_with_uppercase("PythonRocks") == ["Python", "Rocks"]
+    assert find_substrings_starting_with_uppercase("OneTwoThree") == ["One", "Two", "Three"]
+    assert find_substrings_starting_with_uppercase("UPPERlower") == ['U', 'P', 'P', 'E', 'Rlower']
+    assert find_substrings_starting_with_uppercase("MixEdCaSe") == ["Mix", "Ed", "Ca", "Se"]
+    assert find_substrings_starting_with_uppercase("A") == ["A"]
+
+
+# 831. Тесты для функции `string_to_list_of_chars`
+def test_string_to_list_of_chars():
+    assert string_to_list_of_chars("hello") == ["h", "e", "l", "l", "o"]
+    assert string_to_list_of_chars("") is None
+    assert string_to_list_of_chars("12345") == ["1", "2", "3", "4", "5"]
+    assert string_to_list_of_chars("a") == ["a"]
+    assert string_to_list_of_chars("!@#$%") == ["!", "@", "#", "$", "%"]
+    assert string_to_list_of_chars("Python") == ["P", "y", "t", "h", "o", "n"]
+    assert string_to_list_of_chars(" ") == [" "]
+    assert string_to_list_of_chars("Hello World") == ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
+    assert string_to_list_of_chars("MixedCase") == ["M", "i", "x", "e", "d", "C", "a", "s", "e"]
+
+
+# 832. Тесты для функции `find_longest_word`
+def test_find_longest_word():
+    assert find_longest_word("The quick brown fox jumps over the lazy dog") == "quick"
+    assert find_longest_word("") is None
+    assert find_longest_word("Hello world") == "Hello"
+    assert find_longest_word("Python programming is fun") == "programming"
+    assert find_longest_word("a ab abc abcd abcde") == "abcde"
+    assert find_longest_word("short longer longest") == "longest"
+    assert find_longest_word("one two three four") == "three"
+    assert find_longest_word("apple banana orange") == "banana"
+    assert find_longest_word("a abcde abc") == "abcde"
+
+
+# 833. Тесты для функции `is_combination_of_two`
+def test_is_combination_of_two():
+    assert is_combination_of_two("hello world", "hello ", "world") is True
+    assert is_combination_of_two("hello world", "world", "hello ") is False
+    assert is_combination_of_two("abcdef", "abc", "def") is True
+    assert is_combination_of_two("abcdef", "ab", "cdef") is True
+    assert is_combination_of_two("abcdef", "abcd", "ef") is True
+    assert is_combination_of_two("abcdef", "abc", "defg") is False
+    assert is_combination_of_two("abcdef", "", "abcdef") is True
+    assert is_combination_of_two("abcdef", "abcdef", "") is True
+    assert is_combination_of_two("abcdef", "", "") is False
+
+
+# 834. Тесты для функции `is_numeric_string`
+def test_is_numeric_string():
+    assert is_numeric_string("12345") is True
+    assert is_numeric_string("hello123") is False
+    assert is_numeric_string("") is False
+    assert is_numeric_string("000") is True
+    assert is_numeric_string("1a2b3c") is False
+    assert is_numeric_string("42") is True
+    assert is_numeric_string("9999") is True
+    assert is_numeric_string("123 456") is False
+    assert is_numeric_string("123.456") is False
+
+
+# 835. Тесты для функции `count_words_starting_with_vowel`
+def test_count_words_starting_with_vowel():
+    assert count_words_starting_with_vowel("apple orange banana") == 2
+    assert count_words_starting_with_vowel("umbrella elephant iguana octopus") == 4
+    assert count_words_starting_with_vowel("dog cat bird") is None
+    assert count_words_starting_with_vowel("") is None
+    assert count_words_starting_with_vowel("A E I O U") == 5
+    assert count_words_starting_with_vowel("alphabet universe") == 2
+    assert count_words_starting_with_vowel("one two three four") == 1
+    assert count_words_starting_with_vowel("xylophone apple") == 1
+    assert count_words_starting_with_vowel("Owl eagle urchin") == 3
+
+
+# 836. Тесты для функции `find_words_longer_than_3`
+def test_find_words_longer_than_3():
+    assert find_words_longer_than_3("The quick brown fox") == ["quick", "brown"]
+    assert find_words_longer_than_3("a ab abc abcd") == ["abcd"]
+    assert find_words_longer_than_3("I love programming in Python") == ["love", "programming", "Python"]
+    assert find_words_longer_than_3("") is None
+    assert find_words_longer_than_3("this is a test") == ["this", "test"]
+    assert find_words_longer_than_3("hello world") == ["hello", "world"]
+    assert find_words_longer_than_3("abcde") == ["abcde"]
+    assert find_words_longer_than_3("shorter longer longest") == ["shorter", "longer", "longest"]
+    assert find_words_longer_than_3("one two three four five") == ["three", "four", "five"]
+
+
+# 837. Тесты для функции `remove_vowels_from_string_2`
+def test_remove_vowels_from_string_2():
+    assert remove_vowels_from_string_2("hello world") == "hll wrld"
+    assert remove_vowels_from_string_2("aeiou") == ""
+    assert remove_vowels_from_string_2("rhythm") is None
+    assert remove_vowels_from_string_2("quick brown fox") == "qck brwn fx"
+    assert remove_vowels_from_string_2("PYTHON") == "PYTHN"
+    assert remove_vowels_from_string_2("") is None
+    assert remove_vowels_from_string_2("aeiouAEIOU") == ""
+    assert remove_vowels_from_string_2("xyz") is None
+    assert remove_vowels_from_string_2("this is a test") == "ths s  tst"
+
+
+# 838. Тесты для функции `replace_spaces_with_underscores_6`
+def test_replace_spaces_with_underscores_6():
+    assert replace_spaces_with_underscores_6("hello world") == "hello_world"
+    assert replace_spaces_with_underscores_6("") is None
+    assert replace_spaces_with_underscores_6("a b c d") == "a_b_c_d"
+    assert replace_spaces_with_underscores_6("no spaces") == "no_spaces"
+    assert replace_spaces_with_underscores_6("   ") == "___"
+    assert replace_spaces_with_underscores_6("Python programming") == "Python_programming"
+    assert replace_spaces_with_underscores_6("underscore_test") == "underscore_test"
+    assert replace_spaces_with_underscores_6("another example") == "another_example"
+    assert replace_spaces_with_underscores_6("Spaces in between") == "Spaces_in_between"
+
+
+# 839. Тесты для функции `find_digits_in_string`
+def test_find_digits_in_string():
+    assert find_digits_in_string("hello123") == "123"
+    assert find_digits_in_string("no digits") is None
+    assert find_digits_in_string("abc123def456") == "123456"
+    assert find_digits_in_string("1a2b3c") == "123"
+    assert find_digits_in_string("") is None
+    assert find_digits_in_string("42 is the answer") == "42"
+    assert find_digits_in_string("0") == "0"
+    assert find_digits_in_string("123 456 789") == "123456789"
+    assert find_digits_in_string("number 2021") == "2021"
+
+
+# 840. Тесты для функции `count_letters_in_string`
+def test_count_letters_in_string():
+    assert count_letters_in_string("hello world") == 10
+    assert count_letters_in_string("123456") is None
+    assert count_letters_in_string("") is None
+    assert count_letters_in_string("Python 3.9") == 6
+    assert count_letters_in_string("abc123def") == 6
+    assert count_letters_in_string("!@#$%") is None
+    assert count_letters_in_string("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 26
+    assert count_letters_in_string("the quick brown fox") == 16
+    assert count_letters_in_string("numbers 12345") == 7
+
+
+# 841. Тесты для функции `find_first_uppercase_letter`:
+def test_find_first_uppercase_letter():
+    assert find_first_uppercase_letter("helloWorld") == "W"
+    assert find_first_uppercase_letter("helloworld") is None
+    assert find_first_uppercase_letter("HelloWorld") == "H"
+    assert find_first_uppercase_letter("HELLOWORLD") == "H"
+    assert find_first_uppercase_letter("") is None
+    assert find_first_uppercase_letter("abcDEF") == "D"
+    assert find_first_uppercase_letter("abcDEFGHI") == "D"
+    assert find_first_uppercase_letter("123ABCabc") == "A"
+    assert find_first_uppercase_letter("aBcDeF") == "B"
+
+
+# 842. Тесты для функции `reverse_string_in_place`:
+def test_reverse_string_in_place():
+    assert reverse_string_in_place("hello") == "olleh"
+    assert reverse_string_in_place("12345") == "54321"
+    assert reverse_string_in_place("a") == "a"
+    assert reverse_string_in_place("") == ""
+    assert reverse_string_in_place("abcd") == "dcba"
+    assert reverse_string_in_place("racecar") == "racecar"
+    assert reverse_string_in_place("Python") == "nohtyP"
+    assert reverse_string_in_place("123abc") == "cba321"
+    assert reverse_string_in_place("!@#$") == "$#@!"
+
+
+# 843. Тесты для функции `convert_upper_to_lower`:
+def test_convert_upper_to_lower():
+    assert convert_upper_to_lower("HelloWorld") == "helloworld"
+    assert convert_upper_to_lower("HELLOWORLD") == "helloworld"
+    assert convert_upper_to_lower("helloworld") == "helloworld"
+    assert convert_upper_to_lower("") == ""
+    assert convert_upper_to_lower("1234") == "1234"
+    assert convert_upper_to_lower("abcd") == "abcd"
+    assert convert_upper_to_lower("ABCD") == "abcd"
+    assert convert_upper_to_lower("aBcDeF") == "abcdef"
+    assert convert_upper_to_lower("a1B2c3") == "a1b2c3"
+
+
+# 844. Тесты для функции `find_repeated_chars`:
+def test_find_repeated_chars():
+    assert find_repeated_chars("hello") == "l"
+    assert find_repeated_chars("abcde") is None
+    assert find_repeated_chars("abccba") == "abc"
+    assert find_repeated_chars("aabbcc") == "abc"
+    assert find_repeated_chars("") is None
+    assert find_repeated_chars("111") is None
+    assert find_repeated_chars("aaa") == "a"
+    assert find_repeated_chars("abababa") == "ab"
+    assert find_repeated_chars("xyzzyx") == "xyz"
+
+
+# 845. Тесты для функции `find_non_alphabetic_chars`:
+def test_find_non_alphabetic_chars():
+    assert find_non_alphabetic_chars("hello123") == "123"
+    assert find_non_alphabetic_chars("hello!") == "!"
+    assert find_non_alphabetic_chars("1234") == "1234"
+    assert find_non_alphabetic_chars("abcd") is None
+    assert find_non_alphabetic_chars("a1b2c3") == "123"
+    assert find_non_alphabetic_chars("hello world!") == " !"
+    assert find_non_alphabetic_chars("") is None
+    assert find_non_alphabetic_chars("HELLO123") == "123"
+    assert find_non_alphabetic_chars("a@b#c$d") == "@#$"
+
+
+# 846. Тесты для функции `concatenate_strings_from_list`:
+def test_concatenate_strings_from_list():
+    assert concatenate_strings_from_list(["hello", "world"]) == "helloworld"
+    assert concatenate_strings_from_list(["a", "b", "c"]) == "abc"
+    assert concatenate_strings_from_list([""]) == ""
+    assert concatenate_strings_from_list([]) == ""
+    assert concatenate_strings_from_list([" ", " "]) == "  "
+    assert concatenate_strings_from_list(["hello"]) == "hello"
+    assert concatenate_strings_from_list(["1", "2", "3"]) == "123"
+    assert concatenate_strings_from_list(["!@#", "$%^"]) == "!@#$%^"
+    assert concatenate_strings_from_list(["abc", "def"]) == "abcdef"
+
+
+# 847. Тесты для функции `find_min_length_string`:
+def test_find_min_length_string():
+    assert find_min_length_string(["hello", "world", "a", "ab"]) == "a"
+    assert find_min_length_string(["abcd", "ef", "ghij"]) == "ef"
+    assert find_min_length_string(["a", "ab", "abc"]) == "a"
+    assert find_min_length_string([]) is None
+    assert find_min_length_string(["12345", "12", "1234"]) == "12"
+    assert find_min_length_string(["x", "yz", "wxyz"]) == "x"
+    assert find_min_length_string(["apple", "banana", "cherry"]) == "apple"
+    assert find_min_length_string(["racecar", "civic", "deified"]) == "civic"
+    assert find_min_length_string(["abcd", ""]) == ""
+
+
+# 848. Тесты для функции `replace_with_alphabet_position`:
+def test_replace_with_alphabet_position():
+    assert replace_with_alphabet_position("abc") == "123"
+    assert replace_with_alphabet_position("xyz") == "242526"
+    assert replace_with_alphabet_position("Hello") == "85121215"
+    assert replace_with_alphabet_position("WORLD") == "231518124"
+    assert replace_with_alphabet_position("123") == "123"
+    assert replace_with_alphabet_position("a1b2c3") == "112233"
+    assert replace_with_alphabet_position("!@#") == "!@#"
+    assert replace_with_alphabet_position("") == ""
+    assert replace_with_alphabet_position("Alphabet") == "11216812520"
+
+
+# 849. Тесты для функции `find_divisors`:
+def test_find_divisors():
+    assert find_divisors(6) == [1, 2, 3, 6]
+    assert find_divisors(28) == [1, 2, 4, 7, 14, 28]
+    assert find_divisors(0) is None
+    assert find_divisors(-6) == [1, 2, 3, 6]
+    assert find_divisors(1) == [1]
+    assert find_divisors(-1) == [1]
+    assert find_divisors(100) == [1, 2, 4, 5, 10, 20, 25, 50, 100]
+    assert find_divisors(17) == [1, 17]
+    assert find_divisors(12) == [1, 2, 3, 4, 6, 12]
+
+
+# 850. Тесты для функции `is_prime_66`:
+def test_is_prime_66():
+    assert is_prime_66(2) is True
+    assert is_prime_66(3) is True
+    assert is_prime_66(4) is False
+    assert is_prime_66(17) is True
+    assert is_prime_66(20) is False
+    assert is_prime_66(-1) is False
+    assert is_prime_66(1) is False
+    assert is_prime_66(0) is False
+    assert is_prime_66(23) is True
+
+
+# 851. Тесты для функции `sum_of_digits`:
+def test_sum_of_digits():
+    assert sum_of_digits(123) == 6
+    assert sum_of_digits(-456) == 15
+    assert sum_of_digits(0) == 0
+    assert sum_of_digits(7890) == 24
+    assert sum_of_digits(-7890) == 24
+    assert sum_of_digits(1) == 1
+    assert sum_of_digits(-1) == 1
+    assert sum_of_digits(1111111) == 7
+    assert sum_of_digits(999) == 27
+
+
+# 852. Тесты для функции `multiply_by_digits`:
+def test_multiply_by_digits():
+    assert multiply_by_digits(123) == 6
+    assert multiply_by_digits(456) == 120
+    assert multiply_by_digits(-789) == 504
+    assert multiply_by_digits(0) is None
+    assert multiply_by_digits(101) is None
+    assert multiply_by_digits(909) == 81
+    assert multiply_by_digits(111) is None
+    assert multiply_by_digits(-202) == 4
+    assert multiply_by_digits(1001) is None
+
+
+# 853. Тесты для функции `max_digit_in_number`:
+def test_max_digit_in_number():
+    assert max_digit_in_number(123) == 3
+    assert max_digit_in_number(-456) == 6
+    assert max_digit_in_number(7890) == 9
+    assert max_digit_in_number(1) == 1
+    assert max_digit_in_number(0) is None
+    assert max_digit_in_number(-1) == 1
+    assert max_digit_in_number(999) == 9
+    assert max_digit_in_number(-987) == 9
+    assert max_digit_in_number(111111) == 1
+
+
+# 854. Тесты для функции `find_largest_divisible_by_3`:
+def test_find_largest_divisible_by_3():
+    assert find_largest_divisible_by_3([3, 6, 9, 12]) == 12
+    assert find_largest_divisible_by_3([4, 5, 7]) is None
+    assert find_largest_divisible_by_3([3, 3, 3]) == 3
+    assert find_largest_divisible_by_3([1, 2, 3]) == 3
+    assert find_largest_divisible_by_3([]) is None
+    assert find_largest_divisible_by_3([0, 3, 6]) == 6
+    assert find_largest_divisible_by_3([15, 30, 45]) == 45
+    assert find_largest_divisible_by_3([1, 4, 7, 10]) is None
+    assert find_largest_divisible_by_3([3, 33, 333]) == 333
+
+
+# 855. Тесты для функции `find_smallest_divisible_by_5`:
+def test_find_smallest_divisible_by_5():
+    assert find_smallest_divisible_by_5([5, 10, 15, 20]) == 5
+    assert find_smallest_divisible_by_5([6, 7, 8]) is None
+    assert find_smallest_divisible_by_5([5, 5, 5]) == 5
+    assert find_smallest_divisible_by_5([1, 2, 5]) == 5
+    assert find_smallest_divisible_by_5([]) is None
+    assert find_smallest_divisible_by_5([0, 5, 10]) == 0
+    assert find_smallest_divisible_by_5([20, 25, 30]) == 20
+    assert find_smallest_divisible_by_5([1, 4, 7, 10]) == 10
+    assert find_smallest_divisible_by_5([5, 50, 500]) == 5
+
+
+# 856. Тесты для функции `multiply_all_numbers`:
+def test_multiply_all_numbers():
+    assert multiply_all_numbers([1, 2, 3, 4]) == 24
+    assert multiply_all_numbers([0, 2, 4, 6]) == 0
+    assert multiply_all_numbers([-1, 2, -3]) == 6
+    assert multiply_all_numbers([]) is None
+    assert multiply_all_numbers([1, 1, 1, 1]) == 1
+    assert multiply_all_numbers([5]) == 5
+    assert multiply_all_numbers([-2, 2, -2]) == 8
+    assert multiply_all_numbers([7, 7, 7]) == 343
+    assert multiply_all_numbers([2, 4, 8]) == 64
+
+
+# 857. Тесты для функции `count_numbers_greater_than`:
+def test_count_numbers_greater_than():
+    assert count_numbers_greater_than([1, 2, 3, 4, 5], 2) == 3
+    assert count_numbers_greater_than([10, 20, 30, 40], 25) == 2
+    assert count_numbers_greater_than([5, 6, 7, 8], 10) is None
+    assert count_numbers_greater_than([], 5) is None
+    assert count_numbers_greater_than([1, 1, 1, 1], 0) == 4
+    assert count_numbers_greater_than([100, 200, 300], 150) == 2
+    assert count_numbers_greater_than([-1, -2, -3], -4) == 3
+    assert count_numbers_greater_than([1, 2, 3], 3) is None
+    assert count_numbers_greater_than([100, 200, 300], 50) == 3
+
+
+# 858. Тесты для функции `find_numbers_not_divisible_by_2_3_5`:
+def test_find_numbers_not_divisible_by_2_3_5():
+    assert find_numbers_not_divisible_by_2_3_5([1, 2, 3, 4, 5]) == [1]
+    assert find_numbers_not_divisible_by_2_3_5([10, 11, 13, 17]) == [11, 13, 17]
+    assert find_numbers_not_divisible_by_2_3_5([5, 6, 10, 15]) is None
+    assert find_numbers_not_divisible_by_2_3_5([7, 11, 13]) == [7, 11, 13]
+    assert find_numbers_not_divisible_by_2_3_5([]) is None
+    assert find_numbers_not_divisible_by_2_3_5([1, 4, 7, 8]) == [1, 7]
+    assert find_numbers_not_divisible_by_2_3_5([10, 20, 25]) is None
+    assert find_numbers_not_divisible_by_2_3_5([14, 22, 29]) == [29]
+    assert find_numbers_not_divisible_by_2_3_5([8, 14, 22]) is None
+
+
+# 859. Тесты для функции `count_divisible_by_7`:
+def test_count_divisible_by_7():
+    assert count_divisible_by_7([7, 14, 21, 28]) == 4
+    assert count_divisible_by_7([6, 8, 10]) is None
+    assert count_divisible_by_7([7, 7, 7]) == 3
+    assert count_divisible_by_7([1, 2, 3]) is None
+    assert count_divisible_by_7([]) is None
+    assert count_divisible_by_7([0, 7, 14]) == 3
+    assert count_divisible_by_7([21, 28, 35]) == 3
+    assert count_divisible_by_7([1, 4, 7, 10]) == 1
+    assert count_divisible_by_7([7, 70, 700]) == 3
+
+
+# 860. Тесты для функции `find_largest_square_number`:
+def test_find_largest_square_number():
+    assert find_largest_square_number([1, 4, 9, 16]) == 16
+    assert find_largest_square_number([2, 3, 5]) is None
+    assert find_largest_square_number([1, 2, 3, 4]) == 4
+    assert find_largest_square_number([]) is None
+    assert find_largest_square_number([10, 20, 30]) is None
+    assert find_largest_square_number([25, 36, 49]) == 49
+    assert find_largest_square_number([1, 100, 400]) == 400
+    assert find_largest_square_number([9, 16, 25]) == 25
+    assert find_largest_square_number([1, 4, 8, 16]) == 16
+
+
+# 861. Тесты для функции `find_smallest_cube_number`:
+def test_find_smallest_cube_number():
+    assert find_smallest_cube_number([1, 8, 27, 64]) == 1
+    assert find_smallest_cube_number([27, 8, 343, 64]) == 8
+    assert find_smallest_cube_number([1000, 729]) is None
+    assert find_smallest_cube_number([10, 20, 30]) is None
+    assert find_smallest_cube_number([]) is None
+
+
+# 862. Тесты для функции `find_square_and_cube`:
+def test_find_square_and_cube():
+    assert find_square_and_cube([64, 729, 4096]) is None
+    assert find_square_and_cube([1, 8, 27, 64]) == [1]
+    assert find_square_and_cube([2, 3, 5]) is None
+    assert find_square_and_cube([]) is None
+    assert find_square_and_cube([729, 144, 10000, 15625]) is None
+
+
+# 863. Тесты для функции `find_largest_power_of_two`:
+def test_find_largest_power_of_two():
+    assert find_largest_power_of_two([1, 2, 4, 16, 64]) == 64
+    assert find_largest_power_of_two([3, 5, 7]) is None
+    assert find_largest_power_of_two([16, 8, 2]) == 16
+    assert find_largest_power_of_two([0]) == 0
+    assert find_largest_power_of_two([]) is None
+
+
+# 864. Тесты для функции `find_smallest_power_of_two`:
+def test_find_smallest_power_of_two():
+    assert find_smallest_power_of_two([1, 2, 4, 16, 64]) == 1
+    assert find_smallest_power_of_two([3, 5, 7]) is None
+    assert find_smallest_power_of_two([16, 8, 2]) == 2
+    assert find_smallest_power_of_two([0]) == 0
+    assert find_smallest_power_of_two([]) is None
+
+
+# 865. Тесты для функции `find_all_powers_of_two`:
+def test_find_all_powers_of_two():
+    assert find_all_powers_of_two([1, 2, 4, 16, 64]) == [1, 2, 4, 16, 64]
+    assert find_all_powers_of_two([3, 5, 7]) is None
+    assert find_all_powers_of_two([16, 8, 2]) == [16, 8, 2]
+    assert find_all_powers_of_two([0]) == [0]
+    assert find_all_powers_of_two([]) is None
+
+
+# 866. Тесты для функции `find_all_negative_numbers`:
+def test_find_all_negative_numbers():
+    assert find_all_negative_numbers([-1, -2, -4, -16, -64]) == [-1, -2, -4, -16, -64]
+    assert find_all_negative_numbers([3, 5, 7]) is None
+    assert find_all_negative_numbers([16, -8, 2]) == [-8]
+    assert find_all_negative_numbers([0]) is None
+    assert find_all_negative_numbers([]) is None
+
+
+# 867. Тесты для функции `find_all_positive_numbers`:
+def test_find_all_positive_numbers():
+    assert find_all_positive_numbers([1, 2, 4, 16, 64]) == [1, 2, 4, 16, 64]
+    assert find_all_positive_numbers([-3, -5, -7]) is None
+    assert find_all_positive_numbers([16, -8, 2]) == [16, 2]
+    assert find_all_positive_numbers([0]) is None
+    assert find_all_positive_numbers([]) is None
+
+
+# 868. Тесты для функции `find_all_zeros`:
+def test_find_all_zeros():
+    assert find_all_zeros([0, 0, 0]) == [0, 0, 0]
+    assert find_all_zeros([-3, -5, -7]) is None
+    assert find_all_zeros([16, 0, 2]) == [0]
+    assert find_all_zeros([0]) == [0]
+    assert find_all_zeros([]) is None
+
+
+# 869. Тесты для функции `sum_numbers_greater_than`:
+def test_sum_numbers_greater_than():
+    assert sum_numbers_greater_than([1, 2, 4, 16, 64], 10) == 80
+    assert sum_numbers_greater_than([-3, -5, -7], -4) is None
+    assert sum_numbers_greater_than([16, -8, 2], 1) == 18
+    assert sum_numbers_greater_than([0], -1) is None
+    assert sum_numbers_greater_than([], 0) is None
+
+
+# 870. Тесты для функции `find_max_divisible_by_4`:
+def test_find_max_divisible_by_4():
+    assert find_max_divisible_by_4([4, 8, 12, 16, 20]) == 20
+    assert find_max_divisible_by_4([3, 5, 7]) is None
+    assert find_max_divisible_by_4([16, 8, 2]) == 16
+    assert find_max_divisible_by_4([0]) == 0
+    assert find_max_divisible_by_4([]) is None
+
+
+# 871. Тесты для функции `find_min_divisible_by_6`:
+def test_find_min_divisible_by_6():
+    assert find_min_divisible_by_6([6, 12, 18]) == 6
+    assert find_min_divisible_by_6([7, 14, 21]) is None
+    assert find_min_divisible_by_6([24, 36, 6]) == 6
+    assert find_min_divisible_by_6([0]) == 0
+    assert find_min_divisible_by_6([]) is None
+
+
+# 872. Тесты для функции `find_divisible_by_7_and_11`:
+def test_find_divisible_by_7_and_11():
+    assert find_divisible_by_7_and_11([77, 154, 231]) == [77, 154, 231]
+    assert find_divisible_by_7_and_11([21, 33, 49]) is None
+    assert find_divisible_by_7_and_11([77, 88, 99]) == [77]
+    assert find_divisible_by_7_and_11([0]) == [0]
+    assert find_divisible_by_7_and_11([]) is None
+
+
+# 873. Тесты для функции `find_largest_divisible_by_9`:
+def test_find_largest_divisible_by_9():
+    assert find_largest_divisible_by_9([9, 18, 27, 36]) == 36
+    assert find_largest_divisible_by_9([10, 20, 30]) is None
+    assert find_largest_divisible_by_9([27, 18, 9]) == 27
+    assert find_largest_divisible_by_9([0]) == 0
+    assert find_largest_divisible_by_9([]) is None
+
+
+# 874. Тесты для функции `find_smallest_divisible_by_12`:
+def test_find_smallest_divisible_by_12():
+    assert find_smallest_divisible_by_12([12, 24, 36, 48]) == 12
+    assert find_smallest_divisible_by_12([14, 28, 42]) is None
+    assert find_smallest_divisible_by_12([48, 36, 24]) == 24
+    assert find_smallest_divisible_by_12([0]) == 0
+    assert find_smallest_divisible_by_12([]) is None
+
+
+# 875. Тесты для функции `find_divisible_by_15_and_20`:
+def test_find_divisible_by_15_and_20():
+    assert find_divisible_by_15_and_20([60, 120, 180]) == [60, 120, 180]
+    assert find_divisible_by_15_and_20([15, 30, 45]) is None
+    assert find_divisible_by_15_and_20([60, 75, 100]) == [60]
+    assert find_divisible_by_15_and_20([0]) == [0]
+    assert find_divisible_by_15_and_20([]) is None
+
+
+# 876. Тесты для функции `create_tuple_from_list`:
+def test_create_tuple_from_list():
+    assert create_tuple_from_list([1, 2, 3, 4]) == (1, 2, 3, 4)
+    assert create_tuple_from_list([]) is None
+    assert create_tuple_from_list([True, False, None]) == (True, False, None)
+    assert create_tuple_from_list(['a', 'b', 'c']) == ('a', 'b', 'c')
+    assert create_tuple_from_list([1]) == (1,)
+
+
+# 877. Тесты для функции `find_min_max_from_list`:
+def test_find_min_max_from_list():
+    assert find_min_max_from_list([1, 2, 3, 4]) == (1, 4)
+    assert find_min_max_from_list([4, 1, 2, 3]) == (1, 4)
+    assert find_min_max_from_list([]) is None
+    assert find_min_max_from_list([10]) == (10, 10)
+    assert find_min_max_from_list([-5, 0, 5]) == (-5, 5)
+
+
+# 878. Тесты для функции `create_tuple_of_unique_elements`:
+def test_create_tuple_of_unique_elements():
+    assert create_tuple_of_unique_elements([1, 2, 3, 1, 2, 3]) == (1, 2, 3)
+    assert create_tuple_of_unique_elements([]) is None
+    assert create_tuple_of_unique_elements(['a', 'b', 'a', 'b']) == ('a', 'b')
+    assert create_tuple_of_unique_elements([True, False, True]) == (False, True)
+    assert create_tuple_of_unique_elements([None, None]) == (None,)
+
+
+# 879. Тесты для функции `find_divisible_by_3`:
+def test_find_divisible_by_3():
+    assert find_divisible_by_3([3, 6, 9, 12]) == (3, 6, 9, 12)
+    assert find_divisible_by_3([2, 4, 5]) is None
+    assert find_divisible_by_3([3, 5, 6, 9]) == (3, 6, 9)
+    assert find_divisible_by_3([0]) == (0,)
+    assert find_divisible_by_3([]) is None
+
+
+# 880. Тесты для функции `find_even_numbers`:
+def test_find_even_numbers():
+    assert find_even_numbers([2, 4, 6, 8]) == (2, 4, 6, 8)
+    assert find_even_numbers([1, 3, 5]) is None
+    assert find_even_numbers([2, 4, 5, 6]) == (2, 4, 6)
+    assert find_even_numbers([0]) == (0,)
+    assert find_even_numbers([]) is None
+
+
+# 881. Тесты для функции find_long_strings:
+def test_find_long_strings():
+    assert find_long_strings(["abcd", "efg", "hijk", "lmn"]) == ("abcd", "hijk")
+    assert find_long_strings(["a", "ab", "abc", "abcd"]) == ("abcd",)
+    assert find_long_strings(["a", "ab", "abc"]) is None
+    assert find_long_strings([]) is None
+    assert find_long_strings(["abcd", "efghi", "jklmnop"]) == ("abcd", "efghi", "jklmnop")
+
+
+# 882. Тесты для функции find_strings_with_digits_2:
+def test_find_strings_with_digits_2():
+    assert find_strings_with_digits_2(["a1", "b2", "c", "4d"]) == ("a1", "b2", "4d")
+    assert find_strings_with_digits_2(["123", "abc", "456"]) == ("123", "456")
+    assert find_strings_with_digits_2(["abcd", "efgh"]) is None
+    assert find_strings_with_digits_2([]) is None
+    assert find_strings_with_digits_2(["1a2b3c", "4d5e", "6f7g"]) == ("1a2b3c", "4d5e", "6f7g")
+
+
+# 883. Тесты для функции find_square_numbers:
+def test_find_square_numbers():
+    assert find_square_numbers([1, 2, 3, 4, 5, 16]) == (1, 4, 16)
+    assert find_square_numbers([7, 9, 10, 12]) == (9,)
+    assert find_square_numbers([2, 3, 5, 6]) is None
+    assert find_square_numbers([]) is None
+    assert find_square_numbers([25, 36, 49]) == (25, 36, 49)
+
+
+# 884. Тесты для функции find_divisible_by_5:
+def test_find_divisible_by_5():
+    assert find_divisible_by_5([5, 10, 15, 20]) == (5, 10, 15, 20)
+    assert find_divisible_by_5([3, 6, 9]) is None
+    assert find_divisible_by_5([25, 35, 45, 55]) == (25, 35, 45, 55)
+    assert find_divisible_by_5([]) is None
+    assert find_divisible_by_5([50, 60, 70]) == (50, 60, 70)
+
+
+# 885. Тесты для функции find_short_strings:
+def test_find_short_strings():
+    assert find_short_strings(["abc", "abcd", "efg", "hij"]) == ('abc', 'abcd', 'efg', 'hij')
+    assert find_short_strings(["a", "ab", "abc"]) == ("a", "ab", "abc")
+    assert find_short_strings(["abcdef", "ghijkl"]) is None
+    assert find_short_strings([]) is None
+    assert find_short_strings(["abcde", "fghi"]) == ("abcde", "fghi")
+
+
+# 886. Тесты для функции find_greater_than:
+def test_find_greater_than():
+    assert find_greater_than([1, 2, 3, 4, 5], 3) == (4, 5)
+    assert find_greater_than([10, 20, 30], 15) == (20, 30)
+    assert find_greater_than([5, 10, 15], 20) is None
+    assert find_greater_than([], 5) is None
+    assert find_greater_than([50, 60, 70], 55) == (60, 70)
+
+
+# 887. Тесты для функции find_max_indexes:
+def test_find_max_indexes():
+    assert find_max_indexes([1, 3, 7, 3, 7]) == (2, 4)
+    assert find_max_indexes([3, 3, 3]) == (0, 1, 2)
+    assert find_max_indexes([1, 2, 3]) == (2,)
+    assert find_max_indexes([]) is None
+    assert find_max_indexes([7, 8, 8, 7]) == (1, 2)
+
+
+# 888. Тесты для функции find_even_and_greater_than_ten:
+def test_find_even_and_greater_than_ten():
+    assert find_even_and_greater_than_ten([12, 14, 16, 18]) == (12, 14, 16, 18)
+    assert find_even_and_greater_than_ten([8, 9, 10]) is None
+    assert find_even_and_greater_than_ten([20, 21, 22]) == (20, 22)
+    assert find_even_and_greater_than_ten([]) is None
+    assert find_even_and_greater_than_ten([11, 13, 15, 17]) is None
+
+
+# 889. Тесты для функции find_strings_with_uppercase:
+def test_find_strings_with_uppercase():
+    assert find_strings_with_uppercase(["aA", "Bb", "cc", "Dd"]) == ("aA", "Bb", "Dd")
+    assert find_strings_with_uppercase(["abcd", "efGh"]) == ("efGh",)
+    assert find_strings_with_uppercase(["abcd", "efg"]) is None
+    assert find_strings_with_uppercase([]) is None
+    assert find_strings_with_uppercase(["aBcD", "EfGh", "IjK"]) == ("aBcD", "EfGh", "IjK")
+
+
+# 890. Тесты для функции find_numbers_divisible_by_4_not_2:
+def test_find_numbers_divisible_by_4_not_2():
+    assert find_numbers_divisible_by_4_not_2([4, 8, 12, 16]) == (4, 8, 12)
+    assert find_numbers_divisible_by_4_not_2([2, 3, 6]) == (2, 6)
+    assert find_numbers_divisible_by_4_not_2([20, 24, 28]) == (20, 24, 28)
+    assert find_numbers_divisible_by_4_not_2([]) is None
+    assert find_numbers_divisible_by_4_not_2([32, 36, 40]) == (36, 40)
+
+
+# 891. Тесты для функции find_longer_than_average:
+def test_find_longer_than_average():
+    assert find_longer_than_average(["abcd", "efghij", "klm", "nopqrs"]) == ("efghij", "nopqrs")
+    assert find_longer_than_average(["a", "ab", "abc"]) == ("abc",)
+    assert find_longer_than_average(["abcdef", "ghijkl"]) is None
+    assert find_longer_than_average([]) is None
+    assert find_longer_than_average(["ab", "cd", "ef", "gh", "ijkl", "mnopqr"]) == ("ijkl", "mnopqr")
+
+
+# 892. Тесты для функции find_numbers_equal_to_digit_sum:
+def test_find_numbers_equal_to_digit_sum():
+    assert find_numbers_equal_to_digit_sum([1, 2, 3, 4, 5, 6, 12, 21]) == (1, 2, 3, 4, 5, 6)
+    assert find_numbers_equal_to_digit_sum([10, 11, 19]) is None
+    assert find_numbers_equal_to_digit_sum([123, 321]) is None
+    assert find_numbers_equal_to_digit_sum([]) is None
+    assert find_numbers_equal_to_digit_sum([-1, -2, 3, 9]) == (3, 9)
+
+
+# 893. Тесты для функции find_divisors_of_100:
+def test_find_divisors_of_100():
+    assert find_divisors_of_100([1, 2, 4, 5, 10, 20, 25, 50, 100]) == (1, 2, 4, 5, 10, 20, 25, 50, 100)
+    assert find_divisors_of_100([3, 6, 7]) is None
+    assert find_divisors_of_100([10, 5, 20, 25]) == (10, 5, 20, 25)
+    assert find_divisors_of_100([]) is None
+    assert find_divisors_of_100([50, 100, 200]) == (50, 100)
+
+
+# 894. Тесты для функции find_multiples_of_3_and_5:
+def test_find_multiples_of_3_and_5():
+    assert find_multiples_of_3_and_5([15, 30, 45, 60]) == (15, 30, 45, 60)
+    assert find_multiples_of_3_and_5([10, 20, 25]) is None
+    assert find_multiples_of_3_and_5([90, 105, 150]) == (90, 105, 150)
+    assert find_multiples_of_3_and_5([]) is None
+    assert find_multiples_of_3_and_5([9, 18, 27]) is None
+
+
+# 895. Тесты для функции find_multiples_of_list:
+def test_find_multiples_of_list():
+    assert find_multiples_of_list([2, 3, 4, 5, 6, 10, 15], 5) == (5, 10, 15)
+    assert find_multiples_of_list([2, 3, 4, 6], 7) is None
+    assert find_multiples_of_list([1, 2, 3, 4, 5], 1) == (1, 2, 3, 4, 5)
+    assert find_multiples_of_list([], 5) is None
+    assert find_multiples_of_list([10, 20, 30], 10) == (10, 20, 30)
+
+
+# 896. Тесты для функции find_squared_numbers:
+def test_find_squared_numbers():
+    assert find_squared_numbers([1, 4, 9, 16, 25]) == (1, 4, 9, 16, 25)
+    assert find_squared_numbers([2, 3, 5, 7]) is None
+    assert find_squared_numbers([36, 49, 64, 81]) == (36, 49, 64, 81)
+    assert find_squared_numbers([]) is None
+    assert find_squared_numbers([1, 2, 3, 9, 16]) == (1, 9, 16)
+
+
+# 897. Тесты для функции find_divisible_by_6_2:
+def test_find_divisible_by_6_2():
+    assert find_divisible_by_6_2([6, 12, 18, 24]) == (6, 12, 18, 24)
+    assert find_divisible_by_6_2([4, 8, 10]) is None
+    assert find_divisible_by_6_2([30, 36, 42]) == (30, 36, 42)
+    assert find_divisible_by_6_2([]) is None
+    assert find_divisible_by_6_2([2, 3, 6, 18]) == (6, 18)
+
+
+# 898. Тесты для функции find_divisible_by_2_and_3_2:
+def test_find_divisible_by_2_and_3_2():
+    assert find_divisible_by_2_and_3_2([6, 12, 18, 24]) == (6, 12, 18, 24)
+    assert find_divisible_by_2_and_3_2([5, 10, 15]) is None
+    assert find_divisible_by_2_and_3_2([30, 36, 42, 48]) == (30, 36, 42, 48)
+    assert find_divisible_by_2_and_3_2([]) is None
+    assert find_divisible_by_2_and_3_2([4, 8, 12]) == (12,)
+
+
+# 899. Тесты для функции find_multiples_of_2_3_5:
+def test_find_multiples_of_2_3_5():
+    assert find_multiples_of_2_3_5([30, 60, 90, 120]) == (30, 60, 90, 120)
+    assert find_multiples_of_2_3_5([5, 10, 15]) is None
+    assert find_multiples_of_2_3_5([2, 4, 6, 8]) is None
+    assert find_multiples_of_2_3_5([]) is None
+    assert find_multiples_of_2_3_5([3, 9, 18]) is None
+
+
+# 900. Тесты для функции find_palindromes_4:
+def test_find_palindromes_4():
+    assert find_palindromes_4([121, 131, 141, 151]) == (121, 131, 141, 151)
+    assert find_palindromes_4([10, 20, 30]) is None
+    assert find_palindromes_4([212, 232, 252]) == (212, 232, 252)
+    assert find_palindromes_4([]) is None
+    assert find_palindromes_4([123, 456, 789]) is None
+
+
+# 901. Тесты для функции find_numbers_less_than_digit_sum:
+def test_find_numbers_less_than_digit_sum():
+    assert find_numbers_less_than_digit_sum([1, 2, 3, 5]) is None
+    assert find_numbers_less_than_digit_sum([10, 21, 99, 12]) is None
+    assert find_numbers_less_than_digit_sum([-1, -10, -22, 30]) == (-1, -10, -22)
+    assert find_numbers_less_than_digit_sum([0, -100, 101]) == (-100,)
+    assert find_numbers_less_than_digit_sum([-123, -456, 789]) == (-123, -456)
+    assert find_numbers_less_than_digit_sum([]) is None
+
+
+# 902. Тесты для функции find_numbers_equal_to_sum_of_divisors:
+def test_find_numbers_equal_to_sum_of_divisors():
+    assert find_numbers_equal_to_sum_of_divisors([6, 28, 496]) == (6, 28, 496)
+    assert find_numbers_equal_to_sum_of_divisors([12, 18, 20]) is None
+    assert find_numbers_equal_to_sum_of_divisors([6, 1, 5]) == (6,)
+    assert find_numbers_equal_to_sum_of_divisors([]) is None
+    assert find_numbers_equal_to_sum_of_divisors([0, -1, -6]) == (0,)
+    assert find_numbers_equal_to_sum_of_divisors([8128]) == (8128,)
+
+
+# 903. Тесты для функции find_multiples_of_3_not_21:
+def test_find_multiples_of_3_not_21():
+    assert find_multiples_of_3_not_21([3, 6, 9, 12]) == (3, 6, 9, 12)
+    assert find_multiples_of_3_not_21([21, 42, 63]) is None
+    assert find_multiples_of_3_not_21([3, 21, 42, 6]) == (3, 6)
+    assert find_multiples_of_3_not_21([]) is None
+    assert find_multiples_of_3_not_21([0, 1, 2, 3]) == (3,)
+    assert find_multiples_of_3_not_21([3, 6, 12]) == (3, 6, 12)
+
+
+# 904. Тесты для функции find_divisible_by_11_and_13:
+def test_find_divisible_by_11_and_13():
+    assert find_divisible_by_11_and_13([143, 286]) == (143, 286)
+    assert find_divisible_by_11_and_13([11, 13, 22, 26]) is None
+    assert find_divisible_by_11_and_13([143, 13, 11]) == (143,)
+    assert find_divisible_by_11_and_13([]) is None
+    assert find_divisible_by_11_and_13([0, 143]) == (0, 143)
+    assert find_divisible_by_11_and_13([143, 286, 429]) == (143, 286, 429)
+
+
+# 905. Тесты для функции create_square_dict:
+def test_create_square_dict():
+    assert create_square_dict([1, 2, 3]) == {1: 1, 2: 4, 3: 9}
+    assert create_square_dict([]) is None
+    assert create_square_dict([-1, -2, -3]) == {-1: 1, -2: 4, -3: 9}
+    assert create_square_dict([0, 1, 2]) == {0: 0, 1: 1, 2: 4}
+    assert create_square_dict([2, 2, 2]) == {2: 4}
+    assert create_square_dict([1]) == {1: 1}
+
+
+# 906. Тесты для функции find_min_max_in_dict:
+def test_find_min_max_in_dict():
+    assert find_min_max_in_dict({'a': 1, 'b': 2, 'c': 3}) == (('a', 1), ('c', 3))
+    assert find_min_max_in_dict({}) is None
+    assert find_min_max_in_dict({'a': -1, 'b': -2, 'c': -3}) == (('c', -3), ('a', -1))
+    assert find_min_max_in_dict({'a': 0}) == (('a', 0), ('a', 0))
+    assert find_min_max_in_dict({'a': 3, 'b': 3, 'c': 3}) == (('a', 3), ('a', 3))
+    assert find_min_max_in_dict({'a': 5, 'b': 5, 'c': 5}) == (('a', 5), ('a', 5))
+
+
+# 907. Тесты для функции filter_dict_with_strings:
+def test_filter_dict_with_strings():
+    assert filter_dict_with_strings({'a': 1, 'b': 2, 3: 'c'}) == {'a': 1, 'b': 2}
+    assert filter_dict_with_strings({}) is None
+    assert filter_dict_with_strings({1: 'a', 2: 'b', 'c': 'd'}) == {'c': 'd'}
+    assert filter_dict_with_strings({'a': 'x', 'b': 'y', 'c': 'z'}) == {'a': 'x', 'b': 'y', 'c': 'z'}
+    assert filter_dict_with_strings({True: 1, 'b': 2, 3: 3.0}) == {'b': 2}
+    assert filter_dict_with_strings({'x': 0, 'y': 1}) == {'x': 0, 'y': 1}
+
+
+# 908. Тесты для функции sum_of_numeric_keys:
+def test_sum_of_numeric_keys():
+    assert sum_of_numeric_keys({1: 10, 2: 20, 3: 30}) == 60
+    assert sum_of_numeric_keys({}) is None
+    assert sum_of_numeric_keys({1: 10, 2.5: 20.5, 3: 30}) == 60.5
+    assert sum_of_numeric_keys({'a': 10, 'b': 20}) is None
+    assert sum_of_numeric_keys({1: 0, 2: 0}) is None
+    assert sum_of_numeric_keys({'a': 0, 2: 2}) == 2
+
+
+# 909. Тесты для функции create_dict_from_string_lengths:
+def test_create_dict_from_string_lengths():
+    assert create_dict_from_string_lengths(['a', 'bc', 'def']) == {1: 'a', 2: 'bc', 3: 'def'}
+    assert create_dict_from_string_lengths([]) is None
+    assert create_dict_from_string_lengths(['a', 'a', 'a']) == {1: 'a'}
+    assert create_dict_from_string_lengths(['abc', 'de', 'f']) == {1: 'f', 2: 'de', 3: 'abc'}
+    assert create_dict_from_string_lengths(['', 'a', 'abc']) == {0: '', 1: 'a', 3: 'abc'}
+    assert create_dict_from_string_lengths(['x', 'xy', 'xyz']) == {1: 'x', 2: 'xy', 3: 'xyz'}
+
+
+# 910. Тесты для функции remove_negative_values:
+def test_remove_negative_values():
+    assert remove_negative_values({'a': 1, 'b': -2, 'c': 3}) == {'a': 1, 'c': 3}
+    assert remove_negative_values({}) is None
+    assert remove_negative_values({'a': -1, 'b': -2, 'c': -3}) is None
+    assert remove_negative_values({'a': 0, 'b': 2, 'c': 3}) == {'a': 0, 'b': 2, 'c': 3}
+    assert remove_negative_values({'a': 5, 'b': -5, 'c': 10}) == {'a': 5, 'c': 10}
+    assert remove_negative_values({'a': 1}) == {'a': 1}
+
+
+# 911. Тесты для функции create_dict_from_lists:
+def test_create_dict_from_lists():
+    assert create_dict_from_lists([1, 2, 3], ['a', 'b', 'c']) == {1: 'a', 2: 'b', 3: 'c'}
+    assert create_dict_from_lists([], []) is None
+    assert create_dict_from_lists([1, 2], ['a']) is None
+    assert create_dict_from_lists(['a', 'b'], [1, 2]) == {'a': 1, 'b': 2}
+    assert create_dict_from_lists(['a', 'b', 'c'], [1, 2, 3]) == {'a': 1, 'b': 2, 'c': 3}
+    assert create_dict_from_lists([1], ['a']) == {1: 'a'}
+
+
+# 912. Тесты для функции count_strings_by_length:
+def test_count_strings_by_length():
+    assert count_strings_by_length(['a', 'bb', 'ccc']) == {1: 1, 2: 1, 3: 1}
+    assert count_strings_by_length([]) is None
+    assert count_strings_by_length(['a', 'b', 'c']) == {1: 3}
+    assert count_strings_by_length(['abc', 'def', 'gh']) == {3: 2, 2: 1}
+    assert count_strings_by_length(['a', 'aa', 'aaa']) == {1: 1, 2: 1, 3: 1}
+    assert count_strings_by_length(['aaa', 'bbb', 'ccc']) == {3: 3}
+
+
+# 913. Тесты для функции find_min_value_in_dict:
+def test_find_min_value_in_dict():
+    assert find_min_value_in_dict({'a': 1, 'b': 2, 'c': 3}) == 1
+    assert find_min_value_in_dict({}) is None
+    assert find_min_value_in_dict({'a': -1, 'b': -2, 'c': -3}) == -3
+    assert find_min_value_in_dict({'a': 0}) is None
+    assert find_min_value_in_dict({'a': 5, 'b': 5, 'c': 5}) == 5
+    assert find_min_value_in_dict({'a': 5, 'b': -5, 'c': 10}) == -5
+
+
+# 914. Тесты для функции create_dict_from_list:
+def test_create_dict_from_list():
+    assert create_dict_from_list(['a', 'b', 'c']) == {0: 'a', 1: 'b', 2: 'c'}
+    assert create_dict_from_list([]) is None
+    assert create_dict_from_list([1, 2, 3]) == {0: 1, 1: 2, 2: 3}
+    assert create_dict_from_list(['x', 'y']) == {0: 'x', 1: 'y'}
+    assert create_dict_from_list(['abc', 'def']) == {0: 'abc', 1: 'def'}
+    assert create_dict_from_list(['a']) == {0: 'a'}
+
+
+# 915. Тесты для функции find_duplicates_in_dict:
+def test_find_duplicates_in_dict():
+    assert find_duplicates_in_dict({'a': 1, 'b': 2, 'c': 1}) == {1: ['a', 'c']}
+    assert find_duplicates_in_dict({}) is None
+    assert find_duplicates_in_dict({'a': 1, 'b': 1, 'c': 1}) == {1: ['a', 'b', 'c']}
+    assert find_duplicates_in_dict({'a': 1, 'b': 2, 'c': 3}) is None
+    assert find_duplicates_in_dict({'a': -1, 'b': -1, 'c': 0}) == {-1: ['a', 'b']}
+    assert find_duplicates_in_dict({'a': 0, 'b': 0, 'c': 0}) == {0: ['a', 'b', 'c']}
+
+
+# 916. Тесты для функции count_values_by_key:
+def test_count_values_by_key():
+    assert count_values_by_key({'a': 1, 'b': 2, 'c': 1}, 'a') == 2
+    assert count_values_by_key({'a': 1, 'b': 2, 'c': 1}, 'b') == 1
+    assert count_values_by_key({'a': 1, 'b': 2, 'c': 1}, 'c') == 2
+    assert count_values_by_key({}, 'a') is None
+    assert count_values_by_key({'a': 1, 'b': 2, 'c': 1}, 'd') is None
+    assert count_values_by_key({'a': 0, 'b': 0}, 'a') == 2
+
+
+# 917. Тесты для функции find_values_greater_than:
+def test_find_values_greater_than():
+    assert find_values_greater_than({'a': 1, 'b': 2, 'c': 3}, 1) == [('b', 2), ('c', 3)]
+    assert find_values_greater_than({}, 1) is None
+    assert find_values_greater_than({'a': -1, 'b': -2, 'c': 3}, -2) == [('a', -1), ('c', 3)]
+    assert find_values_greater_than({'a': 0}, -1) == [('a', 0)]
+    assert find_values_greater_than({'a': 0, 'b': 1, 'c': 2}, 0) == [('b', 1), ('c', 2)]
+    assert find_values_greater_than({'a': 5, 'b': 10}, 6) == [('b', 10)]
+
+
+# 918. Тесты для функции create_remainders_dict:
+def test_create_remainders_dict():
+    assert create_remainders_dict([5, 10, 15]) == {5: 0, 10: 0, 15: 0}
+    assert create_remainders_dict([]) is None
+    assert create_remainders_dict([1, 2, 3]) == {1: 1, 2: 2, 3: 3}
+    assert create_remainders_dict([4, 9, 14]) == {4: 4, 9: 4, 14: 4}
+    assert create_remainders_dict([5, 11, 20]) == {5: 0, 11: 1, 20: 0}
+    assert create_remainders_dict([5]) == {5: 0}
+
+
+# 919. Тесты для функции sum_of_dict_values:
+def test_sum_of_dict_values():
+    assert sum_of_dict_values({'a': 1, 'b': 2, 'c': 3}) == 6
+    assert sum_of_dict_values({}) is None
+    assert sum_of_dict_values({'a': -1, 'b': -2, 'c': -3}) == -6
+    assert sum_of_dict_values({'a': 0}) is None
+    assert sum_of_dict_values({'a': 0, 'b': 0}) is None
+    assert sum_of_dict_values({'a': 1, 'b': 2, 'c': 3, 'd': 4}) == 10
+
+
+# 920. Тесты для функции create_length_dict:
+def test_create_length_dict():
+    assert create_length_dict(['a', 'bb', 'ccc']) == {'a': 1, 'bb': 2, 'ccc': 3}
+    assert create_length_dict([]) is None
+    assert create_length_dict(['a', 'a', 'a']) == {'a': 1}
+    assert create_length_dict(['abc', 'de', 'f']) == {'abc': 3, 'de': 2, 'f': 1}
+    assert create_length_dict(['', 'a', 'abc']) == {'': 0, 'a': 1, 'abc': 3}
+    assert create_length_dict(['x', 'xy', 'xyz']) == {'x': 1, 'xy': 2, 'xyz': 3}
+
+
+# 921. Тесты для функции `find_prime_numbers_2`:
+def test_find_prime_numbers_2():
+    assert find_prime_numbers_2({}) is None
+    assert find_prime_numbers_2({1: 4, 2: 5}) == {2: 5}
+    assert find_prime_numbers_2({1: 4, 2: 6, 3: 9}) is None
+    assert find_prime_numbers_2({1: 4, 2: 2}) == {2: 2}
+    assert find_prime_numbers_2({1: 4, 2: 11, 3: 7, 4: 9}) == {2: 11, 3: 7}
+    assert find_prime_numbers_2({1: 4, 2: 9}) is None
+    assert find_prime_numbers_2({1: 7, 2: 10, 3: 13}) == {1: 7, 3: 13}
+    assert find_prime_numbers_2({1: 10}) is None
+    assert find_prime_numbers_2({1: 2, 2: 3, 3: 5}) == {1: 2, 2: 3, 3: 5}
+
+
+# 922. Тесты для функции `filter_even_values`:
+def test_filter_even_values():
+    assert filter_even_values({}) is None
+    assert filter_even_values({1: 4, 2: 5}) == {1: 4}
+    assert filter_even_values({1: 4, 2: 6, 3: 9}) == {1: 4, 2: 6}
+    assert filter_even_values({1: 4, 2: 2}) == {1: 4, 2: 2}
+    assert filter_even_values({1: 4, 2: 11, 3: 7, 4: 9}) == {1: 4}
+    assert filter_even_values({1: 4, 2: 9}) == {1: 4}
+    assert filter_even_values({1: 7, 2: 10, 3: 13}) == {2: 10}
+    assert filter_even_values({1: 11}) is None
+    assert filter_even_values({1: 2, 2: 3, 3: 5}) == {1: 2}
+
+
+# 923. Тесты для функции `create_double_value_dict`:
+def test_create_double_value_dict():
+    assert create_double_value_dict([]) is None
+    assert create_double_value_dict([1, 2, 3]) == {1: 2, 2: 4, 3: 6}
+    assert create_double_value_dict([0]) == {0: 0}
+    assert create_double_value_dict([5, 10, 15]) == {5: 10, 10: 20, 15: 30}
+    assert create_double_value_dict([-1, -2]) == {-1: -2, -2: -4}
+    assert create_double_value_dict([100]) == {100: 200}
+    assert create_double_value_dict([3, 6, 9]) == {3: 6, 6: 12, 9: 18}
+    assert create_double_value_dict([7]) == {7: 14}
+    assert create_double_value_dict([1, 3, 5, 7]) == {1: 2, 3: 6, 5: 10, 7: 14}
+
+
+# 924. Тесты для функции `create_sevens_dict`:
+def test_create_sevens_dict():
+    assert create_sevens_dict([]) is None
+    assert create_sevens_dict([7, 14, 21]) == {7: 7, 14: 14, 21: 21}
+    assert create_sevens_dict([0]) == {0: 0}
+    assert create_sevens_dict([5, 10, 15]) is None
+    assert create_sevens_dict([49]) == {49: 49}
+    assert create_sevens_dict([-7, 14, -21]) == {-7: -7, 14: 14, -21: -21}
+    assert create_sevens_dict([1, 2, 3]) is None
+    assert create_sevens_dict([3, 6, 9, 12, 15, 18]) is None
+    assert create_sevens_dict([7, 14, 21, 28, 35, 42, 49]) == {7: 7, 14: 14, 21: 21, 28: 28, 35: 35, 42: 42, 49: 49}
+
+
+# 925. Тесты для функции `find_equal_key_value_pairs`:
+def test_find_equal_key_value_pairs():
+    assert find_equal_key_value_pairs({}) is None
+    assert find_equal_key_value_pairs({1: 4, 2: 5}) is None
+    assert find_equal_key_value_pairs({1: 1, 2: 2, 3: 3}) == [(1, 1), (2, 2), (3, 3)]
+    assert find_equal_key_value_pairs({4: 4}) == [(4, 4)]
+    assert find_equal_key_value_pairs({1: 1, 2: 3}) == [(1, 1)]
+    assert find_equal_key_value_pairs({3: 2, 2: 3}) is None
+    assert find_equal_key_value_pairs({}) is None
+    assert find_equal_key_value_pairs({5: 5, 6: 6, 7: 7}) == [(5, 5), (6, 6), (7, 7)]
+    assert find_equal_key_value_pairs({8: 8, 9: 0}) == [(8, 8)]
+
+
+# 926. Тесты для функции `find_max_value_in_dict_4`:
+def test_find_max_value_in_dict_4():
+    assert find_max_value_in_dict_4({}) is None
+    assert find_max_value_in_dict_4({1: 4, 2: 5}) == 5
+    assert find_max_value_in_dict_4({1: 4, 2: 6, 3: 9}) == 9
+    assert find_max_value_in_dict_4({1: 4, 2: 2}) == 4
+    assert find_max_value_in_dict_4({1: 4, 2: 11, 3: 7, 4: 9}) == 11
+    assert find_max_value_in_dict_4({1: 4, 2: 9}) == 9
+    assert find_max_value_in_dict_4({1: 7, 2: 10, 3: 13}) == 13
+    assert find_max_value_in_dict_4({1: 10}) == 10
+    assert find_max_value_in_dict_4({1: 2, 2: 3, 3: 5}) == 5
+
+
+# 927. Тесты для функции `create_cube_dict`:
+def test_create_cube_dict():
+    assert create_cube_dict([]) is None
+    assert create_cube_dict([1, 2, 3]) == {1: 1, 2: 8, 3: 27}
+    assert create_cube_dict([0]) == {0: 0}
+    assert create_cube_dict([5, 10, 15]) == {5: 125, 10: 1000, 15: 3375}
+    assert create_cube_dict([-1, -2]) == {-1: -1, -2: -8}
+    assert create_cube_dict([100]) == {100: 1000000}
+    assert create_cube_dict([3, 6, 9]) == {3: 27, 6: 216, 9: 729}
+    assert create_cube_dict([7]) == {7: 343}
+    assert create_cube_dict([1, 3, 5, 7]) == {1: 1, 3: 27, 5: 125, 7: 343}
+
+
+# 928. Тесты для функции `find_long_strings_3`:
+def test_find_long_strings_3():
+    assert find_long_strings_3({"a": "short", "b": "longstring"}, 5) == [("b", "longstring")]
+    assert find_long_strings_3({"a": "short", "b": "tiny"}, 5) is None
+    assert find_long_strings_3({}, 5) is None
+    assert find_long_strings_3({"a": "superlong"}, 5) == [("a", "superlong")]
+    assert find_long_strings_3({"a": "short", "b": "loooooooooong"}, 10) == [("b", "loooooooooong")]
+
+
+# 929. Тесты для функции `find_odd_values`:
+def test_find_odd_values():
+    assert find_odd_values({"a": 1, "b": 2, "c": 3}) == [("a", 1), ("c", 3)]
+    assert find_odd_values({"a": 2, "b": 4}) is None
+    assert find_odd_values({}) is None
+    assert find_odd_values({"a": 5, "b": 7}) == [("a", 5), ("b", 7)]
+    assert find_odd_values({"a": -1, "b": 0, "c": 2}) == [("a", -1)]
+
+
+# 930. Тесты для функции `find_values_greater_than_average`:
+def test_find_values_greater_than_average():
+    assert find_values_greater_than_average({"a": 1, "b": 2, "c": 3}) == [("c", 3)]
+    assert find_values_greater_than_average({"a": 4, "b": 5, "c": 6}) == [('c', 6)]
+    assert find_values_greater_than_average({}) is None
+    assert find_values_greater_than_average({"a": 2}) is None
+    assert find_values_greater_than_average({"a": 1, "b": 1, "c": 1}) is None
+
+
+# 931. Тесты для функции `create_string_dict`:
+def test_create_string_dict():
+    assert create_string_dict(["a", "b", "c"]) == {0: "a", 1: "b", 2: "c"}
+    assert create_string_dict([]) is None
+    assert create_string_dict(["single"]) == {0: "single"}
+    assert create_string_dict(["one", "two", "three"]) == {0: "one", 1: "two", 2: "three"}
+    assert create_string_dict(["", "", ""]) == {0: "", 1: "", 2: ""}
+
+
+# 932. Тесты для функции `find_values_greater_than_threshold`:
+def test_find_values_greater_than_threshold():
+    assert find_values_greater_than_threshold({"a": 1, "b": 2, "c": 3}, 2) == [("c", 3)]
+    assert find_values_greater_than_threshold({"a": 4, "b": 5, "c": 6}, 5) == [("c", 6)]
+    assert find_values_greater_than_threshold({}, 5) is None
+    assert find_values_greater_than_threshold({"a": 5}, 5) is None
+    assert find_values_greater_than_threshold({"a": 10, "b": 20, "c": 30}, 15) == [("b", 20), ("c", 30)]
+
+
+# 933. Тесты для функции `count_unique_values`:
+def test_count_unique_values():
+    assert count_unique_values({"a": 1, "b": 2, "c": 3}) == 3
+    assert count_unique_values({"a": 1, "b": 1, "c": 1}) == 1
+    assert count_unique_values({}) is None
+    assert count_unique_values({"a": 5, "b": 7, "c": 5}) == 2
+    assert count_unique_values({"a": 1, "b": 2, "c": 1, "d": 3}) == 3
+
+
+# 934. Тесты для функции `filter_dict_with_string_keys`:
+def test_filter_dict_with_string_keys():
+    assert filter_dict_with_string_keys({1: "a", "b": 2, 3: "c"}) == {"b": 2}
+    assert filter_dict_with_string_keys({"a": 1, "b": 2}) == {"a": 1, "b": 2}
+    assert filter_dict_with_string_keys({}) is None
+    assert filter_dict_with_string_keys({"a": 1, 2: "b", "c": 3}) == {"a": 1, "c": 3}
+    assert filter_dict_with_string_keys({1: "a", 2: "b"}) is None
+
+
+# 935. Тесты для функции `find_max_in_values`:
+def test_find_max_in_values():
+    assert find_max_in_values({"a": 1, "b": 2, "c": 3}) == 3
+    assert find_max_in_values({"a": -5, "b": -2}) == -2
+    assert find_max_in_values({"a": 0}) is None
+    assert find_max_in_values({}) is None
+    assert find_max_in_values({"a": 1, "b": -30}) == 1
+    assert find_max_in_values({"a": 1, "b": -1, "c": 0}) == 1
+
+
+# 936. Тесты для функции `remove_empty_values`:
+def test_remove_empty_values():
+    assert remove_empty_values({"a": "apple", "b": ""}) == {"a": "apple"}
+    assert remove_empty_values({"a": "", "b": "", "c": ""}) is None
+    assert remove_empty_values({"a": "banana", "b": "berry"}) == {"a": "banana", "b": "berry"}
+    assert remove_empty_values({}) is None
+    assert remove_empty_values({"a": "", "b": " ", "c": None}) == {"b": " ", "c": None}
+    assert remove_empty_values({"a": "grape"}) == {"a": "grape"}
+
+
+# 937. Тесты для функции `find_common_elements_5`:
+def test_find_common_elements_5():
+    assert find_common_elements_5([1, 2, 3], {1, 3, 5}) == ((1, 0), (3, 2))
+    assert find_common_elements_5([1, 2, 3, 4], {5, 6, 7}) is None
+    assert find_common_elements_5([10, 20, 30], {30, 40}) == ((30, 2),)
+    assert find_common_elements_5([], {1, 2, 3}) is None
+    assert find_common_elements_5([1, 2, 3], set()) is None
+    assert find_common_elements_5([1, 2, 2, 3], {2, 3}) == ((2, 1), (3, 3))
+
+
+# 938. Тесты для функции `sum_of_multiples_of_3`:
+def test_sum_of_multiples_of_3():
+    assert sum_of_multiples_of_3((1, 3, 6, 9)) == 18
+    assert sum_of_multiples_of_3((1, 2, 4)) is None
+    assert sum_of_multiples_of_3((0, -3, 6, 9)) == 12
+    assert sum_of_multiples_of_3((3, 3, 3)) == 9
+    assert sum_of_multiples_of_3(()) is None
+    assert sum_of_multiples_of_3((2, 5, 7)) is None
+
+
+# 939. Тесты для функции `find_elements_in_list_and_dict`:
+def test_find_elements_in_list_and_dict():
+    assert find_elements_in_list_and_dict([1, 2, 3], {1: "a", 3: "b"}) == (1, 3)
+    assert find_elements_in_list_and_dict([1, 2, 4], {1: "a", 3: "b"}) == (1,)
+    assert find_elements_in_list_and_dict([], {1: "a", 3: "b"}) is None
+    assert find_elements_in_list_and_dict([1, 2, 3], {}) is None
+    assert find_elements_in_list_and_dict([4, 5, 6], {4: "a", 5: "b", 6: "c"}) == (4, 5, 6)
+    assert find_elements_in_list_and_dict([7, 8], {9: "a", 10: "b"}) is None
+
+
+# 940. Тесты для функции `create_unique_set_from_multiple_sources`:
+def test_create_unique_set_from_multiple_sources():
+    assert create_unique_set_from_multiple_sources([1, 2], (2, 3), {1: 4, 2: 5}) == [1, 2, 3, 4, 5]
+    assert create_unique_set_from_multiple_sources([], (), {}) is None
+    assert create_unique_set_from_multiple_sources([1, 1], (1, 1), {1: 1, 2: 2}) == [1, 2]
+    assert create_unique_set_from_multiple_sources([1, 2, 3], (4, 5), {6: 7}) == [1, 2, 3, 4, 5, 7]
+    assert create_unique_set_from_multiple_sources([1, 2], (2, 3), {4: 5}) == [1, 2, 3, 5]
+    assert create_unique_set_from_multiple_sources([3, 4], (4, 5), {5: 6}) == [3, 4, 5, 6]
+
+
+# 941. Тесты для функции `find_long_strings_6`:
+def test_find_long_strings_6():
+    assert find_long_strings_6(['apple', 'banana'], {'a': 'kiwi', 'b': 'mango'}, 5) == ('banana',)
+    assert find_long_strings_6([], {'a': 'apple'}, 3) is None
+    assert find_long_strings_6(['apple'], {}, 3) is None
+    assert find_long_strings_6(['short'], {'a': 'tiny', 'b': 'huge string'}, 4) == ('short', 'huge string')
+    assert find_long_strings_6(['small', 'big'], {'a': 'larger', 'b': 'largest'}, 5) == ('larger', 'largest')
+    assert find_long_strings_6(['longstring'], {'a': 'short', 'b': 'tiny'}, 5) == ('longstring',)
+    assert find_long_strings_6([], {}, 1) is None
+    assert find_long_strings_6(['apple'], {'a': 'apple'}, 10) is None
+
+
+# 942. Тесты для функции `find_numbers_greater_than_dict_values`:
+def test_find_numbers_greater_than_dict_values():
+    assert find_numbers_greater_than_dict_values([1, 2, 3], {'a': 0, 'b': 1}) == [2, 3]
+    assert find_numbers_greater_than_dict_values([], {'a': 1, 'b': 2}) is None
+    assert find_numbers_greater_than_dict_values([5, 6], {}) is None
+    assert find_numbers_greater_than_dict_values([5, 6, 7], {'a': 5}) == [6, 7]
+    assert find_numbers_greater_than_dict_values([10], {'a': 5, 'b': 8}) == [10]
+    assert find_numbers_greater_than_dict_values([5, 8, 12], {'a': 10}) == [12]
+    assert find_numbers_greater_than_dict_values([1, 2, 3], {'a': 3}) is None
+    assert find_numbers_greater_than_dict_values([1, 2, 3], {'a': 0, 'b': 1, 'c': 2}) == [3]
+    assert find_numbers_greater_than_dict_values([1, 10, 20], {'a': 15}) == [20]
+
+
+# 943. Тесты для функции `count_numbers_in_list`:
+def test_count_numbers_in_list():
+    assert count_numbers_in_list([1, 2, 2, 3]) == {1: 1, 2: 2, 3: 1}
+    assert count_numbers_in_list([]) is None
+    assert count_numbers_in_list([4, 4, 4, 4]) == {4: 4}
+    assert count_numbers_in_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}
+    assert count_numbers_in_list([1]) == {1: 1}
+    assert count_numbers_in_list([1, 1, 2, 2, 2, 3]) == {1: 2, 2: 3, 3: 1}
+    assert count_numbers_in_list([5, 5, 5, 6, 6]) == {5: 3, 6: 2}
+    assert count_numbers_in_list([7, 8, 7, 8, 9]) == {7: 2, 8: 2, 9: 1}
+    assert count_numbers_in_list([1, 1, 1, 1, 1]) == {1: 5}
+
+
+# 944. Тесты для функции `find_numbers_in_dict_and_tuple`:
+def test_find_numbers_in_dict_and_tuple():
+    assert find_numbers_in_dict_and_tuple({'a': 1, 'b': 2}, (1, 3)) == [1]
+    assert find_numbers_in_dict_and_tuple({}, (1, 3)) is None
+    assert find_numbers_in_dict_and_tuple({'a': 1, 'b': 2}, ()) is None
+    assert find_numbers_in_dict_and_tuple({'a': 4, 'b': 5}, (5, 6)) == [5]
+    assert find_numbers_in_dict_and_tuple({'a': 1}, (1,)) == [1]
+    assert find_numbers_in_dict_and_tuple({'a': 10, 'b': 20}, (30,)) is None
+    assert find_numbers_in_dict_and_tuple({'a': 2, 'b': 3, 'c': 4}, (2, 3, 4)) == [2, 3, 4]
+    assert find_numbers_in_dict_and_tuple({'a': 7, 'b': 8, 'c': 9}, (8, 10, 12)) == [8]
+    assert find_numbers_in_dict_and_tuple({'a': 2, 'b': 5, 'c': 8}, (5, 8)) == [5, 8]
+
+
+# 945. Тесты для функции `create_index_dict`:
+def test_create_index_dict():
+    assert create_index_dict(['a', 'b', 'c']) == {'a': 0, 'b': 1, 'c': 2}
+    assert create_index_dict([]) is None
+    assert create_index_dict(['apple', 'banana']) == {'apple': 0, 'banana': 1}
+    assert create_index_dict(['x', 'y', 'z']) == {'x': 0, 'y': 1, 'z': 2}
+    assert create_index_dict(['cat', 'dog', 'cat']) == {'cat': 2, 'dog': 1}
+    assert create_index_dict(['one']) == {'one': 0}
+    assert create_index_dict(['a', 'b', 'a', 'b']) == {'a': 2, 'b': 3}
+    assert create_index_dict(['unique', 'value']) == {'unique': 0, 'value': 1}
+    assert create_index_dict(['repeat', 'repeat']) == {'repeat': 1}
+
+
+# 946. Тесты для функции `create_unique_char_set`:
+def test_create_unique_char_set():
+    assert create_unique_char_set(["abc", "def"], {"key1": "ghi", "key2": "jkl"}) == ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
+    assert create_unique_char_set(["abc", "abc"], {"key1": "abc", "key2": "abc"}) == ['a', 'b', 'c']
+    assert create_unique_char_set([], {"key1": "value"}) is None
+    assert create_unique_char_set(["string"], {}) is None
+    assert create_unique_char_set([], {}) is None
+    assert create_unique_char_set(["123"], {"key1": "456"}) == ['1', '2', '3', '4', '5', '6']
+
+
+# 947. Тесты для функции `count_unique_elements`:
+def test_count_unique_elements():
+    assert count_unique_elements([1, 2, 2, 3, 4, 4, 4]) == {1: 1, 2: 2, 3: 1, 4: 3}
+    assert count_unique_elements(["a", "b", "b", "c"]) == {'a': 1, 'b': 2, 'c': 1}
+    assert count_unique_elements([1.1, 2.2, 1.1]) == {1.1: 2, 2.2: 1}
+    assert count_unique_elements([]) is None
+    assert count_unique_elements([1, 1, 1]) == {1: 3}
+    assert count_unique_elements([0, 0, 0, 1, 1]) == {0: 3, 1: 2}
+
+
+# 948. Тесты для функции `find_squares_in_set`:
+def test_find_squares_in_set():
+    assert find_squares_in_set({1, 4, 9, 16, 20}) == [1, 4, 9, 16]
+    assert find_squares_in_set({2, 3, 5, 7, 8}) is None
+    assert find_squares_in_set({0, 1, 100, 25}) == [0, 1, 25, 100]
+    assert find_squares_in_set({1, 4, 4}) == [1, 4]
+    assert find_squares_in_set({}) is None
+    assert find_squares_in_set({36, 49, 64}) == [36, 49, 64]
+
+
+# 949. Тесты для функции `find_numeric_strings`:
+def test_find_numeric_strings():
+    assert find_numeric_strings(["abc1", "def", "ghi2"], {"key1": "jkl3", "key2": "mno"}) == ("abc1", "ghi2", "jkl3")
+    assert find_numeric_strings(["123", "456", "789"], {"key1": "123"}) == ("123", "456", "789", "123")
+    assert find_numeric_strings(["abc", "def"], {"key1": "ghi"}) is None
+    assert find_numeric_strings([], {"key1": "123"}) is None
+    assert find_numeric_strings(["123"], {}) is None
+    assert find_numeric_strings([], {}) is None
+
+
+# 950. Тесты для функции `find_equal_numbers`:
+def test_find_equal_numbers():
+    assert find_equal_numbers([1, 2, 3], {"key1": 2, "key2": 4}) == (2,)
+    assert find_equal_numbers([1, 2, 3], {"key1": 3, "key2": 3}) == (3,)
+    assert find_equal_numbers([0, -1, -2], {"key1": 0, "key2": 1}) == (0,)
+    assert find_equal_numbers([], {"key1": 1}) is None
+    assert find_equal_numbers([1, 1, 1], {"key1": 1}) == (1, 1, 1)
+    assert find_equal_numbers([1, 2, 3], {"key1": 5}) is None
+
+
+# 951. Тесты для функции `find_numbers_from_string`:
+def test_find_numbers_from_string():
+    assert find_numbers_from_string("abc123") == (1, 2, 3)
+    assert find_numbers_from_string("456def") == (4, 5, 6)
+    assert find_numbers_from_string("789") == (7, 8, 9)
+    assert find_numbers_from_string("") is None
+    assert find_numbers_from_string("no numbers") is None
+    assert find_numbers_from_string("0start") == (0,)
+
+
+# 952. Тесты для функции `create_even_indexed_list`:
+def test_create_even_indexed_list():
+    assert create_even_indexed_list({"key1": 1, "key2": 2, "key3": 3}) == [("key1", 1), ("key3", 3)]
+    assert create_even_indexed_list({"a": 1, "b": 2, "c": 3, "d": 4}) == [("a", 1), ("c", 3)]
+    assert create_even_indexed_list({"a": 1}) == [("a", 1)]
+    assert create_even_indexed_list({}) is None
+    assert create_even_indexed_list({"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}) == [("a", 1), ("c", 3), ("e", 5)]
+    assert create_even_indexed_list({"x": 1, "y": 2}) == [("x", 1)]
+
+
+# 953. Тесты для функции `find_numbers_not_in_set`:
+def test_find_numbers_not_in_set():
+    assert find_numbers_not_in_set([1, 2, 3, 4], {2, 4, 6}) == (1, 3)
+    assert find_numbers_not_in_set([5, 6, 7], {7, 8, 9}) == (5, 6)
+    assert find_numbers_not_in_set([], {1, 2}) is None
+    assert find_numbers_not_in_set([1, 2, 3], {1, 2, 3}) is None
+    assert find_numbers_not_in_set([1, 3, 5], {2, 4, 6}) == (1, 3, 5)
+    assert find_numbers_not_in_set([1, 2, 2, 3], {2}) == (1, 3)
+
+
+# 954. Тесты для функции `create_divisors_dict`:
+def test_create_divisors_dict():
+    assert create_divisors_dict([6, 10, 15]) == {6: {1, 2, 3, 6}, 10: {1, 2, 5, 10}, 15: {1, 3, 5, 15}}
+    assert create_divisors_dict([1, 2, 3]) == {1: {1}, 2: {1, 2}, 3: {1, 3}}
+    assert create_divisors_dict([]) is None
+    assert create_divisors_dict([12]) == {12: {1, 2, 3, 4, 6, 12}}
+    assert create_divisors_dict([0]) == {0: set()}
+    assert create_divisors_dict([100]) == {100: {1, 2, 4, 5, 10, 20, 25, 50, 100}}
+
+
+# 955. Тесты для функции `find_numbers_between_bounds`:
+def test_find_numbers_between_bounds():
+    assert find_numbers_between_bounds([1, 2, 3, 4], 1, 4) == (2, 3)
+    assert find_numbers_between_bounds([5, 6, 7], 5, 7) == (6,)
+    assert find_numbers_between_bounds([10, 15, 20], 5, 25) == (10, 15, 20)
+    assert find_numbers_between_bounds([], 1, 2) is None
+    assert find_numbers_between_bounds([1, 2, 3], 3, 4) is None
+    assert find_numbers_between_bounds([1, 2, 3, 4], 2, 3) is None
+
+
+# 956. Тесты для функции `find_values_less_than`:
+def test_find_values_less_than():
+    assert find_values_less_than({"a": 1, "b": 2, "c": 3}, 3) == (1, 2)
+    assert find_values_less_than({"a": 5, "b": 6}, 6) == (5,)
+    assert find_values_less_than({"a": 10, "b": 20, "c": 30}, 25) == (10, 20)
+    assert find_values_less_than({}, 1) is None
+    assert find_values_less_than({"a": 1, "b": 2, "c": 3}, 0) is None
+    assert find_values_less_than({"a": -1, "b": -2, "c": -3}, 0) == (-1, -2, -3)
+
+
+# 957. Тесты для функции `create_length_dict_from_set`:
+def test_create_length_dict_from_set():
+    assert create_length_dict_from_set({"apple", "banana", "cherry"}) == {'apple': 5, 'banana': 6, 'cherry': 6}
+    assert create_length_dict_from_set({"one", "two", "three"}) == {'one': 3, 'three': 5, 'two': 3}
+    assert create_length_dict_from_set({"", "a", "ab"}) == {'': 0, 'a': 1, 'ab': 2}
+    assert create_length_dict_from_set({1, 2, 3}) is None
+    assert create_length_dict_from_set(set()) is None
+    assert create_length_dict_from_set({"text"}) == {'text': 4}
+
+
+# 958. Тесты для функции `find_odd_in_list_and_even_in_dict`:
+def test_find_odd_in_list_and_even_in_dict():
+    assert find_odd_in_list_and_even_in_dict([1, 3, 5], {1: 2, 3: 4, 5: 6}) == [1, 3, 5]
+    assert find_odd_in_list_and_even_in_dict([1, 2, 3], {1: 2, 2: 3}) == [1]
+    assert find_odd_in_list_and_even_in_dict([1, 3, 5], {2: 4, 4: 6}) is None
+    assert find_odd_in_list_and_even_in_dict([], {1: 2}) is None
+    assert find_odd_in_list_and_even_in_dict([1, 3, 5], {}) is None
+    assert find_odd_in_list_and_even_in_dict([2, 4, 6], {2: 2, 4: 4}) is None
+
+
+# 959. Тесты для функции `create_even_number_set`:
+def test_create_even_number_set():
+    assert create_even_number_set([1, 2, 3], {4, 5, 6}) == [2, 4, 6]
+    assert create_even_number_set([2, 4, 6], {8, 10, 12}) == [2, 4, 6, 8, 10, 12]
+    assert create_even_number_set([1, 3, 5], {7, 9}) is None
+    assert create_even_number_set([], {2, 4}) is None
+    assert create_even_number_set([2, 4], set()) is None
+    assert create_even_number_set([], set()) is None
+
+
+# 960. Тесты для функции `find_numbers_greater_than_avg_in_dict`:
+def test_find_numbers_greater_than_avg_in_dict():
+    assert find_numbers_greater_than_avg_in_dict([1, 2, 3, 4], {"a": 2, "b": 4}) == (4,)
+    assert find_numbers_greater_than_avg_in_dict([5, 6, 7], {"a": 5, "b": 7}) == (7,)
+    assert find_numbers_greater_than_avg_in_dict([10, 20, 30], {"a": 10, "b": 30}) == (30,)
+    assert find_numbers_greater_than_avg_in_dict([], {"a": 1, "b": 2}) is None
+    assert find_numbers_greater_than_avg_in_dict([1, 2, 3], {"a": 3, "b": 3}) is None
+    assert find_numbers_greater_than_avg_in_dict([1, 2, 3], {}) is None
+
+
+# 961. Тесты для функции find_short_strings_2:
+def test_find_short_strings_2():
+    assert find_short_strings_2(['abc', 'abcd', 'ab'], {'k1': 'abc', 'k2': 'defg'}, 4) == ('abc', 'ab', 'abc')
+    assert find_short_strings_2(['apple', 'banana'], {'key': 'value'}, 5) is None
+    assert find_short_strings_2([], {}, 2) is None
+    assert find_short_strings_2(['a', 'abc'], {'k1': 'd'}, 2) == ('a', 'd')
+    assert find_short_strings_2(['apple', 'banana'], {'key': 'value'}, 1) is None
+    assert find_short_strings_2(['apple'], {'key': 'value'}, 2) is None
+    assert find_short_strings_2(['a'], {'k1': 'b', 'k2': 'cde'}, 3) == ('a', 'b')
+    assert find_short_strings_2(['apple', 'orange'], {'key1': 'val'}, 4) == ('val',)
+    assert find_short_strings_2(['one', 'two'], {'key1': 'one', 'key2': 'four'}, 3) is None
+
+
+# 962. Тесты для функции find_max_in_dict_and_list:
+def test_find_max_in_dict_and_list():
+    assert find_max_in_dict_and_list([1, 2, 3], {'a': 4, 'b': 5}) == 5
+    assert find_max_in_dict_and_list([-1, -2, -3], {'a': 4, 'b': 5}) == 5
+    assert find_max_in_dict_and_list([], {}) is None
+    assert find_max_in_dict_and_list([3, 2], {'a': 1, 'b': 2}) == 3
+    assert find_max_in_dict_and_list([10, 12, 14], {'a': 8, 'b': 13}) == 14
+    assert find_max_in_dict_and_list([1, 2, 3], {'a': 0}) == 3
+    assert find_max_in_dict_and_list([-1, -2, 0], {'a': -3, 'b': -4}) == 0
+    assert find_max_in_dict_and_list([1, 5, 6], {'a': 5, 'b': 3}) == 6
+    assert find_max_in_dict_and_list([0, 0, 0], {'a': 0}) == 0
+
+
+# 963. Тесты для функции create_length_dict_from_set_2:
+def test_create_length_dict_from_set_2():
+    assert create_length_dict_from_set_2({'abc', 'abcd', 'ab'}) == {'abc': 3, 'abcd': 4, 'ab': 2}
+    assert create_length_dict_from_set_2({123, 45, 6789}) == {123: 3, 45: 2, 6789: 4}
+    assert create_length_dict_from_set_2(set()) is None
+    assert create_length_dict_from_set_2({'', 'a', 'ab'}) == {'': 0, 'a': 1, 'ab': 2}
+    assert create_length_dict_from_set_2({1, 22, 333}) == {1: 1, 22: 2, 333: 3}
+    assert create_length_dict_from_set_2({'apple', 'banana'}) == {'apple': 5, 'banana': 6}
+    assert create_length_dict_from_set_2({0, 10000}) == {0: 1, 10000: 5}
+    assert create_length_dict_from_set_2({'aaa', 'bbbb', 'cc'}) == {'aaa': 3, 'bbbb': 4, 'cc': 2}
+    assert create_length_dict_from_set_2({'car', 'plane', 'train'}) == {'car': 3, 'plane': 5, 'train': 5}
+
+
+# 964. Тесты для функции count_elements_in_list_and_dict:
+def test_count_elements_in_list_and_dict():
+    assert count_elements_in_list_and_dict([1, 2, 2], {'a': 2, 'b': 3}) == {1: 1, 2: 3, 3: 1}
+    assert count_elements_in_list_and_dict([], {}) is None
+    assert count_elements_in_list_and_dict([1, 1], {'a': 1}) == {1: 3}
+    assert count_elements_in_list_and_dict([0, 1], {'a': 1, 'b': 0}) == {0: 2, 1: 2}
+    assert count_elements_in_list_and_dict(['a', 'b', 'b'], {'c': 'b', 'd': 'a'}) == {'a': 2, 'b': 3}
+    assert count_elements_in_list_and_dict(['x'], {'a': 'y'}) == {'x': 1, 'y': 1}
+    assert count_elements_in_list_and_dict(['car', 'car'], {'a': 'car'}) == {'car': 3}
+    assert count_elements_in_list_and_dict([3, 3, 3], {'a': 3}) == {3: 4}
+    assert count_elements_in_list_and_dict([1, 2, 2], {'a': 1, 'b': 1}) == {1: 3, 2: 2}
+
+
+# 965. Тесты для функции find_common_in_set_and_tuple:
+def test_find_common_in_set_and_tuple():
+    assert find_common_in_set_and_tuple({1, 2, 3}, (2, 3, 4)) == [2, 3]
+    assert find_common_in_set_and_tuple(set(), tuple()) is None
+    assert find_common_in_set_and_tuple({1}, (1,)) == [1]
+    assert find_common_in_set_and_tuple({0, 1}, (1, 2)) == [1]
+    assert find_common_in_set_and_tuple({'a', 'b'}, ('b', 'c')) == ['b']
+    assert find_common_in_set_and_tuple({100, 200}, (200, 300)) == [200]
+    assert find_common_in_set_and_tuple({0, 0}, (0, 1)) == [0]
+    assert find_common_in_set_and_tuple({5, 6, 7}, (7, 8, 9)) == [7]
+    assert find_common_in_set_and_tuple({-1, -2}, (-2, -3)) == [-2]
+
+
+# 966. Тесты для функции find_numbers_with_digit:
+def test_find_numbers_with_digit():
+    assert find_numbers_with_digit([123, 456, 789], 4) == (456,)
+    assert find_numbers_with_digit([], 4) is None
+    assert find_numbers_with_digit([111, 222, 333], 1) == (111,)
+    assert find_numbers_with_digit([12, 23, 34], 2) == (12, 23)
+    assert find_numbers_with_digit([111, 22, 3333], 3) == (3333,)
+    assert find_numbers_with_digit([4, 44, 444], 4) == (4, 44, 444)
+    assert find_numbers_with_digit([40, 50, 60], 6) == (60,)
+    assert find_numbers_with_digit([70, 80, 90], 9) == (90,)
+    assert find_numbers_with_digit([100, 200], 0) == (100, 200)
+
+
+# 967. Тесты для функции find_odd_numbers_in_both:
+def test_find_odd_numbers_in_both():
+    assert find_odd_numbers_in_both([1, 2, 3], {1: 'a', 3: 'b'}) == [1, 3]
+    assert find_odd_numbers_in_both([], {}) is None
+    assert find_odd_numbers_in_both([4, 5], {5: 'e'}) == [5]
+    assert find_odd_numbers_in_both([6, 7], {7: 'f'}) == [7]
+    assert find_odd_numbers_in_both([8, 9], {9: 'g'}) == [9]
+    assert find_odd_numbers_in_both([0, 1], {1: 'h'}) == [1]
+    assert find_odd_numbers_in_both([2, 3, 5], {5: 'i'}) == [5]
+    assert find_odd_numbers_in_both([7, 11], {11: 'j'}) == [11]
+    assert find_odd_numbers_in_both([13, 17], {17: 'k'}) == [17]
+
+
+# 968. Тесты для функции find_numbers_not_in_dict:
+def test_find_numbers_not_in_dict():
+    assert find_numbers_not_in_dict([1, 2, 3], {1: 'a', 3: 'b'}) == (2,)
+    assert find_numbers_not_in_dict([], {}) is None
+    assert find_numbers_not_in_dict([4, 5], {5: 'e'}) == (4,)
+    assert find_numbers_not_in_dict([6, 7], {7: 'f'}) == (6,)
+    assert find_numbers_not_in_dict([8, 9], {9: 'g'}) == (8,)
+    assert find_numbers_not_in_dict([0, 1], {1: 'h'}) == (0,)
+    assert find_numbers_not_in_dict([2, 3, 5], {5: 'i'}) == (2, 3)
+    assert find_numbers_not_in_dict([7, 11], {11: 'j'}) == (7,)
+    assert find_numbers_not_in_dict([13, 17], {17: 'k'}) == (13,)
+
+
+# 969. Тесты для функции find_unique_elements_9:
+def test_find_unique_elements_9():
+    assert find_unique_elements_9([1, 2], (2, 3), {3, 4}) == [1, 2, 3, 4]
+    assert find_unique_elements_9([], (), set()) is None
+    assert find_unique_elements_9([1, 1], (1,), {1}) == [1]
+    assert find_unique_elements_9([0, 1], (1, 2), {2, 3}) == [0, 1, 2, 3]
+    assert find_unique_elements_9(['a', 'b'], ('b', 'c'), {'c', 'd'}) == ['a', 'b', 'c', 'd']
+    assert find_unique_elements_9([100, 200], (300,), {400}) == [100, 200, 300, 400]
+    assert find_unique_elements_9([0, 0], (0,), {0}) == [0]
+    assert find_unique_elements_9([5, 6], (7,), {8}) == [5, 6, 7, 8]
+    assert find_unique_elements_9(['x'], ('y',), {'z'}) == ['x', 'y', 'z']
+
+
+# 970. Тесты для функции find_numbers_divisible_by_all:
+def test_find_numbers_divisible_by_all():
+    assert find_numbers_divisible_by_all([12, 24, 36], {2, 3}) == (12, 24, 36)
+    assert find_numbers_divisible_by_all([], {2, 3}) is None
+    assert find_numbers_divisible_by_all([12, 24, 36], set()) is None
+    assert find_numbers_divisible_by_all([12, 25, 36], {2, 3}) == (12, 36)
+    assert find_numbers_divisible_by_all([12, 24], {2, 5}) is None
+    assert find_numbers_divisible_by_all([24, 36, 48], {4, 6}) == (24, 36, 48)
+    assert find_numbers_divisible_by_all([15, 30, 45], {5, 3}) == (15, 30, 45)
+    assert find_numbers_divisible_by_all([7, 14, 21], {7}) == (7, 14, 21)
+    assert find_numbers_divisible_by_all([8, 16, 24], {2, 4}) == (8, 16, 24)
+
+
+# 971. Тесты для функции create_odd_number_set:
+def test_create_odd_number_set():
+    assert create_odd_number_set([1, 2, 3], {4, 5}) == [1, 3, 5]
+    assert create_odd_number_set([], {}) is None
+    assert create_odd_number_set([2, 4], {6, 8}) is None
+    assert create_odd_number_set([3, 5], {7, 9}) == [3, 5, 7, 9]
+    assert create_odd_number_set([0, 1], {2, 3}) == [1, 3]
+    assert create_odd_number_set([11, 12], {13, 14}) == [11, 13]
+    assert create_odd_number_set([15, 16], {17, 18}) == [15, 17]
+    assert create_odd_number_set([19, 20], {21, 22}) == [19, 21]
+    assert create_odd_number_set([23, 24], {25, 26}) == [23, 25]
+
+
+# 972. Тесты для функции find_numbers_in_list_and_dict:
+def test_find_numbers_in_list_and_dict():
+    assert find_numbers_in_list_and_dict([1, 2, 3], {'a': 1, 'b': 3}) == (1, 3)
+    assert find_numbers_in_list_and_dict([], {}) is None
+    assert find_numbers_in_list_and_dict([4, 5], {'e': 5}) == (5,)
+    assert find_numbers_in_list_and_dict([6, 7], {'f': 7}) == (7,)
+    assert find_numbers_in_list_and_dict([8, 9], {'g': 10}) is None
+
+
+# 973. Тесты для функции count_unique_elements_in_list_and_dict:
+def test_count_unique_elements_in_list_and_dict():
+    assert count_unique_elements_in_list_and_dict([1, 2, 2], {1: 'a', 2: 'b'}) == 4
+    assert count_unique_elements_in_list_and_dict([], {}) is None
+    assert count_unique_elements_in_list_and_dict([4, 5], {5: 'e'}) == 3
+    assert count_unique_elements_in_list_and_dict([6, 7], {7: 'f'}) == 3
+    assert count_unique_elements_in_list_and_dict([8, 9], {9: 'g'}) == 3
+    assert count_unique_elements_in_list_and_dict([0, 1], {1: 'h'}) == 3
+    assert count_unique_elements_in_list_and_dict([2, 3, 5], {5: 'i'}) == 4
+    assert count_unique_elements_in_list_and_dict([7, 11], {11: 'j'}) == 3
+    assert count_unique_elements_in_list_and_dict([13, 17], {17: 'k'}) == 3
+
+
+# 974. Тесты для функции create_square_dict_from_set:
+def test_create_square_dict_from_set():
+    assert create_square_dict_from_set({1, 2, 3}) == {1: 1, 2: 4, 3: 9}
+    assert create_square_dict_from_set(set()) is None
+    assert create_square_dict_from_set({0}) == {0: 0}
+    assert create_square_dict_from_set({-1, -2, -3}) == {-1: 1, -2: 4, -3: 9}
+    assert create_square_dict_from_set({4, 5, 6}) == {4: 16, 5: 25, 6: 36}
+    assert create_square_dict_from_set({7, 8, 9}) == {7: 49, 8: 64, 9: 81}
+    assert create_square_dict_from_set({10, 11, 12}) == {10: 100, 11: 121, 12: 144}
+    assert create_square_dict_from_set({13, 14, 15}) == {13: 169, 14: 196, 15: 225}
+    assert create_square_dict_from_set({16, 17, 18}) == {16: 256, 17: 289, 18: 324}
+
+
+# 975. Тесты для функции create_product_list_from_dict:
+def test_create_product_list_from_dict():
+    assert create_product_list_from_dict({'a': [1, 2, 3], 'b': [4, 5, 6]}) == [6, 120]
+    assert create_product_list_from_dict({}) is None
+    assert create_product_list_from_dict({'a': [0]}) == [0]
+    assert create_product_list_from_dict({'a': [-1, -2, -3]}) == [-6]
+    assert create_product_list_from_dict({'a': [2, 2, 2], 'b': [1, 1, 1]}) == [8, 1]
+    assert create_product_list_from_dict({'a': [1.5, 2.5], 'b': [3.5, 4.5]}) == [3.75, 15.75]
+    assert create_product_list_from_dict({'a': [10], 'b': [20, 30]}) == [10, 600]
+    assert create_product_list_from_dict({'a': [0.1, 0.2], 'b': [0.3, 0.4]}) == [0.020000000000000004, 0.12]
+    assert create_product_list_from_dict({'a': [5], 'b': [2, 3]}) == [5, 6]
+
+
+# 976. Тесты для функции find_strings_with_digit:
+def test_find_strings_with_digit():
+    assert find_strings_with_digit(['abc1', '2def'], {'3ghi'}) == ['2def', '3ghi', 'abc1']
+    assert find_strings_with_digit([], set()) is None
+    assert find_strings_with_digit(['a1', 'b2'], {'c3', 'd4'}) == ['a1', 'b2', 'c3', 'd4']
+    assert find_strings_with_digit(['ab', 'cd'], {'ef'}) is None
+    assert find_strings_with_digit(['123', '456'], {'789'}) == ['123', '456', '789']
+    assert find_strings_with_digit(['a', 'b'], {'c'}) is None
+    assert find_strings_with_digit(['1a', 'b2'], {'3c', 'd4'}) == ['1a', '3c', 'b2', 'd4']
+    assert find_strings_with_digit(['xyz'], {'789'}) == ['789']
+    assert find_strings_with_digit(['ab', 'cd'], {'ef', 'gh1'}) == ['gh1']
+
+
+# 977. Тесты для функции find_common_numbers:
+def test_find_common_numbers():
+    assert find_common_numbers([1, 2, 3], (2, 3, 4), {3, 4, 5}) == [3]
+    assert find_common_numbers([], (), set()) is None
+    assert find_common_numbers([1, 2], (2, 3), {3, 4}) is None
+    assert find_common_numbers([0, 1], (1, 2), {2, 3}) is None
+    assert find_common_numbers(['a', 'b'], ('b', 'c'), {'c', 'd'}) is None
+    assert find_common_numbers([100, 200], (300,), {400}) is None
+    assert find_common_numbers([0, 0], (0,), {0}) == [0]
+    assert find_common_numbers([5, 6], (7,), {8}) is None
+    assert find_common_numbers(['x'], ('y',), {'z'}) is None
+
+
+# 978. Тесты для функции create_set_of_short_strings:
+def test_create_set_of_short_strings():
+    assert create_set_of_short_strings(['abc', 'abcd', 'ab'], 4) == ['ab', 'abc']
+    assert create_set_of_short_strings([], 4) is None
+    assert create_set_of_short_strings(['a', 'ab', 'abc'], 3) == ['a', 'ab']
+    assert create_set_of_short_strings(['123', '4567'], 4) == ['123']
+    assert create_set_of_short_strings(['apple', 'banana'], 5) is None
+    assert create_set_of_short_strings(['a', 'b', 'c'], 2) == ['a', 'b', 'c']
+    assert create_set_of_short_strings(['xyz'], 4) == ['xyz']
+    assert create_set_of_short_strings(['abcdef'], 4) is None
+    assert create_set_of_short_strings(['aa', 'bbb', 'cc'], 3) == ['aa', 'cc']
+
+
+# 979. Тесты для функции find_long_strings_2:
+def test_find_long_strings_2():
+    assert find_long_strings_2(['apple', 'banana', 'cherry']) == ('banana', 'cherry')
+    assert find_long_strings_2([]) is None
+    assert find_long_strings_2(['a', 'ab', 'abc']) == ('abc',)
+    assert find_long_strings_2(['123', '4567', '89']) == ('4567',)
+    assert find_long_strings_2(['short', 'longer', 'longest']) == ('longest',)
+    assert find_long_strings_2(['tiny', 'small', 'big']) == ('small',)
+    assert find_long_strings_2(['cat', 'dog', 'elephant']) == ('elephant',)
+    assert find_long_strings_2(['hello', 'world', 'python']) == ('python',)
+    assert find_long_strings_2(['sun', 'moon', 'star']) == ('moon', 'star')
+
+
+# 980. Тесты для функции find_numbers_in_tuple_not_in_dict:
+def test_find_numbers_in_tuple_not_in_dict():
+    assert find_numbers_in_tuple_not_in_dict((1, 2, 3), {1: 'a', 3: 'b'}) == (2,)
+    assert find_numbers_in_tuple_not_in_dict((), {}) is None
+    assert find_numbers_in_tuple_not_in_dict((4, 5), {5: 'e'}) == (4,)
+    assert find_numbers_in_tuple_not_in_dict((6, 7), {7: 'f'}) == (6,)
+    assert find_numbers_in_tuple_not_in_dict((8, 9), {9: 'g'}) == (8,)
+    assert find_numbers_in_tuple_not_in_dict((0, 1), {1: 'h'}) == (0,)
+    assert find_numbers_in_tuple_not_in_dict((2, 3, 5), {5: 'i'}) == (2, 3)
+    assert find_numbers_in_tuple_not_in_dict((7, 11), {11: 'j'}) == (7,)
+    assert find_numbers_in_tuple_not_in_dict((13, 17), {17: 'k'}) == (13,)
+
+
+# 981. Тесты для функции find_in_list_not_in_set_and_dict
+def test_find_in_list_not_in_set_and_dict():
+    assert find_in_list_not_in_set_and_dict([1, 2, 3], {2}, {"a": 3}) == (1,)
+    assert find_in_list_not_in_set_and_dict([], {2}, {"a": 3}) is None
+    assert find_in_list_not_in_set_and_dict([1], set(), {}) is None
+    assert find_in_list_not_in_set_and_dict([1, 2], {1, 2}, {"a": 3}) is None
+    assert find_in_list_not_in_set_and_dict([4], {1, 2}, {"a": 3}) == (4,)
+
+
+# 982. Тесты для функции find_max_values
+def test_find_max_values():
+    assert find_max_values([1, 2, 3], {"a": 4, "b": 5}) == 5
+    assert find_max_values([1, 2], {"a": -1}) == 2
+    assert find_max_values([], {}) is None
+    assert find_max_values(['2', '5', '8'], {'a': '2'}) is None
+    assert find_max_values([-1, -2], {"a": -3}) == -1
+
+
+# 983. Тесты для функции find_in_set_not_in_dict
+def test_find_in_set_not_in_dict():
+    assert find_in_set_not_in_dict({1, 2, 3}, {"a": 2, "b": 3}) == (1, 2, 3)
+    assert find_in_set_not_in_dict({1}, {}) is None
+    assert find_in_set_not_in_dict(set(), {"a": 1}) is None
+    assert find_in_set_not_in_dict({4}, {"a": 3}) == (4,)
+    assert find_in_set_not_in_dict({1, 2}, {"a": 1, "b": 2}) == (1, 2)
+
+
+# 984. Тесты для функции create_string_length_dict
+def test_create_string_length_dict():
+    assert create_string_length_dict({"a", "abc", "test"}) == {"a": 1, "abc": 3, "test": 4}
+    assert create_string_length_dict(set()) is None
+    assert create_string_length_dict({"only"}) == {"only": 4}
+    assert create_string_length_dict({123, "word"}) == {"word": 4}
+    assert create_string_length_dict({123}) is None
+
+
+# 985. Тесты для функции create_unique_set_from_list_and_set
+def test_create_unique_set_from_list_and_set():
+    assert create_unique_set_from_list_and_set([1, 2, 3], {3, 4}) == [1, 2, 3, 4]
+    assert create_unique_set_from_list_and_set([], {3, 4}) is None
+    assert create_unique_set_from_list_and_set([1, 2], set()) is None
+    assert create_unique_set_from_list_and_set([], set()) is None
+    assert create_unique_set_from_list_and_set([5], {5}) == [5]
+
+
+# 986. Тесты для функции find_even_numbers_in_list_and_dict
+def test_find_even_numbers_in_list_and_dict():
+    assert find_even_numbers_in_list_and_dict([1, 2, 3], {"a": 4, "b": 5}) == (2, 4)
+    assert find_even_numbers_in_list_and_dict([1, 3], {"a": 5}) is None
+    assert find_even_numbers_in_list_and_dict([], {"a": 2}) is None
+    assert find_even_numbers_in_list_and_dict([4, 6], {}) is None
+    assert find_even_numbers_in_list_and_dict([], {}) is None
+
+
+# 987. Тесты для функции create_length_dict_from_strings_in_both
+def test_create_length_dict_from_strings_in_both():
+    assert create_length_dict_from_strings_in_both(["a", "abc"], {"a", "abc", "test"}) == {"a": 1, "abc": 3}
+    assert create_length_dict_from_strings_in_both(["abc"], {"xyz"}) is None
+    assert create_length_dict_from_strings_in_both([], {"a"}) is None
+    assert create_length_dict_from_strings_in_both(["test"], set()) is None
+    assert create_length_dict_from_strings_in_both(["only"], {"only"}) == {"only": 4}
+
+
+# 988. Тесты для функции find_strings_with_common_characters
+def test_find_strings_with_common_characters():
+    assert find_strings_with_common_characters(["hello", "world"], ["h", "e", "x"]) == ("hello",)
+    assert find_strings_with_common_characters(["test", "data"], ["a"]) == ("data",)
+    assert find_strings_with_common_characters(["abc"], ["x", "y", "z"]) is None
+    assert find_strings_with_common_characters([], ["x"]) is None
+    assert find_strings_with_common_characters(["same"], []) is None
+
+
+# 989. Тесты для функции find_values_greater_than_in_list
+def test_find_values_greater_than_in_list():
+    assert find_values_greater_than_in_list({"a": 5, "b": 10}, [1, 2, 3]) == (5, 10)
+    assert find_values_greater_than_in_list({"a": 3}, [4, 5]) is None
+    assert find_values_greater_than_in_list({}, [1]) is None
+    assert find_values_greater_than_in_list({"a": 2}, []) is None
+    assert find_values_greater_than_in_list({"a": 6, "b": 7}, [5]) == (6, 7)
+
+
+# 990. Тесты для функции find_numbers_in_both_list_and_set
+def test_find_numbers_in_both_list_and_set():
+    assert find_numbers_in_both_list_and_set([1, 2, 3], {2, 3, 4}) == (2, 3)
+    assert find_numbers_in_both_list_and_set([5, 6], {1, 2}) is None
+    assert find_numbers_in_both_list_and_set([], {1, 2}) is None
+    assert find_numbers_in_both_list_and_set([7, 8], set()) is None
+    assert find_numbers_in_both_list_and_set([3, 4], {4}) == (4,)
+
+
+# 991. Тесты для функции find_elements_not_in_other_structures
+def test_find_elements_not_in_other_structures():
+    assert find_elements_not_in_other_structures([1, 2, 3], {2}, {"a": 3}, (4,)) == (1,)
+    assert find_elements_not_in_other_structures([1], set(), {}, ()) is None
+    assert find_elements_not_in_other_structures([], {2}, {"a": 3}, (4,)) is None
+    assert find_elements_not_in_other_structures([5], {5}, {"a": 5}, (5,)) is None
+    assert find_elements_not_in_other_structures([6], {1, 2}, {"b": 3}, (4,)) == (6,)
+
+
+# 992. Тесты для функции find_numbers_between_min_in_list_and_max_in_dict
+def test_find_numbers_between_min_in_list_and_max_in_dict():
+    assert find_numbers_between_min_in_list_and_max_in_dict([1, 2, 3, 4], {"a": 5}) == (2, 3, 4)
+    assert find_numbers_between_min_in_list_and_max_in_dict([5, 6], {"a": 4}) is None
+    assert find_numbers_between_min_in_list_and_max_in_dict([], {"a": 3}) is None
+    assert find_numbers_between_min_in_list_and_max_in_dict([1, 2, 3], {}) is None
+    assert find_numbers_between_min_in_list_and_max_in_dict([3, 4], {"a": 4}) is None
+
+
+# 993. Тесты для функции create_set_of_long_strings
+def test_create_set_of_long_strings():
+    assert create_set_of_long_strings(["hello", "world", "py"], 3) == ["hello", "world"]
+    assert create_set_of_long_strings(["a", "b", "c"], 1) is None
+    assert create_set_of_long_strings([], 3) is None
+    assert create_set_of_long_strings(["test"], 4) is None
+    assert create_set_of_long_strings(["abc", "abcd"], 2) == ["abc", "abcd"]
+
+
+# 994. Тесты для функции find_numbers_less_than_avg_in_dict
+def test_find_numbers_less_than_avg_in_dict():
+    assert find_numbers_less_than_avg_in_dict({"a": 2, "b": 4, "c": 6}) == (2,)
+    assert find_numbers_less_than_avg_in_dict({"a": 3}) is None
+    assert find_numbers_less_than_avg_in_dict({}) is None
+    assert find_numbers_less_than_avg_in_dict({"a": 1, "b": 2}) == (1,)
+    assert find_numbers_less_than_avg_in_dict({"a": 10, "b": 15, "c": 20}) == (10,)
+
+
+# 995. Тесты для функции count_strings_longer_than_avg
+def test_count_strings_longer_than_avg():
+    assert count_strings_longer_than_avg(["a", "abc", "abcd"]) == 2
+    assert count_strings_longer_than_avg(["abc"]) is None
+    assert count_strings_longer_than_avg([]) is None
+    assert count_strings_longer_than_avg(["a", "b", "c"]) is None
+    assert count_strings_longer_than_avg(["abc", "defgh", "ij"]) == 1
+
+
+# 996. Тесты для функции find_common_in_set_and_tuple_2
+def test_find_common_in_set_and_tuple_2():
+    assert find_common_in_set_and_tuple_2({1, 2, 3}, (2, 4)) == (2,)
+    assert find_common_in_set_and_tuple_2({1}, (2,)) is None
+    assert find_common_in_set_and_tuple_2(set(), (1,)) is None
+    assert find_common_in_set_and_tuple_2({3}, ()) is None
+    assert find_common_in_set_and_tuple_2({4, 5}, (5, 6)) == (5,)
+
+
+# 997. Тесты для функции create_length_dict_from_strings_in_list
+def test_create_length_dict_from_strings_in_list():
+    assert create_length_dict_from_strings_in_list(["a", "abc", "test"]) == {"a": 1, "abc": 3, "test": 4}
+    assert create_length_dict_from_strings_in_list([]) is None
+    assert create_length_dict_from_strings_in_list(["only"]) == {"only": 4}
+    assert create_length_dict_from_strings_in_list(["word", 123]) == {"word": 4}
+    assert create_length_dict_from_strings_in_list([123]) is None
+
+
+# 998. Тесты для функции find_numbers_between_max_in_list_and_min_in_dict
+def test_find_numbers_between_max_in_list_and_min_in_dict():
+    assert find_numbers_between_max_in_list_and_min_in_dict([1, 2, 3], {"a": 5}) is None
+    assert find_numbers_between_max_in_list_and_min_in_dict([5, 6], {"a": 4}) == (5,)
+    assert find_numbers_between_max_in_list_and_min_in_dict([], {"a": 3}) is None
+    assert find_numbers_between_max_in_list_and_min_in_dict([1, 2, 3], {}) is None
+    assert find_numbers_between_max_in_list_and_min_in_dict([3, 4], {"a": 5}) is None
+
+
+# 999. Тесты для функции find_strings_with_letter_from_set
+def test_find_strings_with_letter_from_set():
+    assert find_strings_with_letter_from_set(["abc", "xyz"], {"a", "x"}) == ("abc", "xyz")
+    assert find_strings_with_letter_from_set(["abc", "def"], {"z"}) is None
+    assert find_strings_with_letter_from_set([], {"a"}) is None
+    assert find_strings_with_letter_from_set(["test"], set()) is None
+    assert find_strings_with_letter_from_set(["word"], {"w"}) == ("word",)
+
+
+# 1000. Тесты для функции find_numbers_in_list_not_in_dict
+def test_find_numbers_in_list_not_in_dict():
+    assert find_numbers_in_list_not_in_dict([1, 2, 3], {"a": 2}) == (1, 2, 3)
+    assert find_numbers_in_list_not_in_dict([1], {"a": 1}) == (1,)
+    assert find_numbers_in_list_not_in_dict([], {"a": 1}) is None
+    assert find_numbers_in_list_not_in_dict([4], {}) is None
+    assert find_numbers_in_list_not_in_dict([5, 6], {"a": 5}) == (5, 6)
+
+
+# 1001. Тесты для функции find_numbers_in_both_set_and_dict
+def test_find_numbers_in_both_set_and_dict():
+    assert find_numbers_in_both_set_and_dict([1, 2, 3], {2, 3, 4}, {1: 3, 2: 2}) == (2, 3)
+    assert find_numbers_in_both_set_and_dict([5, 6, 7], {7, 8, 9}, {1: 5, 2: 6, 3: 7}) == (7,)
+    assert find_numbers_in_both_set_and_dict([8, 9, 10], {10, 11, 12}, {3: 8, 4: 9, 5: 10}) == (10,)
+    assert find_numbers_in_both_set_and_dict([], {1, 2, 3}, {1: 2}) is None
+    assert find_numbers_in_both_set_and_dict([1, 2, 3], set(), {1: 2}) is None
+    assert find_numbers_in_both_set_and_dict([1, 2, 3], {1, 2, 3}, dict()) is None
+    assert find_numbers_in_both_set_and_dict([1, 2, 3], {2, 3}, {1: 1, 2: 2, 3: 3}) == (2, 3)
+    assert find_numbers_in_both_set_and_dict([1, 2], {2, 3}, {1: 3, 2: 2}) == (2,)
+    assert find_numbers_in_both_set_and_dict([5, 6, 7], {8, 9}, {1: 7, 2: 6, 3: 5}) is None
+
+
+# 1002. Тесты для функции create_list_between_min_in_dict_and_max_in_set
+def test_create_list_between_min_in_dict_and_max_in_set():
+    assert create_list_between_min_in_dict_and_max_in_set({1: 2, 2: 3}, {4, 5, 6}) == [3]
+    assert create_list_between_min_in_dict_and_max_in_set({1: 1, 2: 2, 3: 3}, {5, 6}) == [2, 3]
+    assert create_list_between_min_in_dict_and_max_in_set({1: 5}, {5, 6, 7}) is None
+    assert create_list_between_min_in_dict_and_max_in_set({}, {1, 2, 3}) is None
+    assert create_list_between_min_in_dict_and_max_in_set({1: 1, 2: 2, 3: 3}, set()) is None
+    assert create_list_between_min_in_dict_and_max_in_set({1: 2, 2: 3}, {3}) is None
+    assert create_list_between_min_in_dict_and_max_in_set({1: 1, 2: 2}, {4, 5}) == [2]
+    assert create_list_between_min_in_dict_and_max_in_set({1: 3, 2: 4, 3: 5}, {6}) == [4, 5]
+    assert create_list_between_min_in_dict_and_max_in_set({1: 10, 2: 20}, {30}) == [20]
+
+
+# 1003. Тесты для функции find_in_tuple_not_in_set_and_dict
+def test_find_in_tuple_not_in_set_and_dict():
+    assert find_in_tuple_not_in_set_and_dict((1, 2, 3), {4, 5}, {1: 6, 2: 7}) == (3,)
+    assert find_in_tuple_not_in_set_and_dict((1, 2, 3), {1, 2, 3}, {1: 1, 2: 2, 3: 3}) is None
+    assert find_in_tuple_not_in_set_and_dict((4, 5, 6), {1, 2, 3}, {1: 1, 2: 2, 3: 3}) == (4, 5, 6)
+    assert find_in_tuple_not_in_set_and_dict((1,), set(), {2: 2}) is None
+    assert find_in_tuple_not_in_set_and_dict((), {1, 2, 3}, {1: 1}) is None
+    assert find_in_tuple_not_in_set_and_dict((1, 2, 3), {1, 3, 5}, {2: 4}) is None
+    assert find_in_tuple_not_in_set_and_dict((7, 8, 9), {4, 5, 6}, {1: 3, 2: 2, 3: 1}) == (7, 8, 9)
+    assert find_in_tuple_not_in_set_and_dict((10, 11), {8, 9}, {1: 7}) == (10, 11)
+    assert find_in_tuple_not_in_set_and_dict((1, 3, 5), {1, 2}, {3: 3, 4: 4, 5: 5}) is None
+
+
+# 1004. Тесты для функции find_floats_between_list_and_dict
+def test_find_floats_between_list_and_dict():
+    assert find_floats_between_list_and_dict([0.1, 0.2, 0.3], {1: 0.4, 2: 0.5, 3: 0.6}) == (0.2, 0.3)
+    assert find_floats_between_list_and_dict([0.4, 0.5], {1: 0.3}) is None
+    assert find_floats_between_list_and_dict([0.2, 0.3], {1: 0.1, 2: 0.4}) == (0.3,)
+    assert find_floats_between_list_and_dict([1.1, 1.2], {1: 2.0, 2: 1.5}) == (1.2,)
+    assert find_floats_between_list_and_dict([], {1: 0.1, 2: 0.2}) is None
+    assert find_floats_between_list_and_dict([0.1, 0.2], dict()) is None
+    assert find_floats_between_list_and_dict([1.0, 2.0, 3.0], {1: 2.5, 2: 3.5}) == (2.0, 3.0)
+    assert find_floats_between_list_and_dict([1.0], {1: 1.5, 2: 2.0}) is None
+    assert find_floats_between_list_and_dict([0.1, 0.2, 0.3], {1: 0.5, 2: 0.6}) == (0.2, 0.3)
+
+
+# 1005. Тесты для функции find_floats_greater_than_max_in_dict
+def test_find_floats_greater_than_max_in_dict():
+    assert find_floats_greater_than_max_in_dict([1.0, 2.0, 3.0], {1: 2.0, 2: 3.0}) is None
+    assert find_floats_greater_than_max_in_dict([1.0, 2.0, 4.0], {1: 3.0, 2: 3.5}) == (4.0,)
+    assert find_floats_greater_than_max_in_dict([0.5, 1.5], {1: 1.0, 2: 2.0}) is None
+    assert find_floats_greater_than_max_in_dict([1.1, 1.2], {1: 1.0}) == (1.1, 1.2)
+    assert find_floats_greater_than_max_in_dict([], {1: 1.0, 2: 2.0}) is None
+    assert find_floats_greater_than_max_in_dict([1.0, 2.0], dict()) is None
+    assert find_floats_greater_than_max_in_dict([3.0, 4.0, 5.0], {1: 2.0, 2: 4.0}) == (5.0,)
+    assert find_floats_greater_than_max_in_dict([1.0], {1: 0.5, 2: 1.5}) is None
+    assert find_floats_greater_than_max_in_dict([2.0, 3.0, 4.0], {1: 1.0, 2: 3.5}) == (4.0,)
+
+
+# 1006. Тесты для функции count_floats_less_than_value_in_list_and_dict
+def test_count_floats_less_than_value_in_list_and_dict():
+    assert count_floats_less_than_value_in_list_and_dict([0.1, 0.2, 0.3], {1: 0.4, 2: 0.5}, 0.35) == 3
+    assert count_floats_less_than_value_in_list_and_dict([0.4, 0.5], {1: 0.3}, 0.4) == 1
+    assert count_floats_less_than_value_in_list_and_dict([0.2, 0.3], {1: 0.1, 2: 0.4}, 0.3) == 2
+    assert count_floats_less_than_value_in_list_and_dict([1.1, 1.2], {1: 2.0, 2: 1.5}, 1.3) == 2
+    assert count_floats_less_than_value_in_list_and_dict([], {1: 0.1, 2: 0.2}, 0.3) is None
+    assert count_floats_less_than_value_in_list_and_dict([0.1, 0.2], dict(), 0.15) is None
+    assert count_floats_less_than_value_in_list_and_dict([1.0, 2.0, 3.0], {1: 2.5, 2: 3.5}, 2.1) == 2
+    assert count_floats_less_than_value_in_list_and_dict([1.0], {1: 1.5, 2: 2.0}, 1.6) == 2
+    assert count_floats_less_than_value_in_list_and_dict([0.1, 0.2, 0.3], {1: 0.5, 2: 0.6}, 0.3) == 2
+
+
+# 1007. Тесты для функции find_floats_less_than_max_in_other_list
+def test_find_floats_less_than_max_in_other_list():
+    assert find_floats_less_than_max_in_other_list([1.0, 2.0, 3.0], [4.0, 5.0]) == (1.0, 2.0, 3.0)
+    assert find_floats_less_than_max_in_other_list([1.0, 2.0, 4.0], [3.0, 3.5]) == (1.0, 2.0)
+    assert find_floats_less_than_max_in_other_list([0.5, 1.5], [1.0, 2.0]) == (0.5, 1.5)
+    assert find_floats_less_than_max_in_other_list([1.1, 1.2], [2.0]) == (1.1, 1.2)
+    assert find_floats_less_than_max_in_other_list([], [1.0, 2.0]) is None
+    assert find_floats_less_than_max_in_other_list([1.0, 2.0], []) is None
+    assert find_floats_less_than_max_in_other_list([3.0, 4.0, 5.0], [6.0, 7.0]) == (3.0, 4.0, 5.0)
+    assert find_floats_less_than_max_in_other_list([1.0], [1.5, 2.0]) == (1.0,)
+    assert find_floats_less_than_max_in_other_list([2.0, 3.0, 4.0], [5.0, 6.0]) == (2.0, 3.0, 4.0)
+
+
+# 1008. Тесты для функции find_floats_between_max_in_list_and_min_in_dict
+def test_find_floats_between_max_in_list_and_min_in_dict():
+    assert find_floats_between_max_in_list_and_min_in_dict([1.1, 1.2], {1: 1.0}) == (1.1,)
+    assert find_floats_between_max_in_list_and_min_in_dict([], {1: 1.0, 2: 2.0}) is None
+    assert find_floats_between_max_in_list_and_min_in_dict([1.0, 2.0], dict()) is None
+    assert find_floats_between_max_in_list_and_min_in_dict([3.0, 4.0, 5.0], {1: 2.0, 2: 4.0}) == (3.0, 4.0)
+    assert find_floats_between_max_in_list_and_min_in_dict([1.0], {1: 0.5, 2: 1.5}) is None
+    assert find_floats_between_max_in_list_and_min_in_dict([2.0, 3.0, 4.0], {1: 1.0, 2: 3.5}) == (2.0, 3.0)
+
+
+# 1009. Тесты для функции find_floats_less_than_or_equal_to_set_values
+def test_find_floats_less_than_or_equal_to_set_values():
+    assert find_floats_less_than_or_equal_to_set_values([1.0, 2.0, 3.0], {4.0, 5.0}) == (1.0, 2.0, 3.0)
+    assert find_floats_less_than_or_equal_to_set_values([1.0, 2.0, 4.0], {3.0, 3.5}) == (1.0, 2.0)
+    assert find_floats_less_than_or_equal_to_set_values([0.5, 1.5], {1.0, 2.0}) == (0.5, 1.5)
+    assert find_floats_less_than_or_equal_to_set_values([1.1, 1.2], {2.0}) == (1.1, 1.2)
+    assert find_floats_less_than_or_equal_to_set_values([], {1.0, 2.0}) is None
+    assert find_floats_less_than_or_equal_to_set_values([1.0, 2.0], set()) is None
+    assert find_floats_less_than_or_equal_to_set_values([3.0, 4.0, 5.0], {6.0, 7.0}) == (3.0, 4.0, 5.0)
+    assert find_floats_less_than_or_equal_to_set_values([1.0], {1.5, 2.0}) == (1.0,)
+    assert find_floats_less_than_or_equal_to_set_values([2.0, 3.0, 4.0], {5.0, 6.0}) == (2.0, 3.0, 4.0)
+
+
+# 1010. Тесты для функции find_floats_less_than_value_in_dict
+def test_find_floats_less_than_value_in_dict():
+    assert find_floats_less_than_value_in_dict({1: 1.0, 2: 2.0, 3: 3.0}, 4.0) == (1.0, 2.0, 3.0)
+    assert find_floats_less_than_value_in_dict({1: 2.0, 2: 3.0, 3: 4.0}, 3.5) == (2.0, 3.0)
+    assert find_floats_less_than_value_in_dict({1: 0.5, 2: 1.5}, 1.0) == (0.5,)
+    assert find_floats_less_than_value_in_dict({1: 1.1, 2: 1.2}, 2.0) == (1.1, 1.2)
+    assert find_floats_less_than_value_in_dict({}, 1.0) is None
+    assert find_floats_less_than_value_in_dict({1: 1.0, 2: 2.0}, 1.5) == (1.0,)
+    assert find_floats_less_than_value_in_dict({1: 3.0, 2: 4.0, 3: 5.0}, 4.5) == (3.0, 4.0)
+
+
+# 1011. Тесты для функции find_floats_between_max_in_first_list_and_min_in_second_list
+def test_find_floats_between_max_in_first_list_and_min_in_second_list():
+    assert find_floats_between_max_in_first_list_and_min_in_second_list([1.0, 2.0, 3.0], [2.0, 5.0]) == (3.0,)
+    assert find_floats_between_max_in_first_list_and_min_in_second_list([1.0, 2.0], [1.5, 2.5]) == (2.0,)
+    assert find_floats_between_max_in_first_list_and_min_in_second_list([], [1.0, 2.0]) is None
+
+
+# 1012. Тесты для функции find_floats_less_than_or_equal_to_max_in_list
+def test_find_floats_less_than_or_equal_to_max_in_list():
+    assert find_floats_less_than_or_equal_to_max_in_list([1.0, 2.0, 3.0]) == (1.0, 2.0, 3.0)
+    assert find_floats_less_than_or_equal_to_max_in_list([0.5, 1.5]) == (0.5, 1.5)
+    assert find_floats_less_than_or_equal_to_max_in_list([],) is None
+
+
+# 1013. Тесты для функции find_floats_between_min_in_list_and_max_in_dict
+def test_find_floats_between_min_in_list_and_max_in_dict():
+    assert find_floats_between_min_in_list_and_max_in_dict([1.0, 2.0], {1: 3.0}) == (2.0,)
+    assert find_floats_between_min_in_list_and_max_in_dict([0.5, 1.5], {1: 2.0}) == (1.5,)
+    assert find_floats_between_min_in_list_and_max_in_dict([], {1: 1.0}) is None
+
+
+# 1014. Тесты для функции create_set_between_min_in_dict_and_max_in_list
+def test_create_set_between_min_in_dict_and_max_in_list():
+    assert create_set_between_min_in_dict_and_max_in_list({1: 1.0, 2: 2.0}, [3.0, 4.0]) == {2.0}
+    assert create_set_between_min_in_dict_and_max_in_list({1: 0.5}, [1.0, 1.5]) is None
+    assert create_set_between_min_in_dict_and_max_in_list({}, [1.0, 2.0]) is None
+
+
+# 1015. Тесты для функции find_floats_divisible_by_value_in_list
+def test_find_floats_divisible_by_value_in_list():
+    assert find_floats_divisible_by_value_in_list([1.0, 2.0, 3.0], 1.0) == (1.0, 2.0, 3.0)
+    assert find_floats_divisible_by_value_in_list([0.5, 1.5], 0.5) == (0.5, 1.5)
+    assert find_floats_divisible_by_value_in_list([], 1.0) is None
+
+
+# 1016. Тесты для функции find_floats_between_value_in_list_and_value_in_dict
+def test_find_floats_between_value_in_list_and_value_in_dict():
+    assert find_floats_between_value_in_list_and_value_in_dict([1.0, 2.0], {1: 3.0}, 2.5) == (1.0, 2.0)
+    assert find_floats_between_value_in_list_and_value_in_dict([0.5, 1.5], {1: 2.0}, 1.0) == (0.5,)
+    assert find_floats_between_value_in_list_and_value_in_dict([], {1: 1.0}, 0.5) is None
+
+
+# 1017. Тесты для функции count_floats_greater_than_avg_in_dict
+def test_count_floats_greater_than_avg_in_dict():
+    assert count_floats_greater_than_avg_in_dict([1.0, 2.0], {1: 1.5}) == 1
+    assert count_floats_greater_than_avg_in_dict([0.5, 1.5], {1: 1.0}) == 1
+    assert count_floats_greater_than_avg_in_dict([], {1: 1.0}) is None
+
+
+# 1018. Тесты для функции find_floats_divisible_by_two_values
+def test_find_floats_divisible_by_two_values():
+    assert find_floats_divisible_by_two_values([1.0, 2.0, 3.0], 1.0, 2.0) == (2.0,)
+    assert find_floats_divisible_by_two_values([0.5, 1.5], 0.5, 0.5) == (0.5, 1.5)
+    assert find_floats_divisible_by_two_values([], 1.0, 2.0) is None
+
+
+# 1019. Тесты для функции create_set_of_floats_greater_than_value_in_list
+def test_create_set_of_floats_greater_than_value_in_list():
+    assert create_set_of_floats_greater_than_value_in_list([1.0, 2.0, 3.0], 2.0) == [3.0]
+    assert create_set_of_floats_greater_than_value_in_list([0.5, 1.5], 1.0) == [1.5]
+    assert create_set_of_floats_greater_than_value_in_list([], 1.0) is None
+
+
+# 1020. Тесты для функции find_floats_less_than_avg_in_other_list
+def test_find_floats_less_than_avg_in_other_list():
+    assert find_floats_less_than_avg_in_other_list([1.0, 2.0], [2.5, 3.5]) == (1.0, 2.0)
+    assert find_floats_less_than_avg_in_other_list([0.5, 1.5], [1.0, 2.0]) == (0.5,)
+    assert find_floats_less_than_avg_in_other_list([], [1.0]) is None
+
+
+# 1021. Тесты для функции `find_floats_between_min_in_first_list_and_max_in_second_list`:
+def test_find_floats_between_min_in_first_list_and_max_in_second_list():
+    assert find_floats_between_min_in_first_list_and_max_in_second_list([1.2, 3.4, 0.5], [5.6, 7.8, 9.0]) == (1.2, 3.4)
+    assert find_floats_between_min_in_first_list_and_max_in_second_list([2.2, 4.4, -1.5], [3.6, 7.8, 1.0]) == (2.2, 4.4)
+    assert find_floats_between_min_in_first_list_and_max_in_second_list([], [1.0, 2.0, 3.0]) is None
+    assert find_floats_between_min_in_first_list_and_max_in_second_list([1.2, 2.4, 3.6], []) is None
+    assert find_floats_between_min_in_first_list_and_max_in_second_list([1.2, 3.4, 5.6], [1.0, 2.0, 3.0]) is None
+
+
+# 1022. Тесты для функции `find_floats_less_than_avg_in_dict`:
+def test_find_floats_less_than_avg_in_dict():
+    assert find_floats_less_than_avg_in_dict([1.2, 3.4, 0.5], {"a": 5.6, "b": 7.8, "c": 9.0}) == (1.2, 3.4, 0.5)
+    assert find_floats_less_than_avg_in_dict([2.2, 4.4, -1.5], {"a": 3.6, "b": 7.8, "c": 1.0}) == (2.2, -1.5)
+    assert find_floats_less_than_avg_in_dict([], {"a": 1.0, "b": 2.0, "c": 3.0}) is None
+    assert find_floats_less_than_avg_in_dict([1.2, 2.4, 3.6], {}) is None
+    assert find_floats_less_than_avg_in_dict([1.2, 3.4, 5.6], {"a": 1.0, "b": 2.0, "c": 3.0}) == (1.2,)
+
+
+# 1023. Тесты для функции `find_floats_greater_than_value_in_dict`:
+def test_find_floats_greater_than_value_in_dict():
+    assert find_floats_greater_than_value_in_dict([1.2, 3.4, 0.5], {"a": 5.6, "b": 7.8, "c": 9.0}, 4.0) == (1.2, 3.4, 0.5)
+    assert find_floats_greater_than_value_in_dict([2.2, 4.4, -1.5], {"a": 3.6, "b": 7.8, "c": 1.0}, 2.0) == (2.2, 4.4, -1.5)
+    assert find_floats_greater_than_value_in_dict([], {"a": 1.0, "b": 2.0, "c": 3.0}, 2.0) is None
+    assert find_floats_greater_than_value_in_dict([1.2, 2.4, 3.6], {}, 2.0) is None
+    assert find_floats_greater_than_value_in_dict([1.2, 3.4, 5.6], {"a": 1.0, "b": 2.0, "c": 3.0}, 1.0) == (1.2, 3.4, 5.6)
+
+
+# 1024. Тесты для функции `find_floats_between_max_in_first_list_and_max_in_second_list`:
+def test_find_floats_between_max_in_first_list_and_max_in_second_list():
+    assert find_floats_between_max_in_first_list_and_max_in_second_list([1.2, 3.4, 0.5], [5.6, 7.8, 9.0]) == (1.2, 3.4, 0.5)
+    assert find_floats_between_max_in_first_list_and_max_in_second_list([2.2, 4.4, -1.5], [3.6, 7.8, 1.0]) == (2.2, 4.4, -1.5)
+    assert find_floats_between_max_in_first_list_and_max_in_second_list([], [1.0, 2.0, 3.0]) is None
+    assert find_floats_between_max_in_first_list_and_max_in_second_list([1.2, 2.4, 3.6], []) is None
+    assert find_floats_between_max_in_first_list_and_max_in_second_list([1.2, 3.4, 5.6], [1.0, 2.0, 3.0]) == (1.2,)
+
+
+# 1025. Тесты для функции `add_lists`:
+def test_add_lists():
+    assert add_lists([1, 2, 3], [4, 5, 6]) == [5, 7, 9]
+    assert add_lists([0, 0, 0], [1, 2, 3]) == [1, 2, 3]
+    assert add_lists([1, 2], [3, 4]) == [4, 6]
+    assert add_lists([], [1, 2, 3]) is None
+    assert add_lists([1, 2, 3], []) is None
+
+
+# 1026. Тесты для функции `square_list_2`:
+def test_square_list_2():
+    assert square_list_2([1, 2, 3]) == [1, 4, 9]
+    assert square_list_2([0, -1, -2]) == [0, 1, 4]
+    assert square_list_2([2, 4, 6]) == [4, 16, 36]
+    assert square_list_2([]) is None
+    assert square_list_2([3]) == [9]
+
+
+# 1027. Тесты для функции `find_divisible_by_7_not_14`:
+def test_find_divisible_by_7_not_14():
+    assert find_divisible_by_7_not_14([7, 14, 21, 28]) == [7, 21]
+    assert find_divisible_by_7_not_14([0, 2, 3, 5]) is None
+    assert find_divisible_by_7_not_14([49, 98]) == [49]
+    assert find_divisible_by_7_not_14([42, 56, 63]) == [63]
+    assert find_divisible_by_7_not_14([7, 14, 21, 28, 35]) == [7, 21, 35]
+
+
+# 1028. Тесты для функции `find_common_in_lists_2`:
+def test_find_common_in_lists_2():
+    assert find_common_in_lists_2([1, 2, 3], [3, 4, 5]) == [3]
+    assert find_common_in_lists_2([1, 2, 3], [4, 5, 6]) is None
+    assert find_common_in_lists_2([1, 2, 3, 4], [2, 4, 6, 8]) == [2, 4]
+    assert find_common_in_lists_2([7, 8, 9], [9, 10, 11]) == [9]
+    assert find_common_in_lists_2([1], [1]) == [1]
+
+
+# 1029. Тесты для функции `multiply_list_elements`:
+def test_multiply_list_elements():
+    assert multiply_list_elements([1, 2, 3]) == 6
+    assert multiply_list_elements([1, 1, 1]) is None
+    assert multiply_list_elements([1]) is None
+    assert multiply_list_elements([7, 8, 9]) == 504
+    assert multiply_list_elements([10]) == 10
+
+
+# 1030. Тесты для функции `subtract_squares_of_lists`:
+def test_subtract_squares_of_lists():
+    assert subtract_squares_of_lists([3, 4], [1, 2]) == [8, 12]
+    assert subtract_squares_of_lists([5, 6], [7, 8]) == [-24, -28]
+    assert subtract_squares_of_lists([1, 1], [1, 1]) == [0, 0]
+    assert subtract_squares_of_lists([], []) is None
+    assert subtract_squares_of_lists([3, 5], [2, 4]) == [5, 9]
+
+
+# 1031. Тесты для функции `find_divisible_by_8_not_16`:
+def test_find_divisible_by_8_not_16():
+    assert find_divisible_by_8_not_16([8, 16, 24, 32]) == [8, 24]
+    assert find_divisible_by_8_not_16([0, 2, 3, 5]) is None
+    assert find_divisible_by_8_not_16([48, 96]) is None
+    assert find_divisible_by_8_not_16([32, 64, 72]) == [72]
+    assert find_divisible_by_8_not_16([8, 16, 24, 32, 40]) == [8, 24, 40]
+
+
+# 1032. Тесты для функции `find_divisors_in_list_2`:
+def test_find_divisors_in_list_2():
+    assert find_divisors_in_list_2([1, 2, 3, 4]) == [1, 2]
+    assert find_divisors_in_list_2([5, 10, 15, 20]) == [5, 10]
+    assert find_divisors_in_list_2([7, 14, 28]) == [7, 14]
+    assert find_divisors_in_list_2([13, 26, 39]) == [13]
+    assert find_divisors_in_list_2([1]) is None
+
+
+# 1033. Тесты для функции `find_less_than_all_other`:
+def test_find_less_than_all_other():
+    assert find_less_than_all_other([1, 2, 3], [4, 5, 6]) == [1, 2, 3]
+    assert find_less_than_all_other([3, 4, 5], [1, 2, 3]) is None
+    assert find_less_than_all_other([1, 2, 3], [3, 2, 1]) is None
+    assert find_less_than_all_other([2, 3, 4], [5, 6, 7]) == [2, 3, 4]
+    assert find_less_than_all_other([], [1, 2, 3]) is None
+
+
+# 1034. Тесты для функции `find_divisible_by_2_or_3`:
+def test_find_divisible_by_2_or_3():
+    assert find_divisible_by_2_or_3([1, 2, 3, 4, 5, 6]) == [2, 3, 4, 6]
+    assert find_divisible_by_2_or_3([7, 8, 9, 10]) == [8, 9, 10]
+    assert find_divisible_by_2_or_3([11, 13]) is None
+    assert find_divisible_by_2_or_3([15, 16, 17, 18]) == [15, 16, 18]
+    assert find_divisible_by_2_or_3([19, 7, 101]) is None
+
+
+# 1035. Тесты для функции `add_lists_elements_with_offset`:
+def test_add_lists_elements_with_offset():
+    assert add_lists_elements_with_offset([1, 2, 3], [4, 5, 6], 1) == [6, 8, 10]
+    assert add_lists_elements_with_offset([0, 0, 0], [1, 2, 3], 2) == [3, 4, 5]
+    assert add_lists_elements_with_offset([1, 2], [3, 4], -1) == [3, 5]
+    assert add_lists_elements_with_offset([], [1, 2, 3], 0) is None
+    assert add_lists_elements_with_offset([1, 2, 3], [], 0) is None
+
+
+# 1036. Тесты для функции `multiply_list_by_constant`:
+def test_multiply_list_by_constant():
+    assert multiply_list_by_constant([1, 2, 3], 2) == [2, 4, 6]
+    assert multiply_list_by_constant([0, -1, -2], 3) == [0, -3, -6]
+    assert multiply_list_by_constant([2, 4, 6], -1) == [-2, -4, -6]
+    assert multiply_list_by_constant([], 10) is None
+    assert multiply_list_by_constant([3], 5) == [15]
+
+
+# 1037. Тесты для функции `find_not_divisible_by_3_and_5`:
+def test_find_not_divisible_by_3_and_5():
+    assert find_not_divisible_by_3_and_5([1, 2, 3, 4, 5, 6]) == [1, 2, 4]
+    assert find_not_divisible_by_3_and_5([10, 15, 20, 25, 30]) is None
+    assert find_not_divisible_by_3_and_5([7, 11, 13, 17]) == [7, 11, 13, 17]
+    assert find_not_divisible_by_3_and_5([8, 14, 19, 22]) == [8, 14, 19, 22]
+
+
+# 1038. Тесты для функции `add_lists_conditionally`:
+def test_add_lists_conditionally():
+    assert add_lists_conditionally([1, 2, 3], [4, 5, 6], 5) == [7, 9]
+    assert add_lists_conditionally([0, 0, 0], [1, 2, 3], 1) == [2, 3]
+    assert add_lists_conditionally([1, 2], [3, 4], 4) == [6]
+    assert add_lists_conditionally([], [1, 2, 3], 0) is None
+    assert add_lists_conditionally([1, 2, 3], [], 0) is None
+
+
+# 1039. Тесты для функции `find_even_and_greater_than_10`:
+def test_find_even_and_greater_than_10():
+    assert find_even_and_greater_than_10([1, 2, 3, 12, 14]) == [12, 14]
+    assert find_even_and_greater_than_10([5, 7, 9, 11, 13]) is None
+    assert find_even_and_greater_than_10([2, 4, 6, 8, 10]) is None
+    assert find_even_and_greater_than_10([15, 16, 20, 22]) == [16, 20, 22]
+    assert find_even_and_greater_than_10([1, 12, 13, 24, 26]) == [12, 24, 26]
+
+
+# 1040. Тесты для функции `find_difference_elements_in_list`:
+def test_find_difference_elements_in_list():
+    assert find_difference_elements_in_list([1, 2, 3, 4]) == (2, 3, 3, 4, 4, 4)
+    assert find_difference_elements_in_list([5, 10, 15, 20]) == (10, 15, 15, 20, 20, 20)
+    assert find_difference_elements_in_list([7, 14, 28]) == (14, 28)
+    assert find_difference_elements_in_list([13, 26, 39]) == (26, 39, 39)
+    assert find_difference_elements_in_list([1]) is None
+
+
+# 1041. Тесты для функции `find_square_roots`:
+def test_find_square_roots():
+    assert find_square_roots([4, 16, 25]) == [2.0, 4.0, 5.0]
+    assert find_square_roots([-1, -4]) is None
+    assert find_square_roots([0, 1, 9]) == [0.0, 1.0, 3.0]
+    assert find_square_roots([1]) == [1.0]
+    assert find_square_roots([]) is None
+    assert find_square_roots([36, 49, -9]) == [6.0, 7.0]
+
+
+# 1042. Тесты для функции `find_unique_in_first_list`:
+def test_find_unique_in_first_list():
+    assert find_unique_in_first_list([1, 2, 3], [2, 3, 4]) == [1]
+    assert find_unique_in_first_list([5, 6, 7], [7, 8, 9]) == [5, 6]
+    assert find_unique_in_first_list([1, 2, 3], [1, 2, 3]) is None
+    assert find_unique_in_first_list([], [1, 2, 3]) is None
+    assert find_unique_in_first_list([1, 2, 3], []) == [1, 2, 3]
+    assert find_unique_in_first_list([1, 2, 3], [4, 5, 6]) == [1, 2, 3]
+
+
+# 1043. Тесты для функции `find_divisible_by_10_or_12`:
+def test_find_divisible_by_10_or_12():
+    assert find_divisible_by_10_or_12([10, 12, 15, 20]) == [10, 12, 20]
+    assert find_divisible_by_10_or_12([24, 36, 48]) == [24, 36, 48]
+    assert find_divisible_by_10_or_12([1, 3, 5]) is None
+    assert find_divisible_by_10_or_12([]) is None
+    assert find_divisible_by_10_or_12([10, 20, 30]) == [10, 20, 30]
+    assert find_divisible_by_10_or_12([12, 24, 36]) == [12, 24, 36]
+
+
+# 1044. Тесты для функции `find_divisible_by_11_not_22`:
+def test_find_divisible_by_11_not_22():
+    assert find_divisible_by_11_not_22([11, 22, 33]) == [11, 33]
+    assert find_divisible_by_11_not_22([44, 55, 66]) == [55]
+    assert find_divisible_by_11_not_22([22, 44]) is None
+    assert find_divisible_by_11_not_22([11]) == [11]
+    assert find_divisible_by_11_not_22([]) is None
+    assert find_divisible_by_11_not_22([11, 22, 33, 44]) == [11, 33]
+
+
+# 1045. Тесты для функции `find_factorials`:
+def test_find_factorials():
+    assert find_factorials([0, 1, 2]) == [1, 1, 2]
+    assert find_factorials([3, 4, 5]) == [6, 24, 120]
+    assert find_factorials([-1, -2]) == [1, 1]
+    assert find_factorials([0]) == [1]
+    assert find_factorials([6, 7]) == [720, 5040]
+    assert find_factorials([]) is None
+
+
+# 1046. Тесты для функции `find_diff_between_max_and_min`:
+def test_find_diff_between_max_and_min():
+    assert find_diff_between_max_and_min([1, 2, 3, 4, 5]) == [4]
+    assert find_diff_between_max_and_min([-1, -2, -3, -4, -5]) == [4]
+    assert find_diff_between_max_and_min([]) is None
+    assert find_diff_between_max_and_min([0]) == [0]
+    assert find_diff_between_max_and_min([]) is None
+
+
+# 1047. Тесты для функции `subtract_squares_of_lists_v2`:
+def test_subtract_squares_of_lists_v2():
+    assert subtract_squares_of_lists_v2([2, 3], [1, 1]) == [3, 8]
+    assert subtract_squares_of_lists_v2([4, 5], [2, 2]) == [12, 21]
+    assert subtract_squares_of_lists_v2([1, 2], [1, 2]) == [0, 0]
+    assert subtract_squares_of_lists_v2([], []) is None
+    assert subtract_squares_of_lists_v2([1], [0]) == [1]
+    assert subtract_squares_of_lists_v2([3, 6], [2, 5]) == [5, 11]
+
+
+# 1048. Тесты для функции `multiply_list_by_constant_v2`:
+def test_multiply_list_by_constant_v2():
+    assert multiply_list_by_constant_v2([1, 2, 3], 2) == [2, 4, 6]
+    assert multiply_list_by_constant_v2([4, 5], 0) == [0, 0]
+    assert multiply_list_by_constant_v2([-1, -2], 3) == [-3, -6]
+    assert multiply_list_by_constant_v2([0], 10) == [0]
+    assert multiply_list_by_constant_v2([], 5) is None
+    assert multiply_list_by_constant_v2([10, 20, 30], 1) == [10, 20, 30]
+
+
+# 1049. Тесты для функции `divide_list_by_constant`:
+def test_divide_list_by_constant():
+    assert divide_list_by_constant([10, 20, 30], 10) == [1.0, 2.0, 3.0]
+    assert divide_list_by_constant([4, 5, 6], 2) == [2.0, 2.5, 3.0]
+    assert divide_list_by_constant([10, 20], 0) is None
+    assert divide_list_by_constant([0], 1) == [0.0]
+    assert divide_list_by_constant([], 5) is None
+    assert divide_list_by_constant([9, 18, 27], 3) == [3.0, 6.0, 9.0]
+
+
+# 1050. Тесты для функции `find_divisible_by_4_or_8_not_12`:
+def test_find_divisible_by_4_or_8_not_12():
+    assert find_divisible_by_4_or_8_not_12([4, 8, 12]) == [4, 8]
+    assert find_divisible_by_4_or_8_not_12([16, 24, 32]) == [16, 32]
+    assert find_divisible_by_4_or_8_not_12([12, 24, 36]) is None
+    assert find_divisible_by_4_or_8_not_12([4]) == [4]
+    assert find_divisible_by_4_or_8_not_12([]) is None
+    assert find_divisible_by_4_or_8_not_12([8, 16, 32]) == [8, 16, 32]
+
+
+# 1051. Тесты для функции `add_lists_with_condition`:
+def test_add_lists_with_condition():
+    assert add_lists_with_condition([1, 2], [3, 4], 4) == [6]
+    assert add_lists_with_condition([5, 6], [5, 6], 10) == [12]
+    assert add_lists_with_condition([1, 2], [1, 2], 5) is None
+    assert add_lists_with_condition([], [], 1) is None
+    assert add_lists_with_condition([1, 1], [4, 4], 2) == [5, 5]
+    assert add_lists_with_condition([10, 20], [30, 40], 30) == [40, 60]
+
+
+# 1052. Тесты для функции `find_max_min_diff_in_lists`:
+def test_find_max_min_diff_in_lists():
+    assert find_max_min_diff_in_lists([1, 2, 3], [4, 5, 6]) == [2, 2]
+    assert find_max_min_diff_in_lists([7, 8, 9], [10, 11, 12]) == [2, 2]
+    assert find_max_min_diff_in_lists([1], []) is None
+    assert find_max_min_diff_in_lists([], [0]) is None
+    assert find_max_min_diff_in_lists([10, 20, 30], [40, 50, 60]) == [20, 20]
+
+
+# 1053. Тесты для функции `find_divisible_by_3_and_7`:
+def test_find_divisible_by_3_and_7():
+    assert find_divisible_by_3_and_7([21, 42, 63]) == [21, 42, 63]
+    assert find_divisible_by_3_and_7([10, 20, 30]) is None
+    assert find_divisible_by_3_and_7([3, 7, 14]) is None
+    assert find_divisible_by_3_and_7([]) is None
+    assert find_divisible_by_3_and_7([3 * 7, 6 * 7, 9 * 7]) == [21, 42, 63]
+    assert find_divisible_by_3_and_7([5, 15, 25]) is None
+
+
+# 1054. Тесты для функции `find_divisible_by_15_not_30`:
+def test_find_divisible_by_15_not_30():
+    assert find_divisible_by_15_not_30([15, 30, 45]) == [15, 45]
+    assert find_divisible_by_15_not_30([60, 90, 120]) is None
+    assert find_divisible_by_15_not_30([15, 75, 105]) == [15, 75, 105]
+    assert find_divisible_by_15_not_30([30, 60, 90]) is None
+    assert find_divisible_by_15_not_30([15]) == [15]
+    assert find_divisible_by_15_not_30([]) is None
+
+
+# 1055. Тесты для функции `subtract_lists_elements`:
+def test_subtract_lists_elements():
+    assert subtract_lists_elements([10, 20, 30], [1, 2, 3]) == [9, 18, 27]
+    assert subtract_lists_elements([1, 2, 3], [3, 2, 1]) == [-2, 0, 2]
+    assert subtract_lists_elements([0, 0, 0], [0, 0, 0]) == [0, 0, 0]
+    assert subtract_lists_elements([5, 15], [5, 15]) == [0, 0]
+    assert subtract_lists_elements([10, 20], [5, 10]) == [5, 10]
+    assert subtract_lists_elements([], []) is None
+
+
+# 1056. Тесты для функции `find_divisible_by_2_and_3_not_7`:
+def test_find_divisible_by_2_and_3_not_7():
+    assert find_divisible_by_2_and_3_not_7([88, 88, 88]) is None
+    assert find_divisible_by_2_and_3_not_7([2, 15, 6]) == [6]
+    assert find_divisible_by_2_and_3_not_7([3, 6, 20]) == [6]
+    assert find_divisible_by_2_and_3_not_7([4, 8, 16]) is None
+    assert find_divisible_by_2_and_3_not_7([10, 20, 30]) == [30]
+    assert find_divisible_by_2_and_3_not_7([12, 15, 18]) == [12, 18]
+
+
+# 1057. Тесты для функции `find_squares_of_elements`:
+def test_find_squares_of_elements():
+    assert find_squares_of_elements([1, 2, 3]) == [1, 4, 9]
+    assert find_squares_of_elements([4, 5, 6]) == [16, 25, 36]
+    assert find_squares_of_elements([0]) == [0]
+    assert find_squares_of_elements([]) is None
+    assert find_squares_of_elements([10, 20, 30]) == [100, 400, 900]
+    assert find_squares_of_elements([7, 8, 9]) == [49, 64, 81]
+
+
+# 1058. Тесты для функции `multiply_even_lists`:
+def test_multiply_even_lists():
+    assert multiply_even_lists([2, 3, 4], [2, 3, 4]) == [4, 16]
+    assert multiply_even_lists([1, 1, 1], [2, 2, 2]) is None
+    assert multiply_even_lists([2, 4, 6], [2, 4, 6]) == [4, 16, 36]
+    assert multiply_even_lists([], []) is None
+    assert multiply_even_lists([2], [2]) == [4]
+    assert multiply_even_lists([2, 4], [2, 4]) == [4, 16]
+
+
+# 1059. Тесты для функции `find_divisible_by_11_not_5`:
+def test_find_divisible_by_11_not_5():
+    assert find_divisible_by_11_not_5([11, 22, 33]) == [11, 22, 33]
+    assert find_divisible_by_11_not_5([10, 15, 25]) is None
+    assert find_divisible_by_11_not_5([55, 110, 165]) is None
+    assert find_divisible_by_11_not_5([]) is None
+    assert find_divisible_by_11_not_5([121, 132, 143]) == [121, 132, 143]
+    assert find_divisible_by_11_not_5([44, 55, 66]) == [44, 66]
+
+
+# 1060. Тесты для функции `find_product_of_elements_of_other_list`:
+def test_find_product_of_elements_of_other_list():
+    assert find_product_of_elements_of_other_list([1, 2, 3], [1, 2, 3]) is None
+    assert find_product_of_elements_of_other_list([1, 2, 6], [1, 2, 3]) == [6]
+    assert find_product_of_elements_of_other_list([1, 2, 3], [2, 2, 2]) is None
+    assert find_product_of_elements_of_other_list([], [2, 2, 2]) is None
+    assert find_product_of_elements_of_other_list([4, 8], [2, 2]) == [4]
+    assert find_product_of_elements_of_other_list([2], [2]) == [2]
+
+
+# 1061. Тесты для функции find_divisors_4:
+def test_find_divisors_4():
+    assert find_divisors_4([1, 2, 3, 4], 8) == [1, 2, 4]
+    assert find_divisors_4([5, 6, 7], 12) == [6]
+    assert find_divisors_4([3, 5, 9], 29) is None
+    assert find_divisors_4([1, 2, 4], 27) == [1]
+    assert find_divisors_4([], 30) is None
+    assert find_divisors_4([7, 8, 9], 63) == [7, 9]
+
+
+# 1062. Тесты для функции find_greater_than_all_in_other_list:
+def test_find_greater_than_all_in_other_list():
+    assert find_greater_than_all_in_other_list([1, 2, 3], [0, -1]) == [1, 2, 3]
+    assert find_greater_than_all_in_other_list([1, 2, 3], [2, 3]) is None
+    assert find_greater_than_all_in_other_list([10, 20, 30], [5, 15]) == [20, 30]
+    assert find_greater_than_all_in_other_list([5, 10, 15], [10]) == [15]
+    assert find_greater_than_all_in_other_list([5, 5, 5], [5]) is None
+    assert find_greater_than_all_in_other_list([10, 20, 30], [30]) is None
+
+
+# 1063. Тесты для функции multiply_list_by_2:
+def test_multiply_list_by_2():
+    assert multiply_list_by_2([1, 2, 3]) == [2, 4, 6]
+    assert multiply_list_by_2([0, -1, -2]) == [0, -2, -4]
+    assert multiply_list_by_2([4, 5, 6]) == [8, 10, 12]
+    assert multiply_list_by_2([-3, -2, -1]) == [-6, -4, -2]
+    assert multiply_list_by_2([2, 3, 4]) == [4, 6, 8]
+    assert multiply_list_by_2([]) is None
+
+
+# 1064. Тесты для функции find_powers_of_elements:
+def test_find_powers_of_elements():
+    assert find_powers_of_elements([1, 2, 3], 2) == [1, 4, 9]
+    assert find_powers_of_elements([2, 3, 4], 3) == [8, 27, 64]
+    assert find_powers_of_elements([0, 1, 2], 4) == [0, 1, 16]
+    assert find_powers_of_elements([5, 6], 0) == [1, 1]
+    assert find_powers_of_elements([-1, -2], 2) == [1, 4]
+    assert find_powers_of_elements([], 2) is None
+
+
+# 1065. Тесты для функции find_greater_or_equal_to_all:
+def test_find_greater_or_equal_to_all():
+    assert find_greater_or_equal_to_all([1, 2, 3], [0, -1]) == [1, 2, 3]
+    assert find_greater_or_equal_to_all([5, 10, 15], [10]) == [10, 15]
+    assert find_greater_or_equal_to_all([1, 2, 3], [4, 5]) is None
+    assert find_greater_or_equal_to_all([4, 5, 6], [4]) == [4, 5, 6]
+    assert find_greater_or_equal_to_all([7, 8, 9], [6, 7]) == [7, 8, 9]
+    assert find_greater_or_equal_to_all([1, 1, 1], [1]) == [1, 1, 1]
+
+
+# 1066. Тесты для функции subtract_lists_with_condition:
+def test_subtract_lists_with_condition():
+    assert subtract_lists_with_condition([10, 20, 30], [1, 2, 3], 5) == [9, 18, 27]
+    assert subtract_lists_with_condition([5, 10, 15], [1, 2, 3], 3) == [4, 8, 12]
+    assert subtract_lists_with_condition([1, 2, 3], [4, 5, 6], 0) is None
+    assert subtract_lists_with_condition([6, 7, 8], [5, 4, 3], 2) == [3, 5]
+    assert subtract_lists_with_condition([2, 3, 4], [1, 1, 1], 1) == [2, 3]
+    assert subtract_lists_with_condition([10, 10, 10], [5, 5, 5], 4) == [5, 5, 5]
+
+
+# 1067. Тесты для функции multiply_lists_elements:
+def test_multiply_lists_elements():
+    assert multiply_lists_elements([1, 2, 3], [4, 5, 6]) == [4, 10, 18]
+    assert multiply_lists_elements([0, -1, -2], [-3, -4, -5]) == [0, 4, 10]
+    assert multiply_lists_elements([2, 3], [2, 3]) == [4, 9]
+    assert multiply_lists_elements([], [0, 0, 0]) is None
+    assert multiply_lists_elements([3, 4, 5], [6, 7, 8]) == [18, 28, 40]
+    assert multiply_lists_elements([5, 10], [5, 10]) == [25, 100]
+
+
+# 1068. Тесты для функции find_divisors_of_list_elements:
+def test_find_divisors_of_list_elements():
+    assert find_divisors_of_list_elements([4, 6]) == [1, 2, 4, 1, 2, 3, 6]
+    assert find_divisors_of_list_elements([]) is None
+    assert find_divisors_of_list_elements([7, 11]) == [1, 7, 1, 11]
+    assert find_divisors_of_list_elements([]) is None
+    assert find_divisors_of_list_elements([8, 9]) == [1, 2, 4, 8, 1, 3, 9]
+    assert find_divisors_of_list_elements([13, 17]) == [1, 13, 1, 17]
+
+
+# 1069. Тесты для функции find_greater_than_or_equal_min:
+def test_find_greater_than_or_equal_min():
+    assert find_greater_than_or_equal_min([1, 2, 3], [2]) == [2, 3]
+    assert find_greater_than_or_equal_min([4, 5, 6], [3]) == [4, 5, 6]
+    assert find_greater_than_or_equal_min([1, 1, 1], [1]) == [1, 1, 1]
+    assert find_greater_than_or_equal_min([1, 2, 3], [4]) is None
+    assert find_greater_than_or_equal_min([7, 8, 9], [7]) == [7, 8, 9]
+    assert find_greater_than_or_equal_min([5, 5, 5], [5]) == [5, 5, 5]
+
+
+# 1070. Тесты для функции find_difference_of_elements:
+def test_find_difference_of_elements():
+    assert find_difference_of_elements([4, 1, 5]) == [3, -1, -4]
+    assert find_difference_of_elements([9, 7, 6]) == [2, 3, 1]
+    assert find_difference_of_elements([]) is None
+    assert find_difference_of_elements([1, 1, 1]) == [0, 0, 0]
+    assert find_difference_of_elements([]) is None
+    assert find_difference_of_elements([5, 4, 3]) == [1, 2, 1]
+
+
+# 1071. Тесты для функции find_square_roots_of_list:
+def test_find_square_roots_of_list():
+    assert find_square_roots_of_list([4, 9, 16]) == [2.0, 3.0, 4.0]
+    assert find_square_roots_of_list([1, 0, 25]) == [1.0, 0.0, 5.0]
+    assert find_square_roots_of_list([36, 49, 64]) == [6.0, 7.0, 8.0]
+    assert find_square_roots_of_list([0, 1, 4]) == [0.0, 1.0, 2.0]
+    assert find_square_roots_of_list([81, 100]) == [9.0, 10.0]
+    assert find_square_roots_of_list([]) is None
+
+
+# 1072. Тесты для функции subtract_lists_elementwise:
+def test_subtract_lists_elementwise():
+    assert subtract_lists_elementwise([10, 20, 30], [1, 2, 3]) == [9, 18, 27]
+    assert subtract_lists_elementwise([5, 10, 15], [5, 5, 5]) == [0, 5, 10]
+    assert subtract_lists_elementwise([], [1, 1, 1]) is None
+    assert subtract_lists_elementwise([1, 2], [2, 1]) == [-1, 1]
+    assert subtract_lists_elementwise([3, 3, 3], [1, 1]) == [2, 2, 3]
+    assert subtract_lists_elementwise([1, 1], [1, 1, 1]) == [0, 0]
+
+
+# 1073. Тесты для функции find_exclusive_in_both:
+def test_find_exclusive_in_both():
+    assert find_exclusive_in_both([1, 2, 3], [3, 4, 5]) == [1, 2, 4, 5]
+    assert find_exclusive_in_both([5, 6], [6, 7]) == [5, 7]
+    assert find_exclusive_in_both([], []) is None
+    assert find_exclusive_in_both([1, 1], [2, 2]) == [1, 1, 2, 2]
+    assert find_exclusive_in_both([], [1, 2, 3]) == [1, 2, 3]
+    assert find_exclusive_in_both([1, 2, 3], []) == [1, 2, 3]
+
+
+# 1074. Тесты для функции sum_lists_if_greater_than_10:
+def test_sum_lists_if_greater_than_10():
+    assert sum_lists_if_greater_than_10([5, 10], [6, 5]) == [11, 15]
+    assert sum_lists_if_greater_than_10([4, 5], [7, 8]) == [11, 13]
+    assert sum_lists_if_greater_than_10([1, 2], [3, 4]) is None
+    assert sum_lists_if_greater_than_10([10, 20], [1, 2]) == [11, 22]
+    assert sum_lists_if_greater_than_10([0, 10], [12, 8]) == [12, 18]
+    assert sum_lists_if_greater_than_10([3, 6], [5, 5]) == [11]
+
+
+# 1075. Тесты для функции power_of_elements:
+def test_power_of_elements():
+    assert power_of_elements([1, 2], [3, 4]) == [1, 16]
+    assert power_of_elements([2, 3], [2, 3]) == [4, 27]
+    assert power_of_elements([0, 1], [0, 1]) == [1, 1]
+    assert power_of_elements([], [0, 0]) is None
+    assert power_of_elements([4, 5], [1, 2]) == [4, 25]
+    assert power_of_elements([5, 6], []) is None
+
+
+# 1076. Тесты для функции divide_lists_with_exclusion_of_zero:
+def test_divide_lists_with_exclusion_of_zero():
+    assert divide_lists_with_exclusion_of_zero([10, 20], [2, 5]) == [5.0, 4.0]
+    assert divide_lists_with_exclusion_of_zero([30, 40], [3, 4]) == [10.0, 10.0]
+    assert divide_lists_with_exclusion_of_zero([], []) is None
+    assert divide_lists_with_exclusion_of_zero([4, 6], [2, 0]) == [2.0]
+    assert divide_lists_with_exclusion_of_zero([5, 7], [1, 1]) == [5.0, 7.0]
+    assert divide_lists_with_exclusion_of_zero([8, 10], [4, 5]) == [2.0, 2.0]
+
+
+# 1077. Тесты для функции find_even_common:
+def test_find_even_common():
+    assert find_even_common([2, 4, 6], [4, 6, 8]) == [4, 6]
+    assert find_even_common([1, 2, 3], [2, 4, 5]) == [2]
+    assert find_even_common([10, 12], [12, 14]) == [12]
+    assert find_even_common([0, 2], [2, 3]) == [2]
+    assert find_even_common([5, 6], [7, 8]) is None
+    assert find_even_common([4, 8], [8, 12]) == [8]
+
+
+# 1078. Тесты для функции find_less_than_sum_of_other_list:
+def test_find_less_than_sum_of_other_list():
+    assert find_less_than_sum_of_other_list([1, 2, 3], [4, 5, 6]) == [1, 2, 3]
+    assert find_less_than_sum_of_other_list([10, 20], [5, 5]) is None
+    assert find_less_than_sum_of_other_list([5, 15], [10, 20]) == [5, 15]
+    assert find_less_than_sum_of_other_list([30, 40], [10, 10]) is None
+    assert find_less_than_sum_of_other_list([3, 7], [6, 5]) == [3, 7]
+    assert find_less_than_sum_of_other_list([2, 9], [1, 2]) == [2]
+
+
+# 1079. Тесты для функции subtract_from_squares:
+def test_subtract_from_squares():
+    assert subtract_from_squares([1, 2, 3]) == [0, 2, 6]
+    assert subtract_from_squares([]) is None
+    assert subtract_from_squares([10, 12]) == [90, 132]
+    assert subtract_from_squares([2, 3, 4]) == [2, 6, 12]
+    assert subtract_from_squares([]) is None
+    assert subtract_from_squares([8, 9]) == [56, 72]
+
+
+# 1080. Тесты для функции multiply_lists_if_greater_than_20:
+def test_multiply_lists_if_greater_than_20():
+    assert multiply_lists_if_greater_than_20([5, 10], [5, 3]) == [25, 30]
+    assert multiply_lists_if_greater_than_20([6, 7], [4, 5]) == [24, 35]
+    assert multiply_lists_if_greater_than_20([2, 3], [10, 7]) == [21]
+    assert multiply_lists_if_greater_than_20([2, 2], [5, 5]) is None
+    assert multiply_lists_if_greater_than_20([4, 5], [6, 5]) == [24, 25]
+    assert multiply_lists_if_greater_than_20([1, 2], [30, 20]) == [30, 40]
+
+
+# 1081. Тесты для функции `find_divisible_by_3_not_6`:
+def test_find_divisible_by_3_not_6():
+    assert find_divisible_by_3_not_6([3, 6, 9, 12, 15]) == [3, 9, 15]
+    assert find_divisible_by_3_not_6([1, 2, 4, 5, 7, 8]) is None
+    assert find_divisible_by_3_not_6([-3, -6, -9, -12, 0]) == [-3, -9]
+
+
+# 1082. Тесты для функции `find_unique_elements_in_sets_3`:
+def test_find_unique_elements_in_sets_3():
+    assert find_unique_elements_in_sets_3([1, 2, 3], [3, 4, 5]) == [1, 2, 4, 5]
+    assert find_unique_elements_in_sets_3([1, 2, 3], [1, 2, 3]) is None
+    assert find_unique_elements_in_sets_3([], [1, 2, 3]) == [1, 2, 3]
+
+
+# 1083. Тесты для функции `sum_elements_times_index`:
+def test_sum_elements_times_index():
+    assert sum_elements_times_index([1, 2, 3, 4]) == [0, 2, 6, 12]
+    assert sum_elements_times_index([0, 0, 0]) == [0, 0, 0]
+    assert sum_elements_times_index([]) is None
+
+
+# 1084. Тесты для функции `diff_of_multiplied_lists`:
+def test_diff_of_multiplied_lists():
+    assert diff_of_multiplied_lists([1, 2, 3], [4, 5, 6]) == [3, 8, 15]
+    assert diff_of_multiplied_lists([0, 0], [0, 0]) == [0, 0]
+    assert diff_of_multiplied_lists([1], [2]) == [1]
+    assert diff_of_multiplied_lists([], [2]) is None
+
+
+# 1085. Тесты для функции `find_unique_in_both_lists_and_sum`:
+def test_find_unique_in_both_lists_and_sum():
+    assert find_unique_in_both_lists_and_sum([1, 2, 3], [3, 4, 5]) == 12
+    assert find_unique_in_both_lists_and_sum([1, 2, 3], [1, 2, 3]) is None
+    assert find_unique_in_both_lists_and_sum([], [1, 2, 3]) == 6
+
+
+# 1086. Тесты для функции `multiply_by_difference_of_lists`:
+def test_multiply_by_difference_of_lists():
+    assert multiply_by_difference_of_lists([1, 2, 3], [4, 5, 6]) == [1, 7, 15]
+    assert multiply_by_difference_of_lists([0, 0], [0, 0]) == [0, 0]
+    assert multiply_by_difference_of_lists([1], [2]) == [1]
+    assert multiply_by_difference_of_lists([], []) is None
+
+
+# 1087. Тесты для функции `find_difference_of_elements_and_squares`:
+def test_find_difference_of_elements_and_squares():
+    assert find_difference_of_elements_and_squares([1, 2, 3]) == [0, -2, -6]
+    assert find_difference_of_elements_and_squares([0]) == [0]
+    assert find_difference_of_elements_and_squares([]) is None
+
+
+# 1088. Тесты для функции `find_common_and_divisible_by_5`:
+def test_find_common_and_divisible_by_5():
+    assert find_common_and_divisible_by_5([5, 10, 15], [5, 15, 20]) == [5, 15]
+    assert find_common_and_divisible_by_5([1, 2, 3], [4, 5, 6]) is None
+    assert find_common_and_divisible_by_5([], [5, 10, 15]) is None
+
+
+# 1089. Тесты для функции `find_less_than_all_and_gt_10`:
+def test_find_less_than_all_and_gt_10():
+    assert find_less_than_all_and_gt_10([5, 15, 25], [10, 20, 30]) is None
+    assert find_less_than_all_and_gt_10([5, 6], [1, 2]) is None
+    assert find_less_than_all_and_gt_10([15, 20], [30, 40]) == [15, 20]
+
+
+# 1090. Тесты для функции `find_divisible_by_2_and_4_not_12`:
+def test_find_divisible_by_2_and_4_not_12():
+    assert find_divisible_by_2_and_4_not_12([8, 16, 24]) == [8, 16]
+    assert find_divisible_by_2_and_4_not_12([3, 6, 9]) is None
+    assert find_divisible_by_2_and_4_not_12([12, 24, 36]) is None
+
+
+# 1091. Тесты для функции `find_diff_between_square_and_cube`:
+def test_find_diff_between_square_and_cube():
+    assert find_diff_between_square_and_cube([2, 3, 4]) == [-4, -18, -48]
+    assert find_diff_between_square_and_cube([1, 0, -1]) == [0, 0, 2]
+    assert find_diff_between_square_and_cube([]) is None
+    assert find_diff_between_square_and_cube([0]) == [0]
+
+
+# 1092. Тесты для функции `power_elements_by_index`:
+def test_power_elements_by_index():
+    assert power_elements_by_index([1, 2, 3, 4]) == [1, 2, 9, 64]
+    assert power_elements_by_index([5, 6]) == [1, 6]
+    assert power_elements_by_index([]) is None
+
+
+# 1093. Тесты для функции `subtract_squares_of_two_lists`:
+def test_subtract_squares_of_two_lists():
+    assert subtract_squares_of_two_lists([5], []) is None
+    assert subtract_squares_of_two_lists([2, 3, 4], [1, 2, 3]) == [3, 5, 7]
+    assert subtract_squares_of_two_lists([5], [3]) == [16]
+    assert subtract_squares_of_two_lists([1, 2], [2, 1]) == [-3, 3]
+
+
+# 1094. Тесты для функции `subtract_divided_lists`:
+def test_subtract_divided_lists():
+    assert subtract_divided_lists([], [2, 4, 6]) is None
+    assert subtract_divided_lists([10, 20, 30], [2, 4, 6]) == [5.0, 15.0, 25.0]
+    assert subtract_divided_lists([1, 2, 3], []) is None
+    assert subtract_divided_lists([1, 2, 3], [1, 1, 1]) == [0.0, 0.0, 0.0]
+    assert subtract_divided_lists([5, 10], [0, 5]) == [8.0]
+
+
+# 1095. Тесты для функции `sum_elements_times_index_v2`:
+def test_sum_elements_times_index_v2():
+    assert sum_elements_times_index_v2([1, 2, 3, 4]) == [1, 4, 9, 16]
+    assert sum_elements_times_index_v2([0, 0, 0]) == [0, 0, 0]
+    assert sum_elements_times_index_v2([]) is None
+
+
+# 1096. Тесты для функции `find_divisible_by_6_and_8`:
+def test_find_divisible_by_6_and_8():
+    assert find_divisible_by_6_and_8([24, 48, 72]) == [24, 48, 72]
+    assert find_divisible_by_6_and_8([12, 18, 30]) is None
+    assert find_divisible_by_6_and_8([]) is None
+
+
+# 1097. Тесты для функции `find_diff_and_factorials`:
+def test_find_diff_and_factorials():
+    assert find_diff_and_factorials([3, 4, 5]) == [-3, -20, -115]
+    assert find_diff_and_factorials([0, 1, 2]) == [-1, 0, 0]
+    assert find_diff_and_factorials([]) is None
+    assert find_diff_and_factorials([6]) == [-714]
+
+
+# 1098. Тесты для функции `multiply_lists_if_less_than_100`:
+def test_multiply_lists_if_less_than_100():
+    assert multiply_lists_if_less_than_100([5, 10, 20], [3, 4, 2]) == [15, 40, 40]
+    assert multiply_lists_if_less_than_100([10], [10]) is None
+    assert multiply_lists_if_less_than_100([], []) is None
+
+
+# 1099. Тесты для функции `find_powers_by_index`:
+def test_find_powers_by_index():
+    assert find_powers_by_index([2, 3, 4]) == [2, 9, 64]
+    assert find_powers_by_index([5, 6]) == [5, 36]
+    assert find_powers_by_index([]) is None
+
+
+# 1100. Тесты для функции `subtract_lists_with_index`:
+def test_subtract_lists_with_index():
+    assert subtract_lists_with_index([10, 20, 30], [1, 2, 3]) == [0, 18, 54]
+    assert subtract_lists_with_index([1, 2, 3], [3, 2, 1]) == [0, 0, 4]
+    assert subtract_lists_with_index([], []) is None
+    assert subtract_lists_with_index([6, 7, 2], [8, 8]) == [0, -1, 4]
+    assert subtract_lists_with_index([5, 10], [5, 5]) == [0, 5]
+
+
+# 1101. Тесты для функции `sum_divided_lists`:
+def test_sum_divided_lists():
+    assert sum_divided_lists([10, 20, 30], [2, 4, 5]) == [5.0, 5.0, 6.0]
+    assert sum_divided_lists([0, 0, 0], [1, 1, 1]) == [0.0, 0.0, 0.0]
+    assert sum_divided_lists([1, 2, 3], [0, 1, 2]) == [2.0, 1.5]
+    assert sum_divided_lists([5, 10], [0, 0]) is None
+    assert sum_divided_lists([], []) is None
+
+
+# 1102. Тесты для функции `diff_of_squares`:
+def test_diff_of_squares():
+    assert diff_of_squares([3, 4], [1, 2]) == [8, 12]
+    assert diff_of_squares([1, 2, 3], [1, 2, 3]) == [0, 0, 0]
+    assert diff_of_squares([0, 0, 0], [0, 0, 0]) == [0, 0, 0]
+    assert diff_of_squares([1, 2], []) is None
+    assert diff_of_squares([], [1, 2]) is None
+    assert diff_of_squares([], []) is None
+
+
+# 1103. Тесты для функции `find_divisible_by_7_not_14_or_21`:
+def test_find_divisible_by_7_not_14_or_21():
+    assert find_divisible_by_7_not_14_or_21([7, 14, 21, 28, 35]) == [7, 35]
+    assert find_divisible_by_7_not_14_or_21([7, 49, 56]) == [7, 49]
+    assert find_divisible_by_7_not_14_or_21([14, 28, 42]) is None
+    assert find_divisible_by_7_not_14_or_21([1, 2, 3]) is None
+    assert find_divisible_by_7_not_14_or_21([]) is None
+
+
+# 1104. Тесты для функции `sum_and_diff_of_lists`:
+def test_sum_and_diff_of_lists():
+    assert sum_and_diff_of_lists([1, 2, 3], [1, 2, 3]) == [2, 4, 6]
+    assert sum_and_diff_of_lists([10, 20], [5, 5]) == [20, 40]
+    assert sum_and_diff_of_lists([0, 0, 0], [1, 2, 3]) == [0, 0, 0]
+    assert sum_and_diff_of_lists([1, 2], []) is None
+    assert sum_and_diff_of_lists([], [1, 2]) is None
+
+
+# 1105. Тесты для функции `multiply_lists_if_greater_than_50`:
+def test_multiply_lists_if_greater_than_50():
+    assert multiply_lists_if_greater_than_50([10, 20, 30], [6, 3, 2]) == [60, 60, 60]
+    assert multiply_lists_if_greater_than_50([5, 10, 15], [1, 6, 4]) == [60, 60]
+    assert multiply_lists_if_greater_than_50([1, 2, 3], [1, 2, 3]) is None
+    assert multiply_lists_if_greater_than_50([10, 10, 10], [1, 1, 1]) is None
+    assert multiply_lists_if_greater_than_50([100], [1]) == [100]
+
+
+# 1106. Тесты для функции `find_divisible_by_8_not_24`:
+def test_find_divisible_by_8_not_24():
+    assert find_divisible_by_8_not_24([8, 16, 24, 32, 48]) == [8, 16, 32]
+    assert find_divisible_by_8_not_24([8, 48]) == [8]
+    assert find_divisible_by_8_not_24([24, 48, 72]) is None
+    assert find_divisible_by_8_not_24([1, 2, 3]) is None
+    assert find_divisible_by_8_not_24([]) is None
+
+
+# 1107. Тесты для функции `diff_of_all_squares`:
+def test_diff_of_all_squares():
+    assert diff_of_all_squares([1, 2, 3], [4, 5, 6]) == [-63]
+    assert diff_of_all_squares([0], [0]) == [0]
+    assert diff_of_all_squares([1, 1, 1], [1, 1, 1]) == [0]
+    assert diff_of_all_squares([3, 3], [2, 2]) == [10]
+    assert diff_of_all_squares([], []) is None
+
+
+# 1108. Тесты для функции `find_common_and_sum_gt_20`:
+def test_find_common_and_sum_gt_20():
+    assert find_common_and_sum_gt_20([15, 30, 45], [15, 30, 50]) == [15, 30]
+    assert find_common_and_sum_gt_20([10, 20], [10, 30]) is None
+    assert find_common_and_sum_gt_20([1, 2, 3], [1, 2, 3]) is None
+    assert find_common_and_sum_gt_20([25], [25]) == [25]
+    assert find_common_and_sum_gt_20([], []) is None
+
+
+# 1109. Тесты для функции `divide_with_remainder`:
+def test_divide_with_remainder():
+    assert divide_with_remainder([10, 20, 30], [3, 4, 5]) == [1, 0, 0]
+    assert divide_with_remainder([1, 2, 3], [1, 2, 3]) == [0, 0, 0]
+    assert divide_with_remainder([5, 10, 15], [2, 3, 4]) == [1, 1, 3]
+    assert divide_with_remainder([5, 5], [0, 1]) == [0]
+    assert divide_with_remainder([], []) is None
+
+
+# 1110. Тесты для функции `multiply_if_greater_than_100`:
+def test_multiply_if_greater_than_100():
+    assert multiply_if_greater_than_100([10, 20, 30], [11, 6, 4]) == [110, 120, 120]
+    assert multiply_if_greater_than_100([15, 25], [5, 5]) == [125]
+    assert multiply_if_greater_than_100([1, 2, 3], [100, 50, 25]) is None
+    assert multiply_if_greater_than_100([10, 10, 10], [9, 9, 9]) is None
+    assert multiply_if_greater_than_100([], []) is None
+
+
+# 1111. Тесты для функции `subtract_by_index`:
+def test_subtract_by_index():
+    assert subtract_by_index([10, 20, 30], [1, 2, 3]) == [9, 18, 27]
+    assert subtract_by_index([1, 2, 3], [0, 1, 2]) == [1, 1, 1]
+    assert subtract_by_index([5, 10, 15], [5, 5, 5]) == [0, 5, 10]
+    assert subtract_by_index([5, 5], []) is None
+    assert subtract_by_index([], []) is None
+
+
+# 1112. Тесты для функции `power_by_index`:
+def test_power_by_index():
+    assert power_by_index([2, 2, 2]) == [2, 4, 8]
+    assert power_by_index([1, 2, 3]) == [1, 4, 27]
+    assert power_by_index([0, 1, 2]) == [0, 1, 8]
+    assert power_by_index([]) is None
+    assert power_by_index([5, 6]) == [5, 36]
+
+
+# 1113. Тесты для функции `diff_divided_by_index`:
+def test_diff_divided_by_index():
+    assert diff_divided_by_index([10, 20, 30], [1, 2, 3]) == [18.0, 13.5]
+    assert diff_divided_by_index([1, 2, 3], [3, 2, 1]) == [0.0, 1.0]
+    assert diff_divided_by_index([5, 10, 15], [5, 5, 5]) == [5.0, 5.0]
+    assert diff_divided_by_index([1, 2, 3], [1, 2]) == [0.0]
+    assert diff_divided_by_index([], []) is None
+
+
+# 1114. Тесты для функции `multiply_by_len_of_other_list`:
+def test_multiply_by_len_of_other_list():
+    assert multiply_by_len_of_other_list([1, 2, 3], [1, 2]) == [2, 4, 6]
+    assert multiply_by_len_of_other_list([5, 10], [1]) == [5, 10]
+    assert multiply_by_len_of_other_list([], [1, 2, 3]) is None
+    assert multiply_by_len_of_other_list([3], [1, 2, 3, 4]) == [12]
+    assert multiply_by_len_of_other_list([2, 4, 6], [1]) == [2, 4, 6]
+
+
+# 1115. Тесты для функции `sum_and_multiply_lists`:
+def test_sum_and_multiply_lists():
+    assert sum_and_multiply_lists([1, 2, 3], [4, 5, 6]) == [9, 17, 27]
+    assert sum_and_multiply_lists([1, 1, 1], [1, 1, 1]) == [3, 3, 3]
+    assert sum_and_multiply_lists([0, 0, 0], [1, 1, 1]) == [1, 1, 1]
+    assert sum_and_multiply_lists([1, 2, 3], [0, 0, 0]) == [1, 2, 3]
+    assert sum_and_multiply_lists([], [1, 2, 3]) is None
+
+
+# 1116. Тесты для функции `sum_and_product_of_lists`:
+def test_sum_and_product_of_lists():
+    assert sum_and_product_of_lists([1, 2], [3, 4]) == [12, 48]
+    assert sum_and_product_of_lists([2, 3], [4, 5]) == [48, 120]
+    assert sum_and_product_of_lists([1, 2], [0, 0]) == [0, 0]
+    assert sum_and_product_of_lists([1, 1], [1, 1]) == [2, 2]
+    assert sum_and_product_of_lists([], []) is None
+
+
+# 1117. Тесты для функции `find_divisible_by_4_not_8_or_16`:
+def test_find_divisible_by_4_not_8_or_16():
+    assert find_divisible_by_4_not_8_or_16([4, 8, 12, 16, 20]) == [4, 12, 20]
+    assert find_divisible_by_4_not_8_or_16([4, 20, 28]) == [4, 20, 28]
+    assert find_divisible_by_4_not_8_or_16([8, 16, 32]) is None
+    assert find_divisible_by_4_not_8_or_16([1, 2, 3]) is None
+    assert find_divisible_by_4_not_8_or_16([]) is None
+
+
+# 1118. Тесты для функции `subtract_by_other_list_index`:
+def test_subtract_by_other_list_index():
+    assert subtract_by_other_list_index([10, 20], [1, 2]) == [9, 18]
+    assert subtract_by_other_list_index([5, 10], [5, 0]) == [0, 10]
+    assert subtract_by_other_list_index([1, 2, 3], [1, 2, 3]) == [0, 0, 0]
+    assert subtract_by_other_list_index([], [1, 2, 3]) is None
+    assert subtract_by_other_list_index([1, 2, 3], []) is None
+
+
+# 1119. Тесты для функции `divide_by_index`:
+def test_divide_by_index():
+    assert divide_by_index([10, 20, 30], [1, 2, 3]) == [20.0, 15.0]
+    assert divide_by_index([1, 2, 3], [3, 2, 1]) == [2.0, 1.5]
+    assert divide_by_index([5, 10, 15], [5, 5, 5]) == [10.0, 7.5]
+    assert divide_by_index([1, 2, 3], [1, 2]) == [2]
+    assert divide_by_index([], []) is None
+
+
+# 1120. Тесты для функции `diff_multiplied_by_index`:
+def test_diff_multiplied_by_index():
+    assert diff_multiplied_by_index([10, 20], [5, 5]) == [0, 15]
+    assert diff_multiplied_by_index([5, 10], [2, 1]) == [0, 9]
+    assert diff_multiplied_by_index([1, 2, 3], [1, 2, 3]) == [0, 0, 0]
+    assert diff_multiplied_by_index([], [1, 2, 3]) is None
+    assert diff_multiplied_by_index([1, 2, 3], []) is None
+
+
+# 1121. Тесты для функции `diff_of_squares_and_indexes`:
+def test_diff_of_squares_and_indexes():
+    assert diff_of_squares_and_indexes([2, 4, 6], [0, 1, 2]) == [4, 15, 34]
+    assert diff_of_squares_and_indexes([3, 5], [2, 2]) == [9, 24]
+    assert diff_of_squares_and_indexes([], [1, 2]) is None
+    assert diff_of_squares_and_indexes([1], []) is None
+    assert diff_of_squares_and_indexes([1], [0]) == [1]
+    assert diff_of_squares_and_indexes([2], [3, 4]) == [4]
+
+
+# 1122. Тесты для функции `diff_of_lists_and_products`:
+def test_diff_of_lists_and_products():
+    assert diff_of_lists_and_products([5, 10, 15], [2, 3]) == [-1, 4, 9]
+    assert diff_of_lists_and_products([6, 8], [1, 2, 3]) == [0, 2]
+    assert diff_of_lists_and_products([1, 1, 1], [2, 2, 2]) == [-7, -7, -7]
+    assert diff_of_lists_and_products([3], [1, 1, 1, 1]) == [2]
+    assert diff_of_lists_and_products([3, 4, 5], []) == [2, 3, 4]
+    assert diff_of_lists_and_products([], [1, 2, 3]) is None
+
+
+# 1123. Тесты для функции `power_by_sum_of_other_list`:
+def test_power_by_sum_of_other_list():
+    assert power_by_sum_of_other_list([2, 3], [1, 1]) == [4, 9]
+    assert power_by_sum_of_other_list([4], [-1, -1, 1]) is None
+    assert power_by_sum_of_other_list([5], [3, 2]) == [3125]
+    assert power_by_sum_of_other_list([], [1, 2, 3]) is None
+    assert power_by_sum_of_other_list([2], [10]) == [1024]
+    assert power_by_sum_of_other_list([1, 1, 1], [0, 0, 0]) == [1, 1, 1]
+
+
+# 1124. Тесты для функции `diff_of_squares_with_index`:
+def test_diff_of_squares_with_index():
+    assert diff_of_squares_with_index([3, 5], [2, 1]) == [5, 25]
+    assert diff_of_squares_with_index([6, 8], [1, 1]) == [35, 64]
+    assert diff_of_squares_with_index([4, 7, 9], [3, 6, 2]) == [7, 14, 79]
+    assert diff_of_squares_with_index([], [1, 2, 3]) is None
+    assert diff_of_squares_with_index([2, 4, 6], []) is None
+    assert diff_of_squares_with_index([1, 2], [2, 2]) == [-3, 1]
+
+
+# 1125. Тесты для функции `multiply_by_division_of_other_list`:
+def test_multiply_by_division_of_other_list():
+    assert multiply_by_division_of_other_list([6, 8, 10], [2, 4, 5]) == [3.0, 2.0, 2.0]
+    assert multiply_by_division_of_other_list([9, 12], [3, 4]) == [3.0, 3.0]
+    assert multiply_by_division_of_other_list([2], [2, 2, 2]) == [1.0]
+    assert multiply_by_division_of_other_list([5], [1]) == [5.0]
+    assert multiply_by_division_of_other_list([], [2, 4, 6]) is None
+    assert multiply_by_division_of_other_list([3, 5], []) is None
+
+
+# 1126. Тесты для функции `power_by_index_of_other_list`:
+def test_power_by_index_of_other_list():
+    assert power_by_index_of_other_list([2, 3, 4], [2, 3, 2]) == [4, 27, 16]
+    assert power_by_index_of_other_list([5, 6], [1, 0]) == [5, 1]
+    assert power_by_index_of_other_list([7, 8], [0, 1]) == [1, 8]
+    assert power_by_index_of_other_list([2], [2]) == [4]
+    assert power_by_index_of_other_list([], [1, 2, 3]) is None
+    assert power_by_index_of_other_list([4, 5], []) is None
+
+
+# 1127. Тесты для функции `find_divisible_by_9_not_12`:
+def test_find_divisible_by_9_not_12():
+    assert find_divisible_by_9_not_12([9, 18, 27]) == [9, 18, 27]
+    assert find_divisible_by_9_not_12([36, 45, 54]) == [45, 54]
+    assert find_divisible_by_9_not_12([12, 24, 48]) is None
+    assert find_divisible_by_9_not_12([81, 99]) == [81, 99]
+    assert find_divisible_by_9_not_12([72, 108]) is None
+    assert find_divisible_by_9_not_12([5, 7, 11]) is None
+
+
+# 1128. Тесты для функции `diff_of_squares_and_indexes_from_other_list`:
+def test_diff_of_squares_and_indexes_from_other_list():
+    assert diff_of_squares_and_indexes_from_other_list([3, 4], [1, 2]) == [8, 14]
+    assert diff_of_squares_and_indexes_from_other_list([5, 6], [0, 3]) == [25, 33]
+    assert diff_of_squares_and_indexes_from_other_list([7, 8], [6, 1]) == [43, 63]
+    assert diff_of_squares_and_indexes_from_other_list([], [1, 2, 3]) is None
+    assert diff_of_squares_and_indexes_from_other_list([2, 3], []) is None
+    assert diff_of_squares_and_indexes_from_other_list([1], [1]) == [0]
+
+
+# 1129. Тесты для функции `divide_by_index_of_other_list`:
+def test_divide_by_index_of_other_list():
+    assert divide_by_index_of_other_list([10, 20, 30], [1, 2, 3]) == [20.0, 15.0]
+    assert divide_by_index_of_other_list([4, 8, 12], [2, 1, 0]) == [8.0, 6.0]
+    assert divide_by_index_of_other_list([6, 12], [3, 6]) == [12.0]
+    assert divide_by_index_of_other_list([], [1, 2, 3]) is None
+    assert divide_by_index_of_other_list([1, 2, 3], []) is None
+    assert divide_by_index_of_other_list([5], [5]) is None
+
+
+# 1130. Тесты для функции `multiply_by_index_if_less_than_50`:
+def test_multiply_by_index_if_less_than_50():
+    assert multiply_by_index_if_less_than_50([2, 3, 4], [10, 5, 2]) == [20, 15, 8]
+    assert multiply_by_index_if_less_than_50([5, 6], [8, 4]) == [40, 24]
+    assert multiply_by_index_if_less_than_50([1, 7], [6, 6]) == [6, 42]
+    assert multiply_by_index_if_less_than_50([], [1, 2, 3]) is None
+    assert multiply_by_index_if_less_than_50([1, 2, 3], []) is None
+    assert multiply_by_index_if_less_than_50([10], [10]) is None
+
+
+# 1131. Тесты для функции `find_divisible_by_6_and_9_not_12`:
+def test_find_divisible_by_6_and_9_not_12():
+    assert find_divisible_by_6_and_9_not_12([18, 36, 54]) == [18, 54]
+    assert find_divisible_by_6_and_9_not_12([72, 90, 108]) == [90]
+    assert find_divisible_by_6_and_9_not_12([24, 48]) is None
+    assert find_divisible_by_6_and_9_not_12([54, 81]) == [54]
+    assert find_divisible_by_6_and_9_not_12([60, 120]) is None
+    assert find_divisible_by_6_and_9_not_12([1, 3, 5]) is None
+
+
+# 1132. Тесты для функции `diff_of_squares_and_sum_of_other_list`:
+def test_diff_of_squares_and_sum_of_other_list():
+    assert diff_of_squares_and_sum_of_other_list([3, 4], [1, 2]) == [6, 13]
+    assert diff_of_squares_and_sum_of_other_list([5, 6], [1, 1, 1]) == [22, 33]
+    assert diff_of_squares_and_sum_of_other_list([7, 8], [2, 2, 2]) == [43, 58]
+    assert diff_of_squares_and_sum_of_other_list([], [1, 2, 3]) is None
+    assert diff_of_squares_and_sum_of_other_list([2, 3], []) == [4, 9]
+    assert diff_of_squares_and_sum_of_other_list([1], [1]) == [0]
+
+
+# 1133. Тесты для функции `multiply_by_divided_index`:
+def test_multiply_by_divided_index():
+    assert multiply_by_divided_index([4, 8, 12], [2, 1, 2]) == [8.0, 12.0]
+    assert multiply_by_divided_index([5, 10], [1, 2]) == [20.0]
+    assert multiply_by_divided_index([6, 12], [3, 3]) == [36.0]
+    assert multiply_by_divided_index([], [1, 2, 3]) is None
+    assert multiply_by_divided_index([1, 2, 3], []) is None
+    assert multiply_by_divided_index([2], [2]) is None
+
+
+# 1134. Тесты для функции `multiply_by_sum_of_other_list_v2`:
+def test_multiply_by_sum_of_other_list_v2():
+    assert multiply_by_sum_of_other_list_v2([2, 3], [1, 2, 3]) == [12, 18]
+    assert multiply_by_sum_of_other_list_v2([4, 5], [1, 1, 1, 1]) == [16, 20]
+    assert multiply_by_sum_of_other_list_v2([6], [2, 2, 2]) == [36]
+    assert multiply_by_sum_of_other_list_v2([], [1, 2, 3]) is None
+    assert multiply_by_sum_of_other_list_v2([2, 3], []) == [0, 0]
+    assert multiply_by_sum_of_other_list_v2([1], [1]) == [1]
+
+
+# 1135. Тесты для функции `subtract_from_product_of_other_list_v2`:
+def test_subtract_from_product_of_other_list_v2():
+    assert subtract_from_product_of_other_list_v2([2, 4], [1, 2]) == [0, -4]
+    assert subtract_from_product_of_other_list_v2([5, 7], [1, 1]) == [0, 0]
+    assert subtract_from_product_of_other_list_v2([6, 8], [0, 3]) == [6, -16]
+    assert subtract_from_product_of_other_list_v2([], [1, 2, 3]) is None
+    assert subtract_from_product_of_other_list_v2([2, 3], []) is None
+    assert subtract_from_product_of_other_list_v2([1], [1]) == [0]
+
+
+# 1136. Тесты для функции `diff_and_multiply_by_index`:
+def test_diff_and_multiply_by_index():
+    assert diff_and_multiply_by_index([2, 4], [1, 2]) == [0, 2]
+    assert diff_and_multiply_by_index([3, 5], [1, 1]) == [0, 4]
+    assert diff_and_multiply_by_index([6, 8], [3, 2]) == [0, 6]
+    assert diff_and_multiply_by_index([], [1, 2, 3]) is None
+    assert diff_and_multiply_by_index([2, 3], []) is None
+    assert diff_and_multiply_by_index([1], [1]) == [0]
+
+
+# 1137. Тесты для функции `divide_by_index_of_list`:
+def test_divide_by_index_of_list():
+    assert divide_by_index_of_list([10, 20, 30]) == [20.0, 15.0]
+    assert divide_by_index_of_list([4, 8, 12]) == [8.0, 6.0]
+    assert divide_by_index_of_list([6, 12]) == [12.0]
+    assert divide_by_index_of_list([]) is None
+    assert divide_by_index_of_list([1, 2, 3]) == [2.0, 1.5]
+    assert divide_by_index_of_list([5]) is None
+
+
+# 1138. Тесты для функции `diff_of_lists_and_multiplied_by_other_list`:
+def test_diff_of_lists_and_multiplied_by_other_list():
+    assert diff_of_lists_and_multiplied_by_other_list([4, 5], [2, 3]) == [4, 6]
+    assert diff_of_lists_and_multiplied_by_other_list([3, 6], [1, 2]) == [2, 8]
+    assert diff_of_lists_and_multiplied_by_other_list([7, 8], [3, 4]) == [12, 16]
+    assert diff_of_lists_and_multiplied_by_other_list([], [1, 2, 3]) is None
+    assert diff_of_lists_and_multiplied_by_other_list([2, 3], []) is None
+    assert diff_of_lists_and_multiplied_by_other_list([1], [1]) == [0]
+
+
+# 1139. Тесты для функции `diff_of_squares_and_sum_v2`:
+def test_diff_of_squares_and_sum_v2():
+    assert diff_of_squares_and_sum_v2([3, 4], [1, 2]) == [6, 13]
+    assert diff_of_squares_and_sum_v2([5, 6], [1, 1, 1]) == [22, 33]
+    assert diff_of_squares_and_sum_v2([7, 8], [2, 2, 2]) == [43, 58]
+    assert diff_of_squares_and_sum_v2([], [1, 2, 3]) is None
+    assert diff_of_squares_and_sum_v2([2, 3], []) == [4, 9]
+    assert diff_of_squares_and_sum_v2([1], [1]) == [0]
+
+
+# 1140. Тесты для функции `diff_of_product_and_square`:
+def test_diff_of_product_and_square():
+    assert diff_of_product_and_square([2, 4], [1, 2]) == [-2, -8]
+    assert diff_of_product_and_square([3, 5], [2, 1]) == [-3, -20]
+    assert diff_of_product_and_square([6, 8], [0, 2]) == [-36, -48]
+    assert diff_of_product_and_square([], [1, 2, 3]) is None
+    assert diff_of_product_and_square([2, 3], []) is None
+    assert diff_of_product_and_square([1], [1]) == [0]
+
+
+# 1141. Тесты для функции `find_divisible_by_4_and_7_not_18`:
+def test_find_divisible_by_4_and_7_not_18():
+    assert find_divisible_by_4_and_7_not_18([28, 56, 14, 7]) == [28, 56]
+    assert find_divisible_by_4_and_7_not_18([14, 21, 35]) is None
+    assert find_divisible_by_4_and_7_not_18([]) is None
+    assert find_divisible_by_4_and_7_not_18([8, 16, 32, 64]) is None
+    assert find_divisible_by_4_and_7_not_18([28, 56]) == [28, 56]
+    assert find_divisible_by_4_and_7_not_18([28]) == [28]
+
+
+# 1142. Тесты для функции `sum_and_diff_of_lists_v2`:
+def test_sum_and_diff_of_lists_v2():
+    assert sum_and_diff_of_lists_v2([1, 2, 3], [4, 5, 6]) == [3, 3, 3]
+    assert sum_and_diff_of_lists_v2([], []) is None
+    assert sum_and_diff_of_lists_v2([1, 2], [1, 2]) == [0, 0]
+    assert sum_and_diff_of_lists_v2([3, 5, 7], [3, 5, 7]) == [0, 0, 0]
+    assert sum_and_diff_of_lists_v2([10, 20, 30], [15, 25, 35]) == [5, 5, 5]
+    assert sum_and_diff_of_lists_v2([1], [2]) == [1]
+
+
+# 1143. Тесты для функции `multiply_all_and_sum_other_list`:
+def test_multiply_all_and_sum_other_list():
+    assert multiply_all_and_sum_other_list([1, 2, 3], [4, 5, 6]) == [15, 30, 45]
+    assert multiply_all_and_sum_other_list([], [4, 5, 6]) is None
+    assert multiply_all_and_sum_other_list([1, 2, 3], []) == [0, 0, 0]
+    assert multiply_all_and_sum_other_list([1, 2], [1, 2]) == [3, 6]
+    assert multiply_all_and_sum_other_list([3, 5, 7], [3, 5, 7]) == [45, 75, 105]
+    assert multiply_all_and_sum_other_list([10, 20, 30], [15, 25, 35]) == [750, 1500, 2250]
+
+
+# 1144. Тесты для функции `diff_of_lists_and_sum_other_list`:
+def test_diff_of_lists_and_sum_other_list():
+    assert diff_of_lists_and_sum_other_list([10, 20, 30], [1, 2, 3]) == [4, 14, 24]
+    assert diff_of_lists_and_sum_other_list([], []) is None
+    assert diff_of_lists_and_sum_other_list([1, 2, 3], [1, 2, 3]) == [-5, -4, -3]
+    assert diff_of_lists_and_sum_other_list([10, 20, 30], [10, 20, 30]) == [-50, -40, -30]
+    assert diff_of_lists_and_sum_other_list([5, 10, 15], [5, 10, 15]) == [-25, -20, -15]
+    assert diff_of_lists_and_sum_other_list([1, 2], [3, 4]) == [-6, -5]
+
+
+# 1145. Тесты для функции `diff_of_squares_and_division_by_other_list`:
+def test_diff_of_squares_and_division_by_other_list():
+    assert diff_of_squares_and_division_by_other_list([4, 9, 16], [2, 3, 4]) == [8.0, 27.0, 64.0]
+    assert diff_of_squares_and_division_by_other_list([4, 9, 16], [0, 0, 0]) is None
+    assert diff_of_squares_and_division_by_other_list([], []) is None
+    assert diff_of_squares_and_division_by_other_list([1, 2, 3], [1, 2, 3]) == [1.0, 2.0, 3.0]
+    assert diff_of_squares_and_division_by_other_list([10, 20, 30], [5, 10, 15]) == [20.0, 40.0, 60.0]
+    assert diff_of_squares_and_division_by_other_list([25, 36, 49], [5, 6, 7]) == [125.0, 216.0, 343.0]
+
+
+# 1146. Тесты для функции `multiply_by_diff_of_lists`:
+def test_multiply_by_diff_of_lists():
+    assert multiply_by_diff_of_lists([4, 9, 16], [2, 3, 4]) == [8, 54, 192]
+    assert multiply_by_diff_of_lists([4, 9, 16], [0, 0, 0]) == [16, 81, 256]
+    assert multiply_by_diff_of_lists([], []) is None
+    assert multiply_by_diff_of_lists([1, 2, 3], [1, 2, 3]) == [0, 0, 0]
+    assert multiply_by_diff_of_lists([10, 20, 30], [5, 10, 15]) == [50, 200, 450]
+    assert multiply_by_diff_of_lists([25, 36, 49], [5, 6, 7]) == [500, 1080, 2058]
+
+
+# 1147. Тесты для функции `find_divisible_by_5_not_10_and_15`:
+def test_find_divisible_by_5_not_10_and_15():
+    assert find_divisible_by_5_not_10_and_15([5, 15, 20, 25, 30]) == [5, 25]
+    assert find_divisible_by_5_not_10_and_15([10, 20, 30, 40]) is None
+    assert find_divisible_by_5_not_10_and_15([]) is None
+    assert find_divisible_by_5_not_10_and_15([35, 45, 55]) == [35, 55]
+    assert find_divisible_by_5_not_10_and_15([50, 60, 70]) is None
+    assert find_divisible_by_5_not_10_and_15([75, 85, 95]) == [85, 95]
+
+
+# 1148. Тесты для функции `diff_of_all_lists`:
+def test_diff_of_all_lists():
+    assert diff_of_all_lists([10, 20, 30], [5, 10, 15]) == [40, 50, 60]
+    assert diff_of_all_lists([], []) is None
+    assert diff_of_all_lists([1, 2, 3], [1, 2, 3]) == [1, 2, 3]
+    assert diff_of_all_lists([10, 20, 30], [1, 2, 3]) == [64, 74, 84]
+    assert diff_of_all_lists([5, 10, 15], [2, 4, 6]) == [23, 28, 33]
+    assert diff_of_all_lists([1, 2], [3, 4]) == [-3, -2]
+
+
+# 1149. Тесты для функции `diff_of_products`:
+def test_diff_of_products():
+    assert diff_of_products([1, 2, 3], [4, 5, 6]) == [-4, -10, -18]
+    assert diff_of_products([], []) is None
+    assert diff_of_products([1, 2, 3], [1, 2, 3]) == [-1, -4, -9]
+    assert diff_of_products([10, 20, 30], [1, 2, 3]) == [-10, -40, -90]
+    assert diff_of_products([5, 10, 15], [2, 4, 6]) == [-10, -40, -90]
+    assert diff_of_products([1, 2], [3, 4]) == [-3, -8]
+
+
+# 1150. Тесты для функции `sum_and_positive_diff`:
+def test_sum_and_positive_diff():
+    assert sum_and_positive_diff([10, 20, 30], [5, 10, 15]) == [15, 30, 45]
+    assert sum_and_positive_diff([], []) is None
+    assert sum_and_positive_diff([1, 2, 3], [1, 2, 3]) is None
+    assert sum_and_positive_diff([10, 20, 30], [1, 2, 3]) == [19, 38, 57]
+    assert sum_and_positive_diff([5, 10, 15], [1, 5, 10]) == [9, 15, 20]
+    assert sum_and_positive_diff([0, 0, 0], [0, 0, 0]) is None
+
+
+# 1151. Тесты для функции `multiply_by_index_with_remainder`:
+def test_multiply_by_index_with_remainder():
+    assert multiply_by_index_with_remainder([1, 2, 3], [4, 5, 6]) == [1, 1, 0]
+    assert multiply_by_index_with_remainder([], []) is None
+    assert multiply_by_index_with_remainder([1, 2], [1, 2]) == [1, 1]
+    assert multiply_by_index_with_remainder([3, 5, 7], [3, 5, 7]) == [0, 1, 1]
+    assert multiply_by_index_with_remainder([10, 20, 30], [15, 25, 35]) == [0, 2, 0]
+    assert multiply_by_index_with_remainder([1], [2]) == [2]
+
+
+# 1152. Тесты для функции `diff_of_squares_of_lists`:
+def test_diff_of_squares_of_lists():
+    assert diff_of_squares_of_lists([4, 9, 16], [2, 3, 4]) == [12, 72, 240]
+    assert diff_of_squares_of_lists([], []) is None
+    assert diff_of_squares_of_lists([1, 2, 3], [1, 2, 3]) == [0, 0, 0]
+    assert diff_of_squares_of_lists([10, 20, 30], [10, 20, 30]) == [0, 0, 0]
+    assert diff_of_squares_of_lists([5, 10, 15], [5, 10, 15]) == [0, 0, 0]
+    assert diff_of_squares_of_lists([1, 2], [3, 4]) == [-8, -12]
+
+
+# 1153. Тесты для функции `multiply_and_divide_by_condition`:
+def test_multiply_and_divide_by_condition():
+    assert multiply_and_divide_by_condition([1, 2, 3], [4, 5, 6]) is None
+    assert multiply_and_divide_by_condition([], []) is None
+    assert multiply_and_divide_by_condition([1, 2, 3], [1, 2, 3]) is None
+    assert multiply_and_divide_by_condition([10, 20, 30], [5, 10, 15]) == [20.0, 30.0]
+    assert multiply_and_divide_by_condition([5, 10, 15], [2, 4, 6]) == [15.0]
+    assert multiply_and_divide_by_condition([1, 2], [3, 4]) is None
+
+
+# 1154. Тесты для функции `diff_from_product_of_other_list`:
+def test_diff_from_product_of_other_list():
+    assert diff_from_product_of_other_list([10, 20, 30], [1, 2, 3]) == [4, 14, 24]
+    assert diff_from_product_of_other_list([], []) is None
+    assert diff_from_product_of_other_list([1, 2, 3], [1, 2, 3]) == [-5, -4, -3]
+    assert diff_from_product_of_other_list([10, 20, 30], [10, 20, 30]) == [-5990, -5980, -5970]
+    assert diff_from_product_of_other_list([5, 10, 15], [5, 10, 15]) == [-745, -740, -735]
+    assert diff_from_product_of_other_list([1, 2], [3, 4]) == [-11, -10]
+
+
+# 1155. Тесты для функции `power_by_index_with_condition`:
+def test_power_by_index_with_condition():
+    assert power_by_index_with_condition([2, 3, 4], [2, 3, 4]) == [4, 27, 256]
+    assert power_by_index_with_condition([], []) is None
+    assert power_by_index_with_condition([1, 2, 3], [1, 2, 3]) == [4, 27]
+    assert power_by_index_with_condition([10, 20, 30], [2, 3, 4]) == [100, 8000, 810000]
+    assert power_by_index_with_condition([5, 10, 15], [2, 3, 4]) == [25, 1000, 50625]
+    assert power_by_index_with_condition([1, 2], [3, 4]) == [1, 16]
+
+
+# 1156. Тесты для функции `diff_and_sum_multiplied_by_indexes`:
+def test_diff_and_sum_multiplied_by_indexes():
+    assert diff_and_sum_multiplied_by_indexes([10, 20, 30], [1, 2, 3]) == [10, 14, 18]
+    assert diff_and_sum_multiplied_by_indexes([], []) is None
+    assert diff_and_sum_multiplied_by_indexes([1, 2, 3], [1, 2, 3]) == [1, -4, -9]
+    assert diff_and_sum_multiplied_by_indexes([10, 20, 30], [10, 20, 30]) == [10, -40, -90]
+    assert diff_and_sum_multiplied_by_indexes([5, 10, 15], [5, 10, 15]) == [5, -20, -45]
+    assert diff_and_sum_multiplied_by_indexes([1, 2], [3, 4]) == [1, -5]
+
+
+# 1157. Тесты для функции `divide_by_index_if_greater_than_2`:
+def test_divide_by_index_if_greater_than_2():
+    assert divide_by_index_if_greater_than_2([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]) == [1.0, 1.0]
+    assert divide_by_index_if_greater_than_2([], []) is None
+    assert divide_by_index_if_greater_than_2([1, 2, 3], [1, 2, 3]) is None
+    assert divide_by_index_if_greater_than_2([10, 20, 30], [2, 4, 6]) is None
+    assert divide_by_index_if_greater_than_2([5, 10, 15], [5, 10, 15]) is None
+    assert divide_by_index_if_greater_than_2([1, 2], [3, 4]) is None
+
+
+# 1158. Тесты для функции `find_divisible_by_8_not_16_and_sum`:
+def test_find_divisible_by_8_not_16_and_sum():
+    assert find_divisible_by_8_not_16_and_sum([8, 16, 24, 32]) == 8 + 24
+    assert find_divisible_by_8_not_16_and_sum([16, 32, 48]) is None
+    assert find_divisible_by_8_not_16_and_sum([]) is None
+    assert find_divisible_by_8_not_16_and_sum([8, 16, 24, 48]) == 32
+    assert find_divisible_by_8_not_16_and_sum([32, 64]) is None
+    assert find_divisible_by_8_not_16_and_sum([8, 40, 24]) == 8 + 40 + 24
+
+
+# 1159. Тесты для функции `power_with_index_condition`:
+def test_power_with_index_condition():
+    assert power_with_index_condition([2, 3, 4], [2, 3, 4]) == [4, 27]
+    assert power_with_index_condition([], []) is None
+    assert power_with_index_condition([1, 2, 3], [1, 2, 3]) == [1, 4, 27]
+    assert power_with_index_condition([10, 20, 30], [2, 3, 4]) is None
+    assert power_with_index_condition([5, 10, 15], [2, 3, 4]) == [25]
+    assert power_with_index_condition([1, 2], [3, 4]) == [1, 16]
+
+
+# 1160. Тесты для функции `diff_of_product_and_squares`:
+def test_diff_of_product_and_squares():
+    assert diff_of_product_and_squares([2, 3, 4], [2, 3, 4]) == [20, 15, 8]
+    assert diff_of_product_and_squares([], []) is None
+    assert diff_of_product_and_squares([1, 2, 3], [1, 2, 3]) == [5, 2, -3]
+    assert diff_of_product_and_squares([10, 20, 30], [5, 10, 15]) == [5975, 5900, 5775]
+    assert diff_of_product_and_squares([5, 10, 15], [2, 4, 6]) == [746, 734, 714]
+    assert diff_of_product_and_squares([1, 2], [3, 4]) == [-7, -14]
+
+
+# 1161. Тесты для функции `power_and_modulo`:
+def test_power_and_modulo():
+    assert power_and_modulo([2, 3], [3, 2]) == [3, 4]
+    assert power_and_modulo([2, 3], [1, 1]) == [2, 3]
+    assert power_and_modulo([2], [0]) == [1]
+    assert power_and_modulo([], [0]) is None
+    assert power_and_modulo([2, 3, 4], [3, 2]) == [3, 4]
+
+
+# 1162. Тесты для функции `find_divisible_by_6_not_9_and_multiply`:
+def test_find_divisible_by_6_not_9_and_multiply():
+    assert find_divisible_by_6_not_9_and_multiply([6, 12, 18, 30]) == 2160
+    assert find_divisible_by_6_not_9_and_multiply([6, 12, 18, 24]) == 1728
+    assert find_divisible_by_6_not_9_and_multiply([5, 7, 8]) is None
+    assert find_divisible_by_6_not_9_and_multiply([6, 12, 18]) == 72
+    assert find_divisible_by_6_not_9_and_multiply([5, 30]) == 30
+
+
+# 1163. Тесты для функции `diff_of_lists_and_total_diff`:
+def test_diff_of_lists_and_total_diff():
+    assert diff_of_lists_and_total_diff([1, 2, 3], [4, 5, 6]) == [-8, -7, -6]
+    assert diff_of_lists_and_total_diff([1, 1], [1, 1]) == [1, 1]
+    assert diff_of_lists_and_total_diff([], [1, 2, 3]) is None
+    assert diff_of_lists_and_total_diff([5, 5], [5, 5]) == [5, 5]
+    assert diff_of_lists_and_total_diff([10, 20], [5, 10]) == [25, 35]
+
+
+# 1164. Тесты для функции `multiply_by_index_and_diff`:
+def test_multiply_by_index_and_diff():
+    assert multiply_by_index_and_diff([1, 2, 3], [4, 5, 6]) == [-15, -13, -9]
+    assert multiply_by_index_and_diff([1, 2], [2, 2]) == [-4, -2]
+    assert multiply_by_index_and_diff([10], [2]) == [-2]
+    assert multiply_by_index_and_diff([], [1]) is None
+    assert multiply_by_index_and_diff([1, 2], [0, 0]) == [0, 2]
+
+
+# 1165. Тесты для функции `diff_and_index_squared`:
+def test_diff_and_index_squared():
+    assert diff_and_index_squared([1, 2], [1, 2]) == [0, 0]
+    assert diff_and_index_squared([5, 10], [3, 4]) == [0, 6]
+    assert diff_and_index_squared([2], [2]) == [0]
+    assert diff_and_index_squared([], [1]) is None
+    assert diff_and_index_squared([10], [0]) == [0]
+
+
+# 1166. Тесты для функции `diff_of_product_and_index`:
+def test_diff_of_product_and_index():
+    assert diff_of_product_and_index([1, 2], [3, 4]) == [3, 7]
+    assert diff_of_product_and_index([5], [6]) == [30]
+    assert diff_of_product_and_index([0, 1], [0, 0]) == [0, -1]
+    assert diff_of_product_and_index([], [1]) is None
+    assert diff_of_product_and_index([1, 1], [1, 1]) == [1, 0]
+
+
+# 1167. Тесты для функции `diff_and_product_of_lists`:
+def test_diff_and_product_of_lists():
+    assert diff_and_product_of_lists([1, 2], [3, 4]) == [-2, -6]
+    assert diff_and_product_of_lists([5, 0], [1, 1]) == [0, 0]
+    assert diff_and_product_of_lists([10, 20], [0, 1]) == [10, 0]
+    assert diff_and_product_of_lists([], [1]) is None
+    assert diff_and_product_of_lists([1, 1], [2, 3]) == [-1, -2]
+
+
+# 1168. Тесты для функции `multiply_by_index_divided_by_sum`:
+def test_multiply_by_index_divided_by_sum():
+    assert multiply_by_index_divided_by_sum([1, 2], [3, 4]) == [0.42857142857142855, 1.1428571428571428]
+    assert multiply_by_index_divided_by_sum([2, 4], [3, 4]) == [0.8571428571428571, 2.2857142857142856]
+    assert multiply_by_index_divided_by_sum([2], [2]) == [2.0]
+    assert multiply_by_index_divided_by_sum([], [1]) is None
+    assert multiply_by_index_divided_by_sum([3, 6], [3, 6]) == [1.0, 4.0]
+
+
+# 1169. Тесты для функции `diff_of_squares_and_indexes_v2`:
+def test_diff_of_squares_and_indexes_v2():
+    assert diff_of_squares_and_indexes_v2([1, 2], [2, 3]) == [-1, 1]
+    assert diff_of_squares_and_indexes_v2([3], [2]) == [7]
+    assert diff_of_squares_and_indexes_v2([5, 10], [2, 4]) == [23, 96]
+    assert diff_of_squares_and_indexes_v2([], [1]) is None
+    assert diff_of_squares_and_indexes_v2([6, 7], [0, 1]) == [36, 48]
+
+
+# 1170. Тесты для функции `find_divisible_by_7_and_11_not_77`:
+def test_find_divisible_by_7_and_11_not_154():
+    assert find_divisible_by_7_and_11_not_154([7, 11, 77, 14]) == [77]
+    assert find_divisible_by_7_and_11_not_154([77, 154, 231]) == [77, 231]
+    assert find_divisible_by_7_and_11_not_154([7, 22]) is None
+    assert find_divisible_by_7_and_11_not_154([154]) is None
+    assert find_divisible_by_7_and_11_not_154([11, 7]) is None
+
+
+# 1171. Тесты для функции `diff_of_all_lists_v2`:
+def test_diff_of_all_lists_v2():
+    assert diff_of_all_lists_v2([1, 2, 3], [4, 5]) == [4, 5, 6]
+    assert diff_of_all_lists_v2([0, 0, 0], [1, 1, 1]) == [3, 3, 3]
+    assert diff_of_all_lists_v2([], []) is None
+    assert diff_of_all_lists_v2([10, 20], [5, 10]) == [-5, 5]
+    assert diff_of_all_lists_v2([-1, -2, -3], [-4, -5]) == [-4, -5, -6]
+    assert diff_of_all_lists_v2([7, 8], [3]) == [-5, -4]
+    assert diff_of_all_lists_v2([5], [10, 15]) == [25]
+    assert diff_of_all_lists_v2([4, 5, 6], [7, 8, 9]) == [13, 14, 15]
+    assert diff_of_all_lists_v2([0], [1]) == [1]
+
+
+# 1172. Тесты для функции `multiply_by_index_and_square`:
+def test_multiply_by_index_and_square():
+    assert multiply_by_index_and_square([1, 2, 3], [4, 5, 6]) == [0, 10, 72]
+    assert multiply_by_index_and_square([0, 0, 0], [1, 2, 3]) == [0, 0, 0]
+    assert multiply_by_index_and_square([], []) is None
+    assert multiply_by_index_and_square([1], [2, 3]) == [0]
+    assert multiply_by_index_and_square([5, 6], [7]) == [0]
+    assert multiply_by_index_and_square([2, 4, 6], [1, 3, 5]) == [0, 12, 120]
+    assert multiply_by_index_and_square([3], [6, 9]) == [0]
+    assert multiply_by_index_and_square([7, 8, 9], [10, 11, 12]) == [0, 88, 432]
+    assert multiply_by_index_and_square([2, 3], [1, 2, 3]) == [0, 6]
+
+
+# 1173. Тесты для функции `find_divisible_by_5_not_10_and_15_and_multiply`:
+def test_find_divisible_by_5_not_10_and_15_and_multiply():
+    assert find_divisible_by_5_not_10_and_15_and_multiply([5, 10, 15, 20, 25]) == 125
+    assert find_divisible_by_5_not_10_and_15_and_multiply([30, 35, 40, 45, 50]) == 35
+    assert find_divisible_by_5_not_10_and_15_and_multiply([10, 20, 30]) is None
+    assert find_divisible_by_5_not_10_and_15_and_multiply([5, 25, 35]) == 4375
+    assert find_divisible_by_5_not_10_and_15_and_multiply([15, 45, 55]) == 55
+    assert find_divisible_by_5_not_10_and_15_and_multiply([0, 5, 10, 15]) == 5
+    assert find_divisible_by_5_not_10_and_15_and_multiply([50, 55, 60]) == 55
+    assert find_divisible_by_5_not_10_and_15_and_multiply([5, 55, 75, 85]) == 23375
+    assert find_divisible_by_5_not_10_and_15_and_multiply([25, 50, 75]) == 25
+
+
+# 1174. Тесты для функции `multiply_by_sum_and_len_other_list`:
+def test_multiply_by_sum_and_len_other_list():
+    assert multiply_by_sum_and_len_other_list([1, 2, 3], [4, 5, 6]) == [5.0, 10.0, 15.0]
+    assert multiply_by_sum_and_len_other_list([0, 0, 0], [1, 1, 1]) == [0.0, 0.0, 0.0]
+    assert multiply_by_sum_and_len_other_list([], []) is None
+    assert multiply_by_sum_and_len_other_list([1], [2, 3]) == [2.5]
+    assert multiply_by_sum_and_len_other_list([5, 6], [7]) == [35.0, 42.0]
+    assert multiply_by_sum_and_len_other_list([2, 4, 6], [1, 3, 5]) == [6.0, 12.0, 18.0]
+    assert multiply_by_sum_and_len_other_list([3], [6, 9]) == [22.5]
+    assert multiply_by_sum_and_len_other_list([7, 8, 9], [10, 11, 12]) == [77.0, 88.0, 99.0]
+    assert multiply_by_sum_and_len_other_list([2, 3], [1, 2, 3]) == [4.0, 6.0]
+
+
+# 1175. Тесты для функции `multiply_by_index_if_greater_than_20`:
+def test_multiply_by_index_if_greater_than_20():
+    assert multiply_by_index_if_greater_than_20([1, 2, 3], [4, 5, 6]) is None
+    assert multiply_by_index_if_greater_than_20([5, 10, 15], [1, 2, 3]) == [45]
+    assert multiply_by_index_if_greater_than_20([1, 1, 1], [1, 1, 1]) is None
+    assert multiply_by_index_if_greater_than_20([], []) is None
+    assert multiply_by_index_if_greater_than_20([5, 6], [7]) == [35]
+    assert multiply_by_index_if_greater_than_20([4, 5], [6, 7, 8]) == [24, 35]
+    assert multiply_by_index_if_greater_than_20([10, 20], [2, 4]) == [80]
+    assert multiply_by_index_if_greater_than_20([7, 3], [3, 10]) == [21, 30]
+    assert multiply_by_index_if_greater_than_20([1, 7, 9], [3, 8, 10]) == [56, 90]
+
+
+# 1176. Тесты для функции `multiply_by_square_divided`:
+def test_multiply_by_square_divided():
+    assert multiply_by_square_divided([1, 2, 3], [4, 5, 6]) == [4, 20, 54]
+    assert multiply_by_square_divided([0, 0, 0], [1, 2, 3]) == [0, 0, 0]
+    assert multiply_by_square_divided([], []) is None
+    assert multiply_by_square_divided([1], [2, 3]) == [2]
+    assert multiply_by_square_divided([5, 6], [7]) == [175]
+    assert multiply_by_square_divided([2, 4, 6], [1, 3, 5]) == [4, 48, 180]
+    assert multiply_by_square_divided([3], [6, 9]) == [54]
+    assert multiply_by_square_divided([7, 8, 9], [10, 11, 12]) == [490, 704, 972]
+    assert multiply_by_square_divided([2, 3], [1, 2, 3]) == [4, 18]
+
+
+# 1177. Тесты для функции `diff_from_sum_multiplied_by_index`:
+def test_diff_from_sum_multiplied_by_index():
+    assert diff_from_sum_multiplied_by_index([1, 2, 3], [4, 5, 6]) == [1, -13, -27]
+    assert diff_from_sum_multiplied_by_index([0, 0, 0], [1, 1, 1]) == [0, -3, -6]
+    assert diff_from_sum_multiplied_by_index([], []) is None
+    assert diff_from_sum_multiplied_by_index([1], [2, 3]) == [1]
+    assert diff_from_sum_multiplied_by_index([5, 6], [7]) == [5, -1]
+    assert diff_from_sum_multiplied_by_index([2, 4, 6], [1, 3, 5]) == [2, -5, -12]
+    assert diff_from_sum_multiplied_by_index([3], [6, 9]) == [3]
+
+
+# 1178. Тесты для функции `divide_by_index_if_less_than_5`:
+def test_divide_by_index_if_less_than_5():
+    assert divide_by_index_if_less_than_5([1, 2, 3], [4, 5, 6]) == [0.25, 0.4, 0.5]
+    assert divide_by_index_if_less_than_5([10, 20, 30], [1, 2, 3]) == [10.0, 10.0, 10.0]
+    assert divide_by_index_if_less_than_5([0, 0, 0], [1, 2, 3]) == [0.0, 0.0, 0.0]
+    assert divide_by_index_if_less_than_5([], []) is None
+    assert divide_by_index_if_less_than_5([5, 6], [7]) == [5/7]
+    assert divide_by_index_if_less_than_5([2, 4, 6], [1, 2, 3]) == [2.0, 2.0, 2.0]
+    assert divide_by_index_if_less_than_5([3], [6, 9]) == [0.5]
+    assert divide_by_index_if_less_than_5([7, 8, 9], [10, 11, 12]) == [0.7, 0.7272727272727273, 0.75]
+    assert divide_by_index_if_less_than_5([2, 3], [1, 2, 3]) == [2.0, 1.5]
+
+
+# 1179. Тесты для функции `multiply_by_diff_of_other_list`:
+def test_multiply_by_diff_of_other_list():
+    assert multiply_by_diff_of_other_list([1, 2, 3], [4, 5, 6]) == [9, 18, 27]
+    assert multiply_by_diff_of_other_list([0, 0, 0], [1, 1, 1]) == [0, 0, 0]
+    assert multiply_by_diff_of_other_list([], []) is None
+    assert multiply_by_diff_of_other_list([1], [2, 3]) == [4]
+    assert multiply_by_diff_of_other_list([5, 6], [7]) == [-20, -24]
+    assert multiply_by_diff_of_other_list([2, 4, 6], [1, 3, 5]) == [-6, -12, -18]
+    assert multiply_by_diff_of_other_list([3], [6, 9]) == [36]
+    assert multiply_by_diff_of_other_list([7, 8, 9], [10, 11, 12]) == [63, 72, 81]
+    assert multiply_by_diff_of_other_list([2, 3], [1, 2, 3]) == [2, 3]
+
+
+# 1180. Тесты для функции `find_divisible_by_4_not_8_and_multiply`:
+def test_find_divisible_by_4_not_8_and_multiply():
+    assert find_divisible_by_4_not_8_and_multiply([4, 8, 12, 16]) == 4 * 12
+    assert find_divisible_by_4_not_8_and_multiply([24, 32, 36, 48]) == 36
+    assert find_divisible_by_4_not_8_and_multiply([8, 16, 24]) is None
+    assert find_divisible_by_4_not_8_and_multiply([4, 12, 20]) == 960
+    assert find_divisible_by_4_not_8_and_multiply([32, 48, 52]) == 52
+    assert find_divisible_by_4_not_8_and_multiply([4, 0, 8, 12]) == 48
+    assert find_divisible_by_4_not_8_and_multiply([16, 24, 36]) == 36
+    assert find_divisible_by_4_not_8_and_multiply([12, 24, 36, 48]) == 432
+    assert find_divisible_by_4_not_8_and_multiply([4, 12, 16, 20]) == 960
+
+
+# 1181. Тесты для функции `multiply_by_index_divided_by_square`:
+def test_multiply_by_index_divided_by_square():
+    assert multiply_by_index_divided_by_square([1, 2, 3], [1, 2, 3]) == [4.0, 2.25]
+    assert multiply_by_index_divided_by_square([], [4, 5, 2145]) is None
+    assert multiply_by_index_divided_by_square([1, 56], []) is None
+    assert multiply_by_index_divided_by_square([0, 0, 0], [1, 1, 1]) == [0.0, 0.0]
+    assert multiply_by_index_divided_by_square([1, 2], [1, 2, 3]) == [4.0]
+
+
+# 1182. Тесты для функции `diff_and_product_multiplied_by_index`:
+def test_diff_and_product_multiplied_by_index():
+    assert diff_and_product_multiplied_by_index([1, 2, 3], [1, 2, 3]) == [1, -4, -9]
+    assert diff_and_product_multiplied_by_index([], []) is None
+    assert diff_and_product_multiplied_by_index([0, 0, 0], [1, 1, 1]) == [0, -1, -2]
+    assert diff_and_product_multiplied_by_index([3, 2, 1], [3, 2, 1]) == [3, -4, -11]
+
+
+# 1183. Тесты для функции `multiply_by_diff_of_all_lists`:
+def test_multiply_by_diff_of_all_lists():
+    assert multiply_by_diff_of_all_lists([1, 2, 3], [3, 2, 1]) == [0, 0, 0]
+    assert multiply_by_diff_of_all_lists([0, 0, 0], []) is None
+    assert multiply_by_diff_of_all_lists([0, 0, 0], [1, 1, 1]) == [0, 0, 0]
+    assert multiply_by_diff_of_all_lists([2, 2, 2], [1, 1, 1]) == [6, 6, 6]
+
+
+# 1184. Тесты для функции `power_by_index_v2`:
+def test_power_by_index_v2():
+    assert power_by_index_v2([], [3, 2, 1]) is None
+    assert power_by_index_v2([2, 3, 4], [1, 2, 3]) == [2, 9, 64]
+    assert power_by_index_v2([1, 2, 3], [3, 2, 1]) == [1, 4, 3]
+    assert power_by_index_v2([0, 1, 2], [1, 2, 3]) == [0, 1, 8]
+
+
+# 1185. Тесты для функции `find_divisible_by_2_and_5_not_12_and_multiply`:
+def test_find_divisible_by_2_and_5_not_12_and_multiply():
+    assert find_divisible_by_2_and_5_not_12_and_multiply([10, 20, 30]) == 6000
+    assert find_divisible_by_2_and_5_not_12_and_multiply([0, 0, 0]) is None
+    assert find_divisible_by_2_and_5_not_12_and_multiply([15, 25, 35]) is None
+
+
+# 1186. Тесты для функции `diff_and_product_with_index`:
+def test_diff_and_product_with_index():
+    assert diff_and_product_with_index([1, 2, 3], [1, 2, 3]) == [1, 0, -3]
+    assert diff_and_product_with_index([0, 0, 0], [1, 1, 1]) == [0, -1, -2]
+    assert diff_and_product_with_index([], []) is None
+    assert diff_and_product_with_index([3, 2, 1], [3, 2, 1]) == [3, 0, -1]
+
+
+# 1187. Тесты для функции `diff_of_all_and_index_product`:
+def test_diff_of_all_and_index_product():
+    assert diff_of_all_and_index_product([1, 2, 3], [1, 2, 3]) == [1, 2, 3]
+    assert diff_of_all_and_index_product([0, 0, 0], [1, 1, 1]) == [0, -3, -6]
+    assert diff_of_all_and_index_product([], [3, 2, 1]) is None
+
+
+# 1188. Тесты для функции `multiply_and_diff_of_lists_v2`:
+def test_multiply_and_diff_of_lists_v2():
+    assert multiply_and_diff_of_lists_v2([1, 2, 3], [3, 2, 1]) == [0, 0, 0]
+    assert multiply_and_diff_of_lists_v2([0, 0, 0], [1, 1, 1]) == [0, 0, 0]
+    assert multiply_and_diff_of_lists_v2([], [6, 54, 3]) is None
+    assert multiply_and_diff_of_lists_v2([2, 2, 2], [1, 1, 1]) == [6, 6, 6]
+
+
+# 1189. Тесты для функции `diff_of_product_and_index_v3`:
+def test_diff_of_product_and_index_v3():
+    assert diff_of_product_and_index_v3([1, 2, 3], [1, 2, 3]) == [1, 3, 5]
+    assert diff_of_product_and_index_v3([], [3, 3, 3]) is None
+    assert diff_of_product_and_index_v3([0, 0, 0], [1, 1, 1]) == [0, -1, -4]
+    assert diff_of_product_and_index_v3([3, 2, 1], [3, 2, 1]) == [9, 3, -3]
+
+
+# 1190. Тесты для функции `diff_of_values_in_dicts`:
+def test_diff_of_values_in_dicts():
+    assert diff_of_values_in_dicts({'a': 1, 'b': 2}, {'a': 1, 'b': 1}) == [0, 1]
+    assert diff_of_values_in_dicts({'a': 3, 'b': 4}, {'a': 2, 'b': 2}) == [1, 2]
+    assert diff_of_values_in_dicts(dict(), {'g': 2, 't': 98}) is None
+    assert diff_of_values_in_dicts({'a': 1}, {'a': 2}) == [-1]
+
+
+# 1191. Тесты для функции `find_common_keys_with_values_gt_10`:
+def test_find_common_keys_with_values_gt_10():
+    assert find_common_keys_with_values_gt_10({'a': 15, 'b': 5}, {'a': 20, 'b': 10}) == ['a']
+    assert find_common_keys_with_values_gt_10({'a': 25, 'b': 30}, {'a': 35, 'b': 40}) == ['a', 'b']
+    assert find_common_keys_with_values_gt_10({'a': 5, 'b': 5}, {'a': 5, 'b': 5}) is None
+
+
+# 1192. Тесты для функции `multiply_values_by_index_in_other_dict`:
+def test_multiply_values_by_index_in_other_dict():
+    assert multiply_values_by_index_in_other_dict({'a': 2, 'b': 3}, {'a': 2, 'b': 3}) == [0, 9]
+    assert multiply_values_by_index_in_other_dict({'a': 1, 'b': 2}, {'a': 3, 'b': 4}) == [0, 8]
+    assert multiply_values_by_index_in_other_dict({'a': 5}, {'a': 2}) == [0]
+    assert multiply_values_by_index_in_other_dict({}, {'a': 2}) is None
+
+
+# 1193. Тесты для функции `find_keys_with_value_greater_in_first_dict`:
+def test_find_keys_with_value_greater_in_first_dict():
+    assert find_keys_with_value_greater_in_first_dict({'a': 10, 'b': 20}, {'a': 5, 'b': 15}) == ['a', 'b']
+    assert find_keys_with_value_greater_in_first_dict({'a': 5}, {'a': 10}) is None
+    assert find_keys_with_value_greater_in_first_dict({'a': 10}, {'b': 5}) is None
+    assert find_keys_with_value_greater_in_first_dict({'a': 10}, {'a': 10}) is None
+
+
+# 1194. Тесты для функции `find_keys_with_equal_values_in_dicts`:
+def test_find_keys_with_equal_values_in_dicts():
+    assert find_keys_with_equal_values_in_dicts({'a': 10, 'b': 20}, {'a': 10, 'b': 20}) == ['a', 'b']
+    assert find_keys_with_equal_values_in_dicts({'a': 10}, {'a': 5}) is None
+    assert find_keys_with_equal_values_in_dicts({'a': 10}, {'b': 10}) is None
+    assert find_keys_with_equal_values_in_dicts({'a': 10}, {'a': 10, 'b': 10}) == ['a']
+
+
+# 1195. Тесты для функции `find_value_diff_between_dicts`:
+def test_find_value_diff_between_dicts():
+    assert find_value_diff_between_dicts({'a': 10, 'b': 20}, {'a': 5, 'b': 15}) == [5, 5]
+    assert find_value_diff_between_dicts({'a': 5}, {'a': 10}) == [-5]
+    assert find_value_diff_between_dicts({'a': 10}, {'b': 5}) is None
+    assert find_value_diff_between_dicts({'a': 10}, {'a': 10}) == [0]
+
+
+# 1196. Тесты для функции `multiply_values_in_dicts`:
+def test_multiply_values_in_dicts():
+    assert multiply_values_in_dicts({'a': 10, 'b': 20}, {'a': 2, 'b': 3}) == [20, 60]
+    assert multiply_values_in_dicts({'a': 1}, {'a': 10}) == [10]
+    assert multiply_values_in_dicts({'a': 10}, {'b': 5}) is None
+    assert multiply_values_in_dicts({}, {'a': 10}) is None
+
+
+# 1197. Тесты для функции `find_keys_with_values_divisible_by_3`:
+def test_find_keys_with_values_divisible_by_3():
+    assert find_keys_with_values_divisible_by_3({'a': 9, 'b': 12}, {'a': 3, 'b': 6}) == ['a', 'b']
+    assert find_keys_with_values_divisible_by_3({'a': 10, 'b': 15}, {'a': 3, 'b': 9}) == ['b']
+    assert find_keys_with_values_divisible_by_3({'a': 9}, {'a': 3}) == ['a']
+    assert find_keys_with_values_divisible_by_3({'a': 10}, {'a': 2}) is None
+
+
+# 1198. Тесты для функции `find_keys_with_value_range_in_dicts`:
+def test_find_keys_with_value_range_in_dicts():
+    assert find_keys_with_value_range_in_dicts({'a': 7, 'b': 8}, {'a': 10, 'b': 15}) == ['a', 'b']
+    assert find_keys_with_value_range_in_dicts({'a': 10, 'b': 12}, {'a': 7, 'b': 15}) == ['b']
+    assert find_keys_with_value_range_in_dicts({'a': 10}, {'a': 5}) is None
+    assert find_keys_with_value_range_in_dicts({}, {'a': 10}) is None
+
+
+# 1199. Тесты для функции `bubble_sort_descending`:
+def test_bubble_sort_descending():
+    assert bubble_sort_descending([3, 2, 1]) == [3, 2, 1]
+    assert bubble_sort_descending([1, 2, 3]) == [3, 2, 1]
+    assert bubble_sort_descending([]) is None
+    assert bubble_sort_descending([1]) == [1]
+    assert bubble_sort_descending([3, 1, 2]) == [3, 2, 1]
+    assert bubble_sort_descending([1, 3, 2]) == [3, 2, 1]
+
+
+# 1200. Тесты для функции `insertion_sort_ascending`:
+def test_insertion_sort_ascending():
+    assert insertion_sort_ascending([3, 2, 1]) == [1, 2, 3]
+    assert insertion_sort_ascending([1, 2, 3]) == [1, 2, 3]
+    assert insertion_sort_ascending([]) is None
+    assert insertion_sort_ascending([1]) == [1]
+    assert insertion_sort_ascending([3, 1, 2]) == [1, 2, 3]
+    assert insertion_sort_ascending([2, 3, 1]) == [1, 2, 3]

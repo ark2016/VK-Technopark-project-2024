@@ -32,7 +32,7 @@ def remove_duplicates_from_string_2(s):
     result = ''
     seen = set()
     for char in s:
-        if char not in seen:
+        if char not in seen and s.count(char) == 1:
             seen.add(char)
             result += char
     return result

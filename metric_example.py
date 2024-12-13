@@ -46,22 +46,41 @@ test2 = '''def test_product_of_floats():
     assert product_of_floats([1.1, -2, 3]) == pytest.approx(-6.6)
 '''
 
+code3 = '''def remove_punctuation_from_string(s):
+    punctuation = '!"#$%&()*+,-./:;<=>?@[]^_`{|}~'
+    result = ''
+    for char in s:
+        if char not in punctuation:
+            result += char
+    return result
+'''
+
+test3 = '''def test_remove_punctuation_from_string():
+    assert remove_punctuation_from_string("hello, world!") == "hello world"
+    assert remove_punctuation_from_string("a.b.c!") == "abc"
+    assert remove_punctuation_from_string("") == ""
+    assert remove_punctuation_from_string("no_punctuation") == "nopunctuation"
+'''
+
 
 if __name__ == '__main__':  # Это здесь обязательно, если на Windows, так как используется мультипроцессинг
 
     # Рассчитаем метрики для отдельных строк
     percent1, errors1, missing1 = coverage_percent(code, test)
     percent2, errors2, missing2 = coverage_percent(code2, test2)
+    percent3, errors3, missing3 = coverage_percent(code3, test3)
 
     print(f'Test 1. Процент покрытия: {percent1} %, Количество ошибок: {errors1}, Пропущенные строчки: {missing1}')
     print(f'Test 2. Процент покрытия: {percent2} %, Количество ошибок: {errors2}, Пропущенные строчки: {missing2}')
+    print(f'Test 2. Процент покрытия: {percent3} %, Количество ошибок: {errors3}, Пропущенные строчки: {missing3}')
 
     # Рассчитаем метрики для целого датафрейма
-    df = pd.read_csv("data/03_functions_tests_800.csv")
+    df = pd.read_csv("data/04_functions_tests_1200.csv")
 
     # Рассчитываем покрытие и ошибки для каждой строки в DataFrame
-    result_df = calculate_coverage_for_df(df)
+    result_df, mean_cov, mean_err = calculate_coverage_for_df(df)
     result_df.to_csv("tests_metric.csv", index=False)
 
     # Выводим результат
-    print(result_df)
+    print(f'Mean cov: {mean_cov}.')
+    print(f'Mean err: {mean_err}.')

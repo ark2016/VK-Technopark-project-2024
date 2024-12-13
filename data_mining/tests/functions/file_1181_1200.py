@@ -24,12 +24,12 @@ def diff_and_product_multiplied_by_index(lst1, lst2):
 
 # 1183. Функция для нахождения чисел, которые равны произведению всех элементов одного списка и разности всех чисел другого
 def multiply_by_diff_of_all_lists(lst1, lst2):
+    if not lst1 or not lst2:
+        return None
     result = []
     total_diff = sum(lst1) - sum(lst2)
     for num in lst1:
         result.append(num * total_diff)
-    if not result:
-        return None
     return result
 
 
@@ -44,12 +44,12 @@ def power_by_index_v2(lst1, lst2):
     return result
 
 
-# 1185. Функция для нахождения чисел, которые делятся на 2 и на 5, но не на 10, и вычисление их произведения
-def find_divisible_by_2_and_5_not_10_and_multiply(lst):
+# 1185. Функция для нахождения чисел, которые делятся на 2 и на 5, но не на 12, и вычисление их произведения
+def find_divisible_by_2_and_5_not_12_and_multiply(lst):
     result = []
     product = 1
     for num in lst:
-        if num % 2 == 0 and num % 5 == 0 and num % 10 != 0:
+        if num % 2 == 0 and num % 5 == 0 and num % 12 != 0:
             result.append(num)
             product *= num
     if not result:
@@ -59,35 +59,35 @@ def find_divisible_by_2_and_5_not_10_and_multiply(lst):
 
 # 1186. Функция для нахождения чисел, которые равны разности всех чисел из одного списка и произведений элементов другого, с учётом их индексов
 def diff_and_product_with_index(lst1, lst2):
+    if not lst1 or not lst2:
+        return None
     result = []
     for i in range(len(lst1)):
         if i < len(lst2):
             result.append(lst1[i] - (lst2[i] * i))
-    if not result:
-        return None
     return result
 
 
 # 1187. Функция для нахождения чисел, которые являются разностью всех чисел первого списка и разности всех чисел второго списка, умноженных на их индексы
 def diff_of_all_and_index_product(lst1, lst2):
+    if not lst1 or not lst2:
+        return None
     result = []
     total_diff_lst2 = sum(lst2) - sum(lst1)
     for i in range(len(lst1)):
         if i < len(lst2):
             result.append(lst1[i] - (total_diff_lst2 * i))
-    if not result:
-        return None
     return result
 
 
 # 1188. Функция для нахождения чисел, которые равны произведению всех чисел из одного списка и разности всех чисел второго списка
 def multiply_and_diff_of_lists_v2(lst1, lst2):
+    if not lst1 or not lst2:
+        return None
     result = []
     total_diff = sum(lst1) - sum(lst2)
     for num in lst1:
         result.append(num * total_diff)
-    if not result:
-        return None
     return result
 
 

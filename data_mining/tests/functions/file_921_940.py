@@ -167,7 +167,7 @@ def remove_empty_values(d):
 def find_common_elements_5(lst, s):
     if not lst or not s:
         return None
-    common = set(lst).intersection(s)
+    common = sorted(set(lst).intersection(s))
     if not common:
         return None
     result = [(item, lst.index(item)) for item in common]
@@ -200,5 +200,5 @@ def find_elements_in_list_and_dict(lst, d):
 def create_unique_set_from_multiple_sources(lst, t, d):
     if not lst or not t or not d:
         return None
-    combined_set = set(lst).union(t).union(d.values())
+    combined_set = sorted(set(lst).union(t).union(d.values()))
     return combined_set if combined_set else None

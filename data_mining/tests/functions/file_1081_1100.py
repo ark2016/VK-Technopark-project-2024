@@ -14,7 +14,7 @@ def find_unique_elements_in_sets_3(lst1, lst2):
     result = list(set(lst1) ^ set(lst2))
     if not result:
         return None
-    return result
+    return sorted(result)
 
 
 # 1083. Функция для нахождения чисел, которые являются суммой всех чисел в списке, умноженных на их индексы
@@ -96,11 +96,11 @@ def find_less_than_all_and_gt_10(lst1, lst2):
     return result
 
 
-# 1090. Функция для нахождения чисел, которые делятся на 2 и на 4, но не на 8
-def find_divisible_by_2_and_4_not_8(lst):
+# 1090. Функция для нахождения чисел, которые делятся на 2 и на 4, но не на 12
+def find_divisible_by_2_and_4_not_12(lst):
     result = []
     for num in lst:
-        if num % 2 == 0 and num % 4 == 0 and num % 8 != 0:
+        if num % 2 == 0 and num % 4 == 0 and num % 12 != 0:
             result.append(num)
     if not result:
         return None

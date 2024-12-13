@@ -46,7 +46,7 @@ def find_common_in_set_and_tuple(s, t):
     if not s or not t:
         return None
     result = s.intersection(t)
-    return tuple(result) if result else None
+    return sorted(tuple(result)) if result else None
 
 
 # 966. Функция для нахождения чисел, которые содержат хотя бы одну цифру из другого числа
@@ -69,7 +69,7 @@ def find_odd_numbers_in_both(lst, d):
     for item in lst:
         if item % 2 != 0 and item in d:
             odd_set.add(item)
-    return odd_set if odd_set else None
+    return sorted(odd_set) if odd_set else None
 
 
 # 968. Функция для нахождения чисел из списка, которые не присутствуют в словаре
@@ -88,7 +88,7 @@ def find_unique_elements_9(lst, t, s):
     if not lst or not t or not s:
         return None
     unique_elements = set(lst).union(set(t)).union(s)
-    return tuple(unique_elements) if unique_elements else None
+    return sorted(tuple(unique_elements)) if unique_elements else None
 
 
 # 970. Функция для нахождения всех чисел в списке, которые делятся на все числа в множестве
@@ -113,7 +113,7 @@ def create_odd_number_set(lst, s):
     for item in s:
         if item % 2 != 0:
             odd_set.add(item)
-    return odd_set if odd_set else None
+    return sorted(odd_set) if odd_set else None
 
 
 # 972. Функция для нахождения всех чисел, которые находятся в обеих коллекциях (списке и словаре)
@@ -151,10 +151,11 @@ def create_product_list_from_dict(d):
         return None
     product_list = []
     for key, value in d.items():
-        product = 1
-        for num in value:
-            product *= num
-        product_list.append(product)
+        if isinstance(value, (list, tuple)) and all(isinstance(num, (int, float)) for num in value):
+            product = 1
+            for num in value:
+                product *= num
+            product_list.append(product)
     return product_list if product_list else None
 
 
@@ -169,7 +170,7 @@ def find_strings_with_digit(lst, s):
     for item in s:
         if isinstance(item, str) and any(char.isdigit() for char in item):
             result.append(item)
-    return tuple(result) if result else None
+    return sorted(tuple(result)) if result else None
 
 
 # 977. Функция для нахождения чисел, которые встречаются и в списке, и в кортеже, и в множестве
@@ -177,7 +178,7 @@ def find_common_numbers(lst, t, s):
     if not lst or not t or not s:
         return None
     common = set(lst).intersection(t, s)
-    return tuple(common) if common else None
+    return sorted(tuple(common)) if common else None
 
 
 # 978. Функция для создания множества, состоящего из всех строк, длина которых меньше заданного числа
@@ -188,7 +189,7 @@ def create_set_of_short_strings(lst, max_len):
     for item in lst:
         if isinstance(item, str) and len(item) < max_len:
             result.add(item)
-    return result if result else None
+    return sorted(result) if result else None
 
 
 # 979. Функция для нахождения строк, длина которых больше средней длины всех строк в списке

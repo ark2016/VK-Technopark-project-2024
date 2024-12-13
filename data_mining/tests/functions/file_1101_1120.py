@@ -52,11 +52,11 @@ def multiply_lists_if_greater_than_50(lst1, lst2):
     return result
 
 
-# 1106. Функция для нахождения чисел, которые делятся на 8, но не делятся на 4
-def find_divisible_by_8_not_4(lst):
+# 1106. Функция для нахождения чисел, которые делятся на 8, но не делятся на 24
+def find_divisible_by_8_not_24(lst):
     result = []
     for num in lst:
-        if num % 8 == 0 and num % 4 != 0:
+        if num % 8 == 0 and num % 24 != 0:
             result.append(num)
     if not result:
         return None
@@ -65,12 +65,12 @@ def find_divisible_by_8_not_4(lst):
 
 # 1107. Функция для нахождения чисел, которые равны разнице квадратов всех чисел из первого списка и всех чисел из второго
 def diff_of_all_squares(lst1, lst2):
+    if not lst1 or not lst2:
+        return None
     result = []
     sum_sq_lst1 = sum([num ** 2 for num in lst1])
     sum_sq_lst2 = sum([num ** 2 for num in lst2])
     result.append(sum_sq_lst1 - sum_sq_lst2)
-    if not result:
-        return None
     return result
 
 

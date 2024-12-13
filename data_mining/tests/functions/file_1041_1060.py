@@ -60,12 +60,12 @@ def find_factorials(lst):
 
 # 1046. Функция для нахождения чисел, которые являются разностью между максимальным и минимальным значением в списке
 def find_diff_between_max_and_min(lst):
+    if not lst:
+        return None
     result = []
     max_val = max(lst)
     min_val = min(lst)
     result.append(max_val - min_val)
-    if not result:
-        return None
     return result
 
 
@@ -125,6 +125,8 @@ def add_lists_with_condition(lst1, lst2, condition):
 
 # 1052. Функция для нахождения чисел, которые являются разницей между максимальным и минимальным элементом в двух списках
 def find_max_min_diff_in_lists(lst1, lst2):
+    if not lst1 or not lst2:
+        return None
     result = []
     max_val1 = max(lst1)
     min_val1 = min(lst1)
@@ -132,8 +134,6 @@ def find_max_min_diff_in_lists(lst1, lst2):
     min_val2 = min(lst2)
     result.append(max_val1 - min_val1)
     result.append(max_val2 - min_val2)
-    if not result:
-        return None
     return result
 
 
@@ -169,11 +169,11 @@ def subtract_lists_elements(lst1, lst2):
     return result
 
 
-# 1056. Функция для нахождения чисел, которые делятся на 2 и на 3, но не на 6
-def find_divisible_by_2_and_3_not_6(lst):
+# 1056. Функция для нахождения чисел, которые делятся на 2 и на 3, но не на 7
+def find_divisible_by_2_and_3_not_7(lst):
     result = []
     for num in lst:
-        if num % 2 == 0 and num % 3 == 0 and num % 6 != 0:
+        if num % 2 == 0 and num % 3 == 0 and num % 7 != 0:
             result.append(num)
     if not result:
         return None
@@ -201,11 +201,11 @@ def multiply_even_lists(lst1, lst2):
     return result
 
 
-# 1059. Функция для нахождения чисел, которые делятся на 10, но не на 5
-def find_divisible_by_10_not_5(lst):
+# 1059. Функция для нахождения чисел, которые делятся на 11, но не на 5
+def find_divisible_by_11_not_5(lst):
     result = []
     for num in lst:
-        if num % 10 == 0 and num % 5 != 0:
+        if num % 11 == 0 and num % 5 != 0:
             result.append(num)
     if not result:
         return None

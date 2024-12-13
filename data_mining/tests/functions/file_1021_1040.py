@@ -38,11 +38,10 @@ def find_floats_greater_than_value_in_dict(lst, d, value):
 def find_floats_between_max_in_first_list_and_max_in_second_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
-    max_lst1 = max(lst1)
     max_lst2 = max(lst2)
     result = []
     for item in lst1:
-        if isinstance(item, float) and max_lst1 < item < max_lst2:
+        if isinstance(item, float) and item < max_lst2:
             result.append(item)
     return tuple(result) if result else None
 
@@ -212,9 +211,7 @@ def find_even_and_greater_than_10(lst):
 def find_difference_elements_in_list(lst):
     result = []
     for i in range(len(lst)):
-        for j in range(i+1, len(lst)):
-            if lst[i] - lst[j] == 0:
+        for j in range(len(lst)):
+            if i != j and lst[i] - lst[j] in lst:
                 result.append(lst[i])
-    if not result:
-        return None
-    return result
+    return tuple(result) if result else None

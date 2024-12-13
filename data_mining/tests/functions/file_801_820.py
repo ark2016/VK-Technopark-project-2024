@@ -117,7 +117,7 @@ def get_unique_characters(s):
     unique_chars = set()
     for char in s:
         unique_chars.add(char)
-    return ''.join(unique_chars)
+    return ''.join(sorted(unique_chars))
 
 
 # 814. Функция для инвертирования строки

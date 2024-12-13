@@ -13,8 +13,10 @@ def find_in_list_not_in_set_and_dict(lst, s, d):
 def find_max_values(lst, d):
     if not lst or not d:
         return None
-    max_lst = max(lst)
-    max_dict = max(d.values())
+    max_lst = max(filter(lambda x: isinstance(x, (int, float)), lst), default=None)
+    max_dict = max(filter(lambda x: isinstance(x, (int, float)), d.values()), default=None)
+    if max_lst is None or max_dict is None:
+        return None
     return max(max_lst, max_dict)
 
 
@@ -26,7 +28,7 @@ def find_in_set_not_in_dict(s, d):
     for item in s:
         if item not in d:
             result.append(item)
-    return tuple(result) if result else None
+    return tuple(sorted(result)) if result else None
 
 
 # 984. Функция для создания словаря, где ключи — это строки из множества, а значения — длина строки
@@ -49,7 +51,7 @@ def create_unique_set_from_list_and_set(lst, s):
         unique_set.add(item)
     for item in s:
         unique_set.add(item)
-    return unique_set if unique_set else None
+    return sorted(unique_set) if unique_set else None
 
 
 # 986. Функция для нахождения всех чисел из списка и словаря, которые являются чётными
@@ -147,7 +149,7 @@ def create_set_of_long_strings(lst, min_length):
     for item in lst:
         if isinstance(item, str) and len(item) > min_length:
             long_strings.add(item)
-    return long_strings if long_strings else None
+    return sorted(long_strings) if long_strings else None
 
 
 # 994. Функция для нахождения всех чисел в словаре, которые меньше средней величины всех значений в словаре

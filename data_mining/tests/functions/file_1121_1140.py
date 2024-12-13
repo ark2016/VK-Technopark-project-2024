@@ -26,6 +26,8 @@ def diff_of_lists_and_products(lst1, lst2):
 def power_by_sum_of_other_list(lst1, lst2):
     result = []
     sum_lst2 = sum(lst2)
+    if sum_lst2 < 0 or sum_lst2 > 10:  # Ограничиваем степень для предотвращения переполнения
+        return None
     for num in lst1:
         result.append(num ** sum_lst2)
     if not result:
@@ -66,11 +68,11 @@ def power_by_index_of_other_list(lst1, lst2):
     return result
 
 
-# 1127. Функция для нахождения чисел, которые делятся на 9, но не на 3
-def find_divisible_by_9_not_3(lst):
+# 1127. Функция для нахождения чисел, которые делятся на 9, но не на 12
+def find_divisible_by_9_not_12(lst):
     result = []
     for num in lst:
-        if num % 9 == 0 and num % 3 != 0:
+        if num % 9 == 0 and num % 12 != 0:
             result.append(num)
     if not result:
         return None
@@ -92,7 +94,7 @@ def diff_of_squares_and_indexes_from_other_list(lst1, lst2):
 def divide_by_index_of_other_list(lst1, lst2):
     result = []
     for i in range(len(lst2)):
-        if i != 0:
+        if i < len(lst1) and i != 0:
             result.append(lst1[i] / i)
     if not result:
         return None

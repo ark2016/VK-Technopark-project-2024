@@ -131,17 +131,17 @@ def max_digit_in_number(n):
         n //= 10
     return max_digit if max_digit != -1 else None
 
-
-def count_even_numbers_5(lst):
-    def is_odd(n):
-        if n % 2 != 0:
-            return True
-        return False
-    count = 0
-    for n in lst:
-        if not is_odd(n):
-            count += 1
-    return count if count > 0 else None
+#
+# def count_even_numbers_5(lst):
+#     def is_odd(n):
+#         if n % 2 != 0:
+#             return True
+#         return False
+#     count = 0
+#     for n in lst:
+#         if not is_odd(n):
+#             count += 1
+#     return count if count > 0 else None
 
 
 # 854. Функция для нахождения наибольшего числа, которое делится на 3 в списке

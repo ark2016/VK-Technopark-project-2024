@@ -18,10 +18,10 @@ def find_numbers_equal_to_sum_of_divisors(lst):
 
 
 # 903. Функция для создания кортежа чисел, которые кратны 9, но не кратны 3
-def find_multiples_of_9_not_3(lst):
+def find_multiples_of_3_not_21(lst):
     result = []
     for n in lst:
-        if n % 9 == 0 and n % 3 != 0:
+        if n % 3 == 0 and n % 21 != 0:
             result.append(n)
     return tuple(result) if result else None
 
@@ -81,7 +81,7 @@ def create_dict_from_string_lengths(lst):
     if not lst:
         return None
     length_dict = {}
-    for s in lst:
+    for s in sorted(lst, key=len):
         length_dict[len(s)] = s
     return length_dict if length_dict else None
 

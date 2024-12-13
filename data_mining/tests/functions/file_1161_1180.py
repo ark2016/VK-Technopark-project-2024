@@ -101,11 +101,11 @@ def diff_of_squares_and_indexes_v2(lst1, lst2):
     return result
 
 
-# 1170. Функция для нахождения чисел, которые делятся на 7 и на 11, но не на 77
-def find_divisible_by_7_and_11_not_77(lst):
+# 1170. Функция для нахождения чисел, которые делятся на 7 и на 11, но не на 154
+def find_divisible_by_7_and_11_not_154(lst):
     result = []
     for num in lst:
-        if num % 7 == 0 and num % 11 == 0 and num % 77 != 0:
+        if num % 7 == 0 and num % 11 == 0 and num % 154 != 0:
             result.append(num)
     if not result:
         return None

@@ -83,7 +83,7 @@ df = pd.DataFrame(data)
 print(df)
 
 # Сохраняем DataFrame в файл, если необходимо
-df.to_csv('03_functions_tests_800.csv', index=False, lineterminator='\n', escapechar='\\')
+df.to_csv('04_functions_tests_1200.csv', index=False, lineterminator='\n', escapechar='\\')
 
 # Выводим DataFrame
 print(df)

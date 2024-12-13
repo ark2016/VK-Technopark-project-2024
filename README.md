@@ -5,7 +5,8 @@
 
 [01_functions_tests_200.csv](data%2F01_functions_tests_200.csv) - Первый вариант, содержит 200 функций  
 [02_functions_tests_600.csv](data%2F02_functions_tests_600.csv) - Добавлены ещё 400 функций, код тестов больше соответствует стандартам  
-[03_functions_tests_800.csv](data%2F03_functions_tests_800.csv) - Добавил ещё 200 тестов
+[03_functions_tests_800.csv](data%2F03_functions_tests_800.csv) - Добавлены ещё 200 тестов  
+[**04_functions_tests_1200.csv**](data%2F04_functions_tests_1200.csv) - Финальный файл, здесь собраны все 1200 тестов.  
 
 В папке `data/data_with_metric` лежат те же датасеты, только с подсчитанными значениями метрик.  
 

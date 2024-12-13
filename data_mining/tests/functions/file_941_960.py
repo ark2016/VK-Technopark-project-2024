@@ -21,7 +21,7 @@ def find_numbers_greater_than_dict_values(lst, d):
     for n in lst:
         if n > max_value:
             greater_numbers.add(n)
-    return greater_numbers if greater_numbers else None
+    return sorted(greater_numbers) if greater_numbers else None
 
 
 # 943. Функция для подсчёта, сколько раз встречаются числа в списке, и создание словаря с этим количеством
@@ -66,7 +66,7 @@ def create_unique_char_set(lst, d):
     for value in d.values():
         if isinstance(value, str):
             char_set.update(value)
-    return char_set if char_set else None
+    return sorted(char_set) if char_set else None
 
 
 # 947. Функция для подсчёта уникальных элементов в списке и добавления их в словарь
@@ -87,7 +87,7 @@ def find_squares_in_set(s):
     for n in s:
         if (n ** 0.5).is_integer():
             result.append(n)
-    return tuple(result) if result else None
+    return sorted(tuple(result)) if result else None
 
 
 # 949. Функция для нахождения строк с числовыми символами, которые встречаются в списке и словаре
@@ -215,7 +215,7 @@ def create_even_number_set(lst, s):
     for item in s:
         if item % 2 == 0:
             even_set.add(item)
-    return even_set if even_set else None
+    return sorted(even_set) if even_set else None
 
 
 # 960. Функция для нахождения чисел из списка и словаря, которые больше среднего в словаре

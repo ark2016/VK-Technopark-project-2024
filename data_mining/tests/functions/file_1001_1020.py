@@ -16,7 +16,7 @@ def create_list_between_min_in_dict_and_max_in_set(d, s):
     min_dict = min(d.values())
     max_set = max(s)
     result = []
-    for value in d.values():
+    for value in sorted(d.values()):
         if min_dict < value < max_set:
             result.append(value)
     return result if result else None
@@ -104,7 +104,7 @@ def find_floats_less_than_or_equal_to_set_values(lst, s):
     for item in lst:
         if isinstance(item, float) and any(item <= elem for elem in s):
             result.append(item)
-    return tuple(result) if result else None
+    return tuple(sorted(result)) if result else None
 
 
 # 1010. Функция для нахождения всех чисел в словаре, которые меньше заданного значения
@@ -122,11 +122,11 @@ def find_floats_less_than_value_in_dict(d, value):
 def find_floats_between_max_in_first_list_and_min_in_second_list(lst1, lst2):
     if not lst1 or not lst2:
         return None
-    max_lst1 = max(lst1)
+    max_lst2 = max(lst2)
     min_lst2 = min(lst2)
     result = []
     for item in lst1:
-        if isinstance(item, float) and max_lst1 < item < min_lst2:
+        if isinstance(item, float) and min_lst2 < item < max_lst2:
             result.append(item)
     return tuple(result) if result else None
 
@@ -163,7 +163,7 @@ def create_set_between_min_in_dict_and_max_in_list(d, lst):
     min_dict = min(d.values())
     max_lst = max(lst)
     result = set()
-    for value in d.values():
+    for value in sorted(d.values()):
         if isinstance(value, float) and min_dict < value < max_lst:
             result.add(value)
     return result if result else None
@@ -222,7 +222,7 @@ def create_set_of_floats_greater_than_value_in_list(lst, value):
     for item in lst:
         if isinstance(item, float) and item > value:
             result.add(item)
-    return result if result else None
+    return sorted(result) if result else None
 
 
 # 1020. Функция для нахождения чисел в списке, которые меньше среднего значения в другом списке
