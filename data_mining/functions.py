@@ -11639,7 +11639,7 @@ def diff_of_lists_and_products(lst1, lst2):
 def power_by_sum_of_other_list(lst1, lst2):
     result = []
     sum_lst2 = sum(lst2)
-    if sum_lst2 < 0 or sum_lst2 > 10:  # Ограничиваем степень для предотвращения переполнения
+    if sum_lst2 < 0 or sum_lst2 > 10:
         return None
     for num in lst1:
         result.append(num ** sum_lst2)
