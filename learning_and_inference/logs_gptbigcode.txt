@@ -1,0 +1,229 @@
+
+======== Epoch 1 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:28<05:03, 11.68s/it]  Batch   100  of    126.    Elapsed: 0:19:29.
+100%|██████████| 126/126 [24:32<00:00, 11.69s/it]
+
+  Average training loss: 0.36
+  Training epoch took: 0:24:33
+Train Loss: 0.3611, Train BLEU score: 0.6989, Train BLEU score Advanced: 0.2038
+
+Running Validation...
+100%|██████████| 24/24 [04:14<00:00, 10.61s/it]
+  Validation Loss: 0.17
+  Validation took: 0:04:15
+Validation Loss: 0.1695,  Validation BLEU score: 0.7445, Validation BLEU score Advanced: 0.1949
+Model saved to /content/runs/model_val_loss.pth
+Model saved to /content/runs/model_bleu_score.pth
+
+======== Epoch 2 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:35<05:03, 11.67s/it]  Batch   100  of    126.    Elapsed: 0:19:36.
+100%|██████████| 126/126 [24:40<00:00, 11.75s/it]
+
+  Average training loss: 0.15
+  Training epoch took: 0:24:41
+Train Loss: 0.1498, Train BLEU score: 0.7595, Train BLEU score Advanced: 0.1882
+
+Running Validation...
+100%|██████████| 24/24 [04:14<00:00, 10.59s/it]
+  Validation Loss: 0.17
+  Validation took: 0:04:14
+Validation Loss: 0.1658,  Validation BLEU score: 0.7480, Validation BLEU score Advanced: 0.2347
+Model saved to /content/runs/model_val_loss.pth
+Model saved to /content/runs/model_bleu_score.pth
+
+======== Epoch 3 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:30<05:03, 11.68s/it]  Batch   100  of    126.    Elapsed: 0:19:31.
+100%|██████████| 126/126 [24:34<00:00, 11.70s/it]
+
+  Average training loss: 0.12
+  Training epoch took: 0:24:35
+Train Loss: 0.1192, Train BLEU score: 0.7921, Train BLEU score Advanced: 0.1897
+
+Running Validation...
+100%|██████████| 24/24 [04:13<00:00, 10.56s/it]
+  Validation Loss: 0.16
+  Validation took: 0:04:14
+Validation Loss: 0.1649,  Validation BLEU score: 0.7562, Validation BLEU score Advanced: 0.1982
+Model saved to /content/runs/model_val_loss.pth
+
+======== Epoch 4 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:32<05:06, 11.80s/it]  Batch   100  of    126.    Elapsed: 0:19:32.
+100%|██████████| 126/126 [24:39<00:00, 11.74s/it]
+
+  Average training loss: 0.10
+  Training epoch took: 0:24:40
+Train Loss: 0.0959, Train BLEU score: 0.8229, Train BLEU score Advanced: 0.1871
+
+Running Validation...
+100%|██████████| 24/24 [04:16<00:00, 10.69s/it]
+  Validation Loss: 0.18
+  Validation took: 0:04:16
+Validation Loss: 0.1770,  Validation BLEU score: 0.7636, Validation BLEU score Advanced: 0.2013
+
+======== Epoch 5 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:42<05:07, 11.83s/it]  Batch   100  of    126.    Elapsed: 0:19:43.
+100%|██████████| 126/126 [24:49<00:00, 11.82s/it]
+
+  Average training loss: 0.08
+  Training epoch took: 0:24:49
+Train Loss: 0.0788, Train BLEU score: 0.8510, Train BLEU score Advanced: 0.1945
+
+Running Validation...
+100%|██████████| 24/24 [04:17<00:00, 10.73s/it]
+  Validation Loss: 0.18
+  Validation took: 0:04:17
+Validation Loss: 0.1841,  Validation BLEU score: 0.7643, Validation BLEU score Advanced: 0.2021
+
+======== Epoch 6 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:33<05:03, 11.69s/it]  Batch   100  of    126.    Elapsed: 0:19:34.
+100%|██████████| 126/126 [24:37<00:00, 11.73s/it]
+
+  Average training loss: 0.06
+  Training epoch took: 0:24:38
+Train Loss: 0.0643, Train BLEU score: 0.8779, Train BLEU score Advanced: 0.2001
+
+Running Validation...
+100%|██████████| 24/24 [04:14<00:00, 10.62s/it]
+  Validation Loss: 0.19
+  Validation took: 0:04:15
+Validation Loss: 0.1913,  Validation BLEU score: 0.7674, Validation BLEU score Advanced: 0.1962
+
+======== Epoch 7 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:32<05:04, 11.72s/it]  Batch   100  of    126.    Elapsed: 0:19:33.
+100%|██████████| 126/126 [24:36<00:00, 11.72s/it]
+
+  Average training loss: 0.05
+  Training epoch took: 0:24:37
+Train Loss: 0.0535, Train BLEU score: 0.9032, Train BLEU score Advanced: 0.2160
+
+Running Validation...
+100%|██████████| 24/24 [04:13<00:00, 10.58s/it]
+  Validation Loss: 0.21
+  Validation took: 0:04:14
+Validation Loss: 0.2082,  Validation BLEU score: 0.7664, Validation BLEU score Advanced: 0.2038
+
+======== Epoch 8 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:30<05:02, 11.65s/it]  Batch   100  of    126.    Elapsed: 0:19:30.
+100%|██████████| 126/126 [24:33<00:00, 11.69s/it]
+
+  Average training loss: 0.05
+  Training epoch took: 0:24:33
+Train Loss: 0.0455, Train BLEU score: 0.9211, Train BLEU score Advanced: 0.2204
+
+Running Validation...
+100%|██████████| 24/24 [04:14<00:00, 10.59s/it]
+  Validation Loss: 0.21
+  Validation took: 0:04:14
+Validation Loss: 0.2125,  Validation BLEU score: 0.7715, Validation BLEU score Advanced: 0.1955
+
+======== Epoch 9 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:26<05:02, 11.65s/it]  Batch   100  of    126.    Elapsed: 0:19:26.
+100%|██████████| 126/126 [24:29<00:00, 11.66s/it]
+
+  Average training loss: 0.04
+  Training epoch took: 0:24:30
+Train Loss: 0.0390, Train BLEU score: 0.9378, Train BLEU score Advanced: 0.2177
+
+Running Validation...
+100%|██████████| 24/24 [04:13<00:00, 10.57s/it]
+  Validation Loss: 0.23
+  Validation took: 0:04:14
+Validation Loss: 0.2290,  Validation BLEU score: 0.7743, Validation BLEU score Advanced: 0.2030
+
+======== Epoch 10 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:29<05:03, 11.69s/it]  Batch   100  of    126.    Elapsed: 0:19:29.
+100%|██████████| 126/126 [24:32<00:00, 11.69s/it]
+
+  Average training loss: 0.04
+  Training epoch took: 0:24:33
+Train Loss: 0.0352, Train BLEU score: 0.9476, Train BLEU score Advanced: 0.2302
+
+Running Validation...
+100%|██████████| 24/24 [04:15<00:00, 10.63s/it]
+  Validation Loss: 0.24
+  Validation took: 0:04:15
+Validation Loss: 0.2395,  Validation BLEU score: 0.7732, Validation BLEU score Advanced: 0.2149
+
+======== Epoch 11 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:28<05:03, 11.67s/it]  Batch   100  of    126.    Elapsed: 0:19:29.
+100%|██████████| 126/126 [24:35<00:00, 11.71s/it]
+
+  Average training loss: 0.03
+  Training epoch took: 0:24:35
+Train Loss: 0.0321, Train BLEU score: 0.9563, Train BLEU score Advanced: 0.2174
+
+Running Validation...
+100%|██████████| 24/24 [04:16<00:00, 10.71s/it]
+  Validation Loss: 0.25
+  Validation took: 0:04:17
+Validation Loss: 0.2548,  Validation BLEU score: 0.7745, Validation BLEU score Advanced: 0.2076
+
+======== Epoch 12 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:35<05:03, 11.68s/it]  Batch   100  of    126.    Elapsed: 0:19:36.
+100%|██████████| 126/126 [24:40<00:00, 11.75s/it]
+
+  Average training loss: 0.03
+  Training epoch took: 0:24:40
+Train Loss: 0.0301, Train BLEU score: 0.9611, Train BLEU score Advanced: 0.2002
+
+Running Validation...
+100%|██████████| 24/24 [04:15<00:00, 10.63s/it]
+  Validation Loss: 0.27
+  Validation took: 0:04:15
+Validation Loss: 0.2666,  Validation BLEU score: 0.7751, Validation BLEU score Advanced: 0.2042
+
+======== Epoch 13 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:35<05:04, 11.72s/it]  Batch   100  of    126.    Elapsed: 0:19:36.
+100%|██████████| 126/126 [24:39<00:00, 11.74s/it]
+
+  Average training loss: 0.03
+  Training epoch took: 0:24:40
+Train Loss: 0.0288, Train BLEU score: 0.9646, Train BLEU score Advanced: 0.2261
+
+Running Validation...
+100%|██████████| 24/24 [04:13<00:00, 10.58s/it]
+  Validation Loss: 0.27
+  Validation took: 0:04:14
+Validation Loss: 0.2656,  Validation BLEU score: 0.7762, Validation BLEU score Advanced: 0.2057
+
+======== Epoch 14 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:32<05:06, 11.78s/it]  Batch   100  of    126.    Elapsed: 0:19:33.
+100%|██████████| 126/126 [24:38<00:00, 11.73s/it]
+
+  Average training loss: 0.03
+  Training epoch took: 0:24:38
+Train Loss: 0.0276, Train BLEU score: 0.9670, Train BLEU score Advanced: 0.2186
+
+Running Validation...
+100%|██████████| 24/24 [04:16<00:00, 10.68s/it]
+  Validation Loss: 0.28
+  Validation took: 0:04:16
+Validation Loss: 0.2753,  Validation BLEU score: 0.7757, Validation BLEU score Advanced: 0.2032
+
+======== Epoch 15 / 15 ========
+Training...
+ 79%|███████▉  | 100/126 [19:36<05:06, 11.80s/it]  Batch   100  of    126.    Elapsed: 0:19:37.
+100%|██████████| 126/126 [24:45<00:00, 11.79s/it]
+
+  Average training loss: 0.03
+  Training epoch took: 0:24:45
+Train Loss: 0.0265, Train BLEU score: 0.9692, Train BLEU score Advanced: 0.2289
+
+Running Validation...
+100%|██████████| 24/24 [04:17<00:00, 10.73s/it]  Validation Loss: 0.29
+  Validation took: 0:04:18
+Validation Loss: 0.2873,  Validation BLEU score: 0.7757, Validation BLEU score Advanced: 0.2027
