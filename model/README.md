@@ -18,7 +18,7 @@
 
 * [language_models_to_train.ipynb](language_models_to_train.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. 
 
-* [language_models_to_train_final.ipynb](language_models_to_train_final.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. ***Важно***: именно этот файл реализует обучение модели. Все реализовано без конфликтов токенизаторов и прочих вещей, готово к запуску обучения.
+* [language_models_to_train_final.ipynb](language_models_to_train_final.ipynb) - файл (.ipynb), в котором реализуется train-val-loop. ***Важно***: именно этот файл реализует обучение модели. Все реализовано без конфликтов токенизаторов и прочих вещей, готово к запуску обучения. (UPD: отложено до лучших времен)
 
 * [language_models_to_train_final_decoder_only.ipynb](language_models_to_train_final_decoder_only.ipynb) - файл (.ipynb ) котором реализуется train-val-loop для запасной модели декодера GPTBigCode. В случае не самых лучших результатов будем обучать нашу модель в "топорном" формате.
 
