@@ -5,6 +5,7 @@ from ...utils.Mistral.inference_gptbigcode import LargeCodeModelGPTBigCode
 import re
 import json
 
+
 def initialize_client():
     """Инициализирует клиента Mistral с API-ключом."""
     if api_key:
@@ -13,6 +14,7 @@ def initialize_client():
     else:
         print("API key не найден.")
         return None
+
 
 def get_chat_response(prompt, context=None, model="open-mistral-7b"):
     """
@@ -41,6 +43,7 @@ def get_chat_response(prompt, context=None, model="open-mistral-7b"):
     except Exception as e:
         return f"Ошибка при получении ответа: {str(e)}"
 
+
 def initialize_test_generator(model_name="4ervonec19/SimpleTestGenerator"):
     """
     Initializes a LargeCodeModelGPTBigCode instance for test generation.
@@ -53,6 +56,7 @@ def initialize_test_generator(model_name="4ervonec19/SimpleTestGenerator"):
         flag_pretrained=True,
         flag_hugging_face=True
     )
+
 
 def generate_tests(code_snippet: str, model_name="4ervonec19/SimpleTestGenerator"):
     """
@@ -94,6 +98,7 @@ def extract_tests_from_message(message):
     except json.JSONDecodeError:
         print("Ошибка: Неверный формат JSON. Тесты не найдены.")
         return None
+
 
 def analyze_generated_tests(code_snippet: str, model_name="4ervonec19/SimpleTestGenerator",
                             llm_model="ft:codestral-latest:58fde890:20241217:9862a68b"):
@@ -158,5 +163,3 @@ def analyze_generated_tests(code_snippet: str, model_name="4ervonec19/SimpleTest
     if res is None:
         return analysis
     return res
-
-
