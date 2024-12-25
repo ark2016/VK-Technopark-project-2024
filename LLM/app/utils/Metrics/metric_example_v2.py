@@ -3,7 +3,7 @@ import pandas as pd
 
 
 if __name__ == '__main__':  # Обязательно оборачиваем использование этого класса в данную конструкцию
-    df = pd.read_csv("data/04_functions_tests_1200.csv")
+    df = pd.read_csv("../../../../data/04_functions_tests_1200.csv")
 
     # Передаём df при инициализации класса (он ОБЯЗАТЕЛЬНО должен содержать столбцы ('Function' и 'Test'),
     # в идеале - только их)
