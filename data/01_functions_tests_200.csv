@@ -1,0 +1,2984 @@
+Function,Test
+"def is_even(n):
+    if n < 0:
+        print(""Negative number, can't be checked for evenness."")
+        return False
+    if n % 2 == 0:
+        return True
+    else:
+        if n == 1:
+            print(""One is odd!"")
+        return False","def test_is_even():
+    assert is_even(4) == True
+    assert is_even(0) == True
+    assert is_even(2) == True
+    assert is_even(3) == False
+    assert is_even(1) == False
+    assert is_even(7) == False
+    assert is_even(-2) == False
+    assert is_even(-3) == False
+    assert is_even(-7) == False"
+"def factorial(n):
+    if n < 0:
+        print(""Factorial is not defined for negative numbers!"")
+        return None
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        if i % 2 == 0:
+            result *= i
+        else:
+            result *= i
+            if i == n:
+                print(f""Factorial of {n} is {result}"")
+    return result","def test_factorial():
+    assert factorial(5) == 120
+    assert factorial(0) == 1
+    assert factorial(-1) == None
+    assert factorial(-12) == None
+    assert factorial(-5) == None
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(4) == 24"
+"def count_vowels(s):
+    vowels = ""aeiou""
+    vowels_count = 0
+    consonants_count = 0
+    for char in s:
+        if char in vowels:
+            vowels_count += 1
+        elif char.isalpha():
+            consonants_count += 1
+    if vowels_count > consonants_count:
+        return True
+    return False","def test_count_vowels():
+    assert count_vowels(""hello"") == False
+    assert count_vowels(""aeioubcd"") == True
+    assert count_vowels(""aeiou"") == True
+    assert count_vowels(""bcd"") == False
+    assert count_vowels(""xylophone"") == False
+    assert count_vowels(""consonant"") == False
+    assert count_vowels(""aaaabbbbcccc"") == False"
+"def count_even_numbers(lst):
+    even_count = 0
+    odd_count = 0
+    for num in lst:
+        if num % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    if even_count > odd_count:
+        return True
+    return False","def test_count_even_numbers():
+    assert count_even_numbers([1, 2, 3, 4, 5]) == False
+    assert count_even_numbers([2, 4, 6, 8]) == True
+    assert count_even_numbers([1, 3, 5, 7]) == False
+    assert count_even_numbers([0, 1, 2, 3, 4]) == True
+    assert count_even_numbers([2, 3, 4, 1, 6]) == True
+    assert count_even_numbers([2, 1, 2, 1, 2]) == True"
+"def sum_up_to_n(n):
+    if n < 0:
+        print(""Negative number provided!"")
+        return 0
+    total = 0
+    for i in range(1, n + 1):
+        if i % 2 == 0:
+            total += i
+        else:
+            if i % 3 == 0:
+                total += i * 2
+    if total > 100:
+        print(""Big sum!"")
+    return total","def test_sum_up_to_n():
+    assert sum_up_to_n(10) == 54
+    assert sum_up_to_n(5) == 12
+    assert sum_up_to_n(0) == 0
+    assert sum_up_to_n(-1) == 0
+    assert sum_up_to_n(3) == 8
+    assert sum_up_to_n(20) == 164
+    assert sum_up_to_n(2) == 2"
+"def is_palindrome(s):
+    if len(s) == 0:
+        print(""Empty string!"")
+        return False
+    s = s.lower()
+    if s == s[::-1]:
+        return True
+    else:
+        print(""This is not a palindrome"")
+        return False","def test_is_palindrome():
+    assert is_palindrome(""radar"") == True
+    assert is_palindrome(""hello"") == False
+    assert is_palindrome(""level"") == True
+    assert is_palindrome(""empty"") == False
+    assert is_palindrome(""madam"") == True
+    assert is_palindrome("" "") == True
+    assert is_palindrome("""") == False"
+"def fibonacci(n):
+    if n <= 0:
+        print(""Please provide a positive number"")
+        return []
+    a, b = 0, 1
+    result = [a]
+    while b <= n:
+        result.append(b)
+        a, b = b, a + b
+        if b > n:
+            break
+    return result","def test_fibonacci():
+    assert fibonacci(5) == [0, 1, 1, 2, 3, 5]
+    assert fibonacci(10) == [0, 1, 1, 2, 3, 5, 8]
+    assert fibonacci(1) == [0, 1, 1]
+    assert fibonacci(0) == []
+    assert fibonacci(-1) == []
+    assert fibonacci(2) == [0, 1, 1, 2]
+    assert fibonacci(7) == [0, 1, 1, 2, 3, 5]"
+"def find_max(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return None
+    max_val = lst[0]
+    for num in lst:
+        if num > max_val:
+            max_val = num
+        if num == 5:
+            print(""Five found!"")
+    return max_val","def test_find_max():
+    assert find_max([1, 2, 3, 4, 5]) == 5
+    assert find_max([5, 4, 3, 2, 1]) == 5
+    assert find_max([1, 2, 3, 4, 0]) == 4
+    assert find_max([0, 0, 0, 0]) == 0
+    assert find_max([-1, -2, -3, -4]) == -1
+    assert find_max([5, 1, 5, 2, 5]) == 5
+    assert find_max([]) == None"
+"def find_min(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return None
+    min_val = lst[0]
+    for num in lst:
+        if num < min_val:
+            min_val = num
+        if num == 10:
+            print(""Ten found!"")
+    return min_val","def test_find_min():
+    assert find_min([1, 2, 3, 4, 5]) == 1
+    assert find_min([5, 4, 3, 2, 1]) == 1
+    assert find_min([1, 2, 3, 4, 0]) == 0
+    assert find_min([0, 0, 0, 0]) == 0
+    assert find_min([-1, -2, -3, -4]) == -4
+    assert find_min([5, 1, 5, 2, 5]) == 1
+    assert find_min([5, 1, 10, 2, 5]) == 1
+    assert find_min([]) == None"
+"def sum_list(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return 0
+    total = 0
+    for num in lst:
+        total += num
+        if num == 0:
+            print(""Zero encountered!"")
+            total -= num
+    return total","def test_sum_list():
+    assert sum_list([1, 2, 3, 4, 5]) == 15
+    assert sum_list([5, 5, 5, 5]) == 20
+    assert sum_list([0, 1, 2, 3]) == 6
+    assert sum_list([0, 0, 0, 0]) == 0
+    assert sum_list([-1, -2, -3, -4]) == -10
+    assert sum_list([1, 1, 1, 1]) == 4
+    assert sum_list([]) == 0"
+"def filter_even(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0:
+            result.append(num)
+        else:
+            if num < 0:
+                print(f""Negative number {num} skipped!"")
+    if len(result) == 0:
+        print(""No even numbers found."")
+    return result","def test_filter_even():
+    assert filter_even([1, 2, 3, 4, 5]) == [2, 4]
+    assert filter_even([5, 5, 5, 5]) == []
+    assert filter_even([0, 1, 2, 3]) == [0, 2]
+    assert filter_even([0, 0, 0, 0]) == [0, 0, 0, 0]
+    assert filter_even([-1, -2, -3, -4]) == [-2, -4]
+    assert filter_even([1, 1, 1, 1]) == []
+    assert filter_even([]) == []"
+"def filter_odd(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0:
+            result.append(num)
+        else:
+            if num == 0:
+                print(""Zero is neither odd nor even!"")
+    if len(result) == 0:
+        print(""No odd numbers found."")
+    return result","def test_filter_odd():
+    assert filter_odd([1, 2, 3, 4, 5]) == [1, 3, 5]
+    assert filter_odd([5, 5, 5, 5]) == [5, 5, 5, 5]
+    assert filter_odd([0, 1, 2, 3]) == [1, 3]
+    assert filter_odd([0, 0, 0, 0]) == []
+    assert filter_odd([-1, -2, -3, -4]) == [-1, -3]
+    assert filter_odd([1, 1, 1, 1]) == [1, 1, 1, 1]
+    assert filter_odd([]) == []"
+"def reverse_string(s):
+    if len(s) == 0:
+        print(""Empty string!"")
+        return s
+    reversed_s = s[::-1]
+    if s == reversed_s:
+        print(""String is the same when reversed!"")
+    return reversed_s","def test_reverse_string():
+    assert reverse_string(""hello"") == ""olleh""
+    assert reverse_string(""radar"") == ""radar""
+    assert reverse_string(""world"") == ""dlrow""
+    assert reverse_string("""") == """"
+    assert reverse_string(""a"") == ""a""
+    assert reverse_string(""madam"") == ""madam""
+    assert reverse_string(""Python"") == ""nohtyP"""
+"def count_words(s):
+    words = s.split()
+    count = len(words)
+    if count == 1:
+        print(""Only one word in the string."")
+    elif count > 10:
+        print(""Too many words!"")
+    return count","def test_count_words():
+    assert count_words(""This is a test"") == 4
+    assert count_words(""Hello World"") == 2
+    assert count_words(""Single"") == 1
+    assert count_words("""") == 0
+    assert count_words(""One Two Three"") == 3
+    assert count_words(""Too many words here"") == 4
+    assert count_words(""This sentence is longer than ten words and needs a test"") == 11"
+"def power(base, exp):
+    if base == 0 and exp == 0:
+        print(""Indeterminate form (0^0)!"")
+        return None
+    if exp < 0:
+        print(""Negative exponent, calculating reciprocal."")
+        base = 1 / base
+        exp = -exp
+    result = 1
+    for _ in range(exp):
+        result *= base
+    return result","def test_power():
+    assert power(2, 3) == 8
+    assert power(0, 0) == None
+    assert power(3, 0) == 1
+    assert power(0, 3) == 0
+    assert power(2, -2) == 0.25
+    assert power(5, 1) == 5
+    assert power(3, 3) == 27"
+"def average(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return 0
+    total = sum(lst)
+    count = len(lst)
+    if total == 0:
+        print(""Sum is zero!"")
+    return total / count","def test_average():
+    assert average([1, 2, 3, 4, 5]) == 3
+    assert average([0, 0, 0, 0]) == 0
+    assert average([10, 20, 30, 40]) == 25
+    assert average([-1, -2, -3, -4]) == -2.5
+    assert average([5, 5, 5, 5]) == 5
+    assert average([1, 2]) == 1.5
+    assert average([]) == 0"
+"def sum_until_negative(lst):
+    total = 0
+    for num in lst:
+        if num < 0:
+            print(f""Negative number {num} encountered, stopping!"")
+            break
+        total += num
+    return total","def test_sum_until_negative():
+    assert sum_until_negative([1, 2, 3, -1, 5]) == 6
+    assert sum_until_negative([5, 5, 5, 5]) == 20
+    assert sum_until_negative([0, 1, 2, 3]) == 6
+    assert sum_until_negative([0, 0, 0, 0]) == 0
+    assert sum_until_negative([-1, -2, -3, -4]) == 0
+    assert sum_until_negative([1, 2, 3, 4]) == 10"
+"def find_primes(n):
+    if n < 2:
+        print(""There are no primes less than 2."")
+        return []
+    primes = []
+    for num in range(2, n + 1):
+        is_prime = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+        else:
+            if num == 4:
+                print(""4 is not a prime!"")
+    return primes","def test_find_primes():
+    assert find_primes(10) == [2, 3, 5, 7]
+    assert find_primes(1) == []
+    assert find_primes(2) == [2]
+    assert find_primes(20) == [2, 3, 5, 7, 11, 13, 17, 19]
+    assert find_primes(0) == []
+    assert find_primes(-5) == []
+    assert find_primes(4) == [2, 3]"
+"def sum_exclude_multiples_of_three(n):
+    total = 0
+    for i in range(1, n + 1):
+        if i % 3 == 0:
+            continue
+        total += i
+    if total > 50:
+        print(""Large sum!"")
+    return total","def test_sum_exclude_multiples_of_three():
+    assert sum_exclude_multiples_of_three(10) == 37
+    assert sum_exclude_multiples_of_three(3) == 3
+    assert sum_exclude_multiples_of_three(6) == 12
+    assert sum_exclude_multiples_of_three(0) == 0
+    assert sum_exclude_multiples_of_three(1) == 1
+    assert sum_exclude_multiples_of_three(5) == 12
+    assert sum_exclude_multiples_of_three(20) == 147"
+"def is_prime(n):
+    if n <= 1:
+        print(f""{n} is not a prime."")
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print(f""{n} is divisible by {i}, not prime!"")
+            return False
+    return True","def test_is_prime():
+    assert is_prime(2) == True
+    assert is_prime(3) == True
+    assert is_prime(4) == False
+    assert is_prime(5) == True
+    assert is_prime(0) == False
+    assert is_prime(1) == False
+    assert is_prime(17) == True
+    assert is_prime(-3) == False"
+"def range_list(a, b):
+    if a > b:
+        print(f""Range is invalid: {a} > {b}"")
+        return []
+    return [i for i in range(a, b + 1)]","def test_range_list():
+    assert range_list(1, 5) == [1, 2, 3, 4, 5]
+    assert range_list(5, 5) == [5]
+    assert range_list(0, 3) == [0, 1, 2, 3]
+    assert range_list(3, 1) == []
+    assert range_list(10, 7) == []
+    assert range_list(-5, 0) == [-5, -4, -3, -2, -1, 0]"
+"def product_list(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return 1
+    product = 1
+    for num in lst:
+        if num == 0:
+            print(""Zero encountered, skipping it!"")
+            continue
+        product *= num
+    return product","def test_product_list():
+    assert product_list([1, 2, 3]) == 6
+    assert product_list([1, 0, 3]) == 3
+    assert product_list([0, 0, 0]) == 1
+    assert product_list([]) == 1
+    assert product_list([5, 7]) == 35
+    assert product_list([1, -2, 3]) == -6"
+"def intersect_lists(lst1, lst2):
+    result = []
+    for x in lst1:
+        if x in lst2:
+            result.append(x)
+    if len(result) == 0:
+        print(""No common elements found."")
+    return result","def test_intersect_lists():
+    assert intersect_lists([1, 2, 3], [3, 4, 5]) == [3]
+    assert intersect_lists([1, 2], [3, 4]) == []
+    assert intersect_lists([5, 6], [6, 7]) == [6]
+    assert intersect_lists([], [1, 2, 3]) == []
+    assert intersect_lists([1, 2, 3], []) == []
+    assert intersect_lists([10, 20], [20, 30]) == [20]"
+"def remove_duplicates(lst):
+    unique_lst = []
+    for num in lst:
+        if num not in unique_lst:
+            unique_lst.append(num)
+    if len(unique_lst) == len(lst):
+        print(""No duplicates found."")
+    return unique_lst","def test_remove_duplicates():
+    assert remove_duplicates([1, 2, 3, 2, 1]) == [1, 2, 3]
+    assert remove_duplicates([1, 1, 1]) == [1]
+    assert remove_duplicates([1, 2, 3]) == [1, 2, 3]
+    assert remove_duplicates([10, 20, 20, 30]) == [10, 20, 30]
+    assert remove_duplicates([1, 1, 1, 2, 2, 2]) == [1, 2]
+    assert remove_duplicates([1, 2, 2, 1]) == [1, 2]"
+"def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    if a == 1:
+        print(""Numbers are co-prime."")
+    return a","def test_gcd():
+    assert gcd(12, 15) == 3
+    assert gcd(100, 25) == 25
+    assert gcd(7, 13) == 1
+    assert gcd(0, 5) == 5
+    assert gcd(5, 0) == 5
+    assert gcd(14, 49) == 7"
+"def lcm(a, b):
+    if a == 0 or b == 0:
+        print(""Zero cannot have an LCM."")
+        return None
+
+    def gcd(a, b):
+        while b:
+            a, b = b, a % b
+        return a
+
+    result = abs(a * b) // gcd(a, b)
+    if result > 1000:
+        print(""The LCM is quite large!"")
+    return result","def test_lcm():
+    assert lcm(4, 5) == 20
+    assert lcm(3, 7) == 21
+    assert lcm(0, 5) == None
+    assert lcm(10, 15) == 30
+    assert lcm(25, 40) == 200
+    assert lcm(8, 12) == 24
+    assert lcm(1000, 1001) == 1001000"
+"def count_occurrences(lst, num):
+    count = 0
+    for val in lst:
+        if val == num:
+            count += 1
+        else:
+            if val % 2 == 0:
+                print(f""Even number {val} encountered."")
+    if count == 0:
+        print(f""{num} not found in the list."")
+    return count","def test_count_occurrences():
+    assert count_occurrences([1, 2, 3, 1], 1) == 2
+    assert count_occurrences([2, 4, 6], 2) == 1
+    assert count_occurrences([1, 1, 1, 1], 2) == 0
+    assert count_occurrences([10, 20, 10], 10) == 2
+    assert count_occurrences([1, 3, 1, 2], 5) == 0
+    assert count_occurrences([0, 2, 0, 4], 0) == 2"
+"def is_number(s):
+    if not s:
+        print(""Empty string can't be a number."")
+        return False
+    if s.replace(""."", """", 1).isdigit():
+        return True
+    else:
+        print(""This is not a valid number!"")
+        return False","def test_is_number():
+    assert is_number(""123"") == True
+    assert is_number(""12.34"") == True
+    assert is_number("""") == False
+    assert is_number(""abc"") == False
+    assert is_number(""123abc"") == False
+    assert is_number(""-123"") == False"
+"def square_non_negative(n):
+    if n < 0:
+        print(f""Negative number {n} can't be squared!"")
+        return None
+    return n ** 2","def test_square_non_negative():
+    assert square_non_negative(4) == 16
+    assert square_non_negative(0) == 0
+    assert square_non_negative(-4) == None
+    assert square_non_negative(5) == 25
+    assert square_non_negative(-10) == None
+    assert square_non_negative(10) == 100"
+"def longest_common_subsequence(str1, str2):
+    m, n = len(str1), len(str2)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if str1[i - 1] == str2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+    if dp[m][n] == 0:
+        print(""No common subsequence found."")
+    return dp[m][n]","def test_longest_common_subsequence():
+    assert longest_common_subsequence(""abc"", ""ac"") == 2
+    assert longest_common_subsequence(""abcdef"", ""abdf"") == 4
+    assert longest_common_subsequence(""abc"", ""xyz"") == 0
+    assert longest_common_subsequence(""abc"", """") == 0
+    assert longest_common_subsequence(""12345"", ""54321"") == 1
+    assert longest_common_subsequence("""", """") == 0"
+"def find_index(lst, elem):
+    for i, val in enumerate(lst):
+        if val == elem:
+            return i
+    print(f""Element {elem} not found."")
+    return -1","def test_find_index():
+    assert find_index([1, 2, 3], 2) == 1
+    assert find_index([10, 20, 30], 40) == -1
+    assert find_index([1, 2, 3, 4], 1) == 0
+    assert find_index([], 1) == -1
+    assert find_index([10, 20], 20) == 1
+    assert find_index([1, 1, 1], 1) == 0"
+"def unique_chars(s):
+    unique = []
+    for char in s:
+        if char not in unique:
+            unique.append(char)
+        else:
+            if char == "" "":
+                print(""Space character skipped."")
+    return ''.join(unique)","def test_unique_chars():
+    assert unique_chars(""aabcc"") == ""abc""
+    assert unique_chars(""abcd"") == ""abcd""
+    assert unique_chars(""aabbcc"") == ""abc""
+    assert unique_chars(""aabb  cc"") == ""ab c""
+    assert unique_chars(""abcdabcd"") == ""abcd""
+    assert unique_chars("""") == """""
+"def count_multiples_of_five(a, b):
+    if a > b:
+        print(""Invalid range, start must be less than end."")
+        return 0
+    count = 0
+    for i in range(a, b + 1):
+        if i % 5 == 0:
+            count += 1
+    return count","def test_count_multiples_of_five():
+    assert count_multiples_of_five(1, 10) == 2
+    assert count_multiples_of_five(10, 1) == 0
+    assert count_multiples_of_five(0, 5) == 2
+    assert count_multiples_of_five(5, 5) == 1
+    assert count_multiples_of_five(10, 20) == 3
+    assert count_multiples_of_five(12, 18) == 1
+    assert count_multiples_of_five(1, 4) == 0"
+"def is_leap_year(year):
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    return False","def test_is_leap_year():
+    assert is_leap_year(2020) == True
+    assert is_leap_year(2024) == True
+    assert is_leap_year(1900) == False
+    assert is_leap_year(2000) == True
+    assert is_leap_year(2023) == False
+    assert is_leap_year(2004) == True"
+"def max_min_difference_1(lst):
+    if len(lst) == 0:
+        print(""List is empty!"")
+        return None
+    max_val = max(lst)
+    min_val = min(lst)
+    return max_val - min_val","def test_max_min_difference_1():
+    assert max_min_difference_1([1, 2, 3, 4]) == 3
+    assert max_min_difference_1([10, 5]) == 5
+    assert max_min_difference_1([1, 1, 1, 1]) == 0
+    assert max_min_difference_1([0, 2, 0]) == 2
+    assert max_min_difference_1([100]) == 0
+    assert max_min_difference_1([]) == None"
+"def is_anagram(s1, s2):
+    if len(s1) != len(s2):
+        print(""Strings are of different lengths!"")
+        return False
+    return sorted(s1) == sorted(s2)","def test_is_anagram():
+    assert is_anagram(""listen"", ""silent"") == True
+    assert is_anagram(""hello"", ""world"") == False
+    assert is_anagram(""evil"", ""vile"") == True
+    assert is_anagram(""abc"", ""acb"") == True
+    assert is_anagram(""abc"", ""abcd"") == False
+    assert is_anagram(""123"", ""321"") == True"
+"def sum_of_squares(lst):
+    total = 0
+    for num in lst:
+        if num < 0:
+            print(f""Negative number {num} skipped."")
+            continue
+        total += num ** 2
+    return total","def test_sum_of_squares():
+    assert sum_of_squares([1, 2, 3]) == 14
+    assert sum_of_squares([0, 4, 5]) == 41
+    assert sum_of_squares([-1, -2, -3]) == 0
+    assert sum_of_squares([1, 2, 3, 4]) == 30
+    assert sum_of_squares([]) == 0
+    assert sum_of_squares([1, 0, 1]) == 2"
+"def geometric_mean(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return None
+    product = 1
+    for x in lst:
+        if x == 0:
+            print(""Zero in list, skipped!"")
+            continue
+        product *= x
+    return product ** (1 / len(lst))","def test_geometric_mean():
+    assert geometric_mean([1, 2, 3]) == 1.8171205928321397
+    assert geometric_mean([5, 5, 5]) == 5.0
+    assert geometric_mean([1, 1, 1]) == 1.0
+    assert geometric_mean([0, 1, 2]) == 1.2599210498948732
+    assert geometric_mean([]) == None
+    assert geometric_mean([3, 2, 4]) == 2.8844991406148166"
+"def find_duplicates(lst):
+    duplicates = []
+    for x in set(lst):
+        if lst.count(x) > 1:
+            duplicates.append(x)
+    if len(duplicates) == 0:
+        print(""No duplicates found."")
+    return duplicates","def test_find_duplicates():
+    assert find_duplicates([1, 2, 3, 2]) == [2]
+    assert find_duplicates([1, 1, 1]) == [1]
+    assert find_duplicates([4, 5, 6]) == []
+    assert find_duplicates([10, 20, 20, 30]) == [20]
+    assert find_duplicates([2, 3, 2, 3]) == [2, 3]
+    assert find_duplicates([1, 1, 2, 3, 3]) == [1, 3]"
+"def square_list(lst):
+    return [x ** 2 for x in lst if x >= 0]","def test_square_list():
+    assert square_list([1, 2, 3]) == [1, 4, 9]
+    assert square_list([0, -1, -2]) == [0]
+    assert square_list([5, 6]) == [25, 36]
+    assert square_list([-1, -3, 2]) == [4]
+    assert square_list([]) == []
+    assert square_list([4, 0, -5]) == [16, 0]"
+"def contains_digits(s):
+    for char in s:
+        if char.isdigit():
+            return True
+    print(""No digits in the string."")
+    return False","def test_contains_digits():
+    assert contains_digits(""123abc"") == True
+    assert contains_digits(""abcdef"") == False
+    assert contains_digits(""abc1"") == True
+    assert contains_digits("""") == False
+    assert contains_digits(""123"") == True
+    assert contains_digits(""no digits here!"") == False"
+"def greater_than(lst, n):
+    result = []
+    for x in lst:
+        if x > n:
+            result.append(x)
+        else:
+            print(f""Number {x} is not greater than {n}"")
+    return result","def test_greater_than():
+    assert greater_than([1, 2, 3, 4], 2) == [3, 4]
+    assert greater_than([5, 6, 7], 7) == []
+    assert greater_than([10, 20, 30], 25) == [30]
+    assert greater_than([-1, 0, 1], 0) == [1]
+    assert greater_than([], 0) == []
+    assert greater_than([2, 2, 2], 2) == []"
+"def sum_even_up_to_n(n):
+    if n < 0:
+        print(""Negative input, summing starts from 1."")
+        n = 1
+    return sum(i for i in range(1, n + 1) if i % 2 == 0)","def test_sum_even_up_to_n():
+    assert sum_even_up_to_n(10) == 30
+    assert sum_even_up_to_n(1) == 0
+    assert sum_even_up_to_n(0) == 0
+    assert sum_even_up_to_n(-5) == 0
+    assert sum_even_up_to_n(7) == 12
+    assert sum_even_up_to_n(2) == 2"
+"def reverse_range(n):
+    if n <= 0:
+        print(""Invalid range. Starting number should be positive."")
+        return []
+    return [i for i in range(n, 0, -1)]","def test_reverse_range():
+    assert reverse_range(5) == [5, 4, 3, 2, 1]
+    assert reverse_range(1) == [1]
+    assert reverse_range(0) == []
+    assert reverse_range(-1) == []
+    assert reverse_range(10) == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert reverse_range(2) == [2, 1]"
+"def common_element(lst1, lst2):
+    for x in lst1:
+        if x in lst2:
+            return x
+    print(""No common elements found."")
+    return None","def test_common_element():
+    assert common_element([1, 2, 3], [3, 4, 5]) == 3
+    assert common_element([10, 20, 30], [5, 15, 20]) == 20
+    assert common_element([1, 2, 3], [4, 5, 6]) == None
+    assert common_element([], [1, 2, 3]) == None
+    assert common_element([1, 2, 3], []) == None
+    assert common_element([1, 2, 3], [1, 2, 3]) == 1"
+"def extract_numbers(s):
+    return [int(x) for x in s.split() if x.isdigit()]","def test_extract_numbers():
+    assert extract_numbers(""1 2 3 abc 4 5 6"") == [1, 2, 3, 4, 5, 6]
+    assert extract_numbers(""no numbers here"") == []
+    assert extract_numbers(""123"") == [123]
+    assert extract_numbers("""") == []
+    assert extract_numbers(""56 78"") == [56, 78]
+    assert extract_numbers(""1 2 three"") == [1, 2]"
+"def trimmed_mean(lst):
+    if len(lst) <= 2:
+        print(""Too few elements to calculate trimmed mean."")
+        return None
+    lst.sort()
+    return sum(lst[1:-1]) / len(lst[1:-1])","def test_trimmed_mean():
+    assert trimmed_mean([1, 2, 3, 4, 5]) == 3
+    assert trimmed_mean([10, 10, 10, 10, 10, 10]) == 10
+    assert trimmed_mean([1, 2]) == None
+    assert trimmed_mean([10]) == None
+    assert trimmed_mean([]) == None
+    assert trimmed_mean([1, 3, 3, 6, 7, 8, 9]) == 5.4"
+"def all_substrings(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i + 1, len(s) + 1):
+            substrings.append(s[i:j])
+    return substrings","def test_all_substrings():
+    assert all_substrings(""abc"") == [""a"", ""ab"", ""abc"", ""b"", ""bc"", ""c""]
+    assert all_substrings(""ab"") == [""a"", ""ab"", ""b""]
+    assert all_substrings(""a"") == [""a""]
+    assert all_substrings("""") == []
+    assert all_substrings(""xyz"") == [""x"", ""xy"", ""xyz"", ""y"", ""yz"", ""z""]
+    assert all_substrings(""abca"") == [""a"", ""ab"", ""abc"", ""abca"", ""b"", ""bc"", ""bca"", ""c"", ""ca"", ""a""]"
+"def divisible_by_three(lst):
+    result = []
+    for x in lst:
+        if x % 3 == 0:
+            result.append(x)
+    return result","def test_divisible_by_three():
+    assert divisible_by_three([3, 6, 9, 12]) == [3, 6, 9, 12]
+    assert divisible_by_three([1, 2, 4, 5]) == []
+    assert divisible_by_three([0, 3, 6]) == [0, 3, 6]
+    assert divisible_by_three([-3, -6, -9]) == [-3, -6, -9]
+    assert divisible_by_three([4, 5, 6, 7, 8, 9]) == [6, 9]
+    assert divisible_by_three([]) == []"
+"def unique_char_count(s):
+    return len(set(s))","def test_unique_char_count():
+    assert unique_char_count(""abcdef"") == 6
+    assert unique_char_count(""aabbcc"") == 3
+    assert unique_char_count(""abcABC"") == 6
+    assert unique_char_count("""") == 0
+    assert unique_char_count(""a"") == 1
+    assert unique_char_count(""aaaa"") == 1"
+"def is_valid_email(email):
+    if ""@"" not in email:
+        print(""Missing '@' in the email address."")
+        return False
+    if ""."" not in email.split(""@"")[1]:
+        print(""Missing '.' after '@'."")
+        return False
+    return True","def test_is_valid_email():
+    assert is_valid_email(""test@example.com"") == True
+    assert is_valid_email(""test.example.com"") == False
+    assert is_valid_email(""test@.com"") == True
+    assert is_valid_email(""test@com"") == False
+    assert is_valid_email(""test@e.com"") == True
+    assert is_valid_email("""") == False"
+"def max_consecutive_chars(s):
+    max_len = 1
+    current_len = 1
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            current_len += 1
+            max_len = max(max_len, current_len)
+        else:
+            current_len = 1
+    return max_len","def test_max_consecutive_chars():
+    assert max_consecutive_chars(""aaabbccc"") == 3
+    assert max_consecutive_chars(""abcd"") == 1
+    assert max_consecutive_chars(""aabbaa"") == 2
+    assert max_consecutive_chars("""") == 1
+    assert max_consecutive_chars(""a"") == 1
+    assert max_consecutive_chars(""aaabbbaaacccddd"") == 3"
+"def median(lst):
+    if len(lst) == 0:
+        print(""List is empty!"")
+        return None
+    lst.sort()
+    n = len(lst)
+    if n % 2 == 0:
+        return (lst[n // 2 - 1] + lst[n // 2]) / 2
+    return lst[n // 2]","def test_median():
+    assert median([3, 1, 2]) == 2
+    assert median([4, 1, 3, 2]) == 2.5
+    assert median([]) == None
+    assert median([1]) == 1
+    assert median([1, 2, 3, 4, 5]) == 3
+    assert median([1, 1, 1, 1, 1]) == 1"
+"def most_frequent(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return None
+    freq = {}
+    for num in lst:
+        freq[num] = freq.get(num, 0) + 1
+    return max(freq, key=freq.get)","def test_most_frequent():
+    assert most_frequent([1, 2, 2, 3, 3, 3]) == 3
+    assert most_frequent([4, 4, 4, 4]) == 4
+    assert most_frequent([1, 1, 2, 2, 3, 3]) == 1  # first encountered
+    assert most_frequent([5]) == 5
+    assert most_frequent([]) == None
+    assert most_frequent([1, 2, 3, 4, 5]) == 1"
+"def remove_spaces(s):
+    return s.replace("" "", """")","def test_remove_spaces():
+    assert remove_spaces(""hello world"") == ""helloworld""
+    assert remove_spaces("" "") == """"
+    assert remove_spaces("""") == """"
+    assert remove_spaces(""a b c"") == ""abc""
+    assert remove_spaces(""no_spaces"") == ""no_spaces""
+    assert remove_spaces(""  leading and trailing spaces  "") == ""leadingandtrailingspaces"""
+"def first_last(lst):
+    if len(lst) == 0:
+        print(""Empty list!"")
+        return None, None
+    return lst[0], lst[-1]","def test_first_last():
+    assert first_last([1, 2, 3, 4]) == (1, 4)
+    assert first_last([5]) == (5, 5)
+    assert first_last([]) == (None, None)
+    assert first_last([10, 20, 30, 40]) == (10, 40)
+    assert first_last([0]) == (0, 0)
+    assert first_last([1, 1, 1, 1]) == (1, 1)"
+"def join_with_space(str1, str2):
+    return str1 + "" "" + str2","def test_join_with_space():
+    assert join_with_space(""hello"", ""world"") == ""hello world""
+    assert join_with_space(""a"", ""b"") == ""a b""
+    assert join_with_space("""", ""empty"") == "" empty""
+    assert join_with_space(""empty"", """") == ""empty ""
+    assert join_with_space("""", """") == "" ""
+    assert join_with_space(""one"", ""two"") == ""one two"""
+"def is_positive(n):
+    if n == 0:
+        print(""Zero is neither positive nor negative."")
+        return False
+    return n > 0","def test_is_positive():
+    assert is_positive(5) == True
+    assert is_positive(-1) == False
+    assert is_positive(0) == False
+    assert is_positive(100) == True
+    assert is_positive(-50) == False
+    assert is_positive(1) == True"
+"def sum_exclude_multiples_of_two(n):
+    total = 0
+    for i in range(1, n + 1):
+        if i % 2 == 0:
+            continue
+        total += i
+    return total","def test_sum_exclude_multiples_of_two():
+    assert sum_exclude_multiples_of_two(10) == 25
+    assert sum_exclude_multiples_of_two(1) == 1
+    assert sum_exclude_multiples_of_two(0) == 0
+    assert sum_exclude_multiples_of_two(-5) == 0
+    assert sum_exclude_multiples_of_two(5) == 9
+    assert sum_exclude_multiples_of_two(7) == 16"
+"def prime_numbers(lst):
+    primes = []
+    for num in lst:
+        if num > 1:
+            for i in range(2, int(num ** 0.5) + 1):
+                if num % i == 0:
+                    break
+            else:
+                primes.append(num)
+    return primes","def test_prime_numbers():
+    assert prime_numbers([2, 3, 4, 5, 6]) == [2, 3, 5]
+    assert prime_numbers([10, 11, 12, 13, 14]) == [11, 13]
+    assert prime_numbers([0, 1, 2, 3]) == [2, 3]
+    assert prime_numbers([-1, -2, 2, 3]) == [2, 3]
+    assert prime_numbers([4, 6, 8, 9]) == []
+    assert prime_numbers([29, 31, 37, 41]) == [29, 31, 37, 41]"
+"def extract_even_numbers(s):
+    numbers = [int(x) for x in s.split() if x.isdigit()]
+    even_numbers = [num for num in numbers if num % 2 == 0]
+    if not even_numbers:
+        print(""No even numbers found in the string."")
+    return even_numbers","def test_extract_even_numbers():
+    assert extract_even_numbers(""1 2 3 4 5"") == [2, 4]
+    assert extract_even_numbers(""10 15 20 25"") == [10, 20]
+    assert extract_even_numbers(""7 9 11 13"") == []
+    assert extract_even_numbers(""0 6 8 10"") == [0, 6, 8, 10]
+    assert extract_even_numbers(""1 3 5 7 9"") == []"
+"def divisible_by(lst, divisor):
+    if divisor == 0:
+        print(""Cannot divide by zero."")
+        return []
+    result = [x for x in lst if x % divisor == 0]
+    if not result:
+        print(f""No numbers divisible by {divisor} found."")
+    return result","def test_divisible_by():
+    assert divisible_by([1, 2, 3, 4, 5], 2) == [2, 4]
+    assert divisible_by([6, 7, 8, 9], 3) == [6, 9]
+    assert divisible_by([10, 20, 30], 5) == [10, 20, 30]
+    assert divisible_by([1, 2, 3], 1) == [1, 2, 3]
+    assert divisible_by([1, 2, 3], 0) == []
+    assert divisible_by([5, 10, 15], 7) == []"
+"def is_float(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        print(f""'{s}' is not a valid floating-point number."")
+        return False","def test_is_float():
+    assert is_float(""3.14"") == True
+    assert is_float(""2.718"") == True
+    assert is_float(""abc"") == False
+    assert is_float(""123"") == True
+    assert is_float(""0.0"") == True
+    assert is_float(""-1.5"") == True"
+"def count_starting_with(lst, char):
+    count = 0
+    for string in lst:
+        if string.startswith(char):
+            count += 1
+        else:
+            if char in string:
+                print(f""String '{string}' contains {char} but doesn't start with it."")
+    return count","def test_count_starting_with():
+    assert count_starting_with([""apple"", ""apricot"", ""banana""], 'a') == 2
+    assert count_starting_with([""pear"", ""plum"", ""peach""], 'p') == 3
+    assert count_starting_with([""apple"", ""banana"", ""cherry""], 'x') == 0
+    assert count_starting_with([""apple"", ""banana"", ""ananas""], 'a') == 2
+    assert count_starting_with([""apple"", ""banana"", ""cherry""], 'b') == 1"
+"def max_odd_number(lst):
+    odd_numbers = [x for x in lst if x % 2 != 0]
+    if not odd_numbers:
+        print(""No odd numbers found."")
+        return None
+    return max(odd_numbers)","def test_max_odd_number():
+    assert max_odd_number([1, 3, 5, 7, 9]) == 9
+    assert max_odd_number([2, 4, 6, 8]) == None
+    assert max_odd_number([10, 15, 20, 25]) == 25
+    assert max_odd_number([-1, -3, -5, -7, -9]) == -1
+    assert max_odd_number([]) == None"
+"def count_uppercase(s):
+    count = sum(1 for char in s if char.isupper())
+    if count == 0:
+        print(""No uppercase letters found."")
+    return count","def test_count_uppercase():
+    assert count_uppercase(""Hello World!"") == 2
+    assert count_uppercase(""HELLO"") == 5
+    assert count_uppercase(""hello"") == 0
+    assert count_uppercase(""HeLLo WoRLd!"") == 6
+    assert count_uppercase(""123ABC"") == 3"
+"def is_fibonacci_number(n):
+    if n < 0:
+        print(""Negative numbers cannot be Fibonacci numbers."")
+        return False
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n","def test_is_fibonacci_number():
+    assert is_fibonacci_number(0) == False
+    assert is_fibonacci_number(1) == True
+    assert is_fibonacci_number(2) == True
+    assert is_fibonacci_number(3) == True
+    assert is_fibonacci_number(4) == False
+    assert is_fibonacci_number(5) == True
+    assert is_fibonacci_number(-1) == False"
+"def is_symmetric(lst):
+    if lst == lst[::-1]:
+        return True
+    else:
+        print(""List is not symmetric."")
+        return False","def test_is_symmetric():
+    assert is_symmetric([1, 2, 3, 2, 1]) == True
+    assert is_symmetric([1, 2, 2, 1]) == True
+    assert is_symmetric([1, 2, 3, 4, 5]) == False
+    assert is_symmetric([]) == True
+    assert is_symmetric([1, 2, 3, 4, 3, 2, 1]) == True"
+"def sum_numbers_in_string(s):
+    numbers = [int(x) for x in s.split() if x.isdigit()]
+    return sum(numbers)","def test_sum_numbers_in_string():
+    assert sum_numbers_in_string(""1 2 3 4 5"") == 15
+    assert sum_numbers_in_string(""10 20 30"") == 60
+    assert sum_numbers_in_string(""abc 123 def"") == 123
+    assert sum_numbers_in_string(""100"") == 100
+    assert sum_numbers_in_string(""1 a 2 b 3 c"") == 6"
+"def odd_max_min_difference(lst):
+    odd_numbers = [x for x in lst if x % 2 != 0]
+    if not odd_numbers:
+        print(""No odd numbers found."")
+        return None
+    return max(odd_numbers) - min(odd_numbers)","def test_odd_max_min_difference():
+    assert odd_max_min_difference([1, 3, 5, 7, 9]) == 8
+    assert odd_max_min_difference([2, 4, 6, 8]) == None
+    assert odd_max_min_difference([10, 15, 20, 25, 30]) == 10
+    assert odd_max_min_difference([-1, -3, -5, -7, -9]) == 8
+    assert odd_max_min_difference([]) == None"
+"def count_digits(s):
+    count = sum(1 for char in s if char.isdigit())
+    return count","def test_count_digits():
+    assert count_digits(""abc123"") == 3
+    assert count_digits(""1234567890"") == 10
+    assert count_digits(""no digits here"") == 0
+    assert count_digits(""123abc456"") == 6
+    assert count_digits("""") == 0"
+"def is_even_length(s):
+    return len(s) % 2 == 0","def test_is_even_length():
+    assert is_even_length(""abcd"") == True
+    assert is_even_length(""abcde"") == False
+    assert is_even_length("""") == True
+    assert is_even_length(""abcdefgh"") == True
+    assert is_even_length(""abc"") == False"
+"def sum_exclude_multiples_of_four(lst):
+    return sum(x for x in lst if x % 4 != 0)","def test_sum_exclude_multiples_of_four():
+    assert sum_exclude_multiples_of_four([1, 2, 3, 4, 5, 6, 7, 8]) == 24
+    assert sum_exclude_multiples_of_four([4, 8, 12]) == 0
+    assert sum_exclude_multiples_of_four([1, 2, 3]) == 6
+    assert sum_exclude_multiples_of_four([]) == 0
+    assert sum_exclude_multiples_of_four([5, 10, 15]) == 30"
+"def missing_min_number(lst):
+    i = 0
+    while i in lst:
+        i += 1
+    return i","def test_missing_min_number():
+    assert missing_min_number([0, 1, 2, 4, 5]) == 3
+    assert missing_min_number([1, 2, 3]) == 0
+    assert missing_min_number([0, 1, 2, 3]) == 4
+    assert missing_min_number([]) == 0
+    assert missing_min_number([5, 6, 7, 8]) == 0"
+"def common_numbers(lst1, lst2):
+    return [x for x in lst1 if x in lst2]","def test_common_numbers():
+    assert common_numbers([1, 2, 3], [3, 4, 5]) == [3]
+    assert common_numbers([6, 7, 8], [8, 9, 10]) == [8]
+    assert common_numbers([1, 2, 3], [4, 5, 6]) == []
+    assert common_numbers([], [1, 2, 3]) == []
+    assert common_numbers([1, 2, 3], [1, 2, 3]) == [1, 2, 3]"
+"def first_string_with_digit(lst):
+    for string in lst:
+        if any(char.isdigit() for char in string):
+            return string
+    print(""No string with digits found."")
+    return None","def test_first_string_with_digit():
+    assert first_string_with_digit([""abc"", ""def2"", ""ghi""]) == ""def2""
+    assert first_string_with_digit([""123"", ""abc"", ""456""]) == ""123""
+    assert first_string_with_digit([""abc"", ""def"", ""ghi""]) == None
+    assert first_string_with_digit([""abc1"", ""def"", ""ghi""]) == ""abc1""
+    assert first_string_with_digit([]) == None"
+"def count_words_starting_with(lst, char):
+    return sum(1 for word in lst if word.startswith(char))","def test_count_words_starting_with():
+    assert count_words_starting_with([""apple"", ""apricot"", ""banana""], 'a') == 2
+    assert count_words_starting_with([""pear"", ""plum"", ""peach""], 'p') == 3
+    assert count_words_starting_with([""apple"", ""banana"", ""cherry""], 'x') == 0
+    assert count_words_starting_with([""apple"", ""banana"", ""ananas""], 'a') == 2
+    assert count_words_starting_with([""apple"", ""banana"", ""cherry""], 'b') == 1"
+"def count_greater_than(lst, n):
+    return sum(1 for x in lst if x > n)","def test_count_greater_than():
+    assert count_greater_than([1, 2, 3, 4, 5], 3) == 2
+    assert count_greater_than([10, 20, 30, 40], 25) == 2
+    assert count_greater_than([1, 2, 3], 4) == 0
+    assert count_greater_than([], 5) == 0
+    assert count_greater_than([5, 6, 7, 8], 5) == 3"
+"def max_sublist_sum(lst):
+    if not lst:
+        print(""List is empty!"")
+        return None
+    max_sum = current_sum = lst[0]
+    for num in lst[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum","def test_max_sublist_sum():
+    assert max_sublist_sum([1, -2, 3, 4, -1, 2, 1, -5, 4]) == 9
+    assert max_sublist_sum([1, 2, 3, 4, 5]) == 15
+    assert max_sublist_sum([-1, -2, -3, -4]) == -1
+    assert max_sublist_sum([3, -2, 5, -1]) == 6
+    assert max_sublist_sum([]) == None"
+"def max_pairwise_product(lst):
+    if len(lst) < 2:
+        print(""Need at least two elements!"")
+        return None
+    lst.sort()
+    return lst[-1] * lst[-2]","def test_max_pairwise_product():
+    assert max_pairwise_product([1, 2, 3, 4, 5]) == 20
+    assert max_pairwise_product([5, 5, 5, 5]) == 25
+    assert max_pairwise_product([1, 0, 0, 1]) == 1
+    assert max_pairwise_product([-1, -2, -3, -4]) == 2
+    assert max_pairwise_product([5]) == None"
+"def is_palindrome_1(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]","def test_is_palindrome_1():
+    assert is_palindrome_1(""A man, a plan, a canal, Panama"") == True
+    assert is_palindrome_1(""No lemon, no melon"") == True
+    assert is_palindrome_1(""Hello, World!"") == False
+    assert is_palindrome_1(""Madam"") == True
+    assert is_palindrome_1("""") == True
+    assert is_palindrome_1(""12321"") == True
+    assert is_palindrome_1(""12345"") == False
+    assert is_palindrome_1(""Was it a car or a cat I saw?"") == True
+    assert is_palindrome_1(""Not a palindrome"") == False"
+"def largest_divisor_less_than(n):
+    if n <= 1:
+        print(f""{n} doesn't have any divisors greater than 1."")
+        return None
+    for i in range(n - 1, 1, -1):
+        if n % i == 0:
+            return i
+    return None","def test_largest_divisor_less_than():
+    assert largest_divisor_less_than(10) == 5
+    assert largest_divisor_less_than(15) == 5
+    assert largest_divisor_less_than(1) == None
+    assert largest_divisor_less_than(2) == None
+    assert largest_divisor_less_than(3) == None
+    assert largest_divisor_less_than(25) == 5
+    assert largest_divisor_less_than(100) == 50
+    assert largest_divisor_less_than(49) == 7
+    assert largest_divisor_less_than(97) == None
+    assert largest_divisor_less_than(11) == None"
+"def non_prime_numbers(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    return [x for x in lst if not is_prime(x)]","def test_non_prime_numbers():
+    assert non_prime_numbers([2, 3, 4, 5, 6]) == [4, 6]
+    assert non_prime_numbers([11, 13, 17, 19, 23]) == []
+    assert non_prime_numbers([8, 12, 15]) == [8, 12, 15]
+    assert non_prime_numbers([1, 2, 3, 5, 7]) == [1]
+    assert non_prime_numbers([4, 6, 8, 9, 10]) == [4, 6, 8, 9, 10]
+    assert non_prime_numbers([25, 26, 27]) == [25, 26, 27]
+    assert non_prime_numbers([16, 18, 20]) == [16, 18, 20]
+    assert non_prime_numbers([22, 24, 28]) == [22, 24, 28]
+    assert non_prime_numbers([31, 33, 35]) == [33, 35]"
+"def max_digit_in_string(s):
+    if not s.isdigit():
+        print(""The string doesn't contain only digits."")
+        return None
+    return max(map(int, s))","def test_max_digit_in_string():
+    assert max_digit_in_string(""1234567890"") == 9
+    assert max_digit_in_string(""5555"") == 5
+    assert max_digit_in_string(""1029384756"") == 9
+    assert max_digit_in_string(""9081726354"") == 9
+    assert max_digit_in_string("""") == None
+    assert max_digit_in_string(""a1b2c3"") == None
+    assert max_digit_in_string(""7654321"") == 7
+    assert max_digit_in_string(""0000"") == 0
+    assert max_digit_in_string(""2468"") == 8"
+"def largest_square(lst):
+    squares = [x for x in lst if int(x ** 0.5) ** 2 == x]
+    if squares:
+        return max(squares)
+    print(""No perfect squares found."")
+    return None","def test_largest_square():
+    assert largest_square([1, 4, 9, 16, 25]) == 25
+    assert largest_square([3, 6, 8, 10]) == None
+    assert largest_square([4, 16, 25, 36]) == 36
+    assert largest_square([0, 1, 2, 3]) == 1
+    assert largest_square([49, 64, 81]) == 81
+    assert largest_square([10, 20, 30]) == None
+    assert largest_square([5, 12, 13]) == None
+    assert largest_square([100, 121, 144]) == 144
+    assert largest_square([9, 25, 49]) == 49"
+"def sum_of_two_squares(lst):
+    def is_sum_of_squares(n):
+        for i in range(1, int(n ** 0.5) + 1):
+            if (n - i ** 2) ** 0.5 == int((n - i ** 2) ** 0.5):
+                return True
+        return False
+
+    return [x for x in lst if is_sum_of_squares(x)]","def test_sum_of_two_squares():
+    assert sum_of_two_squares([5, 10, 13, 18]) == [5, 10, 13, 18]
+    assert sum_of_two_squares([2, 3, 7, 8]) == [2, 8]
+    assert sum_of_two_squares([1, 4, 9, 16]) == [1, 4, 9, 16]
+    assert sum_of_two_squares([6, 11, 15, 20]) == [20]
+    assert sum_of_two_squares([17, 29, 37]) == [17, 29, 37]
+    assert sum_of_two_squares([49, 64, 81]) == [49, 64, 81]
+    assert sum_of_two_squares([3, 5, 7, 12]) == [5]
+    assert sum_of_two_squares([50, 73, 90]) == [50, 73, 90]
+    assert sum_of_two_squares([25, 41, 60]) == [25, 41]"
+"def sum_of_digits_in_string(s):
+    return sum(int(c) for c in s if c.isdigit())","def test_sum_of_digits_in_string():
+    assert sum_of_digits_in_string(""123abc456"") == 21
+    assert sum_of_digits_in_string(""789xyz"") == 24
+    assert sum_of_digits_in_string(""0"") == 0
+    assert sum_of_digits_in_string(""abc"") == 0
+    assert sum_of_digits_in_string(""555"") == 15
+    assert sum_of_digits_in_string(""12a34b56c"") == 21
+    assert sum_of_digits_in_string(""111"") == 3
+    assert sum_of_digits_in_string(""909"") == 18
+    assert sum_of_digits_in_string(""246"") == 12"
+"def elements_less_than_mean(lst):
+    if not lst:
+        print(""List is empty!"")
+        return []
+    mean = sum(lst) / len(lst)
+    return [x for x in lst if x < mean]","def test_elements_less_than_mean():
+    assert elements_less_than_mean([1, 2, 3, 4, 5]) == [1, 2]
+    assert elements_less_than_mean([10, 20, 30, 40, 50]) == [10, 20]
+    assert elements_less_than_mean([5, 6, 7, 8, 9]) == [5, 6]
+    assert elements_less_than_mean([]) == []
+    assert elements_less_than_mean([3, 3, 3, 3, 3]) == []
+    assert elements_less_than_mean([2, 3, 5, 7, 11]) == [2, 3, 5]
+    assert elements_less_than_mean([12, 14, 16, 18]) == [12, 14]
+    assert elements_less_than_mean([8, 10, 12]) == [8]
+    assert elements_less_than_mean([1, 4, 9, 16]) == [1, 4]"
+"def extract_numbers_from_string(s):
+    return [int(x) for x in s.split() if x.isdigit()]","def test_extract_numbers_from_string():
+    assert extract_numbers_from_string(""1 2 3 a b c 4 5 6"") == [1, 2, 3, 4, 5, 6]
+    assert extract_numbers_from_string(""7 8 9 x y z"") == [7, 8, 9]
+    assert extract_numbers_from_string(""No numbers here"") == []
+    assert extract_numbers_from_string(""10 20 30 40"") == [10, 20, 30, 40]
+    assert extract_numbers_from_string(""123abc456"") == []
+    assert extract_numbers_from_string(""0 1 2 3"") == [0, 1, 2, 3]
+    assert extract_numbers_from_string(""Only numbers 0 100"") == [0, 100]
+    assert extract_numbers_from_string(""255 512 1024"") == [255, 512, 1024]
+    assert extract_numbers_from_string(""5 15 25"") == [5, 15, 25]"
+"def max_min_difference(lst):
+    if not lst:
+        print(""List is empty!"")
+        return None
+    return max(lst) - min(lst)","def test_max_min_difference():
+    assert max_min_difference([1, 2, 3, 4, 5]) == 4
+    assert max_min_difference([10, 20, 30, 40, 50]) == 40
+    assert max_min_difference([5, 10, 15, 20]) == 15
+    assert max_min_difference([]) == None
+    assert max_min_difference([1]) == 0
+    assert max_min_difference([100, 200, 300, 400]) == 300
+    assert max_min_difference([7, 14, 21, 28]) == 21
+    assert max_min_difference([9, 18, 27, 36]) == 27
+    assert max_min_difference([3, 6, 9, 12]) == 9"
+"def first_divisible_by_2_and_5(lst):
+    for x in lst:
+        if x % 2 == 0 and x % 5 == 0:
+            return x
+    print(""No number divisible by both 2 and 5 found."")
+    return None","def test_first_divisible_by_2_and_5():
+    assert first_divisible_by_2_and_5([1, 3, 5, 10]) == 10
+    assert first_divisible_by_2_and_5([20, 15, 25, 30]) == 20
+    assert first_divisible_by_2_and_5([1, 2, 3, 4]) == None
+    assert first_divisible_by_2_and_5([50, 60, 70]) == 50
+    assert first_divisible_by_2_and_5([21, 35, 49]) == None
+    assert first_divisible_by_2_and_5([100, 200, 300]) == 100
+    assert first_divisible_by_2_and_5([]) == None
+    assert first_divisible_by_2_and_5([6, 9, 12, 18]) == None
+    assert first_divisible_by_2_and_5([25, 50, 75]) == 50"
+"def square_if_number(s):
+    try:
+        number = float(s)
+        return number ** 2
+    except ValueError:
+        print(f""'{s}' is not a valid number."")
+        return None","def test_square_if_number():
+    assert square_if_number(""4"") == 16.0
+    assert square_if_number(""2.5"") == 6.25
+    assert square_if_number(""-3"") == 9.0
+    assert square_if_number(""abc"") == None
+    assert square_if_number(""0"") == 0.0
+    assert square_if_number(""10"") == 100.0
+    assert square_if_number(""3.14"") == 9.8596
+    assert square_if_number("""") == None
+    assert square_if_number(""1.5e2"") == 22500.0"
+"def count_non_prime(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    return sum(1 for x in lst if not is_prime(x))","def test_count_non_prime():
+    assert count_non_prime([2, 3, 4, 5, 6]) == 2
+    assert count_non_prime([10, 12, 14]) == 3
+    assert count_non_prime([11, 13, 17]) == 0
+    assert count_non_prime([1, 2, 3, 4]) == 2
+    assert count_non_prime([9, 15, 21]) == 3
+    assert count_non_prime([4, 6, 8, 10]) == 4
+    assert count_non_prime([5, 7, 11, 13]) == 0
+    assert count_non_prime([0, 1, 2, 3, 4]) == 3
+    assert count_non_prime([25, 36, 49]) == 3"
+"def palindromic_elements(lst):
+    return [x for x in lst if str(x) == str(x)[::-1]]","def test_palindromic_elements():
+    assert palindromic_elements([""121"", ""abc"", ""mam"", ""pop""]) == [""121"", ""mam"", ""pop""]
+    assert palindromic_elements([""12321"", ""hello"", ""wow""]) == [""12321"", ""wow""]
+    assert palindromic_elements([121, 1331, 12321]) == [121, 1331, 12321]
+    assert palindromic_elements([123, 456, 789]) == []
+    assert palindromic_elements([1441, 1221, 101]) == [1441, 1221, 101]
+    assert palindromic_elements([]) == []
+    assert palindromic_elements([55, 66, 77]) == [55, 66, 77]
+    assert palindromic_elements([""aba"", ""cdc"", ""dad""]) == [""aba"", ""cdc"", ""dad""]
+    assert palindromic_elements([""a"", ""b"", ""c"", ""d""]) == [""a"", ""b"", ""c"", ""d""]"
+"def largest_power_of_two(lst):
+    powers_of_two = [x for x in lst if (x & (x - 1)) == 0 and x > 0]
+    if powers_of_two:
+        return max(powers_of_two)
+    print(""No powers of two found."")
+    return None","def test_largest_power_of_two():
+    assert largest_power_of_two([1, 2, 4, 8, 16]) == 16
+    assert largest_power_of_two([32, 64, 128]) == 128
+    assert largest_power_of_two([3, 5, 7]) == None
+    assert largest_power_of_two([2, 4, 16, 32]) == 32
+    assert largest_power_of_two([]) == None
+    assert largest_power_of_two([10, 20, 40]) == None
+    assert largest_power_of_two([6, 12, 18]) == None
+    assert largest_power_of_two([256, 512, 1024]) == 1024
+    assert largest_power_of_two([5, 10, 20, 40]) == None"
+"def multiples_of_six(lst):
+    return [x for x in lst if x % 6 == 0]","def test_multiples_of_six():
+    assert multiples_of_six([6, 12, 18, 24]) == [6, 12, 18, 24]
+    assert multiples_of_six([5, 10, 15, 20]) == []
+    assert multiples_of_six([36, 42, 48]) == [36, 42, 48]
+    assert multiples_of_six([7, 14, 21]) == []
+    assert multiples_of_six([6, 6, 6]) == [6, 6, 6]
+    assert multiples_of_six([]) == []
+    assert multiples_of_six([30, 60, 90]) == [30, 60, 90]
+    assert multiples_of_six([11, 22, 33]) == []
+    assert multiples_of_six([18, 24, 36]) == [18, 24, 36]"
+"def unique_elements(lst):
+    unique = set()
+    for item in lst:
+        if item not in unique:
+            unique.add(item)
+        else:
+            print(f""Duplicate found: {item}"")
+    return sorted(list(unique))","def test_unique_elements():
+    assert unique_elements([1, 2, 3, 1, 2]) == [1, 2, 3]
+    assert unique_elements([4, 5, 6, 4, 5]) == [4, 5, 6]
+    assert unique_elements([7, 8, 9]) == [7, 8, 9]
+    assert unique_elements([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
+    assert unique_elements([10, 10, 10]) == [10]
+    assert unique_elements([]) == []
+    assert unique_elements([11, 22, 33, 22, 11]) == [11, 22, 33]
+    assert unique_elements([2, 4, 6, 8, 10]) == [2, 4, 6, 8, 10]
+    assert unique_elements([5, 10, 15, 10, 5]) == [5, 10, 15]"
+"def count_occurrences_1(lst):
+    count_dict = {}
+    for item in lst:
+        if item in count_dict:
+            count_dict[item] += 1
+        else:
+            count_dict[item] = 1
+    if not count_dict:
+        print(""No elements found."")
+    return count_dict","def test_count_occurrences_1():
+    assert count_occurrences_1([1, 2, 2, 3, 3, 3]) == {1: 1, 2: 2, 3: 3}
+    assert count_occurrences_1([4, 5, 6, 5, 4]) == {4: 2, 5: 2, 6: 1}
+    assert count_occurrences_1([7, 8, 9]) == {7: 1, 8: 1, 9: 1}
+    assert count_occurrences_1([1, 1, 1, 1]) == {1: 4}
+    assert count_occurrences_1([]) == {}
+    assert count_occurrences_1([2, 4, 4, 6, 6, 6]) == {2: 1, 4: 2, 6: 3}
+    assert count_occurrences_1([10, 20, 30, 20, 10, 30, 30]) == {10: 2, 20: 2, 30: 3}
+    assert count_occurrences_1([2, 3, 4, 5, 2, 4, 5]) == {2: 2, 3: 1, 4: 2, 5: 2}
+    assert count_occurrences_1([100, 100, 100, 200, 200]) == {100: 3, 200: 2}"
+"def intersection_of_lists(lst1, lst2):
+    set1 = set(lst1)
+    set2 = set(lst2)
+    intersection = set1 & set2
+    if not intersection:
+        print(""No common elements found."")
+    return list(intersection)","def test_intersection_of_lists():
+    assert intersection_of_lists([1, 2, 3], [3, 4, 5]) == [3]
+    assert intersection_of_lists([10, 20, 30], [20, 30, 40]) == [20, 30]
+    assert intersection_of_lists([5, 6, 7], [8, 9, 10]) == []
+    assert intersection_of_lists([1, 2, 3, 4], [4, 5, 6, 7]) == [4]
+    assert intersection_of_lists([1, 1, 2, 2], [2, 2, 3, 3]) == [2]
+    assert intersection_of_lists([100, 200, 300], [400, 500, 600]) == []
+    assert intersection_of_lists([0, 1, 2], [2, 3, 4]) == [2]
+    assert intersection_of_lists([10, 11, 12], [13, 14, 15]) == []
+    assert intersection_of_lists([], [1, 2, 3]) == []
+    assert intersection_of_lists([1, 2, 3], []) == []"
+"def divisible_by_any(lst, divisors):
+    divisible = []
+    for num in lst:
+        for divisor in divisors:
+            if num % divisor == 0:
+                divisible.append(num)
+                break
+    if not divisible:
+        print(""No numbers divisible by any divisor found."")
+    return divisible","def test_divisible_by_any():
+    assert divisible_by_any([10, 20, 30, 40], [2, 5]) == [10, 20, 30, 40]
+    assert divisible_by_any([9, 18, 27, 36], [3]) == [9, 18, 27, 36]
+    assert divisible_by_any([7, 14, 21], [2, 7]) == [7, 14, 21]
+    assert divisible_by_any([11, 13, 17], [5, 10]) == []
+    assert divisible_by_any([100, 200, 300], [2, 10]) == [100, 200, 300]
+    assert divisible_by_any([8, 12, 16], [4]) == [8, 12, 16]
+    assert divisible_by_any([15, 25, 35], [5]) == [15, 25, 35]
+    assert divisible_by_any([1, 3, 5, 7], [2, 4]) == []
+    assert divisible_by_any([100, 150, 200], [5]) == [100, 150, 200]
+    assert divisible_by_any([], [2, 3]) == []"
+"def are_anagrams(s1, s2):
+    if len(s1) != len(s2):
+        print(""Strings are not of equal length."")
+        return False
+    char_count = {}
+    for char in s1:
+        char_count[char] = char_count.get(char, 0) + 1
+    for char in s2:
+        if char not in char_count or char_count[char] == 0:
+            print(f""'{char}' is not in the first string or appears too many times."")
+            return False
+        char_count[char] -= 1
+    return True","def test_are_anagrams():
+    assert are_anagrams(""listen"", ""silent"") == True
+    assert are_anagrams(""hello"", ""world"") == False
+    assert are_anagrams(""evil"", ""vile"") == True
+    assert are_anagrams(""fluster"", ""restful"") == True
+    assert are_anagrams(""test"", ""TEST"") == False  # Case-sensitive check
+    assert are_anagrams(""a"", ""a"") == True
+    assert are_anagrams(""abc"", ""abcd"") == False
+    assert are_anagrams("""", """") == True
+    assert are_anagrams(""aabb"", ""abab"") == True
+    assert are_anagrams(""aabb"", ""abac"") == False"
+"def intersection_of_sets(set1, set2):
+    intersection = set1.intersection(set2)
+    if not intersection:
+        print(""The sets have no common elements."")
+    return intersection","def test_intersection_of_sets():
+    assert intersection_of_sets({1, 2, 3}, {3, 4, 5}) == {3}
+    assert intersection_of_sets({1, 2, 3}, {4, 5, 6}) == set()
+    assert intersection_of_sets({""a"", ""b""}, {""b"", ""c""}) == {""b""}
+    assert intersection_of_sets({""a"", ""b"", ""c""}, {""a"", ""b"", ""c""}) == {""a"", ""b"", ""c""}
+    assert intersection_of_sets({""x"", ""y""}, {""y"", ""z""}) == {""y""}
+    assert intersection_of_sets({1}, {1}) == {1}
+    assert intersection_of_sets(set(), {1, 2, 3}) == set()
+    assert intersection_of_sets({1, 2, 3}, set()) == set()
+    assert intersection_of_sets({""apple""}, {""banana""}) == set()
+    assert intersection_of_sets({""dog""}, {""dog"", ""cat""}) == {""dog""}"
+"def remove_duplicate_tuples(lst):
+    seen = set()
+    result = []
+    for item in lst:
+        if item[0] not in seen:
+            seen.add(item[0])
+            result.append(item)
+    return result","def test_remove_duplicate_tuples():
+    assert remove_duplicate_tuples([(1, ""a""), (2, ""b""), (1, ""c"")]) == [(1, ""a""), (2, ""b"")]
+    assert remove_duplicate_tuples([(1, ""a""), (1, ""b""), (1, ""c"")]) == [(1, ""a"")]
+    assert remove_duplicate_tuples([(1, ""x""), (2, ""y""), (2, ""z"")]) == [(1, ""x""), (2, ""y"")]
+    assert remove_duplicate_tuples([(3, ""a""), (4, ""b""), (5, ""c"")]) == [(3, ""a""), (4, ""b""), (5, ""c"")]
+    assert remove_duplicate_tuples([(""a"", 1), (""b"", 2), (""a"", 3)]) == [(""a"", 1), (""b"", 2)]
+    assert remove_duplicate_tuples([(""a"", 1), (""a"", 2), (""a"", 3), (""b"", 4)]) == [(""a"", 1), (""b"", 4)]
+    assert remove_duplicate_tuples([]) == []
+    assert remove_duplicate_tuples([(""x"", 1), (""y"", 2)]) == [(""x"", 1), (""y"", 2)]
+    assert remove_duplicate_tuples([(""a"", 5), (""a"", 6), (""b"", 5)]) == [(""a"", 5), (""b"", 5)]"
+"def count_string_lengths(lst):
+    length_dict = {}
+    for s in lst:
+        length_dict[s] = len(s)
+    return length_dict","def test_count_string_lengths():
+    assert count_string_lengths([""apple"", ""banana"", ""cherry""]) == {""apple"": 5, ""banana"": 6, ""cherry"": 6}
+    assert count_string_lengths([""hello"", ""world""]) == {""hello"": 5, ""world"": 5}
+    assert count_string_lengths([""a"", ""ab"", ""abc"", ""abcd""]) == {""a"": 1, ""ab"": 2, ""abc"": 3, ""abcd"": 4}
+    assert count_string_lengths(["""", ""non-empty"", """"]) == {"""": 0, ""non-empty"": 9}
+    assert count_string_lengths([]) == {}
+    assert count_string_lengths([""short"", ""longer"", ""longest""]) == {""short"": 5, ""longer"": 6, ""longest"": 7}
+    assert count_string_lengths([""test"", ""testing"", ""tests""]) == {""test"": 4, ""testing"": 7, ""tests"": 5}
+    assert count_string_lengths([""x"", ""xx"", ""xxx"", ""xxxx""]) == {""x"": 1, ""xx"": 2, ""xxx"": 3, ""xxxx"": 4}
+    assert count_string_lengths([""single"", ""word"", ""example""]) == {""single"": 6, ""word"": 4, ""example"": 7}
+    assert count_string_lengths([""one"", ""two"", ""three"", ""four""]) == {""one"": 3, ""two"": 3, ""three"": 5, ""four"": 4}"
+"def most_frequent_in_dict(d):
+    if not d:
+        print(""Dictionary is empty."")
+        return None
+    max_key = max(d, key=d.get)
+    return max_key, d[max_key]","def test_most_frequent_in_dict():
+    assert most_frequent_in_dict(None) == None
+    assert most_frequent_in_dict({""a"": 1, ""b"": 2, ""c"": 2}) == (""b"", 2)
+    assert most_frequent_in_dict({""x"": 10, ""y"": 15, ""z"": 10}) == (""y"", 15)
+    assert most_frequent_in_dict({""apple"": 3, ""banana"": 2, ""cherry"": 5}) == (""cherry"", 5)
+    assert most_frequent_in_dict({""a"": 1, ""b"": 2, ""c"": 2, ""d"": 3}) == (""d"", 3)
+    assert most_frequent_in_dict({""a"": 0, ""b"": 0, ""c"": 0}) == (""a"", 0)
+    assert most_frequent_in_dict({""a"": 4}) == (""a"", 4)
+    assert most_frequent_in_dict({}) == None
+    assert most_frequent_in_dict({""x"": 5, ""y"": 5, ""z"": 5}) == (""x"", 5)
+    assert most_frequent_in_dict({""p"": 10, ""q"": 12}) == (""q"", 12)
+    assert most_frequent_in_dict({""cat"": 2, ""dog"": 3, ""rabbit"": 1}) == (""dog"", 3)"
+"def merge_dicts(d1, d2):
+    merged = d1.copy()
+    for key, value in d2.items():
+        if key in merged:
+            merged[key] += value
+        else:
+            merged[key] = value
+    return merged","def test_merge_dicts():
+    assert merge_dicts({""a"": 1, ""b"": 2}, {""b"": 3, ""c"": 4}) == {""a"": 1, ""b"": 5, ""c"": 4}
+    assert merge_dicts({""x"": 5, ""y"": 6}, {""y"": 7, ""z"": 8}) == {""x"": 5, ""y"": 13, ""z"": 8}
+    assert merge_dicts({""a"": 2}, {""a"": 3}) == {""a"": 5}
+    assert merge_dicts({""apple"": 2, ""banana"": 3}, {""apple"": 4, ""cherry"": 5}) == {""apple"": 6, ""banana"": 3, ""cherry"": 5}
+    assert merge_dicts({""a"": 1, ""b"": 2}, {}) == {""a"": 1, ""b"": 2}
+    assert merge_dicts({}, {""a"": 1, ""b"": 2}) == {""a"": 1, ""b"": 2}
+    assert merge_dicts({""x"": 1}, {""x"": 1}) == {""x"": 2}
+    assert merge_dicts({""key1"": 10}, {""key2"": 20}) == {""key1"": 10, ""key2"": 20}
+    assert merge_dicts({}, {}) == {}
+    assert merge_dicts({""a"": 1}, {""b"": 2, ""a"": 3}) == {""a"": 4, ""b"": 2}"
+"def count_even_odd(lst):
+    count = {""even"": 0, ""odd"": 0}
+    for num in lst:
+        if num % 2 == 0:
+            count[""even""] += 1
+        else:
+            count[""odd""] += 1
+    return count","def test_count_even_odd():
+    assert count_even_odd([1, 2, 3, 4, 5]) == {""even"": 2, ""odd"": 3}
+    assert count_even_odd([2, 4, 6]) == {""even"": 3, ""odd"": 0}
+    assert count_even_odd([1, 3, 5]) == {""even"": 0, ""odd"": 3}
+    assert count_even_odd([0, -2, -4, 1, 3]) == {""even"": 3, ""odd"": 2}
+    assert count_even_odd([]) == {""even"": 0, ""odd"": 0}
+    assert count_even_odd([2, 3, 5, 7]) == {""even"": 1, ""odd"": 3}
+    assert count_even_odd([0, 2, 4, 6]) == {""even"": 4, ""odd"": 0}
+    assert count_even_odd([10, 11, 12, 13, 14]) == {""even"": 3, ""odd"": 2}
+    assert count_even_odd([1, 2, 3, 5, 6]) == {""even"": 2, ""odd"": 3}
+    assert count_even_odd([1, 1, 1, 1]) == {""even"": 0, ""odd"": 4}"
+"def min_key_in_dict(d):
+    if not d:
+        print(""Dictionary is empty."")
+        return None
+    return min(d, key=d.get)","def test_min_key_in_dict():
+    assert min_key_in_dict({""a"": 1, ""b"": 2, ""c"": 3}) == ""a""
+    assert min_key_in_dict({""apple"": 10, ""banana"": 5, ""cherry"": 15}) == ""banana""
+    assert min_key_in_dict({""x"": 1, ""y"": 0, ""z"": 2}) == ""y""
+    assert min_key_in_dict({""a"": 100, ""b"": 50, ""c"": 150}) == ""b""
+    assert min_key_in_dict({}) == None
+    assert min_key_in_dict({""cat"": 5, ""dog"": 3, ""rabbit"": 8}) == ""dog""
+    assert min_key_in_dict({""p"": 0, ""q"": 1}) == ""p""
+    assert min_key_in_dict({""a"": -1, ""b"": 2}) == ""a""
+    assert min_key_in_dict({""a"": -1, ""b"": -2}) == ""b""
+    assert min_key_in_dict({""x"": 4, ""y"": 1, ""z"": 4}) == ""y"""
+"def list_to_dict(lst):
+    result = {}
+    for index, value in enumerate(lst):
+        result[index] = value
+    return result","def test_list_to_dict():
+    assert list_to_dict([1, 2, 3]) == {0: 1, 1: 2, 2: 3}
+    assert list_to_dict([""a"", ""b"", ""c""]) == {0: ""a"", 1: ""b"", 2: ""c""}
+    assert list_to_dict([True, False, True]) == {0: True, 1: False, 2: True}
+    assert list_to_dict([3.14, 2.71]) == {0: 3.14, 1: 2.71}
+    assert list_to_dict([]) == {}
+    assert list_to_dict([""apple"", ""banana"", ""cherry""]) == {0: ""apple"", 1: ""banana"", 2: ""cherry""}
+    assert list_to_dict([10, 20, 30, 40]) == {0: 10, 1: 20, 2: 30, 3: 40}
+    assert list_to_dict([1]) == {0: 1}
+    assert list_to_dict([0, 0, 0]) == {0: 0, 1: 0, 2: 0}
+    assert list_to_dict([""one"", ""two"", ""three""]) == {0: ""one"", 1: ""two"", 2: ""three""}"
+"def check_and_square(s):
+    try:
+        num = float(s)
+        return num ** 2
+    except ValueError:
+        print(f""'{s}' is not a valid number."")
+        return None","def test_check_and_square():
+    assert check_and_square(""4"") == 16
+    assert check_and_square(""-3"") == 9
+    assert check_and_square(""2.5"") == 6.25
+    assert check_and_square(""abc"") == None
+    assert check_and_square(""0"") == 0
+    assert check_and_square(""100"") == 10000
+    assert check_and_square(""1.5"") == 2.25
+    assert check_and_square(""-2"") == 4
+    assert check_and_square(""1000"") == 1000000
+    assert check_and_square("""") == None"
+"def merge_tuples(t1, t2):
+    return tuple(sorted(set(t1 + t2)))","def test_merge_tuples():
+    assert merge_tuples((1, 2), (2, 3)) == (1, 2, 3)
+    assert merge_tuples((""a"", ""b""), (""b"", ""c"")) == (""a"", ""b"", ""c"")
+    assert merge_tuples((1, 2, 3), (4, 5)) == (1, 2, 3, 4, 5)
+    assert merge_tuples((1, 1), (1, 2)) == (1, 2)
+    assert merge_tuples((""x"", ""y""), (""z"", ""y"")) == (""x"", ""y"", ""z"")
+    assert merge_tuples((1, 1, 2), (2, 3)) == (1, 2, 3)
+    assert merge_tuples((5, 5), (5, 6)) == (5, 6)
+    assert merge_tuples((), ()) == ()
+    assert merge_tuples((""a"", ""b""), (""a"", ""c"", ""d"")) == (""a"", ""b"", ""c"", ""d"")
+    assert merge_tuples((""apple"", ""banana""), (""orange"", ""banana"")) == (""apple"", ""banana"", ""orange"")"
+"def unique_numbers(lst):
+    unique = set()
+    for num in lst:
+        unique.add(num)
+    return sorted(list(unique))","def test_unique_numbers():
+    assert unique_numbers([1, 2, 2, 3, 4, 4]) == [1, 2, 3, 4]
+    assert unique_numbers([10, 10, 10]) == [10]
+    assert unique_numbers([5, 7, 8, 5, 8]) == [5, 7, 8]
+    assert unique_numbers([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
+    assert unique_numbers([0, 0, 1]) == [0, 1]
+    assert unique_numbers([100, 200, 100, 300]) == [100, 200, 300]
+    assert unique_numbers([1, 3, 2, 4, 3]) == [1, 2, 3, 4]
+    assert unique_numbers([5, 6, 7, 8]) == [5, 6, 7, 8]
+    assert unique_numbers([]) == []
+    assert unique_numbers([1, 1, 1, 1]) == [1]"
+"def create_frequency_dict(lst):
+    frequency_dict = {}
+    for item in lst:
+        if item in frequency_dict:
+            frequency_dict[item] += 1
+        else:
+            frequency_dict[item] = 1
+    return frequency_dict","def test_create_frequency_dict():
+    assert create_frequency_dict([1, 2, 2, 3, 3, 3]) == {1: 1, 2: 2, 3: 3}
+    assert create_frequency_dict([""apple"", ""banana"", ""apple""]) == {""apple"": 2, ""banana"": 1}
+    assert create_frequency_dict([1, 1, 2, 2, 3]) == {1: 2, 2: 2, 3: 1}
+    assert create_frequency_dict([]) == {}
+    assert create_frequency_dict([""a"", ""a"", ""b"", ""c"", ""b""]) == {""a"": 2, ""b"": 2, ""c"": 1}
+    assert create_frequency_dict([5, 5, 5]) == {5: 3}
+    assert create_frequency_dict([1, 2, 3, 4, 5]) == {1: 1, 2: 1, 3: 1, 4: 1, 5: 1}
+    assert create_frequency_dict([1, 1, 1, 1]) == {1: 4}
+    assert create_frequency_dict([9, 8, 7, 6]) == {9: 1, 8: 1, 7: 1, 6: 1}
+    assert create_frequency_dict([1, 1, 1]) == {1: 3}"
+"def difference_of_lists(lst1, lst2):
+    result = []
+    for item in lst1:
+        if item not in lst2:
+            result.append(item)
+    for item in lst2:
+        if item not in lst1:
+            result.append(item)
+    return result","def test_difference_of_lists():
+    assert difference_of_lists([1, 2, 3], [3, 4, 5]) == [1, 2, 4, 5]
+    assert difference_of_lists([1, 2], [2, 3]) == [1, 3]
+    assert difference_of_lists([1, 2, 3], [1, 2, 3]) == []
+    assert difference_of_lists([], [1, 2]) == [1, 2]
+    assert difference_of_lists([5, 6, 7], [7, 8, 9]) == [5, 6, 8, 9]
+    assert difference_of_lists([1], [1]) == []
+    assert difference_of_lists([1, 2], [3, 4]) == [1, 2, 3, 4]
+    assert difference_of_lists([1, 3, 5], [2, 4, 6]) == [1, 3, 5, 2, 4, 6]
+    assert difference_of_lists([1, 2, 3], []) == [1, 2, 3]
+    assert difference_of_lists([], []) == []"
+"def find_in_collection(lst, collection):
+    result = []
+    for item in lst:
+        if item in collection:
+            result.append(item)
+    if not result:
+        print(""No elements found in the collection."")
+    return result","def test_find_in_collection():
+    assert find_in_collection([1, 2, 3], {3, 4, 5}) == [3]
+    assert find_in_collection([1, 2, 3], {4, 5, 6}) == []
+    assert find_in_collection([""a"", ""b"", ""c""], {""b"", ""c"", ""d""}) == [""b"", ""c""]
+    assert find_in_collection([1, 2], {1, 2, 3}) == [1, 2]
+    assert find_in_collection([5, 6, 7], {7, 8}) == [7]
+    assert find_in_collection([], {1, 2, 3}) == []
+    assert find_in_collection([1, 2], set()) == []
+    assert find_in_collection([1, 2, 3], {3, 4, 5}) == [3]
+    assert find_in_collection([""apple"", ""banana""], {""banana"", ""orange""}) == [""banana""]
+    assert find_in_collection([10, 20], {5, 10, 15}) == [10]"
+"def sum_of_duplicates(lst):
+    count_dict = {}
+    for item in lst:
+        if item in count_dict:
+            count_dict[item] += 1
+        else:
+            count_dict[item] = 1
+    total = 0
+    for key, value in count_dict.items():
+        if value > 1:
+            total += key
+    if total == 0:
+        print(""No duplicates found."")
+    return total","def test_sum_of_duplicates():
+    assert sum_of_duplicates([1, 2, 2, 3, 4, 4]) == 6
+    assert sum_of_duplicates([5, 5, 5, 5]) == 5
+    assert sum_of_duplicates([1, 1, 1]) == 1
+    assert sum_of_duplicates([10, 20, 30]) == 0
+    assert sum_of_duplicates([1, 2, 3, 4, 5]) == 0
+    assert sum_of_duplicates([1, 2, 2, 3, 3, 3, 4]) == 5
+    assert sum_of_duplicates([7, 8, 9, 9, 9]) == 9
+    assert sum_of_duplicates([10, 10, 10]) == 10
+    assert sum_of_duplicates([1, 2, 2, 3, 3]) == 5
+    assert sum_of_duplicates([1, 1, 1, 1, 1]) == 1"
+"def unique_in_first(lst1, lst2):
+    unique_elements = []
+    for item in lst1:
+        if item not in lst2:
+            unique_elements.append(item)
+    if not unique_elements:
+        print(""No unique elements found in the first list."")
+    return unique_elements","def test_unique_in_first():
+    assert unique_in_first([1, 2, 3], [3, 4, 5]) == [1, 2]
+    assert unique_in_first([1, 2, 3], [4, 5, 6]) == [1, 2, 3]
+    assert unique_in_first([5, 6, 7], [7, 8, 9]) == [5, 6]
+    assert unique_in_first([1, 2], [1, 2]) == []
+    assert unique_in_first([1, 2, 3], []) == [1, 2, 3]
+    assert unique_in_first([], [1, 2, 3]) == []
+    assert unique_in_first([10, 20, 30], [20, 40, 60]) == [10, 30]
+    assert unique_in_first([1, 1, 2], [1, 3]) == [2]
+    assert unique_in_first([100, 200], [100, 300]) == [200]
+    assert unique_in_first([1, 2, 3], [3]) == [1, 2]"
+"def lcm_1(a, b):
+    if a == 0 or b == 0:
+        print(""LCM is undefined for 0."")
+        return None
+
+    def gcd(x, y):
+        while y:
+            x, y = y, x % y
+        return x
+
+    return abs(a * b) // gcd(a, b)","def test_lcm_1():
+    assert lcm_1(4, 5) == 20
+    assert lcm_1(0, 5) == None
+    assert lcm_1(6, 8) == 24
+    assert lcm_1(9, 12) == 36
+    assert lcm_1(3, 7) == 21
+    assert lcm_1(10, 0) == None
+    assert lcm_1(13, 17) == 221
+    assert lcm_1(15, 25) == 75
+    assert lcm_1(1, 1) == 1
+    assert lcm_1(10, 20) == 20"
+"def filter_dict_by_value(d, threshold):
+    result = {}
+    for key, value in d.items():
+        if value > threshold:
+            result[key] = value
+    if not result:
+        print(""No elements above the threshold."")
+    return result","def test_filter_dict_by_value():
+    assert filter_dict_by_value({""apple"": 100, ""banana"": 50}, 1000) == {}
+    assert filter_dict_by_value({""a"": 5, ""b"": 10, ""c"": 2}, 4) == {""a"": 5, ""b"": 10}
+    assert filter_dict_by_value({""apple"": 5, ""banana"": 3}, 4) == {""apple"": 5}
+    assert filter_dict_by_value({""x"": 1, ""y"": 2, ""z"": 3}, 2) == {""z"": 3}
+    assert filter_dict_by_value({""a"": 1, ""b"": 2}, 2) == {}
+    assert filter_dict_by_value({}, 2) == {}
+    assert filter_dict_by_value({""apple"": 10, ""banana"": 20}, 15) == {""banana"": 20}
+    assert filter_dict_by_value({""a"": 1, ""b"": 1, ""c"": 1}, 1) == {}
+    assert filter_dict_by_value({""cat"": 5, ""dog"": 3}, 4) == {""cat"": 5}
+    assert filter_dict_by_value({""cat"": 1, ""dog"": 0}, 0) == {""cat"": 1}
+    assert filter_dict_by_value({""apple"": 100, ""banana"": 50}, 60) == {""apple"": 100}"
+"def reverse_dict(d):
+    reversed_dict = {}
+    for key, value in d.items():
+        if value in reversed_dict:
+            print(f""Duplicate value {value} found, skipping."")
+        else:
+            reversed_dict[value] = key
+    return reversed_dict","def test_reverse_dict():
+    assert reverse_dict({""a"": 1, ""b"": 2}) == {1: ""a"", 2: ""b""}
+    assert reverse_dict({""x"": 10, ""y"": 20}) == {10: ""x"", 20: ""y""}
+    assert reverse_dict({""apple"": 100, ""banana"": 200}) == {100: ""apple"", 200: ""banana""}
+    assert reverse_dict({""cat"": 5, ""dog"": 3}) == {5: ""cat"", 3: ""dog""}
+    assert reverse_dict({""one"": 1, ""two"": 2}) == {1: ""one"", 2: ""two""}
+    assert reverse_dict({""x"": 1, ""y"": 1}) == {1: ""x""}
+    assert reverse_dict({""key1"": ""value1"", ""key2"": ""value2""}) == {""value1"": ""key1"", ""value2"": ""key2""}
+    assert reverse_dict({}) == {}
+    assert reverse_dict({""p"": 0, ""q"": 0}) == {0: ""p""}
+    assert reverse_dict({""a"": 10, ""b"": 10}) == {10: ""a""}"
+"def multiples_from_list(lst1, lst2):
+    multiples = []
+    for num in lst1:
+        for divisor in lst2:
+            if num % divisor == 0:
+                multiples.append(num)
+                break
+    if not multiples:
+        print(""No numbers are divisible by elements from the second list."")
+    return multiples","def test_multiples_from_list():
+    assert multiples_from_list([10, 20, 30], [2, 5]) == [10, 20, 30]
+    assert multiples_from_list([11, 22, 33], [3, 7]) == [33]
+    assert multiples_from_list([1, 2, 3], [4, 5]) == []
+    assert multiples_from_list([6, 8, 10], [2]) == [6, 8, 10]
+    assert multiples_from_list([9, 15, 25], [3, 5]) == [9, 15, 25]
+    assert multiples_from_list([17, 19, 23], [4, 8]) == []
+    assert multiples_from_list([12, 14, 18], [3, 6]) == [12, 18]
+    assert multiples_from_list([5, 10, 20], [1]) == [5, 10, 20]
+    assert multiples_from_list([], [2, 3]) == []"
+"def case_insensitive_char_frequency(s):
+    freq = {}
+    for char in s.lower():
+        if char.isalpha():
+            if char in freq:
+                freq[char] += 1
+            else:
+                freq[char] = 1
+    if not freq:
+        print(""No alphabetical characters found."")
+    return freq","def test_case_insensitive_char_frequency():
+    assert case_insensitive_char_frequency(""Hello"") == {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+    assert case_insensitive_char_frequency(""AaBbCc"") == {'a': 2, 'b': 2, 'c': 2}
+    assert case_insensitive_char_frequency(""Python!"") == {'p': 1, 'y': 1, 't': 1, 'h': 1, 'o': 1, 'n': 1}
+    assert case_insensitive_char_frequency(""Nope"") == {'n': 1, 'o': 1, 'p': 1, 'e': 1}
+    assert case_insensitive_char_frequency(""MixedCase"") == {'m': 1, 'i': 1, 'x': 1, 'e': 2, 'd': 1, 'c': 1, 'a': 1, 's': 1}
+    assert case_insensitive_char_frequency(""12345"") == {}
+    assert case_insensitive_char_frequency("""") == {}
+    assert case_insensitive_char_frequency(""A"") == {'a': 1}
+    assert case_insensitive_char_frequency(""ABaB"") == {'a': 2, 'b': 2}"
+"def count_unique_with_frequency(lst):
+    frequency = {}
+    for item in lst:
+        if item in frequency:
+            frequency[item] += 1
+        else:
+            frequency[item] = 1
+    return frequency","def test_count_unique_with_frequency():
+    assert count_unique_with_frequency([1, 2, 2, 3, 3, 3]) == {1: 1, 2: 2, 3: 3}
+    assert count_unique_with_frequency([""a"", ""b"", ""a"", ""c"", ""c"", ""c""]) == {""a"": 2, ""b"": 1, ""c"": 3}
+    assert count_unique_with_frequency([5, 5, 5, 5, 5]) == {5: 5}
+    assert count_unique_with_frequency([]) == {}
+    assert count_unique_with_frequency([1, 2, 3]) == {1: 1, 2: 1, 3: 1}
+    assert count_unique_with_frequency([0, 0, 1, 1, 1]) == {0: 2, 1: 3}
+    assert count_unique_with_frequency([""x"", ""y"", ""z""]) == {""x"": 1, ""y"": 1, ""z"": 1}
+    assert count_unique_with_frequency([1, ""1"", 2, ""2"", 2]) == {1: 1, ""1"": 1, 2: 2, ""2"": 1}
+    assert count_unique_with_frequency([3, 3, 3]) == {3: 3}"
+"def count_consecutive_chars(s):
+    if not s:
+        print(""Empty string provided."")
+        return {}
+    count = {}
+    current_char = s[0]
+    current_count = 1
+    for char in s[1:]:
+        if char == current_char:
+            current_count += 1
+        else:
+            if current_char in count:
+                count[current_char] += current_count
+            else:
+                count[current_char] = current_count
+            current_char = char
+            current_count = 1
+    if current_char in count:
+        count[current_char] += current_count
+    else:
+        count[current_char] = current_count
+    return count","def test_count_consecutive_chars():
+    assert count_consecutive_chars(""aaabbcc"") == {'a': 3, 'b': 2, 'c': 2}
+    assert count_consecutive_chars(""abcd"") == {'a': 1, 'b': 1, 'c': 1, 'd': 1}
+    assert count_consecutive_chars(""aaAAa"") == {'A': 2, 'a': 3}
+    assert count_consecutive_chars("""") == {}
+    assert count_consecutive_chars(""x"") == {'x': 1}
+    assert count_consecutive_chars(""zzz"") == {'z': 3}
+    assert count_consecutive_chars(""aabbccdd"") == {'a': 2, 'b': 2, 'c': 2, 'd': 2}
+    assert count_consecutive_chars(""aaaAAA"") == {'a': 3, 'A': 3}
+    assert count_consecutive_chars(""hello"") == {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+    assert count_consecutive_chars(""aaraaraarraarrr"") == {'a': 8, 'r': 7}"
+"def find_keys_in_set(s, d):
+    result = []
+    for item in s:
+        if item in d:
+            result.append(item)
+    if not result:
+        print(""No elements from the set found in the dictionary keys."")
+    return sorted(result)","def test_find_keys_in_set():
+    assert find_keys_in_set({1, 2, 3}, {1: ""one"", 2: ""two"", 4: ""four""}) == [1, 2]
+    assert find_keys_in_set({""a"", ""b"", ""c""}, {""a"": ""alpha"", ""b"": ""beta""}) == [""a"", ""b""]
+    assert find_keys_in_set({5, 6, 7}, {8: ""eight"", 9: ""nine""}) == []
+    assert find_keys_in_set(set(), {""a"": 1, ""b"": 2}) == []
+    assert find_keys_in_set({1, 2, 3}, {}) == []
+    assert find_keys_in_set({1, 2}, {1: ""one"", 2: ""two""}) == [1, 2]
+    assert find_keys_in_set({""x""}, {""x"": ""ex""}) == [""x""]
+    assert find_keys_in_set({""y""}, {""z"": ""zee""}) == []
+    assert find_keys_in_set({""hello"", ""world""}, {""hello"": ""greeting"", ""earth"": ""planet""}) == [""hello""]"
+"def find_prime_numbers(lst):
+    primes = []
+    for num in lst:
+        if num < 2:
+            continue
+        is_prime = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+    return primes","def test_find_prime_numbers():
+    assert find_prime_numbers([2, 3, 4, 5, 6]) == [2, 3, 5]
+    assert find_prime_numbers([10, 11, 12, 13, 14]) == [11, 13]
+    assert find_prime_numbers([1, 2]) == [2]
+    assert find_prime_numbers([15, 16, 17, 18]) == [17]
+    assert find_prime_numbers([]) == []
+    assert find_prime_numbers([0, 1]) == []
+    assert find_prime_numbers([19, 20, 21, 22]) == [19]
+    assert find_prime_numbers([23, 24, 25, 26]) == [23]
+    assert find_prime_numbers([2, 2, 3, 3]) == [2, 2, 3, 3]"
+"def split_digits_and_others(s):
+    digits = []
+    others = []
+    for char in s:
+        if char.isdigit():
+            digits.append(char)
+        else:
+            others.append(char)
+    return digits, others","def test_split_digits_and_others():
+    assert split_digits_and_others(""123abc"") == (['1', '2', '3'], ['a', 'b', 'c'])
+    assert split_digits_and_others(""1a2b3c"") == (['1', '2', '3'], ['a', 'b', 'c'])
+    assert split_digits_and_others("""") == ([], [])
+    assert split_digits_and_others(""123"") == (['1', '2', '3'], [])
+    assert split_digits_and_others(""abc"") == ([], ['a', 'b', 'c'])
+    assert split_digits_and_others(""1!2@3#"") == (['1', '2', '3'], ['!', '@', '#'])
+    assert split_digits_and_others(""a1b2c3"") == (['1', '2', '3'], ['a', 'b', 'c'])
+    assert split_digits_and_others(""456def"") == (['4', '5', '6'], ['d', 'e', 'f'])
+    assert split_digits_and_others(""xyz789"") == (['7', '8', '9'], ['x', 'y', 'z'])"
+"def min_max_tuple(lst):
+    if not lst:
+        print(""List is empty."")
+        return None
+    return min(lst), max(lst)","def test_min_max_tuple():
+    assert min_max_tuple([1, 2, 3]) == (1, 3)
+    assert min_max_tuple([10, 5, 15]) == (5, 15)
+    assert min_max_tuple([0, -1, 1]) == (-1, 1)
+    assert min_max_tuple([-10, -5, -1]) == (-10, -1)
+    assert min_max_tuple([1]) == (1, 1)
+    assert min_max_tuple([]) == None
+    assert min_max_tuple([100, 200, 300]) == (100, 300)
+    assert min_max_tuple([-100, 0, 100]) == (-100, 100)
+    assert min_max_tuple([7, 7, 7]) == (7, 7)"
+"def find_common_keys_with_different_values(d1, d2):
+    common_keys = set(d1.keys()) & set(d2.keys())
+    result = []
+    for key in common_keys:
+        if d1[key] != d2[key]:
+            result.append(key)
+    if not result:
+        print(""No keys with different values found."")
+    return result","def test_find_common_keys_with_different_values():
+    assert find_common_keys_with_different_values(
+        {'a': 1, 'b': 2}, {'a': 2, 'b': 2}) == ['a']
+    assert find_common_keys_with_different_values(
+        {'x': 1, 'y': 2}, {'y': 3, 'z': 4}) == ['y']
+    assert find_common_keys_with_different_values(
+        {'k': 10, 'l': 20}, {'m': 30, 'n': 40}) == []
+    assert find_common_keys_with_different_values({}, {}) == []
+    assert find_common_keys_with_different_values(
+        {'a': 1, 'b': 1}, {'a': 1, 'b': 2}) == ['b']
+    assert find_common_keys_with_different_values(
+        {'key1': 100, 'key2': 200}, {'key1': 300, 'key2': 200}) == ['key1']
+    assert find_common_keys_with_different_values(
+        {'k1': 1, 'k2': 2}, {'k2': 3, 'k3': 4}) == ['k2']
+    assert find_common_keys_with_different_values(
+        {'a': 1}, {'a': 2}) == ['a']
+    assert find_common_keys_with_different_values(
+        {'x': 5}, {'y': 5}) == []"
+"def string_to_numbers(s):
+    try:
+        return [int(x) for x in s.split()]
+    except ValueError:
+        print(""String contains non-numeric values."")
+        return []","def test_string_to_numbers():
+    assert string_to_numbers(""1 2 3"") == [1, 2, 3]
+    assert string_to_numbers(""10 20 30"") == [10, 20, 30]
+    assert string_to_numbers(""4 5 6"") == [4, 5, 6]
+    assert string_to_numbers(""a b c"") == []
+    assert string_to_numbers(""123 abc 456"") == []
+    assert string_to_numbers("""") == []
+    assert string_to_numbers(""7 8 9"") == [7, 8, 9]
+    assert string_to_numbers(""0"") == [0]
+    assert string_to_numbers(""0 1 2"") == [0, 1, 2]"
+"def find_powers_of_two_in_string(s):
+    numbers = []
+    for word in s.split():
+        try:
+            num = int(word)
+            if (num & (num - 1)) == 0 and num > 0:  # Check if number is power of two
+                numbers.append(num)
+        except ValueError:
+            continue
+    return numbers","def test_find_powers_of_two_in_string():
+    assert find_powers_of_two_in_string(""1 2 3 4 5"") == [1, 2, 4]
+    assert find_powers_of_two_in_string(""16 32 64"") == [16, 32, 64]
+    assert find_powers_of_two_in_string(""7 9 11"") == []
+    assert find_powers_of_two_in_string(""0 128 256"") == [128, 256]
+    assert find_powers_of_two_in_string(""2 4 8 16 32"") == [2, 4, 8, 16, 32]
+    assert find_powers_of_two_in_string(""1024"") == [1024]
+    assert find_powers_of_two_in_string(""non-numeric 2 words"") == [2]
+    assert find_powers_of_two_in_string("""") == []
+    assert find_powers_of_two_in_string(""3 6 12"") == []"
+"def find_palindromes(lst):
+    palindromes = []
+    for word in lst:
+        if word == word[::-1]:
+            palindromes.append(word)
+    return palindromes","def test_find_palindromes():
+    assert find_palindromes([""radar"", ""hello"", ""level""]) == [""radar"", ""level""]
+    assert find_palindromes([""world"", ""noon"", ""civic""]) == [""noon"", ""civic""]
+    assert find_palindromes([""abc"", ""def"", ""ghi""]) == []
+    assert find_palindromes([""madam"", ""racecar"", ""apple""]) == [""madam"", ""racecar""]
+    assert find_palindromes([]) == []
+    assert find_palindromes([""kayak"", ""refer""]) == [""kayak"", ""refer""]
+    assert find_palindromes(["""", ""a"", ""bb""]) == ["""", ""a"", ""bb""]
+    assert find_palindromes([""rotor"", ""deed""]) == [""rotor"", ""deed""]
+    assert find_palindromes([""not"", ""a"", ""palindrome""]) == ['a']"
+"def merge_lists_no_duplicates(lst1, lst2):
+    result = lst1.copy()
+    for item in lst2:
+        if item not in result:
+            result.append(item)
+        else:
+            print(f""Duplicate item found: {item}"")
+    return result","def test_merge_lists_no_duplicates():
+    assert merge_lists_no_duplicates([1, 2, 3], [3, 4, 5]) == [1, 2, 3, 4, 5]
+    assert merge_lists_no_duplicates([""a"", ""b""], [""b"", ""c""]) == [""a"", ""b"", ""c""]
+    assert merge_lists_no_duplicates([], [1, 2, 3]) == [1, 2, 3]
+    assert merge_lists_no_duplicates([1, 2, 3], []) == [1, 2, 3]
+    assert merge_lists_no_duplicates([1], [1, 2, 3]) == [1, 2, 3]
+    assert merge_lists_no_duplicates([""x"", ""y""], [""y"", ""z""]) == [""x"", ""y"", ""z""]
+    assert merge_lists_no_duplicates([1, 1, 1], [1, 1, 1]) == [1, 1, 1]
+    assert merge_lists_no_duplicates([4, 5, 6], [7, 8, 9]) == [4, 5, 6, 7, 8, 9]
+    assert merge_lists_no_duplicates([10, 20], [20, 30, 40]) == [10, 20, 30, 40]"
+"def divisible_by_2_not_3(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 3 != 0:
+            result.append(num)
+    if not result:
+        print(""No numbers divisible by 2 but not by 3 found."")
+    return result","def test_divisible_by_2_not_3():
+    assert divisible_by_2_not_3([2, 4, 6, 8]) == [2, 4, 8]
+    assert divisible_by_2_not_3([12, 15, 20]) == [20]
+    assert divisible_by_2_not_3([3, 5, 9]) == []
+    assert divisible_by_2_not_3([18, 21, 24]) == []
+    assert divisible_by_2_not_3([1, 2, 3]) == [2]
+    assert divisible_by_2_not_3([10, 14, 22]) == [10, 14, 22]
+    assert divisible_by_2_not_3([0, 6, 12]) == []
+    assert divisible_by_2_not_3([7, 8, 9]) == [8]
+    assert divisible_by_2_not_3([]) == []"
+"def find_even_numbers_in_string(s):
+    result = []
+    current_num = ''
+    for char in s:
+        if char.isdigit():
+            current_num += char
+        elif current_num:
+            num = int(current_num)
+            if num % 2 == 0:
+                result.append(num)
+            current_num = ''
+    if current_num:
+        num = int(current_num)
+        if num % 2 == 0:
+            result.append(num)
+    return result","def test_find_even_numbers_in_string():
+    assert find_even_numbers_in_string(""12 34 56"") == [12, 34, 56]
+    assert find_even_numbers_in_string(""135 246 789"") == [246]
+    assert find_even_numbers_in_string(""11 33 55"") == []
+    assert find_even_numbers_in_string(""222 333 444"") == [222, 444]
+    assert find_even_numbers_in_string(""2 4 6 8"") == [2, 4, 6, 8]
+    assert find_even_numbers_in_string(""9"") == []
+    assert find_even_numbers_in_string(""10 20 30"") == [10, 20, 30]
+    assert find_even_numbers_in_string("""") == []
+    assert find_even_numbers_in_string(""100 200"") == [100, 200]"
+"def find_non_prime_numbers(lst):
+    non_primes = []
+    for num in lst:
+        if num < 2:
+            non_primes.append(num)
+        else:
+            for i in range(2, int(num ** 0.5) + 1):
+                if num % i == 0:
+                    non_primes.append(num)
+                    break
+    return non_primes","def test_find_non_prime_numbers():
+    assert find_non_prime_numbers([1, 2, 3, 4, 5]) == [1, 4]
+    assert find_non_prime_numbers([10, 11, 12, 13]) == [10, 12]
+    assert find_non_prime_numbers([17, 19, 21, 23]) == [21]
+    assert find_non_prime_numbers([24, 25, 26, 27]) == [24, 25, 26, 27]
+    assert find_non_prime_numbers([29, 30, 31]) == [30]
+    assert find_non_prime_numbers([2, 3, 5]) == []
+    assert find_non_prime_numbers([4, 6, 8]) == [4, 6, 8]
+    assert find_non_prime_numbers([]) == []
+    assert find_non_prime_numbers([0, 1, 2]) == [0, 1]"
+"def unique_chars_ignore_spaces(s):
+    unique_chars = {}
+    for char in s:
+        if char != ' ':
+            if char not in unique_chars:
+                unique_chars[char] = 1
+            else:
+                unique_chars[char] += 1
+    return list(unique_chars.keys())","def test_unique_chars_ignore_spaces():
+    assert unique_chars_ignore_spaces(""hello world"") == ['h', 'e', 'l', 'o', 'w', 'r', 'd']
+    assert unique_chars_ignore_spaces(""a b c"") == ['a', 'b', 'c']
+    assert unique_chars_ignore_spaces(""abc abc"") == ['a', 'b', 'c']
+    assert unique_chars_ignore_spaces(""  "") == []
+    assert unique_chars_ignore_spaces(""unique characters"") == ['u', 'n', 'i', 'q', 'e', 'c', 'h', 'a', 'r', 't', 's']
+    assert unique_chars_ignore_spaces(""xyz 123"") == ['x', 'y', 'z', '1', '2', '3']
+    assert unique_chars_ignore_spaces(""AAA"") == ['A']
+    assert unique_chars_ignore_spaces(""alpha beta"") == ['a', 'l', 'p', 'h', 'b', 'e', 't']
+    assert unique_chars_ignore_spaces(""ignore spaces"") == ['i', 'g', 'n', 'o', 'r', 'e', 's', 'p', 'a', 'c']"
+"def count_words_ignore_punctuation(s):
+    word_count = 0
+    current_word = ''
+    for char in s:
+        if char.isalnum():
+            current_word += char
+        elif current_word:
+            word_count += 1
+            current_word = ''
+    if current_word:
+        word_count += 1
+    return word_count","def test_count_words_ignore_punctuation():
+    assert count_words_ignore_punctuation(""hello world!"") == 2
+    assert count_words_ignore_punctuation(""a b c"") == 3
+    assert count_words_ignore_punctuation(""this, is a test."") == 4
+    assert count_words_ignore_punctuation(""..."") == 0
+    assert count_words_ignore_punctuation(""count these words!"") == 3
+    assert count_words_ignore_punctuation(""punctuation, should be ignored."") == 4
+    assert count_words_ignore_punctuation("""") == 0
+    assert count_words_ignore_punctuation(""one two three"") == 3
+    assert count_words_ignore_punctuation(""   "") == 0"
+"def find_squares(lst):
+    squares = []
+    for num in lst:
+        if int(num ** 0.5) ** 2 == num:
+            squares.append(num)
+    return squares","def test_find_squares():
+    assert find_squares([1, 4, 9, 16, 25]) == [1, 4, 9, 16, 25]
+    assert find_squares([2, 3, 5, 6, 7]) == []
+    assert find_squares([36, 49, 64, 81]) == [36, 49, 64, 81]
+    assert find_squares([10, 20, 30]) == []
+    assert find_squares([100, 121, 144]) == [100, 121, 144]
+    assert find_squares([]) == []
+    assert find_squares([0, 1, 2, 3]) == [0, 1]
+    assert find_squares([50, 60, 70, 80]) == []
+    assert find_squares([9, 25, 36, 49]) == [9, 25, 36, 49]"
+"def word_frequency_in_string(s):
+    word_count = {}
+    current_word = ''
+    for char in s:
+        if char.isalnum():
+            current_word += char
+        elif current_word:
+            if current_word in word_count:
+                word_count[current_word] += 1
+            else:
+                word_count[current_word] = 1
+            current_word = ''
+    if current_word:
+        if current_word in word_count:
+            word_count[current_word] += 1
+        else:
+            word_count[current_word] = 1
+    return word_count","def test_word_frequency_in_string():
+    assert word_frequency_in_string(""hello world"") == {'hello': 1, 'world': 1}
+    assert word_frequency_in_string(""hello hello world"") == {'hello': 2, 'world': 1}
+    assert word_frequency_in_string(""test test test"") == {'test': 3}
+    assert word_frequency_in_string(""a b a b c"") == {'a': 2, 'b': 2, 'c': 1}
+    assert word_frequency_in_string(""one two three two one"") == {'one': 2, 'two': 2, 'three': 1}
+    assert word_frequency_in_string(""punctuation should be ignored"") == {'punctuation': 1, 'should': 1, 'be': 1, 'ignored': 1}
+    assert word_frequency_in_string(""the quick brown fox"") == {'the': 1, 'quick': 1, 'brown': 1, 'fox': 1}
+    assert word_frequency_in_string(""hello world!"") == {'hello': 1, 'world': 1}
+    assert word_frequency_in_string(""repeat repeat repeat repeat"") == {'repeat': 4}"
+"def find_sum_of_two_squares(lst):
+    def is_sum_of_two_squares(n):
+        for i in range(1, int(n ** 0.5) + 1):
+            if (n - i ** 2) ** 0.5 == int((n - i ** 2) ** 0.5):
+                return True
+        return False
+
+    result = []
+    for num in lst:
+        if is_sum_of_two_squares(num):
+            result.append(num)
+    return result","def test_find_sum_of_two_squares():
+    assert find_sum_of_two_squares([1, 2, 3, 4, 5, 10, 25]) == [1, 2, 4, 5, 10, 25]
+    assert find_sum_of_two_squares([0, 1, 2, 9, 16, 20, 25]) == [1, 2, 9, 16, 20, 25]
+    assert find_sum_of_two_squares([3, 5, 7, 8, 10, 15, 50]) == [5, 8, 10, 50]"
+"def find_non_numeric_elements(lst):
+    result = []
+    for item in lst:
+        if not any(char.isdigit() for char in item):
+            result.append(item)
+    return result","def test_find_non_numeric_elements():
+    assert find_non_numeric_elements([""hello"", ""123"", ""world"", ""456""]) == [""hello"", ""world""]
+    assert find_non_numeric_elements([""abc"", ""def"", ""456"", ""789""]) == [""abc"", ""def""]
+    assert find_non_numeric_elements([""123"", ""456"", ""789""]) == []"
+"def find_odd_and_divisible_by_5(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 5 == 0:
+            result.append(num)
+    if not result:
+        print(""No odd numbers divisible by 5 found."")
+    return result","def test_find_odd_and_divisible_by_5():
+    assert find_odd_and_divisible_by_5([5, 10, 15, 20, 25, 30]) == [5, 15, 25]
+    assert find_odd_and_divisible_by_5([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [5]
+    assert find_odd_and_divisible_by_5([2, 4, 6, 8, 10]) == []"
+"def count_elements_above_threshold(d, threshold):
+    count = 0
+    for key, value in d.items():
+        if value > threshold:
+            count += 1
+    return count","def test_count_elements_above_threshold():
+    assert count_elements_above_threshold({""a"": 5, ""b"": 10, ""c"": 15}, 7) == 2
+    assert count_elements_above_threshold({""a"": 1, ""b"": 2, ""c"": 3}, 2) == 1
+    assert count_elements_above_threshold({""a"": 20, ""b"": 25, ""c"": 30}, 15) == 3"
+"def find_powers_of_three(lst):
+    powers_of_three = []
+    for num in lst:
+        while num % 3 == 0 and num > 0:
+            num //= 3
+        if num == 1:
+            powers_of_three.append(num)
+    return powers_of_three","def test_find_powers_of_three():
+    assert find_powers_of_three([1, 3, 9, 27, 81, 243]) == [1, 1, 1, 1, 1, 1]
+    assert find_powers_of_three([1, 2, 4, 8, 16]) == [1]
+    assert find_powers_of_three([1, 3, 9, 27, 81, 243]) == [1, 1, 1, 1, 1, 1]"
+"def find_numbers_greater_than_mean(s):
+    nums = [int(x) for x in s.split() if x.isdigit()]
+    mean = sum(nums) / len(nums) if nums else 0
+    result = []
+    for num in nums:
+        if num > mean:
+            result.append(num)
+    return result","def test_find_numbers_greater_than_mean():
+    assert find_numbers_greater_than_mean(""1 2 3 4 5 6 7 8 9"") == [6, 7, 8, 9]
+    assert find_numbers_greater_than_mean(""10 20 30 40 50"") == [40, 50]
+    assert find_numbers_greater_than_mean(""5 5 5 5 5"") == []"
+"def find_odd_and_not_prime(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+    non_prime_odd = []
+    for num in lst:
+        if num % 2 != 0 and not is_prime(num):
+            non_prime_odd.append(num)
+    return non_prime_odd","def test_find_odd_and_not_prime():
+    assert find_odd_and_not_prime([1, 3, 5, 7, 9, 11, 13, 15]) == [1, 9, 15]
+    assert find_odd_and_not_prime([2, 4, 6, 8, 10]) == []
+    assert find_odd_and_not_prime([21, 33, 35, 39]) == [21, 33, 35, 39]"
+"def find_divisors_in_list(lst):
+    divisors = []
+    for i in range(len(lst)):
+        for j in range(len(lst)):
+            if i != j and lst[i] % lst[j] == 0:
+                divisors.append(lst[i])
+                break
+    return divisors","def test_find_divisors_in_list():
+    assert find_divisors_in_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert find_divisors_in_list([10, 20, 30, 40]) == [20, 30, 40]
+    assert find_divisors_in_list([1, 3, 5, 7]) == [3, 5, 7]"
+"def find_non_multiples(lst1, lst2):
+    non_multiples = []
+    for num in lst1:
+        if all(num % divisor != 0 for divisor in lst2):
+            non_multiples.append(num)
+    return non_multiples","def test_find_non_multiples():
+    assert find_non_multiples([1, 2, 3, 4, 5, 6], [2, 3]) == [1, 5]
+    assert find_non_multiples([10, 15, 20, 25], [5]) == []
+    assert find_non_multiples([8, 16, 24], [4]) == []"
+"def find_common_elements(lst1, lst2):
+    common_elements = []
+    for item in lst1:
+        if item in lst2:
+            common_elements.append(item)
+    if not common_elements:
+        print(""No common elements found."")
+    return common_elements","def test_find_common_elements():
+    assert find_common_elements([1, 2, 3], [3, 4, 5]) == [3]
+    assert find_common_elements([""a"", ""b"", ""c""], [""c"", ""d"", ""e""]) == [""c""]
+    assert find_common_elements([1, 2, 3], [4, 5, 6]) == []"
+"def find_odd_square(lst):
+    result = []
+    for num in lst:
+        if int(num ** 0.5) ** 2 == num and num % 2 != 0:
+            result.append(num)
+    return result","def test_find_odd_square():
+    assert find_odd_square([1, 2, 3, 4, 5, 9, 16, 25]) == [1, 9, 25]
+    assert find_odd_square([2, 4, 6, 8, 10, 12, 14, 18]) == []
+    assert find_odd_square([1, 5, 13, 15, 21, 22, 27, 28]) == [1]"
+"def find_elements_with_vowels(lst):
+    vowels = 'aeiouAEIOU'
+    result = []
+    for item in lst:
+        if any(char in vowels for char in item):
+            result.append(item)
+    return result","def test_find_elements_with_vowels():
+    assert find_elements_with_vowels([""hello"", ""world"", ""sky"", ""tryst""]) == [""hello"", ""world""]
+    assert find_elements_with_vowels([""rhythm"", ""gym"", ""sky""]) == []
+    assert find_elements_with_vowels([""apple"", ""banana"", ""grape""]) == [""apple"", ""banana"", ""grape""]"
+"def find_not_divisible_by_2_and_3(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 3 != 0:
+            result.append(num)
+    if not result:
+        print(""No numbers found that are not divisible by 2 or 3."")
+        return []
+    return result","def test_find_not_divisible_by_2_and_3():
+    assert find_not_divisible_by_2_and_3([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [1, 5, 7]
+    assert find_not_divisible_by_2_and_3([2, 4, 6, 8, 10]) == []
+    assert find_not_divisible_by_2_and_3([11, 13, 17, 19, 23, 25, 29]) == [11, 13, 17, 19, 23, 25, 29]"
+"def count_unique_chars_in_string(s):
+    char_count = {}
+    for char in s:
+        if char.isalpha():
+            if char not in char_count:
+                char_count[char] = 1
+            else:
+                char_count[char] += 1
+    if not char_count:
+        print(""No alphabetical characters found."")
+        return {}
+    return char_count","def test_count_unique_chars_in_string():
+    assert count_unique_chars_in_string(""hello world"") == {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 'r': 1, 'd': 1}
+    assert count_unique_chars_in_string(""abcdefg"") == {'a': 1, 'b': 1, 'c': 1, 'd': 1, 'e': 1, 'f': 1, 'g': 1}
+    assert count_unique_chars_in_string(""1234 5678"") == {}"
+"def find_product_of_two_even_numbers(lst):
+    result = []
+    for num in lst:
+        for i in range(2, num // 2 + 1, 2):
+            if num % i == 0 and (num // i) % 2 == 0:
+                result.append(num)
+                break
+    if not result:
+        print(""No numbers found that are the product of two even numbers."")
+        return []
+    return result","def test_find_product_of_two_even_numbers():
+    assert find_product_of_two_even_numbers([4, 8, 12, 16, 20]) == [4, 8, 12, 16, 20]
+    assert find_product_of_two_even_numbers([1, 3, 5, 7, 9]) == []
+    assert find_product_of_two_even_numbers([6, 10, 14, 18, 22]) == []"
+"def find_multiples_of_5_not_10(lst):
+    result = []
+    for num in lst:
+        if num % 5 == 0 and num % 10 != 0:
+            result.append(num)
+    if not result:
+        print(""No multiples of 5 that are not divisible by 10."")
+    return result","def test_find_multiples_of_5_not_10():
+    assert find_multiples_of_5_not_10([5, 10, 15, 20, 25, 30]) == [5, 15, 25]
+    assert find_multiples_of_5_not_10([2, 4, 6, 8, 10]) == []
+    assert find_multiples_of_5_not_10([1, 3, 7, 9, 11]) == []"
+"def find_double_digits_not_divisible_by_2(lst):
+    result = []
+    for num in lst:
+        if 10 <= num <= 99 and num % 2 != 0:
+            result.append(num)
+    if not result:
+        print(""No double-digit numbers found that are not divisible by 2."")
+    return result","def test_find_double_digits_not_divisible_by_2():
+    assert find_double_digits_not_divisible_by_2([10, 12, 14, 16, 18]) == []
+    assert find_double_digits_not_divisible_by_2([11, 13, 15, 17, 19]) == [11, 13, 15, 17, 19]
+    assert find_double_digits_not_divisible_by_2([21, 23, 25, 27, 29]) == [21, 23, 25, 27, 29]"
+"def find_common_numbers_in_strings(s1, s2):
+    nums1 = {int(x) for x in s1.split() if x.isdigit()}
+    nums2 = {int(x) for x in s2.split() if x.isdigit()}
+    common = nums1 & nums2
+    if not common:
+        print(""No common numbers found between the two strings."")
+        return set()
+    return common","def test_find_common_numbers_in_strings():
+    assert find_common_numbers_in_strings(""1 2 3 4 5"", ""3 4 5 6 7"") == {3, 4, 5}
+    assert find_common_numbers_in_strings(""1 2 3 4 5"", ""6 7 8 9 10"") == set()
+    assert find_common_numbers_in_strings(""10 20 30 40 50"", ""15 25 35 45 55"") == set()"
+"def find_divisible_by_7_not_11(lst):
+    result = []
+    for num in lst:
+        if num % 7 == 0 and num % 11 != 0:
+            result.append(num)
+    if not result:
+        print(""No numbers found divisible by 7 but not 11."")
+    return result","def test_find_divisible_by_7_not_11():
+    assert find_divisible_by_7_not_11([7, 14, 21, 28, 35, 42]) == [7, 14, 21, 28, 35, 42]
+    assert find_divisible_by_7_not_11([11, 22, 33, 44, 55, 66]) == []
+    assert find_divisible_by_7_not_11([49, 63, 77, 84]) == [49, 63, 84]"
+"def count_word_in_string(s, word):
+    s = s.lower()
+    word = word.lower()
+    count = s.split().count(word)
+    if count == 0:
+        print(f""The word '{word}' was not found."")
+        return 0
+    return count","def test_count_word_in_string():
+    assert count_word_in_string(""Hello world, hello universe"", ""hello"") == 2
+    assert count_word_in_string(""Python is great. I love Python."", ""Python"") == 1
+    assert count_word_in_string(""This is a test string."", ""python"") == 0"
+"def find_primes_not_multiples_of_3(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    result = []
+    for num in lst:
+        if is_prime(num) and num % 3 != 0:
+            result.append(num)
+    if not result:
+        print(""No prime numbers found that are not divisible by 3."")
+    return result","def test_find_primes_not_multiples_of_3():
+    assert find_primes_not_multiples_of_3([2, 3, 5, 6, 7, 9, 11, 12]) == [2, 5, 7, 11]
+    assert find_primes_not_multiples_of_3([3, 6, 9, 12, 15]) == []
+    assert find_primes_not_multiples_of_3([1, 2, 4, 5, 8, 10, 14]) == [2, 5]
+    assert find_primes_not_multiples_of_3([7, 11, 13, 17, 19, 23]) == [7, 11, 13, 17, 19, 23]
+    assert find_primes_not_multiples_of_3([]) == []
+    assert find_primes_not_multiples_of_3([29, 31, 37, 41]) == [29, 31, 37, 41]
+    assert find_primes_not_multiples_of_3([9, 27, 30]) == []
+    assert find_primes_not_multiples_of_3([2, 3, 5, 9, 15, 21]) == [2, 5]
+    assert find_primes_not_multiples_of_3([4, 6, 8, 10, 12, 14]) == []"
+"def find_even_numbers_divisible_by_4(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 4 == 0:
+            result.append(num)
+    if not result:
+        print(""No even numbers divisible by 4 found."")
+    return result","def test_find_even_numbers_divisible_by_4():
+    assert find_even_numbers_divisible_by_4([4, 8, 12, 16, 20, 24]) == [4, 8, 12, 16, 20, 24]
+    assert find_even_numbers_divisible_by_4([1, 2, 3, 5, 7, 11]) == []
+    assert find_even_numbers_divisible_by_4([4, 5, 6, 7, 8, 9, 10, 11]) == [4, 8]
+    assert find_even_numbers_divisible_by_4([32, 48, 64, 80, 96, 112]) == [32, 48, 64, 80, 96, 112]
+    assert find_even_numbers_divisible_by_4([]) == []
+    assert find_even_numbers_divisible_by_4([12, 14, 18, 20]) == [12, 20]
+    assert find_even_numbers_divisible_by_4([3, 5, 7, 9, 11]) == []
+    assert find_even_numbers_divisible_by_4([0, 4, 8, 16, 32]) == [0, 4, 8, 16, 32]
+    assert find_even_numbers_divisible_by_4([2, 6, 10, 14]) == []"
+"def find_non_powers_of_two(lst):
+    result = []
+    for num in lst:
+        if (num & (num - 1)) != 0:
+            result.append(num)
+    if not result:
+        print(""No numbers found that are not powers of two."")
+    return result","def test_find_non_powers_of_two():
+    assert find_non_powers_of_two([1, 2, 3, 4, 5, 6, 7, 8]) == [3, 5, 6, 7]
+    assert find_non_powers_of_two([8, 16, 32, 64, 128]) == []
+    assert find_non_powers_of_two([3, 5, 6, 7, 10, 12]) == [3, 5, 6, 7, 10, 12]
+    assert find_non_powers_of_two([1, 2, 4, 8, 16]) == []
+    assert find_non_powers_of_two([]) == []
+    assert find_non_powers_of_two([1024, 2048, 4096]) == []
+    assert find_non_powers_of_two([1, 2, 4, 6, 8, 12, 18]) == [6, 12, 18]
+    assert find_non_powers_of_two([10, 20, 30, 40]) == [10, 20, 30, 40]
+    assert find_non_powers_of_two([7, 14, 21, 28]) == [7, 14, 21, 28]"
+"def count_numbers_greater_than_average(s):
+    nums = [int(x) for x in s.split() if x.isdigit()]
+    if not nums:
+        print(""No numbers found in the string."")
+        return 0
+    average = sum(nums) / len(nums)
+    count = sum(1 for num in nums if num > average)
+    return count","def test_count_numbers_greater_than_average():
+    assert count_numbers_greater_than_average(""1 2 3 4 5 6 7 8 9"") == 4
+    assert count_numbers_greater_than_average(""10 20 30 40 50"") == 2
+    assert count_numbers_greater_than_average(""5 5 5 5"") == 0
+    assert count_numbers_greater_than_average(""100"") == 0
+    assert count_numbers_greater_than_average("""") == 0
+    assert count_numbers_greater_than_average(""10 15 20 25 30"") == 2
+    assert count_numbers_greater_than_average(""7 14 21 28"") == 2
+    assert count_numbers_greater_than_average(""3 6 9 12 15 18"") == 3
+    assert count_numbers_greater_than_average(""0 1 2 3 4 5 6 7 8 9 10"") == 5"
+"def find_multiples_of_4_or_5_not_20(lst):
+    result = []
+    for num in lst:
+        if (num % 4 == 0 or num % 5 == 0) and num % 20 != 0:
+            result.append(num)
+    if not result:
+        print(""No numbers found that are divisible by 4 or 5, but not by 20."")
+    return result","def test_find_multiples_of_4_or_5_not_20():
+    assert find_multiples_of_4_or_5_not_20([4, 5, 8, 10, 12, 15, 16, 25, 40]) == [4, 5, 8, 10, 12, 15, 16, 25]
+    assert find_multiples_of_4_or_5_not_20([20, 40, 60, 80, 100]) == []
+    assert find_multiples_of_4_or_5_not_20([3, 6, 9, 11, 13, 17, 19]) == []
+    assert find_multiples_of_4_or_5_not_20([25, 30, 35, 50]) == [25, 30, 35, 50]
+    assert find_multiples_of_4_or_5_not_20([]) == []
+    assert find_multiples_of_4_or_5_not_20([4, 8, 12, 16, 24]) == [4, 8, 12, 16, 24]
+    assert find_multiples_of_4_or_5_not_20([5, 10, 15, 25]) == [5, 10, 15, 25]
+    assert find_multiples_of_4_or_5_not_20([1, 2, 3, 7, 11]) == []
+    assert find_multiples_of_4_or_5_not_20([9, 27, 33, 45]) == [45]"
+"def find_exact_divisors_of_100(lst):
+    result = []
+    for num in lst:
+        if 100 % num == 0:
+            result.append(num)
+    if not result:
+        print(""No numbers found that are exact divisors of 100."")
+    return result","def test_find_exact_divisors_of_100():
+    assert find_exact_divisors_of_100([1, 2, 4, 5, 10, 20, 25, 50, 100]) == [1, 2, 4, 5, 10, 20, 25, 50, 100]
+    assert find_exact_divisors_of_100([3, 6, 9, 12, 15, 18, 21]) == []
+    assert find_exact_divisors_of_100([4, 8, 16, 32, 64]) == [4]
+    assert find_exact_divisors_of_100([50, 100]) == [50, 100]
+    assert find_exact_divisors_of_100([]) == []
+    assert find_exact_divisors_of_100([10, 20, 30, 40]) == [10, 20]
+    assert find_exact_divisors_of_100([1, 25, 100]) == [1, 25, 100]
+    assert find_exact_divisors_of_100([5, 15, 20]) == [5, 20]
+    assert find_exact_divisors_of_100([7, 14, 21, 35, 70]) == []"
+"def find_odd_not_divisible_by_5(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 5 != 0:
+            result.append(num)
+    if not result:
+        print(""No odd numbers found that are not divisible by 5."")
+    return result","def test_find_odd_not_divisible_by_5():
+    assert find_odd_not_divisible_by_5([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) == [1, 3, 7, 9, 11, 13, 17, 19]
+    assert find_odd_not_divisible_by_5([5, 10, 15, 20, 25]) == []
+    assert find_odd_not_divisible_by_5([2, 4, 6, 8, 10, 12]) == []
+    assert find_odd_not_divisible_by_5([1, 2, 3, 4, 5]) == [1, 3]
+    assert find_odd_not_divisible_by_5([]) == []
+    assert find_odd_not_divisible_by_5([11, 12, 13, 14, 15, 16]) == [11, 13]
+    assert find_odd_not_divisible_by_5([1, 21, 31, 41]) == [1, 21, 31, 41]
+    assert find_odd_not_divisible_by_5([25, 30, 35, 40, 45, 50]) == []
+    assert find_odd_not_divisible_by_5([33, 37, 39, 43, 47]) == [33, 37, 39, 43, 47]"
+"def find_multiples_of_2_or_3(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 3 != 0:
+            result.append(num)
+        elif num % 3 == 0 and num % 2 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are multiples of 2 or 3, but not both.""
+    return result","def test_find_multiples_of_2_or_3():
+    assert find_multiples_of_2_or_3([2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) == [2, 3, 4, 8, 9, 10]
+    assert find_multiples_of_2_or_3([3, 6, 9, 12, 15, 18, 21]) == [3, 9, 15, 21]
+    assert find_multiples_of_2_or_3([2, 4, 6, 8, 10, 12]) == [2, 4, 8, 10]
+    assert find_multiples_of_2_or_3([1, 3, 5, 7, 9, 11]) == [3, 9]
+    assert find_multiples_of_2_or_3([]) == 'No numbers found that are multiples of 2 or 3, but not both.'
+    assert find_multiples_of_2_or_3([6, 12, 18, 24]) == 'No numbers found that are multiples of 2 or 3, but not both.'
+    assert find_multiples_of_2_or_3([3, 6, 7, 9, 14]) == [3, 9, 14]
+    assert find_multiples_of_2_or_3([2, 3, 5, 7]) == [2, 3]
+    assert find_multiples_of_2_or_3([5, 10, 15, 20, 25, 30]) == [10, 15, 20]"
+"def find_odd_or_divisible_by_4(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 or num % 4 == 0:
+            result.append(num)
+    if not result:
+        return ""No odd numbers or numbers divisible by 4 found.""
+    return result","def test_find_odd_or_divisible_by_4():
+    assert find_odd_or_divisible_by_4([1, 2, 3, 4, 5, 6, 7, 8, 9]) == [1, 3, 4, 5, 7, 8, 9]
+    assert find_odd_or_divisible_by_4([2, 4, 6, 8, 10]) == [4, 8]
+    assert find_odd_or_divisible_by_4([1, 3, 5, 7, 9, 11, 13, 15]) == [1, 3, 5, 7, 9, 11, 13, 15]
+    assert find_odd_or_divisible_by_4([4, 8, 12, 16, 20]) == [4, 8, 12, 16, 20]
+    assert find_odd_or_divisible_by_4([]) == 'No odd numbers or numbers divisible by 4 found.'
+    assert find_odd_or_divisible_by_4([3, 5, 6, 7]) == [3, 5, 7]
+    assert find_odd_or_divisible_by_4([10, 12, 14, 16]) == [12, 16]
+    assert find_odd_or_divisible_by_4([2, 3, 4, 5]) == [3, 4, 5]
+    assert find_odd_or_divisible_by_4([9, 10, 12, 15]) == [9, 12, 15]"
+"def find_even_squares(lst):
+    result = []
+    for num in lst:
+        if int(num ** 0.5) ** 2 == num and num % 2 == 0:
+            result.append(num)
+    if not result:
+        return ""No even square numbers found.""
+    return result","def test_find_even_squares():
+    assert find_even_squares([4, 16, 25, 36, 49, 64, 81, 100]) == [4, 16, 36, 64, 100]
+    assert find_even_squares([1, 3, 5, 7, 9]) == 'No even square numbers found.'
+    assert find_even_squares([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [4]
+    assert find_even_squares([9, 25, 49, 81, 121]) == 'No even square numbers found.'
+    assert find_even_squares([]) == 'No even square numbers found.'
+    assert find_even_squares([0, 4, 8, 12]) == [0, 4]
+    assert find_even_squares([2, 6, 8, 10, 14, 18]) == 'No even square numbers found.'
+    assert find_even_squares([4, 5, 6, 7, 8, 9]) == [4]
+    assert find_even_squares([4, 16, 36, 64]) == [4, 16, 36, 64]"
+"def find_multiples_of_3_or_5_not_both(lst):
+    result = []
+    for num in lst:
+        if (num % 3 == 0 or num % 5 == 0) and not (num % 3 == 0 and num % 5 == 0):
+            result.append(num)
+    if not result:
+        return ""No numbers found that are multiples of 3 or 5 but not both.""
+    return result","def test_find_multiples_of_3_or_5_not_both():
+    assert find_multiples_of_3_or_5_not_both([3, 5, 6, 10, 15, 18, 20]) == [3, 5, 6, 10, 18, 20]
+    assert find_multiples_of_3_or_5_not_both([15, 30, 45, 60]) == 'No numbers found that are multiples of 3 or 5 but not both.'
+    assert find_multiples_of_3_or_5_not_both([1, 2, 4, 7]) == 'No numbers found that are multiples of 3 or 5 but not both.'
+    assert find_multiples_of_3_or_5_not_both([3, 6, 9, 12, 18]) == [3, 6, 9, 12, 18]
+    assert find_multiples_of_3_or_5_not_both([]) == 'No numbers found that are multiples of 3 or 5 but not both.'
+    assert find_multiples_of_3_or_5_not_both([5, 10, 20, 25]) == [5, 10, 20, 25]
+    assert find_multiples_of_3_or_5_not_both([7, 11, 13]) == 'No numbers found that are multiples of 3 or 5 but not both.'
+    assert find_multiples_of_3_or_5_not_both([2, 4, 8, 16]) == 'No numbers found that are multiples of 3 or 5 but not both.'
+    assert find_multiples_of_3_or_5_not_both([15, 25, 35, 45]) == [25, 35]"
+"def count_numbers_greater_than_mean(s):
+    nums = [int(x) for x in s.split() if x.isdigit()]
+    if not nums:
+        return ""No numbers found in the string.""
+
+    mean = sum(nums) / len(nums)
+    count = len([num for num in nums if num > mean])
+    if count == 0:
+        return ""No numbers greater than the mean.""
+    return count","def test_count_numbers_greater_than_mean():
+    assert count_numbers_greater_than_mean(""1 2 3 4 5"") == 2
+    assert count_numbers_greater_than_mean(""10 20 30 40"") == 2
+    assert count_numbers_greater_than_mean(""5 5 5 5 5"") == ""No numbers greater than the mean.""
+    assert count_numbers_greater_than_mean(""100"") == ""No numbers greater than the mean.""
+    assert count_numbers_greater_than_mean("""") == ""No numbers found in the string.""
+    assert count_numbers_greater_than_mean(""10 20 30"") == 1
+    assert count_numbers_greater_than_mean(""1 1 1 1 1 2 2 2 2 2"") == 5
+    assert count_numbers_greater_than_mean(""50 100 150 200"") == 2
+    assert count_numbers_greater_than_mean(""6 7 8 9 10"") == 2"
+"def find_powers_of_2(lst):
+    result = []
+    for num in lst:
+        if (num & (num - 1)) == 0:
+            result.append(num)
+    if not result:
+        return ""No powers of 2 found.""
+    return result","def test_find_powers_of_2():
+    assert find_powers_of_2([1, 2, 3, 4, 5, 8, 16, 32, 64]) == [1, 2, 4, 8, 16, 32, 64]
+    assert find_powers_of_2([7, 14, 21, 28]) == 'No powers of 2 found.'
+    assert find_powers_of_2([2, 3, 6, 7, 9, 12]) == [2]
+    assert find_powers_of_2([]) == 'No powers of 2 found.'
+    assert find_powers_of_2([1024, 2048, 4096]) == [1024, 2048, 4096]
+    assert find_powers_of_2([1, 4, 8, 16, 32]) == [1, 4, 8, 16, 32]
+    assert find_powers_of_2([1, 2, 3, 4, 6, 7]) == [1, 2, 4]
+    assert find_powers_of_2([5, 10, 20, 40]) == 'No powers of 2 found.'
+    assert find_powers_of_2([64, 128, 256, 512]) == [64, 128, 256, 512]"
+"def find_even_and_divisible_by_8(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 8 == 0:
+            result.append(num)
+    if not result:
+        return ""No even numbers divisible by 8 found.""
+    return result","def test_find_even_and_divisible_by_8():
+    assert find_even_and_divisible_by_8([8, 16, 24, 32, 40, 48, 56, 64]) == [8, 16, 24, 32, 40, 48, 56, 64]
+    assert find_even_and_divisible_by_8([7, 14, 21, 28]) == 'No even numbers divisible by 8 found.'
+    assert find_even_and_divisible_by_8([2, 4, 6, 10, 12, 14]) == 'No even numbers divisible by 8 found.'
+    assert find_even_and_divisible_by_8([8, 16, 32, 40]) == [8, 16, 32, 40]
+    assert find_even_and_divisible_by_8([]) == 'No even numbers divisible by 8 found.'
+    assert find_even_and_divisible_by_8([80, 96, 112]) == [80, 96, 112]
+    assert find_even_and_divisible_by_8([1, 3, 5, 7]) == 'No even numbers divisible by 8 found.'
+    assert find_even_and_divisible_by_8([0, 8, 16, 24]) == [0, 8, 16, 24]
+    assert find_even_and_divisible_by_8([9, 18, 27, 36]) == 'No even numbers divisible by 8 found.'"
+"def find_odd_and_divisible_by_3(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 3 == 0:
+            result.append(num)
+    if not result:
+        return ""No odd numbers divisible by 3 found.""
+    return result","def test_find_odd_and_divisible_by_3():
+    assert find_odd_and_divisible_by_3([3, 6, 9, 12, 15, 18, 21, 24]) == [3, 9, 15, 21]
+    assert find_odd_and_divisible_by_3([2, 4, 6, 8, 10, 12]) == 'No odd numbers divisible by 3 found.'
+    assert find_odd_and_divisible_by_3([5, 10, 15, 20, 25, 30]) == [15]
+    assert find_odd_and_divisible_by_3([1, 2, 3, 4, 5]) == [3]
+    assert find_odd_and_divisible_by_3([]) == 'No odd numbers divisible by 3 found.'
+    assert find_odd_and_divisible_by_3([9, 18, 27, 36]) == [9, 27]
+    assert find_odd_and_divisible_by_3([3, 5, 7, 11, 13, 15]) == [3, 15]
+    assert find_odd_and_divisible_by_3([21, 33, 45, 57]) == [21, 33, 45, 57]
+    assert find_odd_and_divisible_by_3([8, 16, 32, 64]) == 'No odd numbers divisible by 3 found.'"
+"def find_non_even_or_not_multiples_of_7(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 or num % 7 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are not even or not divisible by 7.""
+    return result","def test_find_non_even_or_not_multiples_of_7():
+    assert find_non_even_or_not_multiples_of_7([2, 3, 4, 5, 6, 7, 8, 9]) == [2, 3, 4, 5, 6, 7, 8, 9]
+    assert find_non_even_or_not_multiples_of_7([7, 14, 21, 28]) == [7, 21]
+    assert find_non_even_or_not_multiples_of_7([1, 2, 4, 8, 16, 32]) == [1, 2, 4, 8, 16, 32]
+    assert find_non_even_or_not_multiples_of_7([2, 3, 5, 7]) == [2, 3, 5, 7]
+    assert find_non_even_or_not_multiples_of_7([0, 7, 14, 21]) == [7, 21]
+    assert find_non_even_or_not_multiples_of_7([9, 18, 27, 36]) == [9, 18, 27, 36]
+    assert find_non_even_or_not_multiples_of_7([3, 7, 10, 13]) == [3, 7, 10, 13]
+    assert find_non_even_or_not_multiples_of_7([2, 6, 14, 28]) == [2, 6]
+    assert find_non_even_or_not_multiples_of_7([5, 10, 20, 25]) == [5, 10, 20, 25]
+    assert find_non_even_or_not_multiples_of_7([28, 14]) == ""No numbers found that are not even or not divisible by 7."""
+"def find_not_divisible_by_2_but_divisible_by_5(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 5 == 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are not divisible by 2 but divisible by 5.""
+    return result","def test_find_not_divisible_by_2_but_divisible_by_5():
+    assert find_not_divisible_by_2_but_divisible_by_5([5, 10, 15, 20, 25, 30]) == [5, 15, 25]
+    assert find_not_divisible_by_2_but_divisible_by_5([2, 4, 6, 8, 10]) == 'No numbers found that are not divisible by 2 but divisible by 5.'
+    assert find_not_divisible_by_2_but_divisible_by_5([1, 2, 3, 4, 5]) == [5]
+    assert find_not_divisible_by_2_but_divisible_by_5([11, 13, 15, 17]) == [15]
+    assert find_not_divisible_by_2_but_divisible_by_5([]) == 'No numbers found that are not divisible by 2 but divisible by 5.'
+    assert find_not_divisible_by_2_but_divisible_by_5([21, 25, 29]) == [25]
+    assert find_not_divisible_by_2_but_divisible_by_5([30, 35, 40, 45]) == [35, 45]
+    assert find_not_divisible_by_2_but_divisible_by_5([7, 14, 21, 28]) == 'No numbers found that are not divisible by 2 but divisible by 5.'
+    assert find_not_divisible_by_2_but_divisible_by_5([50, 75, 95]) == [75, 95]"
+"def find_multiples_of_3_5_or_7(lst):
+    result = []
+    for num in lst:
+        if num % 3 == 0 or num % 5 == 0 or num % 7 == 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are multiples of 3, 5, or 7.""
+    return result","def test_find_multiples_of_3_5_or_7():
+    assert find_multiples_of_3_5_or_7([3, 5, 7, 9, 10, 14, 15, 21, 25, 30]) == [3, 5, 7, 9, 10, 14, 15, 21, 25, 30]
+    assert find_multiples_of_3_5_or_7([1, 2, 4, 8, 11]) == 'No numbers found that are multiples of 3, 5, or 7.'
+    assert find_multiples_of_3_5_or_7([3, 6, 12, 18]) == [3, 6, 12, 18]
+    assert find_multiples_of_3_5_or_7([5, 10, 20, 25]) == [5, 10, 20, 25]
+    assert find_multiples_of_3_5_or_7([7, 14, 28, 35]) == [7, 14, 28, 35]
+    assert find_multiples_of_3_5_or_7([]) == 'No numbers found that are multiples of 3, 5, or 7.'
+    assert find_multiples_of_3_5_or_7([9, 15, 21, 27, 33]) == [9, 15, 21, 27, 33]
+    assert find_multiples_of_3_5_or_7([35, 45, 55, 65]) == [35, 45, 55, 65]
+    assert find_multiples_of_3_5_or_7([50, 75, 100]) == [50, 75, 100]"
+"def find_even_not_divisible_by_4(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 4 != 0:
+            result.append(num)
+    if not result:
+        return ""No even numbers found that are not divisible by 4.""
+    return result","def test_find_even_not_divisible_by_4():
+    assert find_even_not_divisible_by_4([2, 3, 4, 6, 8, 10, 12, 14, 16]) == [2, 6, 10, 14]
+    assert find_even_not_divisible_by_4([4, 8, 12, 16, 20]) == 'No even numbers found that are not divisible by 4.'
+    assert find_even_not_divisible_by_4([1, 3, 5, 7, 9]) == 'No even numbers found that are not divisible by 4.'
+    assert find_even_not_divisible_by_4([10, 20, 30, 40]) == [10, 30]
+    assert find_even_not_divisible_by_4([]) == 'No even numbers found that are not divisible by 4.'
+    assert find_even_not_divisible_by_4([6, 18, 26]) == [6, 18, 26]
+    assert find_even_not_divisible_by_4([14, 28, 44, 52]) == [14]
+    assert find_even_not_divisible_by_4([32, 36, 48, 60]) == 'No even numbers found that are not divisible by 4.'
+    assert find_even_not_divisible_by_4([22, 26, 38]) == [22, 26, 38]"
+"def find_multiples_of_3_or_5_not_15(lst):
+    result = []
+    for num in lst:
+        if (num % 3 == 0 or num % 5 == 0) and num % 15 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are multiples of 3 or 5 but not 15.""
+    return result","def test_find_multiples_of_3_or_5_not_15():
+    assert find_multiples_of_3_or_5_not_15([3, 5, 9, 10, 12, 18, 20, 30, 33]) == [3, 5, 9, 10, 12, 18, 20, 33]
+    assert find_multiples_of_3_or_5_not_15([15, 30, 45, 60]) == 'No numbers found that are multiples of 3 or 5 but not 15.'
+    assert find_multiples_of_3_or_5_not_15([1, 2, 4, 7, 11]) == 'No numbers found that are multiples of 3 or 5 but not 15.'
+    assert find_multiples_of_3_or_5_not_15([5, 10, 20, 25]) == [5, 10, 20, 25]
+    assert find_multiples_of_3_or_5_not_15([3, 6, 9, 12]) == [3, 6, 9, 12]
+    assert find_multiples_of_3_or_5_not_15([]) == 'No numbers found that are multiples of 3 or 5 but not 15.'
+    assert find_multiples_of_3_or_5_not_15([27, 33, 39]) == [27, 33, 39]
+    assert find_multiples_of_3_or_5_not_15([5, 25, 35]) == [5, 25, 35]
+    assert find_multiples_of_3_or_5_not_15([9, 21, 27, 39]) == [9, 21, 27, 39]"
+"def find_difference_of_two_squares(lst):
+    result = []
+    for num in lst:
+        for i in range(1, int(num ** 0.5) + 1):
+            if (num + i ** 2) ** 0.5 == int((num + i ** 2) ** 0.5):
+                result.append(num)
+                break
+    if not result:
+        return ""No numbers found that are the difference of two squares.""
+    return result","def test_find_difference_of_two_squares():
+    assert find_difference_of_two_squares([1, 7, 8]) == [8]
+    assert find_difference_of_two_squares([14, 15, 17]) == [15]
+    assert find_difference_of_two_squares([2, 3, 5]) == [3, 5]
+    assert find_difference_of_two_squares([16, 24, 35]) == [16, 24, 35]
+    assert find_difference_of_two_squares([16, 24, 35]) == [16, 24, 35]
+    assert find_difference_of_two_squares([]) == ""No numbers found that are the difference of two squares."""
+"def find_sum_of_two_divisible_by_3(lst):
+    result = []
+    for num in lst:
+        for i in range(1, num // 2 + 1):
+            if i % 3 == 0 and (num - i) % 3 == 0:
+                result.append(num)
+                break
+    if not result:
+        return ""No numbers found that are the sum of two numbers divisible by 3.""
+    return result","def test_find_sum_of_two_divisible_by_3():
+    assert find_sum_of_two_divisible_by_3([6, 15, 21]) == [6, 15, 21]
+    assert find_sum_of_two_divisible_by_3([5, 7, 11]) == ""No numbers found that are the sum of two numbers divisible by 3.""
+    assert find_sum_of_two_divisible_by_3([9, 18, 30]) == [9, 18, 30]
+    assert find_sum_of_two_divisible_by_3([1, 2, 4]) == ""No numbers found that are the sum of two numbers divisible by 3."""
+"def find_not_even_but_divisible_by_9(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 9 == 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are not even but divisible by 9.""
+    return result","def test_find_not_even_but_divisible_by_9():
+    assert find_not_even_but_divisible_by_9([9, 27, 45]) == [9, 27, 45]
+    assert find_not_even_but_divisible_by_9([2, 4, 6]) == ""No numbers found that are not even but divisible by 9.""
+    assert find_not_even_but_divisible_by_9([15, 33, 81]) == [81]
+    assert find_not_even_but_divisible_by_9([12, 18, 24]) == ""No numbers found that are not even but divisible by 9."""
+"def find_divisible_by_2(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and num % 4 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers.""
+    return result","def test_find_divisible_by_2():
+    assert find_divisible_by_2([4, 16, 28]) ==  'No numbers.'
+    assert find_divisible_by_2([1, 3, 5]) == 'No numbers.'
+    assert find_divisible_by_2([20, 22, 32]) == [22]
+    assert find_divisible_by_2([6, 7, 10]) == [6, 10]"
+"def find_divisible_by_2_or_3_not_6(lst):
+    result = []
+    for num in lst:
+        if (num % 2 == 0 or num % 3 == 0) and num % 6 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are divisible by 2 or 3 but not 6.""
+    return result","def test_find_divisible_by_2_or_3_not_6():
+    assert find_divisible_by_2_or_3_not_6([2, 5, 8]) == [2, 8]
+    assert find_divisible_by_2_or_3_not_6([4, 10, 14]) == [4, 10, 14]
+    assert find_divisible_by_2_or_3_not_6([6, 12, 24]) == ""No numbers found that are divisible by 2 or 3 but not 6.""
+    assert find_divisible_by_2_or_3_not_6([1, 7, 11]) == ""No numbers found that are divisible by 2 or 3 but not 6."""
+"def find_divisors_of_12_not_even(lst):
+    result = []
+    for num in lst:
+        if 12 % num == 0 and num % 2 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are divisors of 12 but not even.""
+    return result","def test_find_divisors_of_12_not_even():
+    assert find_divisors_of_12_not_even([1, 3, 6]) == [1, 3]
+    assert find_divisors_of_12_not_even([2, 4, 8]) == ""No numbers found that are divisors of 12 but not even.""
+    assert find_divisors_of_12_not_even([5, 7, 9]) == ""No numbers found that are divisors of 12 but not even.""
+    assert find_divisors_of_12_not_even([12, 18, 24]) == ""No numbers found that are divisors of 12 but not even."""
+"def find_divisors_of_6_not_12(lst):
+    result = []
+    for num in lst:
+        if 6 % num == 0 and num != 12:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are divisors of 6 but not 12.""
+    return result","def test_find_divisors_of_6_not_12():
+    assert find_divisors_of_6_not_12([1, 3, 6]) == [1, 3, 6]
+    assert find_divisors_of_6_not_12([2, 4, 8]) == [2]
+    assert find_divisors_of_6_not_12([5, 9, 11]) == ""No numbers found that are divisors of 6 but not 12.""
+    assert find_divisors_of_6_not_12([12, 18, 24]) == ""No numbers found that are divisors of 6 but not 12."""
+"def find_squares_of_even_numbers(lst):
+    result = []
+    for num in lst:
+        if int(num ** 0.5) ** 2 == num and int(num ** 0.5) % 2 == 0:
+            result.append(num)
+    if not result:
+        return ""No squares of even numbers found.""
+    return result","def test_find_squares_of_even_numbers():
+    assert find_squares_of_even_numbers([4, 16, 36]) == [4, 16, 36]
+    assert find_squares_of_even_numbers([9, 25, 49]) == ""No squares of even numbers found.""
+    assert find_squares_of_even_numbers([8, 18, 32]) == ""No squares of even numbers found.""
+    assert find_squares_of_even_numbers([64, 100, 144]) == [64, 100, 144]"
+"def find_even_not_powers_of_2(lst):
+    result = []
+    for num in lst:
+        if num % 2 == 0 and (num & (num - 1)) != 0:
+            result.append(num)
+    if not result:
+        return ""No even numbers found that are not powers of 2.""
+    return result","def test_find_even_not_powers_of_2():
+    assert find_even_not_powers_of_2([2, 3, 6, 9]) == [6]
+    assert find_even_not_powers_of_2([4, 8, 16, 32]) == ""No even numbers found that are not powers of 2.""
+    assert find_even_not_powers_of_2([18, 20, 22, 24]) == [18, 20, 22, 24]
+    assert find_even_not_powers_of_2([1, 2, 4, 8]) == ""No even numbers found that are not powers of 2."""
+"def find_not_even_and_not_divisible_by_9(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and num % 9 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are neither even nor divisible by 9.""
+    return result","def test_find_not_even_and_not_divisible_by_9():
+    assert find_not_even_and_not_divisible_by_9([1, 3, 7, 11]) == [1, 3, 7, 11]
+    assert find_not_even_and_not_divisible_by_9([2, 4, 8, 16]) == ""No numbers found that are neither even nor divisible by 9.""
+    assert find_not_even_and_not_divisible_by_9([5, 15, 25, 35]) == [5, 15, 25, 35]
+    assert find_not_even_and_not_divisible_by_9([18, 27, 36, 45]) == ""No numbers found that are neither even nor divisible by 9."""
+"def find_multiples_of_3_and_5_not_7(lst):
+    result = []
+    for num in lst:
+        if num % 3 == 0 and num % 5 == 0 and num % 7 != 0:
+            result.append(num)
+    if not result:
+        return ""No numbers found that are divisible by 3 and 5 but not 7.""
+    return result","def test_find_multiples_of_3_and_5_not_7():
+    assert find_multiples_of_3_and_5_not_7([15, 30, 45]) == [15, 30, 45]
+    assert find_multiples_of_3_and_5_not_7([21, 42, 63]) == ""No numbers found that are divisible by 3 and 5 but not 7.""
+    assert find_multiples_of_3_and_5_not_7([35, 50, 55]) == ""No numbers found that are divisible by 3 and 5 but not 7.""
+    assert find_multiples_of_3_and_5_not_7([75, 90, 105]) == [75, 90]"
+"def find_product_of_two_odd_numbers(lst):
+    result = []
+    for num in lst:
+        for i in range(1, num // 2 + 1, 2):
+            if num % i == 0 and (num // i) % 2 != 0:
+                result.append(num)
+                break
+    if not result:
+        return None
+    return result","def test_find_product_of_two_odd_numbers():
+    assert find_product_of_two_odd_numbers([9, 15, 25]) == [9, 15, 25]
+    assert find_product_of_two_odd_numbers([10, 16, 20]) == None
+    assert find_product_of_two_odd_numbers([21, 27, 45]) == [21, 27, 45]
+    assert find_product_of_two_odd_numbers([14, 18, 22]) == None"
+"def find_product_of_two_primes(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(1, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    result = []
+    for num in lst:
+        for i in range(2, num // 2 + 1):
+            if num % i == 0 and is_prime(i) and is_prime(num // i):
+                result.append(num)
+                break
+    if not result:
+        return None
+    return result","def test_find_product_of_two_primes():
+    assert find_product_of_two_primes([6, 10, 14]) == [6, 10, 14]
+    assert find_product_of_two_primes([8, 12, 18]) == None
+    assert find_product_of_two_primes([15, 21, 35]) == [15, 21, 35]
+    assert find_product_of_two_primes([20, 28, 30]) == None
+    assert find_product_of_two_primes([]) == None"
+"def find_odd_not_power_of_2(lst):
+    result = []
+    for num in lst:
+        if num % 2 != 0 and (num & (num - 1)) != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_odd_not_power_of_2():
+    assert find_odd_not_power_of_2([1, 3, 7]) == [3, 7]
+    assert find_odd_not_power_of_2([2, 4, 8]) == None
+    assert find_odd_not_power_of_2([9, 11, 13]) == [9, 11, 13]
+    assert find_odd_not_power_of_2([16, 32, 64]) == None"
+"def find_divisible_by_6_not_9(lst):
+    result = []
+    for num in lst:
+        if num % 6 == 0 and num % 9 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_divisible_by_6_not_9():
+    assert find_divisible_by_6_not_9([6, 12, 24]) == [6, 12, 24]
+    assert find_divisible_by_6_not_9([9, 18, 27]) == None
+    assert find_divisible_by_6_not_9([30, 36, 42]) == [30, 42]
+    assert find_divisible_by_6_not_9([45, 54, 63]) == None"
+"def find_divisors_of_24_not_8(lst):
+    result = []
+    for num in lst:
+        if 24 % num == 0 and num % 8 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_divisors_of_24_not_8():
+    assert find_divisors_of_24_not_8([1, 2, 3, 4]) == [1, 2, 3, 4]
+    assert find_divisors_of_24_not_8([8, 16, 24]) == None
+    assert find_divisors_of_24_not_8([6, 12, 18]) == [6, 12]
+    assert find_divisors_of_24_not_8([5, 10, 15]) == None"
+"def find_squares_of_odd_numbers(lst):
+    result = []
+    for num in lst:
+        if int(num ** 0.5) ** 2 == num and int(num ** 0.5) % 2 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_squares_of_odd_numbers():
+    assert find_squares_of_odd_numbers([9, 25, 49]) == [9, 25, 49]
+    assert find_squares_of_odd_numbers([16, 36, 64]) == None
+    assert find_squares_of_odd_numbers([81, 121, 169]) == [81, 121, 169]
+    assert find_squares_of_odd_numbers([100, 144, 196]) == None"
+"def find_powers_of_2_not_even(lst):
+    result = []
+    for num in lst:
+        if (num & (num - 1)) == 0 and num % 2 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_powers_of_2_not_even():
+    assert find_powers_of_2_not_even([1, 3, 7]) == [1]
+    assert find_powers_of_2_not_even([8, 16, 32]) == None
+    assert find_powers_of_2_not_even([2, 4, 64]) == None
+    assert find_powers_of_2_not_even([128, 256, 512]) == None"
+"def find_not_multiples_of_3_but_divisible_by_5(lst):
+    result = []
+    for num in lst:
+        if num % 3 != 0 and num % 5 == 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_not_multiples_of_3_but_divisible_by_5():
+    assert find_not_multiples_of_3_but_divisible_by_5([5, 10, 20]) == [5, 10, 20]
+    assert find_not_multiples_of_3_but_divisible_by_5([9, 15, 21]) == None
+    assert find_not_multiples_of_3_but_divisible_by_5([25, 35, 50]) == [25, 35, 50]
+    assert find_not_multiples_of_3_but_divisible_by_5([6, 12, 18]) == None"
+"def find_divisors_of_15_not_3(lst):
+    result = []
+    for num in lst:
+        if 15 % num == 0 and num % 3 != 0:
+            result.append(num)
+    if not result:
+        return None
+    return result","def test_find_divisors_of_15_not_3():
+    assert find_divisors_of_15_not_3([1, 5, 15]) == [1, 5]
+    assert find_divisors_of_15_not_3([3, 9, 12]) == None
+    assert find_divisors_of_15_not_3([2, 4, 6]) == None
+    assert find_divisors_of_15_not_3([7, 11, 13]) == None"
