@@ -46,8 +46,7 @@ def api_analyze_tests(request: AnalyzeTestsRequest):
     :return: Analysis of the tests.
     """
     analysis = analyze_generated_tests(
-        code_snippet=request.code,
-        model_name="4ervonec19/SimpleTestGenerator"
+        code_snippet=request.code
     )
     if "Error" in analysis:
         raise HTTPException(status_code=500, detail=analysis)
