@@ -1,1 +1,0 @@
-# VK-Technopark-project-2024
