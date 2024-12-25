@@ -1,8 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from ..utils.Mistral.mistral import get_chat_response
+from ..utils.Mistral.mistral import get_chat_response, generate_tests,analyze_generated_tests
 from ..schemas.questions import GetChatResponseRequest
-from ..utils.Mistral.mistral import generate_tests
-from ..schemas.questions import GenerateTestsRequest, GenerateTestsResponse
+from ..schemas.questions import GenerateTestsRequest, GenerateTestsResponse, AnalyzeTestsRequest, AnalyzeTestsResponse
 
 router = APIRouter(
     tags=["Questions"]
@@ -37,3 +36,19 @@ def api_generate_tests(request: GenerateTestsRequest):
     if "Error" in generated_tests:
         raise HTTPException(status_code=500, detail=generated_tests)
     return GenerateTestsResponse(generated_tests=generated_tests)
+
+@router.post("/analyze_tests", response_model=AnalyzeTestsResponse)
+def api_analyze_tests(request: AnalyzeTestsRequest):
+    """
+    Analyzes the quality of generated tests for the given Python code.
+
+    :param request: The request containing the Python function code and optionally the tests.
+    :return: Analysis of the tests.
+    """
+    analysis = analyze_generated_tests(
+        code_snippet=request.code,
+        model_name="4ervonec19/SimpleTestGenerator"
+    )
+    if "Error" in analysis:
+        raise HTTPException(status_code=500, detail=analysis)
+    return AnalyzeTestsResponse(analysis=analysis)

@@ -62,5 +62,38 @@ def generate_tests(code_snippet: str, model_name="4ervonec19/SimpleTestGenerator
     except Exception as e:
         return f"Error generating tests: {str(e)}"
 
+def analyze_generated_tests(code_snippet: str, model_name="4ervonec19/SimpleTestGenerator",
+                            llm_model="ft:codestral-latest:58fde890:20241217:9862a68b"):
+    """
+    Generates unit tests for the given Python code snippet and analyzes them using LLM.
+
+    :param code_snippet: The Python function code.
+    :param model_name: The model identifier for test generation.
+    :param llm_model: The LLM model identifier for analysis.
+    :return: Analysis of generated tests as a string.
+    """
+    # Generate unit tests for the provided code snippet
+    generated_tests = generate_tests(code_snippet, model_name)
+
+    if "Error" in generated_tests:
+        return f"Error during test generation: {generated_tests}"
+
+    prompt = (
+        f"Analyze the given Python function and the associated unit tests:\n\n"
+        f"Function:\n{code_snippet}\n\n"
+        f"Provided Unit Tests:\n{generated_tests}\n\n"
+        f"Based on these tests, generate a comprehensive suite of additional unit tests to achieve 100% code coverage. "
+        f"Ensure the newly generated tests adhere to the format and structure of the provided tests, "
+        f"highlight any missing edge cases, and suggest improvements for the existing tests where necessary. "
+        f"Your output should be well-organized, formatted, and executable."
+    )
+
+    # Get LLM analysis
+    analysis = get_chat_response(prompt, model=llm_model)
+
+    if "Ошибка" in analysis:
+        return f"Error during LLM analysis: {analysis}"
+
+    return analysis
 
 

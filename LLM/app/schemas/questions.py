@@ -5,7 +5,7 @@ from pydantic import BaseModel
 class GetChatResponseRequest(BaseModel):
     prompt: str
     context: Optional[str] = None
-    model: Optional[str] = "open-mistral-7b"
+    model: Optional[str] = "ft:codestral-latest:58fde890:20241217:9862a68b"
 
 class GenerateTestsRequest(BaseModel):
     code: str = ("def equals_zero(a):\n"
@@ -38,3 +38,14 @@ class GenerateTestsResponse(BaseModel):
                             "    return result\n"
                             "\n"
                             "def find_divisible_by_2_and_5_not_10")
+
+# Schema for analyzing generated tests
+class AnalyzeTestsRequest(BaseModel):
+    code: str = ("def equals_zero(a):\n"
+                 "    if a == 0:\n"
+                 "        return True\n"
+                 "    return False")
+    tests: Optional[str] = None  # Optional, as tests might be generated internally
+
+class AnalyzeTestsResponse(BaseModel):
+    analysis: str
