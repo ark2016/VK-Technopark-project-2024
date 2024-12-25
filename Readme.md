@@ -185,6 +185,9 @@ uvicorn main:app --reload
     "output_file": "calculated_metrics.csv"
   }
   ```
+- Для корректной обработки, входной `.csv` файл должен ОБЯЗАТЕЛЬНО иметь столбцы `Function` и `Test`!  
+  
+- Выходной файл содержит те же столбцы + `coverage_percent` и `Errors`, содержащих статистику для каждой пары функция/тест.
 
 ---
 
