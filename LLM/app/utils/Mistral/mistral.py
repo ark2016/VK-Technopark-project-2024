@@ -153,9 +153,10 @@ def analyze_generated_tests(code_snippet: str, model_name="4ervonec19/SimpleTest
     # Get LLM analysis
     analysis = get_chat_response(prompt, model=llm_model)
 
-    if "Ошибка" in analysis:
-        return f"Error during LLM analysis: {analysis}"
     print(analysis)
-    return extract_tests_from_message(analysis)
+    res = extract_tests_from_message(analysis)
+    if res is None:
+        return analysis
+    return res
 
 
