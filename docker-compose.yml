@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: LLM
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    environment:
+      - PYTHONUNBUFFERED=1
